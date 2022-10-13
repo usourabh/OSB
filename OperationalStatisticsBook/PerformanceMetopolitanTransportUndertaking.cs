@@ -86,8 +86,24 @@ namespace OperationalStatisticsBook
             table.Rows.Add("8", "Others", "", "", "", "", "", "");
                         return table;
         }
-      
 
+        void ShowData()
+        {
+            DateTime currentDate = new DateTime(Year, Month, 01);
+            DateTime newDate = currentDate.AddYears(+1);
+            string currentYear = currentDate.Year.ToString();
+            string previousYear = newDate.Year.ToString();
+            String previousMonthName = newDate.ToString("MMMM");
+            String[,] param = new string[,]
+                    {
+                    {"@Year",currentYear.Trim()},
+            };
+            DataTable dt = Common.ExecuteProcedure("rptGetAllPerformanceTransUnder", param);
+            if (dt.Rows.Count > 0)
+                dataGridView1.DataSource = dt;
+            else
+                dataGridView1.DataSource = BindPerformanceMetopolitanTransportUndertaking();
+        }
         private void ResetOnClick(object sender, EventArgs e)
         {
             dataGridView1.DataSource = BindPerformanceMetopolitanTransportUndertaking();
@@ -137,7 +153,8 @@ namespace OperationalStatisticsBook
 
         private void PerformanceMetopolitanTransportUndertaking_Load(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = BindPerformanceMetopolitanTransportUndertaking();
+            ShowData();
+           // dataGridView1.DataSource = BindPerformanceMetopolitanTransportUndertaking();
         }
     }
 }

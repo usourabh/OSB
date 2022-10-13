@@ -84,6 +84,21 @@ namespace OperationalStatisticsBook
             return table;
         }
 
+        void ShowData()
+        {
+            DateTime currentDate = new DateTime(Year, Month, 01);
+            String[,] param = new string[,]
+                    {
+                    {"@Year",Year.ToString().Trim()},
+                    {"@Month",Month.ToString().Trim()},
+            };
+            DataTable dt = Common.ExecuteProcedure("sp_GetAllFleetNUtilizations", param);
+            if (dt.Rows.Count > 0)
+                dataGridView1.DataSource = dt;
+            else
+                dataGridView1.DataSource = BindDWODFCMSFleetItsUtilization();
+        }
+
         private void ResetOnClick(object sender, EventArgs e)
         {
             dataGridView1.DataSource = BindDWODFCMSFleetItsUtilization();
@@ -132,7 +147,9 @@ namespace OperationalStatisticsBook
 
         private void DWODFCMSFleetItsUtilization_Load(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = BindDWODFCMSFleetItsUtilization();
+
+            ShowData();
+           // dataGridView1.DataSource = BindDWODFCMSFleetItsUtilization();
 
         }
     }
