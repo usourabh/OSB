@@ -90,20 +90,35 @@ namespace OperationalStatisticsBook
         void ShowData()
         {
             DateTime currentDate = new DateTime(Year, Month, 01);
-            DateTime newDate = currentDate.AddYears(+1);
-            string currentYear = currentDate.Year.ToString();
-            string previousYear = newDate.Year.ToString();
-            String previousMonthName = newDate.ToString("MMMM");
             String[,] param = new string[,]
                     {
-                    {"@Year",currentYear.Trim()},
+                    {"@OsbId",OsbId.ToString()},
+
             };
-            DataTable dt = Common.ExecuteProcedure("rptGetAllPerformanceTransUnder", param);
+            DataTable dt = Common.ExecuteProcedure("sp_PerformanceMetopolitanTransportUndertaking", param);
+            String[,] param1 = new string[,]
+                    {
+                {"@Year",Year.ToString().Trim()},
+              
+            };
+            DataTable dt1 = Common.ExecuteProcedure("rptGetAllPerformanceTransUnder", param1);
+
             if (dt.Rows.Count > 0)
+            {
                 dataGridView1.DataSource = dt;
+            }
+            else if (dt1.Rows.Count > 0)
+            {
+                dataGridView1.DataSource = dt1;
+
+            }
             else
                 dataGridView1.DataSource = BindPerformanceMetopolitanTransportUndertaking();
+
+
         }
+
+ 
         private void ResetOnClick(object sender, EventArgs e)
         {
             dataGridView1.DataSource = BindPerformanceMetopolitanTransportUndertaking();
@@ -118,18 +133,18 @@ namespace OperationalStatisticsBook
             {
                 try
                 {
-                    if (row.Cells[0].Value != null || row.Cells[1].Value != null || row.Cells[2].Value != null || row.Cells[3].Value != null || row.Cells[4].Value != null || row.Cells[5].Value != null || row.Cells[6].Value != null || row.Cells[7].Value != null  )
+                    if (row.Cells[0].Value != null || row.Cells[1].Value != null || row.Cells[2].Value != null || row.Cells[3].Value != null || row.Cells[4].Value != null || row.Cells[5].Value != null || row.Cells[6].Value != null )
                     {
-                        SqlCommand cmd = new SqlCommand("INSERT INTO [rpt].[tbl_PerformanceMetopolitanTransportUndertaking] ([OsbId],[SNo],[Particular],[Param1],[Param2],[Param3],[Param4],[Param5],[Param6]) VALUES (@OsbId,@SNo,@Particular,@Param1,@Param2,@Param3,@Param4,@Param5,@Param6)", con);
+                        SqlCommand cmd = new SqlCommand("INSERT INTO [rpt].[tbl_PerformanceMetopolitanTransportUndertaking] ([OsbId],[Particular],[Param1],[Param2],[Param3],[Param4],[Param5],[Param6]) VALUES (@OsbId,@Particular,@Param1,@Param2,@Param3,@Param4,@Param5,@Param6)", con);
                         cmd.Parameters.AddWithValue("@OsbId", OsbId);
-                        cmd.Parameters.AddWithValue("@SNo", row.Cells[0].Value == null ? "" : row.Cells[0].Value.ToString());
-                        cmd.Parameters.AddWithValue("@Particular", row.Cells[1].Value == null ? "" : row.Cells[1].Value.ToString());
-                        cmd.Parameters.AddWithValue("@Param1", row.Cells[2].Value == null ? "" : row.Cells[2].Value.ToString());
-                        cmd.Parameters.AddWithValue("@Param2", row.Cells[3].Value == null ? "" : row.Cells[3].Value.ToString());
-                        cmd.Parameters.AddWithValue("@Param3", row.Cells[4].Value == null ? "" : row.Cells[4].Value.ToString());
-                        cmd.Parameters.AddWithValue("@Param4", row.Cells[5].Value == null ? "" : row.Cells[5].Value.ToString());
-                        cmd.Parameters.AddWithValue("@Param5", row.Cells[6].Value == null ? "" : row.Cells[6].Value.ToString());
-                        cmd.Parameters.AddWithValue("@Param6", row.Cells[7].Value == null ? "" : row.Cells[7].Value.ToString());
+                   
+                        cmd.Parameters.AddWithValue("@Particular", row.Cells[0].Value == null ? "" : row.Cells[0].Value.ToString());
+                        cmd.Parameters.AddWithValue("@Param1", row.Cells[1].Value == null ? "" : row.Cells[1].Value.ToString());
+                        cmd.Parameters.AddWithValue("@Param2", row.Cells[2].Value == null ? "" : row.Cells[2].Value.ToString());
+                        cmd.Parameters.AddWithValue("@Param3", row.Cells[3].Value == null ? "" : row.Cells[3].Value.ToString());
+                        cmd.Parameters.AddWithValue("@Param4", row.Cells[4].Value == null ? "" : row.Cells[4].Value.ToString());
+                        cmd.Parameters.AddWithValue("@Param5", row.Cells[5].Value == null ? "" : row.Cells[5].Value.ToString());
+                        cmd.Parameters.AddWithValue("@Param6", row.Cells[6].Value == null ? "" : row.Cells[6].Value.ToString());
                           cmd.CommandType = CommandType.Text;
                         con.Open();
                         cmd.ExecuteNonQuery();

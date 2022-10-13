@@ -89,15 +89,32 @@ namespace OperationalStatisticsBook
             DateTime currentDate = new DateTime(Year, Month, 01);
             String[,] param = new string[,]
                     {
-                    {"@Year",Year.ToString().Trim()},
-                    {"@Month",Month.ToString().Trim()},
+                    {"@OsbId",OsbId.ToString()},
+
             };
-            DataTable dt = Common.ExecuteProcedure("sp_GetAllFleetNUtilizations", param);
+            DataTable dt = Common.ExecuteProcedure("sp_DWODFCMSFleetItsUtilization", param);
+            String[,] param1 = new string[,]
+                    {
+                {"@Year",Year.ToString().Trim()},
+                {"@Month",Month.ToString().Trim()},
+            };
+            DataTable dt1 = Common.ExecuteProcedure("sp_GetAllFleetNUtilizations", param1);
+
             if (dt.Rows.Count > 0)
+            {
                 dataGridView1.DataSource = dt;
+            }
+            else if (dt1.Rows.Count > 0)
+            {
+                dataGridView1.DataSource = dt1;
+
+            }
             else
                 dataGridView1.DataSource = BindDWODFCMSFleetItsUtilization();
+
+
         }
+    
 
         private void ResetOnClick(object sender, EventArgs e)
         {

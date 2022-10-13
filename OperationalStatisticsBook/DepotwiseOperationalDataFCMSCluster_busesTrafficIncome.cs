@@ -37,39 +37,32 @@ namespace OperationalStatisticsBook
             DateTime currentDate = new DateTime(Year, Month, 01);
             String[,] param = new string[,]
                     {
-                    {"@Year",Year.ToString().Trim()},
-                    {"@Month",Month.ToString().Trim()},
+                    {"@OsbId",OsbId.ToString()},
+                   
             };
-            DataTable dt = Common.ExecuteProcedure("sp_GetAllTrafficIncomeData", param);
+            DataTable dt = Common.ExecuteProcedure("sp_rptDepotwiseOperationalDataFCMSCluster_busesTrafficIncome", param);
+            String[,] param1 = new string[,]
+                    {
+                {"@Year",Year.ToString().Trim()},
+                {"@Month",Month.ToString().Trim()},
+            };
+            DataTable dt1 = Common.ExecuteProcedure("sp_GetAllTrafficIncomeData", param1);
+
             if (dt.Rows.Count > 0)
+            {
                 dataGridView1.DataSource = dt;
+            }
+            else if(dt1.Rows.Count>0)
+                {
+                dataGridView1.DataSource = dt1;
+               
+            }
             else
                 dataGridView1.DataSource = BindDepotwiseOperationalDataFCMSCluster_busesTrafficIncome();
+
+
         }
 
-
-        //void BindIndexPage(int OsbId)
-        //{
-
-        //    try
-        //    {
-        //        DataTable dt = new DataTable();
-        //        SqlCommand cmd = new SqlCommand("SELECT [S_No],[Param1],[Param2],[Param3],[Param4]  FROM [rpt].[tbl_DepotwiseOperationalDataFCMSCluster_busesTrafficIncome] where OsbId=@OsbId", con);
-        //        cmd.Parameters.AddWithValue("@OsbId", OsbId);
-        //        cmd.CommandType = CommandType.Text;
-        //        SqlDataAdapter sda = new SqlDataAdapter(cmd);
-        //        sda.Fill(dt);
-        //        if (dt.Rows.Count > 0)
-        //            dataGridView1.DataSource = dt;
-        //        else
-        //            dataGridView1.DataSource = BindDepotwiseOperationalDataFCMSCluster_busesTrafficIncome();
-        //    }
-        //    catch (Exception ex)
-        //    {
-
-        //    }
-
-        //}
         int DeleteExisitingTableRecord(string TableName, int OsbId)
         {
             string strTable = "[rpt].[" + TableName + "]";
@@ -84,6 +77,7 @@ namespace OperationalStatisticsBook
 
             return i;
         }
+
         DataTable BindDepotwiseOperationalDataFCMSCluster_busesTrafficIncome()
         {
             DataTable table = new DataTable();
@@ -116,6 +110,7 @@ namespace OperationalStatisticsBook
 
             return table;
         }
+
         private void ResetOnClick(object sender, EventArgs e)
         {
             DeleteExisitingTableRecord("tbl_DepotwiseOperationalDataFCMSCluster_busesTrafficIncome", OsbId);
@@ -134,12 +129,13 @@ namespace OperationalStatisticsBook
                 {
                     if (row.Cells[0].Value != null || row.Cells[1].Value != null || row.Cells[2].Value != null || row.Cells[3].Value != null || row.Cells[4].Value != null )
                     {
-                        SqlCommand cmd = new SqlCommand("INSERT INTO [rpt].[tbl_DepotwiseOperationalDataFCMSCluster_busesTrafficIncome] ([OsbId],[Param1],[Param2],[Param3],[Param4]) VALUES (@OsbId,@Param1,@Param2,@Param3,@Param4)", con);
+                        SqlCommand cmd = new SqlCommand("INSERT INTO [rpt].[tbl_DepotwiseOperationalDataFCMSCluster_busesTrafficIncome] ([OsbId],[Param1],[Param2],[Param3],[Param4],[S_No]) VALUES (@OsbId,@Param1,@Param2,@Param3,@Param4,@S_No)", con);
                         cmd.Parameters.AddWithValue("@OsbId", OsbId);              
                         cmd.Parameters.AddWithValue("@Param1", row.Cells[0].Value == null ? "" : row.Cells[0].Value.ToString());
                         cmd.Parameters.AddWithValue("@Param2", row.Cells[1].Value == null ? "" : row.Cells[1].Value.ToString());
                         cmd.Parameters.AddWithValue("@Param3", row.Cells[2].Value == null ? "" : row.Cells[2].Value.ToString());
                         cmd.Parameters.AddWithValue("@Param4", row.Cells[3].Value == null ? "" : row.Cells[3].Value.ToString());
+                        cmd.Parameters.AddWithValue("@S_No", row.Cells[4].Value == null ? "" : row.Cells[4].Value.ToString());
                        
                         cmd.CommandType = CommandType.Text;
                         con.Open();
@@ -155,6 +151,7 @@ namespace OperationalStatisticsBook
             }
             MessageBox.Show("Done");
         }
+
         private void button1_Click(object sender, EventArgs e)
         {
             DeleteExisitingTableRecord("tbl_DepotwiseOperationalDataFCMSCluster_busesTrafficIncome", OsbId);
@@ -175,8 +172,7 @@ namespace OperationalStatisticsBook
         {
 
             ShowData();
-           // dataGridView1.DataSource = BindDepotwiseOperationalDataFCMSCluster_busesTrafficIncome();
-           // BindIndexPage(OsbId);
+       
         }
     }
 }

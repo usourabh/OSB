@@ -40,7 +40,7 @@ namespace OperationalStatisticsBook
                    {
                    {"@OsbId",OsbId.ToString()},
                 };
-            DataTable dt = Common.ExecuteProcedure("sp_rptDeportWiseStatementOfSchoolSPLHireTouristPassPinkTicketEarning", param);
+            DataTable dt = Common.ExecuteProcedure("sp_rptMaterialConsumptionFrom", param);
             return dt;
         }
 

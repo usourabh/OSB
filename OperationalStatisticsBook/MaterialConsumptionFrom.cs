@@ -31,6 +31,36 @@ namespace OperationalStatisticsBook
             this.MonthName = MonthName;
         }
 
+        void ShowData()
+        {
+            DateTime currentDate = new DateTime(Year, Month, 01);
+            String[,] param = new string[,]
+                    {
+                    {"@OsbId",OsbId.ToString()},
+
+            };
+            DataTable dt = Common.ExecuteProcedure("sp_rptMaterialConsumptionFrom", param);
+            String[,] param1 = new string[,]
+                    {
+                {"@Inputyear",Year.ToString().Trim()},
+                //{"@Month",Month.ToString().Trim()},
+            };
+            DataTable dt1 = Common.ExecuteProcedure("rptGetAllMaterialConsumption", param1);
+
+            if (dt.Rows.Count > 0)
+            {
+                dataGridView1.DataSource = dt;
+            }
+            else if (dt1.Rows.Count > 0)
+            {
+                dataGridView1.DataSource = dt1;
+
+            }
+            else
+                dataGridView1.DataSource = BindMaterialConsumptionFrom();
+
+
+        }
         DataTable BindMaterialConsumptionFrom()
         {
             DataTable table = new DataTable();
@@ -88,23 +118,22 @@ namespace OperationalStatisticsBook
 
         private void SaveOnClick(object sender, EventArgs e)
         {
-            DeleteExisitingTableRecord("tbl_MaterialConsumptionFrom", OsbId);
-
+            DeleteExisitingTableRecord("tbl_MaterialConsumptionFrom", OsbId);          
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
                 try
                 {
-                    if (row.Cells[0].Value != null || row.Cells[1].Value != null || row.Cells[2].Value != null || row.Cells[3].Value != null || row.Cells[4].Value != null || row.Cells[5].Value != null  )
+                    if (row.Cells[0].Value != null || row.Cells[1].Value != null || row.Cells[2].Value != null || row.Cells[3].Value != null || row.Cells[4].Value != null || row.Cells[5].Value != null)
                     {
-                        SqlCommand cmd = new SqlCommand("INSERT INTO [rpt].[tbl_MaterialConsumptionFrom] ([OsbId],[S_No],[ITEM],[UNIT],[Param1],[Param2],[Param3]) VALUES (@OsbId,@S_No,@ITEM,@Param1,@Param2,@Param3)", con);
+                        SqlCommand cmd = new SqlCommand("INSERT INTO [rpt].[tbl_MaterialConsumptionFrom] ([OsbId],[S_No],[ITEM],[UNIT],[Param1],[Param2],[Param3]) VALUES (@OsbId,@S_No,@ITEM,@UNIT,@Param1,@Param2,@Param3)", con);
                         cmd.Parameters.AddWithValue("@OsbId", OsbId);
-                        cmd.Parameters.AddWithValue("@S_No", row.Cells[0].Value == null ? "" : row.Cells[0].Value.ToString());
-                        cmd.Parameters.AddWithValue("@ITEM", row.Cells[1].Value == null ? "" : row.Cells[1].Value.ToString());
-                        cmd.Parameters.AddWithValue("@UNIT", row.Cells[2].Value == null ? "" : row.Cells[2].Value.ToString());
-                        cmd.Parameters.AddWithValue("@Param1", row.Cells[3].Value == null ? "" : row.Cells[3].Value.ToString());
-                        cmd.Parameters.AddWithValue("@Param2", row.Cells[4].Value == null ? "" : row.Cells[4].Value.ToString());
-                        cmd.Parameters.AddWithValue("@Param3", row.Cells[5].Value == null ? "" : row.Cells[5].Value.ToString());
-                      
+                        cmd.Parameters.AddWithValue("@S_No", row.Cells[0].Value == null ? "" : row.Cells[0].Value.ToString().Trim());
+                        cmd.Parameters.AddWithValue("@ITEM", row.Cells[1].Value == null ? "" : row.Cells[1].Value.ToString().Trim());
+                        cmd.Parameters.AddWithValue("@UNIT", row.Cells[2].Value == null ? "" : row.Cells[2].Value.ToString().Trim());
+                        cmd.Parameters.AddWithValue("@Param1", row.Cells[3].Value == null ? "" : row.Cells[3].Value.ToString().Trim());
+                        cmd.Parameters.AddWithValue("@Param2", row.Cells[4].Value == null ? "" : row.Cells[4].Value.ToString().Trim());
+                        cmd.Parameters.AddWithValue("@Param3", row.Cells[5].Value == null ? "" : row.Cells[5].Value.ToString().Trim());
+              
                         cmd.CommandType = CommandType.Text;
                         con.Open();
                         cmd.ExecuteNonQuery();
@@ -122,7 +151,8 @@ namespace OperationalStatisticsBook
 
         private void MaterialConsumptionFrom_Load(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = BindMaterialConsumptionFrom();
+            ShowData();
+            //dataGridView1.DataSource = BindMaterialConsumptionFrom();
         }
 
         private void PrintReportOnClick(object sender, EventArgs e)
