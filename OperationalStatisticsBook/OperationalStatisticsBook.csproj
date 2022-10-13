@@ -1,0 +1,1040 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{86EFB034-22EE-45D2-9098-0B9878367A5B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>OperationalStatisticsBook</RootNamespace>
+    <AssemblyName>OperationalStatisticsBook</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1537.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1537.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1537.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1537.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1537.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="aaa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="aaa.Designer.cs">
+      <DependentUpon>aaa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccidentAnalysisForTheMonth.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccidentAnalysisForTheMonth.Designer.cs">
+      <DependentUpon>AccidentAnalysisForTheMonth.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccidentAnalysisOtherPartyInvolvment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccidentAnalysisOtherPartyInvolvment.Designer.cs">
+      <DependentUpon>AccidentAnalysisOtherPartyInvolvment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccidentNCompensationGvnAccidentVictims.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccidentNCompensationGvnAccidentVictims.Designer.cs">
+      <DependentUpon>AccidentNCompensationGvnAccidentVictims.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AccidentsNCompensationGvnAccidentVictim.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AccidentsNCompensationGvnAccidentVictim.Designer.cs">
+      <DependentUpon>AccidentsNCompensationGvnAccidentVictim.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AnalysisOfAccidentsByDriverGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AnalysisOfAccidentsByDriverGroup.Designer.cs">
+      <DependentUpon>AnalysisOfAccidentsByDriverGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="analysisOfCausesAccidents.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="analysisOfCausesAccidents.Designer.cs">
+      <DependentUpon>analysisOfCausesAccidents.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CategorywiseStaffPositionAsOn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CategorywiseStaffPositionAsOn.Designer.cs">
+      <DependentUpon>CategorywiseStaffPositionAsOn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common.cs" />
+    <Compile Include="ComparativeAnalysisOfCausesOfAccidents.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ComparativeAnalysisOfCausesOfAccidents.Designer.cs">
+      <DependentUpon>ComparativeAnalysisOfCausesOfAccidents.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ComparativeFinancialResultsFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ComparativeFinancialResultsFrom.Designer.cs">
+      <DependentUpon>ComparativeFinancialResultsFrom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ComparativeFinancialResultsFromAprilToMarch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ComparativeFinancialResultsFromAprilToMarch.Designer.cs">
+      <DependentUpon>ComparativeFinancialResultsFromAprilToMarch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ComparativeOperationalDataForThePeriod.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ComparativeOperationalDataForThePeriod.Designer.cs">
+      <DependentUpon>ComparativeOperationalDataForThePeriod.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeportWiseStatementOfSchoolSPLHireTouristPassPinkTicketEarning.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeportWiseStatementOfSchoolSPLHireTouristPassPinkTicketEarning.Designer.cs">
+      <DependentUpon>DeportWiseStatementOfSchoolSPLHireTouristPassPinkTicketEarning.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DepotwiseOperationalDataFCMSCluster_busesTrafficIncome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DepotwiseOperationalDataFCMSCluster_busesTrafficIncome.Designer.cs">
+      <DependentUpon>DepotwiseOperationalDataFCMSCluster_busesTrafficIncome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DepotWiseOperationalDataInRespectOfNonAcAndAcLowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021TripsScheduledAndOperated.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DepotWiseOperationalDataInRespectOfNonAcAndAcLowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021TripsScheduledAndOperated.Designer.cs">
+      <DependentUpon>DepotWiseOperationalDataInRespectOfNonAcAndAcLowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021TripsScheduledAndOperated.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DepotWiseOprationalDataInRespectOfNonAC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DepotWiseOprationalDataInRespectOfNonAC.Designer.cs">
+      <DependentUpon>DepotWiseOprationalDataInRespectOfNonAC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DepotWiseOprationalDataInRespectOfNonAcNAcLowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021AnalysisOfKilometers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DepotWiseOprationalDataInRespectOfNonAcNAcLowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021AnalysisOfKilometers.Designer.cs">
+      <DependentUpon>DepotWiseOprationalDataInRespectOfNonAcNAcLowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021AnalysisOfKilometers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DepotWiseOprationalDataInRespectOfNonAcNAcLowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021TrafficIncome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DepotWiseOprationalDataInRespectOfNonAcNAcLowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021TrafficIncome.Designer.cs">
+      <DependentUpon>DepotWiseOprationalDataInRespectOfNonAcNAcLowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021TrafficIncome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DepotWiseOprationalDataRespectNonALowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021FleetItsUtillization.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DepotWiseOprationalDataRespectNonALowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021FleetItsUtillization.Designer.cs">
+      <DependentUpon>DepotWiseOprationalDataRespectNonALowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021FleetItsUtillization.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DepotWiseTotalMissedKmsAndBreakdowns.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DepotWiseTotalMissedKmsAndBreakdowns.Designer.cs">
+      <DependentUpon>DepotWiseTotalMissedKmsAndBreakdowns.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DetailsofOperationaldataforthemonthofJuly.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DetailsofOperationaldataforthemonthofJuly.Designer.cs">
+      <DependentUpon>DetailsofOperationaldataforthemonthofJuly.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DistrubutionOfFleetByTypeMakeAndYearOfCommission.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DistrubutionOfFleetByTypeMakeAndYearOfCommission.Designer.cs">
+      <DependentUpon>DistrubutionOfFleetByTypeMakeAndYearOfCommission.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DS_OperationalStatisticsBook.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_OperationalStatisticsBook.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dtcoperationDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dtcoperationDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DWODFCMSFleetItsUtilization.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DWODFCMSFleetItsUtilization.Designer.cs">
+      <DependentUpon>DWODFCMSFleetItsUtilization.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FinMasterInfo.cs" />
+    <Compile Include="frmAnalysisOfAccidentsByDriverGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAnalysisOfAccidentsByDriverGroup.Designer.cs">
+      <DependentUpon>frmAnalysisOfAccidentsByDriverGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPerformanceofDTCGlance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPerformanceofDTCGlance.Designer.cs">
+      <DependentUpon>frmPerformanceofDTCGlance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalMaster.cs" />
+    <Compile Include="MainDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainDashboard.Designer.cs">
+      <DependentUpon>MainDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MaterialConsumptionFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaterialConsumptionFrom.Designer.cs">
+      <DependentUpon>MaterialConsumptionFrom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NoOfTripsActualOperatedOnTimeAndNoOfTripsActualOperated.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NoOfTripsActualOperatedOnTimeAndNoOfTripsActualOperated.Designer.cs">
+      <DependentUpon>NoOfTripsActualOperatedOnTimeAndNoOfTripsActualOperated.cs</DependentUpon>
+    </Compile>
+    <Compile Include="obj\Debug\.NETFramework,Version=v4.6.AssemblyAttributes.cs" />
+    <Compile Include="obj\Release\.NETFramework,Version=v4.5.AssemblyAttributes.cs" />
+    <Compile Include="obj\Release\.NETFramework,Version=v4.6.AssemblyAttributes.cs" />
+    <Compile Include="OperationalDepotWiseFleetStrengthNBusesOnRoad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OperationalDepotWiseFleetStrengthNBusesOnRoad.Designer.cs">
+      <DependentUpon>OperationalDepotWiseFleetStrengthNBusesOnRoad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PerformanceMetopolitanTransportUndertaking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PerformanceMetopolitanTransportUndertaking.Designer.cs">
+      <DependentUpon>PerformanceMetopolitanTransportUndertaking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PriceAndCostIndicies.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PriceAndCostIndicies.Designer.cs">
+      <DependentUpon>PriceAndCostIndicies.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="progressiveFinancialResults.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="progressiveFinancialResults.Designer.cs">
+      <DependentUpon>progressiveFinancialResults.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RoutesOperatedByDtc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RoutesOperatedByDtc.Designer.cs">
+      <DependentUpon>RoutesOperatedByDtc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RoutesOperatedByDTCEarningPerKillometerJune.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RoutesOperatedByDTCEarningPerKillometerJune.Designer.cs">
+      <DependentUpon>RoutesOperatedByDTCEarningPerKillometerJune.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rptAccidentAnalysisForTheMonth.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rptAccidentAnalysisForTheMonth.Designer.cs">
+      <DependentUpon>rptAccidentAnalysisForTheMonth.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rptAccidentAnalysisOtherPartyInvolvment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rptAccidentAnalysisOtherPartyInvolvment.Designer.cs">
+      <DependentUpon>rptAccidentAnalysisOtherPartyInvolvment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rptAccidentNCompensationGvnAccidentVictims.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rptAccidentNCompensationGvnAccidentVictims.Designer.cs">
+      <DependentUpon>rptAccidentNCompensationGvnAccidentVictims.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rptAnalysisOfAccidentsByDriverGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rptAnalysisOfAccidentsByDriverGroup.Designer.cs">
+      <DependentUpon>rptAnalysisOfAccidentsByDriverGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rptanalysisOfCausesAccidents.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rptanalysisOfCausesAccidents.Designer.cs">
+      <DependentUpon>rptanalysisOfCausesAccidents.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rptCategorywiseStaffPositionAsOn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rptCategorywiseStaffPositionAsOn.Designer.cs">
+      <DependentUpon>rptCategorywiseStaffPositionAsOn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rptComparativeAnalysisOfCausesOfAccidents.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rptComparativeAnalysisOfCausesOfAccidents.Designer.cs">
+      <DependentUpon>rptComparativeAnalysisOfCausesOfAccidents.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rptComparativeFinancialResultsFrom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rptComparativeFinancialResultsFrom.Designer.cs">
+      <DependentUpon>rptComparativeFinancialResultsFrom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rptComparativeOperationalData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rptComparativeOperationalData.Designer.cs">
+      <DependentUpon>rptComparativeOperationalData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rptDepotwiseOperationalDataFCMSCluster_busesTrafficIncome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rptDepotwiseOperationalDataFCMSCluster_busesTrafficIncome.Designer.cs">
+      <DependentUpon>rptDepotwiseOperationalDataFCMSCluster_busesTrafficIncome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rptDepotWiseOprationalDataInRespectOfNonAC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rptDepotWiseOprationalDataInRespectOfNonAC.Designer.cs">
+      <DependentUpon>rptDepotWiseOprationalDataInRespectOfNonAC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rptDepotWiseOprationalDataInRespectOfNonAcNAcLowFloorCityNCRServiceOnlyAnalysisOfKilometers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rptDepotWiseOprationalDataInRespectOfNonAcNAcLowFloorCityNCRServiceOnlyAnalysisOfKilometers.Designer.cs">
+      <DependentUpon>rptDepotWiseOprationalDataInRespectOfNonAcNAcLowFloorCityNCRServiceOnlyAnalysisOfKilometers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rptDepotWiseOprationalDataInRespectOfNonAcNAcLowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021TrafficIncome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rptDepotWiseOprationalDataInRespectOfNonAcNAcLowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021TrafficIncome.Designer.cs">
+      <DependentUpon>rptDepotWiseOprationalDataInRespectOfNonAcNAcLowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021TrafficIncome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rptDepotWiseOprationalDataRespectNonALowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021FleetItsUtillization.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rptDepotWiseOprationalDataRespectNonALowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021FleetItsUtillization.Designer.cs">
+      <DependentUpon>rptDepotWiseOprationalDataRespectNonALowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021FleetItsUtillization.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rptDepotWiseTotalMissedKmsAndBreakdowns.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rptDepotWiseTotalMissedKmsAndBreakdowns.Designer.cs">
+      <DependentUpon>rptDepotWiseTotalMissedKmsAndBreakdowns.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rptDetailsofOperationaldata.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rptDetailsofOperationaldata.Designer.cs">
+      <DependentUpon>rptDetailsofOperationaldata.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rptDistributionOfFleetByTypeMake.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rptDistributionOfFleetByTypeMake.Designer.cs">
+      <DependentUpon>rptDistributionOfFleetByTypeMake.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rptDWODFCMSFleetItsUtilization.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rptDWODFCMSFleetItsUtilization.Designer.cs">
+      <DependentUpon>rptDWODFCMSFleetItsUtilization.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rptDWODTripsScheduledOperated.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rptDWODTripsScheduledOperated.Designer.cs">
+      <DependentUpon>rptDWODTripsScheduledOperated.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rptDWSPLHireTouristPassPinkTicketEarning.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rptDWSPLHireTouristPassPinkTicketEarning.Designer.cs">
+      <DependentUpon>rptDWSPLHireTouristPassPinkTicketEarning.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rptfrmPerformanceofDTCGlance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rptfrmPerformanceofDTCGlance.Designer.cs">
+      <DependentUpon>rptfrmPerformanceofDTCGlance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rptMaterialConsumptionFinancial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rptMaterialConsumptionFinancial.Designer.cs">
+      <DependentUpon>rptMaterialConsumptionFinancial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rptNoOfTripsActualOperatedOnTimeAndNoOfTripsActualOperated.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rptNoOfTripsActualOperatedOnTimeAndNoOfTripsActualOperated.Designer.cs">
+      <DependentUpon>rptNoOfTripsActualOperatedOnTimeAndNoOfTripsActualOperated.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rptOperationalDepotWiseFleetStrengthNBusesOnRoad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rptOperationalDepotWiseFleetStrengthNBusesOnRoad.Designer.cs">
+      <DependentUpon>rptOperationalDepotWiseFleetStrengthNBusesOnRoad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rptPerformanceMetopolitanTransportUndertaking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rptPerformanceMetopolitanTransportUndertaking.Designer.cs">
+      <DependentUpon>rptPerformanceMetopolitanTransportUndertaking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rptPriceAndCostIndicies.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rptPriceAndCostIndicies.Designer.cs">
+      <DependentUpon>rptPriceAndCostIndicies.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rptprogressiveFinancialResults.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rptprogressiveFinancialResults.Designer.cs">
+      <DependentUpon>rptprogressiveFinancialResults.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rptRoutesOperatedByDtc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rptRoutesOperatedByDtc.Designer.cs">
+      <DependentUpon>rptRoutesOperatedByDtc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rptRoutesOperatedByDTCEarningPerKillometer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rptRoutesOperatedByDTCEarningPerKillometer.Designer.cs">
+      <DependentUpon>rptRoutesOperatedByDTCEarningPerKillometer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rptSalientFeatureGrowthBasicStructure.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rptSalientFeatureGrowthBasicStructure.Designer.cs">
+      <DependentUpon>rptSalientFeatureGrowthBasicStructure.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rptStaffRatioAsOn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rptStaffRatioAsOn.Designer.cs">
+      <DependentUpon>rptStaffRatioAsOn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rptStatementOfForTheMonthOfPasses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rptStatementOfForTheMonthOfPasses.Designer.cs">
+      <DependentUpon>rptStatementOfForTheMonthOfPasses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rptStatementShowingOperationalDataOfNcrCngServicesOfTheCorporation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rptStatementShowingOperationalDataOfNcrCngServicesOfTheCorporation.Designer.cs">
+      <DependentUpon>rptStatementShowingOperationalDataOfNcrCngServicesOfTheCorporation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rptStatementShowingRegionalWiseOperational.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rptStatementShowingRegionalWiseOperational.Designer.cs">
+      <DependentUpon>rptStatementShowingRegionalWiseOperational.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rptStatementShowingRespectCityNCRForeignBusService.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rptStatementShowingRespectCityNCRForeignBusService.Designer.cs">
+      <DependentUpon>rptStatementShowingRespectCityNCRForeignBusService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rptStatementShowingTheRsInRespectOfCityNCRForeignBusServiceIncomeExpewditureJune2022InLakhs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rptStatementShowingTheRsInRespectOfCityNCRForeignBusServiceIncomeExpewditureJune2022InLakhs.Designer.cs">
+      <DependentUpon>rptStatementShowingTheRsInRespectOfCityNCRForeignBusServiceIncomeExpewditureJune2022InLakhs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SalientFeatureGrowthBasicStructure.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SalientFeatureGrowthBasicStructure.Designer.cs">
+      <DependentUpon>SalientFeatureGrowthBasicStructure.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="StaffRatioAsOn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StaffRatioAsOn.Designer.cs">
+      <DependentUpon>StaffRatioAsOn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StatementOfForTheMonthOfPasses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StatementOfForTheMonthOfPasses.Designer.cs">
+      <DependentUpon>StatementOfForTheMonthOfPasses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StatementShowingOperationalDataOfNcrCngServicesOfTheCorporationForTheMonthOfJuly_2022.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StatementShowingOperationalDataOfNcrCngServicesOfTheCorporationForTheMonthOfJuly_2022.Designer.cs">
+      <DependentUpon>StatementShowingOperationalDataOfNcrCngServicesOfTheCorporationForTheMonthOfJuly_2022.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StatementShowingRegionWiseOperationalDataForTheMonth.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StatementShowingRegionWiseOperationalDataForTheMonth.Designer.cs">
+      <DependentUpon>StatementShowingRegionWiseOperationalDataForTheMonth.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StatementShowingTheRsInRespectOfCityNCRForeignBusServiceIncomeExpewditureJune2022InLakhs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StatementShowingTheRsInRespectOfCityNCRForeignBusServiceIncomeExpewditureJune2022InLakhs.Designer.cs">
+      <DependentUpon>StatementShowingTheRsInRespectOfCityNCRForeignBusServiceIncomeExpewditureJune2022InLakhs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StatemnetShowingTheInRespectOfCityNcrAndForeignBusServiceRsIncomeAndExpewnditureJune_2022Inlakhs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StatemnetShowingTheInRespectOfCityNcrAndForeignBusServiceRsIncomeAndExpewnditureJune_2022Inlakhs.Designer.cs">
+      <DependentUpon>StatemnetShowingTheInRespectOfCityNcrAndForeignBusServiceRsIncomeAndExpewnditureJune_2022Inlakhs.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AAA.rdlc" />
+    <EmbeddedResource Include="aaa.resx">
+      <DependentUpon>aaa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccidentAnalysisForTheMonth.resx">
+      <DependentUpon>AccidentAnalysisForTheMonth.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccidentAnalysisOtherPartyInvolvment.resx">
+      <DependentUpon>AccidentAnalysisOtherPartyInvolvment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccidentNCompensationGvnAccidentVictims.resx">
+      <DependentUpon>AccidentNCompensationGvnAccidentVictims.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AccidentsNCompensationGvnAccidentVictim.resx">
+      <DependentUpon>AccidentsNCompensationGvnAccidentVictim.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AnalysisOfAccidentsByDriverGroup.resx">
+      <DependentUpon>AnalysisOfAccidentsByDriverGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="analysisOfCausesAccidents.resx">
+      <DependentUpon>analysisOfCausesAccidents.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CategorywiseStaffPositionAsOn.resx">
+      <DependentUpon>CategorywiseStaffPositionAsOn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ComparativeAnalysisOfCausesOfAccidents.resx">
+      <DependentUpon>ComparativeAnalysisOfCausesOfAccidents.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ComparativeFinancialResultsFrom.resx">
+      <DependentUpon>ComparativeFinancialResultsFrom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ComparativeFinancialResultsFromAprilToMarch.resx">
+      <DependentUpon>ComparativeFinancialResultsFromAprilToMarch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ComparativeOperationalDataForThePeriod.resx">
+      <DependentUpon>ComparativeOperationalDataForThePeriod.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeportWiseStatementOfSchoolSPLHireTouristPassPinkTicketEarning.resx">
+      <DependentUpon>DeportWiseStatementOfSchoolSPLHireTouristPassPinkTicketEarning.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DepotwiseOperationalDataFCMSCluster busesTrafficIncome.resx" />
+    <EmbeddedResource Include="DepotwiseOperationalDataFCMSCluster_busesTrafficIncome.resx">
+      <DependentUpon>DepotwiseOperationalDataFCMSCluster_busesTrafficIncome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DepotWiseOperationalDataInRespectOfNonAcAndAcLowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021TripsScheduledAndOperated.resx">
+      <DependentUpon>DepotWiseOperationalDataInRespectOfNonAcAndAcLowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021TripsScheduledAndOperated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DepotWiseOprationalDataInRespectOfNonAC.resx">
+      <DependentUpon>DepotWiseOprationalDataInRespectOfNonAC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DWODFCMSFleetItsUtilization.resx">
+      <DependentUpon>DWODFCMSFleetItsUtilization.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.AccidentAnalysisForTheMonth.resources" />
+    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.AccidentAnalysisOtherPartyInvolvment.resources" />
+    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.AccidentNCompensationGvnAccidentVictims.resources" />
+    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.AccidentsNCompensationGvnAccidentVictim.resources" />
+    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.AnalysisOfAccidentsByDriverGroup.resources" />
+    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.analysisOfCausesAccidents.resources" />
+    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.CategorywiseStaffPositionAsOn.resources" />
+    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.ComparativeAnalysisOfCausesOfAccidents.resources" />
+    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.ComparativeFinancialResultsFrom.resources" />
+    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.ComparativeFinancialResultsFromAprilToMarch.resources" />
+    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.ComparativeOperationalData.resources" />
+    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.DeportWiseStatementOfSchoolSPLHireTouristPassPinkTicketEarning.resources" />
+    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.DepotwiseOperationalDataFCMSCluster_busesTrafficIncome.resources" />
+    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.DepotWiseOperationalDataInRespectOfNonAcAndAcLowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021TripsScheduledAndOperated.resources" />
+    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.DepotWiseOprationalDataInRespectOfNonAC.resources" />
+    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.DepotWiseOprationalDataInRespectOfNonAcNAcLowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021AnalysisOfKilometers.resources" />
+    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.DepotWiseOprationalDataInRespectOfNonAcNAcLowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021TrafficIncome.resources" />
+    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.DepotWiseOprationalDataRespectNonALowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021FleetItsUtillization.resources" />
+    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.DepotWiseTotalMissedKmsAndBreakdowns.resources" />
+    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.DetailsofOperationaldataforthemonthofJuly.resources" />
+    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.DistrubutionOfFleetByTypeMakeAndYearOfCommission.resources" />
+    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.DWODFCMSFleetItsUtilization.resources" />
+    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.frmAnalysisOfAccidentsByDriverGroup.resources" />
+    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.frmOSBMain.resources" />
+    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.frmPerformanceofDTCGlance.resources" />
+    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.MainDashboard.resources" />
+    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.MaterialConsumptionFrom.resources" />
+    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.NoOfTripsActualOperatedOnTimeAndNoOfTripsActualOperated.resources" />
+    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.OperationalDepotWiseFleetStrengthNBusesOnRoad.resources" />
+    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.PerformanceMetopolitanTransportUndertaking.resources" />
+    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.PriceAndCostIndicies.resources" />
+    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.progressiveFinancialResults.resources" />
+    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.Properties.Resources.resources" />
+    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.RoutesOperatedByDtc.resources" />
+    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.RoutesOperatedByDTCEarningPerKillometerJune.resources" />
+    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.rptAccidentAnalysisForTheMonth.resources" />
+    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.rptAccidentAnalysisOtherPartyInvolvment.resources" />
+    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.rptAccidentNCompensationGvnAccidentVictims.resources" />
+    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.rptAnalysisOfAccidentsByDriverGroup.resources" />
+    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.rptanalysisOfCausesAccidents.resources" />
+    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.rptCategorywiseStaffPositionAsOn.resources" />
+    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.rptComparativeAnalysisOfCausesOfAccidents.resources" />
+    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.rptComparativeFinancialResultsFrom.resources" />
+    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.rptComparativeOperationalData.resources" />
+    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.rptDepotwiseOperationalDataFCMSCluster_busesTrafficIncome.resources" />
+    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.rptDepotWiseOprationalDataInRespectOfNonAC.resources" />
+    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.rptDepotWiseOprationalDataInRespectOfNonAcNAcLowFloorCityNCRServiceOnlyAnalysisOfKilometers.resources" />
+    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.rptDepotWiseOprationalDataInRespectOfNonAcNAcLowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021TrafficIncome.resources" />
+    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.rptDepotWiseOprationalDataRespectNonALowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021FleetItsUtillization.resources" />
+    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.rptDepotWiseTotalMissedKmsAndBreakdowns.resources" />
+    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.rptDetailsofOperationaldata.resources" />
+    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.rptDistributionOfFleetByTypeMake.resources" />
+    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.rptDWODFCMSFleetItsUtilization.resources" />
+    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.rptDWODTripsScheduledOperated.resources" />
+    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.rptDWSPLHireTouristPassPinkTicketEarning.resources" />
+    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.rptfrmPerformanceofDTCGlance.resources" />
+    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.rptMaterialConsumptionFinancial.resources" />
+    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.rptNoOfTripsActualOperatedOnTimeAndNoOfTripsActualOperated.resources" />
+    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.rptOperationalDepotWiseFleetStrengthNBusesOnRoad.resources" />
+    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.rptPerformanceMetopolitanTransportUndertaking.resources" />
+    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.rptPriceAndCostIndicies.resources" />
+    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.rptprogressiveFinancialResults.resources" />
+    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.rptRoutesOperatedByDtc.resources" />
+    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.rptRoutesOperatedByDTCEarningPerKillometer.resources" />
+    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.rptSalientFeatureGrowthBasicStructure.resources" />
+    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.rptStaffRatioAsOn.resources" />
+    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.rptStatementOfForTheMonthOfPasses.resources" />
+    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.rptStatementShowingOperationalDataOfNcrCngServicesOfTheCorporation.resources" />
+    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.rptStatementShowingRegionalWiseOperational.resources" />
+    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.rptStatementShowingRespectCityNCRForeignBusService.resources" />
+    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.rptStatementShowingTheRsInRespectOfCityNCRForeignBusServiceIncomeExpewditureJune2022InLakhs.resources" />
+    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.SalientFeatureGrowthBasicStructure.resources" />
+    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.StaffRatioAsOn.resources" />
+    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.StatementOfForTheMonthOfPasses.resources" />
+    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.StatementShowingOperationalDataOfNcrCngServicesOfTheCorporationForTheMonthOfJuly_2022.resources" />
+    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.StatementShowingRegionWiseOperationalDataForTheMonth.resources" />
+    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.StatementShowingTheRsInRespectOfCityNCRForeignBusServiceIncomeExpewditureJune2022InLakhs.resources" />
+    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.StatemnetShowingTheInRespectOfCityNcrAndForeignBusServiceRsIncomeAndExpewnditureJune_2022Inlakhs.resources" />
+    <EmbeddedResource Include="PerformanceMetopolitanTransportUndertaking.resx">
+      <DependentUpon>PerformanceMetopolitanTransportUndertaking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptAccidentAnalysisForTheMonth.rdlc" />
+    <EmbeddedResource Include="rptAccidentAnalysisForTheMonth.resx">
+      <DependentUpon>rptAccidentAnalysisForTheMonth.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptAccidentNCompensationGvnAccidentVictims.rdlc" />
+    <EmbeddedResource Include="rptAccidentNCompensationGvnAccidentVictims.resx">
+      <DependentUpon>rptAccidentNCompensationGvnAccidentVictims.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptAnalysisOfAccidentsByDriverGroup.rdlc" />
+    <EmbeddedResource Include="rptAnalysisOfAccidentsByDriverGroup.resx">
+      <DependentUpon>rptAnalysisOfAccidentsByDriverGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptanalysisOfCausesAccidents.rdlc" />
+    <EmbeddedResource Include="rptanalysisOfCausesAccidents.resx">
+      <DependentUpon>rptanalysisOfCausesAccidents.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptCategorywiseStaffPositionAsOn.rdlc" />
+    <EmbeddedResource Include="rptCategorywiseStaffPositionAsOn.resx">
+      <DependentUpon>rptCategorywiseStaffPositionAsOn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptComparativeFinancialResultsFrom.rdlc" />
+    <EmbeddedResource Include="rptComparativeFinancialResultsFrom.resx">
+      <DependentUpon>rptComparativeFinancialResultsFrom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptComparativeOperationalData.rdlc" />
+    <EmbeddedResource Include="rptComparativeOperationalData.resx">
+      <DependentUpon>rptComparativeOperationalData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptDepotwiseOperationalDataFCMSCluster_busesTrafficIncome.rdlc" />
+    <EmbeddedResource Include="rptDepotwiseOperationalDataFCMSCluster_busesTrafficIncome.resx">
+      <DependentUpon>rptDepotwiseOperationalDataFCMSCluster_busesTrafficIncome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptDepotWiseOprationalDataInRespectOfNonAC.rdlc" />
+    <EmbeddedResource Include="rptDepotWiseOprationalDataInRespectOfNonAC.resx">
+      <DependentUpon>rptDepotWiseOprationalDataInRespectOfNonAC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptDepotWiseOprationalDataRespectNonALowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021FleetItsUtillization.rdlc" />
+    <EmbeddedResource Include="rptDepotWiseOprationalDataRespectNonALowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021FleetItsUtillization.resx">
+      <DependentUpon>rptDepotWiseOprationalDataRespectNonALowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021FleetItsUtillization.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptDepotWiseTotalMissedKmsAndBreakdowns.rdlc" />
+    <EmbeddedResource Include="rptDepotWiseTotalMissedKmsAndBreakdowns.resx">
+      <DependentUpon>rptDepotWiseTotalMissedKmsAndBreakdowns.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptDetailsofOperationaldata.rdlc" />
+    <EmbeddedResource Include="rptDetailsofOperationaldata.resx">
+      <DependentUpon>rptDetailsofOperationaldata.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptDWODFCMSFleetItsUtilization.rdlc" />
+    <EmbeddedResource Include="rptDWODFCMSFleetItsUtilization.resx">
+      <DependentUpon>rptDWODFCMSFleetItsUtilization.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptfrmPerformanceofDTCGlance.rdlc" />
+    <EmbeddedResource Include="rptfrmPerformanceofDTCGlance.resx">
+      <DependentUpon>rptfrmPerformanceofDTCGlance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptMaterialConsumptionFinancial.rdlc" />
+    <EmbeddedResource Include="rptDWSPLHireTouristPassPinkTicketEarning.rdlc" />
+    <EmbeddedResource Include="rptDWODTripsScheduledOperated.rdlc" />
+    <EmbeddedResource Include="frmAnalysisOfAccidentsByDriverGroup.resx">
+      <DependentUpon>frmAnalysisOfAccidentsByDriverGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptAccidentAnalysisOtherPartyInvolvment.resx">
+      <DependentUpon>rptAccidentAnalysisOtherPartyInvolvment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptComparativeAnalysisOfCausesOfAccidents.resx">
+      <DependentUpon>rptComparativeAnalysisOfCausesOfAccidents.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptDepotWiseOprationalDataInRespectOfNonAcNAcLowFloorCityNCRServiceOnlyAnalysisOfKilometers.rdlc" />
+    <EmbeddedResource Include="rptAccidentAnalysisOtherPartyInvolvment.rdlc" />
+    <EmbeddedResource Include="rptComparativeAnalysisOfCausesOfAccidents.rdlc" />
+    <EmbeddedResource Include="DepotWiseOprationalDataInRespectOfNonAcNAcLowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021AnalysisOfKilometers.resx">
+      <DependentUpon>DepotWiseOprationalDataInRespectOfNonAcNAcLowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021AnalysisOfKilometers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DepotWiseOprationalDataInRespectOfNonAcNAcLowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021TrafficIncome.resx">
+      <DependentUpon>DepotWiseOprationalDataInRespectOfNonAcNAcLowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021TrafficIncome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DepotWiseOprationalDataRespectNonALowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021FleetItsUtillization.resx">
+      <DependentUpon>DepotWiseOprationalDataRespectNonALowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021FleetItsUtillization.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DepotWiseTotalMissedKmsAndBreakdowns.resx">
+      <DependentUpon>DepotWiseTotalMissedKmsAndBreakdowns.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DetailsofOperationaldataforthemonthofJuly.resx">
+      <DependentUpon>DetailsofOperationaldataforthemonthofJuly.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DistrubutionOfFleetByTypeMakeAndYearOfCommission.resx">
+      <DependentUpon>DistrubutionOfFleetByTypeMakeAndYearOfCommission.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPerformanceofDTCGlance.resx">
+      <DependentUpon>frmPerformanceofDTCGlance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainDashboard.resx">
+      <DependentUpon>MainDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaterialConsumptionFrom.resx">
+      <DependentUpon>MaterialConsumptionFrom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NoOfTripsActualOperatedOnTimeAndNoOfTripsActualOperated.resx">
+      <DependentUpon>NoOfTripsActualOperatedOnTimeAndNoOfTripsActualOperated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OperationalDepotWiseFleetStrengthNBusesOnRoad.resx">
+      <DependentUpon>OperationalDepotWiseFleetStrengthNBusesOnRoad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PriceAndCostIndicies.resx">
+      <DependentUpon>PriceAndCostIndicies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="progressiveFinancialResults.resx">
+      <DependentUpon>progressiveFinancialResults.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="RoutesOperatedByDtc.resx">
+      <DependentUpon>RoutesOperatedByDtc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RoutesOperatedByDTCEarningPerKillometerJune.resx">
+      <DependentUpon>RoutesOperatedByDTCEarningPerKillometerJune.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptDepotWiseOprationalDataInRespectOfNonAcNAcLowFloorCityNCRServiceOnlyAnalysisOfKilometers.resx">
+      <DependentUpon>rptDepotWiseOprationalDataInRespectOfNonAcNAcLowFloorCityNCRServiceOnlyAnalysisOfKilometers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptDepotWiseOprationalDataInRespectOfNonAcNAcLowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021TrafficIncome.rdlc" />
+    <EmbeddedResource Include="rptDepotWiseOprationalDataInRespectOfNonAcNAcLowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021TrafficIncome.resx">
+      <DependentUpon>rptDepotWiseOprationalDataInRespectOfNonAcNAcLowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021TrafficIncome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptDistributionOfFleetByTypeMake.rdlc" />
+    <EmbeddedResource Include="rptDistributionOfFleetByTypeMake.resx">
+      <DependentUpon>rptDistributionOfFleetByTypeMake.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptDWODTripsScheduledOperated.resx">
+      <DependentUpon>rptDWODTripsScheduledOperated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptDWSPLHireTouristPassPinkTicketEarning.resx">
+      <DependentUpon>rptDWSPLHireTouristPassPinkTicketEarning.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptMaterialConsumptionFinancial.resx">
+      <DependentUpon>rptMaterialConsumptionFinancial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptNoOfTripsActualOperatedOnTimeAndNoOfTripsActualOperated.rdlc" />
+    <EmbeddedResource Include="rptNoOfTripsActualOperatedOnTimeAndNoOfTripsActualOperated.resx">
+      <DependentUpon>rptNoOfTripsActualOperatedOnTimeAndNoOfTripsActualOperated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptOperationalDepotWiseFleetStrengthNBusesOnRoad.rdlc" />
+    <EmbeddedResource Include="rptOperationalDepotWiseFleetStrengthNBusesOnRoad.resx">
+      <DependentUpon>rptOperationalDepotWiseFleetStrengthNBusesOnRoad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptPerformanceMetopolitanTransportUndertaking.rdlc" />
+    <EmbeddedResource Include="rptPerformanceMetopolitanTransportUndertaking.resx">
+      <DependentUpon>rptPerformanceMetopolitanTransportUndertaking.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptPriceAndCostIndicies.rdlc" />
+    <EmbeddedResource Include="rptPriceAndCostIndicies.resx">
+      <DependentUpon>rptPriceAndCostIndicies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptprogressiveFinancialResults.rdlc" />
+    <EmbeddedResource Include="rptprogressiveFinancialResults.resx">
+      <DependentUpon>rptprogressiveFinancialResults.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptRoutesOperatedByDtc.resx">
+      <DependentUpon>rptRoutesOperatedByDtc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptRoutesOperatedByDTCEarningPerKillometer.rdlc" />
+    <EmbeddedResource Include="rptRoutesOperatedByDTCEarningPerKillometer.resx">
+      <DependentUpon>rptRoutesOperatedByDTCEarningPerKillometer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptSalientFeatureGrowthBasicStructure.rdlc" />
+    <EmbeddedResource Include="rptSalientFeatureGrowthBasicStructure.resx">
+      <DependentUpon>rptSalientFeatureGrowthBasicStructure.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptStaffRatioAsOn.rdlc" />
+    <EmbeddedResource Include="rptStaffRatioAsOn.resx">
+      <DependentUpon>rptStaffRatioAsOn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptStatementOfForTheMonthOfPasses.rdlc" />
+    <EmbeddedResource Include="rptStatementOfForTheMonthOfPasses.resx">
+      <DependentUpon>rptStatementOfForTheMonthOfPasses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptStatementShowingOperationalDataOfNcrCngServicesOfTheCorporation.rdlc" />
+    <EmbeddedResource Include="rptStatementShowingOperationalDataOfNcrCngServicesOfTheCorporation.resx">
+      <DependentUpon>rptStatementShowingOperationalDataOfNcrCngServicesOfTheCorporation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptStatementShowingRegionalWiseOperational.rdlc" />
+    <EmbeddedResource Include="rptStatementShowingRegionalWiseOperational.resx">
+      <DependentUpon>rptStatementShowingRegionalWiseOperational.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptStatementShowingRespectCityNCRForeignBusService.rdlc" />
+    <EmbeddedResource Include="rptStatementShowingRespectCityNCRForeignBusService.resx">
+      <DependentUpon>rptStatementShowingRespectCityNCRForeignBusService.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptStatementShowingTheRsInRespectOfCityNCRForeignBusServiceIncomeExpewditureJune2022InLakhs.rdlc" />
+    <EmbeddedResource Include="rptStatementShowingTheRsInRespectOfCityNCRForeignBusServiceIncomeExpewditureJune2022InLakhs.resx">
+      <DependentUpon>rptStatementShowingTheRsInRespectOfCityNCRForeignBusServiceIncomeExpewditureJune2022InLakhs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rtpRoutesOperatedByDtc.rdlc" />
+    <EmbeddedResource Include="SalientFeatureGrowthBasicStructure.resx">
+      <DependentUpon>SalientFeatureGrowthBasicStructure.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StaffRatioAsOn.resx">
+      <DependentUpon>StaffRatioAsOn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StatementOfForTheMonthOfPasses.resx">
+      <DependentUpon>StatementOfForTheMonthOfPasses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StatementShowingOperationalDataOfNcrCngServicesOfTheCorporationForTheMonthOfJuly_2022.resx">
+      <DependentUpon>StatementShowingOperationalDataOfNcrCngServicesOfTheCorporationForTheMonthOfJuly_2022.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StatementShowingRegionWiseOperationalDataForTheMonth.resx">
+      <DependentUpon>StatementShowingRegionWiseOperationalDataForTheMonth.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StatementShowingTheRsInRespectOfCityNCRForeignBusServiceIncomeExpewditureJune2022InLakhs.resx">
+      <DependentUpon>StatementShowingTheRsInRespectOfCityNCRForeignBusServiceIncomeExpewditureJune2022InLakhs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StatemnetShowingTheInRespectOfCityNcrAndForeignBusServiceRsIncomeAndExpewnditureJune_2022Inlakhs.resx">
+      <DependentUpon>StatemnetShowingTheInRespectOfCityNcrAndForeignBusServiceRsIncomeAndExpewnditureJune_2022Inlakhs.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="bin\Debug\OperationalStatisticsBook.exe.config" />
+    <None Include="DS_OperationalStatisticsBook.xsc">
+      <DependentUpon>DS_OperationalStatisticsBook.xsd</DependentUpon>
+    </None>
+    <None Include="DS_OperationalStatisticsBook.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_OperationalStatisticsBook.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_OperationalStatisticsBook.xss">
+      <DependentUpon>DS_OperationalStatisticsBook.xsd</DependentUpon>
+    </None>
+    <None Include="dtcoperationDataSet.xsc">
+      <DependentUpon>dtcoperationDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="dtcoperationDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dtcoperationDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="dtcoperationDataSet.xss">
+      <DependentUpon>dtcoperationDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="obj\Debug\build.force" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="obj\Debug\OperationalStatisticsBook.csproj.AssemblyReference.cache" />
+    <None Include="obj\Debug\OperationalStatisticsBook.csproj.CopyComplete" />
+    <None Include="obj\Debug\OperationalStatisticsBook.csproj.CoreCompileInputs.cache" />
+    <None Include="obj\Debug\OperationalStatisticsBook.csproj.GenerateResource.cache" />
+    <None Include="obj\Debug\RdlCompile.cache" />
+    <None Include="obj\Debug\RdlCompile.compiled" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\de\Microsoft.ReportViewer.Common.resources.dll" />
+    <Content Include="bin\Debug\de\Microsoft.ReportViewer.DataVisualization.resources.dll" />
+    <Content Include="bin\Debug\de\Microsoft.ReportViewer.Design.resources.dll" />
+    <Content Include="bin\Debug\de\Microsoft.ReportViewer.WinForms.resources.dll" />
+    <Content Include="bin\Debug\EnvDTE.dll" />
+    <Content Include="bin\Debug\es\Microsoft.ReportViewer.Common.resources.dll" />
+    <Content Include="bin\Debug\es\Microsoft.ReportViewer.DataVisualization.resources.dll" />
+    <Content Include="bin\Debug\es\Microsoft.ReportViewer.Design.resources.dll" />
+    <Content Include="bin\Debug\es\Microsoft.ReportViewer.WinForms.resources.dll" />
+    <Content Include="bin\Debug\fr\Microsoft.ReportViewer.Common.resources.dll" />
+    <Content Include="bin\Debug\fr\Microsoft.ReportViewer.DataVisualization.resources.dll" />
+    <Content Include="bin\Debug\fr\Microsoft.ReportViewer.Design.resources.dll" />
+    <Content Include="bin\Debug\fr\Microsoft.ReportViewer.WinForms.resources.dll" />
+    <Content Include="bin\Debug\it\Microsoft.ReportViewer.Common.resources.dll" />
+    <Content Include="bin\Debug\it\Microsoft.ReportViewer.DataVisualization.resources.dll" />
+    <Content Include="bin\Debug\it\Microsoft.ReportViewer.Design.resources.dll" />
+    <Content Include="bin\Debug\it\Microsoft.ReportViewer.WinForms.resources.dll" />
+    <Content Include="bin\Debug\ja\Microsoft.ReportViewer.Common.resources.dll" />
+    <Content Include="bin\Debug\ja\Microsoft.ReportViewer.DataVisualization.resources.dll" />
+    <Content Include="bin\Debug\ja\Microsoft.ReportViewer.Design.resources.dll" />
+    <Content Include="bin\Debug\ja\Microsoft.ReportViewer.WinForms.resources.dll" />
+    <Content Include="bin\Debug\ko\Microsoft.ReportViewer.Common.resources.dll" />
+    <Content Include="bin\Debug\ko\Microsoft.ReportViewer.DataVisualization.resources.dll" />
+    <Content Include="bin\Debug\ko\Microsoft.ReportViewer.Design.resources.dll" />
+    <Content Include="bin\Debug\ko\Microsoft.ReportViewer.WinForms.resources.dll" />
+    <Content Include="bin\Debug\Microsoft.MSXML.dll" />
+    <Content Include="bin\Debug\Microsoft.ReportViewer.Common.dll" />
+    <Content Include="bin\Debug\Microsoft.ReportViewer.DataVisualization.dll" />
+    <Content Include="bin\Debug\Microsoft.ReportViewer.Design.dll" />
+    <Content Include="bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll" />
+    <Content Include="bin\Debug\Microsoft.ReportViewer.WinForms.dll" />
+    <Content Include="bin\Debug\Microsoft.SqlServer.Types.dll" />
+    <Content Include="bin\Debug\Microsoft.VisualStudio.OLE.Interop.dll" />
+    <Content Include="bin\Debug\Microsoft.VisualStudio.Shell.Interop.8.0.dll" />
+    <Content Include="bin\Debug\Microsoft.VisualStudio.Shell.Interop.dll" />
+    <Content Include="bin\Debug\Microsoft.VisualStudio.TextManager.Interop.8.0.dll" />
+    <Content Include="bin\Debug\Microsoft.VisualStudio.TextManager.Interop.dll" />
+    <Content Include="bin\Debug\OperationalStatisticsBook.exe" />
+    <Content Include="bin\Debug\OperationalStatisticsBook.pdb" />
+    <Content Include="bin\Debug\pt\Microsoft.ReportViewer.Common.resources.dll" />
+    <Content Include="bin\Debug\pt\Microsoft.ReportViewer.DataVisualization.resources.dll" />
+    <Content Include="bin\Debug\pt\Microsoft.ReportViewer.Design.resources.dll" />
+    <Content Include="bin\Debug\pt\Microsoft.ReportViewer.WinForms.resources.dll" />
+    <Content Include="bin\Debug\ru\Microsoft.ReportViewer.Common.resources.dll" />
+    <Content Include="bin\Debug\ru\Microsoft.ReportViewer.DataVisualization.resources.dll" />
+    <Content Include="bin\Debug\ru\Microsoft.ReportViewer.Design.resources.dll" />
+    <Content Include="bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll" />
+    <Content Include="bin\Debug\stdole.dll" />
+    <Content Include="bin\Debug\zh-CHS\Microsoft.ReportViewer.Common.resources.dll" />
+    <Content Include="bin\Debug\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll" />
+    <Content Include="bin\Debug\zh-CHS\Microsoft.ReportViewer.Design.resources.dll" />
+    <Content Include="bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll" />
+    <Content Include="bin\Debug\zh-CHT\Microsoft.ReportViewer.Common.resources.dll" />
+    <Content Include="bin\Debug\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll" />
+    <Content Include="bin\Debug\zh-CHT\Microsoft.ReportViewer.Design.resources.dll" />
+    <Content Include="bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll" />
+    <Content Include="obj\Debug\OperationalStatisticsBook.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\OperationalStatisticsBook.exe" />
+    <Content Include="obj\Debug\OperationalStatisticsBook.pdb" />
+    <Content Include="obj\Debug\TempPE\DataSet1.Designer.cs.dll" />
+    <Content Include="obj\Debug\TempPE\DS_OperationalStatisticsBook.Designer.cs.dll" />
+    <Content Include="obj\Debug\TempPE\dtcoperationDataSet.Designer.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Properties.Resources.Designer.cs.dll" />
+    <Content Include="obj\Debug\TempPE\Report.Designer.cs.dll" />
+    <Content Include="obj\Debug\TempPE\rptOperationalDepotWiseFleetStrengthNBusesOnRoad.Designer.cs.dll" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll" />
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll" />
+    <Content Include="SqlServerTypes\x86\msvcr120.dll" />
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Release\" />
+    <Folder Include="Connected Services\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
