@@ -22,7 +22,6 @@ namespace OperationalStatisticsBook
         string finYear = "";
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["dtOperation"].ConnectionString);
 
-
         public AccidentAnalysisForTheMonth(int OsbId, int Year, int Month, string finYear, string MonthName)
         {
             InitializeComponent();
@@ -32,6 +31,8 @@ namespace OperationalStatisticsBook
             this.finYear = finYear;
             this.MonthName = MonthName;
         }
+
+ 
         void BindIndexPage(int OsbId)
         {
 
@@ -54,6 +55,7 @@ namespace OperationalStatisticsBook
             }
 
         }
+              
         int DeleteExisitingTableRecord(string TableName, int OsbId)
         {
             string strTable = "[rpt].[" + TableName + "]";
@@ -68,6 +70,7 @@ namespace OperationalStatisticsBook
 
             return i;
         }
+      
         DataTable BindAccidentAnalysisForTheMonth()
         {
             DataTable table = new DataTable();

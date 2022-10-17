@@ -34,29 +34,57 @@ namespace OperationalStatisticsBook
         }
 
 
-        void BindIndexPage(int OsbId)
+        //void BindIndexPage(int OsbId)
+        //{
+
+        //    try
+        //    {
+        //        DataTable dt = new DataTable();
+        //        SqlCommand cmd = new SqlCommand("SELECT [Param1],[Param2],[Param3],[Param4] ,[Param5],[Param6],[Param7] FROM [rpt].[tbl_StaffRatioAsOn] where OsbId=@OsbId", con);
+        //        cmd.Parameters.AddWithValue("@OsbId", OsbId);
+        //        cmd.CommandType = CommandType.Text;
+        //        SqlDataAdapter sda = new SqlDataAdapter(cmd);
+        //        sda.Fill(dt);
+        //        if (dt.Rows.Count > 0)
+        //            dataGridView1.DataSource = dt;
+        //        else
+        //            dataGridView1.DataSource = BindStaffRatioAsOn();
+        //    }
+        //    catch (Exception ex)
+        //    {
+
+        //    }
+
+        //}
+        void ShowData()
         {
-
-            try
+            DateTime currentDate = new DateTime(Year, Month, 01);
+            String[,] param = new string[,]
             {
-                DataTable dt = new DataTable();
-                SqlCommand cmd = new SqlCommand("SELECT [Param1],[Param2],[Param3],[Param4] ,[Param5],[Param6],[Param7] FROM [rpt].[tbl_StaffRatioAsOn] where OsbId=@OsbId", con);
-                cmd.Parameters.AddWithValue("@OsbId", OsbId);
-                cmd.CommandType = CommandType.Text;
-                SqlDataAdapter sda = new SqlDataAdapter(cmd);
-                sda.Fill(dt);
-                if (dt.Rows.Count > 0)
-                    dataGridView1.DataSource = dt;
-                else
-                    dataGridView1.DataSource = BindStaffRatioAsOn();
-            }
-            catch (Exception ex)
-            {
+                {"@OsbId",OsbId.ToString()},
+            };
+            DataTable dt = Common.ExecuteProcedure("sp_rptStaffRatioAsOn", param);
+            //String[,] param1 = new string[,]
+            //{
+            //    {"@Year",Year.ToString().Trim()},
+            //    {"@Month",Month.ToString().Trim()},
+            //};
+            //DataTable dt1 = Common.ExecuteProcedure("rptGetAllMaterialConsumption", param1);
 
+            if (dt.Rows.Count > 0)
+            {
+                dataGridView1.DataSource = dt;
             }
+            //else if (dt1.Rows.Count > 0)
+            //{
+            //    dataGridView1.DataSource = dt1;
+
+            //}
+            else
+                dataGridView1.DataSource = BindStaffRatioAsOn();
+
 
         }
-
 
         int DeleteExisitingdtRecord(string dtName, int OsbId)
         {
@@ -153,7 +181,8 @@ namespace OperationalStatisticsBook
 
         private void StaffRatioAsOn_Load(object sender, EventArgs e)
         {
-            BindIndexPage(OsbId);
+            ShowData();
+            //BindIndexPage(OsbId);
            // dataGridView1.DataSource = BindStaffRatioAsOn();
         }
     }

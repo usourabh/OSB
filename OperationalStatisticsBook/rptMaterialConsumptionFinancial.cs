@@ -46,10 +46,16 @@ namespace OperationalStatisticsBook
 
         private void rptMaterialConsumptionFinancial_Load(object sender, EventArgs e)
         {
+          
+
             DataTable dtReportData = GetData();
             ReportDataSource datasource = new ReportDataSource("MaterialConsumptionFinancial", dtReportData);
             this.reportViewer1.LocalReport.DataSources.Clear();
             this.reportViewer1.LocalReport.DataSources.Add(datasource);
+            ReportParameter[] rptParam = new ReportParameter[1];
+            rptParam[0] = new ReportParameter("ReportTitle", "Material Consumption form finanacial year "+ this.finYear, false); 
+            this.reportViewer1.LocalReport.SetParameters(rptParam);
+
             this.reportViewer1.RefreshReport();
         }
     }

@@ -228,7 +228,8 @@ namespace OperationalStatisticsBook
         }
         private void CategorywiseStaffPositionAsOn_Load(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = BindCategorywiseStaffPositionAsOn();
+            BindIndexPage(OsbId);
+            //dataGridView1.DataSource = BindCategorywiseStaffPositionAsOn();
         }
 
         private void Print_ReportOnClick(object sender, EventArgs e)

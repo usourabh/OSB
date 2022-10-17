@@ -249,8 +249,6 @@
       <DependentUpon>NoOfTripsActualOperatedOnTimeAndNoOfTripsActualOperated.cs</DependentUpon>
     </Compile>
     <Compile Include="obj\Debug\.NETFramework,Version=v4.6.AssemblyAttributes.cs" />
-    <Compile Include="obj\Release\.NETFramework,Version=v4.5.AssemblyAttributes.cs" />
-    <Compile Include="obj\Release\.NETFramework,Version=v4.6.AssemblyAttributes.cs" />
     <Compile Include="OperationalDepotWiseFleetStrengthNBusesOnRoad.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -597,84 +595,6 @@
     <EmbeddedResource Include="DWODFCMSFleetItsUtilization.resx">
       <DependentUpon>DWODFCMSFleetItsUtilization.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.AccidentAnalysisForTheMonth.resources" />
-    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.AccidentAnalysisOtherPartyInvolvment.resources" />
-    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.AccidentNCompensationGvnAccidentVictims.resources" />
-    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.AccidentsNCompensationGvnAccidentVictim.resources" />
-    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.AnalysisOfAccidentsByDriverGroup.resources" />
-    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.analysisOfCausesAccidents.resources" />
-    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.CategorywiseStaffPositionAsOn.resources" />
-    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.ComparativeAnalysisOfCausesOfAccidents.resources" />
-    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.ComparativeFinancialResultsFrom.resources" />
-    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.ComparativeFinancialResultsFromAprilToMarch.resources" />
-    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.ComparativeOperationalData.resources" />
-    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.DeportWiseStatementOfSchoolSPLHireTouristPassPinkTicketEarning.resources" />
-    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.DepotwiseOperationalDataFCMSCluster_busesTrafficIncome.resources" />
-    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.DepotWiseOperationalDataInRespectOfNonAcAndAcLowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021TripsScheduledAndOperated.resources" />
-    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.DepotWiseOprationalDataInRespectOfNonAC.resources" />
-    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.DepotWiseOprationalDataInRespectOfNonAcNAcLowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021AnalysisOfKilometers.resources" />
-    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.DepotWiseOprationalDataInRespectOfNonAcNAcLowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021TrafficIncome.resources" />
-    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.DepotWiseOprationalDataRespectNonALowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021FleetItsUtillization.resources" />
-    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.DepotWiseTotalMissedKmsAndBreakdowns.resources" />
-    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.DetailsofOperationaldataforthemonthofJuly.resources" />
-    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.DistrubutionOfFleetByTypeMakeAndYearOfCommission.resources" />
-    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.DWODFCMSFleetItsUtilization.resources" />
-    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.frmAnalysisOfAccidentsByDriverGroup.resources" />
-    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.frmOSBMain.resources" />
-    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.frmPerformanceofDTCGlance.resources" />
-    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.MainDashboard.resources" />
-    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.MaterialConsumptionFrom.resources" />
-    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.NoOfTripsActualOperatedOnTimeAndNoOfTripsActualOperated.resources" />
-    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.OperationalDepotWiseFleetStrengthNBusesOnRoad.resources" />
-    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.PerformanceMetopolitanTransportUndertaking.resources" />
-    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.PriceAndCostIndicies.resources" />
-    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.progressiveFinancialResults.resources" />
-    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.Properties.Resources.resources" />
-    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.RoutesOperatedByDtc.resources" />
-    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.RoutesOperatedByDTCEarningPerKillometerJune.resources" />
-    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.rptAccidentAnalysisForTheMonth.resources" />
-    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.rptAccidentAnalysisOtherPartyInvolvment.resources" />
-    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.rptAccidentNCompensationGvnAccidentVictims.resources" />
-    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.rptAnalysisOfAccidentsByDriverGroup.resources" />
-    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.rptanalysisOfCausesAccidents.resources" />
-    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.rptCategorywiseStaffPositionAsOn.resources" />
-    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.rptComparativeAnalysisOfCausesOfAccidents.resources" />
-    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.rptComparativeFinancialResultsFrom.resources" />
-    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.rptComparativeOperationalData.resources" />
-    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.rptDepotwiseOperationalDataFCMSCluster_busesTrafficIncome.resources" />
-    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.rptDepotWiseOprationalDataInRespectOfNonAC.resources" />
-    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.rptDepotWiseOprationalDataInRespectOfNonAcNAcLowFloorCityNCRServiceOnlyAnalysisOfKilometers.resources" />
-    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.rptDepotWiseOprationalDataInRespectOfNonAcNAcLowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021TrafficIncome.resources" />
-    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.rptDepotWiseOprationalDataRespectNonALowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021FleetItsUtillization.resources" />
-    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.rptDepotWiseTotalMissedKmsAndBreakdowns.resources" />
-    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.rptDetailsofOperationaldata.resources" />
-    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.rptDistributionOfFleetByTypeMake.resources" />
-    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.rptDWODFCMSFleetItsUtilization.resources" />
-    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.rptDWODTripsScheduledOperated.resources" />
-    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.rptDWSPLHireTouristPassPinkTicketEarning.resources" />
-    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.rptfrmPerformanceofDTCGlance.resources" />
-    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.rptMaterialConsumptionFinancial.resources" />
-    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.rptNoOfTripsActualOperatedOnTimeAndNoOfTripsActualOperated.resources" />
-    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.rptOperationalDepotWiseFleetStrengthNBusesOnRoad.resources" />
-    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.rptPerformanceMetopolitanTransportUndertaking.resources" />
-    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.rptPriceAndCostIndicies.resources" />
-    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.rptprogressiveFinancialResults.resources" />
-    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.rptRoutesOperatedByDtc.resources" />
-    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.rptRoutesOperatedByDTCEarningPerKillometer.resources" />
-    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.rptSalientFeatureGrowthBasicStructure.resources" />
-    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.rptStaffRatioAsOn.resources" />
-    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.rptStatementOfForTheMonthOfPasses.resources" />
-    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.rptStatementShowingOperationalDataOfNcrCngServicesOfTheCorporation.resources" />
-    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.rptStatementShowingRegionalWiseOperational.resources" />
-    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.rptStatementShowingRespectCityNCRForeignBusService.resources" />
-    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.rptStatementShowingTheRsInRespectOfCityNCRForeignBusServiceIncomeExpewditureJune2022InLakhs.resources" />
-    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.SalientFeatureGrowthBasicStructure.resources" />
-    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.StaffRatioAsOn.resources" />
-    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.StatementOfForTheMonthOfPasses.resources" />
-    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.StatementShowingOperationalDataOfNcrCngServicesOfTheCorporationForTheMonthOfJuly_2022.resources" />
-    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.StatementShowingRegionWiseOperationalDataForTheMonth.resources" />
-    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.StatementShowingTheRsInRespectOfCityNCRForeignBusServiceIncomeExpewditureJune2022InLakhs.resources" />
-    <EmbeddedResource Include="obj\Debug\OperationalStatisticsBook.StatemnetShowingTheInRespectOfCityNcrAndForeignBusServiceRsIncomeAndExpewnditureJune_2022Inlakhs.resources" />
     <EmbeddedResource Include="PerformanceMetopolitanTransportUndertaking.resx">
       <DependentUpon>PerformanceMetopolitanTransportUndertaking.cs</DependentUpon>
     </EmbeddedResource>
@@ -927,15 +847,6 @@
     <None Include="dtcoperationDataSet.xss">
       <DependentUpon>dtcoperationDataSet.xsd</DependentUpon>
     </None>
-    <None Include="obj\Debug\build.force" />
-    <None Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
-    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
-    <None Include="obj\Debug\OperationalStatisticsBook.csproj.AssemblyReference.cache" />
-    <None Include="obj\Debug\OperationalStatisticsBook.csproj.CopyComplete" />
-    <None Include="obj\Debug\OperationalStatisticsBook.csproj.CoreCompileInputs.cache" />
-    <None Include="obj\Debug\OperationalStatisticsBook.csproj.GenerateResource.cache" />
-    <None Include="obj\Debug\RdlCompile.cache" />
-    <None Include="obj\Debug\RdlCompile.compiled" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -951,31 +862,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="bin\Debug\de\Microsoft.ReportViewer.Common.resources.dll" />
-    <Content Include="bin\Debug\de\Microsoft.ReportViewer.DataVisualization.resources.dll" />
-    <Content Include="bin\Debug\de\Microsoft.ReportViewer.Design.resources.dll" />
-    <Content Include="bin\Debug\de\Microsoft.ReportViewer.WinForms.resources.dll" />
     <Content Include="bin\Debug\EnvDTE.dll" />
-    <Content Include="bin\Debug\es\Microsoft.ReportViewer.Common.resources.dll" />
-    <Content Include="bin\Debug\es\Microsoft.ReportViewer.DataVisualization.resources.dll" />
-    <Content Include="bin\Debug\es\Microsoft.ReportViewer.Design.resources.dll" />
-    <Content Include="bin\Debug\es\Microsoft.ReportViewer.WinForms.resources.dll" />
-    <Content Include="bin\Debug\fr\Microsoft.ReportViewer.Common.resources.dll" />
-    <Content Include="bin\Debug\fr\Microsoft.ReportViewer.DataVisualization.resources.dll" />
-    <Content Include="bin\Debug\fr\Microsoft.ReportViewer.Design.resources.dll" />
-    <Content Include="bin\Debug\fr\Microsoft.ReportViewer.WinForms.resources.dll" />
-    <Content Include="bin\Debug\it\Microsoft.ReportViewer.Common.resources.dll" />
-    <Content Include="bin\Debug\it\Microsoft.ReportViewer.DataVisualization.resources.dll" />
-    <Content Include="bin\Debug\it\Microsoft.ReportViewer.Design.resources.dll" />
-    <Content Include="bin\Debug\it\Microsoft.ReportViewer.WinForms.resources.dll" />
-    <Content Include="bin\Debug\ja\Microsoft.ReportViewer.Common.resources.dll" />
-    <Content Include="bin\Debug\ja\Microsoft.ReportViewer.DataVisualization.resources.dll" />
-    <Content Include="bin\Debug\ja\Microsoft.ReportViewer.Design.resources.dll" />
-    <Content Include="bin\Debug\ja\Microsoft.ReportViewer.WinForms.resources.dll" />
-    <Content Include="bin\Debug\ko\Microsoft.ReportViewer.Common.resources.dll" />
-    <Content Include="bin\Debug\ko\Microsoft.ReportViewer.DataVisualization.resources.dll" />
-    <Content Include="bin\Debug\ko\Microsoft.ReportViewer.Design.resources.dll" />
-    <Content Include="bin\Debug\ko\Microsoft.ReportViewer.WinForms.resources.dll" />
     <Content Include="bin\Debug\Microsoft.MSXML.dll" />
     <Content Include="bin\Debug\Microsoft.ReportViewer.Common.dll" />
     <Content Include="bin\Debug\Microsoft.ReportViewer.DataVisualization.dll" />
@@ -990,32 +877,7 @@
     <Content Include="bin\Debug\Microsoft.VisualStudio.TextManager.Interop.dll" />
     <Content Include="bin\Debug\OperationalStatisticsBook.exe" />
     <Content Include="bin\Debug\OperationalStatisticsBook.pdb" />
-    <Content Include="bin\Debug\pt\Microsoft.ReportViewer.Common.resources.dll" />
-    <Content Include="bin\Debug\pt\Microsoft.ReportViewer.DataVisualization.resources.dll" />
-    <Content Include="bin\Debug\pt\Microsoft.ReportViewer.Design.resources.dll" />
-    <Content Include="bin\Debug\pt\Microsoft.ReportViewer.WinForms.resources.dll" />
-    <Content Include="bin\Debug\ru\Microsoft.ReportViewer.Common.resources.dll" />
-    <Content Include="bin\Debug\ru\Microsoft.ReportViewer.DataVisualization.resources.dll" />
-    <Content Include="bin\Debug\ru\Microsoft.ReportViewer.Design.resources.dll" />
-    <Content Include="bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll" />
     <Content Include="bin\Debug\stdole.dll" />
-    <Content Include="bin\Debug\zh-CHS\Microsoft.ReportViewer.Common.resources.dll" />
-    <Content Include="bin\Debug\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll" />
-    <Content Include="bin\Debug\zh-CHS\Microsoft.ReportViewer.Design.resources.dll" />
-    <Content Include="bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll" />
-    <Content Include="bin\Debug\zh-CHT\Microsoft.ReportViewer.Common.resources.dll" />
-    <Content Include="bin\Debug\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll" />
-    <Content Include="bin\Debug\zh-CHT\Microsoft.ReportViewer.Design.resources.dll" />
-    <Content Include="bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll" />
-    <Content Include="obj\Debug\OperationalStatisticsBook.csproj.FileListAbsolute.txt" />
-    <Content Include="obj\Debug\OperationalStatisticsBook.exe" />
-    <Content Include="obj\Debug\OperationalStatisticsBook.pdb" />
-    <Content Include="obj\Debug\TempPE\DataSet1.Designer.cs.dll" />
-    <Content Include="obj\Debug\TempPE\DS_OperationalStatisticsBook.Designer.cs.dll" />
-    <Content Include="obj\Debug\TempPE\dtcoperationDataSet.Designer.cs.dll" />
-    <Content Include="obj\Debug\TempPE\Properties.Resources.Designer.cs.dll" />
-    <Content Include="obj\Debug\TempPE\Report.Designer.cs.dll" />
-    <Content Include="obj\Debug\TempPE\rptOperationalDepotWiseFleetStrengthNBusesOnRoad.Designer.cs.dll" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll" />
     <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll" />
