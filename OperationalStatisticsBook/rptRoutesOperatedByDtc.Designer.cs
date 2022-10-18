@@ -31,13 +31,23 @@ namespace OperationalStatisticsBook
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.dtcoperationDataSet = new OperationalStatisticsBook.dtcoperationDataSet();
             this.tbl_RoutesOperatedByDtcBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dtcoperationDataSet = new OperationalStatisticsBook.dtcoperationDataSet();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.tbl_RoutesOperatedByDtcTableAdapter = new OperationalStatisticsBook.dtcoperationDataSetTableAdapters.tbl_RoutesOperatedByDtcTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.dtcoperationDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbl_RoutesOperatedByDtcBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtcoperationDataSet)).BeginInit();
             this.SuspendLayout();
+            // 
+            // tbl_RoutesOperatedByDtcBindingSource
+            // 
+            this.tbl_RoutesOperatedByDtcBindingSource.DataMember = "tbl_RoutesOperatedByDtc";
+            this.tbl_RoutesOperatedByDtcBindingSource.DataSource = this.dtcoperationDataSet;
+            // 
+            // dtcoperationDataSet
+            // 
+            this.dtcoperationDataSet.DataSetName = "dtcoperationDataSet";
+            this.dtcoperationDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
@@ -47,20 +57,11 @@ namespace OperationalStatisticsBook
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "OperationalStatisticsBook.rtpRoutesOperatedByDtc.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
+            this.reportViewer1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(800, 450);
+            this.reportViewer1.Size = new System.Drawing.Size(533, 292);
             this.reportViewer1.TabIndex = 0;
-            // 
-            // dtcoperationDataSet
-            // 
-            this.dtcoperationDataSet.DataSetName = "dtcoperationDataSet";
-            this.dtcoperationDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tbl_RoutesOperatedByDtcBindingSource
-            // 
-            this.tbl_RoutesOperatedByDtcBindingSource.DataMember = "tbl_RoutesOperatedByDtc";
-            this.tbl_RoutesOperatedByDtcBindingSource.DataSource = this.dtcoperationDataSet;
             // 
             // tbl_RoutesOperatedByDtcTableAdapter
             // 
@@ -68,15 +69,17 @@ namespace OperationalStatisticsBook
             // 
             // rptRoutesOperatedByDtc
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(533, 292);
             this.Controls.Add(this.reportViewer1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "rptRoutesOperatedByDtc";
             this.Text = "rptRoutesOperatedByDtc";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.rptRoutesOperatedByDtc_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dtcoperationDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbl_RoutesOperatedByDtcBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtcoperationDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }

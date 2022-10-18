@@ -31,35 +31,36 @@ namespace OperationalStatisticsBook
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.dtcoperationDataSet = new OperationalStatisticsBook.dtcoperationDataSet();
             this.tbl_DWODFCMSFleetItsUtilizationBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dtcoperationDataSet = new OperationalStatisticsBook.dtcoperationDataSet();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.tbl_DWODFCMSFleetItsUtilizationTableAdapter = new OperationalStatisticsBook.dtcoperationDataSetTableAdapters.tbl_DWODFCMSFleetItsUtilizationTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.dtcoperationDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbl_DWODFCMSFleetItsUtilizationBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtcoperationDataSet)).BeginInit();
             this.SuspendLayout();
             // 
-            // reportViewer1
+            // tbl_DWODFCMSFleetItsUtilizationBindingSource
             // 
-            reportDataSource1.Name = "DWODFCMSFleetItsUtilization";
-            reportDataSource1.Value = this.tbl_DWODFCMSFleetItsUtilizationBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "OperationalStatisticsBook.rptDWODFCMSFleetItsUtilization.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(12, 12);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(776, 326);
-            this.reportViewer1.TabIndex = 0;
+            this.tbl_DWODFCMSFleetItsUtilizationBindingSource.DataMember = "tbl_DWODFCMSFleetItsUtilization";
+            this.tbl_DWODFCMSFleetItsUtilizationBindingSource.DataSource = this.dtcoperationDataSet;
             // 
             // dtcoperationDataSet
             // 
             this.dtcoperationDataSet.DataSetName = "dtcoperationDataSet";
             this.dtcoperationDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // tbl_DWODFCMSFleetItsUtilizationBindingSource
+            // reportViewer1
             // 
-            this.tbl_DWODFCMSFleetItsUtilizationBindingSource.DataMember = "tbl_DWODFCMSFleetItsUtilization";
-            this.tbl_DWODFCMSFleetItsUtilizationBindingSource.DataSource = this.dtcoperationDataSet;
+            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            reportDataSource1.Name = "DWODFCMSFleetItsUtilization";
+            reportDataSource1.Value = this.tbl_DWODFCMSFleetItsUtilizationBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "OperationalStatisticsBook.rptDWODFCMSFleetItsUtilization.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.ServerReport.BearerToken = null;
+            this.reportViewer1.Size = new System.Drawing.Size(800, 450);
+            this.reportViewer1.TabIndex = 0;
             // 
             // tbl_DWODFCMSFleetItsUtilizationTableAdapter
             // 
@@ -73,9 +74,10 @@ namespace OperationalStatisticsBook
             this.Controls.Add(this.reportViewer1);
             this.Name = "rptDWODFCMSFleetItsUtilization";
             this.Text = "rptDWODFCMSFleetItsUtilization";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.rptDWODFCMSFleetItsUtilization_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dtcoperationDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbl_DWODFCMSFleetItsUtilizationBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtcoperationDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }

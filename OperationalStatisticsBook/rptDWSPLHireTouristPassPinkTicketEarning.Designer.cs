@@ -31,35 +31,36 @@ namespace OperationalStatisticsBook
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.dtcoperationDataSet = new OperationalStatisticsBook.dtcoperationDataSet();
             this.tbl_DeportWiseStatementOfSchoolSPLHireTouristPassPinkTicketEarningBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dtcoperationDataSet = new OperationalStatisticsBook.dtcoperationDataSet();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.tbl_DeportWiseStatementOfSchoolSPLHireTouristPassPinkTicketEarningTableAdapter = new OperationalStatisticsBook.dtcoperationDataSetTableAdapters.tbl_DeportWiseStatementOfSchoolSPLHireTouristPassPinkTicketEarningTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.dtcoperationDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbl_DeportWiseStatementOfSchoolSPLHireTouristPassPinkTicketEarningBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtcoperationDataSet)).BeginInit();
             this.SuspendLayout();
             // 
-            // reportViewer1
+            // tbl_DeportWiseStatementOfSchoolSPLHireTouristPassPinkTicketEarningBindingSource
             // 
-            reportDataSource1.Name = "DWSPLHireTouristPassPinkTicketEarning";
-            reportDataSource1.Value = this.tbl_DeportWiseStatementOfSchoolSPLHireTouristPassPinkTicketEarningBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "OperationalStatisticsBook.rptDWSPLHireTouristPassPinkTicketEarning.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(12, 4);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(786, 309);
-            this.reportViewer1.TabIndex = 0;
+            this.tbl_DeportWiseStatementOfSchoolSPLHireTouristPassPinkTicketEarningBindingSource.DataMember = "tbl_DeportWiseStatementOfSchoolSPLHireTouristPassPinkTicketEarning";
+            this.tbl_DeportWiseStatementOfSchoolSPLHireTouristPassPinkTicketEarningBindingSource.DataSource = this.dtcoperationDataSet;
             // 
             // dtcoperationDataSet
             // 
             this.dtcoperationDataSet.DataSetName = "dtcoperationDataSet";
             this.dtcoperationDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // tbl_DeportWiseStatementOfSchoolSPLHireTouristPassPinkTicketEarningBindingSource
+            // reportViewer1
             // 
-            this.tbl_DeportWiseStatementOfSchoolSPLHireTouristPassPinkTicketEarningBindingSource.DataMember = "tbl_DeportWiseStatementOfSchoolSPLHireTouristPassPinkTicketEarning";
-            this.tbl_DeportWiseStatementOfSchoolSPLHireTouristPassPinkTicketEarningBindingSource.DataSource = this.dtcoperationDataSet;
+            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            reportDataSource1.Name = "DWSPLHireTouristPassPinkTicketEarning";
+            reportDataSource1.Value = this.tbl_DeportWiseStatementOfSchoolSPLHireTouristPassPinkTicketEarningBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "OperationalStatisticsBook.rptDWSPLHireTouristPassPinkTicketEarning.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.ServerReport.BearerToken = null;
+            this.reportViewer1.Size = new System.Drawing.Size(800, 450);
+            this.reportViewer1.TabIndex = 0;
             // 
             // tbl_DeportWiseStatementOfSchoolSPLHireTouristPassPinkTicketEarningTableAdapter
             // 
@@ -73,9 +74,10 @@ namespace OperationalStatisticsBook
             this.Controls.Add(this.reportViewer1);
             this.Name = "rptDWSPLHireTouristPassPinkTicketEarning";
             this.Text = "rptDWSPLHireTouristPassPinkTicketEarning";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.rptDWSPLHireTouristPassPinkTicketEarning_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dtcoperationDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbl_DeportWiseStatementOfSchoolSPLHireTouristPassPinkTicketEarningBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtcoperationDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }

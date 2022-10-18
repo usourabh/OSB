@@ -102,16 +102,15 @@
                                   <Value>S.No.</Value>
                                   <Style>
                                     <FontStyle>Normal</FontStyle>
-                                    <FontFamily>Times New Roman</FontFamily>
-                                    <FontSize>12pt</FontSize>
-                                    <FontWeight>Normal</FontWeight>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
                                     <TextDecoration>None</TextDecoration>
                                     <Color>#000000</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
-                                <TextAlign>Center</TextAlign>
+                                <TextAlign>Left</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -141,16 +140,15 @@
                                   <Value>Particulars</Value>
                                   <Style>
                                     <FontStyle>Normal</FontStyle>
-                                    <FontFamily>Times New Roman</FontFamily>
-                                    <FontSize>12pt</FontSize>
-                                    <FontWeight>Normal</FontWeight>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
                                     <TextDecoration>None</TextDecoration>
                                     <Color>#000000</Color>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
-                                <TextAlign>Center</TextAlign>
+                                <TextAlign>Left</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -177,12 +175,11 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value />
+                                  <Value>July-2022</Value>
                                   <Style>
                                     <FontStyle>Normal</FontStyle>
-                                    <FontFamily>Times New Roman</FontFamily>
-                                    <FontSize>12pt</FontSize>
-                                    <FontWeight>Normal</FontWeight>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
                                     <TextDecoration>None</TextDecoration>
                                     <Color>#000000</Color>
                                   </Style>
@@ -218,12 +215,11 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value />
+                                  <Value>July2021</Value>
                                   <Style>
                                     <FontStyle>Normal</FontStyle>
-                                    <FontFamily>Times New Roman</FontFamily>
-                                    <FontSize>12pt</FontSize>
-                                    <FontWeight>Normal</FontWeight>
+                                    <FontSize>8pt</FontSize>
+                                    <FontWeight>Bold</FontWeight>
                                     <TextDecoration>None</TextDecoration>
                                     <Color>#000000</Color>
                                   </Style>
@@ -265,10 +261,14 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value />
-                                  <Style />
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Left</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox1</rd:DefaultName>
@@ -295,10 +295,14 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value />
-                                  <Style />
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Left</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Textbox3</rd:DefaultName>
@@ -328,7 +332,7 @@
                                   <Style>
                                     <FontStyle>Normal</FontStyle>
                                     <FontFamily>Times New Roman</FontFamily>
-                                    <FontSize>12pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Normal</FontWeight>
                                     <TextDecoration>None</TextDecoration>
                                     <Color>#000000</Color>
@@ -336,7 +340,7 @@
                                 </TextRun>
                               </TextRuns>
                               <Style>
-                                <TextAlign>Center</TextAlign>
+                                <TextAlign>Right</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -367,7 +371,7 @@
                                   <Style>
                                     <FontStyle>Normal</FontStyle>
                                     <FontFamily>Times New Roman</FontFamily>
-                                    <FontSize>12pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Normal</FontWeight>
                                     <TextDecoration>None</TextDecoration>
                                     <Color>#000000</Color>
@@ -375,7 +379,7 @@
                                 </TextRun>
                               </TextRuns>
                               <Style>
-                                <TextAlign>Center</TextAlign>
+                                <TextAlign>Right</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -406,7 +410,7 @@
                                   <Style>
                                     <FontStyle>Normal</FontStyle>
                                     <FontFamily>Times New Roman</FontFamily>
-                                    <FontSize>12pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Normal</FontWeight>
                                     <TextDecoration>None</TextDecoration>
                                     <Color>#000000</Color>
@@ -414,7 +418,7 @@
                                 </TextRun>
                               </TextRuns>
                               <Style>
-                                <TextAlign>Center</TextAlign>
+                                <TextAlign>Right</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -445,7 +449,7 @@
                                   <Style>
                                     <FontStyle>Normal</FontStyle>
                                     <FontFamily>Times New Roman</FontFamily>
-                                    <FontSize>12pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Normal</FontWeight>
                                     <TextDecoration>None</TextDecoration>
                                     <Color>#000000</Color>
@@ -453,7 +457,7 @@
                                 </TextRun>
                               </TextRuns>
                               <Style>
-                                <TextAlign>Center</TextAlign>
+                                <TextAlign>Right</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -486,11 +490,13 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>1</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
-                                <TextAlign>Center</TextAlign>
+                                <TextAlign>Left</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -518,11 +524,13 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>2</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
-                                <TextAlign>Center</TextAlign>
+                                <TextAlign>Left</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -553,7 +561,7 @@
                                   <Style>
                                     <FontStyle>Normal</FontStyle>
                                     <FontFamily>Times New Roman</FontFamily>
-                                    <FontSize>12pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Normal</FontWeight>
                                     <TextDecoration>None</TextDecoration>
                                     <Color>#000000</Color>
@@ -561,7 +569,7 @@
                                 </TextRun>
                               </TextRuns>
                               <Style>
-                                <TextAlign>Center</TextAlign>
+                                <TextAlign>Right</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -592,7 +600,7 @@
                                   <Style>
                                     <FontStyle>Normal</FontStyle>
                                     <FontFamily>Times New Roman</FontFamily>
-                                    <FontSize>12pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Normal</FontWeight>
                                     <TextDecoration>None</TextDecoration>
                                     <Color>#000000</Color>
@@ -600,7 +608,7 @@
                                 </TextRun>
                               </TextRuns>
                               <Style>
-                                <TextAlign>Center</TextAlign>
+                                <TextAlign>Right</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -631,7 +639,7 @@
                                   <Style>
                                     <FontStyle>Normal</FontStyle>
                                     <FontFamily>Times New Roman</FontFamily>
-                                    <FontSize>12pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Normal</FontWeight>
                                     <TextDecoration>None</TextDecoration>
                                     <Color>#000000</Color>
@@ -639,7 +647,7 @@
                                 </TextRun>
                               </TextRuns>
                               <Style>
-                                <TextAlign>Center</TextAlign>
+                                <TextAlign>Right</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -670,7 +678,7 @@
                                   <Style>
                                     <FontStyle>Normal</FontStyle>
                                     <FontFamily>Times New Roman</FontFamily>
-                                    <FontSize>12pt</FontSize>
+                                    <FontSize>8pt</FontSize>
                                     <FontWeight>Normal</FontWeight>
                                     <TextDecoration>None</TextDecoration>
                                     <Color>#000000</Color>
@@ -678,7 +686,7 @@
                                 </TextRun>
                               </TextRuns>
                               <Style>
-                                <TextAlign>Center</TextAlign>
+                                <TextAlign>Right</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -711,10 +719,14 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!S_No.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Left</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>S_No</rd:DefaultName>
@@ -741,10 +753,14 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!Param1.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Left</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Param1</rd:DefaultName>
@@ -771,10 +787,14 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!Param2.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Param2</rd:DefaultName>
@@ -801,10 +821,14 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!Param3.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Param3</rd:DefaultName>
@@ -831,10 +855,14 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!Param4.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Param4</rd:DefaultName>
@@ -861,10 +889,14 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!Param5.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontSize>8pt</FontSize>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
-                              <Style />
+                              <Style>
+                                <TextAlign>Right</TextAlign>
+                              </Style>
                             </Paragraph>
                           </Paragraphs>
                           <rd:DefaultName>Param5</rd:DefaultName>
@@ -930,6 +962,7 @@
                   <TextRun>
                     <Value> Comparative Analysis Of Causes Of  Accidents</Value>
                     <Style>
+                      <FontSize>12pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
@@ -956,15 +989,18 @@
             </Style>
           </Textbox>
         </ReportItems>
-        <Height>2in</Height>
+        <Height>5.08cm</Height>
         <Style />
       </Body>
-      <Width>6.9675in</Width>
+      <Width>17.69745cm</Width>
       <Page>
-        <LeftMargin>1in</LeftMargin>
-        <RightMargin>1in</RightMargin>
-        <TopMargin>1in</TopMargin>
-        <BottomMargin>1in</BottomMargin>
+        <PageHeight>29.7cm</PageHeight>
+        <PageWidth>21cm</PageWidth>
+        <LeftMargin>1cm</LeftMargin>
+        <RightMargin>1cm</RightMargin>
+        <TopMargin>1cm</TopMargin>
+        <BottomMargin>1cm</BottomMargin>
+        <ColumnSpacing>1.27cm</ColumnSpacing>
         <Style />
       </Page>
     </ReportSection>
@@ -975,6 +1011,6 @@
       <NumberOfRows>2</NumberOfRows>
     </GridLayoutDefinition>
   </ReportParametersLayout>
-  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportUnitType>Cm</rd:ReportUnitType>
   <rd:ReportID>69de418e-a594-439a-9159-f92791a67453</rd:ReportID>
 </Report>

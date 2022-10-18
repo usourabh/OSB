@@ -31,13 +31,23 @@ namespace OperationalStatisticsBook
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.dtcoperationDataSet = new OperationalStatisticsBook.dtcoperationDataSet();
             this.tbl_DepotwiseOperationalDataFCMSCluster_busesTrafficIncomeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dtcoperationDataSet = new OperationalStatisticsBook.dtcoperationDataSet();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.tbl_DepotwiseOperationalDataFCMSCluster_busesTrafficIncomeTableAdapter = new OperationalStatisticsBook.dtcoperationDataSetTableAdapters.tbl_DepotwiseOperationalDataFCMSCluster_busesTrafficIncomeTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.dtcoperationDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbl_DepotwiseOperationalDataFCMSCluster_busesTrafficIncomeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtcoperationDataSet)).BeginInit();
             this.SuspendLayout();
+            // 
+            // tbl_DepotwiseOperationalDataFCMSCluster_busesTrafficIncomeBindingSource
+            // 
+            this.tbl_DepotwiseOperationalDataFCMSCluster_busesTrafficIncomeBindingSource.DataMember = "tbl_DepotwiseOperationalDataFCMSCluster_busesTrafficIncome";
+            this.tbl_DepotwiseOperationalDataFCMSCluster_busesTrafficIncomeBindingSource.DataSource = this.dtcoperationDataSet;
+            // 
+            // dtcoperationDataSet
+            // 
+            this.dtcoperationDataSet.DataSetName = "dtcoperationDataSet";
+            this.dtcoperationDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
@@ -52,16 +62,6 @@ namespace OperationalStatisticsBook
             this.reportViewer1.Size = new System.Drawing.Size(800, 453);
             this.reportViewer1.TabIndex = 0;
             // 
-            // dtcoperationDataSet
-            // 
-            this.dtcoperationDataSet.DataSetName = "dtcoperationDataSet";
-            this.dtcoperationDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tbl_DepotwiseOperationalDataFCMSCluster_busesTrafficIncomeBindingSource
-            // 
-            this.tbl_DepotwiseOperationalDataFCMSCluster_busesTrafficIncomeBindingSource.DataMember = "tbl_DepotwiseOperationalDataFCMSCluster_busesTrafficIncome";
-            this.tbl_DepotwiseOperationalDataFCMSCluster_busesTrafficIncomeBindingSource.DataSource = this.dtcoperationDataSet;
-            // 
             // tbl_DepotwiseOperationalDataFCMSCluster_busesTrafficIncomeTableAdapter
             // 
             this.tbl_DepotwiseOperationalDataFCMSCluster_busesTrafficIncomeTableAdapter.ClearBeforeFill = true;
@@ -74,9 +74,10 @@ namespace OperationalStatisticsBook
             this.Controls.Add(this.reportViewer1);
             this.Name = "rptDepotwiseOperationalDataFCMSCluster_busesTrafficIncome";
             this.Text = "rptDepotwiseOperationalDataFCMSCluster_busesTrafficIncome";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.rptDepotwiseOperationalDataFCMSCluster_busesTrafficIncome_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dtcoperationDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbl_DepotwiseOperationalDataFCMSCluster_busesTrafficIncomeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtcoperationDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }

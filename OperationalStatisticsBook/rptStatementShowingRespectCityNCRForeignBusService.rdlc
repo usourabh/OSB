@@ -11,18 +11,21 @@
               <TextRun>
                 <Value>Statemnet showing the in respect of City, NCR &amp; Foreign bus service  (Income &amp; Expewnditure June-2022 in lakhs)</Value>
                 <Style>
+                  <FontSize>12pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
             </TextRuns>
-            <Style />
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
-        <Top>1.13453cm</Top>
-        <Left>9.31016cm</Left>
-        <Height>1.04979cm</Height>
-        <Width>11.46938cm</Width>
+        <Top>0.7112cm</Top>
+        <Left>0.31432cm</Left>
+        <Height>0.78521cm</Height>
+        <Width>23.3448cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -37,124 +40,58 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>1.28292cm</Width>
+              <Width>0.83754cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.25646cm</Width>
+              <Width>0.91879cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.25646cm</Width>
+              <Width>0.86462cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.68167cm</Width>
+              <Width>2.0017cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.6275cm</Width>
+              <Width>1.81649cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.76458cm</Width>
+              <Width>2.34316cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.57937cm</Width>
+              <Width>1.1415cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.10604cm</Width>
+              <Width>0.5465cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.90438cm</Width>
+              <Width>2.55983cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.30938cm</Width>
+              <Width>1.89587cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.32271cm</Width>
+              <Width>1.02274cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.65875cm</Width>
+              <Width>1.40608cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.78562cm</Width>
+              <Width>1.84233cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.16896cm</Width>
+              <Width>1.76358cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.60521cm</Width>
+              <Width>1.11504cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.52646cm</Width>
-            </TablixColumn>
-            <TablixColumn>
-              <Width>1.87792cm</Width>
-            </TablixColumn>
-            <TablixColumn>
-              <Width>1.36229cm</Width>
+              <Width>0.59941cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>0.6cm</Height>
+              <Height>0.82628cm</Height>
               <TablixCells>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox2">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>ID</Value>
-                              <Style />
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox2</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox8">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>OsbID</Value>
-                              <Style />
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox8</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="Textbox10">
@@ -168,14 +105,16 @@
                               <Style>
                                 <FontStyle>Normal</FontStyle>
                                 <FontFamily>Times New Roman</FontFamily>
-                                <FontSize>12pt</FontSize>
-                                <FontWeight>Normal</FontWeight>
+                                <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
                                 <TextDecoration>None</TextDecoration>
                                 <Color>#000000</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox10</rd:DefaultName>
@@ -205,14 +144,16 @@
                               <Style>
                                 <FontStyle>Normal</FontStyle>
                                 <FontFamily>Times New Roman</FontFamily>
-                                <FontSize>12pt</FontSize>
-                                <FontWeight>Normal</FontWeight>
+                                <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
                                 <TextDecoration>None</TextDecoration>
                                 <Color>#000000</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox28</rd:DefaultName>
@@ -242,8 +183,8 @@
                               <Style>
                                 <FontStyle>Normal</FontStyle>
                                 <FontFamily>Times New Roman</FontFamily>
-                                <FontSize>12pt</FontSize>
-                                <FontWeight>Normal</FontWeight>
+                                <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
                                 <TextDecoration>None</TextDecoration>
                                 <Color>#000000</Color>
                               </Style>
@@ -283,14 +224,16 @@
                               <Style>
                                 <FontStyle>Normal</FontStyle>
                                 <FontFamily>Times New Roman</FontFamily>
-                                <FontSize>12pt</FontSize>
-                                <FontWeight>Normal</FontWeight>
+                                <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
                                 <TextDecoration>None</TextDecoration>
                                 <Color>#000000</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox34</rd:DefaultName>
@@ -322,8 +265,8 @@
                               <Style>
                                 <FontStyle>Normal</FontStyle>
                                 <FontFamily>Times New Roman</FontFamily>
-                                <FontSize>12pt</FontSize>
-                                <FontWeight>Normal</FontWeight>
+                                <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
                                 <TextDecoration>None</TextDecoration>
                                 <Color>#000000</Color>
                               </Style>
@@ -363,14 +306,16 @@
                               <Style>
                                 <FontStyle>Normal</FontStyle>
                                 <FontFamily>Times New Roman</FontFamily>
-                                <FontSize>12pt</FontSize>
-                                <FontWeight>Normal</FontWeight>
+                                <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
                                 <TextDecoration>None</TextDecoration>
                                 <Color>#000000</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox22</rd:DefaultName>
@@ -402,14 +347,16 @@
                               <Style>
                                 <FontStyle>Normal</FontStyle>
                                 <FontFamily>Times New Roman</FontFamily>
-                                <FontSize>12pt</FontSize>
-                                <FontWeight>Normal</FontWeight>
+                                <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
                                 <TextDecoration>None</TextDecoration>
                                 <Color>#000000</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox4</rd:DefaultName>
@@ -441,14 +388,16 @@
                               <Style>
                                 <FontStyle>Normal</FontStyle>
                                 <FontFamily>Times New Roman</FontFamily>
-                                <FontSize>12pt</FontSize>
-                                <FontWeight>Normal</FontWeight>
+                                <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
                                 <TextDecoration>None</TextDecoration>
                                 <Color>#000000</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox16</rd:DefaultName>
@@ -480,14 +429,16 @@
                               <Style>
                                 <FontStyle>Normal</FontStyle>
                                 <FontFamily>Times New Roman</FontFamily>
-                                <FontSize>12pt</FontSize>
-                                <FontWeight>Normal</FontWeight>
+                                <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
                                 <TextDecoration>None</TextDecoration>
                                 <Color>#000000</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox18</rd:DefaultName>
@@ -509,68 +460,8 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.6cm</Height>
+              <Height>0.82628cm</Height>
               <TablixCells>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox38">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>Id</Value>
-                              <Style />
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox38</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox39">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>Osb Id</Value>
-                              <Style />
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox39</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="Textbox40">
@@ -584,14 +475,16 @@
                               <Style>
                                 <FontStyle>Normal</FontStyle>
                                 <FontFamily>Times New Roman</FontFamily>
-                                <FontSize>12pt</FontSize>
+                                <FontSize>8pt</FontSize>
                                 <FontWeight>Normal</FontWeight>
                                 <TextDecoration>None</TextDecoration>
                                 <Color>#000000</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox40</rd:DefaultName>
@@ -621,14 +514,16 @@
                               <Style>
                                 <FontStyle>Normal</FontStyle>
                                 <FontFamily>Times New Roman</FontFamily>
-                                <FontSize>12pt</FontSize>
+                                <FontSize>8pt</FontSize>
                                 <FontWeight>Normal</FontWeight>
                                 <TextDecoration>None</TextDecoration>
                                 <Color>#000000</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox41</rd:DefaultName>
@@ -658,7 +553,7 @@
                               <Style>
                                 <FontStyle>Normal</FontStyle>
                                 <FontFamily>Times New Roman</FontFamily>
-                                <FontSize>12pt</FontSize>
+                                <FontSize>8pt</FontSize>
                                 <FontWeight>Normal</FontWeight>
                                 <TextDecoration>None</TextDecoration>
                                 <Color>#000000</Color>
@@ -666,7 +561,7 @@
                             </TextRun>
                           </TextRuns>
                           <Style>
-                            <TextAlign>Center</TextAlign>
+                            <TextAlign>Right</TextAlign>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
@@ -697,7 +592,7 @@
                               <Style>
                                 <FontStyle>Normal</FontStyle>
                                 <FontFamily>Times New Roman</FontFamily>
-                                <FontSize>12pt</FontSize>
+                                <FontSize>8pt</FontSize>
                                 <FontWeight>Normal</FontWeight>
                                 <TextDecoration>None</TextDecoration>
                                 <Color>#000000</Color>
@@ -705,7 +600,7 @@
                             </TextRun>
                           </TextRuns>
                           <Style>
-                            <TextAlign>Center</TextAlign>
+                            <TextAlign>Right</TextAlign>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
@@ -736,14 +631,16 @@
                               <Style>
                                 <FontStyle>Normal</FontStyle>
                                 <FontFamily>Times New Roman</FontFamily>
-                                <FontSize>12pt</FontSize>
+                                <FontSize>8pt</FontSize>
                                 <FontWeight>Normal</FontWeight>
                                 <TextDecoration>None</TextDecoration>
                                 <Color>#000000</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox44</rd:DefaultName>
@@ -773,14 +670,16 @@
                               <Style>
                                 <FontStyle>Normal</FontStyle>
                                 <FontFamily>Times New Roman</FontFamily>
-                                <FontSize>12pt</FontSize>
+                                <FontSize>8pt</FontSize>
                                 <FontWeight>Normal</FontWeight>
                                 <TextDecoration>None</TextDecoration>
                                 <Color>#000000</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox45</rd:DefaultName>
@@ -810,14 +709,16 @@
                               <Style>
                                 <FontStyle>Normal</FontStyle>
                                 <FontFamily>Times New Roman</FontFamily>
-                                <FontSize>12pt</FontSize>
+                                <FontSize>8pt</FontSize>
                                 <FontWeight>Normal</FontWeight>
                                 <TextDecoration>None</TextDecoration>
                                 <Color>#000000</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox46</rd:DefaultName>
@@ -847,14 +748,16 @@
                               <Style>
                                 <FontStyle>Normal</FontStyle>
                                 <FontFamily>Times New Roman</FontFamily>
-                                <FontSize>12pt</FontSize>
+                                <FontSize>8pt</FontSize>
                                 <FontWeight>Normal</FontWeight>
                                 <TextDecoration>None</TextDecoration>
                                 <Color>#000000</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox47</rd:DefaultName>
@@ -884,14 +787,16 @@
                               <Style>
                                 <FontStyle>Normal</FontStyle>
                                 <FontFamily>Times New Roman</FontFamily>
-                                <FontSize>12pt</FontSize>
+                                <FontSize>8pt</FontSize>
                                 <FontWeight>Normal</FontWeight>
                                 <TextDecoration>None</TextDecoration>
                                 <Color>#000000</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox48</rd:DefaultName>
@@ -921,14 +826,16 @@
                               <Style>
                                 <FontStyle>Normal</FontStyle>
                                 <FontFamily>Times New Roman</FontFamily>
-                                <FontSize>12pt</FontSize>
+                                <FontSize>8pt</FontSize>
                                 <FontWeight>Normal</FontWeight>
                                 <TextDecoration>None</TextDecoration>
                                 <Color>#000000</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox49</rd:DefaultName>
@@ -958,14 +865,16 @@
                               <Style>
                                 <FontStyle>Normal</FontStyle>
                                 <FontFamily>Times New Roman</FontFamily>
-                                <FontSize>12pt</FontSize>
+                                <FontSize>8pt</FontSize>
                                 <FontWeight>Normal</FontWeight>
                                 <TextDecoration>None</TextDecoration>
                                 <Color>#000000</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox50</rd:DefaultName>
@@ -995,14 +904,16 @@
                               <Style>
                                 <FontStyle>Normal</FontStyle>
                                 <FontFamily>Times New Roman</FontFamily>
-                                <FontSize>12pt</FontSize>
+                                <FontSize>8pt</FontSize>
                                 <FontWeight>Normal</FontWeight>
                                 <TextDecoration>None</TextDecoration>
                                 <Color>#000000</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox51</rd:DefaultName>
@@ -1032,14 +943,16 @@
                               <Style>
                                 <FontStyle>Normal</FontStyle>
                                 <FontFamily>Times New Roman</FontFamily>
-                                <FontSize>12pt</FontSize>
+                                <FontSize>8pt</FontSize>
                                 <FontWeight>Normal</FontWeight>
                                 <TextDecoration>None</TextDecoration>
                                 <Color>#000000</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox52</rd:DefaultName>
@@ -1069,14 +982,16 @@
                               <Style>
                                 <FontStyle>Normal</FontStyle>
                                 <FontFamily>Times New Roman</FontFamily>
-                                <FontSize>12pt</FontSize>
+                                <FontSize>8pt</FontSize>
                                 <FontWeight>Normal</FontWeight>
                                 <TextDecoration>None</TextDecoration>
                                 <Color>#000000</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox53</rd:DefaultName>
@@ -1106,14 +1021,16 @@
                               <Style>
                                 <FontStyle>Normal</FontStyle>
                                 <FontFamily>Times New Roman</FontFamily>
-                                <FontSize>12pt</FontSize>
+                                <FontSize>8pt</FontSize>
                                 <FontWeight>Normal</FontWeight>
                                 <TextDecoration>None</TextDecoration>
                                 <Color>#000000</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox54</rd:DefaultName>
@@ -1143,14 +1060,16 @@
                               <Style>
                                 <FontStyle>Normal</FontStyle>
                                 <FontFamily>Times New Roman</FontFamily>
-                                <FontSize>12pt</FontSize>
+                                <FontSize>8pt</FontSize>
                                 <FontWeight>Normal</FontWeight>
                                 <TextDecoration>None</TextDecoration>
                                 <Color>#000000</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox55</rd:DefaultName>
@@ -1170,68 +1089,8 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.6cm</Height>
+              <Height>0.82628cm</Height>
               <TablixCells>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Id">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>=Fields!Id.Value</Value>
-                              <Style />
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Id</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="OsbId">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>=Fields!OsbId.Value</Value>
-                              <Style />
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>OsbId</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="S_No">
@@ -1242,10 +1101,14 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!S_No.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>S_No</rd:DefaultName>
@@ -1272,10 +1135,14 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!Param1.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Param1</rd:DefaultName>
@@ -1302,10 +1169,14 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!Param2.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Param2</rd:DefaultName>
@@ -1332,10 +1203,14 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!Param3.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Param3</rd:DefaultName>
@@ -1362,10 +1237,14 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!Param4.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Param4</rd:DefaultName>
@@ -1392,10 +1271,14 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!Param5.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Param5</rd:DefaultName>
@@ -1422,10 +1305,14 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!Param6.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Param6</rd:DefaultName>
@@ -1452,10 +1339,14 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!Param7.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Param7</rd:DefaultName>
@@ -1482,10 +1373,14 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!Param8.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Param8</rd:DefaultName>
@@ -1512,10 +1407,14 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!Param9.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Param9</rd:DefaultName>
@@ -1542,10 +1441,14 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!Param10.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Param10</rd:DefaultName>
@@ -1572,10 +1475,14 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!Param11.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Param11</rd:DefaultName>
@@ -1602,10 +1509,14 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!Param12.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Param12</rd:DefaultName>
@@ -1632,10 +1543,14 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!Param13.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Param13</rd:DefaultName>
@@ -1662,10 +1577,14 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!Param14.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Param14</rd:DefaultName>
@@ -1692,10 +1611,14 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!Param15.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Param15</rd:DefaultName>
@@ -1734,8 +1657,6 @@
             <TablixMember />
             <TablixMember />
             <TablixMember />
-            <TablixMember />
-            <TablixMember />
           </TablixMembers>
         </TablixColumnHierarchy>
         <TablixRowHierarchy>
@@ -1752,10 +1673,10 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>StatementShowingRespectCityNCRForeignBusService</DataSetName>
-        <Top>2.82787cm</Top>
-        <Left>2.56328cm</Left>
-        <Height>1.8cm</Height>
-        <Width>37.07667cm</Width>
+        <Top>2.14904cm</Top>
+        <Left>0.31432cm</Left>
+        <Height>2.47883cm</Height>
+        <Width>22.67515cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -1767,14 +1688,14 @@
     <Height>2in</Height>
     <Style />
   </Body>
-  <Width>15.60628in</Width>
+  <Width>9.5542in</Width>
   <Page>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>
-    <LeftMargin>2cm</LeftMargin>
-    <RightMargin>2cm</RightMargin>
-    <TopMargin>2cm</TopMargin>
-    <BottomMargin>2cm</BottomMargin>
+    <LeftMargin>1cm</LeftMargin>
+    <RightMargin>1cm</RightMargin>
+    <TopMargin>1cm</TopMargin>
+    <BottomMargin>1cm</BottomMargin>
     <ColumnSpacing>0.13cm</ColumnSpacing>
     <Style />
   </Page>

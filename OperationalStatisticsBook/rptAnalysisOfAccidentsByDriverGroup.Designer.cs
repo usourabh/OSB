@@ -31,13 +31,23 @@ namespace OperationalStatisticsBook
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.dtcoperationDataSet = new OperationalStatisticsBook.dtcoperationDataSet();
             this.tbl_AnalysisOfAccidentsByDriverGroupBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dtcoperationDataSet = new OperationalStatisticsBook.dtcoperationDataSet();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.tbl_AnalysisOfAccidentsByDriverGroupTableAdapter = new OperationalStatisticsBook.dtcoperationDataSetTableAdapters.tbl_AnalysisOfAccidentsByDriverGroupTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.dtcoperationDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbl_AnalysisOfAccidentsByDriverGroupBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtcoperationDataSet)).BeginInit();
             this.SuspendLayout();
+            // 
+            // tbl_AnalysisOfAccidentsByDriverGroupBindingSource
+            // 
+            this.tbl_AnalysisOfAccidentsByDriverGroupBindingSource.DataMember = "tbl_AnalysisOfAccidentsByDriverGroup";
+            this.tbl_AnalysisOfAccidentsByDriverGroupBindingSource.DataSource = this.dtcoperationDataSet;
+            // 
+            // dtcoperationDataSet
+            // 
+            this.dtcoperationDataSet.DataSetName = "dtcoperationDataSet";
+            this.dtcoperationDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
@@ -51,16 +61,6 @@ namespace OperationalStatisticsBook
             this.reportViewer1.Size = new System.Drawing.Size(800, 447);
             this.reportViewer1.TabIndex = 0;
             // 
-            // dtcoperationDataSet
-            // 
-            this.dtcoperationDataSet.DataSetName = "dtcoperationDataSet";
-            this.dtcoperationDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tbl_AnalysisOfAccidentsByDriverGroupBindingSource
-            // 
-            this.tbl_AnalysisOfAccidentsByDriverGroupBindingSource.DataMember = "tbl_AnalysisOfAccidentsByDriverGroup";
-            this.tbl_AnalysisOfAccidentsByDriverGroupBindingSource.DataSource = this.dtcoperationDataSet;
-            // 
             // tbl_AnalysisOfAccidentsByDriverGroupTableAdapter
             // 
             this.tbl_AnalysisOfAccidentsByDriverGroupTableAdapter.ClearBeforeFill = true;
@@ -73,9 +73,10 @@ namespace OperationalStatisticsBook
             this.Controls.Add(this.reportViewer1);
             this.Name = "rptAnalysisOfAccidentsByDriverGroup";
             this.Text = "rptAnalysisOfAccidentsByDriverGroup";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.rptAnalysisOfAccidentsByDriverGroup_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dtcoperationDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbl_AnalysisOfAccidentsByDriverGroupBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtcoperationDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }

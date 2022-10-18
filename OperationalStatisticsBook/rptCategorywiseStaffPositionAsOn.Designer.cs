@@ -31,13 +31,23 @@ namespace OperationalStatisticsBook
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.dtcoperationDataSet = new OperationalStatisticsBook.dtcoperationDataSet();
             this.tbl_CategorywiseStaffPositionAsOnBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dtcoperationDataSet = new OperationalStatisticsBook.dtcoperationDataSet();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.tbl_CategorywiseStaffPositionAsOnTableAdapter = new OperationalStatisticsBook.dtcoperationDataSetTableAdapters.tbl_CategorywiseStaffPositionAsOnTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.dtcoperationDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbl_CategorywiseStaffPositionAsOnBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtcoperationDataSet)).BeginInit();
             this.SuspendLayout();
+            // 
+            // tbl_CategorywiseStaffPositionAsOnBindingSource
+            // 
+            this.tbl_CategorywiseStaffPositionAsOnBindingSource.DataMember = "tbl_CategorywiseStaffPositionAsOn";
+            this.tbl_CategorywiseStaffPositionAsOnBindingSource.DataSource = this.dtcoperationDataSet;
+            // 
+            // dtcoperationDataSet
+            // 
+            this.dtcoperationDataSet.DataSetName = "dtcoperationDataSet";
+            this.dtcoperationDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
@@ -51,16 +61,6 @@ namespace OperationalStatisticsBook
             this.reportViewer1.Size = new System.Drawing.Size(798, 449);
             this.reportViewer1.TabIndex = 0;
             // 
-            // dtcoperationDataSet
-            // 
-            this.dtcoperationDataSet.DataSetName = "dtcoperationDataSet";
-            this.dtcoperationDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tbl_CategorywiseStaffPositionAsOnBindingSource
-            // 
-            this.tbl_CategorywiseStaffPositionAsOnBindingSource.DataMember = "tbl_CategorywiseStaffPositionAsOn";
-            this.tbl_CategorywiseStaffPositionAsOnBindingSource.DataSource = this.dtcoperationDataSet;
-            // 
             // tbl_CategorywiseStaffPositionAsOnTableAdapter
             // 
             this.tbl_CategorywiseStaffPositionAsOnTableAdapter.ClearBeforeFill = true;
@@ -73,9 +73,10 @@ namespace OperationalStatisticsBook
             this.Controls.Add(this.reportViewer1);
             this.Name = "rptCategorywiseStaffPositionAsOn";
             this.Text = "rptCategorywiseStaffPositionAsOn";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.rptCategorywiseStaffPositionAsOn_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dtcoperationDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbl_CategorywiseStaffPositionAsOnBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtcoperationDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }

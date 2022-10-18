@@ -73,6 +73,7 @@ namespace OperationalStatisticsBook
             this.Controls.Add(this.reportViewer1);
             this.Name = "rptDistributionOfFleetByTypeMake";
             this.Text = "rptDistributionOfFleetByTypeMake";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.rptDistributionOfFleetByTypeMake_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tbl_DistrubutionOfFleetByTypeMakeAndYearOfCommissionBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtcoperationDataSet)).EndInit();

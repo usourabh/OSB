@@ -31,13 +31,23 @@ namespace OperationalStatisticsBook
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.dtcoperationDataSet = new OperationalStatisticsBook.dtcoperationDataSet();
             this.tbl_StatementOfForTheMonthOfPassesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dtcoperationDataSet = new OperationalStatisticsBook.dtcoperationDataSet();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.tbl_StatementOfForTheMonthOfPassesTableAdapter = new OperationalStatisticsBook.dtcoperationDataSetTableAdapters.tbl_StatementOfForTheMonthOfPassesTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.dtcoperationDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbl_StatementOfForTheMonthOfPassesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtcoperationDataSet)).BeginInit();
             this.SuspendLayout();
+            // 
+            // tbl_StatementOfForTheMonthOfPassesBindingSource
+            // 
+            this.tbl_StatementOfForTheMonthOfPassesBindingSource.DataMember = "tbl_StatementOfForTheMonthOfPasses";
+            this.tbl_StatementOfForTheMonthOfPassesBindingSource.DataSource = this.dtcoperationDataSet;
+            // 
+            // dtcoperationDataSet
+            // 
+            this.dtcoperationDataSet.DataSetName = "dtcoperationDataSet";
+            this.dtcoperationDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
@@ -51,16 +61,6 @@ namespace OperationalStatisticsBook
             this.reportViewer1.Size = new System.Drawing.Size(799, 451);
             this.reportViewer1.TabIndex = 0;
             // 
-            // dtcoperationDataSet
-            // 
-            this.dtcoperationDataSet.DataSetName = "dtcoperationDataSet";
-            this.dtcoperationDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tbl_StatementOfForTheMonthOfPassesBindingSource
-            // 
-            this.tbl_StatementOfForTheMonthOfPassesBindingSource.DataMember = "tbl_StatementOfForTheMonthOfPasses";
-            this.tbl_StatementOfForTheMonthOfPassesBindingSource.DataSource = this.dtcoperationDataSet;
-            // 
             // tbl_StatementOfForTheMonthOfPassesTableAdapter
             // 
             this.tbl_StatementOfForTheMonthOfPassesTableAdapter.ClearBeforeFill = true;
@@ -73,9 +73,10 @@ namespace OperationalStatisticsBook
             this.Controls.Add(this.reportViewer1);
             this.Name = "rptStatementOfForTheMonthOfPasses";
             this.Text = "rptStatementOfForTheMonthOfPasses";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.rptStatementOfForTheMonthOfPasses_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dtcoperationDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbl_StatementOfForTheMonthOfPassesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtcoperationDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }

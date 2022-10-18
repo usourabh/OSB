@@ -6,31 +6,31 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>0.54819in</Width>
+              <Width>0.52851in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.65625in</Width>
+              <Width>0.63657in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.71875in</Width>
+              <Width>0.69907in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.66667in</Width>
+              <Width>0.64699in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.78125in</Width>
+              <Width>0.76157in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.6875in</Width>
+              <Width>0.66782in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.67708in</Width>
+              <Width>0.6574in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.70833in</Width>
+              <Width>0.68865in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.72528in</Width>
+              <Width>0.7056in</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -47,10 +47,15 @@
                           <TextRuns>
                             <TextRun>
                               <Value>S.No</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox13</rd:DefaultName>
@@ -77,11 +82,14 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Particulars Of Services</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
-                            <TextAlign>Center</TextAlign>
+                            <TextAlign>Left</TextAlign>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
@@ -109,11 +117,14 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Avg.No. of buses on Road daily</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
-                            <TextAlign>Center</TextAlign>
+                            <TextAlign>Right</TextAlign>
                           </Style>
                         </Paragraph>
                       </Paragraphs>
@@ -141,10 +152,15 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Total Kms. Opt</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox26</rd:DefaultName>
@@ -171,7 +187,10 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Total Income(Rs.)</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -205,7 +224,10 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Earning per Km.</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -239,10 +261,15 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Passengers Carried No</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox14</rd:DefaultName>
@@ -274,10 +301,14 @@
                           <TextRuns>
                             <TextRun>
                               <Value />
-                              <Style />
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox10</rd:DefaultName>
@@ -304,10 +335,14 @@
                           <TextRuns>
                             <TextRun>
                               <Value />
-                              <Style />
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox17</rd:DefaultName>
@@ -334,10 +369,14 @@
                           <TextRuns>
                             <TextRun>
                               <Value />
-                              <Style />
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox22</rd:DefaultName>
@@ -364,10 +403,14 @@
                           <TextRuns>
                             <TextRun>
                               <Value />
-                              <Style />
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox27</rd:DefaultName>
@@ -394,10 +437,14 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Including Passenger Tax</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox47</rd:DefaultName>
@@ -424,10 +471,14 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Excluding Passenger Tax</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox42</rd:DefaultName>
@@ -454,10 +505,14 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Including Passenger Tax</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox37</rd:DefaultName>
@@ -484,10 +539,14 @@
                           <TextRuns>
                             <TextRun>
                               <Value>Excluding Passenger Tax</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox32</rd:DefaultName>
@@ -514,10 +573,14 @@
                           <TextRuns>
                             <TextRun>
                               <Value />
-                              <Style />
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox11</rd:DefaultName>
@@ -549,10 +612,14 @@
                           <TextRuns>
                             <TextRun>
                               <Value>1</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox7</rd:DefaultName>
@@ -579,10 +646,14 @@
                           <TextRuns>
                             <TextRun>
                               <Value>2</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox18</rd:DefaultName>
@@ -609,10 +680,14 @@
                           <TextRuns>
                             <TextRun>
                               <Value>3</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox23</rd:DefaultName>
@@ -639,10 +714,14 @@
                           <TextRuns>
                             <TextRun>
                               <Value>4</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox28</rd:DefaultName>
@@ -669,10 +748,14 @@
                           <TextRuns>
                             <TextRun>
                               <Value>5</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox48</rd:DefaultName>
@@ -699,10 +782,14 @@
                           <TextRuns>
                             <TextRun>
                               <Value>6</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox43</rd:DefaultName>
@@ -729,10 +816,14 @@
                           <TextRuns>
                             <TextRun>
                               <Value>7</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox38</rd:DefaultName>
@@ -759,10 +850,14 @@
                           <TextRuns>
                             <TextRun>
                               <Value>8</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox33</rd:DefaultName>
@@ -789,10 +884,14 @@
                           <TextRuns>
                             <TextRun>
                               <Value>9</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox8</rd:DefaultName>
@@ -827,14 +926,16 @@
                               <Style>
                                 <FontStyle>Normal</FontStyle>
                                 <FontFamily>Times New Roman</FontFamily>
-                                <FontSize>12pt</FontSize>
-                                <FontWeight>Normal</FontWeight>
+                                <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
                                 <TextDecoration>None</TextDecoration>
                                 <Color>#000000</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox1</rd:DefaultName>
@@ -875,10 +976,14 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!S_No.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>S_No</rd:DefaultName>
@@ -905,10 +1010,14 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!Param1.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Param1</rd:DefaultName>
@@ -935,10 +1044,14 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!Param2.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Param2</rd:DefaultName>
@@ -965,10 +1078,14 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!Param3.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Param3</rd:DefaultName>
@@ -995,10 +1112,14 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!Param4.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Param4</rd:DefaultName>
@@ -1025,10 +1146,14 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!Param5.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Param5</rd:DefaultName>
@@ -1055,10 +1180,14 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!Param6.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Param6</rd:DefaultName>
@@ -1085,10 +1214,14 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!Param7.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Param7</rd:DefaultName>
@@ -1115,10 +1248,14 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!Param8.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Right</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Param8</rd:DefaultName>
@@ -1173,8 +1310,9 @@
         </TablixRowHierarchy>
         <DataSetName>rptStatementShowingOperationalDataOfNcrCngServicesOfTheCorporation</DataSetName>
         <Top>0.61333in</Top>
+        <Left>0.17708in</Left>
         <Height>1.3125in</Height>
-        <Width>6.1693in</Width>
+        <Width>5.99222in</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1191,7 +1329,6 @@
                 <Value> Statement Showing Operational Data of NCR CNG</Value>
                 <Style>
                   <FontStyle>Normal</FontStyle>
-                  <FontFamily>Times New Roman</FontFamily>
                   <FontSize>12pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                   <TextDecoration>None</TextDecoration>
@@ -1209,7 +1346,6 @@
                 <Value>Services of the Corporation</Value>
                 <Style>
                   <FontStyle>Normal</FontStyle>
-                  <FontFamily>Times New Roman</FontFamily>
                   <FontSize>12pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                   <TextDecoration>None</TextDecoration>
@@ -1223,10 +1359,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox51</rd:DefaultName>
-        <Top>0.07167in</Top>
-        <Left>1.20444in</Left>
-        <Height>0.25in</Height>
-        <Width>4.02083in</Width>
+        <Top>0.14459in</Top>
+        <Left>0.17708in</Left>
+        <Height>0.32292in</Height>
+        <Width>5.99222in</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -1239,15 +1375,18 @@
         </Style>
       </Textbox>
     </ReportItems>
-    <Height>1.94667in</Height>
+    <Height>5.23558cm</Height>
     <Style />
   </Body>
-  <Width>6.25264in</Width>
+  <Width>16.22566cm</Width>
   <Page>
-    <LeftMargin>1in</LeftMargin>
-    <RightMargin>1in</RightMargin>
-    <TopMargin>1in</TopMargin>
-    <BottomMargin>1in</BottomMargin>
+    <PageHeight>29.7cm</PageHeight>
+    <PageWidth>21cm</PageWidth>
+    <LeftMargin>1cm</LeftMargin>
+    <RightMargin>1cm</RightMargin>
+    <TopMargin>1cm</TopMargin>
+    <BottomMargin>1cm</BottomMargin>
+    <ColumnSpacing>1.27cm</ColumnSpacing>
     <Style />
   </Page>
   <AutoRefresh>0</AutoRefresh>
@@ -1322,6 +1461,6 @@
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
-  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportUnitType>Cm</rd:ReportUnitType>
   <rd:ReportID>f4626275-581a-4ec1-8d04-7dbe421b8f1b</rd:ReportID>
 </Report>

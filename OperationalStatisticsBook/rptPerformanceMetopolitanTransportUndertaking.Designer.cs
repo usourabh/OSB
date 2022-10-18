@@ -31,35 +31,36 @@ namespace OperationalStatisticsBook
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.dtcoperationDataSet = new OperationalStatisticsBook.dtcoperationDataSet();
             this.tbl_PerformanceMetopolitanTransportUndertakingBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dtcoperationDataSet = new OperationalStatisticsBook.dtcoperationDataSet();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.tbl_PerformanceMetopolitanTransportUndertakingTableAdapter = new OperationalStatisticsBook.dtcoperationDataSetTableAdapters.tbl_PerformanceMetopolitanTransportUndertakingTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.dtcoperationDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbl_PerformanceMetopolitanTransportUndertakingBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtcoperationDataSet)).BeginInit();
             this.SuspendLayout();
             // 
-            // reportViewer1
+            // tbl_PerformanceMetopolitanTransportUndertakingBindingSource
             // 
-            reportDataSource1.Name = "PerformanceMetopolitanTransportUndertaking";
-            reportDataSource1.Value = this.tbl_PerformanceMetopolitanTransportUndertakingBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "OperationalStatisticsBook.rptPerformanceMetopolitanTransportUndertaking.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(12, 12);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(776, 363);
-            this.reportViewer1.TabIndex = 0;
+            this.tbl_PerformanceMetopolitanTransportUndertakingBindingSource.DataMember = "tbl_PerformanceMetopolitanTransportUndertaking";
+            this.tbl_PerformanceMetopolitanTransportUndertakingBindingSource.DataSource = this.dtcoperationDataSet;
             // 
             // dtcoperationDataSet
             // 
             this.dtcoperationDataSet.DataSetName = "dtcoperationDataSet";
             this.dtcoperationDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // tbl_PerformanceMetopolitanTransportUndertakingBindingSource
+            // reportViewer1
             // 
-            this.tbl_PerformanceMetopolitanTransportUndertakingBindingSource.DataMember = "tbl_PerformanceMetopolitanTransportUndertaking";
-            this.tbl_PerformanceMetopolitanTransportUndertakingBindingSource.DataSource = this.dtcoperationDataSet;
+            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            reportDataSource1.Name = "PerformanceMetopolitanTransportUndertaking";
+            reportDataSource1.Value = this.tbl_PerformanceMetopolitanTransportUndertakingBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "OperationalStatisticsBook.rptPerformanceMetopolitanTransportUndertaking.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.ServerReport.BearerToken = null;
+            this.reportViewer1.Size = new System.Drawing.Size(804, 594);
+            this.reportViewer1.TabIndex = 0;
             // 
             // tbl_PerformanceMetopolitanTransportUndertakingTableAdapter
             // 
@@ -69,13 +70,14 @@ namespace OperationalStatisticsBook
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 342);
+            this.ClientSize = new System.Drawing.Size(804, 594);
             this.Controls.Add(this.reportViewer1);
             this.Name = "rptPerformanceMetopolitanTransportUndertaking";
             this.Text = "rptPerformanceMetopolitanTransportUndertaking";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.rptPerformanceMetopolitanTransportUndertaking_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dtcoperationDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbl_PerformanceMetopolitanTransportUndertakingBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtcoperationDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }

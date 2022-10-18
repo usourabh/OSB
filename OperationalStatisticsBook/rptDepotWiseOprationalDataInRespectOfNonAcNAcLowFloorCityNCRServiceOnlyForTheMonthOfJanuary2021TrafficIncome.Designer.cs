@@ -39,6 +39,7 @@ namespace OperationalStatisticsBook
     "tyNCRServiceOnlyForTheMonthOfJanuary2021TrafficIncome.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.ServerReport.BearerToken = null;
             this.reportViewer1.Size = new System.Drawing.Size(800, 450);
             this.reportViewer1.TabIndex = 0;
             // 
@@ -52,6 +53,7 @@ namespace OperationalStatisticsBook
     "hOfJanuary2021TrafficIncome";
             this.Text = "rptDepotWiseOprationalDataInRespectOfNonAcNAcLowFloorCityNCRServiceOnlyForTheMont" +
     "hOfJanuary2021TrafficIncome";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.rptDepotWiseOprationalDataInRespectOfNonAcNAcLowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021TrafficIncome_Load);
             this.ResumeLayout(false);
 

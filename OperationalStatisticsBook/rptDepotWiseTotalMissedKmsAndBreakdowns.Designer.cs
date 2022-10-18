@@ -31,13 +31,23 @@ namespace OperationalStatisticsBook
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.dtcoperationDataSet = new OperationalStatisticsBook.dtcoperationDataSet();
             this.tbl_DepotWiseTotalMissedKmsAndBreakdownsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dtcoperationDataSet = new OperationalStatisticsBook.dtcoperationDataSet();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.tbl_DepotWiseTotalMissedKmsAndBreakdownsTableAdapter = new OperationalStatisticsBook.dtcoperationDataSetTableAdapters.tbl_DepotWiseTotalMissedKmsAndBreakdownsTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.dtcoperationDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbl_DepotWiseTotalMissedKmsAndBreakdownsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtcoperationDataSet)).BeginInit();
             this.SuspendLayout();
+            // 
+            // tbl_DepotWiseTotalMissedKmsAndBreakdownsBindingSource
+            // 
+            this.tbl_DepotWiseTotalMissedKmsAndBreakdownsBindingSource.DataMember = "tbl_DepotWiseTotalMissedKmsAndBreakdowns";
+            this.tbl_DepotWiseTotalMissedKmsAndBreakdownsBindingSource.DataSource = this.dtcoperationDataSet;
+            // 
+            // dtcoperationDataSet
+            // 
+            this.dtcoperationDataSet.DataSetName = "dtcoperationDataSet";
+            this.dtcoperationDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
@@ -46,20 +56,11 @@ namespace OperationalStatisticsBook
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "OperationalStatisticsBook.rptDepotWiseTotalMissedKmsAndBreakdowns.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
+            this.reportViewer1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(794, 448);
+            this.reportViewer1.Size = new System.Drawing.Size(530, 292);
             this.reportViewer1.TabIndex = 0;
-            // 
-            // dtcoperationDataSet
-            // 
-            this.dtcoperationDataSet.DataSetName = "dtcoperationDataSet";
-            this.dtcoperationDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tbl_DepotWiseTotalMissedKmsAndBreakdownsBindingSource
-            // 
-            this.tbl_DepotWiseTotalMissedKmsAndBreakdownsBindingSource.DataMember = "tbl_DepotWiseTotalMissedKmsAndBreakdowns";
-            this.tbl_DepotWiseTotalMissedKmsAndBreakdownsBindingSource.DataSource = this.dtcoperationDataSet;
             // 
             // tbl_DepotWiseTotalMissedKmsAndBreakdownsTableAdapter
             // 
@@ -67,15 +68,17 @@ namespace OperationalStatisticsBook
             // 
             // rptDepotWiseTotalMissedKmsAndBreakdowns
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(533, 292);
             this.Controls.Add(this.reportViewer1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "rptDepotWiseTotalMissedKmsAndBreakdowns";
             this.Text = "rptDepotWiseTotalMissedKmsAndBreakdowns";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.rptDepotWiseTotalMissedKmsAndBreakdowns_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dtcoperationDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbl_DepotWiseTotalMissedKmsAndBreakdownsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtcoperationDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }

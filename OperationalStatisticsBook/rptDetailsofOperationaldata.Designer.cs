@@ -31,35 +31,36 @@ namespace OperationalStatisticsBook
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.dtcoperationDataSet = new OperationalStatisticsBook.dtcoperationDataSet();
             this.tbl_DetailsofOperationaldataforthemonthofJulyBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dtcoperationDataSet = new OperationalStatisticsBook.dtcoperationDataSet();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.tbl_DetailsofOperationaldataforthemonthofJulyTableAdapter = new OperationalStatisticsBook.dtcoperationDataSetTableAdapters.tbl_DetailsofOperationaldataforthemonthofJulyTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.dtcoperationDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbl_DetailsofOperationaldataforthemonthofJulyBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtcoperationDataSet)).BeginInit();
             this.SuspendLayout();
             // 
-            // reportViewer1
+            // tbl_DetailsofOperationaldataforthemonthofJulyBindingSource
             // 
-            reportDataSource1.Name = "DetailsofOperationaldata";
-            reportDataSource1.Value = this.tbl_DetailsofOperationaldataforthemonthofJulyBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "OperationalStatisticsBook.rptDetailsofOperationaldata.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(12, 12);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(776, 300);
-            this.reportViewer1.TabIndex = 0;
+            this.tbl_DetailsofOperationaldataforthemonthofJulyBindingSource.DataMember = "tbl_DetailsofOperationaldataforthemonthofJuly";
+            this.tbl_DetailsofOperationaldataforthemonthofJulyBindingSource.DataSource = this.dtcoperationDataSet;
             // 
             // dtcoperationDataSet
             // 
             this.dtcoperationDataSet.DataSetName = "dtcoperationDataSet";
             this.dtcoperationDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // tbl_DetailsofOperationaldataforthemonthofJulyBindingSource
+            // reportViewer1
             // 
-            this.tbl_DetailsofOperationaldataforthemonthofJulyBindingSource.DataMember = "tbl_DetailsofOperationaldataforthemonthofJuly";
-            this.tbl_DetailsofOperationaldataforthemonthofJulyBindingSource.DataSource = this.dtcoperationDataSet;
+            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            reportDataSource1.Name = "DetailsofOperationaldata";
+            reportDataSource1.Value = this.tbl_DetailsofOperationaldataforthemonthofJulyBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "OperationalStatisticsBook.rptDetailsofOperationaldata.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.ServerReport.BearerToken = null;
+            this.reportViewer1.Size = new System.Drawing.Size(800, 450);
+            this.reportViewer1.TabIndex = 0;
             // 
             // tbl_DetailsofOperationaldataforthemonthofJulyTableAdapter
             // 
@@ -73,9 +74,10 @@ namespace OperationalStatisticsBook
             this.Controls.Add(this.reportViewer1);
             this.Name = "rptDetailsofOperationaldata";
             this.Text = "rptDetailsofOperationaldata";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.rptDetailsofOperationaldata_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dtcoperationDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbl_DetailsofOperationaldataforthemonthofJulyBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtcoperationDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }

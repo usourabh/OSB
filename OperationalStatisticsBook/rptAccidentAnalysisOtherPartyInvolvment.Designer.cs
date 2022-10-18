@@ -38,6 +38,7 @@ namespace OperationalStatisticsBook
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "OperationalStatisticsBook.rptAccidentAnalysisOtherPartyInvolvment.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.ServerReport.BearerToken = null;
             this.reportViewer1.Size = new System.Drawing.Size(800, 450);
             this.reportViewer1.TabIndex = 0;
             // 
@@ -49,6 +50,7 @@ namespace OperationalStatisticsBook
             this.Controls.Add(this.reportViewer1);
             this.Name = "rptAccidentAnalysisOtherPartyInvolvment";
             this.Text = "rptAccidentAnalysisOtherPartyInvolvment";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.rptAccidentAnalysisOtherPartyInvolvment_Load);
             this.ResumeLayout(false);
 

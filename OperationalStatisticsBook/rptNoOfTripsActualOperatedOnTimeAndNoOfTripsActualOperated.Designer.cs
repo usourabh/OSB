@@ -31,13 +31,23 @@ namespace OperationalStatisticsBook
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.dtcoperationDataSet = new OperationalStatisticsBook.dtcoperationDataSet();
             this.tbl_NoOfTripsActualOperatedOnTimeAndNoOfTripsActualOperatedBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dtcoperationDataSet = new OperationalStatisticsBook.dtcoperationDataSet();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.tbl_NoOfTripsActualOperatedOnTimeAndNoOfTripsActualOperatedTableAdapter = new OperationalStatisticsBook.dtcoperationDataSetTableAdapters.tbl_NoOfTripsActualOperatedOnTimeAndNoOfTripsActualOperatedTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.dtcoperationDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbl_NoOfTripsActualOperatedOnTimeAndNoOfTripsActualOperatedBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtcoperationDataSet)).BeginInit();
             this.SuspendLayout();
+            // 
+            // tbl_NoOfTripsActualOperatedOnTimeAndNoOfTripsActualOperatedBindingSource
+            // 
+            this.tbl_NoOfTripsActualOperatedOnTimeAndNoOfTripsActualOperatedBindingSource.DataMember = "tbl_NoOfTripsActualOperatedOnTimeAndNoOfTripsActualOperated";
+            this.tbl_NoOfTripsActualOperatedOnTimeAndNoOfTripsActualOperatedBindingSource.DataSource = this.dtcoperationDataSet;
+            // 
+            // dtcoperationDataSet
+            // 
+            this.dtcoperationDataSet.DataSetName = "dtcoperationDataSet";
+            this.dtcoperationDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
@@ -53,16 +63,6 @@ namespace OperationalStatisticsBook
             this.reportViewer1.Size = new System.Drawing.Size(800, 450);
             this.reportViewer1.TabIndex = 0;
             // 
-            // dtcoperationDataSet
-            // 
-            this.dtcoperationDataSet.DataSetName = "dtcoperationDataSet";
-            this.dtcoperationDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tbl_NoOfTripsActualOperatedOnTimeAndNoOfTripsActualOperatedBindingSource
-            // 
-            this.tbl_NoOfTripsActualOperatedOnTimeAndNoOfTripsActualOperatedBindingSource.DataMember = "tbl_NoOfTripsActualOperatedOnTimeAndNoOfTripsActualOperated";
-            this.tbl_NoOfTripsActualOperatedOnTimeAndNoOfTripsActualOperatedBindingSource.DataSource = this.dtcoperationDataSet;
-            // 
             // tbl_NoOfTripsActualOperatedOnTimeAndNoOfTripsActualOperatedTableAdapter
             // 
             this.tbl_NoOfTripsActualOperatedOnTimeAndNoOfTripsActualOperatedTableAdapter.ClearBeforeFill = true;
@@ -75,9 +75,10 @@ namespace OperationalStatisticsBook
             this.Controls.Add(this.reportViewer1);
             this.Name = "rptNoOfTripsActualOperatedOnTimeAndNoOfTripsActualOperated";
             this.Text = "rptNoOfTripsActualOperatedOnTimeAndNoOfTripsActualOperated";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.rptNoOfTripsActualOperatedOnTimeAndNoOfTripsActualOperated_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dtcoperationDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbl_NoOfTripsActualOperatedOnTimeAndNoOfTripsActualOperatedBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtcoperationDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
