@@ -41,7 +41,7 @@ namespace OperationalStatisticsBook
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 12);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(776, 368);
+            this.dataGridView1.Size = new System.Drawing.Size(776, 383);
             this.dataGridView1.TabIndex = 0;
             // 
             // Reset
@@ -56,21 +56,21 @@ namespace OperationalStatisticsBook
             // 
             // Save
             // 
-            this.Save.Location = new System.Drawing.Point(632, 401);
+            this.Save.Location = new System.Drawing.Point(622, 401);
             this.Save.Name = "Save";
-            this.Save.Size = new System.Drawing.Size(75, 37);
+            this.Save.Size = new System.Drawing.Size(85, 37);
             this.Save.TabIndex = 2;
-            this.Save.Text = "Save";
+            this.Save.Text = "Data Verified";
             this.Save.UseVisualStyleBackColor = true;
             this.Save.Click += new System.EventHandler(this.SaveOnClick);
             // 
             // Print_Report
             // 
-            this.Print_Report.Location = new System.Drawing.Point(551, 400);
+            this.Print_Report.Location = new System.Drawing.Point(522, 401);
             this.Print_Report.Name = "Print_Report";
-            this.Print_Report.Size = new System.Drawing.Size(75, 38);
+            this.Print_Report.Size = new System.Drawing.Size(94, 37);
             this.Print_Report.TabIndex = 3;
-            this.Print_Report.Text = "Print Report";
+            this.Print_Report.Text = "Generate Pdf";
             this.Print_Report.UseVisualStyleBackColor = true;
             this.Print_Report.Click += new System.EventHandler(this.PrintReportOnClick);
             // 

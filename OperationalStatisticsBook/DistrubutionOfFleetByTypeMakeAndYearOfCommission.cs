@@ -45,9 +45,14 @@ namespace OperationalStatisticsBook
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
                 sda.Fill(dt);
                 if (dt.Rows.Count > 0)
+                {
                     dataGridView1.DataSource = dt;
+                    Save.BackColor = Color.Green;
+                }
                 else
+                {
                     dataGridView1.DataSource = BindDistrubutionOfFleetByTypeMakeAndYearOfCommission();
+                }
             }
             catch (Exception ex)
             {
@@ -71,8 +76,8 @@ namespace OperationalStatisticsBook
             table.Columns.Add("Percentage ", typeof(string));
 
             table.Rows.Add("Year of Comm.", "CNG ", "CNG", "CNG", "CNG", "Electric", "Electric", "Total", "duistribution");
-            table.Rows.Add("Year of Comm.", "LOW FLOOR ", "LOW FLOOR", "LOW FLOOR", "LOW FLOOR", "LOW FLOOR", "LOW FLOOR", "Total", "by year of" );
-            table.Rows.Add("Year of Comm.", "NON AC ", "AC", "NON AC", "AC", "AC", "AC", "Total", "commission");
+            table.Rows.Add(" ", "LOW FLOOR ", "LOW FLOOR", "LOW FLOOR", "LOW FLOOR", "LOW FLOOR", "LOW FLOOR", "Total", "by year of" );
+            table.Rows.Add(" ", "NON AC ", "AC", "NON AC", "AC", "AC", "AC", "Total", "commission");
             table.Rows.Add("1", "2 ", "3", "4", "5", "6", "7", "8", "9");
 
 

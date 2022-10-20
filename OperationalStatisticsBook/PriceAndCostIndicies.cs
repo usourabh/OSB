@@ -56,7 +56,15 @@ namespace OperationalStatisticsBook
                     {"@OsbId",OsbId.ToString()},
             };
             DataTable dt = Common.ExecuteProcedure("SP_rptPriceAndCostIndices", param);
-            dataGridView1.DataSource = dt;
+            if(dt.Rows.Count>0)
+            {
+                dataGridView1.DataSource = dt;
+                Save.BackColor = Color.Green;
+            }
+           else
+            {
+                dataGridView1.DataSource = BindPriceAndCostIndicies();
+            }
         }
         DataTable BindPriceAndCostIndicies()
         {
@@ -71,8 +79,8 @@ namespace OperationalStatisticsBook
             table.Columns.Add("CPKM (P) ", typeof(string));
             table.Columns.Add("Indicies    ", typeof(string));
             //Rows data
-           // table.Rows.Add("", "Fuel-Lubricant", "Fuel-Lubricant", "Fuel-Lubricant", "Fuel-Lubricant", "Tyres,Tubes & Retd. Material", "Tyres,Tubes & Retd. Material", "Tyres,Tubes & Retd. Material", "Tyres,Tubes & Retd. Material");
-            //table.Rows.Add("1", "2", "3", "4", "5", "6", "7", "8", "9");
+            table.Rows.Add("", "Fuel-Lubricant", "Fuel-Lubricant", "Fuel-Lubricant", "Fuel-Lubricant", "Tyres,Tubes & Retd. Material", "Tyres,Tubes & Retd. Material", "Tyres,Tubes & Retd. Material", "Tyres,Tubes & Retd. Material");
+            table.Rows.Add("1", "2", "3", "4", "5", "6", "7", "8", "9");
             DateTime currentDate = new DateTime(Year, Month, 01);
             DateTime newDate = currentDate.AddYears(1);
             DateTime newDate2 = currentDate.AddYears(+2);

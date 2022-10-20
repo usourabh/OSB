@@ -12,7 +12,6 @@ D:\OSB\OperationalStatisticsBook\bin\Debug\Microsoft.MSXML.dll
 D:\OSB\OperationalStatisticsBook\obj\Debug\OperationalStatisticsBook.AccidentAnalysisForTheMonth.resources
 D:\OSB\OperationalStatisticsBook\obj\Debug\OperationalStatisticsBook.AccidentAnalysisOtherPartyInvolvment.resources
 D:\OSB\OperationalStatisticsBook\obj\Debug\OperationalStatisticsBook.AccidentNCompensationGvnAccidentVictims.resources
-D:\OSB\OperationalStatisticsBook\obj\Debug\OperationalStatisticsBook.AccidentsNCompensationGvnAccidentVictim.resources
 D:\OSB\OperationalStatisticsBook\obj\Debug\OperationalStatisticsBook.AnalysisOfAccidentsByDriverGroup.resources
 D:\OSB\OperationalStatisticsBook\obj\Debug\OperationalStatisticsBook.analysisOfCausesAccidents.resources
 D:\OSB\OperationalStatisticsBook\obj\Debug\OperationalStatisticsBook.CategorywiseStaffPositionAsOn.resources

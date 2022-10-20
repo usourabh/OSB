@@ -52,11 +52,11 @@ namespace OperationalStatisticsBook
             // 
             // BtnSave
             // 
-            this.BtnSave.Location = new System.Drawing.Point(490, 463);
+            this.BtnSave.Location = new System.Drawing.Point(473, 463);
             this.BtnSave.Name = "BtnSave";
-            this.BtnSave.Size = new System.Drawing.Size(75, 37);
+            this.BtnSave.Size = new System.Drawing.Size(92, 37);
             this.BtnSave.TabIndex = 1;
-            this.BtnSave.Text = "Save";
+            this.BtnSave.Text = "Data Verified";
             this.BtnSave.UseMnemonic = false;
             this.BtnSave.UseVisualStyleBackColor = true;
             this.BtnSave.Click += new System.EventHandler(this.SaveOnClick);
@@ -67,7 +67,7 @@ namespace OperationalStatisticsBook
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(83, 37);
             this.btnReset.TabIndex = 2;
-            this.btnReset.Text = "Reset Button";
+            this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = true;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
@@ -77,13 +77,13 @@ namespace OperationalStatisticsBook
             this.Print_Report.Name = "Print_Report";
             this.Print_Report.Size = new System.Drawing.Size(106, 37);
             this.Print_Report.TabIndex = 3;
-            this.Print_Report.Text = "Print Report";
+            this.Print_Report.Text = "Generate Pdf";
             this.Print_Report.UseVisualStyleBackColor = true;
             this.Print_Report.Click += new System.EventHandler(this.Print_ReportOnClick);
             // 
             // progressiveFinancialResults
             // 
-            this.ClientSize = new System.Drawing.Size(690, 536);
+            this.ClientSize = new System.Drawing.Size(690, 506);
             this.Controls.Add(this.Print_Report);
             this.Controls.Add(this.btnReset);
             this.Controls.Add(this.BtnSave);

@@ -33,6 +33,33 @@ namespace OperationalStatisticsBook
             this.MonthName = MonthName;
         }
 
+        void BindIndexPage(int OsbId)
+        {
+
+            try
+            {
+                DataTable dt = new DataTable();
+                SqlCommand cmd = new SqlCommand("SELECT [Year],[Param2],[Param3],[Param4],[Param5],[Param6],[Param7] FROM [rpt].[tbl_AccidentNCompensationGvnAccidentVictims] where OsbId=@OsbId", con);
+                cmd.Parameters.AddWithValue("@OsbId", OsbId);
+                cmd.CommandType = CommandType.Text;
+                SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                sda.Fill(dt);
+                if (dt.Rows.Count > 0)
+                {
+                    dataGridView1.DataSource = dt;
+                    Save.BackColor = Color.Green;
+                }
+                else
+                {
+                    dataGridView1.DataSource = BindAccidentNCompensationGvnAccidentVictims();
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+        }
 
         DataTable BindAccidentNCompensationGvnAccidentVictims()
         {
@@ -127,7 +154,8 @@ namespace OperationalStatisticsBook
 
         private void AccidentNCompensationGvnAccidentVictims_Load(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = BindAccidentNCompensationGvnAccidentVictims();
+            BindIndexPage(OsbId);
+          //  dataGridView1.DataSource = BindAccidentNCompensationGvnAccidentVictims();
         }
 
         private void PrintReportOnClick(object sender, EventArgs e)

@@ -87,7 +87,7 @@ namespace OperationalStatisticsBook
 
             return table;
         }
-            private void ResetOnClick(object sender, EventArgs e)
+       private void ResetOnClick(object sender, EventArgs e)
         {
             DeleteExisitingTableRecord("tbl_AnalysisOfAccidentsByDriverGroup", OsbId);
             dataGridView1.DataSource = BindAnalysisOfAccidentsByDriverGroup();
@@ -159,9 +159,14 @@ namespace OperationalStatisticsBook
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
                 sda.Fill(dt);
                 if (dt.Rows.Count > 0)
+                {
                     dataGridView1.DataSource = dt;
+                    Save.BackColor = Color.Green;
+                }
                 else
+                {
                     dataGridView1.DataSource = BindAnalysisOfAccidentsByDriverGroup();
+                }
             }
             catch (Exception ex)
             {

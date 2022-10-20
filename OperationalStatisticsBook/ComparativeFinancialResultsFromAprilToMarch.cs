@@ -31,11 +31,6 @@ namespace OperationalStatisticsBook
             this.MonthName = MonthName;
         }
 
-
-
-
-
-
         private void ResetOnClick(object sender, EventArgs e)
         {
 

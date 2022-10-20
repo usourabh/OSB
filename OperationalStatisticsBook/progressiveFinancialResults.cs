@@ -30,6 +30,33 @@ namespace OperationalStatisticsBook
             this.MonthName = MonthName;
         }
 
+        void BindIndexPage(int OsbId)
+        {
+
+            try
+            {
+                DataTable dt = new DataTable();
+                SqlCommand cmd = new SqlCommand("SELECT [Param1],[Param2],[Param3],[Param4],[Param5],[Param6],[Param7],[Param8],[Param9] FROM [rpt].[tbl_ProgressiveFinancialResults] where OsbId=@OsbId", con);
+                cmd.Parameters.AddWithValue("@OsbId", OsbId);
+                cmd.CommandType = CommandType.Text;
+                SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                sda.Fill(dt);
+                if (dt.Rows.Count > 0)
+                {
+                    dataGridView1.DataSource = dt;
+                    saveBtn.BackColor = Color.Green;
+                }
+                else
+                {
+                    dataGridView1.DataSource = BindProgressiveFinancialTable();
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+        }
         DataTable BindProgressiveFinancialTable()
         { 
             DataTable table = new DataTable();
@@ -86,7 +113,8 @@ namespace OperationalStatisticsBook
 
         private void progressiveFinancialResults_Load_1(object sender, EventArgs e)
         {
-            BindProgressiveFinancialTable();
+            BindIndexPage(OsbId);
+           // BindProgressiveFinancialTable();
         }
 
         private void btnReset_Click(object sender, EventArgs e)

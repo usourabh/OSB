@@ -61,9 +61,14 @@ namespace OperationalStatisticsBook
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
                 sda.Fill(dt);
                 if (dt.Rows.Count > 0)
+                {
                     dataGridView1.DataSource = dt;
+                    Save.BackColor = Color.Green;
+                }
                 else
+                {
                     dataGridView1.DataSource = BindStatemnetShowingTheInRespectOfCityNcrAndForeignBusServiceRsIncomeAndExpewnditureJune_2022Inlakhs();
+                }
             }
             catch (Exception ex)
             {

@@ -41,14 +41,14 @@ namespace OperationalStatisticsBook
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 13);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(776, 403);
+            this.dataGridView1.Size = new System.Drawing.Size(776, 399);
             this.dataGridView1.TabIndex = 0;
             // 
             // Reset
             // 
-            this.Reset.Location = new System.Drawing.Point(713, 422);
+            this.Reset.Location = new System.Drawing.Point(713, 418);
             this.Reset.Name = "Reset";
-            this.Reset.Size = new System.Drawing.Size(75, 23);
+            this.Reset.Size = new System.Drawing.Size(75, 27);
             this.Reset.TabIndex = 1;
             this.Reset.Text = "Reset";
             this.Reset.UseVisualStyleBackColor = true;
@@ -56,22 +56,22 @@ namespace OperationalStatisticsBook
             // 
             // Save
             // 
-            this.Save.Location = new System.Drawing.Point(621, 422);
+            this.Save.Location = new System.Drawing.Point(602, 418);
             this.Save.Name = "Save";
-            this.Save.Size = new System.Drawing.Size(75, 23);
+            this.Save.Size = new System.Drawing.Size(94, 27);
             this.Save.TabIndex = 2;
-            this.Save.Text = "Save";
+            this.Save.Text = "Data Verified";
             this.Save.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.Save.UseVisualStyleBackColor = true;
             this.Save.Click += new System.EventHandler(this.Save_Click);
             // 
             // PrintReport
             // 
-            this.PrintReport.Location = new System.Drawing.Point(493, 423);
+            this.PrintReport.Location = new System.Drawing.Point(493, 418);
             this.PrintReport.Name = "PrintReport";
-            this.PrintReport.Size = new System.Drawing.Size(86, 23);
+            this.PrintReport.Size = new System.Drawing.Size(103, 28);
             this.PrintReport.TabIndex = 3;
-            this.PrintReport.Text = "PrintReport";
+            this.PrintReport.Text = "Generate Pdf";
             this.PrintReport.UseVisualStyleBackColor = true;
             this.PrintReport.Click += new System.EventHandler(this.PrintReportOnClick);
             // 

@@ -31,6 +31,33 @@ namespace OperationalStatisticsBook
             this.MonthName = MonthName;
         }
 
+        void BindIndexPage(int OsbId)
+        {
+
+            try
+            {
+                DataTable dt = new DataTable();
+                SqlCommand cmd = new SqlCommand("SELECT [S_No],[Param1],[Param2],[Param3],[Param4] ,[Param5] FROM [rpt].[tbl_ComparativeOperationalData] where OsbId=@OsbId", con);
+                cmd.Parameters.AddWithValue("@OsbId", OsbId);
+                cmd.CommandType = CommandType.Text;
+                SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                sda.Fill(dt);
+                if (dt.Rows.Count > 0)
+                {
+                    dataGridView1.DataSource = dt;
+                    Save.BackColor = Color.Green;
+                }
+                else
+                {
+                    dataGridView1.DataSource = BindComparativeOperationDataTbl();
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+        }
         int DeleteExisitingTableRecord(string TableName, int OsbId)
         {
             string strTable = "[rpt].[" + TableName + "]";
@@ -95,7 +122,8 @@ namespace OperationalStatisticsBook
 
         private void ComparativeOperationalData_Load(object sender, EventArgs e)
         {
-            BindComparativeOperationDataTbl();
+            BindIndexPage(OsbId);
+          //  BindComparativeOperationDataTbl();
         }
 
         private void Reset_Click(object sender, EventArgs e)

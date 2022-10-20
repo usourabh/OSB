@@ -74,6 +74,7 @@ namespace OperationalStatisticsBook
             if (dt.Rows.Count > 0)
             {
                 dataGridView1.DataSource = dt;
+                Save.BackColor = Color.Green;
             }
             //else if (dt1.Rows.Count > 0)
             //{

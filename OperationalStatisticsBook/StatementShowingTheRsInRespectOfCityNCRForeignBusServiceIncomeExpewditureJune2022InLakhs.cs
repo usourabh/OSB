@@ -22,7 +22,33 @@ namespace OperationalStatisticsBook
         string finYear = "";
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["dtOperation"].ConnectionString);
 
+        void BindIndexPage(int OsbId)
+        {
 
+            try
+            {
+                DataTable dt = new DataTable();
+                SqlCommand cmd = new SqlCommand("SELECT [S_No],[Particulars],[Param1],[Param2],[Param3],[Param4],[Param5],[Param6],[Param7],[Param8],[Param9],[Param10],[Param11],[Param12] FROM [rpt].[tbl_StatementShowingTheRsInRespectOfCityNCRForeignBusServiceIncomeExpewditureJune2022InLakhs] where OsbId=@OsbId", con);
+                cmd.Parameters.AddWithValue("@OsbId", OsbId);
+                cmd.CommandType = CommandType.Text;
+                SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                sda.Fill(dt);
+                if (dt.Rows.Count > 0)
+                {
+                    dataGridView1.DataSource = dt;
+                    Save.BackColor = Color.Green;
+                }
+                else
+                {
+                    dataGridView1.DataSource = BindStatementShowingTheRsInRespectOfCityNCRForeignBusServiceIncomeExpewditureJune2022InLakhs();
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+        }
         public StatementShowingTheRsInRespectOfCityNCRForeignBusServiceIncomeExpewditureJune2022InLakhs(int OsbId, int Year, int Month, string finYear, string MonthName)
         {
             InitializeComponent();
@@ -209,7 +235,8 @@ namespace OperationalStatisticsBook
 
         private void StatementShowingTheRsInRespectOfCityNCRForeignBusServiceIncomeExpewditureJune2022InLakhs_Load(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = BindStatementShowingTheRsInRespectOfCityNCRForeignBusServiceIncomeExpewditureJune2022InLakhs();
+            BindIndexPage(OsbId);
+           // dataGridView1.DataSource = BindStatementShowingTheRsInRespectOfCityNCRForeignBusServiceIncomeExpewditureJune2022InLakhs();
         }
 
         private void Print_ReportOnClick(object sender, EventArgs e)

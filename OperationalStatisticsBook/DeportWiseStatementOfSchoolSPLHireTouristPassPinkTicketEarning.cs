@@ -116,29 +116,31 @@ namespace OperationalStatisticsBook
             return i;
         }
 
-        void BindIndexPage(int OsbId)
+        void ShowData()
         {
+            DateTime currentDate = new DateTime(Year, Month, 01);
+            String[,] param = new string[,]
+                    {
+                    {"@OsbId",OsbId.ToString()},
 
-            try
-            {
-                DataTable dt = new DataTable();
-                SqlCommand cmd = new SqlCommand("SELECT [S.No],[Depot],[Param1],[Param2],[Param3],[Param4] ,[Param5],[Param6],[Param7],[Param8],[Param9] ,[Param10],[Param11],[Param12],[Param13],[Param14] ,[Param15],[Param16],[Param17],[Param18],[Param19] FROM [rpt].[tbl_DeportWiseStatementOfSchoolSPLHireTouristPassPinkTicketEarning] where OsbId=@OsbId", con);
-                cmd.Parameters.AddWithValue("@OsbId", OsbId);
-                cmd.CommandType = CommandType.Text;
-                SqlDataAdapter sda = new SqlDataAdapter(cmd);
-                sda.Fill(dt);
-                if (dt.Rows.Count > 0)
-                    dataGridView1.DataSource = dt;
-                else
-                    dataGridView1.DataSource = BindDeportWiseStatementOfSchoolSPLHireTouristPassPinkTicketEarning();
-            }
-            catch (Exception ex)
-            {
+            };
+            DataTable dt = Common.ExecuteProcedure("sp_rptDeportWiseStatementOfSchoolSPLHireTouristPassPinkTicketEarning", param);
 
+            if (dt.Rows.Count > 0)
+            {
+                dataGridView1.DataSource = dt;
+                Save.BackColor = Color.Green;
             }
+
+            else
+            {
+                dataGridView1.DataSource = BindDeportWiseStatementOfSchoolSPLHireTouristPassPinkTicketEarning();
+            }
+
 
         }
 
+      
         private void ResetOnClick(object sender, EventArgs e)
         {
             dataGridView1.DataSource = BindDeportWiseStatementOfSchoolSPLHireTouristPassPinkTicketEarning();
@@ -195,7 +197,9 @@ namespace OperationalStatisticsBook
 
         private void DeportWiseStatementOfSchoolSPLHireTouristPassPinkTicketEarning_Load(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = BindDeportWiseStatementOfSchoolSPLHireTouristPassPinkTicketEarning();
+            ShowData();
+           // BindIndexPage(OsbId);
+           // dataGridView1.DataSource = BindDeportWiseStatementOfSchoolSPLHireTouristPassPinkTicketEarning();
         }
 
         private void PrintReportOnClick(object sender, EventArgs e)

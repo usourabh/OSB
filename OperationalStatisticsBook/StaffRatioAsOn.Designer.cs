@@ -56,21 +56,21 @@ namespace OperationalStatisticsBook
             // 
             // Save
             // 
-            this.Save.Location = new System.Drawing.Point(532, 415);
+            this.Save.Location = new System.Drawing.Point(512, 415);
             this.Save.Name = "Save";
-            this.Save.Size = new System.Drawing.Size(75, 32);
+            this.Save.Size = new System.Drawing.Size(95, 32);
             this.Save.TabIndex = 2;
-            this.Save.Text = "Save";
+            this.Save.Text = "Data Verified";
             this.Save.UseVisualStyleBackColor = true;
             this.Save.Click += new System.EventHandler(this.SaveOnClick);
             // 
             // Print_Report
             // 
-            this.Print_Report.Location = new System.Drawing.Point(451, 415);
+            this.Print_Report.Location = new System.Drawing.Point(414, 415);
             this.Print_Report.Name = "Print_Report";
-            this.Print_Report.Size = new System.Drawing.Size(75, 32);
+            this.Print_Report.Size = new System.Drawing.Size(92, 32);
             this.Print_Report.TabIndex = 3;
-            this.Print_Report.Text = "Print Report";
+            this.Print_Report.Text = "Generate Pdf";
             this.Print_Report.UseVisualStyleBackColor = true;
             this.Print_Report.Click += new System.EventHandler(this.PrintReportOnClick);
             // 

@@ -41,12 +41,12 @@ namespace OperationalStatisticsBook
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(3, 2);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(795, 353);
+            this.dataGridView1.Size = new System.Drawing.Size(795, 398);
             this.dataGridView1.TabIndex = 0;
             // 
             // Reset
             // 
-            this.Reset.Location = new System.Drawing.Point(723, 361);
+            this.Reset.Location = new System.Drawing.Point(713, 415);
             this.Reset.Name = "Reset";
             this.Reset.Size = new System.Drawing.Size(75, 23);
             this.Reset.TabIndex = 1;
@@ -56,21 +56,21 @@ namespace OperationalStatisticsBook
             // 
             // Save
             // 
-            this.Save.Location = new System.Drawing.Point(619, 360);
+            this.Save.Location = new System.Drawing.Point(621, 415);
             this.Save.Name = "Save";
-            this.Save.Size = new System.Drawing.Size(75, 23);
+            this.Save.Size = new System.Drawing.Size(86, 23);
             this.Save.TabIndex = 2;
-            this.Save.Text = "Save";
+            this.Save.Text = "Data Verified";
             this.Save.UseVisualStyleBackColor = true;
             this.Save.Click += new System.EventHandler(this.SaveOnClick);
             // 
             // Print_Report
             // 
-            this.Print_Report.Location = new System.Drawing.Point(538, 360);
+            this.Print_Report.Location = new System.Drawing.Point(521, 415);
             this.Print_Report.Name = "Print_Report";
-            this.Print_Report.Size = new System.Drawing.Size(75, 23);
+            this.Print_Report.Size = new System.Drawing.Size(83, 23);
             this.Print_Report.TabIndex = 3;
-            this.Print_Report.Text = "Print Report";
+            this.Print_Report.Text = "Generate Pdf";
             this.Print_Report.UseVisualStyleBackColor = true;
             this.Print_Report.Click += new System.EventHandler(this.Print_ReportOnClick);
             // 

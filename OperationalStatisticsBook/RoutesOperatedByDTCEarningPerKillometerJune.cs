@@ -22,7 +22,33 @@ namespace OperationalStatisticsBook
         string finYear = "";
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["dtOperation"].ConnectionString);
 
+        void BindIndexPage(int OsbId)
+        {
 
+            try
+            {
+                DataTable dt = new DataTable();
+                SqlCommand cmd = new SqlCommand("SELECT [EPK],[Param1],[Param2],[Param3],[Param4] ,[Param5],[Param6],[Param7],[Param8],[Param9],[Param10],[Param11],[Param12],[Param13],[Param14] FROM [rpt].[tbl_RoutesOperatedByDTCEarningPerKillometerJune] where OsbId=@OsbId", con);
+                cmd.Parameters.AddWithValue("@OsbId", OsbId);
+                cmd.CommandType = CommandType.Text;
+                SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                sda.Fill(dt);
+                if (dt.Rows.Count > 0)
+                {
+                    dataGridView1.DataSource = dt;
+                    Save.BackColor = Color.Green;
+                }
+                else
+                {
+                    dataGridView1.DataSource = BindRoutesOperatedByDTCEarningPerKillometerJune();
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+        }
         public RoutesOperatedByDTCEarningPerKillometerJune(int OsbId, int Year, int Month, string finYear, string MonthName)
         {
             InitializeComponent();
@@ -122,7 +148,7 @@ namespace OperationalStatisticsBook
             return table;
         }
             
-            private void ResetOnClick(object sender, EventArgs e)
+        private void ResetOnClick(object sender, EventArgs e)
         {
 
             dataGridView1.DataSource = BindRoutesOperatedByDTCEarningPerKillometerJune();
@@ -173,7 +199,8 @@ namespace OperationalStatisticsBook
 
         private void RoutesOperatedByDTCEarningPerKillometerJune_Load(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = BindRoutesOperatedByDTCEarningPerKillometerJune();
+            BindIndexPage(OsbId);
+           // dataGridView1.DataSource = BindRoutesOperatedByDTCEarningPerKillometerJune();
         }
 
         private void PrintReportOnClick(object sender, EventArgs e)
