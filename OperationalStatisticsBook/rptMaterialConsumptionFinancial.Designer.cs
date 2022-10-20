@@ -31,26 +31,13 @@ namespace OperationalStatisticsBook
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.tbl_MaterialConsumptionFromBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dtcoperationDataSet = new OperationalStatisticsBook.dtcoperationDataSet();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.tbl_MaterialConsumptionFromTableAdapter = new OperationalStatisticsBook.dtcoperationDataSetTableAdapters.tbl_MaterialConsumptionFromTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.tbl_MaterialConsumptionFromBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtcoperationDataSet)).BeginInit();
             this.SuspendLayout();
-            // 
-            // reportViewer1
-            // 
-            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource1.Name = "MaterialConsumptionFinancial";
-            reportDataSource1.Value = this.tbl_MaterialConsumptionFromBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "OperationalStatisticsBook.rptMaterialConsumptionFinancial.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(800, 450);
-            this.reportViewer1.TabIndex = 0;
             // 
             // tbl_MaterialConsumptionFromBindingSource
             // 
@@ -62,6 +49,19 @@ namespace OperationalStatisticsBook
             this.dtcoperationDataSet.DataSetName = "dtcoperationDataSet";
             this.dtcoperationDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // reportViewer1
+            // 
+            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            reportDataSource1.Name = "MaterialConsumptionFinancial";
+            reportDataSource1.Value = this.tbl_MaterialConsumptionFromBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "OperationalStatisticsBook.rptMaterialConsumptionFinancial.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.ServerReport.BearerToken = null;
+            this.reportViewer1.Size = new System.Drawing.Size(804, 594);
+            this.reportViewer1.TabIndex = 0;
+            // 
             // tbl_MaterialConsumptionFromTableAdapter
             // 
             this.tbl_MaterialConsumptionFromTableAdapter.ClearBeforeFill = true;
@@ -70,7 +70,7 @@ namespace OperationalStatisticsBook
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(804, 594);
             this.Controls.Add(this.reportViewer1);
             this.Name = "rptMaterialConsumptionFinancial";
             this.Text = "rptMaterialConsumptionFinancial";

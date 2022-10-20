@@ -52,14 +52,15 @@ namespace OperationalStatisticsBook
             // 
             // reportViewer1
             // 
+            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             reportDataSource1.Name = "DWODTripsScheduledOperated";
             reportDataSource1.Value = this.tbl_DepotWiseOprationalDataRespectNonALowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021FleetItsUtillizationBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "OperationalStatisticsBook.rptDWODTripsScheduledOperated.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(12, 12);
+            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(776, 237);
+            this.reportViewer1.Size = new System.Drawing.Size(804, 594);
             this.reportViewer1.TabIndex = 0;
             // 
             // tbl_DepotWiseOprationalDataRespectNonALowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021FleetItsUtillizationTableAdapter
@@ -70,7 +71,7 @@ namespace OperationalStatisticsBook
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 252);
+            this.ClientSize = new System.Drawing.Size(804, 594);
             this.Controls.Add(this.reportViewer1);
             this.Name = "rptDWODTripsScheduledOperated";
             this.Text = "rptDWODTripsScheduledOperated";

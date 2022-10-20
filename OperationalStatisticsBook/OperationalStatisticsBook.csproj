@@ -56,6 +56,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -407,6 +408,12 @@
     <Compile Include="rptDWSPLHireTouristPassPinkTicketEarning.Designer.cs">
       <DependentUpon>rptDWSPLHireTouristPassPinkTicketEarning.cs</DependentUpon>
     </Compile>
+    <Compile Include="rptFleetUtilization.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rptFleetUtilization.Designer.cs">
+      <DependentUpon>rptFleetUtilization.cs</DependentUpon>
+    </Compile>
     <Compile Include="rptfrmPerformanceofDTCGlance.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -649,6 +656,9 @@
     <EmbeddedResource Include="rptDWODFCMSFleetItsUtilization.rdlc" />
     <EmbeddedResource Include="rptDWODFCMSFleetItsUtilization.resx">
       <DependentUpon>rptDWODFCMSFleetItsUtilization.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptFleetUtilization.resx">
+      <DependentUpon>rptFleetUtilization.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="rptfrmPerformanceofDTCGlance.rdlc" />
     <EmbeddedResource Include="rptfrmPerformanceofDTCGlance.resx">

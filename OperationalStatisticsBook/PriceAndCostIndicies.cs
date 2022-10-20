@@ -71,8 +71,8 @@ namespace OperationalStatisticsBook
             table.Columns.Add("CPKM (P) ", typeof(string));
             table.Columns.Add("Indicies    ", typeof(string));
             //Rows data
-            table.Rows.Add("", "Fuel-Lubricant", "Fuel-Lubricant", "Fuel-Lubricant", "Fuel-Lubricant", "Tyres,Tubes & Retd. Material", "Tyres,Tubes & Retd. Material", "Tyres,Tubes & Retd. Material", "Tyres,Tubes & Retd. Material");
-            table.Rows.Add("1", "2", "3", "4", "5", "6", "7", "8", "9");
+           // table.Rows.Add("", "Fuel-Lubricant", "Fuel-Lubricant", "Fuel-Lubricant", "Fuel-Lubricant", "Tyres,Tubes & Retd. Material", "Tyres,Tubes & Retd. Material", "Tyres,Tubes & Retd. Material", "Tyres,Tubes & Retd. Material");
+            //table.Rows.Add("1", "2", "3", "4", "5", "6", "7", "8", "9");
             DateTime currentDate = new DateTime(Year, Month, 01);
             DateTime newDate = currentDate.AddYears(1);
             DateTime newDate2 = currentDate.AddYears(+2);
@@ -135,12 +135,15 @@ namespace OperationalStatisticsBook
         private void PriceAndCostIndicies_Load(object sender, EventArgs e)
         {
             ShowData();
-           // dataGridView1.DataSource = BindPriceAndCostIndicies();
+            //dataGridView1.DataSource = BindPriceAndCostIndicies();
            // BindIndexPage(OsbId);
         }
 
         private void PrintReportOnClick(object sender, EventArgs e)
         {
+
+            rptPriceAndCostIndicies objFrm = new rptPriceAndCostIndicies(OsbId, Year, Month, finYear, MonthName);
+            objFrm.Show();
 
         }
     }

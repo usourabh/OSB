@@ -96,3 +96,4 @@ D:\OSB\OperationalStatisticsBook\obj\Debug\OperationalStatisticsBook.csproj.Copy
 D:\OSB\OperationalStatisticsBook\obj\Debug\OperationalStatisticsBook.exe
 D:\OSB\OperationalStatisticsBook\obj\Debug\OperationalStatisticsBook.pdb
 D:\OSB\OperationalStatisticsBook\obj\Debug\OperationalStatisticsBook.csproj.AssemblyReference.cache
+D:\OSB\OperationalStatisticsBook\obj\Debug\OperationalStatisticsBook.rptFleetUtilization.resources
