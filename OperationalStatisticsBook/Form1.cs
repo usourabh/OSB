@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp1;
 
 namespace OperationalStatisticsBook
 {
@@ -208,6 +209,12 @@ namespace OperationalStatisticsBook
         private void grdIndexPage_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void OnClickPrintReport(object sender, EventArgs e)
+        {
+            rptIndexPrint objFrm = new rptIndexPrint(OsbId, Year, Month, finYear, MonthName);
+            objFrm.Show();
         }
     }
 }

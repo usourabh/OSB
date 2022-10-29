@@ -33,6 +33,7 @@ namespace OperationalStatisticsBook
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.btnupdateIndexPage = new System.Windows.Forms.Button();
+            this.PrintReport = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grdIndexPage)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -51,6 +52,7 @@ namespace OperationalStatisticsBook
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.PrintReport);
             this.groupBox2.Controls.Add(this.button1);
             this.groupBox2.Controls.Add(this.btnupdateIndexPage);
             this.groupBox2.Controls.Add(this.grdIndexPage);
@@ -81,6 +83,16 @@ namespace OperationalStatisticsBook
             this.btnupdateIndexPage.UseVisualStyleBackColor = true;
             this.btnupdateIndexPage.Click += new System.EventHandler(this.btnupdateIndexPage_Click);
             // 
+            // PrintReport
+            // 
+            this.PrintReport.Location = new System.Drawing.Point(355, 400);
+            this.PrintReport.Name = "PrintReport";
+            this.PrintReport.Size = new System.Drawing.Size(112, 23);
+            this.PrintReport.TabIndex = 8;
+            this.PrintReport.Text = "Generate Pdf";
+            this.PrintReport.UseVisualStyleBackColor = true;
+            this.PrintReport.Click += new System.EventHandler(this.OnClickPrintReport);
+            // 
             // frmOSBMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -101,6 +113,7 @@ namespace OperationalStatisticsBook
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnupdateIndexPage;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button PrintReport;
     }
 }
 
