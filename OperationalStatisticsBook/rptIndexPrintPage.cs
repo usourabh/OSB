@@ -8,13 +8,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace OperationalStatisticsBook
+namespace WindowsFormsApp1
 {
-    public partial class rptIndexPrintPage : Form
+    public partial class rptIndexPrint : Form
     {
-        public rptIndexPrintPage()
+        public rptIndexPrint()
         {
             InitializeComponent();
+        }
+
+        private void rptIndexPrint_Load(object sender, EventArgs e)
+        {
+
+            this.reportViewer1.RefreshReport();
         }
     }
 }

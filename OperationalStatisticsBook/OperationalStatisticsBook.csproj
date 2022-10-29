@@ -676,10 +676,10 @@
     <EmbeddedResource Include="rptfrmPerformanceofDTCGlance.resx">
       <DependentUpon>rptfrmPerformanceofDTCGlance.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="rptIndexPrintPage.rdlc" />
     <EmbeddedResource Include="rptIndexPrintPage.resx">
       <DependentUpon>rptIndexPrintPage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="rptIndexPrintPage.rdlc" />
     <EmbeddedResource Include="rptMaterialConsumptionFinancial.rdlc" />
     <EmbeddedResource Include="rptDWSPLHireTouristPassPinkTicketEarning.rdlc" />
     <EmbeddedResource Include="rptDWODTripsScheduledOperated.rdlc" />
