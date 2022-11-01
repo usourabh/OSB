@@ -1286,8 +1286,8 @@
         <DataSetName>rptAnalysisOfAccidentsByDriverGroup</DataSetName>
         <Top>0.76959in</Top>
         <Left>0.19792in</Left>
-        <Height>1.09375in</Height>
-        <Width>6.79042in</Width>
+        <Height>1.09376in</Height>
+        <Width>6.79044in</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1301,7 +1301,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Analyssis of Accidents by driver group</Value>
+                <Value>Analysis of Accidents by driver group</Value>
                 <Style>
                   <FontStyle>Normal</FontStyle>
                   <FontSize>12pt</FontSize>

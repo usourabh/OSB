@@ -9,7 +9,41 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>A SALIENT FEATURE</Value>
+                <Value>A SALIENT FEATURE </Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>TABLE-1.2</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>GROWTH OF BASIC STRUCTURE OF D.T.C.</Value>
                 <Style>
                   <FontStyle>Normal</FontStyle>
                   <FontSize>12pt</FontSize>
@@ -830,7 +864,7 @@
         <DataSetName>rptSalientFeatureGrowthBasicStructure</DataSetName>
         <Top>1.60196cm</Top>
         <Left>0.35842cm</Left>
-        <Height>2.19688cm</Height>
+        <Height>2.19687cm</Height>
         <Width>17.90569cm</Width>
         <ZIndex>1</ZIndex>
         <Style>

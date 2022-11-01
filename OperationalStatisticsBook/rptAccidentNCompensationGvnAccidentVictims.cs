@@ -50,6 +50,9 @@ namespace OperationalStatisticsBook
             ReportDataSource datasource = new ReportDataSource("rptAccidentNCompensationGvnAccidentVictims", dtReportData);
             this.reportViewer1.LocalReport.DataSources.Clear();
             this.reportViewer1.LocalReport.DataSources.Add(datasource);
+            ReportParameter[] rptParam = new ReportParameter[1];
+            rptParam[0] = new ReportParameter("ReportTitle", "(" + GlobalMaster.FinMaster[9].FinVal + " to " + GlobalMaster.FinMaster[0].FinVal + ")");
+            this.reportViewer1.LocalReport.SetParameters(rptParam);
             this.reportViewer1.RefreshReport();
         }
     }

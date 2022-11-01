@@ -52,6 +52,7 @@ namespace OperationalStatisticsBook
             // 
             // reportViewer1
             // 
+            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             reportDataSource1.Name = "rptDepotWiseOprationalDataRespectNonALowFloorCityNCRServiceOnlyForTheMonthOfJanua" +
     "ry2021FleetItsUtillization";
             reportDataSource1.Value = this.tbl_DepotWiseOprationalDataRespectNonALowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021FleetItsUtillizationBindingSource;
@@ -61,7 +62,7 @@ namespace OperationalStatisticsBook
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(801, 449);
+            this.reportViewer1.Size = new System.Drawing.Size(804, 594);
             this.reportViewer1.TabIndex = 0;
             // 
             // tbl_DepotWiseOprationalDataRespectNonALowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021FleetItsUtillizationTableAdapter

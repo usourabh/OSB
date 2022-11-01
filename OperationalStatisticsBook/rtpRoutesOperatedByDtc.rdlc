@@ -9,6 +9,23 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
+                <Value>Table 1.3</Value>
+                <Style>
+                  <FontStyle>Normal</FontStyle>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                  <TextDecoration>None</TextDecoration>
+                  <Color>#000000</Color>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
                 <Value>ROUTES OPERATED BY D.T.C.</Value>
                 <Style>
                   <FontSize>12pt</FontSize>

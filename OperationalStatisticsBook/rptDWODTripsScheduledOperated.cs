@@ -44,10 +44,14 @@ namespace OperationalStatisticsBook
         }
         private void rptDWODTripsScheduledOperated_Load(object sender, EventArgs e)
         {
+            var MonthList = GlobalMaster.GetPrevousMonthList(Month,Year,2);
             DataTable dtReportData = GetData();
             ReportDataSource datasource = new ReportDataSource("DWODTripsScheduledOperated", dtReportData);
             this.reportViewer1.LocalReport.DataSources.Clear();
             this.reportViewer1.LocalReport.DataSources.Add(datasource);
+            ReportParameter[] rptParam = new ReportParameter[1];
+            rptParam[0] = new ReportParameter("ReportTitle", MonthList[0].MonthName + "-" + MonthList[1].Year);
+            this.reportViewer1.LocalReport.SetParameters(rptParam);
             this.reportViewer1.RefreshReport();
         }
     }

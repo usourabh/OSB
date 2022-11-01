@@ -44,10 +44,18 @@ namespace OperationalStatisticsBook
 
         private void rptfrmPerformanceofDTCGlance_Load(object sender, EventArgs e)
         {
+            var MonthList = GlobalMaster.GetPrevousMonthList(Month, Year, 5);
             DataTable dtReportData = GetData();
             ReportDataSource datasource = new ReportDataSource("rptfrmPerformanceofDTCGlance", dtReportData);
             this.reportViewer1.LocalReport.DataSources.Clear();
             this.reportViewer1.LocalReport.DataSources.Add(datasource);
+            ReportParameter[] rptParam = new ReportParameter[5];
+            rptParam[0] = new ReportParameter("txtDate1", MonthList[4].MonthName + "-" + MonthList[4].Year);
+            rptParam[1] = new ReportParameter("txtDate2", MonthList[3].MonthName + "-" + MonthList[3].Year);
+            rptParam[2] = new ReportParameter("txtDate3", MonthList[2].MonthName + "-" + MonthList[2].Year);
+            rptParam[3] = new ReportParameter("txtDate4", MonthList[1].MonthName + "-" + MonthList[1].Year);
+            rptParam[4] = new ReportParameter("txtDate5", MonthList[0].MonthName + "-" + MonthList[0].Year);
+            this.reportViewer1.LocalReport.SetParameters(rptParam);
             this.reportViewer1.RefreshReport();
         }
     }
