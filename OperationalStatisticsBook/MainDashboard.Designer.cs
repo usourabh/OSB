@@ -39,12 +39,14 @@ namespace OperationalStatisticsBook
             this.SNO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ReportName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.frmName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PrintAllReport = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.PrintAllReport);
             this.groupBox1.Controls.Add(this.btnShow);
             this.groupBox1.Controls.Add(this.cbFinYear);
             this.groupBox1.Controls.Add(this.cbMonth);
@@ -175,6 +177,16 @@ namespace OperationalStatisticsBook
             this.frmName.ReadOnly = true;
             this.frmName.Visible = false;
             // 
+            // PrintAllReport
+            // 
+            this.PrintAllReport.Location = new System.Drawing.Point(648, 37);
+            this.PrintAllReport.Name = "PrintAllReport";
+            this.PrintAllReport.Size = new System.Drawing.Size(89, 24);
+            this.PrintAllReport.TabIndex = 6;
+            this.PrintAllReport.Text = "Print All Report";
+            this.PrintAllReport.UseVisualStyleBackColor = true;
+            this.PrintAllReport.Click += new System.EventHandler(this.PrintAllReportOnClick);
+            // 
             // MainDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -204,5 +216,6 @@ namespace OperationalStatisticsBook
         private System.Windows.Forms.DataGridViewTextBoxColumn SNO;
         private System.Windows.Forms.DataGridViewTextBoxColumn ReportName;
         private System.Windows.Forms.DataGridViewTextBoxColumn frmName;
+        private System.Windows.Forms.Button PrintAllReport;
     }
 }

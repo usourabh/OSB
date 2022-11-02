@@ -10,6 +10,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp1;
 
 namespace OperationalStatisticsBook
 {
@@ -389,6 +390,13 @@ namespace OperationalStatisticsBook
                     objFrm.Show();
                 }
             }
+        }
+
+        private void PrintAllReportOnClick(object sender, EventArgs e)
+        {
+
+            PrintWholePdf objFrm = new PrintWholePdf(OsbId, Year, Month, FinYear, MonthName);
+            objFrm.Show();
         }
     }
 }
