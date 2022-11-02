@@ -107,7 +107,6 @@ D:\AJEEVI\OSB\OperationalStatisticsBook\bin\Debug\Microsoft.VisualStudio.OLE.Int
 D:\AJEEVI\OSB\OperationalStatisticsBook\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.dll
 D:\AJEEVI\OSB\OperationalStatisticsBook\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.8.0.dll
 D:\AJEEVI\OSB\OperationalStatisticsBook\bin\Debug\Microsoft.MSXML.dll
-D:\AJEEVI\OSB\OperationalStatisticsBook\obj\Debug\OperationalStatisticsBook.csproj.AssemblyReference.cache
 D:\AJEEVI\OSB\OperationalStatisticsBook\obj\Debug\OperationalStatisticsBook.AccidentAnalysisForTheMonth.resources
 D:\AJEEVI\OSB\OperationalStatisticsBook\obj\Debug\OperationalStatisticsBook.AccidentAnalysisOtherPartyInvolvment.resources
 D:\AJEEVI\OSB\OperationalStatisticsBook\obj\Debug\OperationalStatisticsBook.AccidentNCompensationGvnAccidentVictims.resources

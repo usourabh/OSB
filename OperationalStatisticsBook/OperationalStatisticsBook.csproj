@@ -113,6 +113,42 @@
     <Compile Include="analysisOfCausesAccidents.Designer.cs">
       <DependentUpon>analysisOfCausesAccidents.cs</DependentUpon>
     </Compile>
+    <Compile Include="BarEarningPerBusPerDay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BarEarningPerBusPerDay.Designer.cs">
+      <DependentUpon>BarEarningPerBusPerDay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BarFleetNUtilization.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BarFleetNUtilization.Designer.cs">
+      <DependentUpon>BarFleetNUtilization.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BarKilometersefficiency.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BarKilometersefficiency.Designer.cs">
+      <DependentUpon>BarKilometersefficiency.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BarOperationalRatio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BarOperationalRatio.Designer.cs">
+      <DependentUpon>BarOperationalRatio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BarPassengerInCarried.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BarPassengerInCarried.Designer.cs">
+      <DependentUpon>BarPassengerInCarried.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BarTrafficEarninginCrore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BarTrafficEarninginCrore.Designer.cs">
+      <DependentUpon>BarTrafficEarninginCrore.cs</DependentUpon>
+    </Compile>
     <Compile Include="CategorywiseStaffPositionAsOn.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -270,6 +306,18 @@
     </Compile>
     <Compile Include="PerformanceMetopolitanTransportUndertaking.Designer.cs">
       <DependentUpon>PerformanceMetopolitanTransportUndertaking.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PieExpenditureForTheMonthOf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PieExpenditureForTheMonthOf.Designer.cs">
+      <DependentUpon>PieExpenditureForTheMonthOf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PieTrafficEarningForTheMonthOf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PieTrafficEarningForTheMonthOf.Designer.cs">
+      <DependentUpon>PieTrafficEarningForTheMonthOf.cs</DependentUpon>
     </Compile>
     <Compile Include="PriceAndCostIndicies.cs">
       <SubType>Form</SubType>
@@ -583,6 +631,24 @@
     <EmbeddedResource Include="analysisOfCausesAccidents.resx">
       <DependentUpon>analysisOfCausesAccidents.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BarEarningPerBusPerDay.resx">
+      <DependentUpon>BarEarningPerBusPerDay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BarFleetNUtilization.resx">
+      <DependentUpon>BarFleetNUtilization.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BarKilometersefficiency.resx">
+      <DependentUpon>BarKilometersefficiency.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BarOperationalRatio.resx">
+      <DependentUpon>BarOperationalRatio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BarPassengerInCarried.resx">
+      <DependentUpon>BarPassengerInCarried.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BarTrafficEarninginCrore.resx">
+      <DependentUpon>BarTrafficEarninginCrore.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CategorywiseStaffPositionAsOn.resx">
       <DependentUpon>CategorywiseStaffPositionAsOn.cs</DependentUpon>
     </EmbeddedResource>
@@ -617,6 +683,13 @@
     <EmbeddedResource Include="PerformanceMetopolitanTransportUndertaking.resx">
       <DependentUpon>PerformanceMetopolitanTransportUndertaking.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PieExpenditureForTheMonthOf.resx">
+      <DependentUpon>PieExpenditureForTheMonthOf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PieTrafficEarningForTheMonthOf.resx">
+      <DependentUpon>PieTrafficEarningForTheMonthOf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintWholePdf.rdlc" />
     <EmbeddedResource Include="rptAccidentAnalysisForTheMonth.rdlc" />
     <EmbeddedResource Include="rptAccidentAnalysisForTheMonth.resx">
       <DependentUpon>rptAccidentAnalysisForTheMonth.cs</DependentUpon>
