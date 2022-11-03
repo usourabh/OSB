@@ -357,7 +357,103 @@ namespace OperationalStatisticsBook
             return dt;
         }
 
+        // Accident Analysis by other party involvement 
 
+        public DataTable GetDataAccidentAnalysisOtherPartyInvolvment_Page30_tbl2(int OsbId)
+        {
+            String[,] param = new string[,]
+                   {
+                   {"@OsbId",OsbId.ToString()},
+                };
+            DataTable dt = Common.ExecuteProcedure("sp_rptAccidentAnalysisOtherPartyInvolvment", param);
+            return dt;
+        }
+
+
+        // Analysis of accidents by driver group 
+
+        public DataTable GetDataAnalysisOfAccidentsByDriverGroup_Page30_tbl3(int OsbId)
+        {
+            String[,] param = new string[,]
+                   {
+                   {"@OsbId",OsbId.ToString()},
+                };
+            DataTable dt = Common.ExecuteProcedure("sp_rptAnalysisOfAccidentsByDriverGroup", param);
+            return dt;
+        }
+
+        // Statement of passes for the month of
+
+        public DataTable GetDataStatementOfForTheMonthOfPasses_Page31n32(int OsbId)
+        {
+            String[,] param = new string[,]
+                   {
+                   {"@OsbId",OsbId.ToString()},
+                };
+            DataTable dt = Common.ExecuteProcedure("sp_rptStatementOfForTheMonthOfPasses", param);
+            return dt;
+        }
+
+        //  depot wise statment of school buses ,spl hire, tourist, pass and pink ticket earning
+
+        public DataTable GetDataDWSPLHireTouristPassPinkTicketEarning_Page33n34(int OsbId)
+        {
+            String[,] param = new string[,]
+                   {
+                   {"@OsbId",OsbId.ToString()},
+                };
+            DataTable dt = Common.ExecuteProcedure("sp_rptDeportWiseStatementOfSchoolSPLHireTouristPassPinkTicketEarning", param);
+            return dt;
+        }
+
+
+        // Statement showing operational data of ncr cng services of the corporation
+        public DataTable GetDataDWSPLHireTouristPassPinkTicketEarning_Page35(int OsbId)
+        {
+            String[,] param = new string[,]
+                   {
+                   {"@OsbId",OsbId.ToString()},
+                };
+            DataTable dt = Common.ExecuteProcedure("sp_rptStatementShowingOperationalDataOfNcrCngServicesOfTheCorporation", param);
+            return dt;
+        }
+
+
+        // Depot wise operational data of FCMS (cluster buses) Fleet and its utilization
+
+        public DataTable GetDataDWODFCMSFleetItsUtilization_Page36_tbl1(int OsbId)
+        {
+            String[,] param = new string[,]
+                   {
+                   {"@OsbId",OsbId.ToString()},
+                };
+            DataTable dt = Common.ExecuteProcedure("sp_DWODFCMSFleetItsUtilization", param);
+            return dt;
+        }
+
+        // Depot wise operational data of FCMS (cluster buses) Traffic Income
+
+        public DataTable GetDataDWODFCMSTrafficIncome_Page36_tbl2(int OsbId)
+        {
+            String[,] param = new string[,]
+                   {
+                   {"@OsbId",OsbId.ToString()},
+                };
+            DataTable dt = Common.ExecuteProcedure("sp_rptDepotwiseOperationalDataFCMSCluster_busesTrafficIncome", param);
+            return dt;
+        }
+
+        // Statement Showing The Income Expewditure In Respect Of City NCR Foreign Bus Service 
+
+        public DataTable GetDataStatShowingIncomeNExpenditureRespectFBS_Page36(int OsbId)
+        {
+            String[,] param = new string[,]
+                   {
+                   {"@OsbId",OsbId.ToString()},
+                };
+            DataTable dt = Common.ExecuteProcedure("sp_rptStatementShowingTheRsInRespectOfCityNCRForeignBusServiceIncomeExpewditureJune2022InLakhs", param);
+            return dt;
+        }
 
 
 

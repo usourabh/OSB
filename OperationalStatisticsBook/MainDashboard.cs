@@ -401,8 +401,23 @@ namespace OperationalStatisticsBook
 
         private void PrintAllReportOnClick(object sender, EventArgs e)
         {
+            if (cbFinYear.Text != "" && cbMonth.Text != "")
+            {
+                this.FinYear = cbFinYear.Text;
+                this.Month = GlobalMaster.GetMonthNumber(cbMonth.Text);
+                this.MonthName = cbMonth.Text;
+                if (Month <= 3)
+                    this.Year = (Convert.ToInt32(cbFinYear.Text.Split('-')[1]) + 2000);
+                else
+                    this.Year = (Convert.ToInt32(cbFinYear.Text.Split('-')[0]));
 
-            GetSinglePagePDF();
+                OsbId = GetOsbId(cbFinYear.Text, cbMonth.Text, Year);
+                GetFinMaster(cbFinYear.Text);
+                GetSinglePagePDF();
+
+            }
+            else
+                MessageBox.Show("Pls Select Fin Year and Month");
         }
 
 
@@ -442,21 +457,27 @@ namespace OperationalStatisticsBook
             lstByte.Add(byarry3);
 
 
-            // STAFF RATIO
+            //// STAFF RATIO
 
-            string Page3ReportName1 = "rptStaffRatioAsOn.rdlc";
-            string Page3DataSourceName1 = "rptStaffRatioAsOn";
-            DataTable Page3Data1 = objPageData.GetDataStaffRatio_Page3_tbl1(this.OsbId, this.Year, this.Month);
-            byte[] byarry4 = GenerateReport(Page3ReportName1, null, Page3DataSourceName1, Page3Data1);
-            lstByte.Add(byarry4);
+            //string Page3ReportName1 = "rptStaffRatioAsOn.rdlc";
+            //string Page3DataSourceName1 = "rptStaffRatioAsOn";
+            //DataTable Page3Data1 = objPageData.GetDataStaffRatio_Page3_tbl1(this.OsbId, this.Year, this.Month);
+            //ReportParameter[] rptParam = new ReportParameter[1];
+            //rptParam[0] = new ReportParameter("ReportTitle", MonthList[0].MonthName + "-" + MonthList[1].Year);
+            //byte[] byarry4 = GenerateReport(Page3ReportName1, rptParam, Page3DataSourceName1, Page3Data1);
+            //lstByte.Add(byarry4);
 
 
-            // ANALYSIS OF CAUSES ACCIDENTS FROM
+            //// ANALYSIS OF CAUSES ACCIDENTS FROM
 
             string Page3ReportName2 = "rptanalysisOfCausesAccidents.rdlc";
             string Page3DataSourceName2 = "rptanalysisOfCausesAccidents";
             DataTable Page3Data2 = objPageData.GetDataAnalysisCausesAccidents_Page3_tbl2(this.OsbId);
-            byte[] byarry5 = GenerateReport(Page3ReportName2, null, Page3DataSourceName2, Page3Data2);
+            ReportParameter[] rptParam = new ReportParameter[3];
+            rptParam[0] = new ReportParameter("ReportTitle", GlobalMaster.FinMaster[1].FinVal + " To " + GlobalMaster.FinMaster[0].FinVal);
+            rptParam[1] = new ReportParameter("txtFrom", GlobalMaster.FinMaster[1].FinVal);
+            rptParam[2] = new ReportParameter("txtTo", GlobalMaster.FinMaster[0].FinVal);
+            byte[] byarry5 = GenerateReport(Page3ReportName2, rptParam, Page3DataSourceName2, Page3Data2);
             lstByte.Add(byarry5);
 
 
@@ -646,20 +667,72 @@ namespace OperationalStatisticsBook
             string Page30ReportName1 = "rptComparativeAnalysisOfCausesOfAccidents.rdlc";
             string Page30DataSourceName1 = "rptComparativeAnalysisOfCausesOfAccidents";
             DataTable Page30Data1 = objPageData.GetDataComparativeAnalysisOfCausesOfAccidentsMonthly_Page30(this.OsbId);
-            byte[] byarry30 = GenerateReport(Page30ReportName1, null, Page30DataSourceName1, Page30Data1);
+            byte[] byarry28 = GenerateReport(Page30ReportName1, null, Page30DataSourceName1, Page30Data1);
+            lstByte.Add(byarry28);
+
+            // Accident Analysis by other party involvement 
+
+            string Page30ReportName2 = "rptAccidentAnalysisOtherPartyInvolvment.rdlc";
+            string Page30DataSourceName2 = "rptAccidentAnalysisOtherPartyInvolvment";
+            DataTable Page30Data2 = objPageData.GetDataAccidentAnalysisOtherPartyInvolvment_Page30_tbl2(this.OsbId);
+            byte[] byarry29 = GenerateReport(Page30ReportName2, null, Page30DataSourceName2, Page30Data2);
+            lstByte.Add(byarry29);
+
+            // Analysis of accidents by driver group 
+
+            string Page30ReportName3 = "rptAnalysisOfAccidentsByDriverGroup.rdlc";
+            string Page30DataSourceName3 = "rptAnalysisOfAccidentsByDriverGroup";
+            DataTable Page30Data3 = objPageData.GetDataAnalysisOfAccidentsByDriverGroup_Page30_tbl3(this.OsbId);
+            byte[] byarry30 = GenerateReport(Page30ReportName3, null, Page30DataSourceName3, Page30Data3);
             lstByte.Add(byarry30);
 
+            // Statement of passes for the month of
 
+            string Page31n32ReportName = "rptStatementOfForTheMonthOfPasses.rdlc";
+            string Page31n32DataSourceName = "rptStatementOfForTheMonthOfPasses";
+            DataTable Page31n32Data = objPageData.GetDataStatementOfForTheMonthOfPasses_Page31n32(this.OsbId);
+            byte[] byarry31 = GenerateReport(Page31n32ReportName, null, Page31n32DataSourceName, Page31n32Data);
+            lstByte.Add(byarry31);
 
+            // depot wise statment of school buses ,spl hire, tourist, pass and pink ticket earning
 
+            string Page33n34ReportName = "rptDWSPLHireTouristPassPinkTicketEarning.rdlc";
+            string Page33n34DataSourceName = "DWSPLHireTouristPassPinkTicketEarning";
+            DataTable Page33n34Data = objPageData.GetDataDWSPLHireTouristPassPinkTicketEarning_Page33n34(this.OsbId);
+            byte[] byarry32 = GenerateReport(Page33n34ReportName, null, Page33n34DataSourceName, Page33n34Data);
+            lstByte.Add(byarry32);
 
+            // Statement showing operational data of ncr cng services of the corporation
 
+            string Page35ReportName = "rptStatementShowingOperationalDataOfNcrCngServicesOfTheCorporation.rdlc";
+            string Page35DataSourceName = "rptStatementShowingOperationalDataOfNcrCngServicesOfTheCorporation";
+            DataTable Page35Data = objPageData.GetDataDWSPLHireTouristPassPinkTicketEarning_Page35(this.OsbId);
+            byte[] byarry33 = GenerateReport(Page35ReportName, null, Page35DataSourceName, Page35Data);
+            lstByte.Add(byarry33);
 
+            // Depot wise operational data of FCMS (cluster buses) Fleet and its utilization
 
+            string Page36ReportName1 = "rptDWODFCMSFleetItsUtilization.rdlc";
+            string Page36DataSourceName1 = "DWODFCMSFleetItsUtilization";
+            DataTable Page36Data1 = objPageData.GetDataDWODFCMSFleetItsUtilization_Page36_tbl1(this.OsbId);
+            byte[] byarry35 = GenerateReport(Page36ReportName1, null, Page36DataSourceName1, Page36Data1);
+            lstByte.Add(byarry35);
 
+            // Depot wise operational data of FCMS (cluster buses) Traffic income
 
+            string Page36ReportName2 = "rptDepotwiseOperationalDataFCMSCluster_busesTrafficIncome.rdlc";
+            string Page36DataSourceName2 = "rptDepotwiseOperationalDataFCMSCluster_busesTrafficIncome";
+            DataTable Page36Data2 = objPageData.GetDataDWODFCMSTrafficIncome_Page36_tbl2(this.OsbId);
+            byte[] byarry36 = GenerateReport(Page36ReportName2, null, Page36DataSourceName2, Page36Data2);
+            lstByte.Add(byarry36);
 
+            // Statement Showing The Income Expewditure In Respect Of City NCR Foreign Bus Service 
 
+            string Page37ReportName = "rptStatementShowingTheRsInRespectOfCityNCRForeignBusServiceIncomeExpewditureJune2022InLakhs.rdlc";
+            string Page37DataSourceName = "rptStatementShowingTheRsInRespectOfCityNCRForeignBusServiceIncomeExpewditureJune2022InLakhs";
+            DataTable Page37Data = objPageData.GetDataStatShowingIncomeNExpenditureRespectFBS_Page36(this.OsbId);
+            byte[] byarry37 = GenerateReport(Page37ReportName, null, Page37DataSourceName, Page37Data);
+            lstByte.Add(byarry37);
 
 
 
