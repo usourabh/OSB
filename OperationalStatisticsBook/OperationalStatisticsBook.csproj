@@ -48,6 +48,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="itextsharp, Version=5.5.13.1, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.1\lib\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1537.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
     </Reference>
@@ -101,6 +104,7 @@
     <Compile Include="AccidentNCompensationGvnAccidentVictims.Designer.cs">
       <DependentUpon>AccidentNCompensationGvnAccidentVictims.cs</DependentUpon>
     </Compile>
+    <Compile Include="AllPageDataContext.cs" />
     <Compile Include="AnalysisOfAccidentsByDriverGroup.cs">
       <SubType>Form</SubType>
     </Compile>

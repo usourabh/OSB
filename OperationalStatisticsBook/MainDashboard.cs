@@ -1,16 +1,23 @@
-﻿using System;
+﻿using iTextSharp.text;
+using iTextSharp.text.pdf;
+using Microsoft.Reporting.Map.WebForms.BingMaps;
+using Microsoft.Reporting.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp1;
+using Warning = Microsoft.Reporting.WinForms.Warning;
 
 namespace OperationalStatisticsBook
 {
@@ -71,7 +78,7 @@ namespace OperationalStatisticsBook
             }
 
         }
-        int GetOsbId(string FinYear, string _month,int _year)
+        int GetOsbId(string FinYear, string _month, int _year)
         {
             int i = 0;
             SqlCommand cmd = new SqlCommand("[rpt].[sp_GetReportId]", con);
@@ -163,7 +170,7 @@ namespace OperationalStatisticsBook
             dt.Rows.Add("", "Depot wise operational data of FCMS Fleet & its utiuzation", "DWODFCMSFleetItsUtilization");
             dt.Rows.Add("", "", "");
             dt.Rows.Add(" ", "Fleet Utilization July -2021 to July-2022 ", "rptFleetUtilization");
-           
+
 
             return dt;
 
@@ -395,8 +402,108 @@ namespace OperationalStatisticsBook
         private void PrintAllReportOnClick(object sender, EventArgs e)
         {
 
-            PrintWholePdf objFrm = new PrintWholePdf(OsbId, Year, Month, FinYear, MonthName);
-            objFrm.Show();
+            GetSinglePagePDF();
         }
+
+
+
+        private void GetSinglePagePDF()
+        {
+            AllPageDataContext objPageData = new AllPageDataContext();
+            List<byte[]> lstByte = new List<byte[]>();
+
+
+            #region GetPagePdfs
+            string Page1ReportName = "rptIndexPrintPage.rdlc";
+            string Page1DataSourceName = "rptIndexPrintPage";
+            DataTable Page1Data = objPageData.GetIndexPageData_Page1(this.OsbId);
+            byte[] byarry1 = GenerateReport(Page1ReportName, null, Page1DataSourceName, Page1Data);
+            lstByte.Add(byarry1);
+
+            //string Page2ReportName = "rptIndexPrintPage.rdlc";
+            //string Page2DataSourceName = "rptIndexPrintPage";
+            //DataTable Page2Data = objPageData.GetIndexPageData_Page1(this.OsbId);
+            //byte[] byarry2 = GenerateReport(Page1ReportName, null, Page1DataSourceName, Page1Data);
+            //lstByte.Add(byarry2);
+
+            #endregion
+
+
+
+            PdfReader reader = null;
+            Document sourceDocument = null;
+            PdfCopy pdfCopyProvider = null;
+            PdfImportedPage importedPage;
+            string outputPdfPath = @"D:/newFile.pdf";
+
+            sourceDocument = new Document();
+            pdfCopyProvider = new PdfCopy(sourceDocument, new System.IO.FileStream(outputPdfPath, System.IO.FileMode.Create));
+
+            //output file Open  
+            sourceDocument.Open();
+
+
+            //files list wise Loop  
+            for (int f = 0; f < lstByte.Count; f++)
+            {
+                int pages = 1;
+
+                reader = new PdfReader(lstByte[f]);
+                //Add pages in new file  
+                for (int i = 1; i <= pages; i++)
+                {
+                    importedPage = pdfCopyProvider.GetImportedPage(reader, i);
+                    pdfCopyProvider.AddPage(importedPage);
+                }
+
+                reader.Close();
+            }
+            //save the output file  
+            sourceDocument.Close();
+        }
+
+        private byte[] GenerateReport(string rdlcReportName, ReportParameter[] rptParam, string DataSourceName, DataTable dtReportData)
+        {
+            ReportViewer rdsAPP = new ReportViewer();
+
+            ReportDataSource datasource = new ReportDataSource(DataSourceName, dtReportData);
+            rdsAPP.LocalReport.ReportPath = rdlcReportName;
+            rdsAPP.LocalReport.DataSources.Clear();
+            rdsAPP.LocalReport.DataSources.Add(datasource);
+            if (rptParam != null)
+                if (rptParam.Count() > 0)
+                    rdsAPP.LocalReport.SetParameters(rptParam);
+
+            byte[] fByte = ConvertReportToPDF(rdsAPP.LocalReport);
+
+            return fByte;
+        }
+
+
+
+        private byte[] ConvertReportToPDF(LocalReport rep)
+        {
+            string reportType = "PDF";
+            string mimeType;
+            string encoding;
+
+            string deviceInfo = "<DeviceInfo>" +
+               "  <OutputFormat>PDF</OutputFormat>" +
+               "  <PageWidth>8.27in</PageWidth>" +
+               "  <PageHeight>6.0in</PageHeight>" +
+               "  <MarginTop>0.2in</MarginTop>" +
+               "  <MarginLeft>0.2in</MarginLeft>" +
+               "  <MarginRight>0.2in</MarginRight>" +
+               "  <MarginBottom>0.2in</MarginBottom>" +
+               "</DeviceInfo>";
+
+            Warning[] warnings;
+            string[] streamIds;
+            string extension = string.Empty;
+
+            byte[] bytes = rep.Render(reportType, deviceInfo, out mimeType, out encoding, out extension, out streamIds, out warnings);
+            return bytes;
+        }
+
     }
 }
