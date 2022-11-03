@@ -45,6 +45,8 @@ namespace OperationalStatisticsBook
         }
         private void rptRoutesOperatedByDtc_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'dtcoperationDataSet.tbl_RoutesOperatedByDtc' table. You can move, or remove it, as needed.
+            this.tbl_RoutesOperatedByDtcTableAdapter.Fill(this.dtcoperationDataSet.tbl_RoutesOperatedByDtc);
             DataTable dtReportData = GetData();
             ReportDataSource datasource = new ReportDataSource("rptRoutesOperatedByDtc", dtReportData);
             this.reportViewer1.LocalReport.DataSources.Clear();

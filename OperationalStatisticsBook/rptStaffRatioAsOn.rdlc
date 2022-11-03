@@ -75,19 +75,19 @@
                   <Width>0.91319in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.95486in</Width>
+                  <Width>1.10069in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.96875in</Width>
+                  <Width>1.04167in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1in</Width>
+                  <Width>1.07292in</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>1.125in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1in</Width>
+                  <Width>0.70833in</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>0.91319in</Width>
@@ -95,7 +95,7 @@
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>0.25in</Height>
+                  <Height>0.5in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -149,7 +149,7 @@
                                 </TextRun>
                               </TextRuns>
                               <Style>
-                                <TextAlign>Right</TextAlign>
+                                <TextAlign>Left</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -184,7 +184,7 @@
                                 </TextRun>
                               </TextRuns>
                               <Style>
-                                <TextAlign>Right</TextAlign>
+                                <TextAlign>Left</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -219,7 +219,7 @@
                                 </TextRun>
                               </TextRuns>
                               <Style>
-                                <TextAlign>Right</TextAlign>
+                                <TextAlign>Left</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -254,7 +254,7 @@
                                 </TextRun>
                               </TextRuns>
                               <Style>
-                                <TextAlign>Right</TextAlign>
+                                <TextAlign>Left</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -289,7 +289,7 @@
                                 </TextRun>
                               </TextRuns>
                               <Style>
-                                <TextAlign>Right</TextAlign>
+                                <TextAlign>Left</TextAlign>
                               </Style>
                             </Paragraph>
                           </Paragraphs>
@@ -312,7 +312,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.25in</Height>
+                  <Height>0.22917in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -555,7 +555,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.25in</Height>
+                  <Height>0.1875in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -798,7 +798,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.25in</Height>
+                  <Height>0.17708in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -1070,9 +1070,9 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>rptStaffRatioAsOn</DataSetName>
-            <Top>0.80083in</Top>
+            <Top>0.36681in</Top>
             <Left>0.10292in</Left>
-            <Height>1in</Height>
+            <Height>1.09375in</Height>
             <Width>6.87499in</Width>
             <Style>
               <Border>
@@ -1113,7 +1113,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox29</rd:DefaultName>
-            <Top>0.25917in</Top>
+            <Top>0.10292in</Top>
             <Left>0.10292in</Left>
             <Height>0.25in</Height>
             <Width>6.87499in</Width>
@@ -1129,7 +1129,7 @@
             </Style>
           </Textbox>
         </ReportItems>
-        <Height>5.31494cm</Height>
+        <Height>8.22536cm</Height>
         <Style />
       </Body>
       <Width>17.98848cm</Width>

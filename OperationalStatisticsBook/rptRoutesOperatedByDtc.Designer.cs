@@ -55,7 +55,7 @@ namespace OperationalStatisticsBook
             reportDataSource1.Name = "rptRoutesOperatedByDtc";
             reportDataSource1.Value = this.tbl_RoutesOperatedByDtcBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "OperationalStatisticsBook.rtpRoutesOperatedByDtc.rdlc";
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "OperationalStatisticsBook.rptRoutesOperatedByDtc.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Margin = new System.Windows.Forms.Padding(2);
             this.reportViewer1.Name = "reportViewer1";

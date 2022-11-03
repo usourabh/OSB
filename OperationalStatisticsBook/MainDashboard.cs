@@ -414,17 +414,260 @@ namespace OperationalStatisticsBook
 
 
             #region GetPagePdfs
+
+            //INDEX PAGE
+
             string Page1ReportName = "rptIndexPrintPage.rdlc";
             string Page1DataSourceName = "rptIndexPrintPage";
             DataTable Page1Data = objPageData.GetIndexPageData_Page1(this.OsbId);
             byte[] byarry1 = GenerateReport(Page1ReportName, null, Page1DataSourceName, Page1Data);
             lstByte.Add(byarry1);
 
-            //string Page2ReportName = "rptIndexPrintPage.rdlc";
-            //string Page2DataSourceName = "rptIndexPrintPage";
-            //DataTable Page2Data = objPageData.GetIndexPageData_Page1(this.OsbId);
-            //byte[] byarry2 = GenerateReport(Page1ReportName, null, Page1DataSourceName, Page1Data);
+
+            //PERFORMANCE OF DTC GLANCE
+
+            //string Page2ReportName = "rptfrmPerformanceofDTCGlance.rdlc";
+            //string Page2DataSourceName = "rptfrmPerformanceofDTCGlance";
+            //DataTable Page2Data = objPageData.GetDataPerformanceDtcGlance_Page2_tbl1(this.OsbId);
+            //byte[] byarry2 = GenerateReport(Page2ReportName, null, Page2DataSourceName, Page1Data);
             //lstByte.Add(byarry2);
+
+
+            // PROGRESSIVE FINANCIAL RESULT
+
+            string Page2ReportName2 = "rptprogressiveFinancialResults.rdlc";
+            string Page2DataSourceName2 = "rptProgressiveFinancialResults";
+            DataTable Page2Data2 = objPageData.GetDataProgressiveFinanResult_Page2_tbl2(this.OsbId);
+            byte[] byarry3 = GenerateReport(Page2ReportName2, null, Page2DataSourceName2, Page2Data2);
+            lstByte.Add(byarry3);
+
+
+            // STAFF RATIO
+
+            string Page3ReportName1 = "rptStaffRatioAsOn.rdlc";
+            string Page3DataSourceName1 = "rptStaffRatioAsOn";
+            DataTable Page3Data1 = objPageData.GetDataStaffRatio_Page3_tbl1(this.OsbId, this.Year, this.Month);
+            byte[] byarry4 = GenerateReport(Page3ReportName1, null, Page3DataSourceName1, Page3Data1);
+            lstByte.Add(byarry4);
+
+
+            // ANALYSIS OF CAUSES ACCIDENTS FROM
+
+            string Page3ReportName2 = "rptanalysisOfCausesAccidents.rdlc";
+            string Page3DataSourceName2 = "rptanalysisOfCausesAccidents";
+            DataTable Page3Data2 = objPageData.GetDataAnalysisCausesAccidents_Page3_tbl2(this.OsbId);
+            byte[] byarry5 = GenerateReport(Page3ReportName2, null, Page3DataSourceName2, Page3Data2);
+            lstByte.Add(byarry5);
+
+
+            // A SALIENT FEATURE GROWTH OF BASIC STRUCTURE OF DTC
+
+            string Page4ReportName1 = "rptSalientFeatureGrowthBasicStructure.rdlc";
+            string Page4DataSourceName1 = "rptSalientFeatureGrowthBasicStructure";
+            DataTable Page4Data1 = objPageData.GetDataSalientGrowthBasicStructure_Page4_tbl1(this.OsbId);
+            byte[] byarry6 = GenerateReport(Page4ReportName1, null, Page4DataSourceName1, Page4Data1);
+            lstByte.Add(byarry6);
+
+
+            //ROUTES OPERATED BY DTC 
+
+            string Page4ReportName2 = "rptRoutesOperatedByDtc.rdlc";
+            string Page4DataSourceName2 = "rptRoutesOperatedByDtc";
+            DataTable Page4Data2 = objPageData.GetDataRoutesOperatedbyDTC_Page4_tbl2(this.OsbId);
+            byte[] byarry7 = GenerateReport(Page4ReportName2, null, Page4DataSourceName2, Page4Data2);
+            lstByte.Add(byarry7);
+
+
+            //COMPARATIVE FINANCIAL RESULT
+
+            string Page5n6ReportName = "rptComparativeFinancialResultsFrom.rdlc";
+            string Page5n6DataSourceName = "rptComparativeFinancialResultsFrom";
+            DataTable Page5n6Data = objPageData.GetDataComparativeFinanacialResult_Page5n6(this.OsbId);
+            byte[] byarry8 = GenerateReport(Page5n6ReportName, null, Page5n6DataSourceName, Page5n6Data);
+            lstByte.Add(byarry8);
+
+
+            // COMPARATIVE OPERATIONAL DATA FOR THE FINANCIAL YEAR
+
+            string Page7ReportName = "rptComparativeOperationalData.rdlc";
+            string Page7DataSourceName = "rptComparativeOperationalData";
+            DataTable Page7Data = objPageData.GetDataComparativeOperationalData_Page7(this.OsbId);
+            byte[] byarry9 = GenerateReport(Page7ReportName, null, Page7DataSourceName, Page7Data);
+            lstByte.Add(byarry9);
+
+
+            // DISTRIBUTION OF FLEET BY TYPE/MAKE AND YEAR OF COMMISION
+
+            string Page8ReportName = "rptDistributionOfFleetByTypeMake.rdlc";
+            string Page8DataSourceName = "rptDistributionOfFleetByTypeMake";
+            DataTable Page8Data = objPageData.GetDataDistributionFleetTypeMakeYearCommision_Page8(this.OsbId);
+            byte[] byarry10 = GenerateReport(Page8ReportName, null, Page8DataSourceName, Page8Data);
+            lstByte.Add(byarry10);
+
+            // PRICE AND COST INDICIES
+
+            string Page9ReportName1 = "rptPriceAndCostIndicies.rdlc";
+            string Page9DataSourceName1 = "rptPriceAndCostIndicies";
+            DataTable Page9Data1 = objPageData.GetDataPriceNCostIndicies_Page9_tbl1(this.OsbId);
+            byte[] byarry11 = GenerateReport(Page9ReportName1, null, Page9DataSourceName1, Page9Data1);
+            lstByte.Add(byarry11);
+
+            //MATERIAL CONSUMPTION 
+
+            string Page9ReportName2 = "rptMaterialConsumptionFinancial.rdlc";
+            string Page9DataSourceName2 = "MaterialConsumptionFinancial";
+            DataTable Page9Data2 = objPageData.GetDataMaterialConsumption_Page9_tbl2(this.OsbId);
+            byte[] byarry12 = GenerateReport(Page9ReportName2, null, Page9DataSourceName2, Page9Data2);
+            lstByte.Add(byarry12);
+
+            //PERFORMANCE OF METROPOLITIN TRANSPORT UNDERTAKING
+
+            string Page10ReportName1 = "rptPerformanceMetopolitanTransportUndertaking.rdlc";
+            string Page10DataSourceName1 = "PerformanceMetopolitanTransportUndertaking";
+            DataTable Page10Data1 = objPageData.GetDataPerformMetroTransUnder_Page10_tbl1(this.OsbId);
+            byte[] byarry13 = GenerateReport(Page10ReportName1, null, Page10DataSourceName1, Page10Data1);
+            lstByte.Add(byarry13);
+
+            // ACCIDENTS AND COMPENSATION GIVEN TO ACCIDENT VICTIMS
+
+            string Page10ReportName2 = "rptAccidentNCompensationGvnAccidentVictims.rdlc";
+            string Page10DataSourceName2 = "rptAccidentNCompensationGvnAccidentVictims";
+            DataTable Page10Data2 = objPageData.GetDataAccidentNCompensGvnAcciVic_Page10_tbl2(this.OsbId);
+            byte[] byarry14 = GenerateReport(Page10ReportName2, null, Page10DataSourceName2, Page10Data2);
+            lstByte.Add(byarry14);
+
+            // OPERATIONAL DATA DEPOT WISE FLEET STRENGTH & BUSES ON ROAD
+
+            string Page11ReportName = "rptOperationalDepotWiseFleetStrengthNBusesOnRoad.rdlc";
+            string Page11DataSourceName = "rptOperationalDepotWiseFleetStrengthNBusesOnRoad";
+            DataTable Page11Data = objPageData.GetDataOperaDepotWiseFleetStrenBusesOnRoad_Page11(this.OsbId);
+            byte[] byarry15 = GenerateReport(Page11ReportName, null, Page11DataSourceName, Page11Data);
+            lstByte.Add(byarry15);
+
+            // CATEGORYWISE STAFF POSITION AS ON 
+
+            string Page12ReportName = "rptCategorywiseStaffPositionAsOn.rdlc";
+            string Page12DataSourceName = "rptCategorywiseStaffPositionAsOn";
+            DataTable Page12Data = objPageData.GetDataCategorywiseStaffPosition_Page12(this.OsbId);
+            byte[] byarry16 = GenerateReport(Page12ReportName, null, Page12DataSourceName, Page12Data);
+            lstByte.Add(byarry16);
+
+            // ROUTES OPERATED BY DTC AND ITS EARNING PER KILOMETER
+
+            string Page13ReportName = "rptRoutesOperatedByDTCEarningPerKillometer.rdlc";
+            string Page13DataSourceName = "RoutesOperatedByDTCEarningPerKillometer";
+            DataTable Page13Data = objPageData.GetDataRoutesOperatedByDTCEarningPerKm_Page13(this.OsbId);
+            byte[] byarry17 = GenerateReport(Page13ReportName, null, Page13DataSourceName, Page13Data);
+            lstByte.Add(byarry17);
+
+            // Statement Showing Region Wise Operational
+
+            string Page14ReportName = "rptStatementShowingRegionalWiseOperational.rdlc";
+            string Page14DataSourceName = "StatementShowingRegionalWiseOperational";
+            DataTable Page14Data = objPageData.GetDataStatementShowRegionWiseOpera_Page14(this.OsbId);
+            byte[] byarry18 = GenerateReport(Page14ReportName, null, Page14DataSourceName, Page14Data);
+            lstByte.Add(byarry18);
+
+            // DETAILS OF OPERATIONAL DATA
+
+            string Page15n16ReportName = "rptDetailsofOperationaldata.rdlc";
+            string Page15n16DataSourceName = "DetailsofOperationaldata";
+            DataTable Page15n16Data = objPageData.GetDataDetailsofOperationaldata_Page15n16(this.OsbId);
+            byte[] byarry19 = GenerateReport(Page15n16ReportName, null, Page15n16DataSourceName, Page15n16Data);
+            lstByte.Add(byarry19);
+
+            // Depot Wise Oprational Data Respect Non Ac Low Floor City NCR Service Only For The Month Of January2021FleetItsUtillization
+
+            string Page17n18ReportName = "rptDepotWiseOprationalDataRespectNonALowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021FleetItsUtillization.rdlc";
+            string Page17n18DataSourceName = "rptDepotWiseOprationalDataRespectNonALowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021FleetItsUtillization";
+            DataTable Page17n18Data = objPageData.GetDataDepotWiseOperDataRespenonACAcLowFloorCityNCRServFleetItsUtillization_Page17n18(this.OsbId);
+            byte[] byarry20 = GenerateReport(Page17n18ReportName, null, Page17n18DataSourceName, Page17n18Data);
+            lstByte.Add(byarry20);
+
+            //DWODTripsScheduledOperated
+
+            string Page19n20ReportName = "rptDWODTripsScheduledOperated.rdlc";
+            string Page19n20DataSourceName = "DWODTripsScheduledOperated";
+            DataTable Page19n20Data = objPageData.GetDataDWODTripsScheduledOperated_Page19n20(this.OsbId);
+            byte[] byarry21 = GenerateReport(Page19n20ReportName, null, Page19n20DataSourceName, Page19n20Data);
+            lstByte.Add(byarry21);
+
+            //DWOD in respect of non ac low floor city & ncr ANALYSIS OF KILOMETER
+
+            string Page21n22ReportName = "rptDepotWiseOprationalDataInRespectOfNonAcNAcLowFloorCityNCRServiceOnlyAnalysisOfKilometers.rdlc";
+            string Page21n22DataSourceName = "rptDepotWiseOprationalDataInRespectOfNonAcNAcLowFloorCityNCRServiceOnlyAnalysisOfKilometers";
+            DataTable Page21n22Data = objPageData.GetDataDWODResNonAcAcAnalysisOfKilometers_Page21n22(this.OsbId);
+            byte[] byarry22 = GenerateReport(Page21n22ReportName, null, Page21n22DataSourceName, Page21n22Data);
+            lstByte.Add(byarry22);
+
+            //DWOD in respect of non ac low floor city & ncr TRAFFIC INCOME
+
+            string Page23n24ReportName = "rptDepotWiseOprationalDataInRespectOfNonAcNAcLowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021TrafficIncome.rdlc";
+            string Page23n24DataSourceName = "rptDepotWiseOprationalDataInRespectOfNonAcNAcLowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021TrafficIncome";
+            DataTable Page23n24Data = objPageData.GetDataDWODResNonAcAcTrafficIncome_Page23n24(this.OsbId);
+            byte[] byarry23 = GenerateReport(Page23n24ReportName, null, Page23n24DataSourceName, Page23n24Data);
+            lstByte.Add(byarry23);
+
+            // Accident Analysis non ac low floor city & ncr For The Month
+
+            string Page25n26ReportName = "rptAccidentAnalysisForTheMonth.rdlc";
+            string Page25n26DataSourceName = "rptAccidentAnalysisForTheMonth";
+            DataTable Page25n26Data = objPageData.GetDataAccidentAnalysisForTheMonth_Page25n26(this.OsbId);
+            byte[] byarry24 = GenerateReport(Page25n26ReportName, null, Page25n26DataSourceName, Page25n26Data);
+            lstByte.Add(byarry24);
+
+            // Depot Wise Oprational Data In Respect Of NonAC
+
+            string Page27ReportName = "rptDepotWiseOprationalDataInRespectOfNonAC.rdlc";
+            string Page27DataSourceName = "rptDepotWiseOprationalDataInRespectOfNonAC";
+            DataTable Page27Data = objPageData.GetDataDepotWiseOprationalDataInRespectOfNonAC_Page27(this.OsbId, this.Year, this.Month);
+            byte[] byarry25 = GenerateReport(Page27ReportName, null, Page27DataSourceName, Page27Data);
+            lstByte.Add(byarry25);
+
+            // No Of Trips Actual Operated On Time And No Of Trips Actual Operated
+
+            string Page28ReportName = "rptNoOfTripsActualOperatedOnTimeAndNoOfTripsActualOperated.rdlc";
+            string Page28DataSourceName = "rptNoOfTripsActualOperatedOnTimeAndNoOfTripsActualOperated";
+            DataTable Page28Data = objPageData.GetDataTripsActualOperatedOnTimeNOperated2min_Page28(this.OsbId);
+            byte[] byarry26 = GenerateReport(Page28ReportName, null, Page28DataSourceName, Page28Data);
+            lstByte.Add(byarry26);
+
+            //DepotWise Total Missed Kms And Breakdowns
+
+            string Page29ReportName = "rptDepotWiseTotalMissedKmsAndBreakdowns.rdlc";
+            string Page29DataSourceName = "rptDepotWiseTotalMissedKmsAndBreakdowns";
+            DataTable Page29Data = objPageData.GetDataDepotWiseTotalMissedKmsAndBreakdowns_Page29(this.OsbId);
+            byte[] byarry27 = GenerateReport(Page29ReportName, null, Page29DataSourceName, Page29Data);
+            lstByte.Add(byarry27);
+
+
+            // Comparative Analysis Of Causes Of Accidents
+
+            string Page30ReportName1 = "rptComparativeAnalysisOfCausesOfAccidents.rdlc";
+            string Page30DataSourceName1 = "rptComparativeAnalysisOfCausesOfAccidents";
+            DataTable Page30Data1 = objPageData.GetDataComparativeAnalysisOfCausesOfAccidentsMonthly_Page30(this.OsbId);
+            byte[] byarry30 = GenerateReport(Page30ReportName1, null, Page30DataSourceName1, Page30Data1);
+            lstByte.Add(byarry30);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
             #endregion
 
@@ -435,6 +678,7 @@ namespace OperationalStatisticsBook
             PdfCopy pdfCopyProvider = null;
             PdfImportedPage importedPage;
             string outputPdfPath = @"D:/newFile.pdf";
+            MessageBox.Show("PDF GENERATED");
 
             sourceDocument = new Document();
             pdfCopyProvider = new PdfCopy(sourceDocument, new System.IO.FileStream(outputPdfPath, System.IO.FileMode.Create));
@@ -489,12 +733,12 @@ namespace OperationalStatisticsBook
 
             string deviceInfo = "<DeviceInfo>" +
                "  <OutputFormat>PDF</OutputFormat>" +
-               "  <PageWidth>8.27in</PageWidth>" +
-               "  <PageHeight>6.0in</PageHeight>" +
-               "  <MarginTop>0.2in</MarginTop>" +
-               "  <MarginLeft>0.2in</MarginLeft>" +
-               "  <MarginRight>0.2in</MarginRight>" +
-               "  <MarginBottom>0.2in</MarginBottom>" +
+               "  <PageWidth>8.3in</PageWidth>" +
+               "  <PageHeight>11.7in</PageHeight>" +
+               "  <MarginTop>0.1in</MarginTop>" +
+               "  <MarginLeft>0.1in</MarginLeft>" +
+               "  <MarginRight>0.1in</MarginRight>" +
+               "  <MarginBottom>0.1in</MarginBottom>" +
                "</DeviceInfo>";
 
             Warning[] warnings;

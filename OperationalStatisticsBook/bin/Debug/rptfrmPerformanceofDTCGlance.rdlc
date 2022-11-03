@@ -546,7 +546,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.6cm</Height>
+                  <Height>0.49417cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -782,7 +782,7 @@
             <DataSetName>rptfrmPerformanceofDTCGlance</DataSetName>
             <Top>1.59314cm</Top>
             <Left>0.34396cm</Left>
-            <Height>1.8cm</Height>
+            <Height>1.69417cm</Height>
             <Width>13.87735cm</Width>
             <ZIndex>1</ZIndex>
             <Style>

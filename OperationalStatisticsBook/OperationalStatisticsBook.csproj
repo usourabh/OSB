@@ -703,11 +703,15 @@
     <EmbeddedResource Include="PrintWholePdf.resx">
       <DependentUpon>PrintWholePdf.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="rptAccidentAnalysisForTheMonth.rdlc" />
+    <EmbeddedResource Include="rptAccidentAnalysisForTheMonth.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="rptAccidentAnalysisForTheMonth.resx">
       <DependentUpon>rptAccidentAnalysisForTheMonth.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="rptAccidentNCompensationGvnAccidentVictims.rdlc" />
+    <EmbeddedResource Include="rptAccidentNCompensationGvnAccidentVictims.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="rptAccidentNCompensationGvnAccidentVictims.resx">
       <DependentUpon>rptAccidentNCompensationGvnAccidentVictims.cs</DependentUpon>
     </EmbeddedResource>
@@ -715,19 +719,27 @@
     <EmbeddedResource Include="rptAnalysisOfAccidentsByDriverGroup.resx">
       <DependentUpon>rptAnalysisOfAccidentsByDriverGroup.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="rptanalysisOfCausesAccidents.rdlc" />
+    <EmbeddedResource Include="rptanalysisOfCausesAccidents.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="rptanalysisOfCausesAccidents.resx">
       <DependentUpon>rptanalysisOfCausesAccidents.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="rptCategorywiseStaffPositionAsOn.rdlc" />
+    <EmbeddedResource Include="rptCategorywiseStaffPositionAsOn.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="rptCategorywiseStaffPositionAsOn.resx">
       <DependentUpon>rptCategorywiseStaffPositionAsOn.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="rptComparativeFinancialResultsFrom.rdlc" />
+    <EmbeddedResource Include="rptComparativeFinancialResultsFrom.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="rptComparativeFinancialResultsFrom.resx">
       <DependentUpon>rptComparativeFinancialResultsFrom.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="rptComparativeOperationalData.rdlc" />
+    <EmbeddedResource Include="rptComparativeOperationalData.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="rptComparativeOperationalData.resx">
       <DependentUpon>rptComparativeOperationalData.cs</DependentUpon>
     </EmbeddedResource>
@@ -735,19 +747,27 @@
     <EmbeddedResource Include="rptDepotwiseOperationalDataFCMSCluster_busesTrafficIncome.resx">
       <DependentUpon>rptDepotwiseOperationalDataFCMSCluster_busesTrafficIncome.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="rptDepotWiseOprationalDataInRespectOfNonAC.rdlc" />
+    <EmbeddedResource Include="rptDepotWiseOprationalDataInRespectOfNonAC.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="rptDepotWiseOprationalDataInRespectOfNonAC.resx">
       <DependentUpon>rptDepotWiseOprationalDataInRespectOfNonAC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="rptDepotWiseOprationalDataRespectNonALowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021FleetItsUtillization.rdlc" />
+    <EmbeddedResource Include="rptDepotWiseOprationalDataRespectNonALowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021FleetItsUtillization.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="rptDepotWiseOprationalDataRespectNonALowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021FleetItsUtillization.resx">
       <DependentUpon>rptDepotWiseOprationalDataRespectNonALowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021FleetItsUtillization.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="rptDepotWiseTotalMissedKmsAndBreakdowns.rdlc" />
+    <EmbeddedResource Include="rptDepotWiseTotalMissedKmsAndBreakdowns.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="rptDepotWiseTotalMissedKmsAndBreakdowns.resx">
       <DependentUpon>rptDepotWiseTotalMissedKmsAndBreakdowns.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="rptDetailsofOperationaldata.rdlc" />
+    <EmbeddedResource Include="rptDetailsofOperationaldata.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="rptDetailsofOperationaldata.resx">
       <DependentUpon>rptDetailsofOperationaldata.cs</DependentUpon>
     </EmbeddedResource>
@@ -758,15 +778,21 @@
     <EmbeddedResource Include="rptFleetUtilization.resx">
       <DependentUpon>rptFleetUtilization.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="rptfrmPerformanceofDTCGlance.rdlc" />
+    <EmbeddedResource Include="rptfrmPerformanceofDTCGlance.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="rptfrmPerformanceofDTCGlance.resx">
       <DependentUpon>rptfrmPerformanceofDTCGlance.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="rptIndexPrintPage.resx">
       <DependentUpon>rptIndexPrintPage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="rptIndexPrintPage.rdlc" />
-    <EmbeddedResource Include="rptMaterialConsumptionFinancial.rdlc" />
+    <EmbeddedResource Include="rptIndexPrintPage.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptMaterialConsumptionFinancial.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="rptDWSPLHireTouristPassPinkTicketEarning.rdlc" />
     <EmbeddedResource Include="rptDWODTripsScheduledOperated.rdlc" />
     <EmbeddedResource Include="frmAnalysisOfAccidentsByDriverGroup.resx">
@@ -778,9 +804,13 @@
     <EmbeddedResource Include="rptComparativeAnalysisOfCausesOfAccidents.resx">
       <DependentUpon>rptComparativeAnalysisOfCausesOfAccidents.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="rptDepotWiseOprationalDataInRespectOfNonAcNAcLowFloorCityNCRServiceOnlyAnalysisOfKilometers.rdlc" />
+    <EmbeddedResource Include="rptDepotWiseOprationalDataInRespectOfNonAcNAcLowFloorCityNCRServiceOnlyAnalysisOfKilometers.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="rptAccidentAnalysisOtherPartyInvolvment.rdlc" />
-    <EmbeddedResource Include="rptComparativeAnalysisOfCausesOfAccidents.rdlc" />
+    <EmbeddedResource Include="rptComparativeAnalysisOfCausesOfAccidents.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="DepotWiseOprationalDataInRespectOfNonAcNAcLowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021AnalysisOfKilometers.resx">
       <DependentUpon>DepotWiseOprationalDataInRespectOfNonAcNAcLowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021AnalysisOfKilometers.cs</DependentUpon>
     </EmbeddedResource>
@@ -842,11 +872,15 @@
     <EmbeddedResource Include="rptDepotWiseOprationalDataInRespectOfNonAcNAcLowFloorCityNCRServiceOnlyAnalysisOfKilometers.resx">
       <DependentUpon>rptDepotWiseOprationalDataInRespectOfNonAcNAcLowFloorCityNCRServiceOnlyAnalysisOfKilometers.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="rptDepotWiseOprationalDataInRespectOfNonAcNAcLowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021TrafficIncome.rdlc" />
+    <EmbeddedResource Include="rptDepotWiseOprationalDataInRespectOfNonAcNAcLowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021TrafficIncome.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="rptDepotWiseOprationalDataInRespectOfNonAcNAcLowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021TrafficIncome.resx">
       <DependentUpon>rptDepotWiseOprationalDataInRespectOfNonAcNAcLowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021TrafficIncome.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="rptDistributionOfFleetByTypeMake.rdlc" />
+    <EmbeddedResource Include="rptDistributionOfFleetByTypeMake.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="rptDistributionOfFleetByTypeMake.resx">
       <DependentUpon>rptDistributionOfFleetByTypeMake.cs</DependentUpon>
     </EmbeddedResource>
@@ -859,38 +893,54 @@
     <EmbeddedResource Include="rptMaterialConsumptionFinancial.resx">
       <DependentUpon>rptMaterialConsumptionFinancial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="rptNoOfTripsActualOperatedOnTimeAndNoOfTripsActualOperated.rdlc" />
+    <EmbeddedResource Include="rptNoOfTripsActualOperatedOnTimeAndNoOfTripsActualOperated.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="rptNoOfTripsActualOperatedOnTimeAndNoOfTripsActualOperated.resx">
       <DependentUpon>rptNoOfTripsActualOperatedOnTimeAndNoOfTripsActualOperated.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="rptOperationalDepotWiseFleetStrengthNBusesOnRoad.rdlc" />
+    <EmbeddedResource Include="rptOperationalDepotWiseFleetStrengthNBusesOnRoad.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="rptOperationalDepotWiseFleetStrengthNBusesOnRoad.resx">
       <DependentUpon>rptOperationalDepotWiseFleetStrengthNBusesOnRoad.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="rptPerformanceMetopolitanTransportUndertaking.rdlc" />
+    <EmbeddedResource Include="rptPerformanceMetopolitanTransportUndertaking.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="rptPerformanceMetopolitanTransportUndertaking.resx">
       <DependentUpon>rptPerformanceMetopolitanTransportUndertaking.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="rptPriceAndCostIndicies.rdlc" />
+    <EmbeddedResource Include="rptPriceAndCostIndicies.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="rptPriceAndCostIndicies.resx">
       <DependentUpon>rptPriceAndCostIndicies.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="rptprogressiveFinancialResults.rdlc" />
+    <EmbeddedResource Include="rptprogressiveFinancialResults.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="rptprogressiveFinancialResults.resx">
       <DependentUpon>rptprogressiveFinancialResults.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="rptRoutesOperatedByDtc.resx">
       <DependentUpon>rptRoutesOperatedByDtc.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="rptRoutesOperatedByDTCEarningPerKillometer.rdlc" />
+    <EmbeddedResource Include="rptRoutesOperatedByDTCEarningPerKillometer.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="rptRoutesOperatedByDTCEarningPerKillometer.resx">
       <DependentUpon>rptRoutesOperatedByDTCEarningPerKillometer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="rptSalientFeatureGrowthBasicStructure.rdlc" />
+    <EmbeddedResource Include="rptSalientFeatureGrowthBasicStructure.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="rptSalientFeatureGrowthBasicStructure.resx">
       <DependentUpon>rptSalientFeatureGrowthBasicStructure.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="rptStaffRatioAsOn.rdlc" />
+    <EmbeddedResource Include="rptStaffRatioAsOn.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="rptStaffRatioAsOn.resx">
       <DependentUpon>rptStaffRatioAsOn.cs</DependentUpon>
     </EmbeddedResource>
@@ -902,7 +952,9 @@
     <EmbeddedResource Include="rptStatementShowingOperationalDataOfNcrCngServicesOfTheCorporation.resx">
       <DependentUpon>rptStatementShowingOperationalDataOfNcrCngServicesOfTheCorporation.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="rptStatementShowingRegionalWiseOperational.rdlc" />
+    <EmbeddedResource Include="rptStatementShowingRegionalWiseOperational.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="rptStatementShowingRegionalWiseOperational.resx">
       <DependentUpon>rptStatementShowingRegionalWiseOperational.cs</DependentUpon>
     </EmbeddedResource>
@@ -914,7 +966,9 @@
     <EmbeddedResource Include="rptStatementShowingTheRsInRespectOfCityNCRForeignBusServiceIncomeExpewditureJune2022InLakhs.resx">
       <DependentUpon>rptStatementShowingTheRsInRespectOfCityNCRForeignBusServiceIncomeExpewditureJune2022InLakhs.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="rtpRoutesOperatedByDtc.rdlc" />
+    <EmbeddedResource Include="rptRoutesOperatedByDtc.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="SalientFeatureGrowthBasicStructure.resx">
       <DependentUpon>SalientFeatureGrowthBasicStructure.cs</DependentUpon>
     </EmbeddedResource>
