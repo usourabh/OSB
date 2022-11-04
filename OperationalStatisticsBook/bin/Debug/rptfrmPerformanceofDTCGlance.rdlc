@@ -73,7 +73,6 @@
                   <TextRun>
                     <Value>Performance of DTC at a Glance -</Value>
                     <Style>
-                      <FontSize>12pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
@@ -84,10 +83,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
-            <Top>0.42898cm</Top>
-            <Left>0.34396cm</Left>
             <Height>0.6cm</Height>
-            <Width>13.87737cm</Width>
+            <Width>11.62839cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -102,22 +99,22 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>3.41238cm</Width>
+                  <Width>4.76176cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.26586cm</Width>
+                  <Width>1.57794cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.98363cm</Width>
+                  <Width>1.37509cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.98363cm</Width>
+                  <Width>1.2428cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.07183cm</Width>
+                  <Width>1.27808cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.16002cm</Width>
+                  <Width>1.33981cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -135,7 +132,7 @@
                                 <TextRun>
                                   <Value>Physical Parameter</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -170,7 +167,7 @@
                                 <TextRun>
                                   <Value>=Parameters!txtDate1.Value</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -205,7 +202,7 @@
                                 <TextRun>
                                   <Value>=Parameters!txtDate2.Value</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -240,7 +237,7 @@
                                 <TextRun>
                                   <Value>=Parameters!txtDate3.Value</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -275,7 +272,7 @@
                                 <TextRun>
                                   <Value>=Parameters!txtDate4.Value</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -310,7 +307,7 @@
                                 <TextRun>
                                   <Value>=Parameters!txtDate5.Value</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -337,7 +334,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.6cm</Height>
+                  <Height>0.36188cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -546,7 +543,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.49417cm</Height>
+                  <Height>0.36188cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -559,7 +556,7 @@
                                 <TextRun>
                                   <Value>=Fields!PhysicalParameter.Value</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>6pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -593,7 +590,7 @@
                                 <TextRun>
                                   <Value>=Fields!Param1.Value</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>6pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -627,7 +624,7 @@
                                 <TextRun>
                                   <Value>=Fields!Param2.Value</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>6pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -661,7 +658,7 @@
                                 <TextRun>
                                   <Value>=Fields!Param3.Value</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>6pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -695,7 +692,7 @@
                                 <TextRun>
                                   <Value>=Fields!Param4.Value</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>6pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -729,7 +726,7 @@
                                 <TextRun>
                                   <Value>=Fields!Param5.Value</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>6pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -780,10 +777,10 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>rptfrmPerformanceofDTCGlance</DataSetName>
-            <Top>1.59314cm</Top>
+            <Top>0.63528cm</Top>
             <Left>0.34396cm</Left>
-            <Height>1.69417cm</Height>
-            <Width>13.87735cm</Width>
+            <Height>1.32375cm</Height>
+            <Width>11.57548cm</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
@@ -792,7 +789,7 @@
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>1.43402in</Height>
+        <Height>1.1736in</Height>
         <Style />
       </Body>
       <Width>5.63194in</Width>

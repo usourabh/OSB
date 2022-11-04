@@ -451,7 +451,7 @@ namespace OperationalStatisticsBook
             rptParam[2] = new ReportParameter("txtDate3", MonthList[2].MonthName + "-" + MonthList[2].Year);
             rptParam[3] = new ReportParameter("txtDate4", MonthList[1].MonthName + "-" + MonthList[1].Year);
             rptParam[4] = new ReportParameter("txtDate5", MonthList[0].MonthName + "-" + MonthList[0].Year);
-            byte[] byarry2 = GenerateReport(Page2ReportName, rptParam, Page2DataSourceName, Page1Data);
+            byte[] byarry2 = GenerateReport(Page2ReportName, rptParam, Page2DataSourceName, Page2Data);
             lstByte.Add(byarry2);
 
 
