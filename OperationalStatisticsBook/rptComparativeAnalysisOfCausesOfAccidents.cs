@@ -54,7 +54,6 @@ namespace OperationalStatisticsBook
             ReportDataSource datasource = new ReportDataSource("rptComparativeAnalysisOfCausesOfAccidents", dtReportData);
             this.reportViewer1.LocalReport.DataSources.Clear();
             this.reportViewer1.LocalReport.DataSources.Add(datasource);
-          
             this.reportViewer1.RefreshReport();
 
             //this.reportViewer1.RefreshReport();
