@@ -193,7 +193,8 @@ namespace OperationalStatisticsBook
 
         private void DistrubutionOfFleetByTypeMakeAndYearOfCommission_Load(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = BindDistrubutionOfFleetByTypeMakeAndYearOfCommission();
+            // dataGridView1.DataSource = BindDistrubutionOfFleetByTypeMakeAndYearOfCommission();
+            BindIndexPage(OsbId);
         }
 
         private void PrintReportOnClick(object sender, EventArgs e)

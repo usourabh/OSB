@@ -141,11 +141,23 @@
     <Compile Include="BarOperationalRatio.Designer.cs">
       <DependentUpon>BarOperationalRatio.cs</DependentUpon>
     </Compile>
+    <Compile Include="BarPassengerCarried.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BarPassengerCarried.Designer.cs">
+      <DependentUpon>BarPassengerCarried.cs</DependentUpon>
+    </Compile>
     <Compile Include="BarPassengerInCarried.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="BarPassengerInCarried.Designer.cs">
       <DependentUpon>BarPassengerInCarried.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BarTrafficEarning.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BarTrafficEarning.Designer.cs">
+      <DependentUpon>BarTrafficEarning.cs</DependentUpon>
     </Compile>
     <Compile Include="BarTrafficEarninginCrore.cs">
       <SubType>Form</SubType>
@@ -260,6 +272,18 @@
     <Compile Include="DWODFCMSFleetItsUtilization.Designer.cs">
       <DependentUpon>DWODFCMSFleetItsUtilization.cs</DependentUpon>
     </Compile>
+    <Compile Include="EarningPerBusPerDay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EarningPerBusPerDay.Designer.cs">
+      <DependentUpon>EarningPerBusPerDay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EXPENDITUREFORTHEMONTH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EXPENDITUREFORTHEMONTH.designer.cs">
+      <DependentUpon>EXPENDITUREFORTHEMONTH.cs</DependentUpon>
+    </Compile>
     <Compile Include="FinMasterInfo.cs" />
     <Compile Include="frmAnalysisOfAccidentsByDriverGroup.cs">
       <SubType>Form</SubType>
@@ -280,6 +304,12 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="GlobalMaster.cs" />
+    <Compile Include="Kilometersefficiency.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kilometersefficiency.designer.cs">
+      <DependentUpon>Kilometersefficiency.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -304,6 +334,12 @@
     </Compile>
     <Compile Include="OperationalDepotWiseFleetStrengthNBusesOnRoad.Designer.cs">
       <DependentUpon>OperationalDepotWiseFleetStrengthNBusesOnRoad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OperationalRatio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OperationalRatio.Designer.cs">
+      <DependentUpon>OperationalRatio.cs</DependentUpon>
     </Compile>
     <Compile Include="PerformanceMetopolitanTransportUndertaking.cs">
       <SubType>Form</SubType>
@@ -626,6 +662,12 @@
     <Compile Include="StatemnetShowingTheInRespectOfCityNcrAndForeignBusServiceRsIncomeAndExpewnditureJune_2022Inlakhs.Designer.cs">
       <DependentUpon>StatemnetShowingTheInRespectOfCityNcrAndForeignBusServiceRsIncomeAndExpewnditureJune_2022Inlakhs.cs</DependentUpon>
     </Compile>
+    <Compile Include="TRAFFICINCOMEFORTHEMONTH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TRAFFICINCOMEFORTHEMONTH.Designer.cs">
+      <DependentUpon>TRAFFICINCOMEFORTHEMONTH.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AccidentAnalysisForTheMonth.resx">
       <DependentUpon>AccidentAnalysisForTheMonth.cs</DependentUpon>
     </EmbeddedResource>
@@ -641,21 +683,33 @@
     <EmbeddedResource Include="analysisOfCausesAccidents.resx">
       <DependentUpon>analysisOfCausesAccidents.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BarEarningPerBusPerDay.rdlc" />
     <EmbeddedResource Include="BarEarningPerBusPerDay.resx">
       <DependentUpon>BarEarningPerBusPerDay.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BarFleetNUtilization.rdlc" />
     <EmbeddedResource Include="BarFleetNUtilization.resx">
       <DependentUpon>BarFleetNUtilization.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BarKilometersefficiency.rdlc" />
     <EmbeddedResource Include="BarKilometersefficiency.resx">
       <DependentUpon>BarKilometersefficiency.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BarOperationalRatio.rdlc" />
     <EmbeddedResource Include="BarOperationalRatio.resx">
       <DependentUpon>BarOperationalRatio.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BarPassengerCarried.resx">
+      <DependentUpon>BarPassengerCarried.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BarPassengerInCarried.rdlc" />
     <EmbeddedResource Include="BarPassengerInCarried.resx">
       <DependentUpon>BarPassengerInCarried.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BarTrafficEarning.resx">
+      <DependentUpon>BarTrafficEarning.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BarTrafficEarninginCrore.rdlc" />
     <EmbeddedResource Include="BarTrafficEarninginCrore.resx">
       <DependentUpon>BarTrafficEarninginCrore.cs</DependentUpon>
     </EmbeddedResource>
@@ -690,12 +744,26 @@
     <EmbeddedResource Include="DWODFCMSFleetItsUtilization.resx">
       <DependentUpon>DWODFCMSFleetItsUtilization.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EarningPerBusPerDay.resx">
+      <DependentUpon>EarningPerBusPerDay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EXPENDITUREFORTHEMONTH.resx">
+      <DependentUpon>EXPENDITUREFORTHEMONTH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kilometersefficiency.resx">
+      <DependentUpon>Kilometersefficiency.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OperationalRatio.resx">
+      <DependentUpon>OperationalRatio.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PerformanceMetopolitanTransportUndertaking.resx">
       <DependentUpon>PerformanceMetopolitanTransportUndertaking.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PieExpenditureForTheMonthOf.rdlc" />
     <EmbeddedResource Include="PieExpenditureForTheMonthOf.resx">
       <DependentUpon>PieExpenditureForTheMonthOf.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PieTrafficEarningForTheMonthOf.rdlc" />
     <EmbeddedResource Include="PieTrafficEarningForTheMonthOf.resx">
       <DependentUpon>PieTrafficEarningForTheMonthOf.cs</DependentUpon>
     </EmbeddedResource>
@@ -1005,6 +1073,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="StatemnetShowingTheInRespectOfCityNcrAndForeignBusServiceRsIncomeAndExpewnditureJune_2022Inlakhs.resx">
       <DependentUpon>StatemnetShowingTheInRespectOfCityNcrAndForeignBusServiceRsIncomeAndExpewnditureJune_2022Inlakhs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TRAFFICINCOMEFORTHEMONTH.resx">
+      <DependentUpon>TRAFFICINCOMEFORTHEMONTH.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="bin\Debug\OperationalStatisticsBook.exe.config" />
     <None Include="DS_OperationalStatisticsBook.xsc">

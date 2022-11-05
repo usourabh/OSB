@@ -168,8 +168,25 @@ namespace OperationalStatisticsBook
             dt.Rows.Add("9", "Statemnet showing the(Rs. in respect of City, NCR & Foreign bus service(Income & Expewnditure June - 2022 in lakhs)", "StatementShowingTheRsInRespectOfCityNCRForeignBusServiceIncomeExpewditureJune2022InLakhs");
             dt.Rows.Add(" ", "Statemnet showing the in respect of City, NCR & Foreign bus service(Income & Expewnditure June - 2022 in lakhs)", "StatemnetShowingTheInRespectOfCityNcrAndForeignBusServiceRsIncomeAndExpewnditureJune_2022Inlakhs");
             dt.Rows.Add("", "Depot wise operational data of FCMS Fleet & its utiuzation", "DWODFCMSFleetItsUtilization");
+            dt.Rows.Add("", "Kilometers efficency July -2021 to July-2022", "Kilometersefficiency");
             dt.Rows.Add("", "", "");
-            dt.Rows.Add(" ", "Fleet Utilization July -2021 to July-2022 ", "rptFleetUtilization");
+            //dt.Rows.Add(" ", "Fleet Utilization July -2021 to July-2022 ", "rptFleetUtilization");
+            dt.Rows.Add(" ", "Fleet Utilization July -2021 to July-2022 ", "BarFleetNUtilization");
+            dt.Rows.Add(" ", "Kilometers efficiency ", "BarKilometersefficiency");
+
+
+            dt.Rows.Add(" ", "form PieChart Traffic Earning for the month ", "TRAFFICINCOMEFORTHEMONTH");
+            dt.Rows.Add(" ", "form Expenditure of  the month ", "EXPENDITUREFORTHEMONTH");
+
+            dt.Rows.Add(" ", "Traffic Earning In Crore ", "BarTrafficEarninginCrore");
+            dt.Rows.Add(" ", "Passenger In Carried", "BarPassengerInCarried");
+            dt.Rows.Add(" ", "Bar Traffic Earning", "BarTrafficEarning");
+            dt.Rows.Add(" ", "Bar Passenger Carried", "BarPassengerCarried");
+
+            dt.Rows.Add(" ", "Bar Operational ratio July - 2021 to July - 2022", "BarOperationalRatio");
+            dt.Rows.Add(" ", "Operational ratio July - 2021 to July - 2022", "OperationalRatio");
+            dt.Rows.Add(" ", "Bar Earining per bus per day in Rs.July - 2021 to July - 2022", "BarEarningPerBusPerDay");
+            dt.Rows.Add(" ", "Earining per bus per day in Rs.July - 2021 to July - 2022", "EarningPerBusPerDay");
 
 
             return dt;
@@ -396,6 +413,76 @@ namespace OperationalStatisticsBook
                     rptFleetUtilization objFrm = new rptFleetUtilization(OsbId, Year, Month, FinYear, MonthName);
                     objFrm.Show();
                 }
+                
+                else if (frmName == "BarFleetNUtilization")
+                {
+                    BarFleetNUtilization objFrm = new BarFleetNUtilization(OsbId, Year, Month, FinYear, MonthName);
+                    objFrm.Show();
+                }
+                else if (frmName == "BarKilometersefficiency")
+                {
+                    BarKilometersefficiency objFrm = new BarKilometersefficiency(OsbId, Year, Month, FinYear, MonthName);
+                    objFrm.Show();
+                }
+                else if (frmName == "Kilometersefficiency")
+                {
+                    Kilometersefficiency objFrm = new Kilometersefficiency(OsbId, Year, Month, FinYear, MonthName);
+                    objFrm.Show();
+                }
+                else if (frmName == "TRAFFICINCOMEFORTHEMONTH")
+                {
+                    TRAFFICINCOMEFORTHEMONTH objFrm = new TRAFFICINCOMEFORTHEMONTH(OsbId, Year, Month, FinYear, MonthName);
+                    objFrm.Show();
+                }
+                else if (frmName == "EXPENDITUREFORTHEMONTH")
+                {
+                    EXPENDITUREFORTHEMONTH objFrm = new EXPENDITUREFORTHEMONTH(OsbId, Year, Month, FinYear, MonthName);
+                    objFrm.Show();
+                }
+
+                else if (frmName == "BarTrafficEarninginCrore")
+                {
+                    BarTrafficEarninginCrore objFrm = new BarTrafficEarninginCrore(OsbId, Year, Month, FinYear, MonthName);
+                    objFrm.Show();
+                }
+                else if (frmName == "BarPassengerInCarried")
+                {
+                    BarPassengerInCarried objFrm = new BarPassengerInCarried(OsbId, Year, Month, FinYear, MonthName);
+                    objFrm.Show();
+                }
+                else if (frmName == "BarTrafficEarning")
+                {
+                    BarTrafficEarning objFrm = new BarTrafficEarning(OsbId, Year, Month, FinYear, MonthName);
+                    objFrm.Show();
+                }
+                else if (frmName == "BarPassengerCarried")
+                {
+                    BarPassengerCarried objFrm = new BarPassengerCarried(OsbId, Year, Month, FinYear, MonthName);
+                    objFrm.Show();
+                }
+
+                else if (frmName == "BarOperationalRatio")
+                {
+                    BarOperationalRatio objFrm = new BarOperationalRatio(OsbId, Year, Month, FinYear, MonthName);
+                    objFrm.Show();
+                }
+                else if (frmName == "OperationalRatio")
+                {
+                    OperationalRatio objFrm = new OperationalRatio(OsbId, Year, Month, FinYear, MonthName);
+                    objFrm.Show();
+                }
+
+                else if (frmName == "BarEarningPerBusPerDay")
+                {
+                    BarEarningPerBusPerDay objFrm = new BarEarningPerBusPerDay(OsbId, Year, Month, FinYear, MonthName);
+                    objFrm.Show();
+                }
+                else if (frmName == "EarningPerBusPerDay")
+                {
+                    EarningPerBusPerDay objFrm = new EarningPerBusPerDay(OsbId, Year, Month, FinYear, MonthName);
+                    objFrm.Show();
+                }
+
             }
         }
 
