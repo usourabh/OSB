@@ -67,9 +67,9 @@ namespace OperationalStatisticsBook
             DataTable table = new DataTable();
 
             // Static Columns
-            table.Columns.Add("Year", typeof(string));
+
             table.Columns.Add("S.No", typeof(string));
-           
+            table.Columns.Add("Year", typeof(string));
             table.Columns.Add("No of Accidents", typeof(string));
             table.Columns.Add("Accidents per 100,000 kms", typeof(string));
             table.Columns.Add("No of Person Injured", typeof(string));
@@ -77,7 +77,7 @@ namespace OperationalStatisticsBook
             table.Columns.Add("No of Cases received", typeof(string));
             table.Columns.Add("Compensation given (Rs. in lakh)", typeof(string));
             table.Columns.Add("Compensation given (Rs. in lakh) ", typeof(string));
-            table.Rows.Add("1", "2", "3", "4", "5", "6", "7", "8", "9");
+         //   table.Rows.Add("1", "2", "3", "4", "5", "6", "7", "8", "9");
             //Static Rows
 
            

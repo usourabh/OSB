@@ -110,8 +110,8 @@ namespace OperationalStatisticsBook
 
             //Row here.......
 
-            table.Rows.Add("", "", "Amt (Rs In Lakhs)", "Per Km.(Paise)", "Amt (Rs In Lakhs)", "Per Km.(Paise)", "Amt (Rs In Lakhs)", "Per Km.(Paise)");
-            table.Rows.Add("I", "INCOME", "", "", "", "", "", "");
+           // table.Rows.Add("", "", "Amt (Rs In Lakhs)", "Per Km.(Paise)", "Amt (Rs In Lakhs)", "Per Km.(Paise)", "Amt (Rs In Lakhs)", "Per Km.(Paise)");
+           // table.Rows.Add("I", "INCOME", "", "", "", "", "", "");
             table.Rows.Add("i", "Ticketed Earning", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("ii", "Less Passenger Tax", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("iii", "Net Ticketed Earning (i-ii)", "0", "0", "0", "0", "0", "0");

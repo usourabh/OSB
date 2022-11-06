@@ -88,7 +88,7 @@
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>0.25in</Height>
+                  <Height>0.19531in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -249,7 +249,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.25in</Height>
+                  <Height>0.20573in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -478,7 +478,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.25in</Height>
+                  <Height>0.19531in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -707,7 +707,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.25in</Height>
+                  <Height>0.1849in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -944,8 +944,8 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>rptComparativeAnalysisOfCausesOfAccidents</DataSetName>
-            <Top>0.56125in</Top>
-            <Height>1in</Height>
+            <Top>0.53in</Top>
+            <Height>0.78125in</Height>
             <Width>6.80086in</Width>
             <Style>
               <Border>
@@ -960,10 +960,51 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value> Comparative Analysis Of Causes Of  Accidents</Value>
+                    <Value>Table -5.1 </Value>
                     <Style>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Comparative Analysis Of Causes Of  Accidents</Value>
+                    <Style>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>for the month of </Value>
+                    <Style>
+                      <FontStyle>Normal</FontStyle>
+                      <FontFamily>Times New Roman</FontFamily>
                       <FontSize>12pt</FontSize>
                       <FontWeight>Bold</FontWeight>
+                      <TextDecoration>None</TextDecoration>
+                      <Color>#000000</Color>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>=Parameters!ReportTitle.Value</Value>
+                    <Style>
+                      <FontStyle>Normal</FontStyle>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                      <TextDecoration>None</TextDecoration>
+                      <Color>#000000</Color>
                     </Style>
                   </TextRun>
                 </TextRuns>
@@ -989,7 +1030,7 @@
             </Style>
           </Textbox>
         </ReportItems>
-        <Height>5.08cm</Height>
+        <Height>3.96875cm</Height>
         <Style />
       </Body>
       <Width>17.69745cm</Width>
@@ -1005,10 +1046,23 @@
       </Page>
     </ReportSection>
   </ReportSections>
+  <ReportParameters>
+    <ReportParameter Name="ReportTitle">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+  </ReportParameters>
   <ReportParametersLayout>
     <GridLayoutDefinition>
       <NumberOfColumns>4</NumberOfColumns>
       <NumberOfRows>2</NumberOfRows>
+      <CellDefinitions>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>ReportTitle</ParameterName>
+        </CellDefinition>
+      </CellDefinitions>
     </GridLayoutDefinition>
   </ReportParametersLayout>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>

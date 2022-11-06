@@ -39,7 +39,7 @@ namespace OperationalStatisticsBook
             try
             {
                 DataTable dt = new DataTable();
-                SqlCommand cmd = new SqlCommand("SELECT [OsbId],[YearOfComm],[Param1],[Param2],[Param3],[Param4] ,[Param5],[Param6] ,[Param7],[Param8] FROM [rpt].[tbl_DistrubutionOfFleetByTypeMakeAndYearOfCommission] where OsbId=@OsbId", con);
+                SqlCommand cmd = new SqlCommand("SELECT [YearOfComm],[Param1],[Param2],[Param3],[Param4] ,[Param5],[Param6] ,[Param7],[Param8] FROM [rpt].[tbl_DistrubutionOfFleetByTypeMakeAndYearOfCommission] where OsbId=@OsbId", con);
                 cmd.Parameters.AddWithValue("@OsbId", OsbId);
                 cmd.CommandType = CommandType.Text;
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
@@ -75,10 +75,10 @@ namespace OperationalStatisticsBook
             table.Columns.Add("Total  ", typeof(string));
             table.Columns.Add("Percentage ", typeof(string));
 
-            table.Rows.Add("Year of Comm.", "CNG ", "CNG", "CNG", "CNG", "Electric", "Electric", "Total", "duistribution");
-            table.Rows.Add(" ", "LOW FLOOR ", "LOW FLOOR", "LOW FLOOR", "LOW FLOOR", "LOW FLOOR", "LOW FLOOR", "Total", "by year of" );
-            table.Rows.Add(" ", "NON AC ", "AC", "NON AC", "AC", "AC", "AC", "Total", "commission");
-            table.Rows.Add("1", "2 ", "3", "4", "5", "6", "7", "8", "9");
+           // table.Rows.Add("Year of Comm.", "CNG ", "CNG", "CNG", "CNG", "Electric", "Electric", "Total", "duistribution");
+           // table.Rows.Add(" ", "LOW FLOOR ", "LOW FLOOR", "LOW FLOOR", "LOW FLOOR", "LOW FLOOR", "LOW FLOOR", "Total", "by year of" );
+           // table.Rows.Add(" ", "NON AC ", "AC", "NON AC", "AC", "AC", "AC", "Total", "commission");
+           // table.Rows.Add("1", "2 ", "3", "4", "5", "6", "7", "8", "9");
 
 
             DateTime currentDate = new DateTime(Year, Month, 01);
@@ -89,7 +89,7 @@ namespace OperationalStatisticsBook
 
             String previousMonthName = newDate.ToString("MMMM");
 
-            for (int i = 10; i > 0; i--)
+            for (int i = 19; i > 0; i--)
             {
 
 

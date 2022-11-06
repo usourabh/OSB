@@ -74,7 +74,6 @@
                     <Value>Table 1.5 </Value>
                     <Style>
                       <FontStyle>Normal</FontStyle>
-                      <FontSize>12pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                       <TextDecoration>None</TextDecoration>
                       <Color>#000000</Color>
@@ -91,7 +90,6 @@
                     <Value>Comparative operational data for the Financial Year </Value>
                     <Style>
                       <FontStyle>Normal</FontStyle>
-                      <FontSize>12pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                       <TextDecoration>None</TextDecoration>
                       <Color>#000000</Color>
@@ -101,7 +99,6 @@
                     <Value>=Parameters!ReportTitle.Value</Value>
                     <Style>
                       <FontStyle>Normal</FontStyle>
-                      <FontSize>12pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                       <TextDecoration>None</TextDecoration>
                       <Color>#000000</Color>
@@ -118,7 +115,6 @@
                     <Value>(DTC Operation)</Value>
                     <Style>
                       <FontStyle>Normal</FontStyle>
-                      <FontSize>12pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                       <TextDecoration>None</TextDecoration>
                       <Color>#000000</Color>
@@ -132,9 +128,9 @@
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
             <Top>0.55245cm</Top>
-            <Left>0.76884cm</Left>
+            <Left>0.50426cm</Left>
             <Height>0.6cm</Height>
-            <Width>14.17097cm</Width>
+            <Width>16.44639cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -149,27 +145,27 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>1.67097cm</Width>
+                  <Width>2.05021cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.5cm</Width>
+                  <Width>4.65194cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.5cm</Width>
+                  <Width>2.29715cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.5cm</Width>
+                  <Width>2.42944cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.5cm</Width>
+                  <Width>2.40299cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.5cm</Width>
+                  <Width>2.61465cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>0.6cm</Height>
+                  <Height>0.61764cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -378,7 +374,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.6cm</Height>
+                  <Height>0.56472cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -587,7 +583,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.6cm</Height>
+                  <Height>0.56472cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -821,10 +817,10 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>rptComparativeOperationalData</DataSetName>
-            <Top>1.82245cm</Top>
-            <Left>0.76884cm</Left>
-            <Height>1.8cm</Height>
-            <Width>14.17097cm</Width>
+            <Top>1.61078cm</Top>
+            <Left>0.50426cm</Left>
+            <Height>1.74708cm</Height>
+            <Width>16.44639cm</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
@@ -833,10 +829,10 @@
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>2in</Height>
+        <Height>1.66667in</Height>
         <Style />
       </Body>
-      <Width>6.19792in</Width>
+      <Width>6.875in</Width>
       <Page>
         <PageHeight>29.7cm</PageHeight>
         <PageWidth>21cm</PageWidth>

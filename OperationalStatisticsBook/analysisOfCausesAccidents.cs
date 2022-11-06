@@ -43,7 +43,7 @@ namespace OperationalStatisticsBook
             table.Columns.Add("%age ", typeof(int));
 
             // Row Static data
-            table.Rows.Add("1", "2", "3", "3", "4", "4");
+           // table.Rows.Add("1", "2", "3", "3", "4", "4");
             table.Rows.Add("1", "Rash & Negligance", 0 , 0 , 0, 0);
             table.Rows.Add("a", "D.T.C", 0, 0, 0, 0);
             table.Rows.Add("b", "Other", 0, 0, 0, 0);

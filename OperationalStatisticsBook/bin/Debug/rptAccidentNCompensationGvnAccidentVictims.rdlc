@@ -86,7 +86,6 @@
                     <Value>Table 1.10 </Value>
                     <Style>
                       <FontStyle>Normal</FontStyle>
-                      <FontSize>12pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                       <TextDecoration>None</TextDecoration>
                       <Color>#000000</Color>
@@ -103,7 +102,6 @@
                     <Value>Accidents and Compensation given to Accident Victims April to March </Value>
                     <Style>
                       <FontStyle>Normal</FontStyle>
-                      <FontSize>12pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                       <TextDecoration>None</TextDecoration>
                       <Color>#000000</Color>
@@ -113,7 +111,6 @@
                     <Value>=Parameters!ReportTitle.Value</Value>
                     <Style>
                       <FontStyle>Normal</FontStyle>
-                      <FontSize>12pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                       <TextDecoration>None</TextDecoration>
                       <Color>#000000</Color>
@@ -127,9 +124,9 @@
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
             <Top>0.32314cm</Top>
-            <Left>0.94051cm</Left>
+            <Left>0.38488cm</Left>
             <Height>0.6cm</Height>
-            <Width>18.69598cm</Width>
+            <Width>16.75161cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -144,31 +141,31 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>1.27125cm</Width>
+                  <Width>1.01549cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.45931cm</Width>
+                  <Width>1.83855cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.77681cm</Width>
+                  <Width>1.44167cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.5cm</Width>
+                  <Width>2.32361cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.5cm</Width>
+                  <Width>2.21778cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.5cm</Width>
+                  <Width>2.21778cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.5cm</Width>
+                  <Width>2.05903cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.68861cm</Width>
+                  <Width>1.75035cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.5cm</Width>
+                  <Width>1.88736cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -826,7 +823,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!S_No.Value</Value>
+                                  <Value>=RowNumber(Nothing)</Value>
                                   <Style>
                                     <FontSize>8pt</FontSize>
                                   </Style>
@@ -1155,9 +1152,9 @@
             </TablixRowHierarchy>
             <DataSetName>rptAccidentNCompensationGvnAccidentVictims</DataSetName>
             <Top>1.6637cm</Top>
-            <Left>0.94051cm</Left>
+            <Left>0.38488cm</Left>
             <Height>1.8cm</Height>
-            <Width>18.69598cm</Width>
+            <Width>16.75161cm</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
@@ -1169,7 +1166,7 @@
         <Height>2in</Height>
         <Style />
       </Body>
-      <Width>7.97507in</Width>
+      <Width>6.8084in</Width>
       <Page>
         <PageHeight>29.7cm</PageHeight>
         <PageWidth>21cm</PageWidth>

@@ -102,7 +102,7 @@
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>0.33854in</Height>
+                  <Height>0.20573in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -308,7 +308,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.33854in</Height>
+                  <Height>0.21614in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -627,7 +627,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.33854in</Height>
+                  <Height>0.19531in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -717,7 +717,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.33854in</Height>
+                  <Height>0.19531in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -1024,8 +1024,8 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>rptComparativeFinancialResultsFrom</DataSetName>
-            <Top>0.73833in</Top>
-            <Height>1.35417in</Height>
+            <Top>0.51958in</Top>
+            <Height>0.81249in</Height>
             <Width>7.37499in</Width>
             <Style>
               <Border>
@@ -1043,7 +1043,6 @@
                     <Value>=Parameters!ReportTitle.Value</Value>
                     <Style>
                       <FontStyle>Normal</FontStyle>
-                      <FontSize>12pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                       <TextDecoration>None</TextDecoration>
                       <Color>#000000</Color>
@@ -1056,8 +1055,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox44</rd:DefaultName>
-            <Top>0.28in</Top>
-            <Height>0.29167in</Height>
+            <Top>0.16542in</Top>
+            <Height>0.19792in</Height>
             <Width>7.37499in</Width>
             <ZIndex>1</ZIndex>
             <Style>
@@ -1071,7 +1070,7 @@
             </Style>
           </Textbox>
         </ReportItems>
-        <Height>6.00286cm</Height>
+        <Height>4.01849cm</Height>
         <Style />
       </Body>
       <Width>18.89125cm</Width>

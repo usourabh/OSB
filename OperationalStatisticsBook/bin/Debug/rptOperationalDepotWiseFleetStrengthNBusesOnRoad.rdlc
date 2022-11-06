@@ -91,7 +91,7 @@
                   <Width>0.55208in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.63542in</Width>
+                  <Width>0.75in</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>0.625in</Width>
@@ -118,12 +118,12 @@
                   <Width>0.65625in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.65625in</Width>
+                  <Width>0.54167in</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>0.31944in</Height>
+                  <Height>0.18663in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -271,7 +271,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.31944in</Height>
+                  <Height>0.20746in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -694,7 +694,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.25in</Height>
+                  <Height>0.1901in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -1128,7 +1128,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.31944in</Height>
+                  <Height>0.17621in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -1540,9 +1540,9 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>rptOperationalDepotWiseFleetStrengthNBusesOnRoad</DataSetName>
-            <Top>0.7175in</Top>
+            <Top>0.58208in</Top>
             <Left>0.10292in</Left>
-            <Height>1.20832in</Height>
+            <Height>0.7604in</Height>
             <Width>7.07292in</Width>
             <Style>
               <Border>
@@ -1559,7 +1559,6 @@
                   <TextRun>
                     <Value xml:space="preserve"> </Value>
                     <Style>
-                      <FontSize>12pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
@@ -1567,7 +1566,6 @@
                     <Value>Table-1.11</Value>
                     <Style>
                       <FontStyle>Normal</FontStyle>
-                      <FontSize>12pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                       <TextDecoration>None</TextDecoration>
                       <Color>#000000</Color>
@@ -1584,7 +1582,6 @@
                     <Value> Operational data</Value>
                     <Style>
                       <FontStyle>Normal</FontStyle>
-                      <FontSize>12pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                       <TextDecoration>None</TextDecoration>
                       <Color>#000000</Color>
@@ -1601,7 +1598,6 @@
                     <Value>Depot wise fleet strength &amp; buses on road as on 31st  </Value>
                     <Style>
                       <FontStyle>Normal</FontStyle>
-                      <FontSize>12pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                       <TextDecoration>None</TextDecoration>
                       <Color>#000000</Color>
@@ -1611,7 +1607,6 @@
                     <Value>=Parameters!ReportTitle.Value</Value>
                     <Style>
                       <FontStyle>Normal</FontStyle>
-                      <FontSize>12pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                       <TextDecoration>None</TextDecoration>
                       <Color>#000000</Color>
@@ -1626,7 +1621,7 @@
             <rd:DefaultName>Textbox52</rd:DefaultName>
             <Top>0.17583in</Top>
             <Left>0.10292in</Left>
-            <Height>0.34375in</Height>
+            <Height>0.25in</Height>
             <Width>7.07292in</Width>
             <ZIndex>1</ZIndex>
             <Style>
@@ -1640,10 +1635,10 @@
             </Style>
           </Textbox>
         </ReportItems>
-        <Height>5.08cm</Height>
+        <Height>4.15396cm</Height>
         <Style />
       </Body>
-      <Width>18.41182cm</Width>
+      <Width>18.6764cm</Width>
       <Page>
         <PageHeight>29.7cm</PageHeight>
         <PageWidth>21cm</PageWidth>
