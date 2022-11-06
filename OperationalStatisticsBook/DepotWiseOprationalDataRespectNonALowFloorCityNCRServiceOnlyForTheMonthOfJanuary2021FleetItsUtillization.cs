@@ -236,7 +236,8 @@ namespace OperationalStatisticsBook
 
         private void DepotWiseOprationalDataRespectNonALowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021FleetItsUtillization_Load(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = BindDepotWiseOprationalDataRespectNonALowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021FleetItsUtillization();
+            BindIndexPage(OsbId);
+            //dataGridView1.DataSource = BindDepotWiseOprationalDataRespectNonALowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021FleetItsUtillization();
         }
 
         private void Print_ReportOnClick(object sender, EventArgs e)

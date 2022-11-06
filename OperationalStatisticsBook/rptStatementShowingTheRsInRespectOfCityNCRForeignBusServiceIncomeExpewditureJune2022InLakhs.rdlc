@@ -6,51 +6,51 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>0.44097in</Width>
+              <Width>0.60764in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.42014in</Width>
+              <Width>1.3993in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.40625in</Width>
+              <Width>1.07292in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.42708in</Width>
+              <Width>0.8125in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.45833in</Width>
+              <Width>1.04166in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.53125in</Width>
+              <Width>0.8125in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.52083in</Width>
+              <Width>1in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.47917in</Width>
+              <Width>0.82292in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.69792in</Width>
+              <Width>1in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.71875in</Width>
+              <Width>0.85766in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.64583in</Width>
+              <Width>1.02083in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.55208in</Width>
+              <Width>0.83333in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.55208in</Width>
+              <Width>1.05208in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.5in</Width>
+              <Width>0.8125in</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>0.25in</Height>
+              <Height>0.1875in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -347,7 +347,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.25in</Height>
+              <Height>0.17708in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -596,7 +596,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Per Km (Paise)"</Value>
+                              <Value>Per Km (Paise)</Value>
                               <Style>
                                 <FontSize>8pt</FontSize>
                               </Style>
@@ -828,7 +828,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.25in</Height>
+              <Height>0.16667in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -915,7 +915,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.25in</Height>
+              <Height>0.1875in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -1017,7 +1017,6 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -1052,7 +1051,6 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -1087,7 +1085,6 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -1122,7 +1119,6 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -1157,7 +1153,6 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -1192,7 +1187,6 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -1227,7 +1221,6 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -1262,7 +1255,6 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -1297,7 +1289,6 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -1332,7 +1323,6 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -1367,7 +1357,6 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -1402,7 +1391,6 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
               </TablixCells>
@@ -1444,10 +1432,10 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>rptStatementShowingTheRsInRespectOfCityNCRForeignBusServiceIncomeExpewditureJune2022InLakhs</DataSetName>
-        <Top>0.82167in</Top>
+        <Top>0.655in</Top>
         <Left>0.12375in</Left>
-        <Height>1in</Height>
-        <Width>7.35068in</Width>
+        <Height>0.71875in</Height>
+        <Width>13.14583in</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1461,9 +1449,34 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Statemnet showing the (Rs. in respect of City, NCR &amp; Foreign bus service(Income &amp; Expewnditure June-2022 in lakhs)</Value>
+                <Value>Statemnet showing the </Value>
                 <Style>
-                  <FontSize>12pt</FontSize>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>(Rs. in respect of City, NCR &amp; Foreign bus service)</Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
+          </Paragraph>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>(Income &amp; Expewnditure June-2022 in lakhs)</Value>
+                <Style>
                   <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
@@ -1476,8 +1489,8 @@
         <rd:DefaultName>Textbox69</rd:DefaultName>
         <Top>0.20708in</Top>
         <Left>0.12375in</Left>
-        <Height>0.46875in</Height>
-        <Width>7.35068in</Width>
+        <Height>0.32292in</Height>
+        <Width>13.05208in</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -1490,10 +1503,10 @@
         </Style>
       </Textbox>
     </ReportItems>
-    <Height>5.08cm</Height>
+    <Height>3.96558cm</Height>
     <Style />
   </Body>
-  <Width>19.41723cm</Width>
+  <Width>33.70473cm</Width>
   <Page>
     <PageHeight>27.94cm</PageHeight>
     <PageWidth>21.59cm</PageWidth>

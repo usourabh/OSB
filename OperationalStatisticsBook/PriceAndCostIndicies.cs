@@ -69,6 +69,9 @@ namespace OperationalStatisticsBook
         DataTable BindPriceAndCostIndicies()
         {
             DataTable table = new DataTable();
+            
+            
+            
             table.Columns.Add("Year", typeof(string));
             table.Columns.Add("Price Per 100 KG (Rs.)", typeof(string));
             table.Columns.Add("Indicies", typeof(string));

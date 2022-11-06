@@ -130,13 +130,14 @@ namespace OperationalStatisticsBook
                 {
                     if (row.Cells[0].Value != null || row.Cells[1].Value != null || row.Cells[2].Value != null || row.Cells[3].Value != null || row.Cells[4].Value != null )
                     {
-                        SqlCommand cmd = new SqlCommand("INSERT INTO [rpt].[tbl_DepotwiseOperationalDataFCMSCluster_busesTrafficIncome] ([OsbId],[Param1],[Param2],[Param3],[Param4],[S_No]) VALUES (@OsbId,@Param1,@Param2,@Param3,@Param4,@S_No)", con);
-                        cmd.Parameters.AddWithValue("@OsbId", OsbId);              
-                        cmd.Parameters.AddWithValue("@Param1", row.Cells[0].Value == null ? "" : row.Cells[0].Value.ToString());
-                        cmd.Parameters.AddWithValue("@Param2", row.Cells[1].Value == null ? "" : row.Cells[1].Value.ToString());
-                        cmd.Parameters.AddWithValue("@Param3", row.Cells[2].Value == null ? "" : row.Cells[2].Value.ToString());
-                        cmd.Parameters.AddWithValue("@Param4", row.Cells[3].Value == null ? "" : row.Cells[3].Value.ToString());
-                        cmd.Parameters.AddWithValue("@S_No", row.Cells[4].Value == null ? "" : row.Cells[4].Value.ToString());
+                        SqlCommand cmd = new SqlCommand("INSERT INTO [rpt].[tbl_DepotwiseOperationalDataFCMSCluster_busesTrafficIncome] ([OsbId],[S_No],[Param1],[Param2],[Param3],[Param4]) VALUES (@OsbId,@S_No,@Param1,@Param2,@Param3,@Param4)", con);
+                        cmd.Parameters.AddWithValue("@OsbId", OsbId);
+                        cmd.Parameters.AddWithValue("@S_No", row.Cells[0].Value == null ? "" : row.Cells[0].Value.ToString());
+                        cmd.Parameters.AddWithValue("@Param1", row.Cells[1].Value == null ? "" : row.Cells[1].Value.ToString());
+                        cmd.Parameters.AddWithValue("@Param2", row.Cells[2].Value == null ? "" : row.Cells[2].Value.ToString());
+                        cmd.Parameters.AddWithValue("@Param3", row.Cells[3].Value == null ? "" : row.Cells[3].Value.ToString());
+                        cmd.Parameters.AddWithValue("@Param4", row.Cells[4].Value == null ? "" : row.Cells[4].Value.ToString());
+                       
                        
                         cmd.CommandType = CommandType.Text;
                         con.Open();

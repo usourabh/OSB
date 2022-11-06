@@ -104,26 +104,30 @@ namespace OperationalStatisticsBook
 
 
            
-            table.Rows.Add("S.No", "Particulars", previousMonthName + ' ' + currentYear, previousMonthName + "  " + currentYear, previousMonthName + "   " + currentYear, previousMonthName + "    " + currentYear, previousMonthName + " " + previousYear, previousMonthName + "  " + previousYear, previousMonthName + "   " + previousYear, previousMonthName + "    " + previousYear);
-            table.Rows.Add("", "", "Minor", "Major", "Fatal", "Total", "Minor", "Major", "Fatal", "Total");
-            table.Rows.Add("1", "2", "3", "4", "5", "6", "7", "8", "9", "10");
+           // table.Rows.Add("S.No", "Particulars", previousMonthName + ' ' + currentYear, previousMonthName + "  " + currentYear, previousMonthName + "   " + currentYear, previousMonthName + "    " + currentYear, previousMonthName + " " + previousYear, previousMonthName + "  " + previousYear, previousMonthName + "   " + previousYear, previousMonthName + "    " + previousYear);
+           // table.Rows.Add("", "", "Minor", "Major", "Fatal", "Total", "Minor", "Major", "Fatal", "Total");
+           // table.Rows.Add("1", "2", "3", "4", "5", "6", "7", "8", "9", "10");
             table.Rows.Add("1", "PO BUS", "0", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("2", "D.T.C", "0", "0", "0", "0", "0", "0", "0", "0");
-            table.Rows.Add("3", "Trucks", "0", "0", "0", "0", "0", "0", "0", "0");
-            table.Rows.Add("4", "Two Wheeler", "0", "0", "0", "0", "0", "0", "0", "0");
+            table.Rows.Add("3", "Two Wheeler", "0", "0", "0", "0", "0", "0", "0", "0");
+            table.Rows.Add("4", "Trucks", "0", "0", "0", "0", "0", "0", "0", "0");
+           // table.Rows.Add("4", "Two Wheeler", "0", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("5", "Pedestrian", "0", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("6", "Hand Cart", "0", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("7", "Animal Cart", "0", "0", "0", "0", "0", "0", "0", "0");
-            table.Rows.Add("8", "Fixed point", "0", "0", "0", "0", "0", "0", "0", "0");
+            table.Rows.Add("8", "Fixed", "0", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("9", "Passengers", "0", "0", "0", "0", "0", "0", "0", "0");
-            table.Rows.Add("10", "Rickshaw", "0", "0", "0", "0", "0", "0", "0", "0");
-            table.Rows.Add("11", "E-Rickshaw", "0", "0", "0", "0", "0", "0", "0", "0");
+            table.Rows.Add("10", "E-Rickshaw", "0", "0", "0", "0", "0", "0", "0", "0");
+            table.Rows.Add("11", "Rickshaw", "0", "0", "0", "0", "0", "0", "0", "0");
+           
             table.Rows.Add("12", "Three Wheeler", "0", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("13", "Jeep/RTV", "0", "0", "0", "0", "0", "0", "0", "0");
-            table.Rows.Add("14", "Tempo", "0", "0", "0", "0", "0", "0", "0", "0");
-            table.Rows.Add("15", "Car", "0", "0", "0", "0", "0", "0", "0", "0");
+            table.Rows.Add("14", "Car", "0", "0", "0", "0", "0", "0", "0", "0");
+            table.Rows.Add("15", "Tempo", "0", "0", "0", "0", "0", "0", "0", "0");
+          
             table.Rows.Add("16", "Cyclist", "0", "0", "0", "0", "0", "0", "0", "0");
-            table.Rows.Add("17", "Other Vehicle", "0", "0", "0", "0", "0", "0", "0", "0");
+            table.Rows.Add("17", "Goods Carr.", "0", "0", "0", "0", "0", "0", "0", "0");
+            table.Rows.Add("18", "Other Vehicle", "0", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("", "Total", "0", "0", "0", "0", "0", "0", "0", "0");
 
 

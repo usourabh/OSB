@@ -94,9 +94,9 @@ namespace OperationalStatisticsBook
             table.Columns.Add("Passengers Carried No", typeof(string));
 
             // Rows
-            table.Rows.Add("", "", "", "", "Including Passenger Tax", "Excluding Passenger Tax", "Including Passenger Tax", "Excluding Passenger Tax","");
-            table.Rows.Add("1", "2", "3", "4", "5", "6","7","8","9");
-            table.Rows.Add("Haryana", "", "", "", "", "","","","");
+           // table.Rows.Add("", "", "", "", "Including Passenger Tax", "Excluding Passenger Tax", "Including Passenger Tax", "Excluding Passenger Tax","");
+           // table.Rows.Add("1", "2", "3", "4", "5", "6","7","8","9");
+           // table.Rows.Add("Haryana", "", "", "", "", "","","","");
             table.Rows.Add("1", "Narela to Bahadur Garh (Non AC)", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("2", "Karol Bagh to Gurgaon (AC)", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("3", "Uttam Nagar to Gugaon VIA Dabri(Non AC)", "0", "0", "0", "0", "0", "0", "0");

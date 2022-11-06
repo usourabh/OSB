@@ -99,9 +99,9 @@ namespace OperationalStatisticsBook
            
             // Rows
            
-            dt.Rows.Add("S_No", "Particulars", previousMonthName + ' ' + previousYear, previousMonthName + "  " + previousYear, previousMonthName + ' ' + currentYear, previousMonthName + "  " + currentYear);
-            dt.Rows.Add("", "", "Absolute", "%Age", "Absolute", "%Age");
-            dt.Rows.Add("1", "2", "3", "4", "5", "6");
+           // dt.Rows.Add("S_No", "Particulars", previousMonthName + ' ' + previousYear, previousMonthName + "  " + previousYear, previousMonthName + ' ' + currentYear, previousMonthName + "  " + currentYear);
+           // dt.Rows.Add("", "", "Absolute", "%Age", "Absolute", "%Age");
+           // dt.Rows.Add("1", "2", "3", "4", "5", "6");
             dt.Rows.Add("1", "Rash & Negligence Driving", "", "", "", "");
             dt.Rows.Add("a", "D.T.C", "0", "0", "0", "0");
             dt.Rows.Add("b", "Other", "0", "0", "0", "0");

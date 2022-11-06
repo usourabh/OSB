@@ -57,10 +57,10 @@ namespace OperationalStatisticsBook
             try
             {
                 DataTable dt = new DataTable();
-                SqlCommand cmd = new SqlCommand("SELECT [S_No],[Param1],[Param2],[Param3],[Param4] ,[Param5],[Param6],[Month],[Year] FROM [rpt].[tbl_DepotWiseTotalMissedKmsAndBreakdowns] where Month=@Month or Year=@Year", con);
-                //cmd.Parameters.AddWithValue("@OsbId", OsbId);
-                cmd.Parameters.AddWithValue("@Month", MonthName);
-                cmd.Parameters.AddWithValue("@Year", finYear);
+                SqlCommand cmd = new SqlCommand("SELECT [S_No],[Param1],[Param2],[Param3],[Param4],[Param5],[Param6] FROM [rpt].[tbl_DepotWiseTotalMissedKmsAndBreakdowns] where OsbId=@OsbId", con);
+                cmd.Parameters.AddWithValue("@OsbId", OsbId);
+               // cmd.Parameters.AddWithValue("@Month", MonthName);
+               // cmd.Parameters.AddWithValue("@Year", finYear);
                 cmd.CommandType = CommandType.Text;
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
                 sda.Fill(dt);
@@ -157,7 +157,7 @@ namespace OperationalStatisticsBook
             {
                 try
                 {
-                    if (row.Cells[0].Value != null || row.Cells[1].Value != null || row.Cells[2].Value != null || row.Cells[3].Value != null || row.Cells[4].Value != null || row.Cells[5].Value != null )
+                    if (row.Cells[0].Value != null || row.Cells[1].Value != null || row.Cells[2].Value != null || row.Cells[3].Value != null || row.Cells[4].Value != null || row.Cells[5].Value != null || row.Cells[6].Value != null)
                     {
                         SqlCommand cmd = new SqlCommand("INSERT INTO [rpt].[tbl_DepotWiseTotalMissedKmsAndBreakdowns] ([OsbId],[S_No],[Param1],[Param2],[Param3],[Param4],[Param5],[Param6]) VALUES (@OsbId,@S_No,@Param1,@Param2,@Param3,@Param4,@Param5,@Param6)", con);
                         cmd.Parameters.AddWithValue("@OsbId", OsbId);
@@ -185,7 +185,7 @@ namespace OperationalStatisticsBook
         }
         private void DepotWiseTotalMissedKmsAndBreakdowns_Load(object sender, EventArgs e)
         {           
-            dataGridView1.DataSource = BindDepotWiseTotalMissedKmsAndBreakdowns();
+           // dataGridView1.DataSource = BindDepotWiseTotalMissedKmsAndBreakdowns();
             BindIndexPage(OsbId);
         }
 

@@ -39,7 +39,7 @@ namespace OperationalStatisticsBook
             try
             {
                 DataTable dt = new DataTable();
-                SqlCommand cmd = new SqlCommand("SELECT [OsbId],[YearOfComm],[Param1],[Param2],[Param3],[Param4] ,[Param5],[Param6] ,[Param7],[Param8] FROM [rpt].[tbl_ComparativeOperationalDataForThePeriod] where OsbId=@OsbId", con);
+                SqlCommand cmd = new SqlCommand("SELECT [OsbId],[YearOfComm],[Param1],[Param2],[Param3],[Param4] ,[Param5],[Param6] ,[Param7],[Param8] FROM [rpt].[tbl_DistrubutionOfFleetByTypeMakeAndYearOfCommission] where OsbId=@OsbId", con);
                 cmd.Parameters.AddWithValue("@OsbId", OsbId);
                 cmd.CommandType = CommandType.Text;
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);

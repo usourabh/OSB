@@ -434,7 +434,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=IIf(Fields!S_No.Value = 0, "Non Ac City", "Ac City")</Value>
+                              <Value />
                               <Style>
                                 <FontSize>8pt</FontSize>
                               </Style>
@@ -609,7 +609,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=RowNumber(Nothing)</Value>
+                              <Value>=Fields!S_No.Value</Value>
                               <Style>
                                 <FontSize>8pt</FontSize>
                               </Style>

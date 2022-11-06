@@ -80,9 +80,9 @@ namespace OperationalStatisticsBook
             table.Columns.Add("City (low Floor AC Electric buses )", typeof(string));
             table.Columns.Add("City (low Floor AC Electric buses)", typeof(string));
 
-            table.Rows.Add(" ", " ", "Amt. (Rs. in lakhs) ", "Per Km (Paise) ", "Amt. (Rs. in lakhs)", "Per Km (Paise)", "Amt. (Rs. in lakhs)", "Per Km (Paise)", "Amt. (Rs. in lakhs)", "Per Km (Paise)", "Amt. (Rs. in lakhs)", "Per Km (Paise)", "Amt. (Rs. in lakhs)", "Per Km (Paise)" );
+          //  table.Rows.Add(" ", " ", "Amt. (Rs. in lakhs) ", "Per Km (Paise) ", "Amt. (Rs. in lakhs)", "Per Km (Paise)", "Amt. (Rs. in lakhs)", "Per Km (Paise)", "Amt. (Rs. in lakhs)", "Per Km (Paise)", "Amt. (Rs. in lakhs)", "Per Km (Paise)", "Amt. (Rs. in lakhs)", "Per Km (Paise)" );
             
-            table.Rows.Add("i", "INCOME", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
+           // table.Rows.Add("i", "INCOME", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("i", "Ticketed Earning", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("ii", "Less Passenger Tax", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("iii", "Net Ticketed Earning (i-ii)", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
@@ -186,6 +186,7 @@ namespace OperationalStatisticsBook
         }
         private void ResetOnClick(object sender, EventArgs e)
         {
+            DeleteExisitingTableRecord("tbl_StatementShowingTheRsInRespectOfCityNCRForeignBusServiceIncomeExpewditureJune2022InLakhs", OsbId);
             dataGridView1.DataSource = BindStatementShowingTheRsInRespectOfCityNCRForeignBusServiceIncomeExpewditureJune2022InLakhs();
             MessageBox.Show("Done");
         }

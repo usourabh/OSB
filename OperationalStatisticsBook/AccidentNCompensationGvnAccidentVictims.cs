@@ -39,7 +39,7 @@ namespace OperationalStatisticsBook
             try
             {
                 DataTable dt = new DataTable();
-                SqlCommand cmd = new SqlCommand("SELECT [Year],[Param2],[Param3],[Param4],[Param5],[Param6],[Param7] FROM [rpt].[tbl_AccidentNCompensationGvnAccidentVictims] where OsbId=@OsbId", con);
+                SqlCommand cmd = new SqlCommand("SELECT [Year],[Param1],[Param2],[Param3],[Param4],[Param5],[Param6],[Param7] FROM [rpt].[tbl_AccidentNCompensationGvnAccidentVictims] where OsbId=@OsbId", con);
                 cmd.Parameters.AddWithValue("@OsbId", OsbId);
                 cmd.CommandType = CommandType.Text;
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
@@ -70,13 +70,13 @@ namespace OperationalStatisticsBook
             table.Columns.Add("Year", typeof(string));
             table.Columns.Add("S.No", typeof(string));
            
-            table.Columns.Add("No of Accidents", typeof(int));
-            table.Columns.Add("Accidents per 100,000 kms", typeof(int));
-            table.Columns.Add("No of Person Injured", typeof(int));
-            table.Columns.Add("No of Person Killed", typeof(int));
-            table.Columns.Add("No of Cases received", typeof(int));
-            table.Columns.Add("Compensation given (Rs. in lakh)", typeof(int));
-            table.Columns.Add("Compensation given (Rs. in lakh) ", typeof(int));
+            table.Columns.Add("No of Accidents", typeof(string));
+            table.Columns.Add("Accidents per 100,000 kms", typeof(string));
+            table.Columns.Add("No of Person Injured", typeof(string));
+            table.Columns.Add("No of Person Killed", typeof(string));
+            table.Columns.Add("No of Cases received", typeof(string));
+            table.Columns.Add("Compensation given (Rs. in lakh)", typeof(string));
+            table.Columns.Add("Compensation given (Rs. in lakh) ", typeof(string));
             table.Rows.Add("1", "2", "3", "4", "5", "6", "7", "8", "9");
             //Static Rows
 
@@ -96,14 +96,14 @@ namespace OperationalStatisticsBook
 
         private void ResetOnClick(object sender, EventArgs e)
         {
-            DeleteExisitingdtRecord("tbl_ComparativeAnalysisOfCausesOfAccidents", OsbId);
+            DeleteExisitingdtRecord("tbl_AccidentNCompensationGvnAccidentVictims", OsbId);
             dataGridView1.DataSource = BindAccidentNCompensationGvnAccidentVictims();
             MessageBox.Show("Done");
         }
 
         private void SaveOnClick(object sender, EventArgs e)
         {
-            DeleteExisitingdtRecord("tbl_ComparativeAnalysisOfCausesOfAccidents", OsbId);
+            DeleteExisitingdtRecord("tbl_AccidentNCompensationGvnAccidentVictims", OsbId);
 
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
