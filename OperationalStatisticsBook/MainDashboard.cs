@@ -823,13 +823,13 @@ namespace OperationalStatisticsBook
             byte[] byarry25 = GenerateReport(Page27ReportName, rptParam, Page27DataSourceName, Page27Data);
             lstByte.Add(byarry25);
 
-            //// No Of Trips Actual Operated On Time And No Of Trips Actual Operated
+            // No Of Trips Actual Operated On Time And No Of Trips Actual Operated
 
-            //string Page28ReportName = "rptNoOfTripsActualOperatedOnTimeAndNoOfTripsActualOperated.rdlc";
-            //string Page28DataSourceName = "rptNoOfTripsActualOperatedOnTimeAndNoOfTripsActualOperated";
-            //DataTable Page28Data = objPageData.GetDataTripsActualOperatedOnTimeNOperated2min_Page28(this.OsbId);
-            //byte[] byarry26 = GenerateReport(Page28ReportName, null, Page28DataSourceName, Page28Data);
-            //lstByte.Add(byarry26);
+            string Page28ReportName = "rptNoOfTripsActualOperatedOnTimeAndNoOfTripsActualOperated.rdlc";
+            string Page28DataSourceName = "rptNoOfTripsActualOperatedOnTimeAndNoOfTripsActualOperated";
+            DataTable Page28Data = objPageData.GetDataTripsActualOperatedOnTimeNOperated2min_Page28(this.OsbId);
+            byte[] byarry26 = GenerateReport(Page28ReportName, null, Page28DataSourceName, Page28Data);
+            lstByte.Add(byarry26);
 
             //DepotWise Total Missed Kms And Breakdowns
 
@@ -967,10 +967,15 @@ namespace OperationalStatisticsBook
             if (rptParam != null)
                 if (rptParam.Count() > 0)
                     rdsAPP.LocalReport.SetParameters(rptParam);
-
-            byte[] fByte = ConvertReportToPDF(rdsAPP.LocalReport);
-
-            return fByte;
+            try
+            {
+                byte[] fByte =  ConvertReportToPDF(rdsAPP.LocalReport);
+                return fByte;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
         }
 
 
