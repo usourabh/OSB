@@ -115,8 +115,8 @@ namespace OperationalStatisticsBook
             dt.Columns.Add("Staff excess/short ", typeof(string));
           
 
-            dt.Rows.Add("", "", "", "", "", "Authorised Fl.Strength (Col.5-3)", "@Actual Fl.Strength (Col.5-4)");
-            dt.Rows.Add("1", "2", "3", "4", "5", "6","7");
+         //   dt.Rows.Add("", "", "", "", "", "Authorised Fl.Strength (Col.5-3)", "@Actual Fl.Strength (Col.5-4)");
+         //   dt.Rows.Add("1", "2", "3", "4", "5", "6","7");
             dt.Rows.Add("DR.", "", "", "", "", "","");
             dt.Rows.Add("COND.", "", "", "", "", "","");
             dt.Rows.Add("Tr.Sup.", "", "", "", "", "","");

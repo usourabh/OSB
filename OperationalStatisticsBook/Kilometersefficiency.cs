@@ -39,7 +39,7 @@ namespace OperationalStatisticsBook
             try
             {
                 DataTable dt = new DataTable();
-                SqlCommand cmd = new SqlCommand("SELECT [S_No],[Id],[OsbId],[Month],[Value],[Year] FROM [tbl_Kilometersefficiency] where OsbId=@OsbId", con);
+                SqlCommand cmd = new SqlCommand("SELECT [Month],[Value] FROM [tbl_Kilometersefficiency] where OsbId=@OsbId", con);
                 cmd.Parameters.AddWithValue("@OsbId", OsbId);
                 cmd.CommandType = CommandType.Text;
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
@@ -97,28 +97,7 @@ namespace OperationalStatisticsBook
             table.Rows.Add(MonthList[1].MonthName + "-" + MonthList[1].Year);
             table.Rows.Add(MonthList[0].MonthName + "-" + MonthList[0].Year);
 
-            ///table.Rows.Add("1", "2", "3");
-            //DateTime currentDate = new DateTime(Year, Month, 01);
-            //DateTime newDate = currentDate.AddMonths(-12);
-            //int previousYear = newDate.Year;
-            //String previousMonthName = newDate.ToString("MMMM");
-            //if (Year > previousYear)
-            //{
-            //    table.Rows.Add(previousYear, "0");
-            //    table.Rows.Add(previousMonthName, "0");
-            //    table.Rows.Add(Year, "0");
-            //}
-            //else
-            //{
-            //    table.Rows.Add(Year, "0");
-            //    table.Rows.Add(previousMonthName, "0");
-            //}
-
-            //for (int i = 0; i < 12; i++)
-            //{
-            //    table.Rows.Add(currentDate.AddMonths(i).ToString("MMMM"), "0");
-            //}
-            //dataGridView1.DataSource = table;
+        
             return table;
         }
 
@@ -165,7 +144,7 @@ namespace OperationalStatisticsBook
 
         private void Kilometersefficiency_Load(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = BindKilometersefficiency();
+           // dataGridView1.DataSource = BindKilometersefficiency();
             BindIndexPage(OsbId);
         }
 
