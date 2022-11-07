@@ -111,10 +111,10 @@ namespace OperationalStatisticsBook
 
 
             // Rows
-            table.Rows.Add("", "", "Scheduled", "Scheduled", "Scheduled", "Scheduled", "Scheduled", "Operated", "Operated", "Operated", "Operated", "Operated", "Kilometer Efficiency (%)", "Kilometer Efficiency (%) ", "Kilometer Efficiency (%)", "Kilometer Efficiency (%)", "Kilometer Efficiency (%)", "Daily Opt. Kilometers", "Daily Opt. Kilometers", "Daily Opt. Kilometers", "Daily Opt. Kilometers", "Daily Opt. Kilometers", "Kilometers per bus per day (No.)", "Kilometers per bus per day (No.)", "Kilometers per bus per day (No.)", "Kilometers per bus per day (No.)", "Kilometers per bus per day (No.)");
-            table.Rows.Add("", "", "City", "City", "NCR", "NCR", "Total", "City", "City", "NCR", "NCR", "Total", "City", "City", "NCR", "NCR", "Total", "City", "City", "NCR", "NCR", "Total", "City", "City", "NCR", "NCR", "Total");
-            table.Rows.Add("", "", "NAC", "AC", "NAC", "AC", "", "NAC", "AC", "NAC", "AC", "", "NAC", "AC", "NAC", "AC", "", "NAC", "AC", "NAC", "AC", "", "NAC", "AC", "NAC", "AC", "");
-            table.Rows.Add("1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22","23","24","25","26","27");
+          //  table.Rows.Add("", "", "Scheduled", "Scheduled", "Scheduled", "Scheduled", "Scheduled", "Operated", "Operated", "Operated", "Operated", "Operated", "Kilometer Efficiency (%)", "Kilometer Efficiency (%) ", "Kilometer Efficiency (%)", "Kilometer Efficiency (%)", "Kilometer Efficiency (%)", "Daily Opt. Kilometers", "Daily Opt. Kilometers", "Daily Opt. Kilometers", "Daily Opt. Kilometers", "Daily Opt. Kilometers", "Kilometers per bus per day (No.)", "Kilometers per bus per day (No.)", "Kilometers per bus per day (No.)", "Kilometers per bus per day (No.)", "Kilometers per bus per day (No.)");
+          //  table.Rows.Add("", "", "City", "City", "NCR", "NCR", "Total", "City", "City", "NCR", "NCR", "Total", "City", "City", "NCR", "NCR", "Total", "City", "City", "NCR", "NCR", "Total", "City", "City", "NCR", "NCR", "Total");
+        //    table.Rows.Add("", "", "NAC", "AC", "NAC", "AC", "", "NAC", "AC", "NAC", "AC", "", "NAC", "AC", "NAC", "AC", "", "NAC", "AC", "NAC", "AC", "", "NAC", "AC", "NAC", "AC", "");
+         //   table.Rows.Add("1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22","23","24","25","26","27");
             table.Rows.Add("1", "BBM", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0","0","0","0","0","0");
             table.Rows.Add("2", "Rohini-I", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0","0","0","0","0","0");
             table.Rows.Add("3", "Rohini-II", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0","0","0","0","0","0");

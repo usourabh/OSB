@@ -117,17 +117,18 @@ namespace OperationalStatisticsBook
 
             dt.Rows.Add("", "", "", "", "", "Authorised Fl.Strength (Col.5-3)", "@Actual Fl.Strength (Col.5-4)");
             dt.Rows.Add("1", "2", "3", "4", "5", "6","7");
-            dt.Rows.Add("DR.", "0", "0", "0", "0", "0","0");
-            dt.Rows.Add("COND.", "0", "0", "0", "0", "0","0");
-            dt.Rows.Add("Tr.Sup.", "0", "0", "0", "0", "0","0");
-            dt.Rows.Add("R & M.", "0", "0", "0", "0", "0","0");
-            dt.Rows.Add("Admin.", "0", "0", "0", "0", "0","0");
-            dt.Rows.Add("Total*", "0", "0", "0", "0", "0","0");
-            dt.Rows.Add("*Included Short term/Contract Basis Staff", " ", " ", " ", " ", " "," ");
-            dt.Rows.Add(" ", "0", "0", "0", "0", "0","0");
-            dt.Rows.Add(" ", "0", "0", "0", "0", "0","0");
-            dt.Rows.Add(" ", "0", "0", "0", "0", "0","0");
-            dt.Rows.Add(" ", "0", "0", "0", "0", "0","0");
+            dt.Rows.Add("DR.", "", "", "", "", "","");
+            dt.Rows.Add("COND.", "", "", "", "", "","");
+            dt.Rows.Add("Tr.Sup.", "", "", "", "", "","");
+            dt.Rows.Add("R & M.", "", "", "", "", "","");
+            dt.Rows.Add("Admin.", "", "", "", "", "","");
+            dt.Rows.Add("Total*", "", "", "", "", "","");
+            dt.Rows.Add("", " ", " ", " ", " ", " "," ");
+            dt.Rows.Add("*Included Short term/Contract Basis Staff", "", "Short term  S/ Guards", " ", "", "Short term Manager", "");
+            dt.Rows.Add("*Included Short term/Contract Basis Staff", "", "Short term  Drivers", " ", "", " Part Time MO", "");
+            dt.Rows.Add("*Included Short term/Contract Basis Staff", "", "Short term Conductors", "", "", "Consultant ", "");
+            dt.Rows.Add("*Included Short term/Contract Basis Staff", "", "Short term Press", "", "", "", "");
+            
            
            
             return dt;
