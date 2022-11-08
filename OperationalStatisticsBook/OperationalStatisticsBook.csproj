@@ -687,7 +687,9 @@
     <EmbeddedResource Include="BarEarningPerBusPerDay.resx">
       <DependentUpon>BarEarningPerBusPerDay.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BarFleetNUtilization.rdlc" />
+    <EmbeddedResource Include="BarFleetNUtilization.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="BarFleetNUtilization.resx">
       <DependentUpon>BarFleetNUtilization.cs</DependentUpon>
     </EmbeddedResource>

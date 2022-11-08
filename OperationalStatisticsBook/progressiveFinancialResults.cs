@@ -70,7 +70,7 @@ namespace OperationalStatisticsBook
             table.Columns.Add("% RECOVERY OF TOTAL EXPENDITURE", typeof(string));
             table.Columns.Add("NET LOSS AMT(Rs.)", typeof(string));            
             //Rows data
-            table.Rows.Add("1", "2", "3", "3", "4", "4");
+          //  table.Rows.Add("1", "2", "3", "3", "4", "4");
             DateTime currentDate = new DateTime(Year, Month, 01);
             DateTime newDate = currentDate.AddMonths(-1);
             int previousYear = newDate.Year;

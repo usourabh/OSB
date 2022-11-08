@@ -80,7 +80,7 @@ namespace OperationalStatisticsBook
 
             table.Rows.Add("Year", currentYear, previousYear, currentYear, previousYear, currentYear, previousYear, currentYear, previousYear, currentYear, previousYear, currentYear, previousYear);
 
-            for (int i = 11; i > 0; i--)
+            for (int i = 7; i > 0; i--)
             {
                 table.Rows.Add(newDateM.AddMonths(-i).ToString("MMMM"), " 0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
             }

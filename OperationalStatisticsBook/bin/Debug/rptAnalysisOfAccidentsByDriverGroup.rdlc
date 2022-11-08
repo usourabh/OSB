@@ -1416,7 +1416,6 @@
                     <Value>for the month of </Value>
                     <Style>
                       <FontStyle>Normal</FontStyle>
-                      <FontFamily>Times New Roman</FontFamily>
                       <FontSize>12pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                       <TextDecoration>None</TextDecoration>
@@ -1427,7 +1426,6 @@
                     <Value>=Parameters!ReportTitle.Value</Value>
                     <Style>
                       <FontStyle>Normal</FontStyle>
-                      <FontFamily>Times New Roman</FontFamily>
                       <FontSize>12pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                       <TextDecoration>None</TextDecoration>

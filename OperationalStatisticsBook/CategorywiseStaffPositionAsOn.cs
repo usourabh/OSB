@@ -124,7 +124,7 @@ namespace OperationalStatisticsBook
             table.Rows.Add("11", "Kanjhawla  ", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("12", "Narela ", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("13", "Rohini sec. 37  ", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
-            table.Rows.Add("North Total", "North Total", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
+            table.Rows.Add("", "North Total", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("14", "Kalka Ji", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("15", "Sri Niwas puri ", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("16", "Ambedkar Nagar", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
@@ -132,7 +132,7 @@ namespace OperationalStatisticsBook
             table.Rows.Add("18", "Tehkhand ", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("19", "Sukhdev Vihar ", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("20", "Sarojni Nagar ", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
-            table.Rows.Add("South Total", "South Total ", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
+            table.Rows.Add("", "South Total ", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("21 ", "Nand Nagri ", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("22 ", "NOIDA ", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("23 ", "East Vinod Nagar ", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
@@ -142,7 +142,7 @@ namespace OperationalStatisticsBook
             table.Rows.Add("27", "Gazi Pur ", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("28", "Raj Ghat-I ", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("29", "Raj Ghat-II ", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
-            table.Rows.Add("East Total", "East Total", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
+            table.Rows.Add("", "East Total", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("30", "Hari Nagar-I", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("31", "Hari Nagar-II ", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("32", "Hari Nagar-III", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
@@ -156,12 +156,12 @@ namespace OperationalStatisticsBook
             table.Rows.Add("40", "Peera Garhi ", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("41", "Ghuman Hera ", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("42", "Mundhela kalan", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
-            table.Rows.Add("West Total", "West Total", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
-            table.Rows.Add("Sup. Checking North", "Sup. Checking North", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
-            table.Rows.Add("Sup. Checking East", "Sup. Checking East", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
-            table.Rows.Add("Sup. Checking West", "Sup. Checking West", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
-            table.Rows.Add("Sup. Checking South", "Sup. Checking South", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
-            table.Rows.Add("R&I H.Qrs.", "R&I H.Qrs.", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
+            table.Rows.Add("", "West Total", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
+            table.Rows.Add("", "Sup. Checking North", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
+            table.Rows.Add("", "Sup. Checking East", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
+            table.Rows.Add("", "Sup. Checking West", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
+            table.Rows.Add("", "Sup. Checking South", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
+            table.Rows.Add("", "R&I H.Qrs.", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("43", "Bawana Sec. 1 ", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("44", "Bawana Sec. 5 ", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("45", "Rani Khera 1  ", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");

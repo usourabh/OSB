@@ -24,7 +24,7 @@
         <Top>1.33174cm</Top>
         <Left>0.5348cm</Left>
         <Height>0.6cm</Height>
-        <Width>17.60522cm</Width>
+        <Width>14.67717cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -39,36 +39,36 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>2.04727cm</Width>
+              <Width>1.13005cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.04727cm</Width>
+              <Width>1.90616cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.04727cm</Width>
+              <Width>1.81796cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.04727cm</Width>
+              <Width>1.85324cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.04727cm</Width>
+              <Width>1.53574cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.78269cm</Width>
+              <Width>1.55338cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.75623cm</Width>
+              <Width>1.66804cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.17956cm</Width>
+              <Width>1.96789cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.6504cm</Width>
+              <Width>1.24471cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>1.26918cm</Height>
+              <Height>0.89876cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -81,7 +81,7 @@
                             <TextRun>
                               <Value>Month</Value>
                               <Style>
-                                <FontSize>8pt</FontSize>
+                                <FontSize>7pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -114,7 +114,7 @@
                             <TextRun>
                               <Value>Total Income</Value>
                               <Style>
-                                <FontSize>8pt</FontSize>
+                                <FontSize>7pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -128,7 +128,7 @@
                             <TextRun>
                               <Value>Amt. (Rs.)</Value>
                               <Style>
-                                <FontSize>8pt</FontSize>
+                                <FontSize>7pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -163,7 +163,7 @@
                             <TextRun>
                               <Value>Working Expenditure</Value>
                               <Style>
-                                <FontSize>8pt</FontSize>
+                                <FontSize>7pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -177,7 +177,7 @@
                             <TextRun>
                               <Value>Amt (Rs.)</Value>
                               <Style>
-                                <FontSize>8pt</FontSize>
+                                <FontSize>7pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -214,7 +214,7 @@
 Working 
 Expenditure</Value>
                               <Style>
-                                <FontSize>8pt</FontSize>
+                                <FontSize>7pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -249,7 +249,7 @@ Expenditure</Value>
                             <TextRun>
                               <Value>Working Loss/ Profit Amt (Rs.)</Value>
                               <Style>
-                                <FontSize>8pt</FontSize>
+                                <FontSize>7pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -284,7 +284,7 @@ Expenditure</Value>
                             <TextRun>
                               <Value> Fixed Cost Amt (Rs.)</Value>
                               <Style>
-                                <FontSize>8pt</FontSize>
+                                <FontSize>7pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -319,7 +319,7 @@ Expenditure</Value>
                             <TextRun>
                               <Value>Total Expenditure Amt (Rs.)</Value>
                               <Style>
-                                <FontSize>8pt</FontSize>
+                                <FontSize>7pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -355,7 +355,7 @@ Expenditure</Value>
                               <Value>%Recovery of 
 total Expenditure</Value>
                               <Style>
-                                <FontSize>8pt</FontSize>
+                                <FontSize>7pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -390,7 +390,7 @@ total Expenditure</Value>
                             <TextRun>
                               <Value>Net Loss Amt (Rs.)</Value>
                               <Style>
-                                <FontSize>8pt</FontSize>
+                                <FontSize>7pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -417,7 +417,7 @@ total Expenditure</Value>
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.46771cm</Height>
+              <Height>0.3266cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -430,7 +430,7 @@ total Expenditure</Value>
                             <TextRun>
                               <Value>1</Value>
                               <Style>
-                                <FontSize>8pt</FontSize>
+                                <FontSize>7pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -463,7 +463,7 @@ total Expenditure</Value>
                             <TextRun>
                               <Value>2</Value>
                               <Style>
-                                <FontSize>8pt</FontSize>
+                                <FontSize>7pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -498,7 +498,7 @@ total Expenditure</Value>
                             <TextRun>
                               <Value>3</Value>
                               <Style>
-                                <FontSize>8pt</FontSize>
+                                <FontSize>7pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -533,7 +533,7 @@ total Expenditure</Value>
                             <TextRun>
                               <Value>4</Value>
                               <Style>
-                                <FontSize>8pt</FontSize>
+                                <FontSize>7pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -568,7 +568,7 @@ total Expenditure</Value>
                             <TextRun>
                               <Value>5</Value>
                               <Style>
-                                <FontSize>8pt</FontSize>
+                                <FontSize>7pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -603,7 +603,7 @@ total Expenditure</Value>
                             <TextRun>
                               <Value>6</Value>
                               <Style>
-                                <FontSize>8pt</FontSize>
+                                <FontSize>7pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -638,7 +638,7 @@ total Expenditure</Value>
                             <TextRun>
                               <Value>7</Value>
                               <Style>
-                                <FontSize>8pt</FontSize>
+                                <FontSize>7pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -673,7 +673,7 @@ total Expenditure</Value>
                             <TextRun>
                               <Value>8</Value>
                               <Style>
-                                <FontSize>8pt</FontSize>
+                                <FontSize>7pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -708,7 +708,7 @@ total Expenditure</Value>
                             <TextRun>
                               <Value>9</Value>
                               <Style>
-                                <FontSize>8pt</FontSize>
+                                <FontSize>7pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -735,7 +735,7 @@ total Expenditure</Value>
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.38833cm</Height>
+              <Height>0.31777cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -1074,8 +1074,8 @@ total Expenditure</Value>
         <DataSetName>rptProgressiveFinancialResults</DataSetName>
         <Top>2.10813cm</Top>
         <Left>0.5348cm</Left>
-        <Height>2.12522cm</Height>
-        <Width>17.60522cm</Width>
+        <Height>1.54314cm</Height>
+        <Width>14.67717cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>

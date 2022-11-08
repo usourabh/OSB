@@ -134,11 +134,11 @@ namespace OperationalStatisticsBook
             {
                 try
                 {
-                    if (row.Cells[0].Value != null || row.Cells[1].Value != null || row.Cells[2].Value != null || row.Cells[3].Value != null || row.Cells[4].Value != null || row.Cells[5].Value != null || row.Cells[6].Value != null )
+                    if (row.Cells[0].Value != null || row.Cells[1].Value != null || row.Cells[2].Value != null || row.Cells[3].Value != null || row.Cells[4].Value != null || row.Cells[5].Value != null || row.Cells[6].Value != null || row.Cells[7].Value != null )
                     {
                         SqlCommand cmd = new SqlCommand("INSERT INTO [rpt].[tbl_PerformanceMetopolitanTransportUndertaking] ([OsbId],[Particular],[Param1],[Param2],[Param3],[Param4],[Param5],[Param6]) VALUES (@OsbId,@Particular,@Param1,@Param2,@Param3,@Param4,@Param5,@Param6)", con);
                         cmd.Parameters.AddWithValue("@OsbId", OsbId);
-                   
+                       // cmd.Parameters.AddWithValue("@SNo", row.Cells[0].Value == null ? "" : row.Cells[0].Value.ToString());
                         cmd.Parameters.AddWithValue("@Particular", row.Cells[0].Value == null ? "" : row.Cells[0].Value.ToString());
                         cmd.Parameters.AddWithValue("@Param1", row.Cells[1].Value == null ? "" : row.Cells[1].Value.ToString());
                         cmd.Parameters.AddWithValue("@Param2", row.Cells[2].Value == null ? "" : row.Cells[2].Value.ToString());

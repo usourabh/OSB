@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp1;
 
 namespace OperationalStatisticsBook
 {
@@ -146,6 +147,12 @@ namespace OperationalStatisticsBook
         {
             dataGridView1.DataSource = BindEarningPerBusPerDay();
             BindIndexPage(OsbId);
+        }
+
+        private void Generatebarchart_OnClick(object sender, EventArgs e)
+        {
+            BarEarningPerBusPerDay obj = new BarEarningPerBusPerDay(OsbId,Year,Month,finYear,MonthName);
+            obj.Show();
         }
     }
 }

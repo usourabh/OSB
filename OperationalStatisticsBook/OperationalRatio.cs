@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp1;
 
 namespace OperationalStatisticsBook
 {
@@ -146,6 +147,12 @@ namespace OperationalStatisticsBook
         {
             dataGridView1.DataSource = BindOperationalRatio();
             BindIndexPage(OsbId);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            BarOperationalRatio obj = new BarOperationalRatio(OsbId, Year, Month, finYear, MonthName);
+            obj.Show();
         }
     }
 }

@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp1;
 
 namespace OperationalStatisticsBook
 {
@@ -157,6 +158,12 @@ namespace OperationalStatisticsBook
         {
             dataGridView1.DataSource = BindBarTrafficEarning();
            // BindIndexPage(OsbId);
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            BarTrafficEarninginCrore obj = new BarTrafficEarninginCrore(OsbId, Year, Month, finYear, MonthName);
+            obj.Show();
         }
     }
 }

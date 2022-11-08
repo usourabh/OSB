@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp1;
 
 namespace OperationalStatisticsBook
 {
@@ -159,6 +160,12 @@ namespace OperationalStatisticsBook
         {
             dataGridView1.DataSource = BindBarPassengerCarried();
 
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            BarPassengerInCarried obj = new BarPassengerInCarried(OsbId, Year, Month, finYear, MonthName);
+            obj.Show();
         }
     }
 }

@@ -455,6 +455,126 @@ namespace OperationalStatisticsBook
             return dt;
         }
 
+        //<-----------BAR GRAPH PIE CHART----------->
+
+
+        // Bar Fleet and its utilization
+
+        public DataTable GetDataBarFleetNUtilization_Page38_graph1(int Year, int Month)
+        {
+            var MonthList = GlobalMaster.GetPrevousMonthList(Month, Year, 02);
+            DateTime currentDate = new DateTime(Year, Month, 01);
+            DateTime newDate = currentDate.AddYears(+1);
+            string currentYear = currentDate.Year.ToString();
+            string previousYear = newDate.Year.ToString();
+            String previousMonthName = newDate.ToString("MMMM");
+            String[,] param = new string[,]
+                   {
+                   {"@Month",Month.ToString().Trim()},
+                   {"@Year",previousYear.ToString().Trim()},
+                };
+            DataTable dt = Common.ExecuteProcedure("SP_BarFleetNUtilization", param);
+            return dt;
+        }
+
+        // Bar operational ratio
+        public DataTable GetDataBarOperationalRatio_Page38_graph2(int OsbId)
+        {
+            String[,] param = new string[,]
+                   {
+                   {"@OsbId",OsbId.ToString().Trim()},
+                   
+                };
+            DataTable dt = Common.ExecuteProcedure("sp_BarOperationalRatio", param);
+            return dt;
+        }
+
+        // BAR KILOMETER EFFICENCY
+
+        public DataTable GetDataBarKilometersefficiency_Page38_graph3(int OsbId)
+        {
+            String[,] param = new string[,]
+                   {
+                   {"@OsbId",OsbId.ToString().Trim()},
+
+                };
+            DataTable dt = Common.ExecuteProcedure("Sp_BarKilometersefficiency", param);
+            return dt;
+        }
+
+        // Traffic earning in crore
+
+        public DataTable GetDataBarTrafficEarninginCrore_Page39_graph1(int OsbId)
+        {
+            String[,] param = new string[,]
+                   {
+                   {"@OsbId",OsbId.ToString()}
+
+                };
+            DataTable dt = Common.ExecuteProcedure("rpt.BarTrafficearning ", param);
+            return dt;
+        }
+
+        // Earning per bus per day
+
+        public DataTable GetDataBarEarningPerBusPerDay_Page39_graph2(int OsbId)
+        {
+            String[,] param = new string[,]
+                   {
+                   {"@OsbId",OsbId.ToString().Trim()},
+
+                };
+            DataTable dt = Common.ExecuteProcedure("Sp_BarEarningPerBusPerDay", param);
+            return dt;
+        }
+
+        // passengers in carried
+
+        public DataTable GetDataBarPassengerInCarried_Page39_graph3(int OsbId)
+        {
+            String[,] param = new string[,]
+                   {
+                   {"@OsbId",OsbId.ToString()}
+
+                };
+            DataTable dt = Common.ExecuteProcedure("rpt.BarPassengerCarried ", param);
+            return dt;
+        }
+
+        //pie chart TRAFFIC EARNING FOR THE MONTH
+
+        public DataTable GetDataBarPassengerInCarried_Page41_pie1()
+        {
+            String[,] param = new string[,]
+                   {
+                     {"@Month","4".ToString()},
+                   {"@Year","2021".ToString()},
+                };
+
+            DataTable dt = Common.ExecuteProcedure("sp_BarPieChartTrafficEarning", param);
+            return dt;
+        }
+
+        // PIE CHART EXPENDITURE FOR THE MONTH
+
+        public DataTable GetDataBarPassengerInCarried_Page41_pie2()
+        {
+            String[,] param = new string[,]
+                   {
+                   {"@Month","4".ToString()},
+                   {"@Year","2021".ToString()},
+                };
+            DataTable dt = Common.ExecuteProcedure("sp_PieChartExpenditureForTheMonth", param);
+            return dt;
+        }
+
+
+
+
+
+
+
+
 
 
 

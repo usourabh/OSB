@@ -133,7 +133,7 @@ namespace OperationalStatisticsBook
             dt.Rows.Add(" ", "Index Page", "frmOSBMain");
             dt.Rows.Add(" ", "Performance of DTC at a Glance", "frmPerformanceofDTCGlance");
             dt.Rows.Add(" ", "PROGRESSIVE FINANCIAL RESULTS (Rs. In Lakh)", "progressiveFinancialResults");
-            dt.Rows.Add(" ", "Staff Ratio as on 31st July-2022", "StaffRatioAsOn");
+            dt.Rows.Add(" ", "Staff Ratio as on ", "StaffRatioAsOn");
             dt.Rows.Add("1.1", "Analysis of causes of Accidents (" + GlobalMaster.FinMaster[1].FinVal + " TO " + GlobalMaster.FinMaster[0].FinVal + ")", "analysisOfCausesAccidents");
             dt.Rows.Add("1.2", "Growith of basic structure of DTC", "SalientFeatureGrowthBasicStructure");
             dt.Rows.Add("1.3", "ROUTES OPERATED BY D.T.C.", "RoutesOperatedByDtc");
@@ -144,51 +144,43 @@ namespace OperationalStatisticsBook
             dt.Rows.Add("1.8", "Material Consumption from (" + GlobalMaster.FinMaster[2].FinVal + " to " + GlobalMaster.FinMaster[0].FinVal + ")", "MaterialConsumptionFrom");
             dt.Rows.Add("1.9", "Performance of Metopolitan Transport Undertaking (" + GlobalMaster.FinMaster[5].FinVal + ")", "PerformanceMetopolitanTransportUndertaking");
             dt.Rows.Add("1.10", "Accidents and Compensation given to Accident Victims April to March (" + GlobalMaster.FinMaster[9].FinVal + " to " + GlobalMaster.FinMaster[0].FinVal + ")", "AccidentNCompensationGvnAccidentVictims");
-            dt.Rows.Add("1.11", "Operational data Depot wise fleet strength & buses on road as on 31st July-2022", "OperationalDepotWiseFleetStrengthNBusesOnRoad");
-            dt.Rows.Add("2", "Category wise Staff Position as on 31st January-2021", "CategorywiseStaffPositionAsOn");
-            dt.Rows.Add("3.1", "Routes operated by DTC and its Earning per Killometer June-2022", "RoutesOperatedByDTCEarningPerKillometerJune");
-            dt.Rows.Add("3.2", "Statement showing Region Wise Operational Data for the month of January 2021", "StatementShowingRegionWiseOperationalDataForTheMonth");
+            dt.Rows.Add("1.11", "Operational data Depot wise fleet strength & buses on road as on", "OperationalDepotWiseFleetStrengthNBusesOnRoad");
+            dt.Rows.Add("2", "Category wise Staff Position as on ", "CategorywiseStaffPositionAsOn");
+            dt.Rows.Add("3.1", "Routes operated by DTC and its Earning per Killometer ", "RoutesOperatedByDTCEarningPerKillometerJune");
+            dt.Rows.Add("3.2", "Statement showing Region Wise Operational Data for the month of ", "StatementShowingRegionWiseOperationalDataForTheMonth");
             dt.Rows.Add("3.3", "DETAILS OF OPERATIONAL DATA", "DetailsofOperationaldataforthemonthofJuly");
-            dt.Rows.Add("4.1", "Depot Wise Oprational Data(inRespectOfNonAC & AC LowFloor City NCR Service Only For The Month Of January 2021 Fleet & ItsUtillization)", "DepotWiseOprationalDataRespectNonALowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021FleetItsUtillization");
+            dt.Rows.Add("4.1", "Depot Wise Oprational Data(inRespectOfNonAC & AC LowFloor City NCR Service Only For The Month Of Fleet & ItsUtillization)", "DepotWiseOprationalDataRespectNonALowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021FleetItsUtillization");
             dt.Rows.Add("4.2", "Depot-wise Operational Data Trips Scheduled and Operated)", "DepotWiseOperationalDataInRespectOfNonAcAndAcLowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021TripsScheduledAndOperated");
-            dt.Rows.Add("4.3", "Depot- wise Oprational Data (in respect of Non AC & AC Low Floor City + NCR service only)for the month of January 2021 Analysis of Kilometers", "DepotWiseOprationalDataInRespectOfNonAcNAcLowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021AnalysisOfKilometers");
-            dt.Rows.Add("4.4", "Depot- wise Oprational Data (in respect of Non AC & AC Low Floor City + NCR service only) For the month of january 2021 Traffic Income", "DepotWiseOprationalDataInRespectOfNonAcNAcLowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021TrafficIncome");
+            dt.Rows.Add("4.3", "Depot- wise Oprational Data (in respect of Non AC & AC Low Floor City + NCR service only)for the month of Analysis of Kilometers", "DepotWiseOprationalDataInRespectOfNonAcNAcLowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021AnalysisOfKilometers");
+            dt.Rows.Add("4.4", "Depot- wise Oprational Data (in respect of Non AC & AC Low Floor City + NCR service only) For the month of Traffic Income", "DepotWiseOprationalDataInRespectOfNonAcNAcLowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021TrafficIncome");
             dt.Rows.Add("4.5", "Accident Analysis Of for the month of (Non AC & AC Low Floor City & NCR service only)", "AccidentAnalysisForTheMonth");
             dt.Rows.Add("4.6", "Depot- wise Oprational Data (in respect of Non AC & AC Low Floor City service only)", "DepotWiseOprationalDataInRespectOfNonAC");
-            dt.Rows.Add("4.7", "No. of trips actual operated on time and No. of trips actual operated within two minutes. for the month of Febuary - 2022", "NoOfTripsActualOperatedOnTimeAndNoOfTripsActualOperated");
-            dt.Rows.Add("4.8", "Depot wise total missed kms and breakdowns for the month of July-2022", "DepotWiseTotalMissedKmsAndBreakdowns");
-            dt.Rows.Add("5.1", "Comparative Analysis of causes of Accidents for the month of July - 2022 & July - 2021", "ComparativeAnalysisOfCausesOfAccidents");
+            dt.Rows.Add("4.7", "No. of trips actual operated on time and No. of trips actual operated within two minutes. for the month of ", "NoOfTripsActualOperatedOnTimeAndNoOfTripsActualOperated");
+            dt.Rows.Add("4.8", "Depot wise total missed kms and breakdowns for the month of", "DepotWiseTotalMissedKmsAndBreakdowns");
+            dt.Rows.Add("5.1", "Comparative Analysis of causes of Accidents for the month of", "ComparativeAnalysisOfCausesOfAccidents");
             dt.Rows.Add("5.2", "Accident Analysis By Other Party Involvement", "AccidentAnalysisOtherPartyInvolvment");
             dt.Rows.Add("5.3", "Analysis of Accidents by driver group", "AnalysisOfAccidentsByDriverGroup");
             dt.Rows.Add("6.1", "Statement Of for the month of Passes", "StatementOfForTheMonthOfPasses");
-            dt.Rows.Add("6.2", "DEPOT WISE STATEMENT OF SCHOOL , SPL. HIRE ,TOURIST, PASS & PINK TICKET EARNING For the month of january 2021", "DeportWiseStatementOfSchoolSPLHireTouristPassPinkTicketEarning");
-            dt.Rows.Add("7.1", "Statement Showing Operational Data of NCR CNG Services of the Corporation for the month of January 2021", "StatementShowingOperationalDataOfNcrCngServicesOfTheCorporationForTheMonthOfJuly_2022");
-            dt.Rows.Add("8.1", "Depot wise operational data of FCMS Fleet & its utiuzation", "DWODFCMSFleetItsUtilization");
+            dt.Rows.Add("6.2", "DEPOT WISE STATEMENT OF SCHOOL , SPL. HIRE ,TOURIST, PASS & PINK TICKET EARNING For the month of", "DeportWiseStatementOfSchoolSPLHireTouristPassPinkTicketEarning");
+            dt.Rows.Add("7.1", "Statement Showing Operational Data of NCR CNG Services of the Corporation for the month of", "StatementShowingOperationalDataOfNcrCngServicesOfTheCorporationForTheMonthOfJuly_2022");
+            dt.Rows.Add("8.1", "Depot wise operational data of FCMS Fleet & its utilization", "DWODFCMSFleetItsUtilization");
             dt.Rows.Add("8.2", "Depot wise Operational Data FCMS Cluster buses Traffic Income", "DepotwiseOperationalDataFCMSCluster_busesTrafficIncome");
-            dt.Rows.Add("9", "Statemnet showing the(Rs. in respect of City, NCR & Foreign bus service(Income & Expewnditure June - 2022 in lakhs)", "StatementShowingTheRsInRespectOfCityNCRForeignBusServiceIncomeExpewditureJune2022InLakhs");
-            dt.Rows.Add(" ", "Statemnet showing the in respect of City, NCR & Foreign bus service(Income & Expewnditure June - 2022 in lakhs)", "StatemnetShowingTheInRespectOfCityNcrAndForeignBusServiceRsIncomeAndExpewnditureJune_2022Inlakhs");
+            dt.Rows.Add("9", "Statemnet showing the(Rs. in respect of City, NCR & Foreign bus service(Income & Expewnditure in lakhs)", "StatementShowingTheRsInRespectOfCityNCRForeignBusServiceIncomeExpewditureJune2022InLakhs");
+            dt.Rows.Add(" ", "Statemnet showing the in respect of City, NCR & Foreign bus service(Income & Expewnditure in lakhs)", "StatemnetShowingTheInRespectOfCityNcrAndForeignBusServiceRsIncomeAndExpewnditureJune_2022Inlakhs");
             dt.Rows.Add("", "Depot wise operational data of FCMS Fleet & its utiuzation", "DWODFCMSFleetItsUtilization");
-            dt.Rows.Add("", "Kilometers efficency July -2021 to July-2022", "Kilometersefficiency");
+        
             dt.Rows.Add("", "", "");
-            //dt.Rows.Add(" ", "Fleet Utilization July -2021 to July-2022 ", "rptFleetUtilization");
-            dt.Rows.Add(" ", "Fleet Utilization July -2021 to July-2022 ", "BarFleetNUtilization");
-            dt.Rows.Add(" ", "Kilometers efficiency ", "BarKilometersefficiency");
+           
+            //<-------------BARGRAPH AND PIE CHART------------>
 
-
-            dt.Rows.Add(" ", "form PieChart Traffic Earning for the month ", "TRAFFICINCOMEFORTHEMONTH");
-            dt.Rows.Add(" ", "form Expenditure of  the month ", "EXPENDITUREFORTHEMONTH");
-
-            dt.Rows.Add(" ", "Traffic Earning In Crore ", "BarTrafficEarninginCrore");
-            dt.Rows.Add(" ", "Passenger In Carried", "BarPassengerInCarried");
-            dt.Rows.Add(" ", "Bar Traffic Earning", "BarTrafficEarning");
-            dt.Rows.Add(" ", "Bar Passenger Carried", "BarPassengerCarried");
-
-            dt.Rows.Add(" ", "Bar Operational ratio July - 2021 to July - 2022", "BarOperationalRatio");
-            dt.Rows.Add(" ", "Operational ratio July - 2021 to July - 2022", "OperationalRatio");
-            dt.Rows.Add(" ", "Bar Earining per bus per day in Rs.July - 2021 to July - 2022", "BarEarningPerBusPerDay");
-            dt.Rows.Add(" ", "Earining per bus per day in Rs.July - 2021 to July - 2022", "EarningPerBusPerDay");
-
-
+            dt.Rows.Add(" ", "BAR GRPAPH Passenger Carried", "BarPassengerCarried");
+            dt.Rows.Add(" ", "BAR GRPAPH Fleet Utilization ", "BarFleetNUtilization");
+            dt.Rows.Add(" ", "BAR GRPAPH Operational ratio", "OperationalRatio");
+            dt.Rows.Add(" ", "BAR GRPAPH Kilometers efficency", "Kilometersefficiency");
+            dt.Rows.Add(" ", "BAR GRPAPH Traffic Earning", "BarTrafficEarning");
+            dt.Rows.Add(" ", "BAR GRPAPH Earning per bus per day in Rs.", "EarningPerBusPerDay");
+            dt.Rows.Add(" ", "PIE CHART Traffic Earning for the month ", "TRAFFICINCOMEFORTHEMONTH");
+            dt.Rows.Add(" ", "PIE CHART Expenditure of  the month ", "EXPENDITUREFORTHEMONTH");
             return dt;
 
         }
@@ -915,6 +907,147 @@ namespace OperationalStatisticsBook
             DataTable Page37Data = objPageData.GetDataStatShowingIncomeNExpenditureRespectFBS_Page36(this.OsbId);
             byte[] byarry37 = GenerateReport(Page37ReportName, null, Page37DataSourceName, Page37Data);
             lstByte.Add(byarry37);
+
+            //<-----------BAR GRAPH PIE CHART----------->
+
+
+            // Bar Fleet and its utilization
+
+            string Page38ReportName1 = "BarFleetNUtilization.rdlc";
+            string Page38DataSourceName1 = "BarFleetNUtilization";
+            DataTable Page38Data1 = objPageData.GetDataBarFleetNUtilization_Page38_graph1(Year, Month);
+
+            var MonthList13 = GlobalMaster.GetPrevousMonthList(Month, Year, 02);
+            DateTime currentDate = new DateTime(Year, Month, 01);
+            DateTime newDate = currentDate.AddYears(+1);
+            string currentYear = currentDate.Year.ToString();
+            string previousYear = newDate.Year.ToString();
+            String previousMonthName = newDate.ToString("MMMM");
+            rptParam = new ReportParameter[1];
+            rptParam[0] = new ReportParameter("ReportTitle", MonthList[0].MonthName + "-" + currentYear + " to " + MonthList[0].MonthName + "-" + previousYear);
+
+            byte[] byarry38 = GenerateReport(Page38ReportName1, rptParam, Page38DataSourceName1, Page38Data1);
+            lstByte.Add(byarry38);
+
+            // Bar operational ratio
+
+            string Page38ReportName2 = "BarOperationalRatio.rdlc";
+            string Page38DataSourceName2 = "BarOperationalRatio";
+            DataTable Page38Data2 = objPageData.GetDataBarOperationalRatio_Page38_graph2(this.OsbId);
+            var MonthList14 = GlobalMaster.GetPrevousMonthList(Month, Year, 02);
+            DateTime currentDate1 = new DateTime(Year, Month, 01);
+            DateTime newDate1 = currentDate.AddYears(+1);
+            string currentYear1 = currentDate.Year.ToString();
+            string previousYear1 = newDate.Year.ToString();
+            String previousMonthName1 = newDate.ToString("MMMM");
+            rptParam = new ReportParameter[1];
+            rptParam[0] = new ReportParameter("ReportTitle", MonthList14[0].MonthName + "-" + currentYear1 + " to " + MonthList14[0].MonthName + "-" + previousYear1);
+
+            byte[] byarry39 = GenerateReport(Page38ReportName2, rptParam, Page38DataSourceName2, Page38Data2);
+            lstByte.Add(byarry39);
+
+            // BAR KILOMETER EFFICENCY
+
+            string Page38ReportName3 = "BarKilometersefficiency.rdlc";
+            string Page38DataSourceName3 = "BarKilometersefficiency";
+            DataTable Page38Data3 = objPageData.GetDataBarKilometersefficiency_Page38_graph3(this.OsbId);
+
+            var MonthList15 = GlobalMaster.GetPrevousMonthList(Month, Year, 02);
+            DateTime currentDate2 = new DateTime(Year, Month, 01);
+            DateTime newDate2 = currentDate.AddYears(+1);
+            string currentYear2 = currentDate.Year.ToString();
+            string previousYear2 = newDate.Year.ToString();
+            String previousMonthName2 = newDate.ToString("MMMM");
+            rptParam = new ReportParameter[1];
+            rptParam[0] = new ReportParameter("ReportTitle", MonthList15[0].MonthName + "-" + currentYear2 + " to " + MonthList15[0].MonthName + "-" + previousYear2);
+
+            byte[] byarry40 = GenerateReport(Page38ReportName3, rptParam, Page38DataSourceName3, Page38Data3);
+            lstByte.Add(byarry40);
+
+            // traffic earning in crore
+
+            string Page39ReportName1 = "BarTrafficEarninginCrore.rdlc";
+            string Page39DataSourceName1 = "BarTrafficEarninginCrore";
+            DataTable Page39Data1 = objPageData.GetDataBarTrafficEarninginCrore_Page39_graph1(this.OsbId);
+
+
+            var MonthList16 = GlobalMaster.GetPrevousMonthList(Month, Year, 02);
+            DateTime currentDate3 = new DateTime(Year, Month, 01);
+            DateTime newDate3 = currentDate.AddYears(+1);
+            string currentYear3 = currentDate.Year.ToString();
+            string previousYear3 = newDate.Year.ToString();
+            String previousMonthName3 = newDate.ToString("MMMM");
+            rptParam = new ReportParameter[1];
+            rptParam[0] = new ReportParameter("ReportTitle", MonthList16[1].MonthName + "-" + currentYear + " to " + MonthList16[0].MonthName + "-" + previousYear);
+
+            byte[] byarry41 = GenerateReport(Page39ReportName1, rptParam, Page39DataSourceName1, Page39Data1);
+            lstByte.Add(byarry41);
+
+            // Earning per bus per day
+
+            string Page40ReportName2 = "BarEarningPerBusPerDay.rdlc";
+            string Page40DataSourceName2 = "BarEarningPerBusPerDay";
+            DataTable Page40Data2 = objPageData.GetDataBarEarningPerBusPerDay_Page39_graph2(this.OsbId);
+
+
+            var MonthList17 = GlobalMaster.GetPrevousMonthList(Month, Year, 02);
+            DateTime currentDate4 = new DateTime(Year, Month, 01);
+            DateTime newDate4 = currentDate.AddYears(+1);
+            string currentYear4 = currentDate.Year.ToString();
+            string previousYear4 = newDate.Year.ToString();
+            String previousMonthName4 = newDate.ToString("MMMM");
+            rptParam = new ReportParameter[1];
+            rptParam[0] = new ReportParameter("ReportTitle", MonthList17[0].MonthName + "-" + currentYear4 + " to " + MonthList17[0].MonthName + "-" + previousYear4);
+
+            byte[] byarry42 = GenerateReport(Page40ReportName2, rptParam, Page40DataSourceName2, Page40Data2);
+            lstByte.Add(byarry42);
+
+            // passenger in carried
+
+            string Page40ReportName3 = "BarPassengerInCarried.rdlc";
+            string Page40DataSourceName3 = "BarPassengerInCarried";
+            DataTable Page40Data3 = objPageData.GetDataBarPassengerInCarried_Page39_graph3(this.OsbId);
+
+
+            var MonthList18 = GlobalMaster.GetPrevousMonthList(Month, Year, 02);
+            DateTime currentDate5 = new DateTime(Year, Month, 01);
+            DateTime newDate5 = currentDate.AddYears(+1);
+            string currentYear5 = currentDate.Year.ToString();
+            string previousYear5 = newDate.Year.ToString();
+            String previousMonthName5 = newDate.ToString("MMMM");
+
+            rptParam = new ReportParameter[1];
+            rptParam[0] = new ReportParameter("ReportTitle", MonthList18[0].MonthName + "-" + currentYear5 + " to " + MonthList18[0].MonthName + "-" + previousYear5);
+
+            byte[] byarry43 = GenerateReport(Page40ReportName3, rptParam, Page40DataSourceName3, Page40Data3);
+            lstByte.Add(byarry43);
+
+            //TRAFFIC EARNING FOR THE MONTH
+
+            string Page41ReportName1 = "BarPassengerInCarried.rdlc";
+            string Page41DataSourceName1 = "BarPassengerInCarried";
+            DataTable Page41Data1 = objPageData.GetDataBarPassengerInCarried_Page41_pie1();
+
+            var MonthList19 = GlobalMaster.GetPrevousMonthList(Month, Year, 02);
+            rptParam = new ReportParameter[1];
+            rptParam[0] = new ReportParameter("ReportTitle", MonthList19[0].MonthName + "-" + MonthList19[0].Year);
+
+            byte[] byarry44 = GenerateReport(Page41ReportName1, rptParam, Page41DataSourceName1, Page41Data1);
+            lstByte.Add(byarry44);
+
+            // PIE CHART EXPENDITURE FOR THE MONTH
+
+            string Page41ReportName2 = "BarPassengerInCarried.rdlc";
+            string Page41DataSourceName2 = "BarPassengerInCarried";
+            DataTable Page41Data2 = objPageData.GetDataBarPassengerInCarried_Page41_pie2();
+
+            var MonthList20 = GlobalMaster.GetPrevousMonthList(Month, Year, 02);
+            rptParam = new ReportParameter[1];
+            rptParam[0] = new ReportParameter("ReportTitle", MonthList[0].MonthName + "-" + MonthList[0].Year);
+
+            byte[] byarry45 = GenerateReport(Page41ReportName2, rptParam, Page41DataSourceName2, Page41Data2);
+            lstByte.Add(byarry45);
+
 
 
 

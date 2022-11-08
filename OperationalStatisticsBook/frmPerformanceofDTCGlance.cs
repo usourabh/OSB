@@ -72,9 +72,14 @@ namespace OperationalStatisticsBook
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
                 sda.Fill(dt);
                 if (dt.Rows.Count > 0)
+                {
                     grdIndexPage.DataSource = dt;
+                    btnupdateIndexPage.BackColor = Color.Green;
+                }
                 else
+                {
                     grdIndexPage.DataSource = BindMasterData();
+                }
             }
             catch (Exception ex)
             {

@@ -132,16 +132,17 @@ namespace OperationalStatisticsBook
             {
                 try
                 {
-                    if (row.Cells[0].Value != null || row.Cells[1].Value != null || row.Cells[2].Value != null || row.Cells[3].Value != null || row.Cells[4].Value != null || row.Cells[5].Value != null)
+                    if (row.Cells[0].Value != null || row.Cells[1].Value != null || row.Cells[2].Value != null || row.Cells[3].Value != null || row.Cells[4].Value != null || row.Cells[5].Value != null || row.Cells[6].Value != null)
                     {
-                        SqlCommand cmd = new SqlCommand("INSERT INTO [rpt].[tbl_DWODFCMSFleetItsUtilization] ([OsbId],[Depot],[Param1],[Param2],[Param3],[Param4],[Param5]) VALUES (@OsbId,@Depot,@Param1,@Param2,@Param3,@Param4,@Param5)", con);
+                        SqlCommand cmd = new SqlCommand("INSERT INTO [rpt].[tbl_DWODFCMSFleetItsUtilization] ([OsbId],[SNo],[Depot],[Param1],[Param2],[Param3],[Param4],[Param5]) VALUES (@OsbId,@SNo,@Depot,@Param1,@Param2,@Param3,@Param4,@Param5)", con);
                         cmd.Parameters.AddWithValue("@OsbId", OsbId);
-                        cmd.Parameters.AddWithValue("@Depot", row.Cells[0].Value == null ? "" : row.Cells[0].Value.ToString());
-                        cmd.Parameters.AddWithValue("@Param1", row.Cells[1].Value == null ? "" : row.Cells[1].Value.ToString());
-                        cmd.Parameters.AddWithValue("@Param2", row.Cells[2].Value == null ? "" : row.Cells[2].Value.ToString());
-                        cmd.Parameters.AddWithValue("@Param3", row.Cells[3].Value == null ? "" : row.Cells[3].Value.ToString());
-                        cmd.Parameters.AddWithValue("@Param4", row.Cells[4].Value == null ? "" : row.Cells[4].Value.ToString());
-                        cmd.Parameters.AddWithValue("@Param5", row.Cells[5].Value == null ? "" : row.Cells[5].Value.ToString());
+                        cmd.Parameters.AddWithValue("@SNo", row.Cells[0].Value == null ? "" : row.Cells[0].Value.ToString());
+                        cmd.Parameters.AddWithValue("@Depot", row.Cells[1].Value == null ? "" : row.Cells[1].Value.ToString());
+                        cmd.Parameters.AddWithValue("@Param1", row.Cells[2].Value == null ? "" : row.Cells[2].Value.ToString());
+                        cmd.Parameters.AddWithValue("@Param2", row.Cells[3].Value == null ? "" : row.Cells[3].Value.ToString());
+                        cmd.Parameters.AddWithValue("@Param3", row.Cells[4].Value == null ? "" : row.Cells[4].Value.ToString());
+                        cmd.Parameters.AddWithValue("@Param4", row.Cells[5].Value == null ? "" : row.Cells[5].Value.ToString());
+                        cmd.Parameters.AddWithValue("@Param5", row.Cells[6].Value == null ? "" : row.Cells[6].Value.ToString());
                            cmd.CommandType = CommandType.Text;
                         con.Open();
                         cmd.ExecuteNonQuery();
@@ -166,8 +167,8 @@ namespace OperationalStatisticsBook
         private void DWODFCMSFleetItsUtilization_Load(object sender, EventArgs e)
         {
 
-            ShowData();
-           // dataGridView1.DataSource = BindDWODFCMSFleetItsUtilization();
+           // ShowData();
+            dataGridView1.DataSource = BindDWODFCMSFleetItsUtilization();
 
         }
     }

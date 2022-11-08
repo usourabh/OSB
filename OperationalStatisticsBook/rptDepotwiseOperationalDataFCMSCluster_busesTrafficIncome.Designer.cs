@@ -51,15 +51,16 @@ namespace OperationalStatisticsBook
             // 
             // reportViewer1
             // 
+            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             reportDataSource1.Name = "rptDepotwiseOperationalDataFCMSCluster_busesTrafficIncome";
             reportDataSource1.Value = this.tbl_DepotwiseOperationalDataFCMSCluster_busesTrafficIncomeBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "OperationalStatisticsBook.rptDepotwiseOperationalDataFCMSCluster_busesTrafficInco" +
     "me.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(0, -2);
+            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(800, 453);
+            this.reportViewer1.Size = new System.Drawing.Size(804, 594);
             this.reportViewer1.TabIndex = 0;
             // 
             // tbl_DepotwiseOperationalDataFCMSCluster_busesTrafficIncomeTableAdapter

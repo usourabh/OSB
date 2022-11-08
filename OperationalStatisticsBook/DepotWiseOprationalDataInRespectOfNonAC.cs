@@ -54,10 +54,10 @@ namespace OperationalStatisticsBook
             table.Columns.Add("  For The Month of July-2022       ",typeof(string));
             table.Columns.Add("  For The Month of July-2022  ",typeof(string));
 
-            table.Rows.Add("Sr.No.", "Name Of the Depot", "Analysis of km.", "Analysis of km.", "Analysis of km.", "Analysis of km.", "Analysis of km.", "Traffic Income", "Traffic Income", "Traffic Income", "Traffic Income", "Accident", "Accident", "Drivers", "Drivers","Conductors", "Conductors");
-            table.Rows.Add(" ", " ", "Total km.(Number)", "Total km.(Number)", "Killometer Efficiency(%)", "Daily Operated Killometers", "Killometers per bus per day(No.)", "Monthly Traffic Income(Rs.)", "Daily Traffic Income(Rs.) ", "Traffic Income per km(paise)", "Traffic Income per bus oer day(Rs.)", "Total Accident (No).", "Accident Per 100000 kms", "No of Drivers", "Killometers per day /Drivers","Nos of Conductors", "Earning per day /Conductors");
-            table.Rows.Add(" ", " ", "Scheduled", "Operated", "", "", "", "", "", "", "", "", "", "", "", "", "");
-            table.Rows.Add("1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17");
+            //table.Rows.Add("Sr.No.", "Name Of the Depot", "Analysis of km.", "Analysis of km.", "Analysis of km.", "Analysis of km.", "Analysis of km.", "Traffic Income", "Traffic Income", "Traffic Income", "Traffic Income", "Accident", "Accident", "Drivers", "Drivers","Conductors", "Conductors");
+            //table.Rows.Add(" ", " ", "Total km.(Number)", "Total km.(Number)", "Killometer Efficiency(%)", "Daily Operated Killometers", "Killometers per bus per day(No.)", "Monthly Traffic Income(Rs.)", "Daily Traffic Income(Rs.) ", "Traffic Income per km(paise)", "Traffic Income per bus oer day(Rs.)", "Total Accident (No).", "Accident Per 100000 kms", "No of Drivers", "Killometers per day /Drivers","Nos of Conductors", "Earning per day /Conductors");
+            //table.Rows.Add(" ", " ", "Scheduled", "Operated", "", "", "", "", "", "", "", "", "", "", "", "", "");
+            //table.Rows.Add("1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17");
             table.Rows.Add("1", "BBM ", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("2", "RH-1  ", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("3", "RH-2 ", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");

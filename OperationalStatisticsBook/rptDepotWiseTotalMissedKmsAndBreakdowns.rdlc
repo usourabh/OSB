@@ -29,7 +29,7 @@
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>0.6cm</Height>
+              <Height>0.49417cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -178,7 +178,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.6cm</Height>
+              <Height>0.45889cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -421,7 +421,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.6cm</Height>
+              <Height>0.42361cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -664,7 +664,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.6cm</Height>
+              <Height>0.42361cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -938,7 +938,7 @@
         <DataSetName>rptDepotWiseTotalMissedKmsAndBreakdowns</DataSetName>
         <Top>1.59314cm</Top>
         <Left>0.67592cm</Left>
-        <Height>2.4cm</Height>
+        <Height>1.80028cm</Height>
         <Width>13.06478cm</Width>
         <Style>
           <Border>
