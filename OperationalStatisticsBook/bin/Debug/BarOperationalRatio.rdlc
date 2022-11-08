@@ -65,11 +65,6 @@
                       <GroupExpression>=Fields!Month.Value</GroupExpression>
                     </GroupExpressions>
                   </Group>
-                  <SortExpressions>
-                    <SortExpression>
-                      <Value>=Fields!Month.Value</Value>
-                    </SortExpression>
-                  </SortExpressions>
                   <Label>=Fields!Month.Value</Label>
                 </ChartMember>
               </ChartMembers>
@@ -95,6 +90,10 @@
                         <Visible>true</Visible>
                       </ChartDataLabel>
                       <Style>
+                        <Border>
+                          <Color>White</Color>
+                          <Width>1.5pt</Width>
+                        </Border>
                         <Color>Turquoise</Color>
                       </Style>
                       <ChartMarker>
@@ -355,8 +354,9 @@
                 </ChartValueAxes>
                 <ChartThreeDProperties>
                   <Enabled>true</Enabled>
-                  <Rotation>9</Rotation>
+                  <Rotation>13</Rotation>
                   <Inclination>19</Inclination>
+                  <GapDepth>105</GapDepth>
                 </ChartThreeDProperties>
                 <Style>
                   <Border>

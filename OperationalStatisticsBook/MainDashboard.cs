@@ -815,7 +815,7 @@ namespace OperationalStatisticsBook
             byte[] byarry25 = GenerateReport(Page27ReportName, rptParam, Page27DataSourceName, Page27Data);
             lstByte.Add(byarry25);
 
-            // No Of Trips Actual Operated On Time And No Of Trips Actual Operated
+            // No Of Trips Actual Operated On Time And No Of Trips Actual Operated within two minutes
 
             string Page28ReportName = "rptNoOfTripsActualOperatedOnTimeAndNoOfTripsActualOperated.rdlc";
             string Page28DataSourceName = "rptNoOfTripsActualOperatedOnTimeAndNoOfTripsActualOperated";
@@ -1062,7 +1062,10 @@ namespace OperationalStatisticsBook
             PdfImportedPage importedPage;
             string outputPdfPath = @"D:/newFile.pdf";
             MessageBox.Show("PDF GENERATED");
+            try
+            {
 
+            
             sourceDocument = new Document();
             pdfCopyProvider = new PdfCopy(sourceDocument, new System.IO.FileStream(outputPdfPath, System.IO.FileMode.Create));
 
@@ -1084,6 +1087,12 @@ namespace OperationalStatisticsBook
                 }
 
                 reader.Close();
+            }
+            }
+            catch (Exception ex)
+            {
+
+                throw;
             }
             //save the output file  
             sourceDocument.Close();
