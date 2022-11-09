@@ -168,9 +168,9 @@ namespace OperationalStatisticsBook
             dt.Rows.Add("9", "Statemnet showing the(Rs. in respect of City, NCR & Foreign bus service(Income & Expewnditure in lakhs)", "StatementShowingTheRsInRespectOfCityNCRForeignBusServiceIncomeExpewditureJune2022InLakhs");
             dt.Rows.Add(" ", "Statemnet showing the in respect of City, NCR & Foreign bus service(Income & Expewnditure in lakhs)", "StatemnetShowingTheInRespectOfCityNcrAndForeignBusServiceRsIncomeAndExpewnditureJune_2022Inlakhs");
             dt.Rows.Add("", "Depot wise operational data of FCMS Fleet & its utiuzation", "DWODFCMSFleetItsUtilization");
-        
+
             dt.Rows.Add("", "", "");
-           
+
             //<-------------BARGRAPH AND PIE CHART------------>
 
             dt.Rows.Add(" ", "BAR GRPAPH Passenger Carried", "BarPassengerCarried");
@@ -405,7 +405,7 @@ namespace OperationalStatisticsBook
                     rptFleetUtilization objFrm = new rptFleetUtilization(OsbId, Year, Month, FinYear, MonthName);
                     objFrm.Show();
                 }
-                
+
                 else if (frmName == "BarFleetNUtilization")
                 {
                     BarFleetNUtilization objFrm = new BarFleetNUtilization(OsbId, Year, Month, FinYear, MonthName);
@@ -1065,29 +1065,31 @@ namespace OperationalStatisticsBook
             try
             {
 
-            
-            sourceDocument = new Document();
-            pdfCopyProvider = new PdfCopy(sourceDocument, new System.IO.FileStream(outputPdfPath, System.IO.FileMode.Create));
 
-            //output file Open  
-            sourceDocument.Open();
+                sourceDocument = new Document();
+                pdfCopyProvider = new PdfCopy(sourceDocument, new System.IO.FileStream(outputPdfPath, System.IO.FileMode.Create));
+
+                //output file Open  
+                sourceDocument.Open();
 
 
-            //files list wise Loop  
-            for (int f = 0; f < lstByte.Count; f++)
-            {
-                int pages = 1;
-
-                reader = new PdfReader(lstByte[f]);
-                //Add pages in new file  
-                for (int i = 1; i <= pages; i++)
+                //files list wise Loop  
+                for (int f = 0; f < lstByte.Count; f++)
                 {
-                    importedPage = pdfCopyProvider.GetImportedPage(reader, i);
-                    pdfCopyProvider.AddPage(importedPage);
-                }
+                    int pages = 1;
+                    if (lstByte[f] != null)
+                    {
+                        reader = new PdfReader(lstByte[f]);
+                        //Add pages in new file  
+                        for (int i = 1; i <= pages; i++)
+                        {
+                            importedPage = pdfCopyProvider.GetImportedPage(reader, i);
+                            pdfCopyProvider.AddPage(importedPage);
+                        }
 
-                reader.Close();
-            }
+                        reader.Close();
+                    }
+                }
             }
             catch (Exception ex)
             {
@@ -1111,7 +1113,7 @@ namespace OperationalStatisticsBook
                     rdsAPP.LocalReport.SetParameters(rptParam);
             try
             {
-                byte[] fByte =  ConvertReportToPDF(rdsAPP.LocalReport);
+                byte[] fByte = ConvertReportToPDF(rdsAPP.LocalReport);
                 return fByte;
             }
             catch (Exception ex)
@@ -1136,6 +1138,7 @@ namespace OperationalStatisticsBook
                "  <MarginLeft>0.1in</MarginLeft>" +
                "  <MarginRight>0.1in</MarginRight>" +
                "  <MarginBottom>0.1in</MarginBottom>" +
+               " <EmbedFonts>None</EmbedFonts>" +
                "</DeviceInfo>";
 
             Warning[] warnings;
