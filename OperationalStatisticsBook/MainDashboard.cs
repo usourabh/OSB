@@ -139,7 +139,7 @@ namespace OperationalStatisticsBook
             dt.Rows.Add("1.3", "ROUTES OPERATED BY D.T.C.", "RoutesOperatedByDtc");
             dt.Rows.Add("1.4", "Comparative Financial Results Year (" + GlobalMaster.FinMaster[2].FinVal + " to " + GlobalMaster.FinMaster[0].FinVal + ")", "ComparativeFinancialResultsFrom");
             dt.Rows.Add("1.5", "Comparative operational data for the period (April to March) (" + GlobalMaster.FinMaster[2].FinVal + " to " + GlobalMaster.FinMaster[0].FinVal + ")", "ComparativeOperationalData");
-            dt.Rows.Add("1.6", "Distrubution fof fleet by type/make and year of commission", "DistrubutionOfFleetByTypeMakeAndYearOfCommission");
+            dt.Rows.Add("1.6", "Distrubution of fleet by type/make and year of commission", "DistrubutionOfFleetByTypeMakeAndYearOfCommission");
             dt.Rows.Add("1.7", "PRICE AND COST INDICES (" + GlobalMaster.FinMaster[5].FinVal + " to " + GlobalMaster.FinMaster[0].FinVal + ")", "PriceAndCostIndicies");
             dt.Rows.Add("1.8", "Material Consumption from (" + GlobalMaster.FinMaster[2].FinVal + " to " + GlobalMaster.FinMaster[0].FinVal + ")", "MaterialConsumptionFrom");
             dt.Rows.Add("1.9", "Performance of Metopolitan Transport Undertaking (" + GlobalMaster.FinMaster[5].FinVal + ")", "PerformanceMetopolitanTransportUndertaking");
@@ -167,7 +167,7 @@ namespace OperationalStatisticsBook
             dt.Rows.Add("8.2", "Depot wise Operational Data FCMS Cluster buses Traffic Income", "DepotwiseOperationalDataFCMSCluster_busesTrafficIncome");
             dt.Rows.Add("9", "Statemnet showing the(Rs. in respect of City, NCR & Foreign bus service(Income & Expewnditure in lakhs)", "StatementShowingTheRsInRespectOfCityNCRForeignBusServiceIncomeExpewditureJune2022InLakhs");
             dt.Rows.Add(" ", "Statemnet showing the in respect of City, NCR & Foreign bus service(Income & Expewnditure in lakhs)", "StatemnetShowingTheInRespectOfCityNcrAndForeignBusServiceRsIncomeAndExpewnditureJune_2022Inlakhs");
-            dt.Rows.Add("", "Depot wise operational data of FCMS Fleet & its utiuzation", "DWODFCMSFleetItsUtilization");
+           // dt.Rows.Add("", "Depot wise operational data of FCMS Fleet & its utiuzation", "DWODFCMSFleetItsUtilization");
 
             dt.Rows.Add("", "", "");
 
@@ -1024,8 +1024,8 @@ namespace OperationalStatisticsBook
 
             //TRAFFIC EARNING FOR THE MONTH
 
-            string Page41ReportName1 = "BarPassengerInCarried.rdlc";
-            string Page41DataSourceName1 = "BarPassengerInCarried";
+            string Page41ReportName1 = "PieTrafficEarningForTheMonthOf.rdlc";
+            string Page41DataSourceName1 = "PieTrafficEarningForTheMonthOfMonth";
             DataTable Page41Data1 = objPageData.GetDataBarPassengerInCarried_Page41_pie1();
 
             var MonthList19 = GlobalMaster.GetPrevousMonthList(Month, Year, 02);
@@ -1037,8 +1037,8 @@ namespace OperationalStatisticsBook
 
             // PIE CHART EXPENDITURE FOR THE MONTH
 
-            string Page41ReportName2 = "BarPassengerInCarried.rdlc";
-            string Page41DataSourceName2 = "BarPassengerInCarried";
+            string Page41ReportName2 = "PieExpenditureForTheMonthOf.rdlc";
+            string Page41DataSourceName2 = "ExpenditureOfTheMonth";
             DataTable Page41Data2 = objPageData.GetDataBarPassengerInCarried_Page41_pie2();
 
             var MonthList20 = GlobalMaster.GetPrevousMonthList(Month, Year, 02);

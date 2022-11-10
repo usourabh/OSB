@@ -100,7 +100,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Distrubution fof fleet by type/make and year of commission</Value>
+                    <Value>Distrubution of fleet by type/make and year of commission</Value>
                     <Style>
                       <FontStyle>Normal</FontStyle>
                       <FontSize>12pt</FontSize>
@@ -160,9 +160,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
-            <Top>0.86995cm</Top>
-            <Left>0.31433cm</Left>
-            <Height>0.81166cm</Height>
+            <Height>2.07821cm</Height>
             <Width>19.8425cm</Width>
             <Style>
               <Border>
@@ -1316,7 +1314,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>3</Value>
+                                  <Value>1</Value>
                                   <Style>
                                     <FontStyle>Normal</FontStyle>
                                     <FontSize>8pt</FontSize>
@@ -1354,7 +1352,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>4</Value>
+                                  <Value>2</Value>
                                   <Style>
                                     <FontStyle>Normal</FontStyle>
                                     <FontSize>8pt</FontSize>
@@ -1392,7 +1390,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>5</Value>
+                                  <Value>3</Value>
                                   <Style>
                                     <FontStyle>Normal</FontStyle>
                                     <FontSize>8pt</FontSize>
@@ -1430,7 +1428,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>6</Value>
+                                  <Value>4</Value>
                                   <Style>
                                     <FontStyle>Normal</FontStyle>
                                     <FontSize>8pt</FontSize>
@@ -1468,7 +1466,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>7</Value>
+                                  <Value>5</Value>
                                   <Style>
                                     <FontStyle>Normal</FontStyle>
                                     <FontSize>8pt</FontSize>
@@ -1506,7 +1504,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>8</Value>
+                                  <Value>6</Value>
                                   <Style>
                                     <FontStyle>Normal</FontStyle>
                                     <FontSize>8pt</FontSize>
@@ -1544,7 +1542,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>9</Value>
+                                  <Value>7</Value>
                                   <Style>
                                     <FontStyle>Normal</FontStyle>
                                     <FontSize>8pt</FontSize>
@@ -1582,7 +1580,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>10</Value>
+                                  <Value>8</Value>
                                   <Style>
                                     <FontStyle>Normal</FontStyle>
                                     <FontSize>8pt</FontSize>
@@ -1620,7 +1618,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>11</Value>
+                                  <Value>9</Value>
                                   <Style>
                                     <FontStyle>Normal</FontStyle>
                                     <FontSize>8pt</FontSize>
@@ -1999,8 +1997,8 @@
                 </TablixMember>
               </TablixMembers>
             </TablixRowHierarchy>
-            <Top>2.11349cm</Top>
-            <Left>0.31433cm</Left>
+            <Top>2.45745cm</Top>
+            <Left>0.3937cm</Left>
             <Height>3.6cm</Height>
             <Width>17.25648cm</Width>
             <ZIndex>1</ZIndex>
