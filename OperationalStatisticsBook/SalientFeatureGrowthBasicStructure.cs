@@ -102,16 +102,17 @@ namespace OperationalStatisticsBook
 
             //Rows Static Data
             DateTime currentDate = new DateTime(Year, Month, 01);
-            DateTime newDate = currentDate.AddYears(1);
+            DateTime newDate = currentDate.AddYears(0);
             DateTime newDateM = currentDate.AddMonths(+1);
-            DateTime newDate2 = currentDate.AddYears(+2);
+            DateTime newDate2 = currentDate.AddYears(1);
             DateTime currentMonth = currentDate.AddMonths(-10);
 
-            DateTime newDateCurrent = currentDate.AddYears(+1);
-            string currentYear = currentDate.Year.ToString();
+            DateTime newDateCurrent = currentDate.AddYears(0);
+            DateTime newDateCurrent1 = currentDate.AddYears(-1);
+            string currentYear = newDateCurrent1.Year.ToString();
             string previousYear = newDateCurrent.Year.ToString();
 
-            DateTime newDateCurrent2 = currentDate.AddYears(-1);
+            DateTime newDateCurrent2 = currentDate.AddYears(-2);
             string previousYear1 = newDateCurrent2.Year.ToString();
             // int j = 1;
             for (int i = 10; i > 0; i--)

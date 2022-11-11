@@ -83,9 +83,9 @@ namespace OperationalStatisticsBook
            
 
             DateTime currentDate = new DateTime(Year, Month, 01);
-            DateTime newDate = currentDate.AddYears(1);
-            DateTime newDate2 = currentDate.AddYears(+2);
-            string currentYear = currentDate.AddYears(+2).ToString();
+            DateTime newDate = currentDate.AddYears(0);
+            DateTime newDate2 = currentDate.AddYears(+1);
+            //string currentYear = currentDate.AddYears(+2).ToString();
             String previousMonthName = newDate.ToString("MMMM");
             for (int i = 10; i > 0; i--)
             {

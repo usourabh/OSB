@@ -51,7 +51,7 @@ namespace OperationalStatisticsBook
             this.reportViewer1.LocalReport.DataSources.Clear();
             this.reportViewer1.LocalReport.DataSources.Add(datasource);
             ReportParameter[] rptParam = new ReportParameter[1];
-            rptParam[0] = new ReportParameter("ReportTitle", " (" + GlobalMaster.FinMaster[5].FinVal + ")");
+            rptParam[0] = new ReportParameter("ReportTitle", " (" + GlobalMaster.FinMaster[6].FinVal + ")");
             this.reportViewer1.LocalReport.SetParameters(rptParam);
             this.reportViewer1.RefreshReport();
         }

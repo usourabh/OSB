@@ -9,7 +9,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>ProgressiveFinancialResults</Value>
+                <Value>Progressive Financial Results</Value>
                 <Style>
                   <FontWeight>Bold</FontWeight>
                 </Style>
@@ -1074,7 +1074,7 @@ total Expenditure</Value>
         <DataSetName>rptProgressiveFinancialResults</DataSetName>
         <Top>2.10813cm</Top>
         <Left>0.5348cm</Left>
-        <Height>1.54314cm</Height>
+        <Height>1.54313cm</Height>
         <Width>14.67717cm</Width>
         <ZIndex>1</ZIndex>
         <Style>

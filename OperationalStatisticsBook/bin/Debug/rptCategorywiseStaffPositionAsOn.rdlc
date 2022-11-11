@@ -1974,7 +1974,23 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Table - 2 Categorywise Staff Position as on 31st </Value>
+                    <Value>Table - 2 </Value>
+                    <Style>
+                      <FontStyle>Normal</FontStyle>
+                      <FontWeight>Bold</FontWeight>
+                      <TextDecoration>None</TextDecoration>
+                      <Color>#000000</Color>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Categorywise Staff Position as on 31st </Value>
                     <Style>
                       <FontStyle>Normal</FontStyle>
                       <FontWeight>Bold</FontWeight>
@@ -2013,10 +2029,10 @@
             </Style>
           </Textbox>
         </ReportItems>
-        <Height>9.13164cm</Height>
+        <Height>3.25789cm</Height>
         <Style />
       </Body>
-      <Width>21.98357cm</Width>
+      <Width>19.02024cm</Width>
       <Page>
         <PageHeight>29.7cm</PageHeight>
         <PageWidth>21cm</PageWidth>

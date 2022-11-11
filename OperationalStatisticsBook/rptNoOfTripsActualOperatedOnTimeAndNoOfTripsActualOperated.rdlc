@@ -1287,8 +1287,8 @@
             <DataSetName>rptNoOfTripsActualOperatedOnTimeAndNoOfTripsActualOperated</DataSetName>
             <Top>0.79042in</Top>
             <Left>0.14583in</Left>
-            <Height>0.72917in</Height>
-            <Width>7.12501in</Width>
+            <Height>0.72916in</Height>
+            <Width>7.125in</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1299,6 +1299,22 @@
             <CanGrow>true</CanGrow>
             <KeepTogether>true</KeepTogether>
             <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Table-4.7</Value>
+                    <Style>
+                      <FontStyle>Normal</FontStyle>
+                      <FontWeight>Bold</FontWeight>
+                      <TextDecoration>None</TextDecoration>
+                      <Color>#000000</Color>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
               <Paragraph>
                 <TextRuns>
                   <TextRun>

@@ -972,6 +972,22 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
+                    <Value>Table-6.1</Value>
+                    <Style>
+                      <FontStyle>Normal</FontStyle>
+                      <FontWeight>Bold</FontWeight>
+                      <TextDecoration>None</TextDecoration>
+                      <Color>#000000</Color>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
                     <Value>Statement of For the month of passes</Value>
                     <Style>
                       <FontStyle>Normal</FontStyle>

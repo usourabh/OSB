@@ -75,22 +75,40 @@ namespace OperationalStatisticsBook
             DateTime newDate = currentDate.AddMonths(-1);
             int previousYear = newDate.Year;
             String previousMonthName = newDate.ToString("MMMM");
-            if (Year > previousYear)
+            //if (Year > previousYear)
+            //{
+            //    //table.Rows.Add(previousYear, "0", "0", "0", "0", "0", "0", "0", "0");
+            //    //table.Rows.Add(previousMonthName, "0", "0", "0", "0", "0", "0", "0", "0");
+            //    //table.Rows.Add(Year, "0", "0", "0", "0", "0", "0", "0", "0");
+            //     table.Rows.Add(Year, "0", "0", "0", "0", "0", "0", "0", "0");
+            //     table.Rows.Add(previousMonthName, "0", "0", "0", "0", "0", "0", "0", "0");
+            //}
+            //else
+            //{
+            //    // table.Rows.Add(Year, "0", "0", "0", "0", "0", "0", "0", "0");
+            //    //  table.Rows.Add(previousMonthName, "0", "0", "0", "0", "0", "0", "0", "0");
+            //    table.Rows.Add(previousYear, "0", "0", "0", "0", "0", "0", "0", "0");
+            //    table.Rows.Add(previousMonthName, "0", "0", "0", "0", "0", "0", "0", "0");
+            //    table.Rows.Add(Year, "0", "0", "0", "0", "0", "0", "0", "0");
+            //}       
+            DateTime newDateM = currentDate.AddMonths(0);
+            DateTime newDateCurrent2 = currentDate.AddYears(-1);
+            string previousYear1 = newDateCurrent2.Year.ToString();
+            DateTime currentMonth = currentDate.AddMonths(-6);
+            table.Rows.Add(previousYear1, "0", "0", "0", "0", "0", "0", "0", "0");
+            for (int i = 7; i > 0; i--)
             {
-                table.Rows.Add(previousYear, "0", "0", "0", "0", "0", "0", "0", "0");
-                table.Rows.Add(previousMonthName, "0", "0", "0", "0", "0", "0", "0", "0");
-                table.Rows.Add(Year, "0", "0", "0", "0", "0", "0", "0", "0");
+                table.Rows.Add(currentMonth.AddMonths(-i).ToString("MMMM"), "0", "0", "0", "0", "0", "0", "0", "0");
             }
-            else
+            table.Rows.Add(Year, "0", "0", "0", "0", "0", "0", "0", "0");
+            for (int i = 6; i > 0; i--)
             {
-                table.Rows.Add(Year, "0", "0", "0", "0", "0", "0", "0", "0");
-                table.Rows.Add(previousMonthName, "0", "0", "0", "0", "0", "0", "0", "0");
-            }       
-
-            for (int i = 0; i < 12; i++)
-            {
-                table.Rows.Add(currentDate.AddMonths(i).ToString("MMMM"), "0", "0", "0", "0", "0", "0", "0", "0");
+                table.Rows.Add(newDateM.AddMonths(-i).ToString("MMMM"), "0", "0", "0", "0", "0", "0", "0", "0");
             }
+            //for (int i = 0; i > 7; i++)
+            //{
+            //    table.Rows.Add(currentDate.AddMonths(i).ToString("MMMM"), "0", "0", "0", "0", "0", "0", "0", "0");
+            //}
             dataGridView1.DataSource = table;
             return table;
         }

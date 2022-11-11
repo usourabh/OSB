@@ -46,17 +46,21 @@ namespace OperationalStatisticsBook
             table.Columns.Add("Average   Route   length ", typeof(string));
             table.Columns.Add("Average Route  length ", typeof(string));
             DateTime currentDate = new DateTime(Year, Month, 01);
-            DateTime newDate = currentDate.AddYears(1);
+            DateTime newDate = currentDate.AddYears(0);
             DateTime newDateM = currentDate.AddMonths(+1);
-            DateTime newDate2 = currentDate.AddYears(+2);
+            DateTime newDate2 = currentDate.AddYears(1);
             DateTime currentMonth = currentDate.AddMonths(-6);
-            DateTime newDateCurrent = currentDate.AddYears(+1);
-            string currentYear = currentDate.Year.ToString();
+            DateTime newDateCurrent = currentDate.AddYears(0);
+
+            DateTime currentYear1 = currentDate.AddYears(-2);
+           
+            
+            string currentYear = currentYear1.Year.ToString();
             string previousYear = newDateCurrent.Year.ToString();
             DateTime newDateCurrent2 = currentDate.AddYears(-1);
             string previousYear1 = newDateCurrent2.Year.ToString();
-            table.Rows.Add("", "City", "City", "NCR", "NCR", "City", "City", "NCR", "NCR", "City", "City", "NCR", "NCR");
-            table.Rows.Add("1", "2", "2", "3", "3", "4", "4", "5", "5", "6", "6", "7", "7");
+           // table.Rows.Add("", "City", "City", "NCR", "NCR", "City", "City", "NCR", "NCR", "City", "City", "NCR", "NCR");
+          //  table.Rows.Add("1", "2", "2", "3", "3", "4", "4", "5", "5", "6", "6", "7", "7");
 
             for (int i = 10; i > 0; i--)
             {
@@ -68,17 +72,16 @@ namespace OperationalStatisticsBook
             table.Rows.Add("", " City ", "City ", "NCR", "NCR", "City", "City", "NCR", "NCR", "City", "City", "NCR", "NCR");
 
 
-            table.Rows.Add("Year", previousYear1, currentYear, previousYear1, currentYear, previousYear1, currentYear, previousYear1, currentYear, previousYear1, currentYear, previousYear1, currentYear);
+            table.Rows.Add("Year", currentYear, previousYear1, currentYear, previousYear1, currentYear, previousYear1, currentYear, previousYear1, currentYear, previousYear1, currentYear, previousYear1);
             for (int i = 6; i > 0; i--)
             {
                 table.Rows.Add(currentMonth.AddMonths(-i).ToString("MMMM"), " 0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
-
             }
 
             table.Rows.Add("", " City ", "City ", "NCR", "NCR", "City", "City", "NCR", "NCR", "City", "City", "NCR", "NCR");
 
 
-            table.Rows.Add("Year", currentYear, previousYear, currentYear, previousYear, currentYear, previousYear, currentYear, previousYear, currentYear, previousYear, currentYear, previousYear);
+            table.Rows.Add("Year", previousYear1, previousYear, previousYear1, previousYear, previousYear1, previousYear, previousYear1, previousYear, previousYear1, previousYear, previousYear1, previousYear);
 
             for (int i = 7; i > 0; i--)
             {

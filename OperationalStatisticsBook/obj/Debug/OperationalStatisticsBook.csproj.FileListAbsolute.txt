@@ -1118,3 +1118,4 @@ E:\OSB\OSB\OSB\OperationalStatisticsBook\obj\Debug\OperationalStatisticsBook.csp
 E:\OSB\OSB\OSB\OperationalStatisticsBook\obj\Debug\OperationalStatisticsBook.csproj.CopyComplete
 E:\OSB\OSB\OSB\OperationalStatisticsBook\obj\Debug\OperationalStatisticsBook.exe
 E:\OSB\OSB\OSB\OperationalStatisticsBook\obj\Debug\OperationalStatisticsBook.pdb
+E:\OSB\OSB\OSB\OperationalStatisticsBook\obj\Debug\OperationalStatisticsBook.csproj.AssemblyReference.cache

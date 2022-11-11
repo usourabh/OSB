@@ -51,7 +51,7 @@ namespace OperationalStatisticsBook
         {
             var MonthList = GlobalMaster.GetPrevousMonthList(Month, Year, 02);
             DateTime currentDate = new DateTime(Year, Month, 01);
-            DateTime newDate = currentDate.AddYears(+1);
+            DateTime newDate = currentDate.AddYears(-1);
             string currentYear = currentDate.Year.ToString();
             string previousYear = newDate.Year.ToString();
             String previousMonthName = newDate.ToString("MMMM");

@@ -58,7 +58,7 @@ namespace OperationalStatisticsBook
             this.reportViewer1.LocalReport.DataSources.Clear();
             this.reportViewer1.LocalReport.DataSources.Add(datasource);
             ReportParameter[] rptParam = new ReportParameter[1];
-            rptParam[0] = new ReportParameter("ReportTitle", MonthList[0].MonthName + "-" + currentYear + " to " + MonthList[0].MonthName + "-" + previousYear);
+            rptParam[0] = new ReportParameter("ReportTitle", MonthList[0].MonthName + "-" + currentYear );
             this.reportViewer1.LocalReport.SetParameters(rptParam);
             this.reportViewer1.RefreshReport();
         }
