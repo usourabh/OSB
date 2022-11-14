@@ -147,14 +147,14 @@ namespace OperationalStatisticsBook
             dt.Rows.Add("- AC Electric Low Floor", "", "", "", "", "");
             dt.Rows.Add("- Total", "", "", "", "", "");
             dt.Rows.Add("Trips Operated / day (in Lacs)", "", "", "", "", "");
-            dt.Rows.Add("KMs Operated / day ( in Lacs)", "", "", "", "", "");
-            dt.Rows.Add("Passengers Carried / day( in Lacs)", "", "", "", "", "");
+            dt.Rows.Add("KMs Operated / day (in Lacs)", "", "", "", "", "");
+            dt.Rows.Add("Passengers Carried / day (in Lacs)", "", "", "", "", "");
             dt.Rows.Add("Total number of routes (city)", "", "", "", "", "");
-            dt.Rows.Add("Average route length(Kms)", "", "", "", "", "");
+            dt.Rows.Add("Average route length (Kms)", "", "", "", "", "");
             dt.Rows.Add("Staff Strength (including contractual)", "", "", "", "", "");
-            dt.Rows.Add("Daily Earning   ( Rs in Cr)", "", "", "", "", "");
-            dt.Rows.Add("Earnings Per Kms( Rs. )", "", "", "", "", "");
-            dt.Rows.Add("Earnings Per bus Per Day ( Rs. )", "", "", "", "", "");
+            dt.Rows.Add("Daily Earning (Rs in Cr)", "", "", "", "", "");
+            dt.Rows.Add("Earnings Per Kms (Rs.)", "", "", "", "", "");
+            dt.Rows.Add("Earnings Per bus Per Day (Rs.)", "", "", "", "", "");
             return dt;
             
 

@@ -105,7 +105,7 @@ namespace OperationalStatisticsBook
             DateTime newDate = currentDate.AddYears(0);
             DateTime newDateM = currentDate.AddMonths(+1);
             DateTime newDate2 = currentDate.AddYears(1);
-            DateTime currentMonth = currentDate.AddMonths(-10);
+            DateTime currentMonth = currentDate.AddMonths(-6);
 
             DateTime newDateCurrent = currentDate.AddYears(0);
             DateTime newDateCurrent1 = currentDate.AddYears(-1);

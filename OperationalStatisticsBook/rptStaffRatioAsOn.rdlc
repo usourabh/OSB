@@ -1113,9 +1113,9 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox29</rd:DefaultName>
-            <Top>0.10292in</Top>
+            <Top>0.18625in</Top>
             <Left>0.10292in</Left>
-            <Height>0.25in</Height>
+            <Height>0.11111in</Height>
             <Width>6.87499in</Width>
             <ZIndex>1</ZIndex>
             <Style>
@@ -1128,8 +1128,45 @@
               <PaddingBottom>2pt</PaddingBottom>
             </Style>
           </Textbox>
+          <Textbox Name="Textbox2">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>SOME FIGURES</Value>
+                    <Style>
+                      <FontStyle>Normal</FontStyle>
+                      <FontFamily>Times New Roman</FontFamily>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Normal</FontWeight>
+                      <TextDecoration>None</TextDecoration>
+                      <Color>#000000</Color>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox2</rd:DefaultName>
+            <Top>0.12912cm</Top>
+            <Left>0.26142cm</Left>
+            <Height>0.27341cm</Height>
+            <Width>4.08749cm</Width>
+            <ZIndex>2</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
         </ReportItems>
-        <Height>8.22536cm</Height>
+        <Height>5.3414cm</Height>
         <Style />
       </Body>
       <Width>17.98848cm</Width>

@@ -136,7 +136,7 @@ namespace OperationalStatisticsBook
             dt.Rows.Add(" ", "Staff Ratio as on ", "StaffRatioAsOn");
             dt.Rows.Add("1.1", "Analysis of causes of Accidents (" + GlobalMaster.FinMaster[1].FinVal + " TO " + GlobalMaster.FinMaster[0].FinVal + ")", "analysisOfCausesAccidents");
             dt.Rows.Add("1.2", "Growith of basic structure of DTC", "SalientFeatureGrowthBasicStructure");
-            dt.Rows.Add("1.3", "ROUTES OPERATED BY D.T.C.", "RoutesOperatedByDtc");
+            dt.Rows.Add("1.3", "ROUTES OPERATED BY DTC.", "RoutesOperatedByDtc");
             dt.Rows.Add("1.4", "Comparative Financial Results Year (" + GlobalMaster.FinMaster[2].FinVal + " to " + GlobalMaster.FinMaster[0].FinVal + ")", "ComparativeFinancialResultsFrom");
             dt.Rows.Add("1.5", "Comparative operational data for the period (April to March) (" + GlobalMaster.FinMaster[2].FinVal + " to " + GlobalMaster.FinMaster[0].FinVal + ")", "ComparativeOperationalData");
             dt.Rows.Add("1.6", "Distrubution of fleet by type/make and year of commission", "DistrubutionOfFleetByTypeMakeAndYearOfCommission");
@@ -560,9 +560,9 @@ namespace OperationalStatisticsBook
             string Page3DataSourceName2 = "rptanalysisOfCausesAccidents";
             DataTable Page3Data2 = objPageData.GetDataAnalysisCausesAccidents_Page3_tbl2(this.OsbId);
             rptParam = new ReportParameter[3];
-            rptParam[0] = new ReportParameter("ReportTitle", GlobalMaster.FinMaster[1].FinVal + " To " + GlobalMaster.FinMaster[0].FinVal);
-            rptParam[1] = new ReportParameter("txtFrom", GlobalMaster.FinMaster[1].FinVal);
-            rptParam[2] = new ReportParameter("txtTo", GlobalMaster.FinMaster[0].FinVal);
+            rptParam[0] = new ReportParameter("ReportTitle", GlobalMaster.FinMaster[2].FinVal + " to " + GlobalMaster.FinMaster[1].FinVal);
+            rptParam[1] = new ReportParameter("txtFrom", GlobalMaster.FinMaster[2].FinVal);
+            rptParam[2] = new ReportParameter("txtTo", GlobalMaster.FinMaster[1].FinVal);
             byte[] byarry5 = GenerateReport(Page3ReportName2, rptParam, Page3DataSourceName2, Page3Data2);
             lstByte.Add(byarry5);
 
@@ -591,10 +591,10 @@ namespace OperationalStatisticsBook
             string Page5n6DataSourceName = "rptComparativeFinancialResultsFrom";
             DataTable Page5n6Data = objPageData.GetDataComparativeFinanacialResult_Page5n6(this.OsbId);
             rptParam = new ReportParameter[4];
-            rptParam[0] = new ReportParameter("ReportTitle", "Comparative Financial Results form (Rs " + GlobalMaster.FinMaster[2].FinVal + " to " + GlobalMaster.FinMaster[0].FinVal + " in lakh)");
-            rptParam[1] = new ReportParameter("txtDate1", GlobalMaster.FinMaster[2].FinVal);
-            rptParam[2] = new ReportParameter("txtDate2", GlobalMaster.FinMaster[1].FinVal);
-            rptParam[3] = new ReportParameter("txtDate3", GlobalMaster.FinMaster[0].FinVal);
+            rptParam[0] = new ReportParameter("ReportTitle", "Comparative Financial Results form (Rs " + GlobalMaster.FinMaster[4].FinVal + " to " + GlobalMaster.FinMaster[2].FinVal + " in lakh)");
+            rptParam[1] = new ReportParameter("txtDate1", GlobalMaster.FinMaster[4].FinVal);
+            rptParam[2] = new ReportParameter("txtDate2", GlobalMaster.FinMaster[3].FinVal);
+            rptParam[3] = new ReportParameter("txtDate3", GlobalMaster.FinMaster[2].FinVal);
             byte[] byarry8 = GenerateReport(Page5n6ReportName, rptParam, Page5n6DataSourceName, Page5n6Data);
             lstByte.Add(byarry8);
 
@@ -605,10 +605,10 @@ namespace OperationalStatisticsBook
             string Page7DataSourceName = "rptComparativeOperationalData";
             DataTable Page7Data = objPageData.GetDataComparativeOperationalData_Page7(this.OsbId);
             rptParam = new ReportParameter[4];
-            rptParam[0] = new ReportParameter("ReportTitle", GlobalMaster.FinMaster[2].FinVal + " to " + GlobalMaster.FinMaster[0].FinVal);
-            rptParam[1] = new ReportParameter("txtDate1", GlobalMaster.FinMaster[2].FinVal);
-            rptParam[2] = new ReportParameter("txtDate2", GlobalMaster.FinMaster[1].FinVal);
-            rptParam[3] = new ReportParameter("txtDate3", GlobalMaster.FinMaster[0].FinVal);
+            rptParam[0] = new ReportParameter("ReportTitle", GlobalMaster.FinMaster[3].FinVal + " to " + GlobalMaster.FinMaster[1].FinVal);
+            rptParam[1] = new ReportParameter("txtDate1", GlobalMaster.FinMaster[3].FinVal);
+            rptParam[2] = new ReportParameter("txtDate2", GlobalMaster.FinMaster[2].FinVal);
+            rptParam[3] = new ReportParameter("txtDate3", GlobalMaster.FinMaster[1].FinVal);
             byte[] byarry9 = GenerateReport(Page7ReportName, rptParam, Page7DataSourceName, Page7Data);
             lstByte.Add(byarry9);
 
@@ -631,8 +631,7 @@ namespace OperationalStatisticsBook
             DataTable Page9Data1 = objPageData.GetDataPriceNCostIndicies_Page9_tbl1(this.OsbId);
 
             rptParam = new ReportParameter[1];
-            rptParam[0] = new ReportParameter("ReportTitle", "Table 1.7 Price and cost indices form Financial year " + GlobalMaster.FinMaster[5].FinVal + " to " + GlobalMaster.FinMaster[0].FinVal + "");
-
+            rptParam[0] = new ReportParameter("ReportTitle", GlobalMaster.FinMaster[6].FinVal + " to " + GlobalMaster.FinMaster[2].FinVal);
             byte[] byarry11 = GenerateReport(Page9ReportName1, rptParam, Page9DataSourceName1, Page9Data1);
             lstByte.Add(byarry11);
 
@@ -642,10 +641,10 @@ namespace OperationalStatisticsBook
             string Page9DataSourceName2 = "MaterialConsumptionFinancial";
             DataTable Page9Data2 = objPageData.GetDataMaterialConsumption_Page9_tbl2(this.OsbId);
             rptParam = new ReportParameter[4];
-            rptParam[0] = new ReportParameter("ReportTitle", GlobalMaster.FinMaster[2].FinVal + " to " + GlobalMaster.FinMaster[0].FinVal);
-            rptParam[1] = new ReportParameter("txtDate1", GlobalMaster.FinMaster[2].FinVal);
-            rptParam[2] = new ReportParameter("txtDate2", GlobalMaster.FinMaster[1].FinVal);
-            rptParam[3] = new ReportParameter("txtDate3", GlobalMaster.FinMaster[0].FinVal);
+            rptParam[0] = new ReportParameter("ReportTitle", GlobalMaster.FinMaster[3].FinVal + " to " + GlobalMaster.FinMaster[1].FinVal);
+            rptParam[1] = new ReportParameter("txtDate1", GlobalMaster.FinMaster[3].FinVal);
+            rptParam[2] = new ReportParameter("txtDate2", GlobalMaster.FinMaster[2].FinVal);
+            rptParam[3] = new ReportParameter("txtDate3", GlobalMaster.FinMaster[1].FinVal);
             byte[] byarry12 = GenerateReport(Page9ReportName2, rptParam, Page9DataSourceName2, Page9Data2);
             lstByte.Add(byarry12);
 
@@ -656,8 +655,7 @@ namespace OperationalStatisticsBook
             DataTable Page10Data1 = objPageData.GetDataPerformMetroTransUnder_Page10_tbl1(this.OsbId);
 
             rptParam = new ReportParameter[1];
-            rptParam[0] = new ReportParameter("ReportTitle", " (" + GlobalMaster.FinMaster[5].FinVal + ")");
-
+            rptParam[0] = new ReportParameter("ReportTitle", " (" + GlobalMaster.FinMaster[6].FinVal + ")");
             byte[] byarry13 = GenerateReport(Page10ReportName1, rptParam, Page10DataSourceName1, Page10Data1);
             lstByte.Add(byarry13);
 
@@ -668,7 +666,7 @@ namespace OperationalStatisticsBook
             DataTable Page10Data2 = objPageData.GetDataAccidentNCompensGvnAcciVic_Page10_tbl2(this.OsbId);
 
             rptParam = new ReportParameter[1];
-            rptParam[0] = new ReportParameter("ReportTitle", "(" + GlobalMaster.FinMaster[9].FinVal + " to " + GlobalMaster.FinMaster[0].FinVal + ")");
+            rptParam[0] = new ReportParameter("ReportTitle", "(" + GlobalMaster.FinMaster[10].FinVal + " to " + GlobalMaster.FinMaster[1].FinVal + ")");
 
             byte[] byarry14 = GenerateReport(Page10ReportName2, rptParam, Page10DataSourceName2, Page10Data2);
             lstByte.Add(byarry14);
@@ -693,7 +691,7 @@ namespace OperationalStatisticsBook
 
             var MonthList3 = GlobalMaster.GetPrevousMonthList(Month, Year, 2);
             rptParam = new ReportParameter[1];
-            rptParam[0] = new ReportParameter("txtDate", MonthList3[0].MonthName + "-" + MonthList[1].Year);
+            rptParam[0] = new ReportParameter("txtDate", MonthList3[0].MonthName + "-" + MonthList3[1].Year);
 
             byte[] byarry16 = GenerateReport(Page12ReportName, rptParam, Page12DataSourceName, Page12Data);
             lstByte.Add(byarry16);
@@ -706,7 +704,7 @@ namespace OperationalStatisticsBook
 
             var MonthList4 = GlobalMaster.GetPrevousMonthList(Month, Year, 2);
             rptParam = new ReportParameter[1];
-            rptParam[0] = new ReportParameter("ReportTitle", MonthList4[1].MonthName + "-" + MonthList[1].Year);
+            rptParam[0] = new ReportParameter("ReportTitle", MonthList4[1].MonthName + "-" + MonthList4[1].Year);
 
             byte[] byarry17 = GenerateReport(Page13ReportName, rptParam, Page13DataSourceName, Page13Data);
             lstByte.Add(byarry17);
@@ -719,7 +717,7 @@ namespace OperationalStatisticsBook
 
             var MonthList5 = GlobalMaster.GetPrevousMonthList(Month, Year, 2);
             rptParam = new ReportParameter[1];
-            rptParam[0] = new ReportParameter("ReportTitle", MonthList5[0].MonthName + "-" + MonthList[1].Year);
+            rptParam[0] = new ReportParameter("ReportTitle", MonthList5[0].MonthName + "-" + MonthList5[1].Year);
 
             byte[] byarry18 = GenerateReport(Page14ReportName, rptParam, Page14DataSourceName, Page14Data);
             lstByte.Add(byarry18);
@@ -732,7 +730,7 @@ namespace OperationalStatisticsBook
 
             var MonthList6 = GlobalMaster.GetPrevousMonthList(Month, Year, 2);
             rptParam = new ReportParameter[1];
-            rptParam[0] = new ReportParameter("ReportTitle", MonthList6[0].MonthName + "-" + MonthList[1].Year);
+            rptParam[0] = new ReportParameter("ReportTitle", MonthList6[0].MonthName + "-" + MonthList6[1].Year);
 
             byte[] byarry19 = GenerateReport(Page15n16ReportName, rptParam, Page15n16DataSourceName, Page15n16Data);
             lstByte.Add(byarry19);
@@ -745,7 +743,7 @@ namespace OperationalStatisticsBook
 
             var MonthList7 = GlobalMaster.GetPrevousMonthList(Month, Year, 02);
             rptParam = new ReportParameter[1];
-            rptParam[0] = new ReportParameter("ReportTitle", MonthList7[0].MonthName + "-" + MonthList[1].Year);
+            rptParam[0] = new ReportParameter("ReportTitle", MonthList7[0].MonthName + "-" + MonthList7[1].Year);
 
             byte[] byarry20 = GenerateReport(Page17n18ReportName, rptParam, Page17n18DataSourceName, Page17n18Data);
             lstByte.Add(byarry20);
@@ -816,10 +814,16 @@ namespace OperationalStatisticsBook
             lstByte.Add(byarry25);
 
             // No Of Trips Actual Operated On Time And No Of Trips Actual Operated within two minutes
+            var MonthList13 = GlobalMaster.GetPrevousMonthList(Month, Year, 02);
+            DateTime currentDate = new DateTime(Year, Month, 01);
+            DateTime newDate = currentDate.AddYears(+1);
+            string currentYear = currentDate.Year.ToString();
 
             string Page28ReportName = "rptNoOfTripsActualOperatedOnTimeAndNoOfTripsActualOperated.rdlc";
             string Page28DataSourceName = "rptNoOfTripsActualOperatedOnTimeAndNoOfTripsActualOperated";
             DataTable Page28Data = objPageData.GetDataTripsActualOperatedOnTimeNOperated2min_Page28(this.OsbId);
+            rptParam = new ReportParameter[1];
+            rptParam[0] = new ReportParameter("ReportTitle", MonthList13[0].MonthName + "-" + currentYear);
             byte[] byarry26 = GenerateReport(Page28ReportName, null, Page28DataSourceName, Page28Data);
             lstByte.Add(byarry26);
 
@@ -917,14 +921,12 @@ namespace OperationalStatisticsBook
             string Page38DataSourceName1 = "BarFleetNUtilization";
             DataTable Page38Data1 = objPageData.GetDataBarFleetNUtilization_Page38_graph1(Year, Month);
 
-            var MonthList13 = GlobalMaster.GetPrevousMonthList(Month, Year, 02);
-            DateTime currentDate = new DateTime(Year, Month, 01);
-            DateTime newDate = currentDate.AddYears(+1);
-            string currentYear = currentDate.Year.ToString();
+            var MonthList21 = GlobalMaster.GetPrevousMonthList(Month, Year, 02);
+          
             string previousYear = newDate.Year.ToString();
             String previousMonthName = newDate.ToString("MMMM");
             rptParam = new ReportParameter[1];
-            rptParam[0] = new ReportParameter("ReportTitle", MonthList[0].MonthName + "-" + currentYear + " to " + MonthList[0].MonthName + "-" + previousYear);
+            rptParam[0] = new ReportParameter("ReportTitle", MonthList21[0].MonthName + "-" + currentYear + " to " + MonthList21[0].MonthName + "-" + previousYear);
 
             byte[] byarry38 = GenerateReport(Page38ReportName1, rptParam, Page38DataSourceName1, Page38Data1);
             lstByte.Add(byarry38);

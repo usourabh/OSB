@@ -151,7 +151,7 @@ namespace OperationalStatisticsBook
             dt.Rows.Add("", "Staff ratio", "2");
             dt.Rows.Add("1.1", "Analysis of causes of accidents (" + GlobalMaster.FinMaster[2].FinVal + " to " + GlobalMaster.FinMaster[1].FinVal + ")", "2");
             dt.Rows.Add("1.2", "Growith of basic structure of DTC ", "3");
-            dt.Rows.Add("1.3", "Routes operated by D.T.C.", "3");
+            dt.Rows.Add("1.3", "Routes operated by DTC.", "3");
             dt.Rows.Add("1.4", "Comparative financial results Year "+ GlobalMaster.FinMaster[4].FinVal + " to " + GlobalMaster.FinMaster[2].FinVal , "4-5");
             dt.Rows.Add("1.5", "Comparative operational data of DTC Financial year " + GlobalMaster.FinMaster[3].FinVal + " to " + GlobalMaster.FinMaster[1].FinVal , "6");
             dt.Rows.Add("1.6", "Distribution of fleet by type/make and year of commission", "7");
@@ -185,8 +185,8 @@ namespace OperationalStatisticsBook
             dt.Rows.Add("6.2", "Statement of depot wise School Buses, Special Hire, Tourist Bus, Passes & Pink Tickets Earnings DTC", "32-33");
             dt.Rows.Add("7.1", "Statement Showing Operational Data of NCR CNG", "34");
             dt.Rows.Add("", "Depot wise Operational data (Non AC & AC buses FCMS)", "");
-            dt.Rows.Add("8.1", "Fleet and its utilisation ", "35");
-            dt.Rows.Add("8.2", "Traffic Income  ", "35");
+            dt.Rows.Add("8.1", "Fleet and its Utilization", "35");
+            dt.Rows.Add("8.2", "Traffic Income", "35");
             dt.Rows.Add("9", "Statement showing figures of Income & Expenditure", "36-43");
             dt.Rows.Add("", "Comparison of Fleet Utilization, Operational Ratio & Kms. Efficiency graphs", "44");
             dt.Rows.Add("", "Comparison of Traffic Earning, Earning per bus per day & No. of passengers carried", "45");

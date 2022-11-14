@@ -85,8 +85,8 @@ namespace OperationalStatisticsBook
           //  table.Rows.Add("", "Fuel-Lubricant", "Fuel-Lubricant", "Fuel-Lubricant", "Fuel-Lubricant", "Tyres,Tubes & Retd. Material", "Tyres,Tubes & Retd. Material", "Tyres,Tubes & Retd. Material", "Tyres,Tubes & Retd. Material");
            // table.Rows.Add("1", "2", "3", "4", "5", "6", "7", "8", "9");
             DateTime currentDate = new DateTime(Year, Month, 01);
-            DateTime newDate = currentDate.AddYears(-2);
-            DateTime newDate2 = currentDate.AddYears(-1);
+            DateTime newDate = currentDate.AddYears(-1);
+            DateTime newDate2 = currentDate.AddYears(0);
             string currentYear = currentDate.AddYears(+2).ToString();
             String previousMonthName = newDate.ToString("MMMM");
             for (int i = 5; i > 0; i--)
