@@ -72,9 +72,9 @@ namespace OperationalStatisticsBook
 
 
             //Rows here.....
-            table.Rows.Add("S.No", "Age Group", previousMonthName + ' ' + currentYear, previousMonthName + ' ' + currentYear, previousMonthName + ' ' + currentYear, previousMonthName + ' ' + currentYear, previousMonthName + ' ' + currentYear, previousMonthName + ' ' + currentYear, previousMonthName + ' ' + currentYear, previousMonthName + ' ' + currentYear);
-            table.Rows.Add("", "", "Minor", "Major", "Fatal", "Total", "Minor", "Major", "Fatal", "Total");
-            table.Rows.Add("1", "2", "3", "4", "5", "6", "7", "8", "9", "10");
+           // table.Rows.Add("S.No", "Age Group", previousMonthName + ' ' + currentYear, previousMonthName + ' ' + currentYear, previousMonthName + ' ' + currentYear, previousMonthName + ' ' + currentYear, previousMonthName + ' ' + currentYear, previousMonthName + ' ' + currentYear, previousMonthName + ' ' + currentYear, previousMonthName + ' ' + currentYear);
+           // table.Rows.Add("", "", "Minor", "Major", "Fatal", "Total", "Minor", "Major", "Fatal", "Total");
+          //  table.Rows.Add("1", "2", "3", "4", "5", "6", "7", "8", "9", "10");
             table.Rows.Add("1", "20-25", "0", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("2", "26-30", "0", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("3", "31-35", "0", "0", "0", "0", "0", "0", "0", "0");

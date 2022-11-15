@@ -1041,6 +1041,22 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
+                    <Value>Table-1.4</Value>
+                    <Style>
+                      <FontStyle>Normal</FontStyle>
+                      <FontWeight>Bold</FontWeight>
+                      <TextDecoration>None</TextDecoration>
+                      <Color>#000000</Color>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
                     <Value>=Parameters!ReportTitle.Value</Value>
                     <Style>
                       <FontStyle>Normal</FontStyle>

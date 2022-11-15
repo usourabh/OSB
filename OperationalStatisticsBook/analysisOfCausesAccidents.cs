@@ -57,7 +57,7 @@ namespace OperationalStatisticsBook
             table.Rows.Add("5", "Alighting Passengers", 0, 0, 0, 0);
             table.Rows.Add("6", "Boarding Passengers", 0, 0, 0, 0);
             table.Rows.Add("7", "MISC", 0, 0, 0, 0);
-            table.Rows.Add("", "Total", 0, 0, 0, 0);
+           // table.Rows.Add("", "Total", 0, 0, 0, 0);
 
 
 

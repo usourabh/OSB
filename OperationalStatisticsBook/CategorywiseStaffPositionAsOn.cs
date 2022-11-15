@@ -108,9 +108,9 @@ namespace OperationalStatisticsBook
             //table.Columns.Add(" Total ", typeof(string));
 
             //Rows////
-            table.Rows.Add("S.No ", " DEPOT ", "DRIVER", "DRIVER", "DRIVER", "Conductors", "Conductors", "Conductors", "Traffic", "Repair &", "Admin ", "Consultant  ", " Total ");
-            table.Rows.Add(" ", " ", "M.R.", "CONT.", "TOTAL", "M.R.", "CONT.", "TOTAL", "Supervisor", "Maintence", " ", " ", " ");
-            table.Rows.Add("1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13");
+          //  table.Rows.Add("S.No ", " DEPOT ", "DRIVER", "DRIVER", "DRIVER", "Conductors", "Conductors", "Conductors", "Traffic", "Repair &", "Admin ", "Consultant  ", " Total ");
+          //  table.Rows.Add(" ", " ", "M.R.", "CONT.", "TOTAL", "M.R.", "CONT.", "TOTAL", "Supervisor", "Maintence", " ", " ", " ");
+          //  table.Rows.Add("1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13");
             table.Rows.Add("1", "Banda Bahadur Marg ", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("2", "Rohini-I ", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("3", "Rohini-II ", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
@@ -174,8 +174,8 @@ namespace OperationalStatisticsBook
             table.Rows.Add("52", "Rewla (Khanpur) ", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("53", "Ghuman Hera -1 ", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("54", "Ghuman Hera -2 ", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
-            table.Rows.Add("FCMS Total", "FCMS Total.", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
-            table.Rows.Add("Grand Total", "Grand Total.", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
+            table.Rows.Add("", "FCMS Total.", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
+            table.Rows.Add("", "Grand Total.", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
 
 
             return table;

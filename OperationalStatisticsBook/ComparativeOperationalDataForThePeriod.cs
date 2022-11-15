@@ -89,7 +89,7 @@ namespace OperationalStatisticsBook
            
             //Rows Static data
 
-            table.Rows.Add("1", "2", "3", "4", "5", "6");
+           // table.Rows.Add("1", "2", "3", "4", "5", "6");
             table.Rows.Add("1", "Total Fleet as on last Date", "No", "0", "0", "0");
             table.Rows.Add("2", "Average Fleet", "No", "0", "0", "0");
             table.Rows.Add("3", "Avg. No. of buses on road", "No", "0", "0", "0");

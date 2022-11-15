@@ -167,7 +167,7 @@ namespace OperationalStatisticsBook
             dt.Rows.Add("8.2", "Depot wise Operational Data FCMS Cluster buses Traffic Income", "DepotwiseOperationalDataFCMSCluster_busesTrafficIncome");
             dt.Rows.Add("9", "Statemnet showing the(Rs. in respect of City, NCR & Foreign bus service(Income & Expewnditure in lakhs)", "StatementShowingTheRsInRespectOfCityNCRForeignBusServiceIncomeExpewditureJune2022InLakhs");
             dt.Rows.Add(" ", "Statemnet showing the in respect of City, NCR & Foreign bus service(Income & Expewnditure in lakhs)", "StatemnetShowingTheInRespectOfCityNcrAndForeignBusServiceRsIncomeAndExpewnditureJune_2022Inlakhs");
-           // dt.Rows.Add("", "Depot wise operational data of FCMS Fleet & its utiuzation", "DWODFCMSFleetItsUtilization");
+            // dt.Rows.Add("", "Depot wise operational data of FCMS Fleet & its utiuzation", "DWODFCMSFleetItsUtilization");
 
             dt.Rows.Add("", "", "");
 
@@ -756,7 +756,7 @@ namespace OperationalStatisticsBook
 
             var MonthList8 = GlobalMaster.GetPrevousMonthList(Month, Year, 2);
             rptParam = new ReportParameter[1];
-            rptParam[0] = new ReportParameter("ReportTitle", MonthList8[0].MonthName + "-" + MonthList[1].Year);
+            rptParam[0] = new ReportParameter("ReportTitle", MonthList8[0].MonthName + "-" + MonthList8[1].Year);
 
             byte[] byarry21 = GenerateReport(Page19n20ReportName, rptParam, Page19n20DataSourceName, Page19n20Data);
             lstByte.Add(byarry21);
@@ -769,7 +769,7 @@ namespace OperationalStatisticsBook
 
             var MonthList9 = GlobalMaster.GetPrevousMonthList(Month, Year, 2);
             rptParam = new ReportParameter[1];
-            rptParam[0] = new ReportParameter("ReportTitle", MonthList9[0].MonthName + "-" + MonthList[1].Year);
+            rptParam[0] = new ReportParameter("ReportTitle", MonthList9[0].MonthName + "-" + MonthList9[1].Year);
 
             byte[] byarry22 = GenerateReport(Page21n22ReportName, rptParam, Page21n22DataSourceName, Page21n22Data);
             lstByte.Add(byarry22);
@@ -782,7 +782,7 @@ namespace OperationalStatisticsBook
 
             var MonthList10 = GlobalMaster.GetPrevousMonthList(Month, Year, 02);
             rptParam = new ReportParameter[1];
-            rptParam[0] = new ReportParameter("ReportTitle", MonthList10[0].MonthName + "-" + MonthList[1].Year);
+            rptParam[0] = new ReportParameter("ReportTitle", MonthList10[0].MonthName + "-" + MonthList10[1].Year);
 
             byte[] byarry23 = GenerateReport(Page23n24ReportName, rptParam, Page23n24DataSourceName, Page23n24Data);
             lstByte.Add(byarry23);
@@ -795,7 +795,7 @@ namespace OperationalStatisticsBook
 
             var MonthList11 = GlobalMaster.GetPrevousMonthList(Month, Year, 02);
             rptParam = new ReportParameter[1];
-            rptParam[0] = new ReportParameter("ReportTitle", MonthList11[0].MonthName + "-" + MonthList[1].Year);
+            rptParam[0] = new ReportParameter("ReportTitle", MonthList11[0].MonthName + "-" + MonthList11[1].Year);
 
             byte[] byarry24 = GenerateReport(Page25n26ReportName, rptParam, Page25n26DataSourceName, Page25n26Data);
             lstByte.Add(byarry24);
@@ -808,23 +808,26 @@ namespace OperationalStatisticsBook
 
             var MonthList12 = GlobalMaster.GetPrevousMonthList(Month, Year, 2);
             rptParam = new ReportParameter[1];
-            rptParam[0] = new ReportParameter("ReportTitle", MonthList12[0].MonthName + "-" + MonthList[1].Year);
+            rptParam[0] = new ReportParameter("ReportTitle", MonthList12[0].MonthName + "-" + MonthList12[1].Year);
 
             byte[] byarry25 = GenerateReport(Page27ReportName, rptParam, Page27DataSourceName, Page27Data);
             lstByte.Add(byarry25);
 
             // No Of Trips Actual Operated On Time And No Of Trips Actual Operated within two minutes
+
             var MonthList13 = GlobalMaster.GetPrevousMonthList(Month, Year, 02);
             DateTime currentDate = new DateTime(Year, Month, 01);
             DateTime newDate = currentDate.AddYears(+1);
             string currentYear = currentDate.Year.ToString();
+            string previousYear = newDate.Year.ToString();
+            String previousMonthName = newDate.ToString("MMMM");
 
             string Page28ReportName = "rptNoOfTripsActualOperatedOnTimeAndNoOfTripsActualOperated.rdlc";
             string Page28DataSourceName = "rptNoOfTripsActualOperatedOnTimeAndNoOfTripsActualOperated";
             DataTable Page28Data = objPageData.GetDataTripsActualOperatedOnTimeNOperated2min_Page28(this.OsbId);
             rptParam = new ReportParameter[1];
             rptParam[0] = new ReportParameter("ReportTitle", MonthList13[0].MonthName + "-" + currentYear);
-            byte[] byarry26 = GenerateReport(Page28ReportName, null, Page28DataSourceName, Page28Data);
+            byte[] byarry26 = GenerateReport(Page28ReportName, rptParam, Page28DataSourceName, Page28Data);
             lstByte.Add(byarry26);
 
             //DepotWise Total Missed Kms And Breakdowns
@@ -832,7 +835,13 @@ namespace OperationalStatisticsBook
             string Page29ReportName = "rptDepotWiseTotalMissedKmsAndBreakdowns.rdlc";
             string Page29DataSourceName = "rptDepotWiseTotalMissedKmsAndBreakdowns";
             DataTable Page29Data = objPageData.GetDataDepotWiseTotalMissedKmsAndBreakdowns_Page29(this.OsbId);
-            byte[] byarry27 = GenerateReport(Page29ReportName, null, Page29DataSourceName, Page29Data);
+
+            var MonthList21 = GlobalMaster.GetPrevousMonthList(Month, Year, 02);
+
+            rptParam = new ReportParameter[1];
+            rptParam[0] = new ReportParameter("ReportTitle", MonthList21[0].MonthName + "-" + MonthList21[0].Year);
+
+            byte[] byarry27 = GenerateReport(Page29ReportName, rptParam, Page29DataSourceName, Page29Data);
             lstByte.Add(byarry27);
 
 
@@ -841,7 +850,17 @@ namespace OperationalStatisticsBook
             string Page30ReportName1 = "rptComparativeAnalysisOfCausesOfAccidents.rdlc";
             string Page30DataSourceName1 = "rptComparativeAnalysisOfCausesOfAccidents";
             DataTable Page30Data1 = objPageData.GetDataComparativeAnalysisOfCausesOfAccidentsMonthly_Page30(this.OsbId);
-            byte[] byarry28 = GenerateReport(Page30ReportName1, null, Page30DataSourceName1, Page30Data1);
+
+            var MonthList22 = GlobalMaster.GetPrevousMonthList(Month, Year, 02);
+            DateTime currentDate1 = new DateTime(Year, Month, 01);
+            DateTime newDate1 = currentDate.AddYears(-1);
+            string currentYear1 = currentDate.Year.ToString();
+            string previousYear1 = newDate.Year.ToString();
+            String previousMonthName1 = newDate.ToString("MMMM");
+            rptParam = new ReportParameter[1];
+            rptParam[0] = new ReportParameter("ReportTitle", MonthList22[0].MonthName + "-" + currentYear1 + " & " + MonthList22[0].MonthName + "-" + previousYear1);
+
+            byte[] byarry28 = GenerateReport(Page30ReportName1, rptParam, Page30DataSourceName1, Page30Data1);
             lstByte.Add(byarry28);
             //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
             // Accident Analysis by other party involvement 
@@ -849,7 +868,18 @@ namespace OperationalStatisticsBook
             string Page30ReportName2 = "rptAccidentAnalysisOtherPartyInvolvment.rdlc";
             string Page30DataSourceName2 = "rptAccidentAnalysisOtherPartyInvolvment";
             DataTable Page30Data2 = objPageData.GetDataAccidentAnalysisOtherPartyInvolvment_Page30_tbl2(this.OsbId);
-            byte[] byarry29 = GenerateReport(Page30ReportName2, null, Page30DataSourceName2, Page30Data2);
+
+            var MonthList23 = GlobalMaster.GetPrevousMonthList(Month, Year, 02);
+            DateTime currentDate2 = new DateTime(Year, Month, 01);
+            DateTime newDate2 = currentDate.AddYears(-1);
+            string currentYear2 = currentDate.Year.ToString();
+            string previousYear2 = newDate.Year.ToString();
+            String previousMonthName2 = newDate.ToString("MMMM");
+            rptParam = new ReportParameter[1];
+            rptParam[0] = new ReportParameter("ReportTitle", MonthList23[0].MonthName + "-" + currentYear2 + " & " + MonthList23[0].MonthName + "-" + previousYear2);
+
+
+            byte[] byarry29 = GenerateReport(Page30ReportName2, rptParam, Page30DataSourceName2, Page30Data2);
             lstByte.Add(byarry29);
 
             // Analysis of accidents by driver group 
@@ -857,7 +887,18 @@ namespace OperationalStatisticsBook
             string Page30ReportName3 = "rptAnalysisOfAccidentsByDriverGroup.rdlc";
             string Page30DataSourceName3 = "rptAnalysisOfAccidentsByDriverGroup";
             DataTable Page30Data3 = objPageData.GetDataAnalysisOfAccidentsByDriverGroup_Page30_tbl3(this.OsbId);
-            byte[] byarry30 = GenerateReport(Page30ReportName3, null, Page30DataSourceName3, Page30Data3);
+
+            var MonthList24 = GlobalMaster.GetPrevousMonthList(Month, Year, 02);
+            DateTime currentDate3 = new DateTime(Year, Month, 01);
+            DateTime newDate3 = currentDate.AddYears(-1);
+            string currentYear3 = currentDate.Year.ToString();
+            string previousYear3 = newDate.Year.ToString();
+            String previousMonthName3 = newDate.ToString("MMMM");
+            rptParam = new ReportParameter[1];
+            rptParam[0] = new ReportParameter("ReportTitle", MonthList24[0].MonthName + "-" + currentYear3 + " & " + MonthList24[0].MonthName + "-" + previousYear3);
+
+
+            byte[] byarry30 = GenerateReport(Page30ReportName3, rptParam, Page30DataSourceName3, Page30Data3);
             lstByte.Add(byarry30);
 
             // Statement of passes for the month of
@@ -865,7 +906,18 @@ namespace OperationalStatisticsBook
             string Page31n32ReportName = "rptStatementOfForTheMonthOfPasses.rdlc";
             string Page31n32DataSourceName = "rptStatementOfForTheMonthOfPasses";
             DataTable Page31n32Data = objPageData.GetDataStatementOfForTheMonthOfPasses_Page31n32(this.OsbId);
-            byte[] byarry31 = GenerateReport(Page31n32ReportName, null, Page31n32DataSourceName, Page31n32Data);
+
+            var MonthList25 = GlobalMaster.GetPrevousMonthList(Month, Year, 02);
+            DateTime currentDate4 = new DateTime(Year, Month, 01);
+            DateTime newDate4 = currentDate.AddYears(+1);
+            string currentYear4 = currentDate.Year.ToString();
+            string previousYear4 = newDate.Year.ToString();
+            String previousMonthName4 = newDate.ToString("MMMM");
+            rptParam = new ReportParameter[1];
+            rptParam[0] = new ReportParameter("ReportTitle", MonthList25[0].MonthName + "-" + currentYear4);
+
+
+            byte[] byarry31 = GenerateReport(Page31n32ReportName, rptParam, Page31n32DataSourceName, Page31n32Data);
             lstByte.Add(byarry31);
 
             // depot wise statment of school buses ,spl hire, tourist, pass and pink ticket earning
@@ -873,7 +925,13 @@ namespace OperationalStatisticsBook
             string Page33n34ReportName = "rptDWSPLHireTouristPassPinkTicketEarning.rdlc";
             string Page33n34DataSourceName = "DWSPLHireTouristPassPinkTicketEarning";
             DataTable Page33n34Data = objPageData.GetDataDWSPLHireTouristPassPinkTicketEarning_Page33n34(this.OsbId);
-            byte[] byarry32 = GenerateReport(Page33n34ReportName, null, Page33n34DataSourceName, Page33n34Data);
+
+            var MonthList26 = GlobalMaster.GetPrevousMonthList(Month, Year, 2);
+            rptParam = new ReportParameter[1];
+            rptParam[0] = new ReportParameter("ReportTitle", MonthList26[0].MonthName + "-" + MonthList26[1].Year);
+
+
+            byte[] byarry32 = GenerateReport(Page33n34ReportName, rptParam, Page33n34DataSourceName, Page33n34Data);
             lstByte.Add(byarry32);
 
             // Statement showing operational data of ncr cng services of the corporation
@@ -882,8 +940,11 @@ namespace OperationalStatisticsBook
             string Page35DataSourceName = "rptStatementShowingOperationalDataOfNcrCngServicesOfTheCorporation";
             DataTable Page35Data = objPageData.GetDataDWSPLHireTouristPassPinkTicketEarning_Page35(this.OsbId);
 
+            var MonthList27 = GlobalMaster.GetPrevousMonthList(Month, Year, 02);
+            rptParam = new ReportParameter[1];
+            rptParam[0] = new ReportParameter("ReportTitle", MonthList27[0].MonthName + "-" + MonthList27[1].Year);
 
-            byte[] byarry33 = GenerateReport(Page35ReportName, null, Page35DataSourceName, Page35Data);
+            byte[] byarry33 = GenerateReport(Page35ReportName, rptParam, Page35DataSourceName, Page35Data);
             lstByte.Add(byarry33);
 
             // Depot wise operational data of FCMS (cluster buses) Fleet and its utilization
@@ -892,8 +953,12 @@ namespace OperationalStatisticsBook
             string Page36DataSourceName1 = "DWODFCMSFleetItsUtilization";
             DataTable Page36Data1 = objPageData.GetDataDWODFCMSFleetItsUtilization_Page36_tbl1(this.OsbId);
 
+            var MonthList28 = GlobalMaster.GetPrevousMonthList(Month, Year, 2);
+            rptParam = new ReportParameter[1];
+            rptParam[0] = new ReportParameter("ReportTitle", MonthList28[0].MonthName + "-" + MonthList28[1].Year);
 
-            byte[] byarry35 = GenerateReport(Page36ReportName1, null, Page36DataSourceName1, Page36Data1);
+
+            byte[] byarry35 = GenerateReport(Page36ReportName1, rptParam, Page36DataSourceName1, Page36Data1);
             lstByte.Add(byarry35);
 
             // Depot wise operational data of FCMS (cluster buses) Traffic income
@@ -901,7 +966,18 @@ namespace OperationalStatisticsBook
             string Page36ReportName2 = "rptDepotwiseOperationalDataFCMSCluster_busesTrafficIncome.rdlc";
             string Page36DataSourceName2 = "rptDepotwiseOperationalDataFCMSCluster_busesTrafficIncome";
             DataTable Page36Data2 = objPageData.GetDataDWODFCMSTrafficIncome_Page36_tbl2(this.OsbId);
-            byte[] byarry36 = GenerateReport(Page36ReportName2, null, Page36DataSourceName2, Page36Data2);
+
+            var MonthList29 = GlobalMaster.GetPrevousMonthList(Month, Year, 02);
+            DateTime currentDate5 = new DateTime(Year, Month, 01);
+            DateTime newDate5 = currentDate.AddYears(+1);
+            string currentYear5 = currentDate.Year.ToString();
+            string previousYear5 = newDate.Year.ToString();
+            String previousMonthName5 = newDate.ToString("MMMM");
+
+            rptParam = new ReportParameter[1];
+            rptParam[0] = new ReportParameter("ReportTitle", MonthList29[0].MonthName + "-" + currentYear5);
+
+            byte[] byarry36 = GenerateReport(Page36ReportName2, rptParam, Page36DataSourceName2, Page36Data2);
             lstByte.Add(byarry36);
 
             // Statement Showing The Income Expewditure In Respect Of City NCR Foreign Bus Service 
@@ -909,6 +985,8 @@ namespace OperationalStatisticsBook
             string Page37ReportName = "rptStatementShowingTheRsInRespectOfCityNCRForeignBusServiceIncomeExpewditureJune2022InLakhs.rdlc";
             string Page37DataSourceName = "rptStatementShowingTheRsInRespectOfCityNCRForeignBusServiceIncomeExpewditureJune2022InLakhs";
             DataTable Page37Data = objPageData.GetDataStatShowingIncomeNExpenditureRespectFBS_Page36(this.OsbId);
+
+
             byte[] byarry37 = GenerateReport(Page37ReportName, null, Page37DataSourceName, Page37Data);
             lstByte.Add(byarry37);
 
@@ -921,12 +999,15 @@ namespace OperationalStatisticsBook
             string Page38DataSourceName1 = "BarFleetNUtilization";
             DataTable Page38Data1 = objPageData.GetDataBarFleetNUtilization_Page38_graph1(Year, Month);
 
-            var MonthList21 = GlobalMaster.GetPrevousMonthList(Month, Year, 02);
-          
-            string previousYear = newDate.Year.ToString();
-            String previousMonthName = newDate.ToString("MMMM");
+            var MonthList30 = GlobalMaster.GetPrevousMonthList(Month, Year, 02);
+            DateTime currentDate30 = new DateTime(Year, Month, 01);
+            DateTime newDate30 = currentDate.AddYears(-1);
+            string currentYear30 = currentDate.Year.ToString();
+            string previousYear30 = newDate.Year.ToString();
+            String previousMonthName30 = newDate.ToString("MMMM");
+
             rptParam = new ReportParameter[1];
-            rptParam[0] = new ReportParameter("ReportTitle", MonthList21[0].MonthName + "-" + currentYear + " to " + MonthList21[0].MonthName + "-" + previousYear);
+            rptParam[0] = new ReportParameter("ReportTitle", MonthList30[0].MonthName + "-" + previousYear30 + " to " + MonthList30[0].MonthName + "-" + currentYear30);
 
             byte[] byarry38 = GenerateReport(Page38ReportName1, rptParam, Page38DataSourceName1, Page38Data1);
             lstByte.Add(byarry38);
@@ -936,14 +1017,16 @@ namespace OperationalStatisticsBook
             string Page38ReportName2 = "BarOperationalRatio.rdlc";
             string Page38DataSourceName2 = "BarOperationalRatio";
             DataTable Page38Data2 = objPageData.GetDataBarOperationalRatio_Page38_graph2(this.OsbId);
-            var MonthList14 = GlobalMaster.GetPrevousMonthList(Month, Year, 02);
-            DateTime currentDate1 = new DateTime(Year, Month, 01);
-            DateTime newDate1 = currentDate.AddYears(+1);
-            string currentYear1 = currentDate.Year.ToString();
-            string previousYear1 = newDate.Year.ToString();
-            String previousMonthName1 = newDate.ToString("MMMM");
+
+            var MonthList31 = GlobalMaster.GetPrevousMonthList(Month, Year, 02);
+            DateTime currentDate31 = new DateTime(Year, Month, 01);
+            DateTime newDate31 = currentDate.AddYears(-1);
+            string currentYear31 = currentDate.Year.ToString();
+            string previousYear31 = newDate.Year.ToString();
+            String previousMonthName31 = newDate.ToString("MMMM");
+
             rptParam = new ReportParameter[1];
-            rptParam[0] = new ReportParameter("ReportTitle", MonthList14[0].MonthName + "-" + currentYear1 + " to " + MonthList14[0].MonthName + "-" + previousYear1);
+            rptParam[0] = new ReportParameter("ReportTitle", MonthList31[0].MonthName + "-" + previousYear31 + " to " + MonthList31[0].MonthName + "-" + currentYear31);
 
             byte[] byarry39 = GenerateReport(Page38ReportName2, rptParam, Page38DataSourceName2, Page38Data2);
             lstByte.Add(byarry39);
@@ -954,14 +1037,15 @@ namespace OperationalStatisticsBook
             string Page38DataSourceName3 = "BarKilometersefficiency";
             DataTable Page38Data3 = objPageData.GetDataBarKilometersefficiency_Page38_graph3(this.OsbId);
 
-            var MonthList15 = GlobalMaster.GetPrevousMonthList(Month, Year, 02);
-            DateTime currentDate2 = new DateTime(Year, Month, 01);
-            DateTime newDate2 = currentDate.AddYears(+1);
-            string currentYear2 = currentDate.Year.ToString();
-            string previousYear2 = newDate.Year.ToString();
-            String previousMonthName2 = newDate.ToString("MMMM");
+            var MonthList32 = GlobalMaster.GetPrevousMonthList(Month, Year, 02);
+            DateTime currentDate32 = new DateTime(Year, Month, 01);
+            DateTime newDate32 = currentDate.AddYears(+1);
+            string currentYear32 = currentDate.Year.ToString();
+            string previousYear32 = newDate.Year.ToString();
+            String previousMonthName32 = newDate.ToString("MMMM");
+
             rptParam = new ReportParameter[1];
-            rptParam[0] = new ReportParameter("ReportTitle", MonthList15[0].MonthName + "-" + currentYear2 + " to " + MonthList15[0].MonthName + "-" + previousYear2);
+            rptParam[0] = new ReportParameter("ReportTitle", MonthList32[0].MonthName + "-" + previousYear32 + " to " + MonthList32[0].MonthName + "-" + currentYear32);
 
             byte[] byarry40 = GenerateReport(Page38ReportName3, rptParam, Page38DataSourceName3, Page38Data3);
             lstByte.Add(byarry40);
@@ -973,14 +1057,17 @@ namespace OperationalStatisticsBook
             DataTable Page39Data1 = objPageData.GetDataBarTrafficEarninginCrore_Page39_graph1(this.OsbId);
 
 
-            var MonthList16 = GlobalMaster.GetPrevousMonthList(Month, Year, 02);
-            DateTime currentDate3 = new DateTime(Year, Month, 01);
-            DateTime newDate3 = currentDate.AddYears(+1);
-            string currentYear3 = currentDate.Year.ToString();
-            string previousYear3 = newDate.Year.ToString();
-            String previousMonthName3 = newDate.ToString("MMMM");
+            var MonthList33 = GlobalMaster.GetPrevousMonthList(Month, Year, 02);
+            DateTime currentDate33 = new DateTime(Year, Month, 01);
+            DateTime newDate33 = currentDate.AddYears(-1);
+            string currentYear33 = currentDate.Year.ToString();
+            string previousYear33 = newDate.Year.ToString();
+            String previousMonthName33 = newDate.ToString("MMMM");
+
+
+
             rptParam = new ReportParameter[1];
-            rptParam[0] = new ReportParameter("ReportTitle", MonthList16[1].MonthName + "-" + currentYear + " to " + MonthList16[0].MonthName + "-" + previousYear);
+            rptParam[0] = new ReportParameter("ReportTitle", MonthList33[0].MonthName + "-" + previousYear33 + " to " + MonthList33[0].MonthName + "-" + currentYear33);
 
             byte[] byarry41 = GenerateReport(Page39ReportName1, rptParam, Page39DataSourceName1, Page39Data1);
             lstByte.Add(byarry41);
@@ -992,14 +1079,16 @@ namespace OperationalStatisticsBook
             DataTable Page40Data2 = objPageData.GetDataBarEarningPerBusPerDay_Page39_graph2(this.OsbId);
 
 
-            var MonthList17 = GlobalMaster.GetPrevousMonthList(Month, Year, 02);
-            DateTime currentDate4 = new DateTime(Year, Month, 01);
-            DateTime newDate4 = currentDate.AddYears(+1);
-            string currentYear4 = currentDate.Year.ToString();
-            string previousYear4 = newDate.Year.ToString();
-            String previousMonthName4 = newDate.ToString("MMMM");
+            var MonthList34 = GlobalMaster.GetPrevousMonthList(Month, Year, 02);
+            DateTime currentDate34 = new DateTime(Year, Month, 01);
+            DateTime newDate34 = currentDate.AddYears(+1);
+            string currentYear34 = currentDate.Year.ToString();
+            string previousYear34 = newDate.Year.ToString();
+            String previousMonthName34 = newDate.ToString("MMMM");
+
+
             rptParam = new ReportParameter[1];
-            rptParam[0] = new ReportParameter("ReportTitle", MonthList17[0].MonthName + "-" + currentYear4 + " to " + MonthList17[0].MonthName + "-" + previousYear4);
+            rptParam[0] = new ReportParameter("ReportTitle", MonthList34[0].MonthName + "-" + currentYear34 + " to " + MonthList34[0].MonthName + "-" + previousYear34);
 
             byte[] byarry42 = GenerateReport(Page40ReportName2, rptParam, Page40DataSourceName2, Page40Data2);
             lstByte.Add(byarry42);
@@ -1010,16 +1099,14 @@ namespace OperationalStatisticsBook
             string Page40DataSourceName3 = "BarPassengerInCarried";
             DataTable Page40Data3 = objPageData.GetDataBarPassengerInCarried_Page39_graph3(this.OsbId);
 
-
-            var MonthList18 = GlobalMaster.GetPrevousMonthList(Month, Year, 02);
-            DateTime currentDate5 = new DateTime(Year, Month, 01);
-            DateTime newDate5 = currentDate.AddYears(+1);
-            string currentYear5 = currentDate.Year.ToString();
-            string previousYear5 = newDate.Year.ToString();
-            String previousMonthName5 = newDate.ToString("MMMM");
-
+            var MonthList35 = GlobalMaster.GetPrevousMonthList(Month, Year, 02);
+            DateTime currentDate35 = new DateTime(Year, Month, 01);
+            DateTime newDate35 = currentDate.AddYears(-1);
+            string currentYear35 = currentDate.Year.ToString();
+            string previousYear35 = newDate.Year.ToString();
+            String previousMonthName35 = newDate.ToString("MMMM");
             rptParam = new ReportParameter[1];
-            rptParam[0] = new ReportParameter("ReportTitle", MonthList18[0].MonthName + "-" + currentYear5 + " to " + MonthList18[0].MonthName + "-" + previousYear5);
+            rptParam[0] = new ReportParameter("ReportTitle", MonthList35[0].MonthName + "-" + previousYear35 + " to " + MonthList35[0].MonthName + "-" + currentYear35);
 
             byte[] byarry43 = GenerateReport(Page40ReportName3, rptParam, Page40DataSourceName3, Page40Data3);
             lstByte.Add(byarry43);
@@ -1030,9 +1117,10 @@ namespace OperationalStatisticsBook
             string Page41DataSourceName1 = "PieTrafficEarningForTheMonthOfMonth";
             DataTable Page41Data1 = objPageData.GetDataBarPassengerInCarried_Page41_pie1();
 
-            var MonthList19 = GlobalMaster.GetPrevousMonthList(Month, Year, 02);
+            var MonthList36 = GlobalMaster.GetPrevousMonthList(Month, Year, 02);
             rptParam = new ReportParameter[1];
-            rptParam[0] = new ReportParameter("ReportTitle", MonthList19[0].MonthName + "-" + MonthList19[0].Year);
+            rptParam[0] = new ReportParameter("ReportTitle", MonthList36[0].MonthName + "-" + MonthList36[0].Year);
+
 
             byte[] byarry44 = GenerateReport(Page41ReportName1, rptParam, Page41DataSourceName1, Page41Data1);
             lstByte.Add(byarry44);
@@ -1043,9 +1131,10 @@ namespace OperationalStatisticsBook
             string Page41DataSourceName2 = "ExpenditureOfTheMonth";
             DataTable Page41Data2 = objPageData.GetDataBarPassengerInCarried_Page41_pie2();
 
-            var MonthList20 = GlobalMaster.GetPrevousMonthList(Month, Year, 02);
+            var MonthList37 = GlobalMaster.GetPrevousMonthList(Month, Year, 02);
+
             rptParam = new ReportParameter[1];
-            rptParam[0] = new ReportParameter("ReportTitle", MonthList[0].MonthName + "-" + MonthList[0].Year);
+            rptParam[0] = new ReportParameter("ReportTitle", MonthList37[0].MonthName + "-" + MonthList37[0].Year);
 
             byte[] byarry45 = GenerateReport(Page41ReportName2, rptParam, Page41DataSourceName2, Page41Data2);
             lstByte.Add(byarry45);

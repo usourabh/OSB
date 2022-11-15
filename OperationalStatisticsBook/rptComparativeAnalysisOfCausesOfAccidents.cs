@@ -59,8 +59,10 @@ namespace OperationalStatisticsBook
             ReportDataSource datasource = new ReportDataSource("rptComparativeAnalysisOfCausesOfAccidents", dtReportData);
             this.reportViewer1.LocalReport.DataSources.Clear();
             this.reportViewer1.LocalReport.DataSources.Add(datasource);
-            ReportParameter[] rptParam = new ReportParameter[1];
+            ReportParameter[] rptParam = new ReportParameter[3];
             rptParam[0] = new ReportParameter("ReportTitle", MonthList[0].MonthName + "-" + currentYear + " & " + MonthList[0].MonthName + "-" + previousYear);
+            rptParam[1] = new ReportParameter("fromDate", MonthList[0].MonthName + "-" + currentYear);
+            rptParam[2] = new ReportParameter("ToDate", MonthList[0].MonthName + "-" + previousYear);
             this.reportViewer1.LocalReport.SetParameters(rptParam);
             this.reportViewer1.RefreshReport();
 

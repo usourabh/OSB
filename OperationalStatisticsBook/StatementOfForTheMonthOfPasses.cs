@@ -123,9 +123,9 @@ namespace OperationalStatisticsBook
             //table.Columns.Add("No.of", typeof(string));
             //table.Columns.Add("Amount", typeof(string));
             ////Rows.......
-            table.Rows.Add("S.No ","Type of Concessional Passes", "Denomination",  "No.of", "Amount");
-            table.Rows.Add(" ", " ", "(Rs.) ", "Passes", "(Rs)");
-            table.Rows.Add("1 ", "2 ", "3", "4", "5");
+          //  table.Rows.Add("S.No ","Type of Concessional Passes", "Denomination",  "No.of", "Amount");
+          //  table.Rows.Add(" ", " ", "(Rs.) ", "Passes", "(Rs)");
+          //  table.Rows.Add("1 ", "2 ", "3", "4", "5");
             table.Rows.Add("1 ", "STUDENT PASSES ", " ", " ", " ");
             table.Rows.Add("1.1", "Student Destination ( AC)  ", "0", "0", "0");
             table.Rows.Add("1.2", " All Route Pass ( AC) 100*1  ", "0", "0", "0");
@@ -236,10 +236,10 @@ namespace OperationalStatisticsBook
             table.Rows.Add("10.8", "National award winners Six Month Non AC ", "0", "0", "0");
             table.Rows.Add("10.9", "WAR WIDOW & THEIR DEPENDENT SIX MONTH Non AC  ", "0", "0", "0");
             table.Rows.Add("10.10", "MLA/MP Attendant AC Pass One Yr. ", "0", "0", "0");
-            table.Rows.Add("0", "City Amount of NCR Passes ", "0", "0", "0");
-            table.Rows.Add("0", "TOTAL CITY Passes ", "0", "0", "0");
-            table.Rows.Add("0", "NCR Passes", "0", "0", "0");
-            table.Rows.Add("0", "Grand Total", "0", "0", "0");
+            table.Rows.Add("", "City Amount of NCR Passes ", "0", "0", "0");
+            table.Rows.Add("", "TOTAL CITY Passes ", "0", "0", "0");
+            table.Rows.Add("", "NCR Passes", "0", "0", "0");
+            table.Rows.Add("", "Grand Total", "0", "0", "0");
 
 
             return table;

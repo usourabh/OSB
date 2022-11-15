@@ -101,9 +101,9 @@ namespace OperationalStatisticsBook
             //           table.Columns.Add("% of Trips  ", typeof(string));
 
             //Rows......
-            table.Rows.Add("S.No ", "Unit ", "No. of Trips ", "No. of Trips", "No. of Trips", "No. of Trips", "% of Trips ", "% of Trips", "% of Trips");
-            table.Rows.Add(" ", " ", "Total Scheduled Trip ", "Total Actual Trip", "Act. Trips on-time", "Actual Trips late within2 min.", "Total % ", "Act. Ontime %", "Actual late Within 2 min.% ");
-            table.Rows.Add("", " ", "A", "B", "C","D","B/A","C/A","D/A");
+           // table.Rows.Add("S.No ", "Unit ", "No. of Trips ", "No. of Trips", "No. of Trips", "No. of Trips", "% of Trips ", "% of Trips", "% of Trips");
+           // table.Rows.Add(" ", " ", "Total Scheduled Trip ", "Total Actual Trip", "Act. Trips on-time", "Actual Trips late within2 min.", "Total % ", "Act. Ontime %", "Actual late Within 2 min.% ");
+          //  table.Rows.Add("", " ", "A", "B", "C","D","B/A","C/A","D/A");
             table.Rows.Add("1", "B.B.M. ", "", "", "", "", "", "", "");
             table.Rows.Add("2 ", "Rohini-I", "", "", "", "", "", "", "");
             table.Rows.Add("3 ", "Rohini-II", "", "", "", "", "", "", "");

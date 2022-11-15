@@ -90,7 +90,7 @@ namespace OperationalStatisticsBook
             table.Columns.Add("Traffic Income per bus per day(Rs.)", typeof(string));
 
             ///Rows here........ 
-            table.Rows.Add("1 ", " 2", "3", "4", "5");
+          //  table.Rows.Add("1 ", " 2", "3", "4", "5");
             table.Rows.Add("Non AC City", " ", "", "", "");
             table.Rows.Add("1", "Bawana Sec. 1  ", "0", "0", "0");
             table.Rows.Add("2", "Rani Khera-1 ", "0", "0", "0");
