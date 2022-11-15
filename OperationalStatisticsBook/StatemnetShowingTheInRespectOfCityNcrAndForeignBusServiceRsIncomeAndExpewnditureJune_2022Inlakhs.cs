@@ -101,7 +101,7 @@ namespace OperationalStatisticsBook
        
 
             // Rows
-            table.Rows.Add("", "", "Amt.(Rs.in lakhs)", "Per Km (Paise)", "Amt.(Rs. in lakhs)", "Per Km (Paise)", "Amt.(Rs.in lakhs)", "Per Km (Paise)", "Amt.(Rs.in lakhs) ", "Per Km (Paise)", "Amt.(Rs.in lakhs)", "Per Km (Paise)", "Amt.Rs. in lakhs)", "Per Km (Paise)", "Amt.(Rs. in lakhs)", "Per Km (Paise)");
+           // table.Rows.Add("", "", "Amt.(Rs.in lakhs)", "Per Km (Paise)", "Amt.(Rs. in lakhs)", "Per Km (Paise)", "Amt.(Rs.in lakhs)", "Per Km (Paise)", "Amt.(Rs.in lakhs) ", "Per Km (Paise)", "Amt.(Rs.in lakhs)", "Per Km (Paise)", "Amt.Rs. in lakhs)", "Per Km (Paise)", "Amt.(Rs. in lakhs)", "Per Km (Paise)");
             table.Rows.Add("I", "INCOME","", "", "", "", "", "", "", "", "", "", "", "", "", "");
             table.Rows.Add("i", "Ticketed Earning", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("ii", "Less Passenger Tax", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");

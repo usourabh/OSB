@@ -6058,7 +6058,7 @@
             <DataSetName>rptAccidentAnalysisForTheMonth</DataSetName>
             <Top>0.57167in</Top>
             <Height>0.94792in</Height>
-            <Width>13.77998in</Width>
+            <Width>13.78001in</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -6142,11 +6142,68 @@
               <PaddingBottom>2pt</PaddingBottom>
             </Style>
           </Textbox>
+          <Textbox Name="Textbox2">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>* A person injured very badly</Value>
+                    <Style>
+                      <FontSize>6pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>**A person injured very badly</Value>
+                    <Style>
+                      <FontSize>6pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>***A persson expired in accident</Value>
+                    <Style>
+                      <FontSize>6pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox2</rd:DefaultName>
+            <Top>4.30953cm</Top>
+            <Left>0.23495cm</Left>
+            <Height>0.99688cm</Height>
+            <Width>4.31592cm</Width>
+            <ZIndex>2</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
         </ReportItems>
-        <Height>4.49476cm</Height>
+        <Height>6.32039cm</Height>
         <Style />
       </Body>
-      <Width>35.00116cm</Width>
+      <Width>35.0806cm</Width>
       <Page>
         <PageHeight>29.7cm</PageHeight>
         <PageWidth>21cm</PageWidth>

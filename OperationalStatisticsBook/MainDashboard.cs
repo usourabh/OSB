@@ -134,16 +134,23 @@ namespace OperationalStatisticsBook
             dt.Rows.Add(" ", "Performance of DTC at a Glance", "frmPerformanceofDTCGlance");
             dt.Rows.Add(" ", "PROGRESSIVE FINANCIAL RESULTS (Rs. In Lakh)", "progressiveFinancialResults");
             dt.Rows.Add(" ", "Staff Ratio as on ", "StaffRatioAsOn");
-            dt.Rows.Add("1.1", "Analysis of causes of Accidents (" + GlobalMaster.FinMaster[1].FinVal + " TO " + GlobalMaster.FinMaster[0].FinVal + ")", "analysisOfCausesAccidents");
+           // dt.Rows.Add("1.1", "Analysis of causes of Accidents (" + GlobalMaster.FinMaster[1].FinVal + " TO " + GlobalMaster.FinMaster[0].FinVal + ")", "analysisOfCausesAccidents");
+            dt.Rows.Add("1.1", "Analysis of causes of Accidents ", "analysisOfCausesAccidents");
             dt.Rows.Add("1.2", "Growith of basic structure of DTC", "SalientFeatureGrowthBasicStructure");
             dt.Rows.Add("1.3", "ROUTES OPERATED BY DTC.", "RoutesOperatedByDtc");
-            dt.Rows.Add("1.4", "Comparative Financial Results Year (" + GlobalMaster.FinMaster[2].FinVal + " to " + GlobalMaster.FinMaster[0].FinVal + ")", "ComparativeFinancialResultsFrom");
-            dt.Rows.Add("1.5", "Comparative operational data for the period (April to March) (" + GlobalMaster.FinMaster[2].FinVal + " to " + GlobalMaster.FinMaster[0].FinVal + ")", "ComparativeOperationalData");
+           // dt.Rows.Add("1.4", "Comparative Financial Results Year (" + GlobalMaster.FinMaster[2].FinVal + " to " + GlobalMaster.FinMaster[0].FinVal + ")", "ComparativeFinancialResultsFrom");
+            dt.Rows.Add("1.4", "Comparative Financial Results Year ", "ComparativeFinancialResultsFrom");
+           // dt.Rows.Add("1.5", "Comparative operational data for the period (April to March) (" + GlobalMaster.FinMaster[2].FinVal + " to " + GlobalMaster.FinMaster[0].FinVal + ")", "ComparativeOperationalData");
+            dt.Rows.Add("1.5", "Comparative operational data for the period (April to March) ", "ComparativeOperationalData");
             dt.Rows.Add("1.6", "Distrubution of fleet by type/make and year of commission", "DistrubutionOfFleetByTypeMakeAndYearOfCommission");
-            dt.Rows.Add("1.7", "PRICE AND COST INDICES (" + GlobalMaster.FinMaster[5].FinVal + " to " + GlobalMaster.FinMaster[0].FinVal + ")", "PriceAndCostIndicies");
-            dt.Rows.Add("1.8", "Material Consumption from (" + GlobalMaster.FinMaster[2].FinVal + " to " + GlobalMaster.FinMaster[0].FinVal + ")", "MaterialConsumptionFrom");
-            dt.Rows.Add("1.9", "Performance of Metopolitan Transport Undertaking (" + GlobalMaster.FinMaster[5].FinVal + ")", "PerformanceMetopolitanTransportUndertaking");
-            dt.Rows.Add("1.10", "Accidents and Compensation given to Accident Victims April to March (" + GlobalMaster.FinMaster[9].FinVal + " to " + GlobalMaster.FinMaster[0].FinVal + ")", "AccidentNCompensationGvnAccidentVictims");
+           // dt.Rows.Add("1.7", "PRICE AND COST INDICES (" + GlobalMaster.FinMaster[5].FinVal + " to " + GlobalMaster.FinMaster[0].FinVal + ")", "PriceAndCostIndicies");
+            dt.Rows.Add("1.7", "PRICE AND COST INDICES ", "PriceAndCostIndicies");
+           // dt.Rows.Add("1.8", "Material Consumption from (" + GlobalMaster.FinMaster[2].FinVal + " to " + GlobalMaster.FinMaster[0].FinVal + ")", "MaterialConsumptionFrom");
+            dt.Rows.Add("1.8", "Material Consumption from ", "MaterialConsumptionFrom");
+           // dt.Rows.Add("1.9", "Performance of Metopolitan Transport Undertaking (" + GlobalMaster.FinMaster[5].FinVal + ")", "PerformanceMetopolitanTransportUndertaking");
+            dt.Rows.Add("1.9", "Performance of Metopolitan Transport Undertaking ", "PerformanceMetopolitanTransportUndertaking");
+           // dt.Rows.Add("1.10", "Accidents and Compensation given to Accident Victims April to March (" + GlobalMaster.FinMaster[9].FinVal + " to " + GlobalMaster.FinMaster[0].FinVal + ")", "AccidentNCompensationGvnAccidentVictims");
+            dt.Rows.Add("1.10", "Accidents and Compensation given to Accident Victims April to March ", "AccidentNCompensationGvnAccidentVictims");
             dt.Rows.Add("1.11", "Operational data Depot wise fleet strength & buses on road as on", "OperationalDepotWiseFleetStrengthNBusesOnRoad");
             dt.Rows.Add("2", "Category wise Staff Position as on ", "CategorywiseStaffPositionAsOn");
             dt.Rows.Add("3.1", "Routes operated by DTC and its Earning per Killometer ", "RoutesOperatedByDTCEarningPerKillometerJune");
@@ -854,11 +861,14 @@ namespace OperationalStatisticsBook
             var MonthList22 = GlobalMaster.GetPrevousMonthList(Month, Year, 02);
             DateTime currentDate1 = new DateTime(Year, Month, 01);
             DateTime newDate1 = currentDate.AddYears(-1);
-            string currentYear1 = currentDate.Year.ToString();
-            string previousYear1 = newDate.Year.ToString();
+            string currentYear1 = currentDate1.Year.ToString();
+            string previousYear1 = newDate1.Year.ToString();
             String previousMonthName1 = newDate.ToString("MMMM");
-            rptParam = new ReportParameter[1];
+            rptParam = new ReportParameter[3];
+           
             rptParam[0] = new ReportParameter("ReportTitle", MonthList22[0].MonthName + "-" + currentYear1 + " & " + MonthList22[0].MonthName + "-" + previousYear1);
+            rptParam[1] = new ReportParameter("fromDate", MonthList22[0].MonthName + "-" + currentYear1);
+            rptParam[2] = new ReportParameter("ToDate", MonthList22[0].MonthName + "-" + previousYear1);
 
             byte[] byarry28 = GenerateReport(Page30ReportName1, rptParam, Page30DataSourceName1, Page30Data1);
             lstByte.Add(byarry28);
@@ -872,12 +882,14 @@ namespace OperationalStatisticsBook
             var MonthList23 = GlobalMaster.GetPrevousMonthList(Month, Year, 02);
             DateTime currentDate2 = new DateTime(Year, Month, 01);
             DateTime newDate2 = currentDate.AddYears(-1);
-            string currentYear2 = currentDate.Year.ToString();
-            string previousYear2 = newDate.Year.ToString();
+            string currentYear2 = currentDate2.Year.ToString();
+            string previousYear2 = newDate2.Year.ToString();
             String previousMonthName2 = newDate.ToString("MMMM");
-            rptParam = new ReportParameter[1];
-            rptParam[0] = new ReportParameter("ReportTitle", MonthList23[0].MonthName + "-" + currentYear2 + " & " + MonthList23[0].MonthName + "-" + previousYear2);
+            rptParam = new ReportParameter[3];
 
+            rptParam[0] = new ReportParameter("ReportTitle", MonthList23[0].MonthName + "-" + currentYear2 + " & " + MonthList23[0].MonthName + "-" + previousYear2);
+            rptParam[1] = new ReportParameter("FromDate", MonthList23[0].MonthName + "-" + currentYear2);
+            rptParam[2] = new ReportParameter("ToDate", MonthList23[0].MonthName + "-" + previousYear2);
 
             byte[] byarry29 = GenerateReport(Page30ReportName2, rptParam, Page30DataSourceName2, Page30Data2);
             lstByte.Add(byarry29);
@@ -891,12 +903,14 @@ namespace OperationalStatisticsBook
             var MonthList24 = GlobalMaster.GetPrevousMonthList(Month, Year, 02);
             DateTime currentDate3 = new DateTime(Year, Month, 01);
             DateTime newDate3 = currentDate.AddYears(-1);
-            string currentYear3 = currentDate.Year.ToString();
-            string previousYear3 = newDate.Year.ToString();
+            string currentYear3 = currentDate3.Year.ToString();
+            string previousYear3 = newDate3.Year.ToString();
             String previousMonthName3 = newDate.ToString("MMMM");
-            rptParam = new ReportParameter[1];
+            rptParam = new ReportParameter[3];
+        
             rptParam[0] = new ReportParameter("ReportTitle", MonthList24[0].MonthName + "-" + currentYear3 + " & " + MonthList24[0].MonthName + "-" + previousYear3);
-
+            rptParam[1] = new ReportParameter("FromDate", MonthList24[0].MonthName + "-" + currentYear3);
+            rptParam[2] = new ReportParameter("ToDate", MonthList24[0].MonthName + "-" + previousYear3);
 
             byte[] byarry30 = GenerateReport(Page30ReportName3, rptParam, Page30DataSourceName3, Page30Data3);
             lstByte.Add(byarry30);
@@ -1002,8 +1016,8 @@ namespace OperationalStatisticsBook
             var MonthList30 = GlobalMaster.GetPrevousMonthList(Month, Year, 02);
             DateTime currentDate30 = new DateTime(Year, Month, 01);
             DateTime newDate30 = currentDate.AddYears(-1);
-            string currentYear30 = currentDate.Year.ToString();
-            string previousYear30 = newDate.Year.ToString();
+            string currentYear30 = currentDate30.Year.ToString();
+            string previousYear30 = newDate30.Year.ToString();
             String previousMonthName30 = newDate.ToString("MMMM");
 
             rptParam = new ReportParameter[1];
@@ -1021,8 +1035,8 @@ namespace OperationalStatisticsBook
             var MonthList31 = GlobalMaster.GetPrevousMonthList(Month, Year, 02);
             DateTime currentDate31 = new DateTime(Year, Month, 01);
             DateTime newDate31 = currentDate.AddYears(-1);
-            string currentYear31 = currentDate.Year.ToString();
-            string previousYear31 = newDate.Year.ToString();
+            string currentYear31 = currentDate31.Year.ToString();
+            string previousYear31 = newDate31.Year.ToString();
             String previousMonthName31 = newDate.ToString("MMMM");
 
             rptParam = new ReportParameter[1];
@@ -1039,9 +1053,9 @@ namespace OperationalStatisticsBook
 
             var MonthList32 = GlobalMaster.GetPrevousMonthList(Month, Year, 02);
             DateTime currentDate32 = new DateTime(Year, Month, 01);
-            DateTime newDate32 = currentDate.AddYears(+1);
-            string currentYear32 = currentDate.Year.ToString();
-            string previousYear32 = newDate.Year.ToString();
+            DateTime newDate32 = currentDate.AddYears(-1);
+            string currentYear32 = currentDate32.Year.ToString();
+            string previousYear32 = newDate32.Year.ToString();
             String previousMonthName32 = newDate.ToString("MMMM");
 
             rptParam = new ReportParameter[1];
@@ -1060,8 +1074,8 @@ namespace OperationalStatisticsBook
             var MonthList33 = GlobalMaster.GetPrevousMonthList(Month, Year, 02);
             DateTime currentDate33 = new DateTime(Year, Month, 01);
             DateTime newDate33 = currentDate.AddYears(-1);
-            string currentYear33 = currentDate.Year.ToString();
-            string previousYear33 = newDate.Year.ToString();
+            string currentYear33 = currentDate33.Year.ToString();
+            string previousYear33 = newDate33.Year.ToString();
             String previousMonthName33 = newDate.ToString("MMMM");
 
 
@@ -1081,14 +1095,14 @@ namespace OperationalStatisticsBook
 
             var MonthList34 = GlobalMaster.GetPrevousMonthList(Month, Year, 02);
             DateTime currentDate34 = new DateTime(Year, Month, 01);
-            DateTime newDate34 = currentDate.AddYears(+1);
-            string currentYear34 = currentDate.Year.ToString();
-            string previousYear34 = newDate.Year.ToString();
+            DateTime newDate34 = currentDate.AddYears(-1);
+            string currentYear34 = currentDate34.Year.ToString();
+            string previousYear34 = newDate34.Year.ToString();
             String previousMonthName34 = newDate.ToString("MMMM");
 
 
             rptParam = new ReportParameter[1];
-            rptParam[0] = new ReportParameter("ReportTitle", MonthList34[0].MonthName + "-" + currentYear34 + " to " + MonthList34[0].MonthName + "-" + previousYear34);
+            rptParam[0] = new ReportParameter("ReportTitle", MonthList34[0].MonthName + "-" + previousYear34 + " to " + MonthList34[0].MonthName + "-" + currentYear34);
 
             byte[] byarry42 = GenerateReport(Page40ReportName2, rptParam, Page40DataSourceName2, Page40Data2);
             lstByte.Add(byarry42);
@@ -1102,8 +1116,8 @@ namespace OperationalStatisticsBook
             var MonthList35 = GlobalMaster.GetPrevousMonthList(Month, Year, 02);
             DateTime currentDate35 = new DateTime(Year, Month, 01);
             DateTime newDate35 = currentDate.AddYears(-1);
-            string currentYear35 = currentDate.Year.ToString();
-            string previousYear35 = newDate.Year.ToString();
+            string currentYear35 = currentDate35.Year.ToString();
+            string previousYear35 = newDate35.Year.ToString();
             String previousMonthName35 = newDate.ToString("MMMM");
             rptParam = new ReportParameter[1];
             rptParam[0] = new ReportParameter("ReportTitle", MonthList35[0].MonthName + "-" + previousYear35 + " to " + MonthList35[0].MonthName + "-" + currentYear35);
@@ -1134,7 +1148,7 @@ namespace OperationalStatisticsBook
             var MonthList37 = GlobalMaster.GetPrevousMonthList(Month, Year, 02);
 
             rptParam = new ReportParameter[1];
-            rptParam[0] = new ReportParameter("ReportTitle", MonthList37[0].MonthName + "-" + MonthList37[0].Year);
+            rptParam[0] = new ReportParameter("ReportTitle", MonthList37[1].MonthName + "-" + MonthList37[0].Year);
 
             byte[] byarry45 = GenerateReport(Page41ReportName2, rptParam, Page41DataSourceName2, Page41Data2);
             lstByte.Add(byarry45);

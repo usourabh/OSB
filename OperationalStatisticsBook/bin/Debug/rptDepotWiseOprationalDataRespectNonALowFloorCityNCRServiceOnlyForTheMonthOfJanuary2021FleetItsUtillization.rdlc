@@ -4248,8 +4248,8 @@
             <DataSetName>rptDepotWiseOprationalDataRespectNonALowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021FleetItsUtillization</DataSetName>
             <Top>0.63763in</Top>
             <Left>0.9375in</Left>
-            <Height>0.79168in</Height>
-            <Width>13.93047in</Width>
+            <Height>0.79169in</Height>
+            <Width>13.93048in</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -4263,7 +4263,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Table-4.1 Depot- wise Oprational Data in respect of Non AC &amp; AC Low Floor City &amp; NCR service only</Value>
+                    <Value>Table-4.1 Depot- wise Oprational Data </Value>
                     <Style>
                       <FontStyle>Normal</FontStyle>
                       <FontWeight>Bold</FontWeight>
@@ -4279,7 +4279,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>For the month of </Value>
+                    <Value>For the month of Fleet &amp; its Utillization in respect of Non AC &amp; AC Low Floor City &amp; NCR service only </Value>
                     <Style>
                       <FontStyle>Normal</FontStyle>
                       <FontWeight>Bold</FontWeight>
@@ -4304,7 +4304,23 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Fleet &amp; its Utillization</Value>
+                    <Value>its Utilization</Value>
+                    <Style>
+                      <FontStyle>Normal</FontStyle>
+                      <FontWeight>Bold</FontWeight>
+                      <TextDecoration>None</TextDecoration>
+                      <Color>#000000</Color>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value />
                     <Style>
                       <FontStyle>Normal</FontStyle>
                       <FontWeight>Bold</FontWeight>
@@ -4319,10 +4335,9 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox140</rd:DefaultName>
-            <Top>0.25569in</Top>
             <Left>0.9375in</Left>
-            <Height>0.34028in</Height>
-            <Width>8.28315in</Width>
+            <Height>0.56819in</Height>
+            <Width>7.72916in</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>

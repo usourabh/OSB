@@ -124,7 +124,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Routes operated by DTC and its Earning per Killometer </Value>
+                    <Value>Routes Operated by DTC and its Earning per Kilometer </Value>
                     <Style>
                       <FontStyle>Normal</FontStyle>
                       <FontFamily>Times New Roman</FontFamily>
@@ -1012,7 +1012,7 @@
             <DataSetName>RoutesOperatedByDTCEarningPerKillometer</DataSetName>
             <Top>1.87536cm</Top>
             <Height>1.19999cm</Height>
-            <Width>20.68138cm</Width>
+            <Width>20.68132cm</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>

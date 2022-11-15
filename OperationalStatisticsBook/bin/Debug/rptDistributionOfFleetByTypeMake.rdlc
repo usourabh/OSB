@@ -117,7 +117,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>As on 31st </Value>
+                    <Value>As on </Value>
                     <Style>
                       <FontStyle>Normal</FontStyle>
                       <FontSize>12pt</FontSize>

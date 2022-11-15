@@ -95,9 +95,9 @@ namespace OperationalStatisticsBook
           
             
           
-            table.Rows.Add("", "Depot", "Missed Kms", "Breakdowns", "Breakdowns", "Breakdowns", "Breakdowns");           
-            table.Rows.Add("", "", "", "M", "E", "T", "Total");
-            table.Rows.Add("1", "2", "3", "4", "5", "6", "7");
+        //    table.Rows.Add("", "Depot", "Missed Kms", "Breakdowns", "Breakdowns", "Breakdowns", "Breakdowns");           
+         //   table.Rows.Add("", "", "", "M", "E", "T", "Total");
+         //   table.Rows.Add("1", "2", "3", "4", "5", "6", "7");
             table.Rows.Add("1", "BBM", "0", "0", "0", "0", "0");
             table.Rows.Add("2", "Rohini-I", "0", "0", "0", "0", "0");
             table.Rows.Add("3", "Rohini-II", "0", "0", "0", "0", "0");

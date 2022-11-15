@@ -140,7 +140,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Details of operational data for the month of </Value>
+                    <Value>Details of Operational data for the month of </Value>
                     <Style>
                       <FontStyle>Normal</FontStyle>
                       <FontSize>12pt</FontSize>

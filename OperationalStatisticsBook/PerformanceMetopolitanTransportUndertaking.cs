@@ -58,9 +58,9 @@ namespace OperationalStatisticsBook
             table.Columns.Add("M.T.C. ", typeof(string));
             table.Columns.Add("B.M.T.C.", typeof(string));
 
-            table.Rows.Add("", "", "", "DELHI", "CALCUTTA", "BOMBAY", "CHENNAI", "BANGLORE");
-            table.Rows.Add("1", "2", "3", "4", "5", "6", "7", "8");
-            table.Rows.Add("A", "Physical Parformance", "", "", "", "", "", "");
+            //table.Rows.Add("", "", "", "DELHI", "CALCUTTA", "BOMBAY", "CHENNAI", "BANGLORE");
+           // table.Rows.Add("1", "2", "3", "4", "5", "6", "7", "8");
+           // table.Rows.Add("A", "Physical Parformance", "", "", "", "", "", "");
             table.Rows.Add("1", "Avg. fleet held", "Number", "", "", "", "", "");
             table.Rows.Add("2", "Avg. age of the fleet", "Years", "", "", "", "", "");
             table.Rows.Add("3", "%age of overaged Buses", "%age", "", "", "", "", "");
@@ -74,6 +74,7 @@ namespace OperationalStatisticsBook
             table.Rows.Add("B", "Financial Performance", "", "", "", "", "", "");
             table.Rows.Add("1", "Revenue per Km.", "Paise", "", "", "", "", "");
             table.Rows.Add("2", "Cost per Km", "Paise", "", "", "", "", "");
+            table.Rows.Add("3", "Net Profit/ Loss Per Km.", "Paise", "", "", "", "", "");
 
             table.Rows.Add("C", "Cost Structrue", "", "", "", "", "", "");
             table.Rows.Add("1", "Staff cost", "", "", "", "", "", "");
@@ -134,18 +135,18 @@ namespace OperationalStatisticsBook
             {
                 try
                 {
-                    if (row.Cells[0].Value != null || row.Cells[1].Value != null || row.Cells[2].Value != null || row.Cells[3].Value != null || row.Cells[4].Value != null || row.Cells[5].Value != null || row.Cells[6].Value != null || row.Cells[7].Value != null )
+                    if (row.Cells[0].Value != null || row.Cells[1].Value != null || row.Cells[2].Value != null || row.Cells[3].Value != null || row.Cells[4].Value != null || row.Cells[5].Value != null || row.Cells[6].Value != null || row.Cells[7].Value != null || row.Cells[8].Value != null)
                     {
-                        SqlCommand cmd = new SqlCommand("INSERT INTO [rpt].[tbl_PerformanceMetopolitanTransportUndertaking] ([OsbId],[Particular],[Param1],[Param2],[Param3],[Param4],[Param5],[Param6]) VALUES (@OsbId,@Particular,@Param1,@Param2,@Param3,@Param4,@Param5,@Param6)", con);
+                        SqlCommand cmd = new SqlCommand("INSERT INTO [rpt].[tbl_PerformanceMetopolitanTransportUndertaking] ([OsbId],[SNo],[Particular],[Param1],[Param2],[Param3],[Param4],[Param5],[Param6]) VALUES (@OsbId,@SNo,@Particular,@Param1,@Param2,@Param3,@Param4,@Param5,@Param6)", con);
                         cmd.Parameters.AddWithValue("@OsbId", OsbId);
-                       // cmd.Parameters.AddWithValue("@SNo", row.Cells[0].Value == null ? "" : row.Cells[0].Value.ToString());
-                        cmd.Parameters.AddWithValue("@Particular", row.Cells[0].Value == null ? "" : row.Cells[0].Value.ToString());
-                        cmd.Parameters.AddWithValue("@Param1", row.Cells[1].Value == null ? "" : row.Cells[1].Value.ToString());
-                        cmd.Parameters.AddWithValue("@Param2", row.Cells[2].Value == null ? "" : row.Cells[2].Value.ToString());
-                        cmd.Parameters.AddWithValue("@Param3", row.Cells[3].Value == null ? "" : row.Cells[3].Value.ToString());
-                        cmd.Parameters.AddWithValue("@Param4", row.Cells[4].Value == null ? "" : row.Cells[4].Value.ToString());
-                        cmd.Parameters.AddWithValue("@Param5", row.Cells[5].Value == null ? "" : row.Cells[5].Value.ToString());
-                        cmd.Parameters.AddWithValue("@Param6", row.Cells[6].Value == null ? "" : row.Cells[6].Value.ToString());
+                        cmd.Parameters.AddWithValue("@SNo", row.Cells[0].Value == null ? "" : row.Cells[0].Value.ToString());
+                        cmd.Parameters.AddWithValue("@Particular", row.Cells[1].Value == null ? "" : row.Cells[1].Value.ToString());
+                        cmd.Parameters.AddWithValue("@Param1", row.Cells[2].Value == null ? "" : row.Cells[2].Value.ToString());
+                        cmd.Parameters.AddWithValue("@Param2", row.Cells[3].Value == null ? "" : row.Cells[3].Value.ToString());
+                        cmd.Parameters.AddWithValue("@Param3", row.Cells[4].Value == null ? "" : row.Cells[4].Value.ToString());
+                        cmd.Parameters.AddWithValue("@Param4", row.Cells[5].Value == null ? "" : row.Cells[5].Value.ToString());
+                        cmd.Parameters.AddWithValue("@Param5", row.Cells[6].Value == null ? "" : row.Cells[6].Value.ToString());
+                        cmd.Parameters.AddWithValue("@Param6", row.Cells[7].Value == null ? "" : row.Cells[7].Value.ToString());
                           cmd.CommandType = CommandType.Text;
                         con.Open();
                         cmd.ExecuteNonQuery();

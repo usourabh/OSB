@@ -56,7 +56,7 @@ namespace WindowsFormsApp1
             this.reportViewer1.LocalReport.DataSources.Add(datasource);
             ReportParameter[] rptParam = new ReportParameter[1];
             //  rptParam[0] = new ReportParameter("ReportTitle", MonthList[1].MonthName + "-" + MonthList[1].Year + " to " + MonthList[0].MonthName + "-" + MonthList[0].Year);
-            rptParam[0] = new ReportParameter("ReportTitle", MonthList[0].MonthName + "-" + MonthList[0].Year);
+            rptParam[0] = new ReportParameter("ReportTitle", MonthList[1].MonthName + "-" + MonthList[0].Year);
             this.reportViewer1.LocalReport.SetParameters(rptParam);
             this.reportViewer1.RefreshReport();
         }
