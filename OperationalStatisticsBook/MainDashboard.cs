@@ -748,18 +748,33 @@ namespace OperationalStatisticsBook
             byte[] byarry20 = GenerateReport(Page17n18ReportName, rptParam, Page17n18DataSourceName, Page17n18Data);
             lstByte.Add(byarry20);
 
-            //DWODTripsScheduledOperated
+            //DWODTripsScheduledOperated ---------PAGE 1 CALLING
 
-            string Page19n20ReportName = "rptDWODTripsScheduledOperated.rdlc";
-            string Page19n20DataSourceName = "DWODTripsScheduledOperated";
-            DataTable Page19n20Data = objPageData.GetDataDWODTripsScheduledOperated_Page19n20(this.OsbId);
+            string Page19n20ReportNamePage1 = "rptDWODTripsScheduledOperated.rdlc";
+            string Page19n20DataSourceNamePage1 = "DWODTripsScheduledOperated";
+            DataTable Page19n20DataPage1 = objPageData.GetDataDWODTripsScheduledOperated_Page19n20(this.OsbId);
 
             var MonthList8 = GlobalMaster.GetPrevousMonthList(Month, Year, 2);
             rptParam = new ReportParameter[1];
             rptParam[0] = new ReportParameter("ReportTitle", MonthList8[0].MonthName + "-" + MonthList8[1].Year);
 
-            byte[] byarry21 = GenerateReport(Page19n20ReportName, rptParam, Page19n20DataSourceName, Page19n20Data);
+            byte[] byarry21 = GenerateReport(Page19n20ReportNamePage1, rptParam, Page19n20DataSourceNamePage1, Page19n20DataPage1);
             lstByte.Add(byarry21);
+
+
+            //DWODTripsScheduledOperated ---------PAGE 2 CALLING
+
+            string Page19n20ReportNamePage2 = "rptDWODTripsScheduledOperated2.rdlc";
+            string Page19n20DataSourceNamePage2 = "DWODTripsScheduledOperated";
+            DataTable Page19n20DataPage2 = objPageData.GetDataDWODTripsScheduledOperated_Page19n20(this.OsbId);
+
+            var MonthList8Page2 = GlobalMaster.GetPrevousMonthList(Month, Year, 2);
+            rptParam = new ReportParameter[1];
+            rptParam[0] = new ReportParameter("ReportTitle", MonthList8Page2[0].MonthName + "-" + MonthList8Page2[1].Year);
+
+            byte[] byarry46 = GenerateReport(Page19n20ReportNamePage2, rptParam, Page19n20DataSourceNamePage2, Page19n20DataPage2);
+            lstByte.Add(byarry46);
+
 
             //DWOD in respect of non ac low floor city & ncr ANALYSIS OF KILOMETER
 
@@ -1174,7 +1189,8 @@ namespace OperationalStatisticsBook
                 //files list wise Loop  
                 for (int f = 0; f < lstByte.Count; f++)
                 {
-                    int pages = 1;
+                    int pages = countpage(lstByte[f]);
+
                     if (lstByte[f] != null)
                     {
                         reader = new PdfReader(lstByte[f]);
@@ -1218,6 +1234,22 @@ namespace OperationalStatisticsBook
             {
                 return null;
             }
+        }
+
+
+        //countpage function is counting the no of pages in single rdlc
+        public int countpage(byte[] pdfContent)
+        {
+            int pageCount;
+            MemoryStream stream = new MemoryStream(pdfContent);
+            using (var r = new StreamReader(stream))
+            {
+                string pdfText = r.ReadToEnd();
+                System.Text.RegularExpressions.Regex regx = new Regex(@"/Type\s*/Page[^s]");
+                System.Text.RegularExpressions.MatchCollection matches = regx.Matches(pdfText);
+                pageCount = matches.Count;
+            }
+            return pageCount;
         }
 
 

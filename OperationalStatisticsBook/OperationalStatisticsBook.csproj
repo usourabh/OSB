@@ -851,6 +851,7 @@
     <EmbeddedResource Include="rptDWODFCMSFleetItsUtilization.resx">
       <DependentUpon>rptDWODFCMSFleetItsUtilization.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="rptDWODTripsScheduledOperated2.rdlc" />
     <EmbeddedResource Include="rptFleetUtilization.resx">
       <DependentUpon>rptFleetUtilization.cs</DependentUpon>
     </EmbeddedResource>

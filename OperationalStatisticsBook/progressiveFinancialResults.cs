@@ -137,10 +137,8 @@ namespace OperationalStatisticsBook
 
         private void btnReset_Click(object sender, EventArgs e)
         {
-            DeleteExisitingTableRecord("tbl_ProgressiveFinancialResults", OsbId);
             dataGridView1.DataSource = BindProgressiveFinancialTable();
             MessageBox.Show("Done");
-
         }
 
         private void Print_ReportOnClick(object sender, EventArgs e)
