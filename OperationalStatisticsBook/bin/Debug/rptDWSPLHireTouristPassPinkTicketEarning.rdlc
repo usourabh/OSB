@@ -131,6 +131,23 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
+                    <Value>Table-6.2 </Value>
+                    <Style>
+                      <FontStyle>Normal</FontStyle>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                      <TextDecoration>None</TextDecoration>
+                      <Color>#000000</Color>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
                     <Value>Depot wise Statemt of School buses, Spl. Hire, Tourist, Pass &amp; Pink Ticket Earning :  </Value>
                     <Style>
                       <FontStyle>Normal</FontStyle>
@@ -160,7 +177,7 @@
             <Top>0.42016cm</Top>
             <Left>0.26141cm</Left>
             <Height>0.94396cm</Height>
-            <Width>21.78687cm</Width>
+            <Width>28.73524cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -178,55 +195,55 @@
                   <Width>1.19036cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.11098cm</Width>
+                  <Width>2.40717cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.8064cm</Width>
+                  <Width>1.14154cm</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>1.13744cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.66119cm</Width>
+                  <Width>1.18131cm</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>1.26973cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.75348cm</Width>
+                  <Width>1.17681cm</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>1.40202cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.52952cm</Width>
+                  <Width>1.41146cm</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>1.28327cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.11098cm</Width>
+                  <Width>1.3932cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.79348cm</Width>
+                  <Width>1.17244cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.03535cm</Width>
+                  <Width>1.5907cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.81994cm</Width>
+                  <Width>1.27855cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.97869cm</Width>
+                  <Width>1.22563cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.97869cm</Width>
+                  <Width>1.52522cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.81994cm</Width>
+                  <Width>1.31383cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.76702cm</Width>
+                  <Width>1.29619cm</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>1.53431cm</Width>
@@ -1415,7 +1432,7 @@
             <Top>1.71662cm</Top>
             <Left>0.26141cm</Left>
             <Height>1.34288cm</Height>
-            <Width>21.78683cm</Width>
+            <Width>28.73524cm</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
@@ -1424,10 +1441,10 @@
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>2.10417in</Height>
+        <Height>1.38195in</Height>
         <Style />
       </Body>
-      <Width>8.86645in</Width>
+      <Width>11.63518in</Width>
       <Page>
         <PageHeight>29.7cm</PageHeight>
         <PageWidth>21cm</PageWidth>

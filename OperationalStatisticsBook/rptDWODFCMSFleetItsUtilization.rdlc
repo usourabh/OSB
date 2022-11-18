@@ -49,14 +49,18 @@
           <DataField>Param5</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="SNo">
+          <DataField>SNo</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>dtcoperationDataSet</rd:DataSetName>
-        <rd:SchemaPath>E:\DTC_Git\OperationalStatisticBook\OperationalStatisticsBook\OperationalStatisticsBook\dtcoperationDataSet.xsd</rd:SchemaPath>
-        <rd:TableName>tbl_DWODFCMSFleetItsUtilization</rd:TableName>
+        <rd:SchemaPath>D:\NewOsbRdlc\OSB\OSB\OperationalStatisticsBook\dtcoperationDataSet.xsd</rd:SchemaPath>
+        <rd:TableName>tbl_DWODFCMSFleetItsUtilization1</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>tbl_DWODFCMSFleetItsUtilizationTableAdapter</rd:TableAdapterName>
+        <rd:TableAdapterName>tbl_DWODFCMSFleetItsUtilization1TableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
@@ -68,6 +72,23 @@
             <CanGrow>true</CanGrow>
             <KeepTogether>true</KeepTogether>
             <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Table-8.1</Value>
+                    <Style>
+                      <FontStyle>Normal</FontStyle>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                      <TextDecoration>None</TextDecoration>
+                      <Color>#000000</Color>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
               <Paragraph>
                 <TextRuns>
                   <TextRun>
@@ -148,7 +169,7 @@
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>1.28791cm</Height>
+                  <Height>0.84694cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -426,18 +447,18 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.9175cm</Height>
+                  <Height>0.65292cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Id">
+                        <Textbox Name="SNo">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Rownumber(Nothing)</Value>
+                                  <Value>=Fields!SNo.Value</Value>
                                   <Style>
                                     <FontSize>8pt</FontSize>
                                   </Style>
@@ -448,7 +469,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Id</rd:DefaultName>
+                          <rd:DefaultName>SNo</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -694,7 +715,7 @@
             <DataSetName>DWODFCMSFleetItsUtilization</DataSetName>
             <Top>2.13996cm</Top>
             <Left>0.50271cm</Left>
-            <Height>2.20541cm</Height>
+            <Height>1.49986cm</Height>
             <Width>18.3318cm</Width>
             <ZIndex>1</ZIndex>
             <Style>
@@ -704,7 +725,7 @@
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>2.18658in</Height>
+        <Height>1.69352in</Height>
         <Style />
       </Body>
       <Width>7.561in</Width>

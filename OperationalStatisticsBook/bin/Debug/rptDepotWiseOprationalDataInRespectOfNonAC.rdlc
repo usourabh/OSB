@@ -179,7 +179,6 @@
                                   <Value>for the month of </Value>
                                   <Style>
                                     <FontStyle>Normal</FontStyle>
-                                    <FontSize>12pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                     <TextDecoration>None</TextDecoration>
                                     <Color>#000000</Color>
@@ -189,7 +188,6 @@
                                   <Value>=Parameters!ReportTitle.Value</Value>
                                   <Style>
                                     <FontStyle>Normal</FontStyle>
-                                    <FontSize>12pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                     <TextDecoration>None</TextDecoration>
                                     <Color>#000000</Color>
@@ -2515,7 +2513,7 @@
             <Top>0.48139in</Top>
             <Left>0.21875in</Left>
             <Height>1.04167in</Height>
-            <Width>7.15194in</Width>
+            <Width>7.15193in</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -2529,10 +2527,25 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Table-4.6Depot- wise Oprational Data (in respect of Non AC &amp; AC Low Floor City service only)</Value>
+                    <Value>Table-4.6</Value>
                     <Style>
                       <FontStyle>Normal</FontStyle>
-                      <FontSize>12pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                      <TextDecoration>None</TextDecoration>
+                      <Color>#000000</Color>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Depot- wise Oprational Data (in respect of Non AC &amp; AC Low Floor City service only)</Value>
+                    <Style>
+                      <FontStyle>Normal</FontStyle>
                       <FontWeight>Bold</FontWeight>
                       <TextDecoration>None</TextDecoration>
                       <Color>#000000</Color>
@@ -2547,7 +2560,7 @@
             <rd:DefaultName>Textbox69</rd:DefaultName>
             <Top>0.11333in</Top>
             <Left>0.21875in</Left>
-            <Height>0.29861in</Height>
+            <Height>0.29862in</Height>
             <Width>7.15194in</Width>
             <ZIndex>1</ZIndex>
             <Style>
