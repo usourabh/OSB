@@ -722,18 +722,31 @@ namespace OperationalStatisticsBook
             byte[] byarry18 = GenerateReport(Page14ReportName, rptParam, Page14DataSourceName, Page14Data);
             lstByte.Add(byarry18);
 
-            // DETAILS OF OPERATIONAL DATA
+            // DETAILS OF OPERATIONAL DATA --------PAGE 1
 
-            string Page15n16ReportName = "rptDetailsofOperationaldata.rdlc";
-            string Page15n16DataSourceName = "DetailsofOperationaldata";
-            DataTable Page15n16Data = objPageData.GetDataDetailsofOperationaldata_Page15n16(this.OsbId);
+            string Page15n16ReportNamePage1 = "rptDetailsofOperationaldata1.rdlc";
+            string Page15n16DataSourceNamePage1 = "DetailsofOperationaldata";
+            DataTable Page15n16DataPage1 = objPageData.GetDataDetailsofOperationaldata_Page15n16(this.OsbId);
 
-            var MonthList6 = GlobalMaster.GetPrevousMonthList(Month, Year, 2);
+            var MonthList6Page1 = GlobalMaster.GetPrevousMonthList(Month, Year, 2);
             rptParam = new ReportParameter[1];
-            rptParam[0] = new ReportParameter("ReportTitle", MonthList6[0].MonthName + "-" + MonthList6[1].Year);
+            rptParam[0] = new ReportParameter("ReportTitle", MonthList6Page1[0].MonthName + "-" + MonthList6Page1[1].Year);
 
-            byte[] byarry19 = GenerateReport(Page15n16ReportName, rptParam, Page15n16DataSourceName, Page15n16Data);
-            lstByte.Add(byarry19);
+            byte[] byarry47 = GenerateReport(Page15n16ReportNamePage1, rptParam, Page15n16DataSourceNamePage1, Page15n16DataPage1);
+            lstByte.Add(byarry47);
+
+            // DETAILS OF OPERATIONAL DATA -------PAGE 2
+
+            string Page15n16ReportNamePage2 = "rptDetailsofOperationaldata2.rdlc";
+            string Page15n16DataSourceNamePage2 = "DetailsofOperationaldata";
+            DataTable Page15n16DataPage2 = objPageData.GetDataDetailsofOperationaldata_Page15n16(this.OsbId);
+
+            var MonthList6Page2 = GlobalMaster.GetPrevousMonthList(Month, Year, 2);
+            rptParam = new ReportParameter[1];
+            rptParam[0] = new ReportParameter("ReportTitle", MonthList6Page2[0].MonthName + "-" + MonthList6Page2[1].Year);
+
+            byte[] byarry48 = GenerateReport(Page15n16ReportNamePage2, rptParam, Page15n16DataSourceNamePage2, Page15n16DataPage2);
+            lstByte.Add(byarry48);
 
             // Depot Wise Oprational Data Respect Non Ac Low Floor City NCR Service Only For The Month Of January2021FleetItsUtillization
 

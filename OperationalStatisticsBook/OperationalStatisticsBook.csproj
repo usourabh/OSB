@@ -839,6 +839,12 @@
     <EmbeddedResource Include="rptDepotWiseTotalMissedKmsAndBreakdowns.resx">
       <DependentUpon>rptDepotWiseTotalMissedKmsAndBreakdowns.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="rptDetailsofOperationaldata2.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptDetailsofOperationaldata1.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="rptDetailsofOperationaldata.rdlc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
