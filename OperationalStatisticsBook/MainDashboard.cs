@@ -789,44 +789,81 @@ namespace OperationalStatisticsBook
             lstByte.Add(byarry46);
 
 
-            //DWOD in respect of non ac low floor city & ncr ANALYSIS OF KILOMETER
+            //DWOD in respect of non ac low floor city & ncr ANALYSIS OF KILOMETER Page1
 
-            string Page21n22ReportName = "rptDepotWiseOprationalDataInRespectOfNonAcNAcLowFloorCityNCRServiceOnlyAnalysisOfKilometers.rdlc";
-            string Page21n22DataSourceName = "rptDepotWiseOprationalDataInRespectOfNonAcNAcLowFloorCityNCRServiceOnlyAnalysisOfKilometers";
-            DataTable Page21n22Data = objPageData.GetDataDWODResNonAcAcAnalysisOfKilometers_Page21n22(this.OsbId);
+            string Page21n22ReportNamePage1 = "rptDepotWiseOprationalDataInRespectOfNonAcNAcLowFloorCityNCRServiceOnlyAnalysisOfKilometers1.rdlc";
+            string Page21n22DataSourceNamePage1 = "rptDepotWiseOprationalDataInRespectOfNonAcNAcLowFloorCityNCRServiceOnlyAnalysisOfKilometers";
+            DataTable Page21n22DataPage1 = objPageData.GetDataDWODResNonAcAcAnalysisOfKilometers_Page21n22(this.OsbId);
 
-            var MonthList9 = GlobalMaster.GetPrevousMonthList(Month, Year, 2);
+            var MonthList9Page1 = GlobalMaster.GetPrevousMonthList(Month, Year, 2);
             rptParam = new ReportParameter[1];
-            rptParam[0] = new ReportParameter("ReportTitle", MonthList9[0].MonthName + "-" + MonthList9[1].Year);
+            rptParam[0] = new ReportParameter("ReportTitle", MonthList9Page1[0].MonthName + "-" + MonthList9Page1[1].Year);
 
-            byte[] byarry22 = GenerateReport(Page21n22ReportName, rptParam, Page21n22DataSourceName, Page21n22Data);
-            lstByte.Add(byarry22);
+            byte[] byarry49 = GenerateReport(Page21n22ReportNamePage1, rptParam, Page21n22DataSourceNamePage1, Page21n22DataPage1);
+            lstByte.Add(byarry49);
 
-            //DWOD in respect of non ac low floor city & ncr TRAFFIC INCOME
+            //DWOD in respect of non ac low floor city & ncr ANALYSIS OF KILOMETER Page2
 
-            string Page23n24ReportName = "rptDepotWiseOprationalDataInRespectOfNonAcNAcLowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021TrafficIncome.rdlc";
-            string Page23n24DataSourceName = "rptDepotWiseOprationalDataInRespectOfNonAcNAcLowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021TrafficIncome";
-            DataTable Page23n24Data = objPageData.GetDataDWODResNonAcAcTrafficIncome_Page23n24(this.OsbId);
+            string Page21n22ReportNamePage2 = "rptDepotWiseOprationalDataInRespectOfNonAcNAcLowFloorCityNCRServiceOnlyAnalysisOfKilometers2.rdlc";
+            string Page21n22DataSourceNamePage2 = "rptDepotWiseOprationalDataInRespectOfNonAcNAcLowFloorCityNCRServiceOnlyAnalysisOfKilometers";
+            DataTable Page21n22DataPage2 = objPageData.GetDataDWODResNonAcAcAnalysisOfKilometers_Page21n22(this.OsbId);
 
-            var MonthList10 = GlobalMaster.GetPrevousMonthList(Month, Year, 02);
+            var MonthList9Page2 = GlobalMaster.GetPrevousMonthList(Month, Year, 2);
             rptParam = new ReportParameter[1];
-            rptParam[0] = new ReportParameter("ReportTitle", MonthList10[0].MonthName + "-" + MonthList10[1].Year);
+            rptParam[0] = new ReportParameter("ReportTitle", MonthList9Page2[0].MonthName + "-" + MonthList9Page2[1].Year);
 
-            byte[] byarry23 = GenerateReport(Page23n24ReportName, rptParam, Page23n24DataSourceName, Page23n24Data);
+            byte[] byarry50 = GenerateReport(Page21n22ReportNamePage2, rptParam, Page21n22DataSourceNamePage2, Page21n22DataPage2);
+            lstByte.Add(byarry50);
+
+            //DWOD in respect of non ac low floor city & ncr TRAFFIC INCOME Page1
+
+            string Page23n24ReportNamePage1 = "rptDepotWiseOprationalDataInRespectOfNonAcNAcLowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021TrafficIncome1.rdlc";
+            string Page23n24DataSourceNamePage1 = "rptDepotWiseOprationalDataInRespectOfNonAcNAcLowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021TrafficIncome";
+            DataTable Page23n24DataPage1 = objPageData.GetDataDWODResNonAcAcTrafficIncome_Page23n24(this.OsbId);
+
+            var MonthList10Page1 = GlobalMaster.GetPrevousMonthList(Month, Year, 02);
+            rptParam = new ReportParameter[1];
+            rptParam[0] = new ReportParameter("ReportTitle", MonthList10Page1[0].MonthName + "-" + MonthList10Page1[1].Year);
+
+            byte[] byarry51 = GenerateReport(Page23n24ReportNamePage1, rptParam, Page23n24DataSourceNamePage1, Page23n24DataPage1);
+            lstByte.Add(byarry51);
+            //DWOD in respect of non ac low floor city & ncr TRAFFIC INCOME Page2
+
+            string Page23n24ReportNamePage2 = "rptDepotWiseOprationalDataInRespectOfNonAcNAcLowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021TrafficIncome2.rdlc";
+            string Page23n24DataSourceNamePage2 = "rptDepotWiseOprationalDataInRespectOfNonAcNAcLowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021TrafficIncome";
+            DataTable Page23n24DataPage2 = objPageData.GetDataDWODResNonAcAcTrafficIncome_Page23n24(this.OsbId);
+
+            var MonthList10Page2 = GlobalMaster.GetPrevousMonthList(Month, Year, 02);
+            rptParam = new ReportParameter[1];
+            rptParam[0] = new ReportParameter("ReportTitle", MonthList10Page2[0].MonthName + "-" + MonthList10Page2[1].Year);
+
+            byte[] byarry23 = GenerateReport(Page23n24ReportNamePage2, rptParam, Page23n24DataSourceNamePage2, Page23n24DataPage2);
             lstByte.Add(byarry23);
 
-            // Accident Analysis non ac low floor city & ncr For The Month
+            // Accident Analysis non ac low floor city & ncr For The Month Page1
 
-            string Page25n26ReportName = "rptAccidentAnalysisForTheMonth.rdlc";
-            string Page25n26DataSourceName = "rptAccidentAnalysisForTheMonth";
-            DataTable Page25n26Data = objPageData.GetDataAccidentAnalysisForTheMonth_Page25n26(this.OsbId);
+            string Page25n26ReportNamePage1 = "rptAccidentAnalysisForTheMonth1.rdlc";
+            string Page25n26DataSourceNamePage1 = "rptAccidentAnalysisForTheMonth";
+            DataTable Page25n26DataPage1 = objPageData.GetDataAccidentAnalysisForTheMonth_Page25n26(this.OsbId);
 
-            var MonthList11 = GlobalMaster.GetPrevousMonthList(Month, Year, 02);
+            var MonthList11Page1 = GlobalMaster.GetPrevousMonthList(Month, Year, 02);
             rptParam = new ReportParameter[1];
-            rptParam[0] = new ReportParameter("ReportTitle", MonthList11[0].MonthName + "-" + MonthList11[1].Year);
+            rptParam[0] = new ReportParameter("ReportTitle", MonthList11Page1[0].MonthName + "-" + MonthList11Page1[1].Year);
 
-            byte[] byarry24 = GenerateReport(Page25n26ReportName, rptParam, Page25n26DataSourceName, Page25n26Data);
-            lstByte.Add(byarry24);
+            byte[] byarry52 = GenerateReport(Page25n26ReportNamePage1, rptParam, Page25n26DataSourceNamePage1, Page25n26DataPage1);
+            lstByte.Add(byarry52);
+            // Accident Analysis non ac low floor city & ncr For The Month Page2
+
+            string Page25n26ReportNamePage2 = "rptAccidentAnalysisForTheMonth2.rdlc";
+            string Page25n26DataSourceNamePage2 = "rptAccidentAnalysisForTheMonth";
+            DataTable Page25n26DataPage2 = objPageData.GetDataAccidentAnalysisForTheMonth_Page25n26(this.OsbId);
+
+            var MonthList11Page2 = GlobalMaster.GetPrevousMonthList(Month, Year, 02);
+            rptParam = new ReportParameter[1];
+            rptParam[0] = new ReportParameter("ReportTitle", MonthList11Page2[0].MonthName + "-" + MonthList11Page2[1].Year);
+
+            byte[] byarry53 = GenerateReport(Page25n26ReportNamePage2, rptParam, Page25n26DataSourceNamePage2, Page25n26DataPage2);
+            lstByte.Add(byarry53);
 
             // Depot Wise Oprational Data In Respect Of NonAC
 
@@ -955,20 +992,33 @@ namespace OperationalStatisticsBook
             byte[] byarry31 = GenerateReport(Page31n32ReportName, rptParam, Page31n32DataSourceName, Page31n32Data);
             lstByte.Add(byarry31);
 
-            // depot wise statment of school buses ,spl hire, tourist, pass and pink ticket earning
+            // depot wise statment of school buses ,spl hire, tourist, pass and pink ticket earning Page1
 
-            string Page33n34ReportName = "rptDWSPLHireTouristPassPinkTicketEarning.rdlc";
-            string Page33n34DataSourceName = "DWSPLHireTouristPassPinkTicketEarning";
-            DataTable Page33n34Data = objPageData.GetDataDWSPLHireTouristPassPinkTicketEarning_Page33n34(this.OsbId);
+            string Page33n34ReportNamePage1 = "rptDWSPLHireTouristPassPinkTicketEarning1.rdlc";
+            string Page33n34DataSourceNamePage1 = "DWSPLHireTouristPassPinkTicketEarning";
+            DataTable Page33n34DataPage1 = objPageData.GetDataDWSPLHireTouristPassPinkTicketEarning_Page33n34(this.OsbId);
 
-            var MonthList26 = GlobalMaster.GetPrevousMonthList(Month, Year, 2);
+            var MonthList26Page1 = GlobalMaster.GetPrevousMonthList(Month, Year, 2);
             rptParam = new ReportParameter[1];
-            rptParam[0] = new ReportParameter("ReportTitle", MonthList26[0].MonthName + "-" + MonthList26[1].Year);
+            rptParam[0] = new ReportParameter("ReportTitle", MonthList26Page1[0].MonthName + "-" + MonthList26Page1[1].Year);
 
 
-            byte[] byarry32 = GenerateReport(Page33n34ReportName, rptParam, Page33n34DataSourceName, Page33n34Data);
-            lstByte.Add(byarry32);
+            byte[] byarry54 = GenerateReport(Page33n34ReportNamePage1, rptParam, Page33n34DataSourceNamePage1, Page33n34DataPage1);
+            lstByte.Add(byarry54);
 
+            // depot wise statment of school buses ,spl hire, tourist, pass and pink ticket earning Page2
+
+            string Page33n34ReportNamePage2 = "rptDWSPLHireTouristPassPinkTicketEarning2.rdlc";
+            string Page33n34DataSourceNamePage2 = "DWSPLHireTouristPassPinkTicketEarning";
+            DataTable Page33n34DataPage2 = objPageData.GetDataDWSPLHireTouristPassPinkTicketEarning_Page33n34(this.OsbId);
+
+            var MonthList26Page2 = GlobalMaster.GetPrevousMonthList(Month, Year, 2);
+            rptParam = new ReportParameter[1];
+            rptParam[0] = new ReportParameter("ReportTitle", MonthList26Page2[0].MonthName + "-" + MonthList26Page2[1].Year);
+
+
+            byte[] byarry55 = GenerateReport(Page33n34ReportNamePage2, rptParam, Page33n34DataSourceNamePage2, Page33n34DataPage2);
+            lstByte.Add(byarry55);
             // Statement showing operational data of ncr cng services of the corporation
 
             string Page35ReportName = "rptStatementShowingOperationalDataOfNcrCngServicesOfTheCorporation.rdlc";

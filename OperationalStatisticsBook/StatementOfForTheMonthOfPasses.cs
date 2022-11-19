@@ -23,27 +23,7 @@ namespace OperationalStatisticsBook
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["dtOperation"].ConnectionString);
 
 
-        public StatementOfForTheMonthOfPasses(int OsbId, int Year, int Month
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            , string finYear, string MonthName)
+        public StatementOfForTheMonthOfPasses(int OsbId, int Year, int Month, string finYear, string MonthName)
         {
             InitializeComponent();
             this.OsbId = OsbId;
