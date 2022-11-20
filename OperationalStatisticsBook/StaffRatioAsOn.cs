@@ -125,9 +125,9 @@ namespace OperationalStatisticsBook
             dt.Rows.Add("Total*", "", "", "", "", "","");
             dt.Rows.Add("", " ", " ", " ", " ", " "," ");
             dt.Rows.Add("*Included Short term/Contract Basis Staff", "", "Short term  S/ Guards", " ", "", "Short term Manager", "");
-            dt.Rows.Add("*Included Short term/Contract Basis Staff", "", "Short term  Drivers", " ", "", " Part Time MO", "");
-            dt.Rows.Add("*Included Short term/Contract Basis Staff", "", "Short term Conductors", "", "", "Consultant ", "");
-            dt.Rows.Add("*Included Short term/Contract Basis Staff", "", "Short term Press", "", "", "", "");
+            dt.Rows.Add("", "", "Short term  Drivers", " ", "", " Part Time MO", "");
+            dt.Rows.Add("", "", "Short term Conductors", "", "", "Consultant ", "");
+            dt.Rows.Add("", "", "Short term Press", "", "", "", "");
             
            
            

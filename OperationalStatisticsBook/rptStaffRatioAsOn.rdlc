@@ -1070,7 +1070,7 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>rptStaffRatioAsOn</DataSetName>
-            <Top>0.36681in</Top>
+            <Top>0.57514in</Top>
             <Left>0.10292in</Left>
             <Height>1.09375in</Height>
             <Width>6.87499in</Width>
@@ -1087,20 +1087,9 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>  Staff Ratio as on </Value>
+                    <Value>  Staff Ratio as on 31st July</Value>
                     <Style>
                       <FontStyle>Normal</FontStyle>
-                      <FontSize>12pt</FontSize>
-                      <FontWeight>Bold</FontWeight>
-                      <TextDecoration>None</TextDecoration>
-                      <Color>#000000</Color>
-                    </Style>
-                  </TextRun>
-                  <TextRun>
-                    <Value>=Parameters!ReportTitle.Value</Value>
-                    <Style>
-                      <FontStyle>Normal</FontStyle>
-                      <FontSize>12pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                       <TextDecoration>None</TextDecoration>
                       <Color>#000000</Color>
@@ -1115,7 +1104,7 @@
             <rd:DefaultName>Textbox29</rd:DefaultName>
             <Top>0.18625in</Top>
             <Left>0.10292in</Left>
-            <Height>0.11111in</Height>
+            <Height>0.20486in</Height>
             <Width>6.87499in</Width>
             <ZIndex>1</ZIndex>
             <Style>
@@ -1139,7 +1128,6 @@
                     <Style>
                       <FontStyle>Normal</FontStyle>
                       <FontFamily>Times New Roman</FontFamily>
-                      <FontSize>12pt</FontSize>
                       <FontWeight>Normal</FontWeight>
                       <TextDecoration>None</TextDecoration>
                       <Color>#000000</Color>
@@ -1152,7 +1140,7 @@
             <rd:DefaultName>Textbox2</rd:DefaultName>
             <Top>0.12912cm</Top>
             <Left>0.26142cm</Left>
-            <Height>0.27341cm</Height>
+            <Height>0.34395cm</Height>
             <Width>4.08749cm</Width>
             <ZIndex>2</ZIndex>
             <Style>
@@ -1166,11 +1154,57 @@
             </Style>
           </Textbox>
         </ReportItems>
-        <Height>5.3414cm</Height>
+        <Height>4.41536cm</Height>
         <Style />
       </Body>
       <Width>17.98848cm</Width>
       <Page>
+        <PageFooter>
+          <Height>0.84667cm</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
+          <ReportItems>
+            <Textbox Name="Textbox5">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>3</Value>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox5</rd:DefaultName>
+              <Top>0.03528cm</Top>
+              <Left>8.02251cm</Left>
+              <Height>0.54708cm</Height>
+              <Width>1.49458cm</Width>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+          </ReportItems>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </PageFooter>
         <PageHeight>27.94cm</PageHeight>
         <PageWidth>21.59cm</PageWidth>
         <LeftMargin>1cm</LeftMargin>
