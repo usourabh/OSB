@@ -6,22 +6,22 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>0.60764in</Width>
+              <Width>0.40972in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.3993in</Width>
+              <Width>3.3472in</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>1.07292in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>0.8125in</Width>
+              <Width>0.91667in</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>1.04166in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.13542in</Width>
+              <Width>1.08334in</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>0.88542in</Width>
@@ -50,7 +50,7 @@
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>0.1875in</Height>
+              <Height>0.14583in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -347,7 +347,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.17708in</Height>
+              <Height>0.15625in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -361,6 +361,7 @@
                               <Value />
                               <Style>
                                 <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -395,6 +396,7 @@
                               <Value />
                               <Style>
                                 <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -429,6 +431,7 @@
                               <Value>Amt. (Rs. in lakhs)</Value>
                               <Style>
                                 <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -463,6 +466,7 @@
                               <Value>Per Km (Paise)</Value>
                               <Style>
                                 <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -497,6 +501,7 @@
                               <Value>Amt. (Rs. in lakhs)</Value>
                               <Style>
                                 <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -531,6 +536,7 @@
                               <Value>Per Km (Paise)</Value>
                               <Style>
                                 <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -565,6 +571,7 @@
                               <Value>Amt. (Rs. in lakhs)</Value>
                               <Style>
                                 <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -599,6 +606,7 @@
                               <Value>Per Km (Paise)</Value>
                               <Style>
                                 <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -633,6 +641,7 @@
                               <Value>Amt. (Rs. in lakhs)</Value>
                               <Style>
                                 <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -667,6 +676,7 @@
                               <Value>Per Km (Paise)</Value>
                               <Style>
                                 <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -701,6 +711,7 @@
                               <Value>Amt. (Rs. in lakhs)</Value>
                               <Style>
                                 <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -735,6 +746,7 @@
                               <Value>Per Km (Paise)</Value>
                               <Style>
                                 <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -769,6 +781,7 @@
                               <Value>Amt. (Rs. in lakhs)</Value>
                               <Style>
                                 <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -803,6 +816,7 @@
                               <Value>Per Km (Paise)</Value>
                               <Style>
                                 <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -828,7 +842,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.16667in</Height>
+              <Height>0.14584in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -842,6 +856,7 @@
                               <Value>1</Value>
                               <Style>
                                 <FontSize>8pt</FontSize>
+                                <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -915,7 +930,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.1875in</Height>
+              <Height>0.15625in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -1432,10 +1447,10 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>rptStatementShowingTheRsInRespectOfCityNCRForeignBusServiceIncomeExpewditureJune2022InLakhs</DataSetName>
-        <Top>0.655in</Top>
+        <Top>0.58556in</Top>
         <Left>0.12375in</Left>
-        <Height>0.71875in</Height>
-        <Width>13.08334in</Width>
+        <Height>0.60417in</Height>
+        <Width>14.8854in</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1449,53 +1464,57 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>                                                                                           Table-9   </Value>
+                <Value>Table-9   </Value>
                 <Style>
+                  <FontSize>9pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
             </TextRuns>
             <Style>
-              <TextAlign>Left</TextAlign>
+              <TextAlign>Center</TextAlign>
             </Style>
           </Paragraph>
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>                                                                               Statemnet showing the</Value>
+                <Value>Statement showing the</Value>
                 <Style>
+                  <FontSize>9pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
             </TextRuns>
             <Style>
-              <TextAlign>Left</TextAlign>
+              <TextAlign>Center</TextAlign>
             </Style>
           </Paragraph>
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>                                                           (Rs. in respect of City, NCR &amp; Foreign bus service)</Value>
+                <Value>(Rs. in respect of City, NCR &amp; Foreign bus service)</Value>
                 <Style>
+                  <FontSize>9pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
             </TextRuns>
             <Style>
-              <TextAlign>Left</TextAlign>
+              <TextAlign>Center</TextAlign>
             </Style>
           </Paragraph>
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>                                                                (Income &amp; Expewnditure June-2022 in lakhs)</Value>
+                <Value>(Income &amp; Expewnditure June-2022 in lakhs)</Value>
                 <Style>
+                  <FontSize>9pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
             </TextRuns>
             <Style>
-              <TextAlign>Left</TextAlign>
+              <TextAlign>Center</TextAlign>
             </Style>
           </Paragraph>
         </Paragraphs>
@@ -1503,7 +1522,7 @@
         <Top>0.155in</Top>
         <Left>0.12375in</Left>
         <Height>0.375in</Height>
-        <Width>13.19791in</Width>
+        <Width>7.8715in</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -1516,11 +1535,57 @@
         </Style>
       </Textbox>
     </ReportItems>
-    <Height>3.96558cm</Height>
+    <Height>3.11891cm</Height>
     <Style />
   </Body>
-  <Width>34.49851cm</Width>
+  <Width>38.41429cm</Width>
   <Page>
+    <PageFooter>
+      <Height>0.63528cm</Height>
+      <PrintOnFirstPage>true</PrintOnFirstPage>
+      <PrintOnLastPage>true</PrintOnLastPage>
+      <ReportItems>
+        <Textbox Name="Textbox1">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>35</Value>
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox1</rd:DefaultName>
+          <Top>0.14111cm</Top>
+          <Left>7.88608cm</Left>
+          <Height>0.49417cm</Height>
+          <Width>0.67438cm</Width>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+      </ReportItems>
+      <Style>
+        <Border>
+          <Style>None</Style>
+        </Border>
+      </Style>
+    </PageFooter>
     <PageHeight>27.94cm</PageHeight>
     <PageWidth>21.59cm</PageWidth>
     <LeftMargin>1cm</LeftMargin>
