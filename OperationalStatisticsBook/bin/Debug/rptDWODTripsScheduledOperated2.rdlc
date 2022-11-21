@@ -1078,7 +1078,9 @@
                   <TextRuns>
                     <TextRun>
                       <Value>20</Value>
-                      <Style />
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                      </Style>
                     </TextRun>
                   </TextRuns>
                   <Style>
