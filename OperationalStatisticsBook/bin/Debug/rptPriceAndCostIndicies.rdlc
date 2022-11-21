@@ -129,7 +129,7 @@
             <Top>0.16542in</Top>
             <Left>0.19667in</Left>
             <Height>0.30208in</Height>
-            <Width>6.10417in</Width>
+            <Width>6.61458in</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -144,31 +144,31 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>0.90162in</Width>
+                  <Width>0.92245in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.59954in</Width>
+                  <Width>0.62037in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.60648in</Width>
+                  <Width>0.62731in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.75231in</Width>
+                  <Width>0.77314in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.66898in</Width>
+                  <Width>0.68981in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.66898in</Width>
+                  <Width>0.68981in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.7419in</Width>
+                  <Width>0.76273in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.79398in</Width>
+                  <Width>0.81481in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.69329in</Width>
+                  <Width>0.71412in</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -1272,10 +1272,10 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>rptPriceAndCostIndicies</DataSetName>
-            <Top>0.73833in</Top>
+            <Top>0.53694in</Top>
             <Left>0.19667in</Left>
             <Height>0.9375in</Height>
-            <Width>6.42708in</Width>
+            <Width>6.61458in</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
@@ -1284,11 +1284,57 @@
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>5.08cm</Height>
+        <Height>4.18042cm</Height>
         <Style />
       </Body>
-      <Width>17.14182cm</Width>
+      <Width>17.56515cm</Width>
       <Page>
+        <PageFooter>
+          <Height>0.58208cm</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
+          <ReportItems>
+            <Textbox Name="Textbox3">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>10</Value>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox3</rd:DefaultName>
+              <Top>0.03528cm</Top>
+              <Left>7.90787cm</Left>
+              <Height>0.49417cm</Height>
+              <Width>0.72729cm</Width>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+          </ReportItems>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </PageFooter>
         <PageHeight>29.7cm</PageHeight>
         <PageWidth>21cm</PageWidth>
         <LeftMargin>1cm</LeftMargin>

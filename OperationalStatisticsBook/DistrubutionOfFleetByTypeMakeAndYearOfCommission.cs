@@ -102,16 +102,16 @@ namespace OperationalStatisticsBook
             table.Rows.Add("TOTAL ", " ", "", "", "", "", "", "", "");
 
 
-            table.Rows.Add("PercentageDistribution  ", " ", "", "", "", "", "", "", "");
+            table.Rows.Add("Percentage Distribution  ", " ", "", "", "", "", "", "", "");
 
             table.Rows.Add("BY TYPE /MAKEAVERAGE AGE(INYEAR) ", " ", "", "", "", "", "", "", "");
 
             table.Rows.Add(" ", " ", "", "", "", "", "", "", "");
 
-            table.Rows.Add(" DISTRIBUTION OF FLEET", "DISTRIBUTION OF FLEET ", "DISTRIBUTION OF FLEET", "", "", "", "Extent of Overaged Buses", "Extent of Overaged Buses", "Extent of Overaged Buses");
+            table.Rows.Add(" DISTRIBUTION OF FLEET", " ", " ", "", "", "", "Extent of Overaged Buses", " ", " ");
 
           
-            table.Rows.Add("As on 31st July-2022 ", " As on 31st July-2022", "As on 31st July-2022", "", "", "", "(More Than 8 Years Old)", "(More Than 8 Years Old)", "(More Than 8 Years Old)");
+            table.Rows.Add("As on 31st July-2022 ", " ", " ", "", "", "", "(More Than 8 Years Old)", " ", " ");
             table.Rows.Add("Age Group in Years ", "Number of buses ", "", "", "", "", "", "Absolute(Number)", "Percentage   ");
             table.Rows.Add("0 ", "0 ", "", "", "", "", "0", "0", "0");
             table.Rows.Add("0 ", "0 ", "", "", "", "", "0", "0", "0");
@@ -119,7 +119,8 @@ namespace OperationalStatisticsBook
             table.Rows.Add("0 ", "0 ", "", "", "", "", "0", "0", "0");
             table.Rows.Add("0 ", "0 ", "", "", "", "", "0", "0", "0");
             table.Rows.Add("0 ", "0 ", "", "", "", "", "0", "0", "0");
-            table.Rows.Add("Total ", " ", "", "", "", "0", "0", "0", "0");
+            table.Rows.Add("Total ", " ", "", "", "", " ", "0", "0", "0");
+            table.Rows.Add("*Authorised Fleet Strength of DTC=5500 ", " ", "", "", "", "", "0", "0", "0");
             table.Rows.Add(" ", " ", "", "", "", "", "0", "0", "0");
             table.Rows.Add(" ", " ", "", "", "", "", "0", "0", "0");
             table.Rows.Add(" ", " ", "", "", "", "", "0", "0", "0");
@@ -129,7 +130,6 @@ namespace OperationalStatisticsBook
             table.Rows.Add(" ", " ", "", "", "", "", "0", "0", "0");
             table.Rows.Add(" ", " ", "", "", "", "", "0", "0", "0");
             table.Rows.Add(" ", " ", "", "", "", "", "0", "0", "0");
-            table.Rows.Add("*Authorised Fleet Strength of DTC=5500 ", "*Authorised Fleet Strength of DTC=5500 ", "*Authorised Fleet Strength of DTC=5500", "", "", "", "0", "0", "0");
 
 
             return table;
