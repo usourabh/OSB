@@ -125,7 +125,7 @@
             <rd:DefaultName>Textbox1</rd:DefaultName>
             <Top>0.32314cm</Top>
             <Left>0.38488cm</Left>
-            <Height>0.6cm</Height>
+            <Height>0.67938cm</Height>
             <Width>16.75161cm</Width>
             <Style>
               <Border>
@@ -1151,10 +1151,10 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>rptAccidentNCompensationGvnAccidentVictims</DataSetName>
-            <Top>1.6637cm</Top>
+            <Top>1.00252cm</Top>
             <Left>0.38488cm</Left>
             <Height>1.8cm</Height>
-            <Width>16.75161cm</Width>
+            <Width>16.75162cm</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
@@ -1163,11 +1163,57 @@
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>2in</Height>
+        <Height>1.22917in</Height>
         <Style />
       </Body>
-      <Width>6.8084in</Width>
+      <Width>6.91257in</Width>
       <Page>
+        <PageFooter>
+          <Height>0.60854cm</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
+          <ReportItems>
+            <Textbox Name="Textbox3">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>13</Value>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox3</rd:DefaultName>
+              <Top>0.03528cm</Top>
+              <Left>8.38412cm</Left>
+              <Height>0.52062cm</Height>
+              <Width>0.83786cm</Width>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+          </ReportItems>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </PageFooter>
         <PageHeight>29.7cm</PageHeight>
         <PageWidth>21cm</PageWidth>
         <LeftMargin>1cm</LeftMargin>

@@ -88,7 +88,7 @@ namespace OperationalStatisticsBook
             table.Rows.Add("3", "Lube oil(Output)", "KMP Lts", 0, 0, 0);
             table.Rows.Add("C", "Tyres", 0, 0, 0, 0);
             table.Rows.Add("1", "New tyres (Qty.)", "No", 0, 0, 0);
-            table.Rows.Add("2", "New tyre Value (with tube & flap)", "Rs per tyre", 0, 0, 0);
+            table.Rows.Add("2", "New tyre Value (with tube & flap)", " Rs per tyre", 0, 0, 0);
             table.Rows.Add("3", "Tyre out-put(I) New", "kms", 0, 0, 0);
             table.Rows.Add(0, "(EA) Cumulative", "kms", 0, 0, 0);
             table.Rows.Add("D", "AVERAGE INVENTORY", 0, 0, 0, 0);
