@@ -158,7 +158,6 @@
                     <Value>Table-4.2</Value>
                     <Style>
                       <FontStyle>Normal</FontStyle>
-                      <FontSize>12pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                       <TextDecoration>None</TextDecoration>
                       <Color>#000000</Color>
@@ -175,7 +174,6 @@
                     <Value>Depot- wise Oprational Data in respect of Non AC &amp; AC Low Floor City &amp; NCR service only</Value>
                     <Style>
                       <FontStyle>Normal</FontStyle>
-                      <FontSize>12pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                       <TextDecoration>None</TextDecoration>
                       <Color>#000000</Color>
@@ -192,7 +190,6 @@
                     <Value>For the month of </Value>
                     <Style>
                       <FontStyle>Normal</FontStyle>
-                      <FontSize>12pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                       <TextDecoration>None</TextDecoration>
                       <Color>#000000</Color>
@@ -202,7 +199,6 @@
                     <Value>=Parameters!ReportTitle.Value</Value>
                     <Style>
                       <FontStyle>Normal</FontStyle>
-                      <FontSize>12pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                       <TextDecoration>None</TextDecoration>
                       <Color>#000000</Color>
@@ -219,7 +215,6 @@
                     <Value>Trips Scheduled and Operated</Value>
                     <Style>
                       <FontStyle>Normal</FontStyle>
-                      <FontSize>12pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                       <TextDecoration>None</TextDecoration>
                       <Color>#000000</Color>
@@ -235,7 +230,7 @@
             <Top>0.42016cm</Top>
             <Left>0.44662cm</Left>
             <Height>0.57354cm</Height>
-            <Width>12.07374cm</Width>
+            <Width>18.22749cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -253,54 +248,54 @@
                   <Width>1.00265cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.49995cm</Width>
+                  <Width>1.34662cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.92328cm</Width>
+                  <Width>1.1614cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.6587cm</Width>
+                  <Width>1.0806cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.79099cm</Width>
+                  <Width>1.02779cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.89682cm</Width>
+                  <Width>1.18786cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.84391cm</Width>
+                  <Width>1.18787cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.73807cm</Width>
+                  <Width>1.05281cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.57932cm</Width>
+                  <Width>1.21156cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.49995cm</Width>
+                  <Width>1.05281cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.89682cm</Width>
+                  <Width>1.1614cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.6587cm</Width>
+                  <Width>1.00266cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.55286cm</Width>
+                  <Width>1.18786cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.63224cm</Width>
+                  <Width>1.00266cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.94974cm</Width>
+                  <Width>1.24078cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.94974cm</Width>
+                  <Width>1.32016cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>0.6cm</Height>
+                  <Height>0.41479cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -474,7 +469,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.6cm</Height>
+                  <Height>0.44125cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -487,7 +482,7 @@
                                 <TextRun>
                                   <Value>=Fields!S_No.Value</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -519,7 +514,7 @@
                                 <TextRun>
                                   <Value>=Fields!Param11.Value</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -553,7 +548,7 @@
                                 <TextRun>
                                   <Value>=Fields!Param12.Value</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -587,7 +582,7 @@
                                 <TextRun>
                                   <Value>=Fields!Param13.Value</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -621,7 +616,7 @@
                                 <TextRun>
                                   <Value>=Fields!Param14.Value</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -655,7 +650,7 @@
                                 <TextRun>
                                   <Value>=Fields!Param15.Value</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -689,7 +684,7 @@
                                 <TextRun>
                                   <Value>=Fields!Param16.Value</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -723,7 +718,7 @@
                                 <TextRun>
                                   <Value>=Fields!Param17.Value</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -757,7 +752,7 @@
                                 <TextRun>
                                   <Value>=Fields!Param18.Value</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -791,7 +786,7 @@
                                 <TextRun>
                                   <Value>=Fields!Param19.Value</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -825,7 +820,7 @@
                                 <TextRun>
                                   <Value>=Fields!Param20.Value</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -859,7 +854,7 @@
                                 <TextRun>
                                   <Value>=Fields!Param21.Value</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -893,7 +888,7 @@
                                 <TextRun>
                                   <Value>=Fields!Param22.Value</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -927,7 +922,7 @@
                                 <TextRun>
                                   <Value>=Fields!Param23.Value</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -961,7 +956,7 @@
                                 <TextRun>
                                   <Value>=Fields!Param24.Value</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -995,7 +990,7 @@
                                 <TextRun>
                                   <Value>=Fields!Param25.Value</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -1055,8 +1050,8 @@
             <DataSetName>DWODTripsScheduledOperated</DataSetName>
             <Top>0.9937cm</Top>
             <Left>0.44662cm</Left>
-            <Height>1.2cm</Height>
-            <Width>12.07374cm</Width>
+            <Height>0.85604cm</Height>
+            <Width>18.22749cm</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
@@ -1065,11 +1060,56 @@
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>0.98193in</Height>
+        <Height>0.76318in</Height>
         <Style />
       </Body>
-      <Width>5.20996in</Width>
+      <Width>7.44576in</Width>
       <Page>
+        <PageFooter>
+          <Height>0.89958cm</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
+          <ReportItems>
+            <Textbox Name="Textbox2">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>20</Value>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox2</rd:DefaultName>
+              <Top>0.17639cm</Top>
+              <Left>8.33558cm</Left>
+              <Height>0.38696cm</Height>
+              <Width>1.57645cm</Width>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+          </ReportItems>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </PageFooter>
         <PageHeight>29.7cm</PageHeight>
         <PageWidth>21cm</PageWidth>
         <LeftMargin>1cm</LeftMargin>

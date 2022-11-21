@@ -110,7 +110,6 @@
                     <Value>Table-3.1</Value>
                     <Style>
                       <FontStyle>Normal</FontStyle>
-                      <FontFamily>Times New Roman</FontFamily>
                       <FontWeight>Bold</FontWeight>
                       <TextDecoration>None</TextDecoration>
                       <Color>#000000</Color>
@@ -127,7 +126,6 @@
                     <Value>Routes Operated by DTC and its Earning per Kilometer </Value>
                     <Style>
                       <FontStyle>Normal</FontStyle>
-                      <FontFamily>Times New Roman</FontFamily>
                       <FontWeight>Bold</FontWeight>
                       <TextDecoration>None</TextDecoration>
                       <Color>#000000</Color>
@@ -137,7 +135,6 @@
                     <Value>=Parameters!ReportTitle.Value</Value>
                     <Style>
                       <FontStyle>Normal</FontStyle>
-                      <FontFamily>Times New Roman</FontFamily>
                       <FontWeight>Bold</FontWeight>
                       <TextDecoration>None</TextDecoration>
                       <Color>#000000</Color>
@@ -152,7 +149,7 @@
             <rd:DefaultName>Textbox1</rd:DefaultName>
             <Top>0.55245cm</Top>
             <Height>1.14652cm</Height>
-            <Width>20.68138cm</Width>
+            <Width>19.7187cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -170,22 +167,22 @@
                   <Width>1.27017cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.40788cm</Width>
+                  <Width>1.69351cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.74642cm</Width>
+                  <Width>1.32309cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.34142cm</Width>
+                  <Width>1.62704cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.01163cm</Width>
+                  <Width>1.56184cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.00559cm</Width>
+                  <Width>1.34955cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.00684cm</Width>
+                  <Width>1.32434cm</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>1.27017cm</Width>
@@ -197,7 +194,7 @@
                   <Width>1.376cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.95267cm</Width>
+                  <Width>1.29663cm</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>1.0585cm</Width>
@@ -206,7 +203,7 @@
                   <Width>1.05851cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.84684cm</Width>
+                  <Width>1.18068cm</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>1.03205cm</Width>
@@ -214,7 +211,7 @@
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>0.53385cm</Height>
+                  <Height>0.42802cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -227,7 +224,7 @@
                                 <TextRun>
                                   <Value>EPK</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -264,7 +261,7 @@
                                   <Style>
                                     <FontStyle>Normal</FontStyle>
                                     <FontFamily>Times New Roman</FontFamily>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                     <TextDecoration>None</TextDecoration>
                                     <Color>#000000</Color>
@@ -303,7 +300,7 @@
                                   <Style>
                                     <FontStyle>Normal</FontStyle>
                                     <FontFamily>Times New Roman</FontFamily>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                     <TextDecoration>None</TextDecoration>
                                     <Color>#000000</Color>
@@ -342,7 +339,7 @@
                                   <Style>
                                     <FontStyle>Normal</FontStyle>
                                     <FontFamily>Times New Roman</FontFamily>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                     <TextDecoration>None</TextDecoration>
                                     <Color>#000000</Color>
@@ -381,7 +378,7 @@
                                   <Style>
                                     <FontStyle>Normal</FontStyle>
                                     <FontFamily>Times New Roman</FontFamily>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                     <TextDecoration>None</TextDecoration>
                                     <Color>#000000</Color>
@@ -420,7 +417,7 @@
                                   <Style>
                                     <FontStyle>Normal</FontStyle>
                                     <FontFamily>Times New Roman</FontFamily>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                     <TextDecoration>None</TextDecoration>
                                     <Color>#000000</Color>
@@ -459,7 +456,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.66614cm</Height>
+                  <Height>0.42802cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -472,7 +469,7 @@
                                 <TextRun>
                                   <Value>=Fields!EPK.Value</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -507,7 +504,7 @@
                                 <TextRun>
                                   <Value>=Fields!Param1.Value</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -542,7 +539,7 @@
                                 <TextRun>
                                   <Value>=Fields!Param2.Value</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -577,7 +574,7 @@
                                 <TextRun>
                                   <Value>=Fields!Param3.Value</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -612,7 +609,7 @@
                                 <TextRun>
                                   <Value>=Fields!Param4.Value</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -647,7 +644,7 @@
                                 <TextRun>
                                   <Value>=Fields!Param5.Value</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -681,7 +678,7 @@
                                 <TextRun>
                                   <Value>=Fields!Param6.Value</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -715,7 +712,7 @@
                                 <TextRun>
                                   <Value>=Fields!Param7.Value</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -749,7 +746,7 @@
                                 <TextRun>
                                   <Value>=Fields!Param8.Value</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -783,7 +780,7 @@
                                 <TextRun>
                                   <Value>=Fields!Param9.Value</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -817,7 +814,7 @@
                                 <TextRun>
                                   <Value>=Fields!Param10.Value</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -851,7 +848,7 @@
                                 <TextRun>
                                   <Value>=Fields!Param11.Value</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -885,7 +882,7 @@
                                 <TextRun>
                                   <Value>=Fields!Param12.Value</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -919,7 +916,7 @@
                                 <TextRun>
                                   <Value>=Fields!Param13.Value</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -953,7 +950,7 @@
                                 <TextRun>
                                   <Value>=Fields!Param14.Value</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -1011,8 +1008,8 @@
             </TablixRowHierarchy>
             <DataSetName>RoutesOperatedByDTCEarningPerKillometer</DataSetName>
             <Top>1.87536cm</Top>
-            <Height>1.19999cm</Height>
-            <Width>20.68132cm</Width>
+            <Height>0.85604cm</Height>
+            <Width>19.71871cm</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
@@ -1021,11 +1018,56 @@
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>2in</Height>
+        <Height>1.15625in</Height>
         <Style />
       </Body>
-      <Width>8.31535in</Width>
+      <Width>7.8466in</Width>
       <Page>
+        <PageFooter>
+          <Height>0.76993cm</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
+          <ReportItems>
+            <Textbox Name="Textbox2">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>16</Value>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox2</rd:DefaultName>
+              <Top>0.17639cm</Top>
+              <Left>8.48124cm</Left>
+              <Height>0.29132cm</Height>
+              <Width>1.00684cm</Width>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+          </ReportItems>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </PageFooter>
         <PageHeight>29.7cm</PageHeight>
         <PageWidth>21cm</PageWidth>
         <LeftMargin>1cm</LeftMargin>

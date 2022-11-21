@@ -748,18 +748,30 @@ namespace OperationalStatisticsBook
             byte[] byarry48 = GenerateReport(Page15n16ReportNamePage2, rptParam, Page15n16DataSourceNamePage2, Page15n16DataPage2);
             lstByte.Add(byarry48);
 
-            // Depot Wise Oprational Data Respect Non Ac Low Floor City NCR Service Only For The Month Of January2021FleetItsUtillization
+            // Depot Wise Oprational Data Respect Non Ac Low Floor City NCR Service Only For The Month Of January2021FleetItsUtillization Page1
 
-            string Page17n18ReportName = "rptDepotWiseOprationalDataRespectNonALowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021FleetItsUtillization.rdlc";
-            string Page17n18DataSourceName = "rptDepotWiseOprationalDataRespectNonALowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021FleetItsUtillization";
-            DataTable Page17n18Data = objPageData.GetDataDepotWiseOperDataRespenonACAcLowFloorCityNCRServFleetItsUtillization_Page17n18(this.OsbId);
+            string Page17n18ReportNamePage1 = "rptDepotWiseOprationalDataRespectNonALowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021FleetItsUtillization1.rdlc";
+            string Page17n18DataSourceNamePage1 = "rptDepotWiseOprationalDataRespectNonALowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021FleetItsUtillization";
+            DataTable Page17n18DataPage1 = objPageData.GetDataDepotWiseOperDataRespenonACAcLowFloorCityNCRServFleetItsUtillization_Page17n18(this.OsbId);
 
-            var MonthList7 = GlobalMaster.GetPrevousMonthList(Month, Year, 02);
+            var MonthList7Page1 = GlobalMaster.GetPrevousMonthList(Month, Year, 02);
             rptParam = new ReportParameter[1];
-            rptParam[0] = new ReportParameter("ReportTitle", MonthList7[0].MonthName + "-" + MonthList7[1].Year);
+            rptParam[0] = new ReportParameter("ReportTitle", MonthList7Page1[0].MonthName + "-" + MonthList7Page1[1].Year);
 
-            byte[] byarry20 = GenerateReport(Page17n18ReportName, rptParam, Page17n18DataSourceName, Page17n18Data);
-            lstByte.Add(byarry20);
+            byte[] byarry56 = GenerateReport(Page17n18ReportNamePage1, rptParam, Page17n18DataSourceNamePage1, Page17n18DataPage1);
+            lstByte.Add(byarry56);
+            // Depot Wise Oprational Data Respect Non Ac Low Floor City NCR Service Only For The Month Of January2021FleetItsUtillization Page2
+
+            string Page17n18ReportNamePage2 = "rptDepotWiseOprationalDataRespectNonALowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021FleetItsUtillization2.rdlc";
+            string Page17n18DataSourceNamePage2 = "rptDepotWiseOprationalDataRespectNonALowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021FleetItsUtillization";
+            DataTable Page17n18DataPage2 = objPageData.GetDataDepotWiseOperDataRespenonACAcLowFloorCityNCRServFleetItsUtillization_Page17n18(this.OsbId);
+
+            var MonthList7Page2 = GlobalMaster.GetPrevousMonthList(Month, Year, 02);
+            rptParam = new ReportParameter[1];
+            rptParam[0] = new ReportParameter("ReportTitle", MonthList7Page2[0].MonthName + "-" + MonthList7Page2[1].Year);
+
+            byte[] byarry57 = GenerateReport(Page17n18ReportNamePage2, rptParam, Page17n18DataSourceNamePage2, Page17n18DataPage2);
+            lstByte.Add(byarry57);
 
             //DWODTripsScheduledOperated ---------PAGE 1 CALLING
 
