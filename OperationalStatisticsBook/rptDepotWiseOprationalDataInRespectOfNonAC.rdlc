@@ -127,16 +127,16 @@
                   <Width>0.31004in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.33088in</Width>
+                  <Width>0.3413in</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>0.39338in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.42463in</Width>
+                  <Width>0.44546in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.36213in</Width>
+                  <Width>0.4038in</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>0.45588in</Width>
@@ -233,7 +233,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.17708in</Height>
+                  <Height>0.1875in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -248,7 +248,7 @@
                                   <Style>
                                     <FontStyle>Normal</FontStyle>
                                     <FontFamily>Times New Roman</FontFamily>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                     <TextDecoration>None</TextDecoration>
                                     <Color>#000000</Color>
@@ -270,6 +270,7 @@
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
                             <PaddingBottom>2pt</PaddingBottom>
+                            <WritingMode>Rotate270</WritingMode>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -285,7 +286,7 @@
                                 <TextRun>
                                   <Value>Name Of the Depot</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -320,7 +321,7 @@
                                 <TextRun>
                                   <Value>Analysis of km.</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -362,7 +363,7 @@
                                   <Style>
                                     <FontStyle>Normal</FontStyle>
                                     <FontFamily>Times New Roman</FontFamily>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                     <TextDecoration>None</TextDecoration>
                                     <Color>#000000</Color>
@@ -405,7 +406,7 @@
                                   <Style>
                                     <FontStyle>Normal</FontStyle>
                                     <FontFamily>Times New Roman</FontFamily>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                     <TextDecoration>None</TextDecoration>
                                     <Color>#000000</Color>
@@ -446,7 +447,7 @@
                                   <Style>
                                     <FontStyle>Normal</FontStyle>
                                     <FontFamily>Times New Roman</FontFamily>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                     <TextDecoration>None</TextDecoration>
                                     <Color>#000000</Color>
@@ -487,7 +488,7 @@
                                   <Style>
                                     <FontStyle>Normal</FontStyle>
                                     <FontFamily>Times New Roman</FontFamily>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                     <TextDecoration>None</TextDecoration>
                                     <Color>#000000</Color>
@@ -531,7 +532,7 @@
                                 <TextRun>
                                   <Value />
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -566,7 +567,7 @@
                                 <TextRun>
                                   <Value />
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -603,7 +604,7 @@
                                   <Style>
                                     <FontStyle>Normal</FontStyle>
                                     <FontFamily>Times New Roman</FontFamily>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                     <TextDecoration>None</TextDecoration>
                                     <Color>#000000</Color>
@@ -642,7 +643,7 @@
                                 <TextRun>
                                   <Value>Killometer Efficiency(%)</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -662,6 +663,7 @@
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
                             <PaddingBottom>2pt</PaddingBottom>
+                            <WritingMode>Rotate270</WritingMode>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -677,7 +679,7 @@
                                 <TextRun>
                                   <Value>Daily Operated Killometers</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -697,6 +699,7 @@
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
                             <PaddingBottom>2pt</PaddingBottom>
+                            <WritingMode>Rotate270</WritingMode>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -712,7 +715,7 @@
                                 <TextRun>
                                   <Value>Killometers per bus per day(No.)</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -732,6 +735,7 @@
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
                             <PaddingBottom>2pt</PaddingBottom>
+                            <WritingMode>Rotate270</WritingMode>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -747,7 +751,7 @@
                                 <TextRun>
                                   <Value>Monthly Traffic Income(Rs.)</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -767,6 +771,7 @@
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
                             <PaddingBottom>2pt</PaddingBottom>
+                            <WritingMode>Rotate270</WritingMode>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -782,7 +787,7 @@
                                 <TextRun>
                                   <Value>Daily Traffic Income(Rs.)</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -802,6 +807,7 @@
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
                             <PaddingBottom>2pt</PaddingBottom>
+                            <WritingMode>Rotate270</WritingMode>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -817,7 +823,7 @@
                                 <TextRun>
                                   <Value>Traffic Income per km(paise)</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -837,6 +843,7 @@
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
                             <PaddingBottom>2pt</PaddingBottom>
+                            <WritingMode>Rotate270</WritingMode>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -852,7 +859,7 @@
                                 <TextRun>
                                   <Value>Traffic Income per bus oer day(Rs.)</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -872,6 +879,7 @@
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
                             <PaddingBottom>2pt</PaddingBottom>
+                            <WritingMode>Rotate270</WritingMode>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -887,7 +895,7 @@
                                 <TextRun>
                                   <Value>Total Accident (No).</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -907,6 +915,7 @@
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
                             <PaddingBottom>2pt</PaddingBottom>
+                            <WritingMode>Rotate270</WritingMode>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -922,7 +931,7 @@
                                 <TextRun>
                                   <Value>Accident Per 100000 kms</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -942,6 +951,7 @@
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
                             <PaddingBottom>2pt</PaddingBottom>
+                            <WritingMode>Rotate270</WritingMode>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -957,7 +967,7 @@
                                 <TextRun>
                                   <Value>No of Drivers</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -977,6 +987,7 @@
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
                             <PaddingBottom>2pt</PaddingBottom>
+                            <WritingMode>Rotate270</WritingMode>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -992,7 +1003,7 @@
                                 <TextRun>
                                   <Value>Killometers per day /Drivers</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -1012,6 +1023,7 @@
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
                             <PaddingBottom>2pt</PaddingBottom>
+                            <WritingMode>Rotate270</WritingMode>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -1027,7 +1039,7 @@
                                 <TextRun>
                                   <Value>Nos of Conductors</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -1047,6 +1059,7 @@
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
                             <PaddingBottom>2pt</PaddingBottom>
+                            <WritingMode>Rotate270</WritingMode>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -1062,7 +1075,7 @@
                                 <TextRun>
                                   <Value>Earning per day /Conductors</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -1082,6 +1095,7 @@
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
                             <PaddingBottom>2pt</PaddingBottom>
+                            <WritingMode>Rotate270</WritingMode>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -1102,7 +1116,7 @@
                                 <TextRun>
                                   <Value />
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -1137,7 +1151,7 @@
                                 <TextRun>
                                   <Value />
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -1172,7 +1186,7 @@
                                 <TextRun>
                                   <Value>Scheduled</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -1207,7 +1221,7 @@
                                 <TextRun>
                                   <Value>Operated</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -1242,7 +1256,7 @@
                                 <TextRun>
                                   <Value />
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
                                 </TextRun>
@@ -2512,8 +2526,8 @@
             <DataSetName>rptDepotWiseOprationalDataInRespectOfNonAC</DataSetName>
             <Top>0.48139in</Top>
             <Left>0.21875in</Left>
-            <Height>1.04167in</Height>
-            <Width>7.15193in</Width>
+            <Height>1.05209in</Height>
+            <Width>7.22485in</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -2573,14 +2587,49 @@
               <PaddingBottom>2pt</PaddingBottom>
             </Style>
           </Textbox>
+          <Textbox Name="Textbox4">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Note- RGD-2 depot Spl. Hire 6320 km &amp; Earning Rs. 1583600</Value>
+                    <Style>
+                      <FontSize>7pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Left</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox4</rd:DefaultName>
+            <Top>3.86857cm</Top>
+            <Left>0.55562cm</Left>
+            <Height>0.2825cm</Height>
+            <Width>7.79739cm</Width>
+            <ZIndex>2</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
         </ReportItems>
-        <Height>3.93913cm</Height>
+        <Height>4.19516cm</Height>
         <Style />
       </Body>
       <Width>19.27872cm</Width>
       <Page>
         <PageFooter>
-          <Height>0.87312cm</Height>
+          <Height>0.44979cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -2594,6 +2643,7 @@
                       <Value>24</Value>
                       <Style>
                         <FontSize>8pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
                       </Style>
                     </TextRun>
                   </TextRuns>
@@ -2603,8 +2653,8 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox2</rd:DefaultName>
-              <Top>0.1852cm</Top>
-              <Left>9.46891cm</Left>
+              <Top>0.03528cm</Top>
+              <Left>8.62848cm</Left>
               <Height>0.36187cm</Height>
               <Width>0.85601cm</Width>
               <Style>
