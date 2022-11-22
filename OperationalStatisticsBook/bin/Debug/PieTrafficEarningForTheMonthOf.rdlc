@@ -56,22 +56,27 @@
                 <TextRuns>
                   <TextRun>
                     <Value>Traffic Income For the Month  of </Value>
-                    <Style />
+                    <Style>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
                   </TextRun>
                   <TextRun>
-                    <Label>Traffic Income For the Month of </Label>
                     <Value>=Parameters!ReportTitle.Value</Value>
-                    <Style />
+                    <Style>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
                   </TextRun>
                 </TextRuns>
-                <Style />
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>ReportTitle</rd:DefaultName>
             <Top>0.58208cm</Top>
-            <Left>5.68537cm</Left>
+            <Left>1.74307cm</Left>
             <Height>0.9846cm</Height>
-            <Width>9.24688cm</Width>
+            <Width>13.21501cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -383,28 +388,6 @@
                 </Style>
               </ChartArea>
             </ChartAreas>
-            <ChartLegends>
-              <ChartLegend Name="Default">
-                <Style>
-                  <Border>
-                    <Width>7.5pt</Width>
-                  </Border>
-                  <BackgroundGradientType>None</BackgroundGradientType>
-                  <FontSize>8pt</FontSize>
-                </Style>
-                <Layout>=Fields!Name.Value</Layout>
-                <ChartLegendTitle>
-                  <Caption>Legend Title</Caption>
-                  <Style>
-                    <FontSize>8pt</FontSize>
-                    <FontWeight>Bold</FontWeight>
-                    <TextAlign>Center</TextAlign>
-                  </Style>
-                </ChartLegendTitle>
-                <HeaderSeparatorColor>Black</HeaderSeparatorColor>
-                <ColumnSeparatorColor>Black</ColumnSeparatorColor>
-              </ChartLegend>
-            </ChartLegends>
             <Palette>Pacific</Palette>
             <ChartBorderSkin>
               <Style>
@@ -425,8 +408,8 @@
             <DataSetName>PieTrafficEarningForTheMonthOfMonth</DataSetName>
             <Top>1.63724cm</Top>
             <Left>1.74307cm</Left>
-            <Height>8.04271cm</Height>
-            <Width>14.98771cm</Width>
+            <Height>6.38528cm</Height>
+            <Width>13.21501cm</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
@@ -438,15 +421,61 @@
             </Style>
           </Chart>
         </ReportItems>
-        <Height>4.07142in</Height>
+        <Height>3.32514in</Height>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
         </Style>
       </Body>
-      <Width>8.92708in</Width>
+      <Width>6.66666in</Width>
       <Page>
+        <PageFooter>
+          <Height>1.13771cm</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
+          <ReportItems>
+            <Textbox Name="Textbox1">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>42</Value>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox1</rd:DefaultName>
+              <Top>0.17639cm</Top>
+              <Left>1.74307cm</Left>
+              <Height>0.3184cm</Height>
+              <Width>13.21501cm</Width>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+          </ReportItems>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </PageFooter>
         <PageHeight>29.7cm</PageHeight>
         <PageWidth>21cm</PageWidth>
         <LeftMargin>2cm</LeftMargin>

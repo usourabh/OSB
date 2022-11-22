@@ -63,21 +63,27 @@
                 <TextRuns>
                   <TextRun>
                     <Value>Expenditure for the Month of </Value>
-                    <Style />
+                    <Style>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
                   </TextRun>
                   <TextRun>
                     <Value>=Parameters!ReportTitle.Value</Value>
-                    <Style />
+                    <Style>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
                   </TextRun>
                 </TextRuns>
-                <Style />
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>ReportParameter</rd:DefaultName>
             <Top>0.6609cm</Top>
-            <Left>5.02391cm</Left>
+            <Left>2.80141cm</Left>
             <Height>0.67056cm</Height>
-            <Width>5.09292cm</Width>
+            <Width>11.81271cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -387,27 +393,6 @@
                 </Style>
               </ChartArea>
             </ChartAreas>
-            <ChartLegends>
-              <ChartLegend Name="Default">
-                <Style>
-                  <BackgroundGradientType>None</BackgroundGradientType>
-                  <FontSize>8pt</FontSize>
-                </Style>
-                <Position>RightCenter</Position>
-                <Layout>=Fields!Name.Value</Layout>
-                <DockOutsideChartArea>true</DockOutsideChartArea>
-                <ChartLegendTitle>
-                  <Caption>Legend Title</Caption>
-                  <Style>
-                    <FontSize>8pt</FontSize>
-                    <FontWeight>Bold</FontWeight>
-                    <TextAlign>Center</TextAlign>
-                  </Style>
-                </ChartLegendTitle>
-                <HeaderSeparatorColor>Black</HeaderSeparatorColor>
-                <ColumnSeparatorColor>Black</ColumnSeparatorColor>
-              </ChartLegend>
-            </ChartLegends>
             <Palette>Pacific</Palette>
             <ChartBorderSkin>
               <Style>
@@ -428,8 +413,8 @@
             <DataSetName>ExpenditureOfTheMonth</DataSetName>
             <Top>1.43729cm</Top>
             <Left>2.80141cm</Left>
-            <Height>6.5875cm</Height>
-            <Width>10.22521cm</Width>
+            <Height>6.81391cm</Height>
+            <Width>11.81271cm</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
@@ -444,8 +429,54 @@
         <Height>3.41517in</Height>
         <Style />
       </Body>
-      <Width>6.5in</Width>
+      <Width>6.92708in</Width>
       <Page>
+        <PageFooter>
+          <Height>1.11125cm</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
+          <ReportItems>
+            <Textbox Name="Textbox1">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>43</Value>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox1</rd:DefaultName>
+              <Top>0.17639cm</Top>
+              <Left>8.27828cm</Left>
+              <Height>0.55653cm</Height>
+              <Width>2.5cm</Width>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+          </ReportItems>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </PageFooter>
         <PageHeight>29.7cm</PageHeight>
         <PageWidth>21cm</PageWidth>
         <LeftMargin>2cm</LeftMargin>

@@ -377,7 +377,7 @@
             <DataSetName>BarFleetNUtilization</DataSetName>
             <Top>0.52083in</Top>
             <Left>0.1875in</Left>
-            <Height>3.91541in</Height>
+            <Height>3.51958in</Height>
             <Width>6.51042in</Width>
             <Style>
               <Border>
@@ -444,11 +444,57 @@
             </Style>
           </Textbox>
         </ReportItems>
-        <Height>11.26807cm</Height>
+        <Height>10.47432cm</Height>
         <Style />
       </Body>
       <Width>17.5948cm</Width>
       <Page>
+        <PageFooter>
+          <Height>1.19062cm</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
+          <ReportItems>
+            <Textbox Name="Textbox2">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>36</Value>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox2</rd:DefaultName>
+              <Top>0.26459cm</Top>
+              <Left>8.35766cm</Left>
+              <Height>0.6cm</Height>
+              <Width>1.28292cm</Width>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+          </ReportItems>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </PageFooter>
         <PageHeight>29.7cm</PageHeight>
         <PageWidth>21cm</PageWidth>
         <LeftMargin>1cm</LeftMargin>

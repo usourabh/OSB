@@ -388,7 +388,7 @@
             <DataSetName>BarOperationalRatio</DataSetName>
             <Top>0.53in</Top>
             <Left>0.10417in</Left>
-            <Height>3.10417in</Height>
+            <Height>2.83334in</Height>
             <Width>6.29042in</Width>
             <Style>
               <Border>
@@ -455,11 +455,57 @@
             </Style>
           </Textbox>
         </ReportItems>
-        <Height>3.73833in</Height>
+        <Height>3.41541in</Height>
         <Style />
       </Body>
       <Width>6.5in</Width>
       <Page>
+        <PageFooter>
+          <Height>0.41667in</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
+          <ReportItems>
+            <Textbox Name="Textbox2">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>37</Value>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox2</rd:DefaultName>
+              <Top>0.06944in</Top>
+              <Left>2.73833in</Left>
+              <Height>0.15973in</Height>
+              <Width>1in</Width>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+          </ReportItems>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </PageFooter>
         <LeftMargin>1in</LeftMargin>
         <RightMargin>1in</RightMargin>
         <TopMargin>1in</TopMargin>
