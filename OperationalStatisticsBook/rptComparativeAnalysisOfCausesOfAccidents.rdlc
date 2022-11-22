@@ -88,7 +88,7 @@
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>0.19531in</Height>
+                  <Height>0.20573in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -945,7 +945,7 @@
             </TablixRowHierarchy>
             <DataSetName>rptComparativeAnalysisOfCausesOfAccidents</DataSetName>
             <Top>0.53in</Top>
-            <Height>0.78125in</Height>
+            <Height>0.79167in</Height>
             <Width>6.80086in</Width>
             <Style>
               <Border>
@@ -1015,9 +1015,8 @@
             </Paragraphs>
             <rd:DefaultName>Textbox19</rd:DefaultName>
             <Top>0.155in</Top>
-            <Left>1.17688in</Left>
             <Height>0.25in</Height>
-            <Width>4.7075in</Width>
+            <Width>6.80086in</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
@@ -1030,11 +1029,57 @@
             </Style>
           </Textbox>
         </ReportItems>
-        <Height>3.96875cm</Height>
+        <Height>3.4925cm</Height>
         <Style />
       </Body>
       <Width>17.69745cm</Width>
       <Page>
+        <PageFooter>
+          <Height>1.05833cm</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
+          <ReportItems>
+            <Textbox Name="Textbox2">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>27</Value>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox2</rd:DefaultName>
+              <Top>0.17639cm</Top>
+              <Left>7.66974cm</Left>
+              <Height>0.39398cm</Height>
+              <Width>1.12417cm</Width>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+          </ReportItems>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </PageFooter>
         <PageHeight>29.7cm</PageHeight>
         <PageWidth>21cm</PageWidth>
         <LeftMargin>1cm</LeftMargin>

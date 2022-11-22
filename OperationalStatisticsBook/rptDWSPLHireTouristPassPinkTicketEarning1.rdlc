@@ -177,7 +177,7 @@
             <Top>0.42016cm</Top>
             <Left>0.26141cm</Left>
             <Height>0.94396cm</Height>
-            <Width>16.16675cm</Width>
+            <Width>18.62737cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -192,45 +192,45 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>1.19036cm</Width>
+                  <Width>1.39541cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.40717cm</Width>
+                  <Width>2.61222cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.14154cm</Width>
+                  <Width>1.34659cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.13744cm</Width>
+                  <Width>1.34249cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.18131cm</Width>
+                  <Width>1.38636cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.26973cm</Width>
+                  <Width>1.47478cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.17681cm</Width>
+                  <Width>1.38186cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.40202cm</Width>
+                  <Width>1.60707cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.41146cm</Width>
+                  <Width>1.61651cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.28327cm</Width>
+                  <Width>1.48832cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.3932cm</Width>
+                  <Width>1.59825cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.17244cm</Width>
+                  <Width>1.37749cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
-                  <Height>0.71113cm</Height>
+                  <Height>0.49946cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -518,7 +518,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.63175cm</Height>
+                  <Height>0.52592cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -963,8 +963,8 @@
             <DataSetName>DWSPLHireTouristPassPinkTicketEarning</DataSetName>
             <Top>1.71662cm</Top>
             <Left>0.26141cm</Left>
-            <Height>1.34288cm</Height>
-            <Width>16.16675cm</Width>
+            <Height>1.02538cm</Height>
+            <Width>18.62737cm</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
@@ -973,11 +973,57 @@
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>1.38195in</Height>
+        <Height>1.11112in</Height>
         <Style />
       </Body>
-      <Width>6.5831in</Width>
+      <Width>7.5831in</Width>
       <Page>
+        <PageFooter>
+          <Height>0.87313cm</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
+          <ReportItems>
+            <Textbox Name="Textbox2">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>31</Value>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox2</rd:DefaultName>
+              <Top>0.09615cm</Top>
+              <Left>8.51641cm</Left>
+              <Height>0.40364cm</Height>
+              <Width>2.5cm</Width>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+          </ReportItems>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </PageFooter>
         <PageHeight>29.7cm</PageHeight>
         <PageWidth>21cm</PageWidth>
         <LeftMargin>1cm</LeftMargin>

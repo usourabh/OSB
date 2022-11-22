@@ -64,19 +64,19 @@
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>0.82917in</Width>
+                  <Width>0.93334in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>3.4529in</Width>
+                  <Width>3.55707in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.90625in</Width>
+                  <Width>1.01042in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.69375in</Width>
+                  <Width>0.79792in</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.6625in</Width>
+                  <Width>0.76667in</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -947,8 +947,8 @@
             <DataSetName>rptStatementOfForTheMonthOfPasses</DataSetName>
             <Top>0.50917in</Top>
             <Left>0.13542in</Left>
-            <Height>0.81251in</Height>
-            <Width>6.54457in</Width>
+            <Height>0.8125in</Height>
+            <Width>7.0654in</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1012,7 +1012,7 @@
             <Top>0.16542in</Top>
             <Left>0.13542in</Left>
             <Height>0.22916in</Height>
-            <Width>6.54457in</Width>
+            <Width>7.0654in</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
@@ -1025,11 +1025,57 @@
             </Style>
           </Textbox>
         </ReportItems>
-        <Height>3.9391cm</Height>
+        <Height>3.43639cm</Height>
         <Style />
       </Body>
-      <Width>17.36406cm</Width>
+      <Width>18.73989cm</Width>
       <Page>
+        <PageFooter>
+          <Height>0.84667cm</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
+          <ReportItems>
+            <Textbox Name="Textbox2">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>30</Value>
+                      <Style>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox2</rd:DefaultName>
+              <Top>0.06176cm</Top>
+              <Left>8.25183cm</Left>
+              <Height>0.41479cm</Height>
+              <Width>1.07125cm</Width>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+          </ReportItems>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </PageFooter>
         <PageHeight>29.7cm</PageHeight>
         <PageWidth>21cm</PageWidth>
         <LeftMargin>1cm</LeftMargin>
