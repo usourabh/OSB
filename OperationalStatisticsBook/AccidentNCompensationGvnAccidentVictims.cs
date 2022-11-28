@@ -61,7 +61,7 @@ namespace OperationalStatisticsBook
 
         }
 
-        DataTable BindAccidentNCompensationGvnAccidentVictims()
+         DataTable BindAccidentNCompensationGvnAccidentVictims()
         {
 
             DataTable table = new DataTable();
@@ -87,11 +87,21 @@ namespace OperationalStatisticsBook
             DateTime newDate2 = currentDate.AddYears(+1);
             //string currentYear = currentDate.AddYears(+2).ToString();
             String previousMonthName = newDate.ToString("MMMM");
-            for (int i = 10; i > 0; i--)
-            {
-                table.Rows.Add(newDate.AddYears(-i).Year + "-" + newDate2.AddYears(-i).Year, "0", "0", "0", "0", "0", "0", "0", "0");
-            }
+
+            table.Rows.Add("1", "2", "3", "4", "5", "6", "7", "8", "9");
+            table.Rows.Add("2012-13", "251", "0.07", "229", "68", "308", "284.72", "179");
+            table.Rows.Add("2013-14", "225", "0.07", "184", "63","259", "171.78", "45");
+            table.Rows.Add("2014-15", "178", "0.06", "141", "40","225", "176.89", "31");
+            table.Rows.Add("2015-16", "153", "0.06", "119", "34","167", "124.21", "16");
+            table.Rows.Add("2016-17", "128", "0.05", "97", "29", "207", "102.30", "15");
+            table.Rows.Add("2017-18", "121", "0.05", "93", "28", "157", "61.98", "07");
+            table.Rows.Add("2018-19", "125", "0.05", "97", "25", "123", "65.33", "09");
+            table.Rows.Add("2019-20", "118", "0.05", "88", "30", "132", "36.59", "06");
+            table.Rows.Add("2020-21", "67", "0.04", "48", "16", "48", "8.14", "03");
+            table.Rows.Add("2021-22", "98", "0.04", "96", "22", "75", "0", "0");
+
             return table;
+
         }
 
         private void ResetOnClick(object sender, EventArgs e)

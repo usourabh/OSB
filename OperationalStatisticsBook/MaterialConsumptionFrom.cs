@@ -54,12 +54,15 @@ namespace OperationalStatisticsBook
             }
             else if (dt1.Rows.Count > 0)
             {
-                dataGridView1.DataSource = dt1;
-
-            }
-            else
+                // dataGridView1.DataSource = dt1;
                 dataGridView1.DataSource = BindMaterialConsumptionFrom();
+            }
+            //else
+            //    dataGridView1.DataSource = BindMaterialConsumptionFrom();
 
+            Common.SetColumnNonEditable(dataGridView1, 3);
+            Common.SetColumnNonEditable(dataGridView1, 4);
+            Common.SetColumnNonEditable(dataGridView1, 5);
 
         }
         DataTable BindMaterialConsumptionFrom()
@@ -71,29 +74,29 @@ namespace OperationalStatisticsBook
             table.Columns.Add("S.No", typeof(string));
             table.Columns.Add("Item", typeof(string));
             table.Columns.Add("Unit", typeof(string));
-            table.Columns.Add("2018-2019", typeof(int));
-            table.Columns.Add("2019-2020", typeof(int));
-            table.Columns.Add("2020-2021", typeof(int));
+            table.Columns.Add("2018-2019", typeof(string));
+            table.Columns.Add("2019-2020", typeof(string));
+            table.Columns.Add("2020-2021", typeof(string));
 
             //Rows data
 
             table.Rows.Add("1", "2", "3", "4", "5", "6");
-            table.Rows.Add("A", "CNG BUSES CONSUMPTION", 0, 0, 0, 0);
-            table.Rows.Add("1", "CNG(Qty.)", "Lakh kgs", 0, 0, 0);
-            table.Rows.Add("2", "CNG(Value)", "Rs in Lakh", 0, 0, 0);
-            table.Rows.Add("3", "CNG(output)", "KMP kg", 0, 0, 0);
-            table.Rows.Add("B", "OIL Consumption", 0, 0, 0, 0);
-            table.Rows.Add("1", "Lube oil(Qty.)", "Lakh Lts", 0, 0, 0);
-            table.Rows.Add("2", "Lube oil(Value)", "Rs in Lakh", 0, 0, 0);
-            table.Rows.Add("3", "Lube oil(Output)", "KMP Lts", 0, 0, 0);
-            table.Rows.Add("C", "Tyres", 0, 0, 0, 0);
-            table.Rows.Add("1", "New tyres (Qty.)", "No", 0, 0, 0);
-            table.Rows.Add("2", "New tyre Value (with tube & flap)", " Rs per tyre", 0, 0, 0);
-            table.Rows.Add("3", "Tyre out-put(I) New", "kms", 0, 0, 0);
-            table.Rows.Add(0, "(EA) Cumulative", "kms", 0, 0, 0);
-            table.Rows.Add("D", "AVERAGE INVENTORY", 0, 0, 0, 0);
-            table.Rows.Add("1", "Opening Balance", "Rs in Lakh", 0, 0, 0);
-            table.Rows.Add("2", "Closing Balance", "Rs in Lakh", 0, 0, 0);
+            table.Rows.Add("A", "CNG BUSES CONSUMPTION", "", "", "", "");
+            table.Rows.Add("1", "CNG(Qty.)", "Lakh kgs", "1066.54", "837.70", "1054.75");
+            table.Rows.Add("2", "CNG(Value)", "Rs in Lakh", "46561.36", "34438.23", "45300.82");
+            table.Rows.Add("3", "CNG(output)", "KMP kg", "2.13", "2.29", "2.20");
+            table.Rows.Add("B", "OIL Consumption", "", "", "", "");
+            table.Rows.Add("1", "Lube oil(Qty.)", "Lakh Lts", "0.15", "0.15", "0.15");
+            table.Rows.Add("2", "Lube oil(Value)", "Rs in Lakh", "14.54", "14.54", "14.54");
+            table.Rows.Add("3", "Lube oil(Output)", "KMP Lts", "146", "146", "146");
+            table.Rows.Add("C", "Tyres", "", "", "", "");
+            table.Rows.Add("1", "New tyres (Qty.)", "No", "0", "0", "0");
+            table.Rows.Add("2", "New tyre Value (with tube & flap)", " Rs per tyre", "0", "0", "0");
+            table.Rows.Add("3", "Tyre out-put(I) New", "kms", "50149", "50149", "50149");
+            table.Rows.Add(" ", "(EA) Cumulative", "kms", "115444", "115444", "115444");
+            table.Rows.Add("D", "AVERAGE INVENTORY", "", "", "", "");
+            table.Rows.Add("1", "Opening Balance", "Rs in Lakh", "14.54", "14.54", "14.54");
+            table.Rows.Add("2", "Closing Balance", "Rs in Lakh", "14.54", "14.54", "14.54");
 
             return table;
         }

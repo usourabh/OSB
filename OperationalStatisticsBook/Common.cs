@@ -35,6 +35,70 @@ namespace OperationalStatisticsBook
             da.Fill(dt);
             return dt;
         }
+        public static Decimal ConvertToDecimal(string value)
+        {
+            decimal tmp = 0;
+
+            try
+            {
+                tmp = Decimal.Parse(value);
+            }
+            catch
+            {
+                tmp = 0;
+            }
+            return tmp;
+        }
+
+        public static decimal GetSum(System.Windows.Forms.DataGridViewRowCollection rows, int fromRow, int ToRows, int SumColumnIndex)
+        {
+            decimal Sum = 0;
+            try
+            {
+
+
+                for (int i = fromRow; i <= ToRows; i++)
+                {
+                    Sum += Common.ConvertToDecimal(rows[i].Cells[SumColumnIndex].Value.ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return Sum;
+        }
+
+
+        public static void SetRowNonEditable(System.Windows.Forms.DataGridView dataGridView1, int RowIndex)
+        {
+            dataGridView1.Rows[RowIndex].ReadOnly = true;
+            dataGridView1.Rows[RowIndex].DefaultCellStyle.BackColor = System.Drawing.Color.LightGray;
+        }
+
+        public static void SetColumnNonEditable(System.Windows.Forms.DataGridView dataGridView1, int ColunIndex)
+        {
+            dataGridView1.Columns[ColunIndex].ReadOnly = true;
+            dataGridView1.Columns[ColunIndex].DefaultCellStyle.BackColor = System.Drawing.Color.LightGray;
+        }
+
+        public static void SetColumnNonEditable(System.Windows.Forms.DataGridView dataGridView1, int ColunIndex, int exceptForRows)
+        {
+            dataGridView1.Columns[ColunIndex].ReadOnly = true;
+            dataGridView1.Columns[ColunIndex].DefaultCellStyle.BackColor = System.Drawing.Color.LightGray;
+
+            if (exceptForRows != -1)
+            {
+                dataGridView1.Rows[exceptForRows].Cells[ColunIndex].ReadOnly = false;
+                dataGridView1.Rows[exceptForRows].Cells[ColunIndex].Style.BackColor = System.Drawing.Color.White;
+            }
+        }
+
+        public static void SetCELLumnNonEditable(System.Windows.Forms.DataGridView dataGridView1, int ColunIndex, int RowIndex)
+        {
+            dataGridView1.Rows[RowIndex].Cells[ColunIndex].ReadOnly = true;
+            dataGridView1.Rows[RowIndex].Cells[ColunIndex].Style.BackColor = System.Drawing.Color.LightGray;
+        }
 
     }
 }

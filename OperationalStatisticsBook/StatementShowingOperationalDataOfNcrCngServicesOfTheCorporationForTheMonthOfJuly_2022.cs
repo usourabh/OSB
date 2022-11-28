@@ -71,6 +71,12 @@ namespace OperationalStatisticsBook
                 {
                     dataGridView1.DataSource = BindStatementShowingOperationalDataOfNcrCngServicesOfTheCorporationForTheMonthOfJuly_2022();
                 }
+
+                Common.SetColumnNonEditable(dataGridView1, 6);
+                Common.SetColumnNonEditable(dataGridView1, 7);
+                Common.SetRowNonEditable(dataGridView1, 9);
+                CalculateFormula();
+
             }
             catch (Exception ex)
             {
@@ -118,7 +124,7 @@ namespace OperationalStatisticsBook
         private void SaveOnClick(object sender, EventArgs e)
         {
             DeleteExisitingTableRecord("tbl_StatementShowingOperationalDataOfNcrCngServicesOfTheCorporationForTheMonthOfJuly_2022", OsbId);
-
+            CalculateFormula();
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
                 try
@@ -155,6 +161,9 @@ namespace OperationalStatisticsBook
         {
             DeleteExisitingTableRecord("tbl_StatementShowingOperationalDataOfNcrCngServicesOfTheCorporationForTheMonthOfJuly_2022", OsbId);
             dataGridView1.DataSource = BindStatementShowingOperationalDataOfNcrCngServicesOfTheCorporationForTheMonthOfJuly_2022();
+            Common.SetColumnNonEditable(dataGridView1, 6);
+            Common.SetColumnNonEditable(dataGridView1, 7);
+            Common.SetRowNonEditable(dataGridView1, 9);
             MessageBox.Show("Done");
         }
 
@@ -168,6 +177,49 @@ namespace OperationalStatisticsBook
         {
             rptStatementShowingOperationalDataOfNcrCngServicesOfTheCorporation objFrm = new rptStatementShowingOperationalDataOfNcrCngServicesOfTheCorporation(OsbId, Year, Month, finYear, MonthName);
             objFrm.Show();
+        }
+
+        void CalculateFormula()
+        {
+            var row = dataGridView1.Rows;
+            // Total
+            dataGridView1.Rows[9].Cells[3].Value = Common.GetSum(row, 0, 8, 3);
+            dataGridView1.Rows[9].Cells[4].Value = Common.GetSum(row, 0, 8, 4);
+            dataGridView1.Rows[9].Cells[5].Value = Common.GetSum(row, 0, 8, 5);
+            dataGridView1.Rows[9].Cells[8].Value = Common.GetSum(row, 0, 8, 8);
+
+            // column no 7
+            
+            dataGridView1.Rows[0].Cells[6].Value = Common.ConvertToDecimal(row[0].Cells[3].Value.ToString()) > 0 ? Math.Round((Common.ConvertToDecimal(row[0].Cells[4].Value.ToString()) / Common.ConvertToDecimal(row[0].Cells[3].Value.ToString())) * 100, 0) : 0;
+            dataGridView1.Rows[1].Cells[6].Value = Common.ConvertToDecimal(row[1].Cells[3].Value.ToString()) > 0 ? Math.Round((Common.ConvertToDecimal(row[1].Cells[4].Value.ToString()) / Common.ConvertToDecimal(row[1].Cells[3].Value.ToString())) * 100, 0) : 0;
+            dataGridView1.Rows[2].Cells[6].Value = Common.ConvertToDecimal(row[2].Cells[3].Value.ToString()) > 0 ? Math.Round((Common.ConvertToDecimal(row[2].Cells[4].Value.ToString()) / Common.ConvertToDecimal(row[2].Cells[3].Value.ToString())) * 100, 0) : 0;
+            dataGridView1.Rows[3].Cells[6].Value = Common.ConvertToDecimal(row[3].Cells[3].Value.ToString()) > 0 ? Math.Round((Common.ConvertToDecimal(row[3].Cells[4].Value.ToString()) / Common.ConvertToDecimal(row[3].Cells[3].Value.ToString())) * 100, 0) : 0;
+            dataGridView1.Rows[4].Cells[6].Value = Common.ConvertToDecimal(row[4].Cells[3].Value.ToString()) > 0 ? Math.Round((Common.ConvertToDecimal(row[4].Cells[4].Value.ToString()) / Common.ConvertToDecimal(row[4].Cells[3].Value.ToString())) * 100, 0) : 0;
+            dataGridView1.Rows[5].Cells[6].Value = Common.ConvertToDecimal(row[5].Cells[3].Value.ToString()) > 0 ? Math.Round((Common.ConvertToDecimal(row[5].Cells[4].Value.ToString()) / Common.ConvertToDecimal(row[5].Cells[3].Value.ToString())) * 100, 0) : 0;
+            dataGridView1.Rows[6].Cells[6].Value = Common.ConvertToDecimal(row[6].Cells[3].Value.ToString()) > 0 ? Math.Round((Common.ConvertToDecimal(row[6].Cells[4].Value.ToString()) / Common.ConvertToDecimal(row[6].Cells[3].Value.ToString())) * 100, 0) : 0;
+            dataGridView1.Rows[7].Cells[6].Value = Common.ConvertToDecimal(row[7].Cells[3].Value.ToString()) > 0 ? Math.Round((Common.ConvertToDecimal(row[7].Cells[4].Value.ToString()) / Common.ConvertToDecimal(row[7].Cells[3].Value.ToString())) * 100, 0) : 0;
+            dataGridView1.Rows[8].Cells[6].Value = Common.ConvertToDecimal(row[8].Cells[3].Value.ToString()) > 0 ? Math.Round((Common.ConvertToDecimal(row[8].Cells[4].Value.ToString()) / Common.ConvertToDecimal(row[8].Cells[3].Value.ToString())) * 100, 0) : 0;
+            dataGridView1.Rows[9].Cells[6].Value = Common.ConvertToDecimal(row[9].Cells[3].Value.ToString()) > 0 ? Math.Round((Common.ConvertToDecimal(row[9].Cells[4].Value.ToString()) / Common.ConvertToDecimal(row[9].Cells[3].Value.ToString())) * 100, 0) : 0;
+
+            // column no 8
+
+            dataGridView1.Rows[0].Cells[7].Value = Common.ConvertToDecimal(row[0].Cells[3].Value.ToString()) > 0 ? Math.Round((Common.ConvertToDecimal(row[0].Cells[5].Value.ToString()) / Common.ConvertToDecimal(row[0].Cells[3].Value.ToString())) * 100, 0) : 0;
+            dataGridView1.Rows[1].Cells[7].Value = Common.ConvertToDecimal(row[1].Cells[3].Value.ToString()) > 0 ? Math.Round((Common.ConvertToDecimal(row[1].Cells[5].Value.ToString()) / Common.ConvertToDecimal(row[1].Cells[3].Value.ToString())) * 100, 0) : 0;
+            dataGridView1.Rows[2].Cells[7].Value = Common.ConvertToDecimal(row[2].Cells[3].Value.ToString()) > 0 ? Math.Round((Common.ConvertToDecimal(row[2].Cells[5].Value.ToString()) / Common.ConvertToDecimal(row[2].Cells[3].Value.ToString())) * 100, 0) : 0;
+            dataGridView1.Rows[3].Cells[7].Value = Common.ConvertToDecimal(row[3].Cells[3].Value.ToString()) > 0 ? Math.Round((Common.ConvertToDecimal(row[3].Cells[5].Value.ToString()) / Common.ConvertToDecimal(row[3].Cells[3].Value.ToString())) * 100, 0) : 0;
+            dataGridView1.Rows[4].Cells[7].Value = Common.ConvertToDecimal(row[4].Cells[3].Value.ToString()) > 0 ? Math.Round((Common.ConvertToDecimal(row[4].Cells[5].Value.ToString()) / Common.ConvertToDecimal(row[4].Cells[3].Value.ToString())) * 100, 0) : 0;
+            dataGridView1.Rows[5].Cells[7].Value = Common.ConvertToDecimal(row[5].Cells[3].Value.ToString()) > 0 ? Math.Round((Common.ConvertToDecimal(row[5].Cells[5].Value.ToString()) / Common.ConvertToDecimal(row[5].Cells[3].Value.ToString())) * 100, 0) : 0;
+            dataGridView1.Rows[6].Cells[7].Value = Common.ConvertToDecimal(row[6].Cells[3].Value.ToString()) > 0 ? Math.Round((Common.ConvertToDecimal(row[6].Cells[5].Value.ToString()) / Common.ConvertToDecimal(row[6].Cells[3].Value.ToString())) * 100, 0) : 0;
+            dataGridView1.Rows[7].Cells[7].Value = Common.ConvertToDecimal(row[7].Cells[3].Value.ToString()) > 0 ? Math.Round((Common.ConvertToDecimal(row[7].Cells[5].Value.ToString()) / Common.ConvertToDecimal(row[7].Cells[3].Value.ToString())) * 100, 0) : 0;
+            dataGridView1.Rows[8].Cells[7].Value = Common.ConvertToDecimal(row[8].Cells[3].Value.ToString()) > 0 ? Math.Round((Common.ConvertToDecimal(row[8].Cells[5].Value.ToString()) / Common.ConvertToDecimal(row[8].Cells[3].Value.ToString())) * 100, 0) : 0;
+            dataGridView1.Rows[9].Cells[7].Value = Common.ConvertToDecimal(row[9].Cells[3].Value.ToString()) > 0 ? Math.Round((Common.ConvertToDecimal(row[9].Cells[5].Value.ToString()) / Common.ConvertToDecimal(row[9].Cells[3].Value.ToString())) * 100, 0) : 0;
+
+
+        }
+
+        private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            CalculateFormula();
         }
     }
 }

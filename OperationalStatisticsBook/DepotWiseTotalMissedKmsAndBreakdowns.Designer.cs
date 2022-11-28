@@ -40,17 +40,18 @@ namespace OperationalStatisticsBook
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(1, 2);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
             this.dataGridView1.Size = new System.Drawing.Size(731, 367);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEndEdit);
             // 
             // Reset
             // 
             this.Reset.Location = new System.Drawing.Point(652, 373);
-            this.Reset.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Reset.Margin = new System.Windows.Forms.Padding(2);
             this.Reset.Name = "Reset";
             this.Reset.Size = new System.Drawing.Size(80, 27);
             this.Reset.TabIndex = 1;
@@ -61,7 +62,7 @@ namespace OperationalStatisticsBook
             // Save
             // 
             this.Save.Location = new System.Drawing.Point(545, 373);
-            this.Save.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Save.Margin = new System.Windows.Forms.Padding(2);
             this.Save.Name = "Save";
             this.Save.Size = new System.Drawing.Size(87, 27);
             this.Save.TabIndex = 2;
@@ -72,7 +73,7 @@ namespace OperationalStatisticsBook
             // Print_Report
             // 
             this.Print_Report.Location = new System.Drawing.Point(459, 373);
-            this.Print_Report.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Print_Report.Margin = new System.Windows.Forms.Padding(2);
             this.Print_Report.Name = "Print_Report";
             this.Print_Report.Size = new System.Drawing.Size(82, 27);
             this.Print_Report.TabIndex = 3;
@@ -89,7 +90,7 @@ namespace OperationalStatisticsBook
             this.Controls.Add(this.Save);
             this.Controls.Add(this.Reset);
             this.Controls.Add(this.dataGridView1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "DepotWiseTotalMissedKmsAndBreakdowns";
             this.Text = "DepotWiseTotalMissedKmsAndBreakdowns";
             this.Load += new System.EventHandler(this.DepotWiseTotalMissedKmsAndBreakdowns_Load);

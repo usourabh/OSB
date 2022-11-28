@@ -115,10 +115,22 @@ namespace OperationalStatisticsBook
             DateTime newDateCurrent2 = currentDate.AddYears(-2);
             string previousYear1 = newDateCurrent2.Year.ToString();
             // int j = 1;
-            for (int i = 10; i > 0; i--)
-            {
-                table.Rows.Add(newDate.AddYears(-i).Year + "-" + newDate2.AddYears(-i).Year, 0, " ", 0, " ", 0, " ", 0, " ", 0, " ", 0, " ");
-            }
+            //for (int i = 10; i > 0; i--)
+            //{
+            //    table.Rows.Add(newDate.AddYears(-i).Year + "-" + newDate2.AddYears(-i).Year, 0, " ", 0, " ", 0, " ", 0, " ", 0, " ", 0, " ");
+            //}
+
+            table.Rows.Add("1", "2", "", "3", "", "4", "", "5", "", "6", "0", "7", "");
+            table.Rows.Add("2012-13", "46", "", "38103", "", "7.00", "", "0", "", "446", "", "5445", "");
+            table.Rows.Add("2013-14", "45", "", "35503", "", "6.80", "", "0", "", "222", "", "5223", "");
+            table.Rows.Add("2014-15", "43", "", "32864", "", "6.97", "", "0", "", "511", "", "4712", "");
+            table.Rows.Add("2015-16", "43", "", "30527", "", "7.01", "", "1", "", "361", "", "4352", "");
+            table.Rows.Add("2016-17", "39", "", "27879", "", "6.92", "", "0", "", "325", "", "4027", "");
+            table.Rows.Add("2017-18", "39", "", "25489", "", "6.45", "", "0", "", "76", "", "3951", "");
+            table.Rows.Add("2018-19", "39", "", "24721", "", "6.42", "", "0", "", "102", "", "3849", "");
+            table.Rows.Add("2019-20", "35", "", "28163", "", "7.49", "", "0", "", "80", "", "3762", "");
+            table.Rows.Add("2020-21", "35", "", "29369", "", "7.81", "", "0", "", "2", "", "3760", "");
+            table.Rows.Add("2021-22", "36", "", "30675", "", "8.15", "", "2", "", "", "", "3762", "");
 
             table.Rows.Add(" ", "No of Depots", "No of Depots", "Man Power", "Man Power", "Staff Ratio", "Staff Ratio", "Added (Vehicle)", "Added (Vehicle)", "Deleted (Vehicle)", "Deleted (Vehicle)", "Fleet at the end", "Fleet at the end");
 

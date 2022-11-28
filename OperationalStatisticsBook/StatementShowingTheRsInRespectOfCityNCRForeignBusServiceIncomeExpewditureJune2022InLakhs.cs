@@ -42,6 +42,23 @@ namespace OperationalStatisticsBook
                 {
                     dataGridView1.DataSource = BindStatementShowingTheRsInRespectOfCityNCRForeignBusServiceIncomeExpewditureJune2022InLakhs();
                 }
+
+                Common.SetRowNonEditable(dataGridView1, 2);
+                Common.SetRowNonEditable(dataGridView1, 8);
+                Common.SetRowNonEditable(dataGridView1, 17);
+                Common.SetRowNonEditable(dataGridView1, 18);
+                Common.SetRowNonEditable(dataGridView1, 30);
+                Common.SetRowNonEditable(dataGridView1, 46);
+                Common.SetRowNonEditable(dataGridView1, 50);
+                Common.SetRowNonEditable(dataGridView1, 63);
+                Common.SetRowNonEditable(dataGridView1, 64);
+                Common.SetRowNonEditable(dataGridView1, 65);
+                Common.SetRowNonEditable(dataGridView1, 66);
+
+                Common.SetRowNonEditable(dataGridView1, 71);
+                Common.SetRowNonEditable(dataGridView1, 72);
+                Common.SetRowNonEditable(dataGridView1, 73);
+                CalculateTotal();
             }
             catch (Exception ex)
             {
@@ -80,9 +97,9 @@ namespace OperationalStatisticsBook
             table.Columns.Add("City (low Floor AC Electric buses )", typeof(string));
             table.Columns.Add("City (low Floor AC Electric buses)", typeof(string));
 
-          //  table.Rows.Add(" ", " ", "Amt. (Rs. in lakhs) ", "Per Km (Paise) ", "Amt. (Rs. in lakhs)", "Per Km (Paise)", "Amt. (Rs. in lakhs)", "Per Km (Paise)", "Amt. (Rs. in lakhs)", "Per Km (Paise)", "Amt. (Rs. in lakhs)", "Per Km (Paise)", "Amt. (Rs. in lakhs)", "Per Km (Paise)" );
-            
-           // table.Rows.Add("i", "INCOME", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
+            //  table.Rows.Add(" ", " ", "Amt. (Rs. in lakhs) ", "Per Km (Paise) ", "Amt. (Rs. in lakhs)", "Per Km (Paise)", "Amt. (Rs. in lakhs)", "Per Km (Paise)", "Amt. (Rs. in lakhs)", "Per Km (Paise)", "Amt. (Rs. in lakhs)", "Per Km (Paise)", "Amt. (Rs. in lakhs)", "Per Km (Paise)" );
+
+            // table.Rows.Add("i", "INCOME", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("i", "Ticketed Earning", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("ii", "Less Passenger Tax", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("iii", "Net Ticketed Earning (i-ii)", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
@@ -165,7 +182,7 @@ namespace OperationalStatisticsBook
             table.Rows.Add("", "Total (VII)", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("viii", "Total Expenditure(V+VII) ", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("ix", "Total loss/Profit (I-VIII)  ", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
-                
+
 
             return table;
         }
@@ -199,7 +216,7 @@ namespace OperationalStatisticsBook
             {
                 try
                 {
-                    if (row.Cells[0].Value != null || row.Cells[1].Value != null || row.Cells[2].Value != null || row.Cells[3].Value != null || row.Cells[4].Value != null || row.Cells[5].Value != null || row.Cells[6].Value != null || row.Cells[7].Value != null || row.Cells[8].Value != null || row.Cells[9].Value != null || row.Cells[10].Value != null || row.Cells[11].Value != null || row.Cells[12].Value != null  )
+                    if (row.Cells[0].Value != null || row.Cells[1].Value != null || row.Cells[2].Value != null || row.Cells[3].Value != null || row.Cells[4].Value != null || row.Cells[5].Value != null || row.Cells[6].Value != null || row.Cells[7].Value != null || row.Cells[8].Value != null || row.Cells[9].Value != null || row.Cells[10].Value != null || row.Cells[11].Value != null || row.Cells[12].Value != null)
                     {
                         SqlCommand cmd = new SqlCommand("INSERT INTO [rpt].[tbl_StatementShowingTheRsInRespectOfCityNCRForeignBusServiceIncomeExpewditureJune2022InLakhs]" +
                             "([OsbId],[S_No],[Particulars],[Param1],[Param2],[Param3],[Param4],[Param5],[Param6],[Param7],[Param8],[Param9],[Param10],[Param11],[Param12]) VALUES (@OsbId,@S_No,@Particulars,@Param1,@Param2,@Param3,@Param4,@Param5,@Param6,@Param7,@Param8,@Param9,@Param10,@Param11,@Param12)", con);
@@ -218,7 +235,7 @@ namespace OperationalStatisticsBook
                         cmd.Parameters.AddWithValue("@Param10", row.Cells[11].Value == null ? "" : row.Cells[11].Value.ToString());
                         cmd.Parameters.AddWithValue("@Param11", row.Cells[12].Value == null ? "" : row.Cells[12].Value.ToString());
                         cmd.Parameters.AddWithValue("@Param12", row.Cells[13].Value == null ? "" : row.Cells[13].Value.ToString());
-                      
+
                         cmd.CommandType = CommandType.Text;
                         con.Open();
                         cmd.ExecuteNonQuery();
@@ -237,13 +254,179 @@ namespace OperationalStatisticsBook
         private void StatementShowingTheRsInRespectOfCityNCRForeignBusServiceIncomeExpewditureJune2022InLakhs_Load(object sender, EventArgs e)
         {
             BindIndexPage(OsbId);
-           // dataGridView1.DataSource = BindStatementShowingTheRsInRespectOfCityNCRForeignBusServiceIncomeExpewditureJune2022InLakhs();
+            // dataGridView1.DataSource = BindStatementShowingTheRsInRespectOfCityNCRForeignBusServiceIncomeExpewditureJune2022InLakhs();
         }
 
         private void Print_ReportOnClick(object sender, EventArgs e)
         {
             rptStatementShowingTheRsInRespectOfCityNCRForeignBusServiceIncomeExpewditureJune2022InLakhs objFrm = new rptStatementShowingTheRsInRespectOfCityNCRForeignBusServiceIncomeExpewditureJune2022InLakhs(OsbId, Year, Month, finYear, MonthName);
             objFrm.Show();
+        }
+
+        private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            CalculateTotal();
+        }
+
+        void CalculateTotal()
+        {
+            var row = dataGridView1.Rows;
+
+            #region Calculating_VerticalSum
+            for (int i = 0; i < (row.Count - 1); i++)
+            {
+                if (i == 2)
+                {
+                    for (int j = 2; j < 14; j++)
+                    {
+                        dataGridView1.Rows[i].Cells[j].Value = Common.ConvertToDecimal(row[i - 2].Cells[j].Value.ToString()) - Common.ConvertToDecimal(row[i - 1].Cells[j].Value.ToString());
+                    }
+                }
+                if (i == 8)
+                {
+                    for (int j = 2; j < 14; j++)
+                    {
+                        decimal cSum = 0;
+                        for (int a = 2; a <= 7; a++)
+                        {
+                            cSum += Common.ConvertToDecimal(row[a].Cells[j].Value.ToString());
+                        }
+
+                        dataGridView1.Rows[i].Cells[j].Value = cSum;
+                    }
+                }
+
+                if (i == 17)
+                {
+                    for (int j = 2; j < 14; j++)
+                    {
+                        decimal cSum = 0;
+                        for (int a = 9; a <= 16; a++)
+                        {
+                            cSum += Common.ConvertToDecimal(row[a].Cells[j].Value.ToString());
+                        }
+
+                        dataGridView1.Rows[i].Cells[j].Value = cSum;
+                    }
+                }
+                if (i == 18)
+                {
+                    for (int j = 2; j < 14; j++)
+                    {
+                        dataGridView1.Rows[i].Cells[j].Value = Common.ConvertToDecimal(row[8].Cells[j].Value.ToString()) + Common.ConvertToDecimal(row[17].Cells[j].Value.ToString());
+                    }
+                }
+                if (i == 30)
+                {
+                    for (int j = 2; j < 14; j++)
+                    {
+                        decimal cSum = 0;
+                        for (int a = 20; a <= 29; a++)
+                        {
+                            cSum += Common.ConvertToDecimal(row[a].Cells[j].Value.ToString());
+                        }
+
+                        dataGridView1.Rows[i].Cells[j].Value = cSum;
+                    }
+                }
+
+                if (i == 46)
+                {
+                    for (int j = 2; j < 14; j++)
+                    {
+                        decimal cSum = 0;
+                        for (int a = 34; a <= 45; a++)
+                        {
+                            cSum += Common.ConvertToDecimal(row[a].Cells[j].Value.ToString());
+                        }
+
+                        dataGridView1.Rows[i].Cells[j].Value = cSum;
+                    }
+                }
+                if (i == 50)
+                {
+                    for (int j = 2; j < 14; j++)
+                    {
+                        decimal cSum = 0;
+                        for (int a = 48; a <= 50; a++)
+                        {
+                            cSum += Common.ConvertToDecimal(row[a].Cells[j].Value.ToString());
+                        }
+
+                        dataGridView1.Rows[i].Cells[j].Value = cSum;
+                    }
+                }
+
+                if (i == 63)
+                {
+                    for (int j = 2; j < 14; j++)
+                    {
+                        decimal cSum = 0;
+                        for (int a = 52; a <= 62; a++)
+                        {
+                            cSum += Common.ConvertToDecimal(row[a].Cells[j].Value.ToString());
+                        }
+
+                        dataGridView1.Rows[i].Cells[j].Value = cSum;
+                    }
+                }
+
+                if (i == 64)
+                {
+                    for (int j = 2; j < 14; j++)
+                    {
+                        dataGridView1.Rows[i].Cells[j].Value = Common.ConvertToDecimal(row[63].Cells[j].Value.ToString()) + Common.ConvertToDecimal(row[50].Cells[j].Value.ToString())+ Common.ConvertToDecimal(row[46].Cells[j].Value.ToString());
+                    }
+                }
+
+                if (i == 65)
+                {
+                    for (int j = 2; j < 14; j++)
+                    {
+                        dataGridView1.Rows[i].Cells[j].Value = Common.ConvertToDecimal(row[30].Cells[j].Value.ToString()) + Common.ConvertToDecimal(row[64].Cells[j].Value.ToString());
+                    }
+                }
+
+                if (i == 66)
+                {
+                    for (int j = 2; j < 14; j++)
+                    {
+                        dataGridView1.Rows[i].Cells[j].Value = Common.ConvertToDecimal(row[0].Cells[j].Value.ToString()) - Common.ConvertToDecimal(row[65].Cells[j].Value.ToString());
+                    }
+                }
+
+                if (i == 71)
+                {
+                    for (int j = 2; j < 14; j++)
+                    {
+                        decimal cSum = 0;
+                        for (int a = 68; a <= 70; a++)
+                        {
+                            cSum += Common.ConvertToDecimal(row[a].Cells[j].Value.ToString());
+                        }
+
+                        dataGridView1.Rows[i].Cells[j].Value = cSum;
+                    }
+                }
+
+                if (i == 72)
+                {
+                    for (int j = 2; j < 14; j++)
+                    {
+                        dataGridView1.Rows[i].Cells[j].Value = Common.ConvertToDecimal(row[65].Cells[j].Value.ToString()) - Common.ConvertToDecimal(row[71].Cells[j].Value.ToString());
+                    }
+                }
+                if (i == 73)
+                {
+                    for (int j = 2; j < 14; j++)
+                    {
+                        dataGridView1.Rows[i].Cells[j].Value = Common.ConvertToDecimal(row[0].Cells[j].Value.ToString()) - Common.ConvertToDecimal(row[72].Cells[j].Value.ToString());
+                    }
+                }
+            }
+            #endregion
+
+
         }
     }
 }

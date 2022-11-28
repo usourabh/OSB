@@ -82,9 +82,26 @@ namespace OperationalStatisticsBook
 
             //}
             else
+            {
                 dataGridView1.DataSource = BindStaffRatioAsOn();
+              
+            }
+
+            Common.SetColumnNonEditable(dataGridView1, 2);
+            Common.SetColumnNonEditable(dataGridView1, 5);
+            Common.SetRowNonEditable(dataGridView1, 5);
+            for (short i = 0; i < 5; i++) 
+            {
+                dataGridView1.Rows[i].Cells[3].ReadOnly = true;
+                dataGridView1.Rows[i].Cells[3].Style.BackColor = Color.LightGray;
+                dataGridView1.Rows[i].Cells[6].ReadOnly = true;
+                dataGridView1.Rows[i].Cells[6].Style.BackColor = Color.LightGray;
+            }
 
 
+            //dataGridView1.Rows[].Cells[].DefaultCellStyle.BackColor = System.Drawing.Color.LightGray;
+
+            CalculateTotal();
         }
 
         int DeleteExisitingdtRecord(string dtName, int OsbId)
@@ -117,12 +134,12 @@ namespace OperationalStatisticsBook
 
          //   dt.Rows.Add("", "", "", "", "", "Authorised Fl.Strength (Col.5-3)", "@Actual Fl.Strength (Col.5-4)");
          //   dt.Rows.Add("1", "2", "3", "4", "5", "6","7");
-            dt.Rows.Add("DR.", "", "", "", "", "","");
-            dt.Rows.Add("COND.", "", "", "", "", "","");
-            dt.Rows.Add("Tr.Sup.", "", "", "", "", "","");
-            dt.Rows.Add("R & M.", "", "", "", "", "","");
-            dt.Rows.Add("Admin.", "", "", "", "", "","");
-            dt.Rows.Add("Total*", "", "", "", "", "","");
+            dt.Rows.Add("DR.", "2.65", "", "", "", "","");
+            dt.Rows.Add("COND.", "2.65", "", "", "", "","");
+            dt.Rows.Add("Tr.Sup.", "0.50", "", "", "", "","");
+            dt.Rows.Add("R & M.", "0.25", "", "", "", "","");
+            dt.Rows.Add("Admin.", "1.00", "", "", "", "","");
+            dt.Rows.Add("Total*", "7.05", "", "", "", "","");
             dt.Rows.Add("", " ", " ", " ", " ", " "," ");
             dt.Rows.Add("*Included Short term/Contract Basis Staff", "", "Short term  S/ Guards", " ", "", "Short term Manager", "");
             dt.Rows.Add("", "", "Short term  Drivers", " ", "", " Part Time MO", "");
@@ -139,12 +156,12 @@ namespace OperationalStatisticsBook
             DeleteExisitingdtRecord("tbl_StaffRatioAsOn", OsbId);
             dataGridView1.DataSource = BindStaffRatioAsOn();
             MessageBox.Show("Done");
-        }
+        }    
 
         private void SaveOnClick(object sender, EventArgs e)
         {
             DeleteExisitingdtRecord("tbl_StaffRatioAsOn", OsbId);
-
+            CalculateTotal();
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
                 try
@@ -186,6 +203,58 @@ namespace OperationalStatisticsBook
             ShowData();
             //BindIndexPage(OsbId);
            // dataGridView1.DataSource = BindStaffRatioAsOn();
+        }
+
+        void CalculateTotal()
+        {
+            var row = dataGridView1.Rows;
+
+            // Column no = 3 
+
+             dataGridView1.Rows[0].Cells[2].Value = Math.Round(Common.ConvertToDecimal(dataGridView1.Rows[0].Cells[1].Value.ToString()) * 5500, 0);
+             dataGridView1.Rows[1].Cells[2].Value = Math.Round(Common.ConvertToDecimal(dataGridView1.Rows[1].Cells[1].Value.ToString()) * 5500, 0); 
+             dataGridView1.Rows[2].Cells[2].Value = Math.Round(Common.ConvertToDecimal(dataGridView1.Rows[2].Cells[1].Value.ToString()) * 5500, 0);
+             dataGridView1.Rows[3].Cells[2].Value = Math.Round(Common.ConvertToDecimal(dataGridView1.Rows[3].Cells[1].Value.ToString()) * 5500, 0);
+             dataGridView1.Rows[4].Cells[2].Value = Math.Round(Common.ConvertToDecimal(dataGridView1.Rows[4].Cells[1].Value.ToString()) * 5500, 0);
+             dataGridView1.Rows[5].Cells[2].Value = Math.Round(Common.ConvertToDecimal(dataGridView1.Rows[5].Cells[1].Value.ToString()) * 5500, 0);
+
+            // column no 4 
+
+            dataGridView1.Rows[0].Cells[3].Value = Math.Round(Common.ConvertToDecimal(dataGridView1.Rows[0].Cells[1].Value.ToString()) * 3913, 0);
+            dataGridView1.Rows[1].Cells[3].Value = Math.Round(Common.ConvertToDecimal(dataGridView1.Rows[1].Cells[1].Value.ToString()) * 3913, 0);
+            dataGridView1.Rows[2].Cells[3].Value = Math.Round(Common.ConvertToDecimal(dataGridView1.Rows[2].Cells[1].Value.ToString()) * 3913, 0);
+            dataGridView1.Rows[3].Cells[3].Value = Math.Round(Common.ConvertToDecimal(dataGridView1.Rows[3].Cells[1].Value.ToString()) * 3913, 0);
+            dataGridView1.Rows[4].Cells[3].Value = Math.Round(Common.ConvertToDecimal(dataGridView1.Rows[4].Cells[1].Value.ToString()) * 3913, 0);
+            dataGridView1.Rows[5].Cells[3].Value = Math.Round(Common.ConvertToDecimal(dataGridView1.Rows[5].Cells[1].Value.ToString()) * 3913, 0);
+
+            // Formulas column no = 6, 7
+            //Col = 6
+            dataGridView1.Rows[0].Cells[5].Value = Math.Round(Common.ConvertToDecimal(dataGridView1.Rows[0].Cells[4].Value.ToString()) - Common.ConvertToDecimal(dataGridView1.Rows[0].Cells[2].Value.ToString()), 0);
+            dataGridView1.Rows[1].Cells[5].Value = Math.Round(Common.ConvertToDecimal(dataGridView1.Rows[1].Cells[4].Value.ToString()) - Common.ConvertToDecimal(dataGridView1.Rows[1].Cells[2].Value.ToString()), 0);
+            dataGridView1.Rows[2].Cells[5].Value = Math.Round(Common.ConvertToDecimal(dataGridView1.Rows[2].Cells[4].Value.ToString()) - Common.ConvertToDecimal(dataGridView1.Rows[2].Cells[2].Value.ToString()), 0);
+            dataGridView1.Rows[3].Cells[5].Value = Math.Round(Common.ConvertToDecimal(dataGridView1.Rows[3].Cells[4].Value.ToString()) - Common.ConvertToDecimal(dataGridView1.Rows[3].Cells[2].Value.ToString()), 0);
+            dataGridView1.Rows[4].Cells[5].Value = Math.Round(Common.ConvertToDecimal(dataGridView1.Rows[4].Cells[4].Value.ToString()) - Common.ConvertToDecimal(dataGridView1.Rows[4].Cells[2].Value.ToString()), 0);
+            dataGridView1.Rows[5].Cells[5].Value = Math.Round(Common.ConvertToDecimal(dataGridView1.Rows[5].Cells[4].Value.ToString()) - Common.ConvertToDecimal(dataGridView1.Rows[5].Cells[2].Value.ToString()), 0);
+            //Col = 7                                                                                                                                                     
+            dataGridView1.Rows[0].Cells[6].Value = Math.Round(Common.ConvertToDecimal(dataGridView1.Rows[0].Cells[4].Value.ToString()) - Common.ConvertToDecimal(dataGridView1.Rows[0].Cells[3].Value.ToString()), 0);
+            dataGridView1.Rows[1].Cells[6].Value = Math.Round(Common.ConvertToDecimal(dataGridView1.Rows[1].Cells[4].Value.ToString()) - Common.ConvertToDecimal(dataGridView1.Rows[1].Cells[3].Value.ToString()), 0);
+            dataGridView1.Rows[2].Cells[6].Value = Math.Round(Common.ConvertToDecimal(dataGridView1.Rows[2].Cells[4].Value.ToString()) - Common.ConvertToDecimal(dataGridView1.Rows[2].Cells[3].Value.ToString()), 0);
+            dataGridView1.Rows[3].Cells[6].Value = Math.Round(Common.ConvertToDecimal(dataGridView1.Rows[3].Cells[4].Value.ToString()) - Common.ConvertToDecimal(dataGridView1.Rows[3].Cells[3].Value.ToString()), 0);
+            dataGridView1.Rows[4].Cells[6].Value = Math.Round(Common.ConvertToDecimal(dataGridView1.Rows[4].Cells[4].Value.ToString()) - Common.ConvertToDecimal(dataGridView1.Rows[4].Cells[3].Value.ToString()), 0);
+            dataGridView1.Rows[5].Cells[6].Value = Math.Round(Common.ConvertToDecimal(dataGridView1.Rows[5].Cells[4].Value.ToString()) - Common.ConvertToDecimal(dataGridView1.Rows[5].Cells[3].Value.ToString()), 0);
+
+            //for total
+            dataGridView1.Rows[5].Cells[2].Value = Common.GetSum(row, 0, 4, 2);
+            dataGridView1.Rows[5].Cells[3].Value = Common.GetSum(row, 0, 4, 3);
+            dataGridView1.Rows[5].Cells[4].Value = Common.GetSum(row, 0, 4, 4);
+            dataGridView1.Rows[5].Cells[5].Value = Common.GetSum(row, 0, 4, 5);
+            dataGridView1.Rows[5].Cells[6].Value = Common.GetSum(row, 0, 4, 6);
+
+        }
+
+        private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            CalculateTotal();
         }
     }
 }

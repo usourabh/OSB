@@ -59,13 +59,26 @@ namespace OperationalStatisticsBook
             string previousYear = newDateCurrent.Year.ToString();
             DateTime newDateCurrent2 = currentDate.AddYears(-1);
             string previousYear1 = newDateCurrent2.Year.ToString();
-           // table.Rows.Add("", "City", "City", "NCR", "NCR", "City", "City", "NCR", "NCR", "City", "City", "NCR", "NCR");
-          //  table.Rows.Add("1", "2", "2", "3", "3", "4", "4", "5", "5", "6", "6", "7", "7");
+            // table.Rows.Add("", "City", "City", "NCR", "NCR", "City", "City", "NCR", "NCR", "City", "City", "NCR", "NCR");
+            //  table.Rows.Add("1", "2", "2", "3", "3", "4", "4", "5", "5", "6", "6", "7", "7");
 
-            for (int i = 10; i > 0; i--)
-            {
-                table.Rows.Add(newDate.AddYears(-i).Year + "-" + newDate2.AddYears(-i).Year, " 0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
-            }
+            //for (int i = 10; i > 0; i--)
+            //{
+            //    table.Rows.Add(newDate.AddYears(-i).Year + "-" + newDate2.AddYears(-i).Year, " 0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
+            //}
+
+            table.Rows.Add("1", "2", "", "3", "", "4", "", "5", "", "6", "", "7", "");
+            table.Rows.Add("2012-13", "589", "", "23", "", "15646.00", "", "1032", "", "26.6", "", "44.9", "");
+            table.Rows.Add("2013-14", "579", "", "12", "", "15480.0", "", "529", "", "26.7", "", "44.1", "");
+            table.Rows.Add("2014-15", "574", "", "12", "", "15285.5", "", "503", "", "26.7", "", "41.9", "");
+            table.Rows.Add("2015-16", "546", "", "11", "", "14732.5", "", "414", "", "27.0", "", "37.6", "");
+            table.Rows.Add("2016-17", "474", "", "9", "", "13017.9", "", "314", "", "27.5", "", "34.9", "");
+            table.Rows.Add("2017-18", "453", "", "8", "", "12490.7", "", "247", "", "27.6", "", "34.9", "");
+            table.Rows.Add("2018-19", "437", "", "8", "", "11968.1", "", "242", "", "27.4", "", "30.3", "");
+            table.Rows.Add("2019-20", "448", "", "7", "", "12183.8", "", "219", "", "27.2", "", "31.2", "");
+            table.Rows.Add("2020-21", "453", "", "7", "", "12289.7", "", "219", "", "27.1", "", "31.2", "");
+            table.Rows.Add("2021-22", "461", "", "7", "", "12480.0", "", "219", "", "27.1", "", "31.2", "");
+
 
             table.Rows.Add("", " No.of routes at the end of the period", "No.of routes at the end of the period", "No.of routes at the end of the period", "No.of routes at the end of the period", "Route KMs at the end of the period", "Route KMs at the end of the period", "Route KMs at the end of the period", "Route KMs at the end of the period", "Average route length", "Average route length", "Average route length", "Average route length");
 

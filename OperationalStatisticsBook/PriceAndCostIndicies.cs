@@ -65,6 +65,11 @@ namespace OperationalStatisticsBook
             {
                 dataGridView1.DataSource = BindPriceAndCostIndicies();
             }
+            Common.SetRowNonEditable(dataGridView1, 0);
+            Common.SetRowNonEditable(dataGridView1, 1);
+            Common.SetRowNonEditable(dataGridView1, 2);
+            Common.SetRowNonEditable(dataGridView1, 3);
+            Common.SetRowNonEditable(dataGridView1, 4);
         }
         DataTable BindPriceAndCostIndicies()
         {
@@ -89,10 +94,19 @@ namespace OperationalStatisticsBook
             DateTime newDate2 = currentDate.AddYears(0);
             string currentYear = currentDate.AddYears(+2).ToString();
             String previousMonthName = newDate.ToString("MMMM");
-            for (int i = 5; i > 0; i--)
-            {
-                table.Rows.Add(newDate.AddYears(-i).Year + "-" + newDate2.AddYears(-i).Year, "0", "0", "0", "0", "0", "0", "0", "0");
-            }
+
+            //for (int i = 5; i > 0; i--)
+            //{
+            //    table.Rows.Add(newDate.AddYears(-i).Year + "-" + newDate2.AddYears(-i).Year, "0", "0", "0", "0", "0", "0", "0", "0");
+            //}
+
+            table.Rows.Add("2016-2017", "3604", "228", "1575", "97", "11183", "226", "1", "1");
+            table.Rows.Add("2017-2018", "3628", "230", "1943", "120", "11208", "227", "1", "1");
+            table.Rows.Add("2018-2019", "4412", "279", "1796", "111", "11208", "227", "0", "0");
+            table.Rows.Add("2019-2020", "4367", "257", "1956", "111", "11208", "227", "0", "0");
+            table.Rows.Add("2020-2021", "4117", "257", "1815", "111", "11208", "227", "1", "0");
+
+
             return table;
         }
         private void ResetOnClick(object sender, EventArgs e)
