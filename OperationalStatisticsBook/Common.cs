@@ -100,5 +100,20 @@ namespace OperationalStatisticsBook
             dataGridView1.Rows[RowIndex].Cells[ColunIndex].Style.BackColor = System.Drawing.Color.LightGray;
         }
 
+
+        public static decimal GetDiv(System.Windows.Forms.DataGridViewRowCollection rows, int fromRow, int ToRows, int DivColumnIndex)
+        {
+            decimal div = 0;
+            try
+            {
+                div += Common.ConvertToDecimal(rows[fromRow].Cells[DivColumnIndex].Value.ToString()) - Common.ConvertToDecimal(rows[ToRows].Cells[DivColumnIndex].Value.ToString());
+            }
+            catch (Exception ex)
+            {
+
+            }
+            return div;
+        }
+
     }
 }

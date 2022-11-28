@@ -68,6 +68,7 @@ namespace OperationalStatisticsBook
                 {
                     dataGridView1.DataSource = BindOperationalDepotWiseFleetStrengthNBusesOnRoad();
                 }
+                CalcalculateTotal();
             }
             catch (Exception ex)
             {
@@ -197,10 +198,39 @@ namespace OperationalStatisticsBook
          
         }
 
+        void CalcalculateTotal()
+        {
+            var row = dataGridView1.Rows;
+
+            #region Calculating_VerticalSum
+
+            // North Total
+            dataGridView1.Rows[38].Cells[3].Value = Common.GetSum(row, 0, 37,3);
+            dataGridView1.Rows[38].Cells[4].Value = Common.GetSum(row, 0, 37,4);
+            dataGridView1.Rows[38].Cells[5].Value = Common.GetSum(row, 0, 37,5);
+            dataGridView1.Rows[38].Cells[6].Value = Common.GetSum(row, 0, 37,6);
+            dataGridView1.Rows[38].Cells[7].Value = Common.GetSum(row, 0, 37,7);
+            dataGridView1.Rows[38].Cells[8].Value = Common.GetSum(row, 0, 37,8);
+            dataGridView1.Rows[38].Cells[9].Value = Common.GetSum(row, 0, 37,9);
+            dataGridView1.Rows[38].Cells[10].Value = Common.GetSum(row,0, 37,10);
+           // dataGridView1.Rows[37].Cells[11].Value = Common.GetSum(row,0, 36,11);
+          
+
+       
+
+            #endregion
+
+
+        }
         private void PrintReportOnClick(object sender, EventArgs e)
         {
             rptOperationalDepotWiseFleetStrengthNBusesOnRoad objFrm = new rptOperationalDepotWiseFleetStrengthNBusesOnRoad(OsbId, Year, Month, finYear, MonthName);
             objFrm.Show();
+        }
+
+        private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            CalcalculateTotal();
         }
     }
 }

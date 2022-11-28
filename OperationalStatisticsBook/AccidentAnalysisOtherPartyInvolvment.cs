@@ -51,7 +51,8 @@ namespace OperationalStatisticsBook
                 else
                 {
                     dataGridView1.DataSource = BindAccidentAnalysisOtherPartyInvolvment();
-                } 
+                }
+                CalcalculateTotal();
             }
             catch (Exception ex)
             {
@@ -188,10 +189,50 @@ namespace OperationalStatisticsBook
             BindIndexPage(OsbId);
         }
 
+        void CalcalculateTotal()
+        {
+            var row = dataGridView1.Rows;
+
+            #region Calculating_VerticalSum
+
+            // North Total
+            dataGridView1.Rows[18].Cells[2].Value = Common.GetSum(row, 0, 17, 2);
+            dataGridView1.Rows[18].Cells[3].Value = Common.GetSum(row, 0, 17, 3);
+            dataGridView1.Rows[18].Cells[4].Value = Common.GetSum(row, 0, 17, 4);
+            dataGridView1.Rows[18].Cells[5].Value = Common.GetSum(row, 0, 17, 5);
+            dataGridView1.Rows[18].Cells[6].Value = Common.GetSum(row, 0, 17, 6);
+            dataGridView1.Rows[18].Cells[7].Value = Common.GetSum(row, 0, 17, 7);
+            dataGridView1.Rows[18].Cells[8].Value = Common.GetSum(row, 0, 17, 8);
+            dataGridView1.Rows[18].Cells[9].Value = Common.GetSum(row, 0, 17, 9);
+          
+
+          
+
+            #endregion
+
+            #region Calculating_HorizontalSum
+            for (int i = 0; i < (row.Count - 1); i++)
+            {
+
+                if (i >= 0)
+                {
+                    dataGridView1.Rows[i].Cells[5].Value = Common.ConvertToDecimal(row[i].Cells[2].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[3].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[4].Value.ToString());
+                    dataGridView1.Rows[i].Cells[9].Value = Common.ConvertToDecimal(row[i].Cells[6].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[7].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[8].Value.ToString());
+                 
+                }
+            }
+            #endregion
+
+        }
         private void PrintReportOnClick(object sender, EventArgs e)
         {
             rptAccidentAnalysisOtherPartyInvolvment objFrm = new rptAccidentAnalysisOtherPartyInvolvment(OsbId, Year, Month, finYear, MonthName);
             objFrm.Show();
+        }
+
+        private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            CalcalculateTotal();
         }
     }
 }

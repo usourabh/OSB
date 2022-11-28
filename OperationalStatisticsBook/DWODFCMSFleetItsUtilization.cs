@@ -57,7 +57,7 @@ namespace OperationalStatisticsBook
             table.Columns.Add("Avg.no.of buses on Road ", typeof(string));
             table.Columns.Add("Percentage fleet utilisation  ", typeof(string));
 
-            table.Rows.Add("1", "2", "3", "4", "5", "6", "7");
+          //  table.Rows.Add("1", "2", "3", "4", "5", "6", "7");
             table.Rows.Add("Non AC City", "", "", "", "", "", "");
             table.Rows.Add("1", "Non AC City", "0", "0", "0", "0", "0");
             table.Rows.Add("2", "Rani Khera-1 ", "0", "0", "0", "0", "0");
@@ -111,8 +111,16 @@ namespace OperationalStatisticsBook
 
             }
             else
+            {
                 dataGridView1.DataSource = BindDWODFCMSFleetItsUtilization();
-
+            }
+            Common.SetRowNonEditable(dataGridView1,0);
+            Common.SetRowNonEditable(dataGridView1,8);
+            Common.SetRowNonEditable(dataGridView1,9);
+            Common.SetRowNonEditable(dataGridView1,16);
+            Common.SetRowNonEditable(dataGridView1,17);
+            Common.SetColumnNonEditable(dataGridView1,6);
+            CalcalculateTotal();
 
         }
     
@@ -164,12 +172,60 @@ namespace OperationalStatisticsBook
             objFrm.Show();
         }
 
+        void CalcalculateTotal()
+        {
+            var row = dataGridView1.Rows;
+
+            #region Calculating_VerticalSum
+
+
+            dataGridView1.Rows[9].Cells[2].Value = Common.GetSum(row, 1, 8, 2);
+            dataGridView1.Rows[9].Cells[3].Value = Common.GetSum(row, 1, 8, 3);
+            dataGridView1.Rows[9].Cells[4].Value = Common.GetSum(row, 1, 8, 4);
+            dataGridView1.Rows[9].Cells[5].Value = Common.GetSum(row, 1, 8, 5);
+
+
+            dataGridView1.Rows[16].Cells[2].Value = Common.GetSum(row, 11, 15, 2);
+            dataGridView1.Rows[16].Cells[3].Value = Common.GetSum(row, 11, 15, 3);
+            dataGridView1.Rows[16].Cells[4].Value = Common.GetSum(row, 11, 15, 4);
+            dataGridView1.Rows[16].Cells[5].Value = Common.GetSum(row, 11, 15, 5);
+
+
+
+            // All Grand Total
+            dataGridView1.Rows[17].Cells[2].Value = Common.ConvertToDecimal(dataGridView1.Rows[9].Cells[2].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[16].Cells[2].Value.ToString());
+            dataGridView1.Rows[17].Cells[3].Value = Common.ConvertToDecimal(dataGridView1.Rows[9].Cells[3].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[16].Cells[3].Value.ToString());
+            dataGridView1.Rows[17].Cells[4].Value = Common.ConvertToDecimal(dataGridView1.Rows[9].Cells[4].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[16].Cells[4].Value.ToString());
+            dataGridView1.Rows[17].Cells[5].Value = Common.ConvertToDecimal(dataGridView1.Rows[9].Cells[5].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[16].Cells[5].Value.ToString());
+
+
+
+            #endregion
+
+            #region Calculating_HorizontalSum
+            for (int i = 0; i < (row.Count - 1); i++)
+            {
+
+                if (i > 0)
+                {                  
+                    dataGridView1.Rows[i].Cells[6].Value = Common.ConvertToDecimal(row[i].Cells[3].Value.ToString()) > 0 ? Math.Round((Common.ConvertToDecimal(row[i].Cells[5].Value.ToString()) / Common.ConvertToDecimal(row[i].Cells[3].Value.ToString())) * 100,2):0;
+                }
+            }
+            #endregion
+
+        }
+
         private void DWODFCMSFleetItsUtilization_Load(object sender, EventArgs e)
         {
 
-           // ShowData();
-            dataGridView1.DataSource = BindDWODFCMSFleetItsUtilization();
+            ShowData();
+            //dataGridView1.DataSource = BindDWODFCMSFleetItsUtilization();
 
+        }
+
+        private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            CalcalculateTotal();
         }
     }
 }

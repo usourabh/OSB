@@ -53,15 +53,21 @@ namespace OperationalStatisticsBook
                 dataGridView1.DataSource = dt;
                 Save.BackColor = Color.Green;
             }
-            else if(dt1.Rows.Count>0)
-                {
+            else if (dt1.Rows.Count > 0)
+            {
                 dataGridView1.DataSource = dt1;
-               
+
             }
             else
+            {
                 dataGridView1.DataSource = BindDepotwiseOperationalDataFCMSCluster_busesTrafficIncome();
-
-
+            }
+            Common.SetRowNonEditable(dataGridView1, 0);
+            Common.SetRowNonEditable(dataGridView1, 9);
+            Common.SetRowNonEditable(dataGridView1, 10);
+            Common.SetRowNonEditable(dataGridView1, 15);
+            Common.SetRowNonEditable(dataGridView1, 16);
+            CalcalculateTotal();
         }
 
         int DeleteExisitingTableRecord(string TableName, int OsbId)
@@ -170,11 +176,41 @@ namespace OperationalStatisticsBook
 
         }
 
+        void CalcalculateTotal()
+        {
+            var row = dataGridView1.Rows;
+
+            #region Calculating_VerticalSum
+
+       
+            dataGridView1.Rows[8].Cells[2].Value = Common.GetSum(row, 1, 7, 2);
+            dataGridView1.Rows[8].Cells[3].Value = Common.GetSum(row, 1, 7, 3);
+
+
+            dataGridView1.Rows[15].Cells[2].Value = Common.GetSum(row, 10, 14, 2);
+            dataGridView1.Rows[15].Cells[3].Value = Common.GetSum(row, 10, 14, 3);
+
+
+
+            // All Grand Total
+            dataGridView1.Rows[16].Cells[2].Value = Common.ConvertToDecimal(dataGridView1.Rows[8].Cells[2].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[15].Cells[2].Value.ToString());
+            dataGridView1.Rows[16].Cells[3].Value = Common.ConvertToDecimal(dataGridView1.Rows[8].Cells[3].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[15].Cells[3].Value.ToString());
+
+
+            #endregion
+
+        }
+
         private void DepotwiseOperationalDataFCMSCluster_busesTrafficIncome_Load(object sender, EventArgs e)
         {
 
             ShowData();
        
+        }
+
+        private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            CalcalculateTotal();
         }
     }
 }
