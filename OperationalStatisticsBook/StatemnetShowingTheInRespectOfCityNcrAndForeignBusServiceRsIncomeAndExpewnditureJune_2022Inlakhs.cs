@@ -242,5 +242,18 @@ namespace OperationalStatisticsBook
             rptStatementShowingRespectCityNCRForeignBusService objFrm = new rptStatementShowingRespectCityNCRForeignBusService(OsbId, Year, Month, finYear, MonthName);
             objFrm.Show();
         }
+
+        void CalculateFormula()
+        {
+
+            
+
+        }
+
+
+        private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            CalculateFormula();
+        }
     }
 }

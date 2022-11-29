@@ -73,8 +73,10 @@ namespace OperationalStatisticsBook
 
 
                 Common.SetRowNonEditable(dataGridView1, 37);
+                Common.SetRowNonEditable(dataGridView1, 38);
                 Common.SetRowNonEditable(dataGridView1, 41);
                 Common.SetRowNonEditable(dataGridView1, 42);
+                Common.SetRowNonEditable(dataGridView1, 43);
                 Common.SetRowNonEditable(dataGridView1, 45);
 
                 Common.SetColumnNonEditable(dataGridView1, 11);
@@ -309,8 +311,12 @@ namespace OperationalStatisticsBook
 
                 if (i > 2)
                 {
-                    dataGridView1.Rows[i].Cells[6].Value = Common.ConvertToDecimal(row[i].Cells[2].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[3].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[4].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[5].Value.ToString());
-                    dataGridView1.Rows[i].Cells[11].Value = Common.ConvertToDecimal(row[i].Cells[7].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[8].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[9].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[10].Value.ToString());
+                    if (i != 38 && i != 43)
+                    {
+                        dataGridView1.Rows[i].Cells[6].Value = Common.ConvertToDecimal(row[i].Cells[2].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[3].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[4].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[5].Value.ToString());
+                        dataGridView1.Rows[i].Cells[11].Value = Common.ConvertToDecimal(row[i].Cells[7].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[8].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[9].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[10].Value.ToString());
+
+                    }
                 }
             }
             #endregion

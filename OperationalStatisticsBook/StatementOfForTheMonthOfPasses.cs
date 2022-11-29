@@ -69,18 +69,10 @@ namespace OperationalStatisticsBook
                 {
                     dataGridView1.DataSource = BindStatementOfForTheMonthOfPasses();
                 }
-                Common.SetRowNonEditable(dataGridView1,0);
-                Common.SetRowNonEditable(dataGridView1,8);
-                Common.SetRowNonEditable(dataGridView1,17);
-                Common.SetRowNonEditable(dataGridView1,30);
-                Common.SetRowNonEditable(dataGridView1,43);
-                Common.SetRowNonEditable(dataGridView1,50);
-                Common.SetRowNonEditable(dataGridView1,59);
-                Common.SetRowNonEditable(dataGridView1,72);
-                Common.SetRowNonEditable(dataGridView1,85);
-                Common.SetRowNonEditable(dataGridView1,98);
+                
               //  Common.SetColumnNonEditable(dataGridView1,4);
                 CalcalculateTotal();
+                SetNonEditable();
             }
             catch (Exception ex)
             {
@@ -240,6 +232,7 @@ namespace OperationalStatisticsBook
         {
             DeleteExisitingTableRecord("tbl_StatementOfForTheMonthOfPasses", OsbId);
             dataGridView1.DataSource = BindStatementOfForTheMonthOfPasses();
+            SetNonEditable();
             MessageBox.Show("Done");
         }
 
@@ -308,14 +301,31 @@ namespace OperationalStatisticsBook
 
                 if (i >=1)
                 {
-                   // dataGridView1.Rows[i].Cells[4].Value = Common.ConvertToDecimal(row[i].Cells[3].Value.ToString()) > 0 ? Math.Round((Common.ConvertToDecimal(row[i].Cells[2].Value.ToString()) * Common.ConvertToDecimal(row[i].Cells[3].Value.ToString()))) : 0;
-                    dataGridView1.Rows[i].Cells[4].Value = Common.ConvertToDecimal(row[i].Cells[2].Value.ToString()) * Common.ConvertToDecimal(row[i].Cells[3].Value.ToString());
+                    if (i != 8 && i != 17 && i != 30 && i != 43 && i != 50 && i != 59 && i != 72 && i != 85 && i != 98)
+                    {
+                        // dataGridView1.Rows[i].Cells[4].Value = Common.ConvertToDecimal(row[i].Cells[3].Value.ToString()) > 0 ? Math.Round((Common.ConvertToDecimal(row[i].Cells[2].Value.ToString()) * Common.ConvertToDecimal(row[i].Cells[3].Value.ToString()))) : 0;
+                        dataGridView1.Rows[i].Cells[4].Value = Common.ConvertToDecimal(row[i].Cells[2].Value.ToString()) * Common.ConvertToDecimal(row[i].Cells[3].Value.ToString());
+
+                    }
                 }
             }
             #endregion
 
         }
 
+        void SetNonEditable()
+        {
+            Common.SetRowNonEditable(dataGridView1, 0);
+            Common.SetRowNonEditable(dataGridView1, 8);
+            Common.SetRowNonEditable(dataGridView1, 17);
+            Common.SetRowNonEditable(dataGridView1, 30);
+            Common.SetRowNonEditable(dataGridView1, 43);
+            Common.SetRowNonEditable(dataGridView1, 50);
+            Common.SetRowNonEditable(dataGridView1, 59);
+            Common.SetRowNonEditable(dataGridView1, 72);
+            Common.SetRowNonEditable(dataGridView1, 85);
+            Common.SetRowNonEditable(dataGridView1, 98);
+        }
         private void Print_ReportOnClick(object sender, EventArgs e)
         {
             rptStatementOfForTheMonthOfPasses objFrm = new rptStatementOfForTheMonthOfPasses(OsbId, Year, Month, finYear, MonthName);

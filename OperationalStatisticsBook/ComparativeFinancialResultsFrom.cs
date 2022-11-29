@@ -115,17 +115,14 @@ namespace OperationalStatisticsBook
             table.Columns.Add("Particulars", typeof(string));
 
 
-            table.Columns.Add(Year + "-" + previousYear, typeof(string));
-            table.Columns.Add(Year + "- " + previousYear, typeof(string));
-            // table.Columns.Add("2018-19 ", typeof(string));
-            // table.Columns.Add("2018-19", typeof(string));
-            table.Columns.Add(previousYear + "-" + previousYear1, typeof(string));
-            table.Columns.Add(previousYear + "-  " + previousYear1, typeof(string));
-            // table.Columns.Add("2019-20    ", typeof(string));
-            //table.Columns.Add("2020-21", typeof(string));
-            //table.Columns.Add("2020-21  ", typeof(string));
-            table.Columns.Add(previousYear1 + "-" + previousYear2, typeof(string));
-            table.Columns.Add(previousYear1 + "-  " + previousYear2, typeof(string));
+            table.Columns.Add(GlobalMaster.FinMaster[4].FinVal, typeof(string));
+            table.Columns.Add(GlobalMaster.FinMaster[4].FinVal+" ", typeof(string));
+     
+            table.Columns.Add(GlobalMaster.FinMaster[3].FinVal, typeof(string));
+            table.Columns.Add(GlobalMaster.FinMaster[3].FinVal+" ", typeof(string));
+        
+            table.Columns.Add(GlobalMaster.FinMaster[2].FinVal, typeof(string));
+            table.Columns.Add(GlobalMaster.FinMaster[2].FinVal+" ", typeof(string));
 
             //Row here.......
 

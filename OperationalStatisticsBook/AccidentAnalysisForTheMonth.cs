@@ -54,6 +54,14 @@ namespace OperationalStatisticsBook
                     dataGridView1.DataSource = BindAccidentAnalysisForTheMonth();
                 }
 
+                Common.SetRowNonEditable(dataGridView1, 34);
+                Common.SetRowNonEditable(dataGridView1, 35);
+                Common.SetRowNonEditable(dataGridView1, 38);
+                Common.SetRowNonEditable(dataGridView1, 39);
+                Common.SetRowNonEditable(dataGridView1, 42);
+                Common.SetRowNonEditable(dataGridView1, 40);
+
+
                 Common.SetColumnNonEditable(dataGridView1, 6);
                 Common.SetColumnNonEditable(dataGridView1, 11);
                 Common.SetColumnNonEditable(dataGridView1, 16);
@@ -427,20 +435,24 @@ namespace OperationalStatisticsBook
 
                 if (i >= 0)
                 {
-                    dataGridView1.Rows[i].Cells[6].Value = Common.ConvertToDecimal(row[i].Cells[2].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[3].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[4].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[5].Value.ToString());
-                    dataGridView1.Rows[i].Cells[11].Value = Common.ConvertToDecimal(row[i].Cells[7].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[8].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[9].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[10].Value.ToString());
+                    if (i != 35 && i != 40)
+                    {
+                        dataGridView1.Rows[i].Cells[6].Value = Common.ConvertToDecimal(row[i].Cells[2].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[3].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[4].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[5].Value.ToString());
+                        dataGridView1.Rows[i].Cells[11].Value = Common.ConvertToDecimal(row[i].Cells[7].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[8].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[9].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[10].Value.ToString());
 
-                    dataGridView1.Rows[i].Cells[16].Value = Common.ConvertToDecimal(row[i].Cells[12].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[13].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[14].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[15].Value.ToString());
+                        dataGridView1.Rows[i].Cells[16].Value = Common.ConvertToDecimal(row[i].Cells[12].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[13].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[14].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[15].Value.ToString());
 
-                    dataGridView1.Rows[i].Cells[17].Value = Common.ConvertToDecimal(row[i].Cells[2].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[7].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[12].Value.ToString());
-                    dataGridView1.Rows[i].Cells[18].Value = Common.ConvertToDecimal(row[i].Cells[3].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[8].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[13].Value.ToString());
-                    dataGridView1.Rows[i].Cells[19].Value = Common.ConvertToDecimal(row[i].Cells[4].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[9].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[14].Value.ToString());
-                    dataGridView1.Rows[i].Cells[20].Value = Common.ConvertToDecimal(row[i].Cells[5].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[10].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[15].Value.ToString());
+                        dataGridView1.Rows[i].Cells[17].Value = Common.ConvertToDecimal(row[i].Cells[2].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[7].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[12].Value.ToString());
+                        dataGridView1.Rows[i].Cells[18].Value = Common.ConvertToDecimal(row[i].Cells[3].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[8].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[13].Value.ToString());
+                        dataGridView1.Rows[i].Cells[19].Value = Common.ConvertToDecimal(row[i].Cells[4].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[9].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[14].Value.ToString());
+                        dataGridView1.Rows[i].Cells[20].Value = Common.ConvertToDecimal(row[i].Cells[5].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[10].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[15].Value.ToString());
 
 
-                    dataGridView1.Rows[i].Cells[21].Value = Common.ConvertToDecimal(row[i].Cells[17].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[18].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[19].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[20].Value.ToString());
-                    dataGridView1.Rows[i].Cells[31].Value = Common.ConvertToDecimal(row[i].Cells[27].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[28].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[29].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[30].Value.ToString());
-                    dataGridView1.Rows[i].Cells[36].Value = Common.ConvertToDecimal(row[i].Cells[32].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[33].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[34].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[35].Value.ToString());
+                        dataGridView1.Rows[i].Cells[21].Value = Common.ConvertToDecimal(row[i].Cells[17].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[18].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[19].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[20].Value.ToString());
+                        dataGridView1.Rows[i].Cells[31].Value = Common.ConvertToDecimal(row[i].Cells[27].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[28].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[29].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[30].Value.ToString());
+                        dataGridView1.Rows[i].Cells[36].Value = Common.ConvertToDecimal(row[i].Cells[32].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[33].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[34].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[35].Value.ToString());
+
+                    }
                 }
             }
             #endregion
