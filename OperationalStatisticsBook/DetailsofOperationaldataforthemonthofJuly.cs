@@ -148,27 +148,8 @@ namespace OperationalStatisticsBook
                 {
                     dataGridView1.DataSource = BindDetailsofOperationaldataforthemonthofJuly();
                 }
-                Common.SetRowNonEditable(dataGridView1, 17);
-                Common.SetRowNonEditable(dataGridView1, 21);
-                Common.SetRowNonEditable(dataGridView1, 24);
-                Common.SetRowNonEditable(dataGridView1, 26);
-                Common.SetRowNonEditable(dataGridView1, 27);
-                Common.SetRowNonEditable(dataGridView1, 30);
-                Common.SetRowNonEditable(dataGridView1, 34);
-                Common.SetRowNonEditable(dataGridView1, 37);
-                Common.SetRowNonEditable(dataGridView1, 39);
 
-                Common.SetColumnNonEditable(dataGridView1,1);
-                Common.SetColumnNonEditable(dataGridView1,2);
-                Common.SetColumnNonEditable(dataGridView1,6);
-                Common.SetColumnNonEditable(dataGridView1,9);
-                Common.SetColumnNonEditable(dataGridView1,10);
-                Common.SetColumnNonEditable(dataGridView1,11);
-                Common.SetColumnNonEditable(dataGridView1,12);
-                Common.SetColumnNonEditable(dataGridView1,13);
-                Common.SetColumnNonEditable(dataGridView1,15);
-                Common.SetColumnNonEditable(dataGridView1,18);
-              
+                NonEditableRowAndColumn();
                 CalcalculateTotal();
             }
             catch (Exception ex)
@@ -228,6 +209,7 @@ namespace OperationalStatisticsBook
         {
             dataGridView1.DataSource = BindDetailsofOperationaldataforthemonthofJuly();
             DeleteExisitingTableRecord("tbl_RoutesOperatedByDtc", OsbId);
+            NonEditableRowAndColumn();
             MessageBox.Show("Done");
         }
         void CalcalculateTotal()
@@ -1004,6 +986,30 @@ namespace OperationalStatisticsBook
         private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             CalcalculateTotal();
+        }
+
+        public void NonEditableRowAndColumn()
+        {
+            Common.SetRowNonEditable(dataGridView1, 17);
+            Common.SetRowNonEditable(dataGridView1, 21);
+            Common.SetRowNonEditable(dataGridView1, 24);
+            Common.SetRowNonEditable(dataGridView1, 26);
+            Common.SetRowNonEditable(dataGridView1, 27);
+            Common.SetRowNonEditable(dataGridView1, 30);
+            Common.SetRowNonEditable(dataGridView1, 34);
+            Common.SetRowNonEditable(dataGridView1, 37);
+            Common.SetRowNonEditable(dataGridView1, 39);
+
+            Common.SetColumnNonEditable(dataGridView1, 1);
+            Common.SetColumnNonEditable(dataGridView1, 2);
+            Common.SetColumnNonEditable(dataGridView1, 6);
+            Common.SetColumnNonEditable(dataGridView1, 9);
+            Common.SetColumnNonEditable(dataGridView1, 10);
+            Common.SetColumnNonEditable(dataGridView1, 11);
+            Common.SetColumnNonEditable(dataGridView1, 12);
+            Common.SetColumnNonEditable(dataGridView1, 13);
+            Common.SetColumnNonEditable(dataGridView1, 15);
+            Common.SetColumnNonEditable(dataGridView1, 18);
         }
     }
 }
