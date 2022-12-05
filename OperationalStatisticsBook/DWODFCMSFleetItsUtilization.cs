@@ -59,9 +59,8 @@ namespace OperationalStatisticsBook
 
           //  table.Rows.Add("1", "2", "3", "4", "5", "6", "7");
             table.Rows.Add("Non AC City", "", "", "", "", "", "");
-            table.Rows.Add("1", "Non AC City", "0", "0", "0", "0", "0");
+            table.Rows.Add("1", "Bawana Sec.1", "0", "0", "0", "0", "0");
             table.Rows.Add("2", "Rani Khera-1 ", "0", "0", "0", "0", "0");
-            table.Rows.Add("3", "Rani Khera-2", "0", "0", "0", "0", "0");
             table.Rows.Add("3", "Rani Khera-2", "0", "0", "0", "0", "0");
             table.Rows.Add("4", "Rani Khera-3", "0", "0", "0", "0", "0");
             table.Rows.Add("5", "Kharkhari Nahar", "0", "0", "0", "0", "0");
@@ -93,41 +92,40 @@ namespace OperationalStatisticsBook
 
             };
             DataTable dt = Common.ExecuteProcedure("sp_DWODFCMSFleetItsUtilization", param);
-            String[,] param1 = new string[,]
-                    {
-                {"@Year",Year.ToString().Trim()},
-                {"@Month",Month.ToString().Trim()},
-            };
-            DataTable dt1 = Common.ExecuteProcedure("sp_GetAllFleetNUtilizations", param1);
+            //String[,] param1 = new string[,]
+            //        {
+            //    {"@Year",Year.ToString().Trim()},
+            //    {"@Month",Month.ToString().Trim()},
+            //};
+            //DataTable dt1 = Common.ExecuteProcedure("sp_GetAllFleetNUtilizations", param1);
 
             if (dt.Rows.Count > 0)
             {
                 dataGridView1.DataSource = dt;
                 Save.BackColor = Color.Green;
             }
-            else if (dt1.Rows.Count > 0)
-            {
-                dataGridView1.DataSource = dt1;
+            //else if (dt1.Rows.Count > 0)
+            //{
+            //    dataGridView1.DataSource = dt1;
 
-            }
+            //}
             else
             {
                 dataGridView1.DataSource = BindDWODFCMSFleetItsUtilization();
             }
-            Common.SetRowNonEditable(dataGridView1,0);
-            Common.SetRowNonEditable(dataGridView1,8);
-            Common.SetRowNonEditable(dataGridView1,9);
-            Common.SetRowNonEditable(dataGridView1,16);
-            Common.SetRowNonEditable(dataGridView1,17);
-            Common.SetColumnNonEditable(dataGridView1,6);
+        
             CalcalculateTotal();
+            NonEditableRowAndColumn();
 
         }
     
 
         private void ResetOnClick(object sender, EventArgs e)
         {
+
+            DeleteExisitingTableRecord("tbl_DWODFCMSFleetItsUtilization", OsbId);
             dataGridView1.DataSource = BindDWODFCMSFleetItsUtilization();
+            NonEditableRowAndColumn();
             MessageBox.Show("Done");
 
         }
@@ -179,24 +177,24 @@ namespace OperationalStatisticsBook
             #region Calculating_VerticalSum
 
 
-            dataGridView1.Rows[9].Cells[2].Value = Common.GetSum(row, 1, 8, 2);
-            dataGridView1.Rows[9].Cells[3].Value = Common.GetSum(row, 1, 8, 3);
-            dataGridView1.Rows[9].Cells[4].Value = Common.GetSum(row, 1, 8, 4);
-            dataGridView1.Rows[9].Cells[5].Value = Common.GetSum(row, 1, 8, 5);
+            dataGridView1.Rows[8].Cells[2].Value = Common.GetSum(row, 1,7, 2);
+            dataGridView1.Rows[8].Cells[3].Value = Common.GetSum(row, 1,7, 3);
+            dataGridView1.Rows[8].Cells[4].Value = Common.GetSum(row, 1,7, 4);
+            dataGridView1.Rows[8].Cells[5].Value = Common.GetSum(row, 1,7, 5);
 
 
-            dataGridView1.Rows[16].Cells[2].Value = Common.GetSum(row, 11, 15, 2);
-            dataGridView1.Rows[16].Cells[3].Value = Common.GetSum(row, 11, 15, 3);
-            dataGridView1.Rows[16].Cells[4].Value = Common.GetSum(row, 11, 15, 4);
-            dataGridView1.Rows[16].Cells[5].Value = Common.GetSum(row, 11, 15, 5);
+            dataGridView1.Rows[15].Cells[2].Value = Common.GetSum(row, 10, 14, 2);
+            dataGridView1.Rows[15].Cells[3].Value = Common.GetSum(row, 10, 14, 3);
+            dataGridView1.Rows[15].Cells[4].Value = Common.GetSum(row, 10, 14, 4);
+            dataGridView1.Rows[15].Cells[5].Value = Common.GetSum(row, 10, 14, 5);
 
 
 
             // All Grand Total
-            dataGridView1.Rows[17].Cells[2].Value = Common.ConvertToDecimal(dataGridView1.Rows[9].Cells[2].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[16].Cells[2].Value.ToString());
-            dataGridView1.Rows[17].Cells[3].Value = Common.ConvertToDecimal(dataGridView1.Rows[9].Cells[3].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[16].Cells[3].Value.ToString());
-            dataGridView1.Rows[17].Cells[4].Value = Common.ConvertToDecimal(dataGridView1.Rows[9].Cells[4].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[16].Cells[4].Value.ToString());
-            dataGridView1.Rows[17].Cells[5].Value = Common.ConvertToDecimal(dataGridView1.Rows[9].Cells[5].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[16].Cells[5].Value.ToString());
+            dataGridView1.Rows[16].Cells[2].Value = Common.ConvertToDecimal(dataGridView1.Rows[8].Cells[2].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[15].Cells[2].Value.ToString());
+            dataGridView1.Rows[16].Cells[3].Value = Common.ConvertToDecimal(dataGridView1.Rows[8].Cells[3].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[15].Cells[3].Value.ToString());
+            dataGridView1.Rows[16].Cells[4].Value = Common.ConvertToDecimal(dataGridView1.Rows[8].Cells[4].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[15].Cells[4].Value.ToString());
+            dataGridView1.Rows[16].Cells[5].Value = Common.ConvertToDecimal(dataGridView1.Rows[8].Cells[5].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[15].Cells[5].Value.ToString());
 
 
 
@@ -207,8 +205,13 @@ namespace OperationalStatisticsBook
             {
 
                 if (i > 0)
-                {                  
-                    dataGridView1.Rows[i].Cells[6].Value = Common.ConvertToDecimal(row[i].Cells[3].Value.ToString()) > 0 ? Math.Round((Common.ConvertToDecimal(row[i].Cells[5].Value.ToString()) / Common.ConvertToDecimal(row[i].Cells[3].Value.ToString())) * 100,2):0;
+                {
+                    if (i !=0 && i !=9 )
+                    {
+
+                        dataGridView1.Rows[i].Cells[6].Value = Common.ConvertToDecimal(row[i].Cells[3].Value.ToString()) > 0 ? Math.Round((Common.ConvertToDecimal(row[i].Cells[5].Value.ToString()) / Common.ConvertToDecimal(row[i].Cells[3].Value.ToString())) * 100, 2) : 0;
+
+                    }
                 }
             }
             #endregion
@@ -226,6 +229,15 @@ namespace OperationalStatisticsBook
         private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             CalcalculateTotal();
+        }
+        void NonEditableRowAndColumn()
+        {
+            Common.SetRowNonEditable(dataGridView1, 0);
+            Common.SetRowNonEditable(dataGridView1, 8);
+            Common.SetRowNonEditable(dataGridView1, 9);
+            Common.SetRowNonEditable(dataGridView1, 15);
+            Common.SetRowNonEditable(dataGridView1, 16);
+            Common.SetColumnNonEditable(dataGridView1, 6);
         }
     }
 }

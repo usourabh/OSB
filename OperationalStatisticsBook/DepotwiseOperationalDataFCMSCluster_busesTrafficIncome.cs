@@ -41,33 +41,30 @@ namespace OperationalStatisticsBook
                    
             };
             DataTable dt = Common.ExecuteProcedure("sp_rptDepotwiseOperationalDataFCMSCluster_busesTrafficIncome", param);
-            String[,] param1 = new string[,]
-                    {
-                {"@Year",Year.ToString().Trim()},
-                {"@Month",Month.ToString().Trim()},
-            };
-            DataTable dt1 = Common.ExecuteProcedure("sp_GetAllTrafficIncomeData", param1);
+            //String[,] param1 = new string[,]
+            //        {
+            //    {"@Year",Year.ToString().Trim()},
+            //    {"@Month",Month.ToString().Trim()},
+            //};
+           // DataTable dt1 = Common.ExecuteProcedure("sp_GetAllTrafficIncomeData", param1);
 
             if (dt.Rows.Count > 0)
             {
                 dataGridView1.DataSource = dt;
                 Save.BackColor = Color.Green;
             }
-            else if (dt1.Rows.Count > 0)
-            {
-                dataGridView1.DataSource = dt1;
+            //else if (dt1.Rows.Count > 0)
+            //{
+            //    dataGridView1.DataSource = dt1;
 
-            }
+            //}
             else
             {
                 dataGridView1.DataSource = BindDepotwiseOperationalDataFCMSCluster_busesTrafficIncome();
             }
-            Common.SetRowNonEditable(dataGridView1, 0);
-            Common.SetRowNonEditable(dataGridView1, 9);
-            Common.SetRowNonEditable(dataGridView1, 10);
-            Common.SetRowNonEditable(dataGridView1, 15);
-            Common.SetRowNonEditable(dataGridView1, 16);
+        
             CalcalculateTotal();
+            NonEditableRowAndColumn();
         }
 
         int DeleteExisitingTableRecord(string TableName, int OsbId)
@@ -122,6 +119,7 @@ namespace OperationalStatisticsBook
         {
             DeleteExisitingTableRecord("tbl_DepotwiseOperationalDataFCMSCluster_busesTrafficIncome", OsbId);
             dataGridView1.DataSource = BindDepotwiseOperationalDataFCMSCluster_busesTrafficIncome();
+            NonEditableRowAndColumn();
             MessageBox.Show("Done");
 
         }
@@ -178,6 +176,50 @@ namespace OperationalStatisticsBook
 
         void CalcalculateTotal()
         {
+
+            int MonthLastDay = 0;
+            DateTime currentDate = new DateTime(Year, Month, 01);
+            String previousMonthName = currentDate.ToString("MMMM");
+            switch (previousMonthName)
+            {
+                case "January":
+                    MonthLastDay = 31;
+                    break;
+                case "February":
+                    MonthLastDay = 28;
+                    break;
+                case "March":
+                    MonthLastDay = 31;
+                    break;
+                case "April":
+                    MonthLastDay = 30;
+                    break;
+                case "May":
+                    MonthLastDay = 31;
+                    break;
+                case "June":
+                    MonthLastDay = 30;
+                    break;
+                case "July":
+                    MonthLastDay = 31;
+                    break;
+                case "August":
+                    MonthLastDay = 31;
+                    break;
+                case "September":
+                    MonthLastDay = 30;
+                    break;
+                case "October":
+                    MonthLastDay = 31;
+                    break;
+                case "November":
+                    MonthLastDay = 30;
+                    break;
+                case "December":
+                    MonthLastDay = 31;
+                    break;
+            };
+
             var row = dataGridView1.Rows;
 
             #region Calculating_VerticalSum
@@ -197,6 +239,25 @@ namespace OperationalStatisticsBook
             dataGridView1.Rows[16].Cells[3].Value = Common.ConvertToDecimal(dataGridView1.Rows[8].Cells[3].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[15].Cells[3].Value.ToString());
 
 
+            #region Calculating_HorizontalSum
+            for (int i = 0; i < (row.Count - 1); i++)
+            {
+
+                if (i > 0)
+                {
+                    if (i != 0 && i != 9)
+                    {
+
+                        dataGridView1.Rows[i].Cells[3].Value = Math.Round((Common.ConvertToDecimal(row[i].Cells[2].Value.ToString()) / MonthLastDay));
+                 
+
+                    }
+                }
+            }
+            #endregion
+
+     
+
             #endregion
 
         }
@@ -211,6 +272,14 @@ namespace OperationalStatisticsBook
         private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             CalcalculateTotal();
+        }
+        void NonEditableRowAndColumn()
+        {
+            Common.SetRowNonEditable(dataGridView1, 0);
+            Common.SetRowNonEditable(dataGridView1, 9);
+            Common.SetRowNonEditable(dataGridView1, 8);
+            Common.SetRowNonEditable(dataGridView1, 15);
+            Common.SetRowNonEditable(dataGridView1, 16);
         }
     }
 }
