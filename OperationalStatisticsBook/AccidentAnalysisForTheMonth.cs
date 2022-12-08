@@ -204,7 +204,7 @@ namespace OperationalStatisticsBook
 
         private void SaveOnClick(object sender, EventArgs e)
         {
-            DeleteExisitingTableRecord("[rpt].[tbl_AccidentAnalysisForTheMonth]", OsbId);
+            DeleteExisitingTableRecord("tbl_AccidentAnalysisForTheMonth", OsbId);
 
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
