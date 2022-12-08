@@ -52,6 +52,7 @@ namespace OperationalStatisticsBook
                 {
                     dataGridView1.DataSource = BindAccidentAnalysisOtherPartyInvolvment();
                 }
+                NonEditableRowAndColumn();
                 CalcalculateTotal();
             }
             catch (Exception ex)
@@ -142,6 +143,7 @@ namespace OperationalStatisticsBook
         {
             DeleteExisitingdtRecord("tbl_AccidentAnalysisOtherPartyInvolvment", OsbId);
             dataGridView1.DataSource = BindAccidentAnalysisOtherPartyInvolvment();
+            NonEditableRowAndColumn();
             MessageBox.Show("Done");
         }
 
@@ -232,7 +234,16 @@ namespace OperationalStatisticsBook
 
         private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
+           
             CalcalculateTotal();
+        }
+
+        public void NonEditableRowAndColumn()
+        {
+            Common.SetRowNonEditable(dataGridView1, 18);
+
+            Common.SetColumnNonEditable(dataGridView1, 5);
+            Common.SetColumnNonEditable(dataGridView1, 9);
         }
     }
 }

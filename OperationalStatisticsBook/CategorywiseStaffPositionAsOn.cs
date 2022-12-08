@@ -51,8 +51,9 @@ namespace OperationalStatisticsBook
                 {
                     dataGridView1.DataSource = BindCategorywiseStaffPositionAsOn();
                 }
-               
+                NonEditableRowAndColumn();
                 CalcalculateTotal();
+
             }
             catch (Exception ex)
             {
@@ -186,6 +187,7 @@ namespace OperationalStatisticsBook
         {
             DeleteExisitingTableRecord("tbl_CategorywiseStaffPositionAsOn", OsbId);
             dataGridView1.DataSource = BindCategorywiseStaffPositionAsOn();
+            NonEditableRowAndColumn();
             MessageBox.Show("Done");
         }
 
@@ -231,6 +233,7 @@ namespace OperationalStatisticsBook
         {
             DeleteExisitingTableRecord("tbl_CategorywiseStaffPositionAsOn", OsbId);
             dataGridView1.DataSource = BindCategorywiseStaffPositionAsOn();
+           // NonEditableRowAndColumn();
             MessageBox.Show("Done");
         }
         private void CategorywiseStaffPositionAsOn_Load(object sender, EventArgs e)
@@ -368,6 +371,19 @@ namespace OperationalStatisticsBook
         private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             CalcalculateTotal();
+        }
+        public void NonEditableRowAndColumn()
+        {
+            Common.SetRowNonEditable(dataGridView1, 13);
+            Common.SetRowNonEditable(dataGridView1, 21);
+            Common.SetRowNonEditable(dataGridView1, 31);
+            Common.SetRowNonEditable(dataGridView1, 45);
+            Common.SetRowNonEditable(dataGridView1, 63);
+            Common.SetRowNonEditable(dataGridView1, 64);
+
+            Common.SetColumnNonEditable(dataGridView1,4);
+            Common.SetColumnNonEditable(dataGridView1,7);
+            Common.SetColumnNonEditable(dataGridView1,12);
         }
     }
 }

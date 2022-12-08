@@ -69,35 +69,8 @@ namespace OperationalStatisticsBook
                 {
                     dataGridView1.DataSource = BindStatementShowingRegionWiseOperationalDataForTheMonth();
                 }
-             
-                Common.SetRowNonEditable(dataGridView1,5);
-                Common.SetRowNonEditable(dataGridView1,7);
-                Common.SetRowNonEditable(dataGridView1,11);
-                Common.SetRowNonEditable(dataGridView1,15);
-                Common.SetRowNonEditable(dataGridView1,18);
-                Common.SetRowNonEditable(dataGridView1,19);
-                Common.SetRowNonEditable(dataGridView1,16);
-                Common.SetRowNonEditable(dataGridView1,41);
-                Common.SetRowNonEditable(dataGridView1,31);
-                Common.SetRowNonEditable(dataGridView1,33);
-                Common.SetRowNonEditable(dataGridView1,40);
-                Common.SetRowNonEditable(dataGridView1,28);
-                Common.SetRowNonEditable(dataGridView1,42);
-                Common.SetRowNonEditable(dataGridView1,44);
-                Common.SetRowNonEditable(dataGridView1,10);
-                Common.SetRowNonEditable(dataGridView1,14);
-                Common.SetRowNonEditable(dataGridView1,24);
-                Common.SetRowNonEditable(dataGridView1,26);
-                Common.SetRowNonEditable(dataGridView1,37);
-                Common.SetRowNonEditable(dataGridView1,39);
-               
-                Common.SetRowNonEditable(dataGridView1,21);
-                Common.SetRowNonEditable(dataGridView1,27);
-                Common.SetRowNonEditable(dataGridView1,30);
-                Common.SetRowNonEditable(dataGridView1,34);
-                Common.SetRowNonEditable(dataGridView1,17);
 
-                Common.SetColumnNonEditable(dataGridView1,7);
+                NonEditableRowAndColumn();
                 CalcalculateTotal();
             }
             catch (Exception ex)
@@ -180,6 +153,7 @@ namespace OperationalStatisticsBook
         {
             DeleteExisitingTableRecord("tbl_StatementShowingRegionWiseOperationalDataForTheMonth", OsbId);
             dataGridView1.DataSource = BindStatementShowingRegionWiseOperationalDataForTheMonth();
+            NonEditableRowAndColumn();
             MessageBox.Show("Done");
         }
 
@@ -516,6 +490,37 @@ namespace OperationalStatisticsBook
         private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             CalcalculateTotal();
+        }
+        public void NonEditableRowAndColumn()
+        {
+            Common.SetRowNonEditable(dataGridView1, 5);
+            Common.SetRowNonEditable(dataGridView1, 7);
+            Common.SetRowNonEditable(dataGridView1, 11);
+            Common.SetRowNonEditable(dataGridView1, 15);
+            Common.SetRowNonEditable(dataGridView1, 18);
+            Common.SetRowNonEditable(dataGridView1, 19);
+            Common.SetRowNonEditable(dataGridView1, 16);
+            Common.SetRowNonEditable(dataGridView1, 41);
+            Common.SetRowNonEditable(dataGridView1, 31);
+            Common.SetRowNonEditable(dataGridView1, 33);
+            Common.SetRowNonEditable(dataGridView1, 40);
+            Common.SetRowNonEditable(dataGridView1, 28);
+            Common.SetRowNonEditable(dataGridView1, 42);
+            Common.SetRowNonEditable(dataGridView1, 44);
+            Common.SetRowNonEditable(dataGridView1, 10);
+            Common.SetRowNonEditable(dataGridView1, 14);
+            Common.SetRowNonEditable(dataGridView1, 24);
+            Common.SetRowNonEditable(dataGridView1, 26);
+            Common.SetRowNonEditable(dataGridView1, 37);
+            Common.SetRowNonEditable(dataGridView1, 39);
+
+            Common.SetRowNonEditable(dataGridView1, 21);
+            Common.SetRowNonEditable(dataGridView1, 27);
+            Common.SetRowNonEditable(dataGridView1, 30);
+            Common.SetRowNonEditable(dataGridView1, 34);
+            Common.SetRowNonEditable(dataGridView1, 17);
+
+            Common.SetColumnNonEditable(dataGridView1, 7);
         }
     }
 }

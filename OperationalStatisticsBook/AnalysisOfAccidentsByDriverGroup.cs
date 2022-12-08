@@ -91,6 +91,7 @@ namespace OperationalStatisticsBook
         {
             DeleteExisitingTableRecord("tbl_AnalysisOfAccidentsByDriverGroup", OsbId);
             dataGridView1.DataSource = BindAnalysisOfAccidentsByDriverGroup();
+            NonEditableRowAndColumn();
             MessageBox.Show("Done");
         }
 
@@ -167,6 +168,7 @@ namespace OperationalStatisticsBook
                 {
                     dataGridView1.DataSource = BindAnalysisOfAccidentsByDriverGroup();
                 }
+                NonEditableRowAndColumn();
                 CalcalculateTotal();
             }
             catch (Exception ex)
@@ -233,6 +235,13 @@ namespace OperationalStatisticsBook
         private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             CalcalculateTotal();
+        }
+        public void NonEditableRowAndColumn()
+        {
+            Common.SetRowNonEditable(dataGridView1, 8);
+
+            Common.SetColumnNonEditable(dataGridView1, 5);
+            Common.SetColumnNonEditable(dataGridView1, 9);
         }
     }
 }

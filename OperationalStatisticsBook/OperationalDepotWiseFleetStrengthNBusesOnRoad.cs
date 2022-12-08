@@ -68,8 +68,9 @@ namespace OperationalStatisticsBook
                 {
                     dataGridView1.DataSource = BindOperationalDepotWiseFleetStrengthNBusesOnRoad();
                 }
-                Common.SetRowNonEditable(dataGridView1,37);
+                NonEditableRowAndcolumn();
                 CalcalculateTotal();
+            
             }
             catch (Exception ex)
             {
@@ -142,8 +143,9 @@ namespace OperationalStatisticsBook
 
         private void ResetOnClick(object sender, EventArgs e)
         {
-          
+            DeleteExisitingTableRecord("tbl_OperationalDepotWiseFleetStrengthNBusesOnRoad", OsbId);
             dataGridView1.DataSource = BindOperationalDepotWiseFleetStrengthNBusesOnRoad();
+            NonEditableRowAndcolumn();
             MessageBox.Show("Done");
         }
 
@@ -190,6 +192,7 @@ namespace OperationalStatisticsBook
         {
             DeleteExisitingTableRecord("tbl_OperationalDepotWiseFleetStrengthNBusesOnRoad", OsbId);
             dataGridView1.DataSource = BindOperationalDepotWiseFleetStrengthNBusesOnRoad();
+         //   NonEditableRowAndcolumn();
             MessageBox.Show("Done");
         }
         private void OperationalDepotWiseFleetStrengthNBusesOnRoad_Load(object sender, EventArgs e)
@@ -231,6 +234,10 @@ namespace OperationalStatisticsBook
         private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             CalcalculateTotal();
+        }
+        public void NonEditableRowAndcolumn()
+        {
+            Common.SetRowNonEditable(dataGridView1, 37);
         }
     }
 }
