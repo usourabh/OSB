@@ -55,6 +55,7 @@ namespace OperationalStatisticsBook
                 MessageBox.Show("Pls Select Fin Year and Month");
 
         }
+
         void BindFinYear(string year, string month)
         {
 
@@ -78,6 +79,7 @@ namespace OperationalStatisticsBook
             }
 
         }
+
         int GetOsbId(string FinYear, string _month, int _year)
         {
             int i = 0;
@@ -101,6 +103,7 @@ namespace OperationalStatisticsBook
 
             return i;
         }
+
         void GetFinMaster(string Finyear)
         {
 
@@ -124,6 +127,7 @@ namespace OperationalStatisticsBook
             }
 
         }
+
         DataTable BindMasterData()
         {
             DataTable dt = new DataTable();
@@ -184,6 +188,7 @@ namespace OperationalStatisticsBook
             return dt;
 
         }
+
         private void MainDashboard_Load(object sender, EventArgs e)
         {
             DataGridViewButtonColumn button = new DataGridViewButtonColumn();
@@ -498,8 +503,6 @@ namespace OperationalStatisticsBook
             else
                 MessageBox.Show("Pls Select Fin Year and Month");
         }
-
-
 
         private void GetSinglePagePDF()
         {
