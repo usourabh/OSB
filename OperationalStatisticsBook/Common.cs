@@ -115,5 +115,8 @@ namespace OperationalStatisticsBook
             return div;
         }
 
+        public static string[] monthNames = { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
+
+
     }
 }

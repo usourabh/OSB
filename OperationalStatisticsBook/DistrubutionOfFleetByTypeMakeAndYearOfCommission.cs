@@ -149,7 +149,10 @@ namespace OperationalStatisticsBook
             table.Rows.Add(" ", " ", "", "", "", "",                                       "31.3.20", "1868", "0");
             table.Rows.Add(" ", " ", "", "", "", "",                                       "31.3.21", "3760", "0");
             table.Rows.Add(" ", " ", "", "", "", "",                                       "31.3.22", "3760", "0");
-            table.Rows.Add(" ", " ", "", "", "", "",                                       "31.3.23", "3760", "0");
+
+            int lastDayofTheMonth = DateTime.DaysInMonth(currentDate.Year, currentDate.Month);
+            string lastDateWithSelectedMonth = lastDayofTheMonth +"."+ currentDate.Month + "." + currentDate.Year;
+            table.Rows.Add(" ", " ", "", "", "", "", lastDateWithSelectedMonth, "3760", "0");
 
 
             return table;

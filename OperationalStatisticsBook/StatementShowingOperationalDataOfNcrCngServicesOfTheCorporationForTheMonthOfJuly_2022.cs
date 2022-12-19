@@ -74,7 +74,7 @@ namespace OperationalStatisticsBook
 
                 Common.SetColumnNonEditable(dataGridView1, 6);
                 Common.SetColumnNonEditable(dataGridView1, 7);
-                Common.SetRowNonEditable(dataGridView1, 9);
+                Common.SetRowNonEditable(dataGridView1, 10);
                 CalculateFormula();
 
             }
@@ -103,19 +103,20 @@ namespace OperationalStatisticsBook
            // table.Rows.Add("", "", "", "", "Including Passenger Tax", "Excluding Passenger Tax", "Including Passenger Tax", "Excluding Passenger Tax","");
            // table.Rows.Add("1", "2", "3", "4", "5", "6","7","8","9");
            // table.Rows.Add("Haryana", "", "", "", "", "","","","");
-            table.Rows.Add("1", "Narela to Bahadur Garh (Non AC)", "0", "0", "0", "0", "0", "0", "0");
+            table.Rows.Add("1", "Narela to Bahadur Garh (AC)", "0", "0", "0", "0", "0", "0", "0");
+            table.Rows.Add(" ", "Narela to Bahadur Garh (Non AC)", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("2", "Karol Bagh to Gurgaon (AC)", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("3", "Uttam Nagar to Gugaon VIA Dabri(Non AC)", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("4", "Anand vihar to Gurgaon (Non AC)", "0", "0", "0", "0", "0", "0", "0");
-            table.Rows.Add("", "Anand vihar to Gurgaon (AC)", "0", "0", "0", "0", "0", "0", "0");
+            table.Rows.Add(" ", "Anand vihar to Gurgaon (AC)", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("5", "Badarpur to Gurgaon (Non AC)", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("6", "New Delhi railway station to Bahadur Garh(Non AC)", "0", "0", "0", "0", "0", "0", "0");
-            table.Rows.Add("", "New Delhi railway station to Bahadur Garh(AC)", "0", "0", "0", "0", "0", "0", "0");
+            table.Rows.Add(" ", "New Delhi railway station to Bahadur Garh(AC)", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("7", "Karampura to Bahadur Garh(NonAC)", "0", "0", "0", "0", "0", "0", "0");
-            table.Rows.Add("", "TOTAL", "0", "0", "0", "0", "0", "0", "0");
-            table.Rows.Add("", "NCR PASS EARNING", "", "", "0", "", "", "", "0");
-            table.Rows.Add("NTERNATIONAL ROUTE", "", "", "", "", "", "", "", "");
-            table.Rows.Add("", "DELHI to KATHMANDU", "0", "0", "0", "0", "0", "0", "0");
+            table.Rows.Add(" ", "TOTAL", "0", "0", "0", "0", "0", "0", "0");
+            table.Rows.Add(" ", "NCR PASS EARNING", " ", " ", "0", " ", " ", " ", "0");
+            table.Rows.Add("INTERNATIONAL ROUTE", "", "", "", "", "", "", "", "");
+            table.Rows.Add(" ", "DELHI to KATHMANDU", "0", "0", "0", "0", "0", "0", "0");
 
 
             return table;
@@ -163,7 +164,7 @@ namespace OperationalStatisticsBook
             dataGridView1.DataSource = BindStatementShowingOperationalDataOfNcrCngServicesOfTheCorporationForTheMonthOfJuly_2022();
             Common.SetColumnNonEditable(dataGridView1, 6);
             Common.SetColumnNonEditable(dataGridView1, 7);
-            Common.SetRowNonEditable(dataGridView1, 9);
+            Common.SetRowNonEditable(dataGridView1, 10);
             MessageBox.Show("Done");
         }
 
@@ -183,10 +184,12 @@ namespace OperationalStatisticsBook
         {
             var row = dataGridView1.Rows;
             // Total
-            dataGridView1.Rows[9].Cells[3].Value = Common.GetSum(row, 0, 8, 3);
-            dataGridView1.Rows[9].Cells[4].Value = Common.GetSum(row, 0, 8, 4);
-            dataGridView1.Rows[9].Cells[5].Value = Common.GetSum(row, 0, 8, 5);
-            dataGridView1.Rows[9].Cells[8].Value = Common.GetSum(row, 0, 8, 8);
+
+            dataGridView1.Rows[10].Cells[2].Value = Common.GetSum(row, 0, 8, 2);
+            dataGridView1.Rows[10].Cells[3].Value = Common.GetSum(row, 0, 8, 3);
+            dataGridView1.Rows[10].Cells[4].Value = Common.GetSum(row, 0, 8, 4);
+            dataGridView1.Rows[10].Cells[5].Value = Common.GetSum(row, 0, 8, 5);
+            dataGridView1.Rows[10].Cells[8].Value = Common.GetSum(row, 0, 8, 8);
 
             // column no 7
             

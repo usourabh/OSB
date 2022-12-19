@@ -45,6 +45,8 @@ namespace OperationalStatisticsBook
             table.Columns.Add("Average  Route length ", typeof(string));
             table.Columns.Add("Average   Route   length ", typeof(string));
             table.Columns.Add("Average Route  length ", typeof(string));
+
+
             DateTime currentDate = new DateTime(Year, Month, 01);
             DateTime newDate = currentDate.AddYears(0);
             DateTime newDateM = currentDate.AddMonths(+1);
@@ -81,25 +83,34 @@ namespace OperationalStatisticsBook
 
 
             table.Rows.Add("", " No.of routes at the end of the period", "No.of routes at the end of the period", "No.of routes at the end of the period", "No.of routes at the end of the period", "Route KMs at the end of the period", "Route KMs at the end of the period", "Route KMs at the end of the period", "Route KMs at the end of the period", "Average route length", "Average route length", "Average route length", "Average route length");
-
             table.Rows.Add("", " City ", "City ", "NCR", "NCR", "City", "City", "NCR", "NCR", "City", "City", "NCR", "NCR");
-
-
             table.Rows.Add("Year", currentYear, previousYear1, currentYear, previousYear1, currentYear, previousYear1, currentYear, previousYear1, currentYear, previousYear1, currentYear, previousYear1);
-            for (int i = 6; i > 0; i--)
+
+            //for (int i = 6; i > 0; i--)
+            //{
+            //    table.Rows.Add(currentMonth.AddMonths(-i).ToString("MMMM"), " 0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
+            //}
+            for (int i = currentDate.Month; i <= 12; i++)
             {
-                table.Rows.Add(currentMonth.AddMonths(-i).ToString("MMMM"), " 0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
+                table.Rows.Add(Common.monthNames[i - 1], 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
             }
 
+
             table.Rows.Add("", " City ", "City ", "NCR", "NCR", "City", "City", "NCR", "NCR", "City", "City", "NCR", "NCR");
-
-
             table.Rows.Add("Year", previousYear1, previousYear, previousYear1, previousYear, previousYear1, previousYear, previousYear1, previousYear, previousYear1, previousYear, previousYear1, previousYear);
 
-            for (int i = 7; i > 0; i--)
+            for (int i = 1; i <= currentDate.Month; i++)
             {
-                table.Rows.Add(newDateM.AddMonths(-i).ToString("MMMM"), " 0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
+                table.Rows.Add(Common.monthNames[i - 1], 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
             }
+
+
+
+
+            //for (int i = 7; i > 0; i--)
+            //{
+            //    table.Rows.Add(newDateM.AddMonths(-i).ToString("MMMM"), " 0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
+            //}
 
 
             return table;

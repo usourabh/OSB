@@ -141,24 +141,25 @@ namespace OperationalStatisticsBook
             table.Rows.Add("23", "Hasan Pur", "", "", "", "", "", "", "");
             table.Rows.Add("24", "Gazi Pur", "", "", "", "", "", "", "");
             table.Rows.Add("25", "Raj Ghat-I", "", "", "", "", "", "", "");
+            table.Rows.Add("26", "Raj Ghat-II", "", "", "", "", "", "", "");
             table.Rows.Add(" ", "Total East Region", "", "", "", "", "", "", "");
-            table.Rows.Add("26", "Hari Nagar-I", "", "", "", "", "", "", "");
-            table.Rows.Add("27", "Hari Nagar-II ", "", "", "", "", "", "", "");
-            table.Rows.Add("28", "Kesho Pur", "", "", "", "", "", "", "");
-            table.Rows.Add("29", "Naraina", "", "", "", "", "", "", "");
-            table.Rows.Add("30", "Shadi Pur", "", "", "", "", "", "", "");
-            table.Rows.Add("31", "BAGDOLA", "", "", "", "", "", "", "");
-            table.Rows.Add("32", "DW.SEC- 2 ", "", "", "", "", "", "", "");
-            table.Rows.Add("33", "Maya Puri", "", "", "", "", "", "", "");
-            table.Rows.Add("34", "Dichaon Kalan", "", "", "", "", "", "", "");
-            table.Rows.Add("35", "Peera Garhi   ", "", "", "", "", "", "", "");
-            table.Rows.Add("36", "Mundhela kalan ", "", "", "", "", "", "", "");
+            table.Rows.Add("27", "Hari Nagar-I", "", "", "", "", "", "", "");
+            table.Rows.Add("28", "Hari Nagar-II ", "", "", "", "", "", "", "");
+            table.Rows.Add("29", "Kesho Pur", "", "", "", "", "", "", "");
+            table.Rows.Add("30", "Naraina", "", "", "", "", "", "", "");
+            table.Rows.Add("31", "Shadi Pur", "", "", "", "", "", "", "");
+            table.Rows.Add("32", "BAGDOLA", "", "", "", "", "", "", "");
+            table.Rows.Add("33", "DW.SEC- 2 ", "", "", "", "", "", "", "");
+            table.Rows.Add("34", "Maya Puri", "", "", "", "", "", "", "");
+            table.Rows.Add("35", "Dichaon Kalan", "", "", "", "", "", "", "");
+            table.Rows.Add("36", "Peera Garhi   ", "", "", "", "", "", "", "");
+            table.Rows.Add("37", "Mundhela kalan ", "", "", "", "", "", "", "");
             table.Rows.Add(" ", "Total West Region", "", "", "", "", "", "", "");
             table.Rows.Add(" ", "Grand Total", "", "", "", "", "", "", "");
 
             return table;
         }
-            private void ResetOnClick(object sender, EventArgs e)
+        private void ResetOnClick(object sender, EventArgs e)
         {
             DeleteExisitingTableRecord("tbl_NoOfTripsActualOperatedOnTimeAndNoOfTripsActualOperated", OsbId);
             dataGridView1.DataSource = BindNoOfTripsActualOperatedOnTimeAndNoOfTripsActualOperated();

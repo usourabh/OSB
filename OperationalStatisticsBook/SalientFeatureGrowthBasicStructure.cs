@@ -102,6 +102,7 @@ namespace OperationalStatisticsBook
 
             //Rows Static Data
             DateTime currentDate = new DateTime(Year, Month, 01);
+
             DateTime newDate = currentDate.AddYears(0);
             DateTime newDateM = currentDate.AddMonths(+1);
             DateTime newDate2 = currentDate.AddYears(1);
@@ -135,18 +136,25 @@ namespace OperationalStatisticsBook
             table.Rows.Add(" ", "No of Depots", "No of Depots", "Man Power", "Man Power", "Staff Ratio", "Staff Ratio", "Added (Vehicle)", "Added (Vehicle)", "Deleted (Vehicle)", "Deleted (Vehicle)", "Fleet at the end", "Fleet at the end");
 
             table.Rows.Add("Year", previousYear1, currentYear, previousYear1, currentYear, previousYear1, currentYear, previousYear1, currentYear, previousYear1, currentYear, previousYear1, currentYear);
-            for (int i = 6; i > 0; i--)
-            {
-                table.Rows.Add(currentMonth.AddMonths(-i).ToString("MMMM"), 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 
+            for (int i = currentDate.Month; i <= 12; i++)
+            {
+                table.Rows.Add(Common.monthNames[i-1], 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
             }
+
+
+            //for (int i = 6; i > 0; i--)
+            //{
+            //    table.Rows.Add(currentMonth.AddMonths(-i).ToString("MMMM"), 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+
+            //}
 
             table.Rows.Add(" ", "No of Depots", "No of Depots", "Man Power", "Man Power", "Staff Ratio", "Staff Ratio", "Added (Vehicle)", "Added (Vehicle)", "Deleted (Vehicle)", "Deleted (Vehicle)", "Fleet at the end", "Fleet at the end");
             table.Rows.Add("Year", currentYear, previousYear, currentYear, previousYear, currentYear, previousYear, currentYear, previousYear, currentYear, previousYear, currentYear, previousYear);
 
-            for (int i = 7; i > 0; i--)
+            for (int i = 1; i<=currentDate.Month; i++)
             {
-                table.Rows.Add(newDateM.AddMonths(-i).ToString("MMMM"), 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                table.Rows.Add(Common.monthNames[i-1], 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
             }
 
 
