@@ -133,26 +133,28 @@ namespace OperationalStatisticsBook
           
             table.Rows.Add("As on 31st July-2022 ", " ", " ", "", "", "", "(More Than 8 Years Old)", " ", " ");
             table.Rows.Add("Age Group in Years ", "Number of buses ", "", "", "", "", "", "Absolute(Number)", "Percentage ");
-            table.Rows.Add("0-2", "153 ", "", "", "", "",                                  "31.3.07", "347", "0");
-            table.Rows.Add("2-4", "0", "", "", "", "",                                     "31.3.08", "299", "0");
-            table.Rows.Add("4-6", "0", "", "", "", "",                                     "31.3.09", "260", "0");
-            table.Rows.Add("6-8", "0", "", "", "", "",                                     "31.3.10", "1839", "0");
-            table.Rows.Add("8-10", "0", "", "", "", "",                                    "31.3.11", "1843", "0");
-            table.Rows.Add("10+", "3760", "", "", "", "",                                  "31.3.12", "2079", "0");
-            table.Rows.Add("Total", "3913", "", "", "", " ",                               "31.3.13", "1634", "0");
-            table.Rows.Add("*Authorised Fleet Strength of DTC=5500 ", " ", "", "", "", "", "31.3.14", "1440", "0");
-            table.Rows.Add(" ", " ", "", "", "", "",                                       "31.3.15", "930", "0");
-            table.Rows.Add(" ", " ", "", "", "", "",                                       "31.3.16", "569", "0");
-            table.Rows.Add(" ", " ", "", "", "", "",                                       "31.3.17", "245", "0");
-            table.Rows.Add(" ", " ", "", "", "", "",                                       "31.3.18", "826", "0");
-            table.Rows.Add(" ", " ", "", "", "", "",                                       "31.3.19", "1978", "0");
-            table.Rows.Add(" ", " ", "", "", "", "",                                       "31.3.20", "1868", "0");
-            table.Rows.Add(" ", " ", "", "", "", "",                                       "31.3.21", "3760", "0");
-            table.Rows.Add(" ", " ", "", "", "", "",                                       "31.3.22", "3760", "0");
+            table.Rows.Add("0-2", "153 ", "", "", "", "",                                  "31.3.07", "347", "9.81");
+            table.Rows.Add("2-4", "0", "", "", "", "",                                     "31.3.08", "299", "8.45");
+            table.Rows.Add("4-6", "0", "", "", "", "",                                     "31.3.09", "260", "6.83");
+            table.Rows.Add("6-8", "0", "", "", "", "",                                     "31.3.10", "1839", "39.24");
+            table.Rows.Add("8-10", "0", "", "", "", "",                                    "31.3.11", "1843", "29.71");
+            table.Rows.Add("10+", "3760", "", "", "", "",                                  "31.3.12", "2079", "35.29");
+            table.Rows.Add("Total", "3913", "", "", "", " ",                               "31.3.13", "1634", "30.01");
+            table.Rows.Add("*Authorised Fleet Strength of DTC=5500 ", " ", "", "", "", "", "31.3.14", "1440", "27.57");
+            table.Rows.Add(" ", " ", "", "", "", "",                                       "31.3.15", "930", "19.74");
+            table.Rows.Add(" ", " ", "", "", "", "",                                       "31.3.16", "569", "13.07");
+            table.Rows.Add(" ", " ", "", "", "", "",                                       "31.3.17", "245", "6.08");
+            table.Rows.Add(" ", " ", "", "", "", "",                                       "31.3.18", "826", "20.91");
+            table.Rows.Add(" ", " ", "", "", "", "",                                       "31.3.19", "1978", "51.39");
+            table.Rows.Add(" ", " ", "", "", "", "",                                       "31.3.20", "1868", "99.15");
+            table.Rows.Add(" ", " ", "", "", "", "",                                       "31.3.21", "3760", "100.00");
+            table.Rows.Add(" ", " ", "", "", "", "",                                       "31.3.22", "3760", "100.00");
 
             int lastDayofTheMonth = DateTime.DaysInMonth(currentDate.Year, currentDate.Month);
-            string lastDateWithSelectedMonth = lastDayofTheMonth +"."+ currentDate.Month + "." + currentDate.Year;
-            table.Rows.Add(" ", " ", "", "", "", "", lastDateWithSelectedMonth, "3760", "0");
+            string lastDateOfSelectedMonth = lastDayofTheMonth +"."+ currentDate.Month + "." + currentDate.Year;
+
+
+            table.Rows.Add(" ", " ", "", "", "", "", lastDateOfSelectedMonth, "3760", " ");
 
 
             return table;
@@ -313,10 +315,12 @@ namespace OperationalStatisticsBook
         }
         void SetNonEditable()
         {
-            for(byte i=0; i<=20; i++)
+            for(byte i=0; i<=15; i++)
             {
                 Common.SetRowNonEditable(dataGridView1, i);
             }
+            Common.SetRowNonEditable(dataGridView1, 19);
+            Common.SetRowNonEditable(dataGridView1, 20);
             for (byte i = 22; i <= 42; i++)
             {
                 Common.SetRowNonEditable(dataGridView1, i);

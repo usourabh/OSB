@@ -113,9 +113,9 @@ namespace OperationalStatisticsBook
             table.Rows.Add("12", "Rohini sec.-37 ", "May 2022", "0", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("13", "Kalka Ji", "Nov.1966", "0", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("14", "SNPD", "May.1975", "0", "0", "0", "0", "0", "0", "0", "0");
-            table.Rows.Add("15", "Ambedkar Nagar", "June.1975", "0", "0", "0", "0", "0", "0", "0", "0");
+            table.Rows.Add("15", "Ambedkar Nagar", "Jan.1975", "0", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("16", "Vasant Vihar", "April.1976", "0", "0", "0", "0", "0", "0", "0", "0");
-            table.Rows.Add("17", "Tehkhand", "June.2010", "0", "0", "0", "0", "0", "0", "0", "0");
+            table.Rows.Add("17", "Tehkhand", "Jan.2010", "0", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("18", "Sukhdev Vihar", "Feb.1976", "0", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("19", "Sarojni Nagar", "April.1954", "0", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("20", "Nand Nagri", "Jan.1983", "0", "0", "0", "0", "0", "0", "0", "0");
@@ -125,17 +125,18 @@ namespace OperationalStatisticsBook
             table.Rows.Add("24", "Inderprastha", "Aug.1958", "0", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("25", "Gazi Pur", "Oct.1989", "0", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("26", "Raj Ghat-I", "Oct.2010", "0", "0", "0", "0", "0", "0", "0", "0");
-            table.Rows.Add("27", "Hari Nagar-I ", "July.1961", "0", "0", "0", "0", "0", "0", "0", "0");
-            table.Rows.Add("28", "Hari Nagar-II", "July.1975", "0", "0", "0", "0", "0", "0", "0", "0");
-            table.Rows.Add("29", "Kesho Pur", "March 1985", "0", "0", "0", "0", "0", "0", "0", "0");
-            table.Rows.Add("30", "Naraina", "Jan.1982", "0", "0", "0", "0", "0", "0", "0", "0");
-            table.Rows.Add("31", "Shadi Pur", "May 1957", "0", "0", "0", "0", "0", "0", "0", "0");
-            table.Rows.Add("32", "BAGDOLA", "Oct.2009", "0", "0", "0", "0", "0", "0", "0", "0");
-            table.Rows.Add("33", "DW.SEC-2", "Feb.2010", "0", "0", "0", "0", "0", "0", "0", "0");
-            table.Rows.Add("34", "Maya Puri", "Sept.1975", "0", "0", "0", "0", "0", "0", "0", "0");
-            table.Rows.Add("35", "Dichaon Kalan", "Oct.1974", "0", "0", "0", "0", "0", "0", "0", "0");
-            table.Rows.Add("36", "Peera Garhi", "Jun.1989", "0", "0", "0", "0", "0", "0", "0", "0");
-            table.Rows.Add("37", "Mundhela kalan", "May 2022", "0", "0", "0", "0", "0", "0", "0", "0");
+            table.Rows.Add("27", "Raj Ghat-II", "Oct.2010", "0", "0", "0", "0", "0", "0", "0", "0");
+            table.Rows.Add("28", "Hari Nagar-I ", "July.1961", "0", "0", "0", "0", "0", "0", "0", "0");
+            table.Rows.Add("29", "Hari Nagar-II", "July.1975", "0", "0", "0", "0", "0", "0", "0", "0");
+            table.Rows.Add("30", "Kesho Pur", "March 1985", "0", "0", "0", "0", "0", "0", "0", "0");
+            table.Rows.Add("31", "Naraina", "Jan.1982", "0", "0", "0", "0", "0", "0", "0", "0");
+            table.Rows.Add("32", "Shadi Pur", "May 1957", "0", "0", "0", "0", "0", "0", "0", "0");
+            table.Rows.Add("33", "BAGDOLA", "Oct.2009", "0", "0", "0", "0", "0", "0", "0", "0");
+            table.Rows.Add("34", "DW.SEC-2", "Feb.2010", "0", "0", "0", "0", "0", "0", "0", "0");
+            table.Rows.Add("35", "Maya Puri", "Sept.1975", "0", "0", "0", "0", "0", "0", "0", "0");
+            table.Rows.Add("36", "Dichaon Kalan", "Oct.1974", "0", "0", "0", "0", "0", "0", "0", "0");
+            table.Rows.Add("37", "Peera Garhi", "Jun.1989", "0", "0", "0", "0", "0", "0", "0", "0");
+            table.Rows.Add("38", "Mundhela kalan", "May 2022", "0", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add(" ", "Grand Total", "", "", "", "", "", "", "", "", "");
 
             return table;
@@ -208,14 +209,14 @@ namespace OperationalStatisticsBook
             #region Calculating_VerticalSum
 
             // North Total
-            dataGridView1.Rows[37].Cells[3].Value = Common.GetSum(row, 0, 36,3);
-            dataGridView1.Rows[37].Cells[4].Value = Common.GetSum(row, 0, 36,4);
-            dataGridView1.Rows[37].Cells[5].Value = Common.GetSum(row, 0, 36,5);
-            dataGridView1.Rows[37].Cells[6].Value = Common.GetSum(row, 0, 36,6);
-            dataGridView1.Rows[37].Cells[7].Value = Common.GetSum(row, 0, 36,7);
-            dataGridView1.Rows[37].Cells[8].Value = Common.GetSum(row, 0, 36,8);
-            dataGridView1.Rows[37].Cells[9].Value = Common.GetSum(row, 0, 36,9);
-            dataGridView1.Rows[37].Cells[10].Value = Common.GetSum(row,0, 36,10);
+            dataGridView1.Rows[37].Cells[3].Value = Common.GetSum(row, 0, 37,3);
+            dataGridView1.Rows[37].Cells[4].Value = Common.GetSum(row, 0, 37,4);
+            dataGridView1.Rows[37].Cells[5].Value = Common.GetSum(row, 0, 37,5);
+            dataGridView1.Rows[37].Cells[6].Value = Common.GetSum(row, 0, 37,6);
+            dataGridView1.Rows[37].Cells[7].Value = Common.GetSum(row, 0, 37,7);
+            dataGridView1.Rows[37].Cells[8].Value = Common.GetSum(row, 0, 37,8);
+            dataGridView1.Rows[37].Cells[9].Value = Common.GetSum(row, 0, 37,9);
+            dataGridView1.Rows[37].Cells[10].Value = Common.GetSum(row,0, 37,10);
         
           
 
