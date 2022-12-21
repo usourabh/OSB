@@ -134,11 +134,11 @@ namespace OperationalStatisticsBook
 
                 CalcalculateTotal();
 
-                Common.SetRowNonEditable(dataGridView1, 14);
-                Common.SetRowNonEditable(dataGridView1, 22);
-                Common.SetRowNonEditable(dataGridView1, 31);
+                Common.SetRowNonEditable(dataGridView1, 13);
+                Common.SetRowNonEditable(dataGridView1, 21);
+                Common.SetRowNonEditable(dataGridView1, 30);
+                Common.SetRowNonEditable(dataGridView1, 42);
                 Common.SetRowNonEditable(dataGridView1, 43);
-                Common.SetRowNonEditable(dataGridView1, 44);
 
             }
             catch (Exception ex)
@@ -168,6 +168,11 @@ namespace OperationalStatisticsBook
         {
             DeleteExisitingTableRecord("tbl_DepotWiseOprationalDataInRespectOfNonACNAC", OsbId);
             dataGridView1.DataSource = BindDepotWiseOprationalDataInRespectOfNonAC();
+            Common.SetRowNonEditable(dataGridView1, 13);
+            Common.SetRowNonEditable(dataGridView1, 21);
+            Common.SetRowNonEditable(dataGridView1, 30);
+            Common.SetRowNonEditable(dataGridView1, 42);
+            Common.SetRowNonEditable(dataGridView1, 43);
             MessageBox.Show("Done");
         }
 
@@ -214,6 +219,7 @@ namespace OperationalStatisticsBook
             }
             MessageBox.Show("Done");
         }
+
         private void button1_Click(object sender, EventArgs e)
         {
             DeleteExisitingTableRecord("tbl_DepotWiseOprationalDataInRespectOfNonACNAC", OsbId);
@@ -225,6 +231,7 @@ namespace OperationalStatisticsBook
             Common.SetRowNonEditable(dataGridView1, 44);
             MessageBox.Show("Done");
         }
+
         private void DepotWiseOprationalDataInRespectOfNonAC_Load(object sender, EventArgs e)
         {
             //dataGridView1.DataSource = BindDepotWiseOprationalDataInRespectOfNonAC();
@@ -250,87 +257,18 @@ namespace OperationalStatisticsBook
 
             for (int i = 2; i <= 16; i++)
             {
-                dataGridView1.Rows[14].Cells[i].Value = Common.GetSum(row, 1, 13, i);
-                dataGridView1.Rows[22].Cells[i].Value = Common.GetSum(row, 15, 21, i);
-                dataGridView1.Rows[31].Cells[i].Value = Common.GetSum(row, 23, 30, i);
-                dataGridView1.Rows[43].Cells[i].Value = Common.GetSum(row, 32, 42, i);
-
+                dataGridView1.Rows[13].Cells[i].Value = Common.GetSum(row, 1, 13, i);
+                dataGridView1.Rows[21].Cells[i].Value = Common.GetSum(row, 15, 21, i);
+                dataGridView1.Rows[30].Cells[i].Value = Common.GetSum(row, 23, 30, i);
+                dataGridView1.Rows[42].Cells[i].Value = Common.GetSum(row, 32, 42, i);
             }
-
-
-            //dataGridView1.Rows[13].Cells[2].Value = Common.GetSum(row, 0, 12, 2);
-            //dataGridView1.Rows[13].Cells[3].Value = Common.GetSum(row, 0, 12, 3);
-            //dataGridView1.Rows[13].Cells[4].Value = Common.GetSum(row, 0, 12, 4);
-            //dataGridView1.Rows[13].Cells[5].Value = Common.GetSum(row, 0, 12, 5);
-            //dataGridView1.Rows[13].Cells[6].Value = Common.GetSum(row, 0, 12, 6);
-            //dataGridView1.Rows[13].Cells[7].Value = Common.GetSum(row, 0, 12, 7);
-            //dataGridView1.Rows[13].Cells[8].Value = Common.GetSum(row, 0, 12, 8);
-            //dataGridView1.Rows[13].Cells[9].Value = Common.GetSum(row, 0, 12, 9);
-            //dataGridView1.Rows[13].Cells[10].Value = Common.GetSum(row, 0, 12, 10);
-            //dataGridView1.Rows[13].Cells[11].Value = Common.GetSum(row, 0, 12, 11);
-            //dataGridView1.Rows[13].Cells[12].Value = Common.GetSum(row, 0, 12, 12);
-            //dataGridView1.Rows[13].Cells[13].Value = Common.GetSum(row, 0, 12, 13);
-            //dataGridView1.Rows[13].Cells[14].Value = Common.GetSum(row, 0, 12, 14);
-            //dataGridView1.Rows[13].Cells[15].Value = Common.GetSum(row, 0, 12, 15);
-            //dataGridView1.Rows[13].Cells[16].Value = Common.GetSum(row, 0, 12, 16);
-
-            //dataGridView1.Rows[21].Cells[2].Value = Common.GetSum(row, 14, 20, 2);
-            //dataGridView1.Rows[21].Cells[3].Value = Common.GetSum(row, 14, 20, 3);
-            //dataGridView1.Rows[21].Cells[4].Value = Common.GetSum(row, 14, 20, 4);
-            //dataGridView1.Rows[21].Cells[5].Value = Common.GetSum(row, 14, 20, 5);
-            //dataGridView1.Rows[21].Cells[6].Value = Common.GetSum(row, 14, 20, 6);
-            //dataGridView1.Rows[21].Cells[7].Value = Common.GetSum(row, 14, 20, 7);
-            //dataGridView1.Rows[21].Cells[8].Value = Common.GetSum(row, 14, 20, 8);
-            //dataGridView1.Rows[21].Cells[9].Value = Common.GetSum(row, 14, 20, 9);
-            //dataGridView1.Rows[21].Cells[10].Value = Common.GetSum(row, 14, 20, 10);
-            //dataGridView1.Rows[21].Cells[11].Value = Common.GetSum(row, 14, 20, 11);
-            //dataGridView1.Rows[21].Cells[12].Value = Common.GetSum(row, 14, 20, 12);
-            //dataGridView1.Rows[21].Cells[13].Value = Common.GetSum(row, 14, 20, 13);
-            //dataGridView1.Rows[21].Cells[14].Value = Common.GetSum(row, 14, 20, 14);
-            //dataGridView1.Rows[21].Cells[15].Value = Common.GetSum(row, 14, 20, 15);
-            //dataGridView1.Rows[21].Cells[16].Value = Common.GetSum(row, 14, 20, 16);
-
-
-            //dataGridView1.Rows[29].Cells[2].Value = Common.GetSum(row, 22, 28, 2);
-            //dataGridView1.Rows[29].Cells[3].Value = Common.GetSum(row, 22, 28, 3);
-            //dataGridView1.Rows[29].Cells[4].Value = Common.GetSum(row, 22, 28, 4);
-            //dataGridView1.Rows[29].Cells[5].Value = Common.GetSum(row, 22, 28, 5);
-            //dataGridView1.Rows[29].Cells[6].Value = Common.GetSum(row, 22, 28, 6);
-            //dataGridView1.Rows[29].Cells[7].Value = Common.GetSum(row, 22, 28, 7);
-            //dataGridView1.Rows[29].Cells[8].Value = Common.GetSum(row, 22, 28, 8);
-            //dataGridView1.Rows[29].Cells[9].Value = Common.GetSum(row, 22, 28, 9);
-            //dataGridView1.Rows[29].Cells[10].Value = Common.GetSum(row, 22, 28, 10);
-            //dataGridView1.Rows[29].Cells[11].Value = Common.GetSum(row, 22, 28, 11);
-            //dataGridView1.Rows[29].Cells[12].Value = Common.GetSum(row, 22, 28, 12);
-            //dataGridView1.Rows[29].Cells[13].Value = Common.GetSum(row, 22, 28, 13);
-            //dataGridView1.Rows[29].Cells[14].Value = Common.GetSum(row, 22, 28, 14);
-            //dataGridView1.Rows[29].Cells[15].Value = Common.GetSum(row, 22, 28, 15);
-            //dataGridView1.Rows[29].Cells[16].Value = Common.GetSum(row, 22, 28, 16);
-
-            //dataGridView1.Rows[41].Cells[2].Value = Common.GetSum(row, 30, 40, 2);
-            //dataGridView1.Rows[41].Cells[3].Value = Common.GetSum(row, 30, 40, 3);
-            //dataGridView1.Rows[41].Cells[4].Value = Common.GetSum(row, 30, 40, 4);
-            //dataGridView1.Rows[41].Cells[5].Value = Common.GetSum(row, 30, 40, 5);
-            //dataGridView1.Rows[41].Cells[6].Value = Common.GetSum(row, 30, 40, 6);
-            //dataGridView1.Rows[41].Cells[7].Value = Common.GetSum(row, 30, 40, 7);
-            //dataGridView1.Rows[41].Cells[8].Value = Common.GetSum(row, 30, 40, 8);
-            //dataGridView1.Rows[41].Cells[9].Value = Common.GetSum(row, 30, 40, 9);
-            //dataGridView1.Rows[41].Cells[10].Value = Common.GetSum(row, 30, 40, 10);
-            //dataGridView1.Rows[41].Cells[11].Value = Common.GetSum(row, 30, 40, 11);
-            //dataGridView1.Rows[41].Cells[12].Value = Common.GetSum(row, 30, 40, 12);
-            //dataGridView1.Rows[41].Cells[13].Value = Common.GetSum(row, 30, 40, 13);
-            //dataGridView1.Rows[41].Cells[14].Value = Common.GetSum(row, 30, 40, 14);
-            //dataGridView1.Rows[41].Cells[15].Value = Common.GetSum(row, 30, 40, 15);
-            //dataGridView1.Rows[41].Cells[16].Value = Common.GetSum(row, 30, 40, 16);
 
             for (int i = 2; i <= 16; i++)
             {
-                dataGridView1.Rows[44].Cells[i].Value = Common.ConvertToDecimal(dataGridView1.Rows[14].Cells[i].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[22].Cells[i].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[31].Cells[i].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[43].Cells[i].Value.ToString());
+                dataGridView1.Rows[43].Cells[i].Value = Common.ConvertToDecimal(dataGridView1.Rows[14].Cells[i].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[22].Cells[i].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[31].Cells[i].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[43].Cells[i].Value.ToString());
 
             }
             #endregion
-
-
 
         }
 

@@ -220,12 +220,6 @@ namespace OperationalStatisticsBook
         {
             var row = dataGridView1.Rows;
 
-            // for total
-            for (byte i = 2; i < 21; i++)
-            {
-                dataGridView1.Rows[39].Cells[i].Value = Common.GetSum(row, 3, 38, i);
-            }
-
             //for (byte i = 3; i < 38; i++)
             //{
             //    decimal kmsTotal = 0;
@@ -266,7 +260,14 @@ namespace OperationalStatisticsBook
                                                                  + Common.ConvertToDecimal(dataGridView1.Rows[i].Cells[18].Value.ToString()), 0);
             }
 
-            
+
+            // for total
+            for (byte i = 2; i < 21; i++)
+            {
+                dataGridView1.Rows[40].Cells[i].Value = Common.GetSum(row, 3, 38, i);
+            }
+
+
         }
 
         private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)

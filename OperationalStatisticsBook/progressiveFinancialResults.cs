@@ -61,7 +61,7 @@ namespace OperationalStatisticsBook
         { 
             DataTable table = new DataTable();
             table.Columns.Add("MONTH", typeof(string));
-            table.Columns.Add("TOTAL INCOME AMT. (Rs.)", typeof(int));
+            table.Columns.Add("TOTAL INCOME AMT. (Rs.)", typeof(string));
             table.Columns.Add("WORKING EXPENDITURE AMT(Rs.)", typeof(string));
             table.Columns.Add("% RECOVERY WORKING EXPENDITURE", typeof(string));
             table.Columns.Add("WORKING LOSS/PROFIT AMT(Rs.)", typeof(string));
@@ -95,15 +95,30 @@ namespace OperationalStatisticsBook
             DateTime newDateCurrent2 = currentDate.AddYears(-1);
             string previousYear1 = newDateCurrent2.Year.ToString();
             DateTime currentMonth = currentDate.AddMonths(-6);
-            table.Rows.Add(previousYear1, "0", "0", "0", "0", "0", "0", "0", "0");
-            for (int i = 7; i > 0; i--)
+
+
+            table.Rows.Add(previousYear1, " ", " ", " ", " ", " ", " ", " ", " ");
+
+            //for (int i = 7; i > 0; i--)
+            //{
+            //    table.Rows.Add(currentMonth.AddMonths(-i).ToString("MMMM"), "0", "0", "0", "0", "0", "0", "0", "0");
+            //}
+
+            for (int i = currentDate.Month; i <= 12; i++)
             {
-                table.Rows.Add(currentMonth.AddMonths(-i).ToString("MMMM"), "0", "0", "0", "0", "0", "0", "0", "0");
+                table.Rows.Add(Common.monthNames[i - 1], "0", "0", "0", "0", "0", "0", "0", "0");
             }
-            table.Rows.Add(Year, "0", "0", "0", "0", "0", "0", "0", "0");
-            for (int i = 6; i > 0; i--)
+
+            table.Rows.Add(Year, " ", " ", " ", " ", " ", " ", " ", " ");
+
+            //for (int i = 6; i > 0; i--)
+            //{
+            //    table.Rows.Add(newDateM.AddMonths(-i).ToString("MMMM"), " ", "0", "0", "0", "0", "0", "0", "0");
+            //}
+
+            for (int i = 1; i <= currentDate.Month; i++)
             {
-                table.Rows.Add(newDateM.AddMonths(-i).ToString("MMMM"), "0", "0", "0", "0", "0", "0", "0", "0");
+                table.Rows.Add(Common.monthNames[i - 1], "0", "0", "0", "0", "0", "0", "0", "0");
             }
             //for (int i = 0; i > 7; i++)
             //{

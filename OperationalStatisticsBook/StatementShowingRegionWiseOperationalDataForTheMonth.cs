@@ -299,7 +299,7 @@ namespace OperationalStatisticsBook
             #endregion
 
             #region Calculating_HorizontalSum
-            // for (int i = 0; i < (row.Count - 1); i++)
+            // for (int i = 0; i < (row.Count - 1); i++)        
             for (int i = 0; i < 5; i++)
             {
 
@@ -478,6 +478,11 @@ namespace OperationalStatisticsBook
 
             }
             #endregion
+
+            for (int i = 3; i < 8; i++)
+            {
+                dataGridView1.Rows[43].Cells[i].Value = Common.ConvertToDecimal(row[12].Cells[i].Value.ToString()) > 0 ? Math.Round((Common.ConvertToDecimal(row[42].Cells[i].Value.ToString()) * 10000) / (Common.ConvertToDecimal(row[12].Cells[i].Value.ToString()) * 100000), 2) : 0;
+            }
 
         }
 

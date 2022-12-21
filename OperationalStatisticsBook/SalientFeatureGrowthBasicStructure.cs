@@ -31,9 +31,6 @@ namespace OperationalStatisticsBook
             this.MonthName = MonthName;
         }
 
-
-
-
         void BindIndexPage(int OsbId)
         {
 
@@ -61,6 +58,7 @@ namespace OperationalStatisticsBook
             }
 
         }
+
         int DeleteExisitingdtRecord(string dtName, int OsbId)
         {
             string strdt = "[rpt].[" + dtName + "]";
@@ -162,15 +160,12 @@ namespace OperationalStatisticsBook
 
         }
 
-
         private void ResetOnClick(object sender, EventArgs e)
         {
             DeleteExisitingdtRecord("tbl_SalientFeatureGrowthBasicStructure", OsbId);
             dataGridView1.DataSource = BindSalientFeatureGrowthBasicSturucture();
             MessageBox.Show("Done");
         }
-
-
 
         private void SalientFeatureGrowthBasicStructure_Load(object sender, EventArgs e)
         {
