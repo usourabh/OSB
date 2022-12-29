@@ -139,19 +139,15 @@ namespace OperationalStatisticsBook
                 dataGridView1.DataSource = BindDeportWiseStatementOfSchoolSPLHireTouristPassPinkTicketEarning();
             }
 
-            Common.SetRowNonEditable(dataGridView1, 39);
-            Common.SetColumnNonEditable(dataGridView1, 19);
-            Common.SetColumnNonEditable(dataGridView1, 20);
-
+            setRowColNonEditable();
             CalculateFormula();
-
 
         }
 
-      
         private void ResetOnClick(object sender, EventArgs e)
         {
             dataGridView1.DataSource = BindDeportWiseStatementOfSchoolSPLHireTouristPassPinkTicketEarning();
+            setRowColNonEditable();
             MessageBox.Show("Done");
         }
 
@@ -219,21 +215,8 @@ namespace OperationalStatisticsBook
         void CalculateFormula()
         {
             var row = dataGridView1.Rows;
-
-            //for (byte i = 3; i < 38; i++)
-            //{
-            //    decimal kmsTotal = 0;
-            //    for (int j = 2; j <= 20; j++)
-            //    {
-            //        if()
-            //        kmsTotal += Common.ConvertToDecimal(row[i].Cells[j].Value.ToString());
-            //    }
-            //    dataGridView1.Rows[i].Cells[19].Value = kmsTotal;
-            //}
-
-
-            //col no 21
-                for (byte i = 3; i <= 38; i++) 
+            
+                for (byte i = 3; i <= 39; i++) 
                 { 
                     dataGridView1.Rows[i].Cells[19].Value = Math.Round(Common.ConvertToDecimal(dataGridView1.Rows[i].Cells[2].Value.ToString()) 
                                                              + Common.ConvertToDecimal(dataGridView1.Rows[i].Cells[3].Value.ToString()) 
@@ -244,7 +227,7 @@ namespace OperationalStatisticsBook
 
             // col no 22
 
-            for (byte i = 3; i <= 38; i++)
+            for (byte i = 3; i <= 39; i++)
             {
                 dataGridView1.Rows[i].Cells[20].Value = Math.Round(Common.ConvertToDecimal(dataGridView1.Rows[i].Cells[6].Value.ToString()) 
                                                                  + Common.ConvertToDecimal(dataGridView1.Rows[i].Cells[7].Value.ToString()) 
@@ -264,10 +247,16 @@ namespace OperationalStatisticsBook
             // for total
             for (byte i = 2; i < 21; i++)
             {
-                dataGridView1.Rows[40].Cells[i].Value = Common.GetSum(row, 3, 38, i);
+                dataGridView1.Rows[40].Cells[i].Value = Common.GetSum(row, 3, 39, i);
             }
 
+        }
 
+        private void setRowColNonEditable()
+        {
+            Common.SetRowNonEditable(dataGridView1, 40);
+            Common.SetColumnNonEditable(dataGridView1, 19);
+            Common.SetColumnNonEditable(dataGridView1, 20);
         }
 
         private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)

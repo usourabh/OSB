@@ -148,24 +148,7 @@ namespace OperationalStatisticsBook
 
                     dataGridView1.DataSource = BindDepotWiseOprationalDataRespectNonALowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021FleetItsUtillization();
                 }
-                Common.SetRowNonEditable(dataGridView1, 34);
-                Common.SetRowNonEditable(dataGridView1, 35);
-                Common.SetRowNonEditable(dataGridView1, 38);
-                Common.SetRowNonEditable(dataGridView1, 39);
-                Common.SetRowNonEditable(dataGridView1, 43);
-                Common.SetRowNonEditable(dataGridView1, 40);
-
-                Common.SetColumnNonEditable(dataGridView1, 6, 41);
-                Common.SetColumnNonEditable(dataGridView1, 11, 41);
-                Common.SetColumnNonEditable(dataGridView1, 16, 41);
-                Common.SetColumnNonEditable(dataGridView1, 21, 41);
-          
-
-                Common.SetColumnNonEditable(dataGridView1, 22);
-                Common.SetColumnNonEditable(dataGridView1, 23);
-                Common.SetColumnNonEditable(dataGridView1, 24);
-                Common.SetColumnNonEditable(dataGridView1, 25);
-                Common.SetColumnNonEditable(dataGridView1, 26);
+                setRowColNonEditable();
                 CalcalculateTotal();
             }
             catch (Exception ex)
@@ -192,6 +175,7 @@ namespace OperationalStatisticsBook
         {
          
             dataGridView1.DataSource = BindDepotWiseOprationalDataRespectNonALowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021FleetItsUtillization();
+            setRowColNonEditable();
             MessageBox.Show("Done");
         }
 
@@ -280,7 +264,7 @@ namespace OperationalStatisticsBook
                 if (i >= 0)
                 {
 
-                    if (i != 35 && i != 40)
+                    if (i != 35 && i != 40 && i!=42)
 
                     {
                         dataGridView1.Rows[i].Cells[6].Value = Common.ConvertToDecimal(row[i].Cells[2].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[3].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[4].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[5].Value.ToString());
@@ -410,5 +394,28 @@ namespace OperationalStatisticsBook
 
 
         }
+
+        private void setRowColNonEditable()
+        {
+            Common.SetRowNonEditable(dataGridView1, 34);
+            Common.SetRowNonEditable(dataGridView1, 35);
+            Common.SetRowNonEditable(dataGridView1, 39);
+            Common.SetRowNonEditable(dataGridView1, 40);
+            Common.SetRowNonEditable(dataGridView1, 41);
+            Common.SetRowNonEditable(dataGridView1, 43);
+
+            Common.SetColumnNonEditable(dataGridView1, 6,  42);
+            Common.SetColumnNonEditable(dataGridView1, 11, 42);
+            Common.SetColumnNonEditable(dataGridView1, 16, 42);
+            Common.SetColumnNonEditable(dataGridView1, 21, 42);
+            Common.SetColumnNonEditable(dataGridView1, 22, 42);
+            Common.SetColumnNonEditable(dataGridView1, 23, 42);
+            Common.SetColumnNonEditable(dataGridView1, 24, 42);
+            Common.SetColumnNonEditable(dataGridView1, 25, 42);
+            Common.SetColumnNonEditable(dataGridView1, 26, 42);
+
+           
+        }
+
     }
 }

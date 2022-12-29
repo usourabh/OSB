@@ -227,16 +227,19 @@ namespace OperationalStatisticsBook
        
             dataGridView1.Rows[8].Cells[2].Value = Common.GetSum(row, 1, 7, 2);
             dataGridView1.Rows[8].Cells[3].Value = Common.GetSum(row, 1, 7, 3);
+            dataGridView1.Rows[8].Cells[4].Value = Common.GetSum(row, 1, 7, 4);
 
 
             dataGridView1.Rows[15].Cells[2].Value = Common.GetSum(row, 10, 14, 2);
             dataGridView1.Rows[15].Cells[3].Value = Common.GetSum(row, 10, 14, 3);
+            dataGridView1.Rows[15].Cells[4].Value = Common.GetSum(row, 10, 14, 4);
 
 
 
             // All Grand Total
             dataGridView1.Rows[16].Cells[2].Value = Common.ConvertToDecimal(dataGridView1.Rows[8].Cells[2].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[15].Cells[2].Value.ToString());
             dataGridView1.Rows[16].Cells[3].Value = Common.ConvertToDecimal(dataGridView1.Rows[8].Cells[3].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[15].Cells[3].Value.ToString());
+            dataGridView1.Rows[16].Cells[4].Value = Common.ConvertToDecimal(dataGridView1.Rows[8].Cells[4].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[15].Cells[4].Value.ToString());
 
 
             #region Calculating_HorizontalSum
@@ -274,10 +277,11 @@ namespace OperationalStatisticsBook
             CalcalculateTotal();
         }
         void NonEditableRowAndColumn()
+
         {
             Common.SetRowNonEditable(dataGridView1, 0);
-            Common.SetRowNonEditable(dataGridView1, 9);
             Common.SetRowNonEditable(dataGridView1, 8);
+            Common.SetRowNonEditable(dataGridView1, 9);
             Common.SetRowNonEditable(dataGridView1, 15);
             Common.SetRowNonEditable(dataGridView1, 16);
         }

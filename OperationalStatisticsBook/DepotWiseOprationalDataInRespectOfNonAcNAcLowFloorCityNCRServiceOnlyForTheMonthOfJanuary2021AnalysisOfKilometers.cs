@@ -69,21 +69,7 @@ namespace OperationalStatisticsBook
                 else
                     dataGridView1.DataSource = BindDepotWiseOprationalDataInRespectOfNonAcNAcLowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021AnalysisOfKilometers();
 
-                Common.SetRowNonEditable(dataGridView1,34);
-                Common.SetRowNonEditable(dataGridView1,35);
-                Common.SetRowNonEditable(dataGridView1, 38);
-                Common.SetRowNonEditable(dataGridView1, 39);
-                Common.SetRowNonEditable(dataGridView1, 40);
-                Common.SetRowNonEditable(dataGridView1, 43);
-
-                Common.SetColumnNonEditable(dataGridView1, 6);
-                Common.SetColumnNonEditable(dataGridView1, 11);
-                Common.SetColumnNonEditable(dataGridView1, 13);
-                Common.SetColumnNonEditable(dataGridView1, 14);
-                Common.SetColumnNonEditable(dataGridView1, 15);
-                Common.SetColumnNonEditable(dataGridView1, 16);
-                Common.SetColumnNonEditable(dataGridView1, 17);
-                Common.SetColumnNonEditable(dataGridView1, 22);
+                setRowColNonEditable();
                 CalcalculateTotal();
             }
             catch (Exception ex)
@@ -156,24 +142,29 @@ namespace OperationalStatisticsBook
             table.Rows.Add("22", "Hasan Pur", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0","0","0","0","0","0");
             table.Rows.Add("23", "Gazi Pur", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0","0","0","0","0","0");
             table.Rows.Add("24", "Rajghat I", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0","0","0","0","0","0");
-            table.Rows.Add("25", "Rajghat II", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0","0","0","0","0","0");
-            table.Rows.Add("26", "Hari Nagar I", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0","0","0","0","0","0");
-            table.Rows.Add("27", "Hari Nagar II", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0","0","0","0","0","0");
-            table.Rows.Add("28", "Kesho Pur", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0","0","0","0","0","0");
-            table.Rows.Add("29", "Naraina", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0","0","0","0","0","0");
-            table.Rows.Add("30", "Shadi Pur", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0","0","0","0","0","0");
-            table.Rows.Add("31", "BAGDOLA", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0","0","0","0","0","0");
-            table.Rows.Add("32", "DW. SEC.-II", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0","0","0","0","0","0");
-            table.Rows.Add("33", "Maya Puri", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0","0","0","0","0","0");
-            table.Rows.Add("34", "Dichaon Kalan", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0","0","0","0","0","0");
-            table.Rows.Add("35", "Peera Garhi", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0","0","0","0","0","0");
+            table.Rows.Add("25", "Hari Nagar I", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0","0","0","0","0","0");
+            table.Rows.Add("26", "Hari Nagar II", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0","0","0","0","0","0");
+            table.Rows.Add("27", "Kesho Pur", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0","0","0","0","0","0");
+            table.Rows.Add("28", "Naraina", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0","0","0","0","0","0");
+            table.Rows.Add("29", "Shadi Pur", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0","0","0","0","0","0");
+            table.Rows.Add("30", "BAGDOLA", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0","0","0","0","0","0");
+            table.Rows.Add("31", "DW. SEC.-II", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0","0","0","0","0","0");
+            table.Rows.Add("32", "Maya Puri", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0","0","0","0","0","0");
+            table.Rows.Add("33", "Dichaon Kalan", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0","0","0","0","0","0");
+            table.Rows.Add("34", "Peera Garhi", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0","0","0","0","0","0");
             table.Rows.Add("", "Total", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0","0","0","0","0","0");
+            
             table.Rows.Add("", "Electric Buses", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "","","","","","");
             table.Rows.Add("1", "Rohini sec.37", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
-            table.Rows.Add("2", "Mundhela kalan", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
+            table.Rows.Add("2", "Rajghat II", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0","0","0","0","0","0");
+            table.Rows.Add("3", "Mundhela kalan", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
+            
             table.Rows.Add("", "Total Electric", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
+            
             table.Rows.Add("", "Total DTC", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
+            
             table.Rows.Add("", "International", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "");
+            
             table.Rows.Add("1", "Kathmandu", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("", "Grand Total", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
 
@@ -185,6 +176,7 @@ namespace OperationalStatisticsBook
         {
             DeleteExisitingTableRecord("tbl_DepotWiseOprationalDataInRespectOfNonAcNAcLowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021AnalysisOfKilometers", OsbId);
             dataGridView1.DataSource = BindDepotWiseOprationalDataInRespectOfNonAcNAcLowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021AnalysisOfKilometers();
+            setRowColNonEditable();
             MessageBox.Show("Done");
         }
 
@@ -279,41 +271,31 @@ namespace OperationalStatisticsBook
             dataGridView1.Rows[34].Cells[11].Value = Common.GetSum(row,0,33, 11);
 
 
-            dataGridView1.Rows[38].Cells[2].Value = Common.GetSum(row, 36,37,2);
-            dataGridView1.Rows[38].Cells[3].Value = Common.GetSum(row, 36,37,3);
-            dataGridView1.Rows[38].Cells[4].Value = Common.GetSum(row, 36,37,4);
-            dataGridView1.Rows[38].Cells[5].Value = Common.GetSum(row, 36,37,5);
-            dataGridView1.Rows[38].Cells[6].Value = Common.GetSum(row, 36,37,6);
-            dataGridView1.Rows[38].Cells[7].Value = Common.GetSum(row, 36,37,7);
-            dataGridView1.Rows[38].Cells[8].Value = Common.GetSum(row, 36,37,8);
-            dataGridView1.Rows[38].Cells[9].Value = Common.GetSum(row, 36,37,9);
-            dataGridView1.Rows[38].Cells[10].Value = Common.GetSum(row,36,37, 10);
-            dataGridView1.Rows[38].Cells[11].Value = Common.GetSum(row,36,37, 11);
+            dataGridView1.Rows[39].Cells[2].Value = Common.GetSum(row, 36, 38, 2);
+            dataGridView1.Rows[39].Cells[3].Value = Common.GetSum(row, 36, 38, 3);
+            dataGridView1.Rows[39].Cells[4].Value = Common.GetSum(row, 36, 38, 4);
+            dataGridView1.Rows[39].Cells[5].Value = Common.GetSum(row, 36, 38, 5);
+            dataGridView1.Rows[39].Cells[6].Value = Common.GetSum(row, 36, 38, 6);
+            dataGridView1.Rows[39].Cells[7].Value = Common.GetSum(row, 36, 38, 7);
+            dataGridView1.Rows[39].Cells[8].Value = Common.GetSum(row, 36, 38, 8);
+            dataGridView1.Rows[39].Cells[9].Value = Common.GetSum(row, 36, 38, 9);
+            dataGridView1.Rows[39].Cells[10].Value = Common.GetSum(row,36, 38, 10);
+            dataGridView1.Rows[39].Cells[11].Value = Common.GetSum(row,36, 38, 11);
 
 
 
-            dataGridView1.Rows[39].Cells[2].Value = Common.ConvertToDecimal(dataGridView1.Rows[34].Cells[2].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[38].Cells[2].Value.ToString());
-            dataGridView1.Rows[39].Cells[3].Value = Common.ConvertToDecimal(dataGridView1.Rows[34].Cells[3].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[38].Cells[3].Value.ToString());
-            dataGridView1.Rows[39].Cells[4].Value = Common.ConvertToDecimal(dataGridView1.Rows[34].Cells[4].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[38].Cells[4].Value.ToString());
-            dataGridView1.Rows[39].Cells[5].Value = Common.ConvertToDecimal(dataGridView1.Rows[34].Cells[5].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[38].Cells[5].Value.ToString());
-            dataGridView1.Rows[39].Cells[6].Value = Common.ConvertToDecimal(dataGridView1.Rows[34].Cells[6].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[38].Cells[6].Value.ToString());
-            dataGridView1.Rows[39].Cells[7].Value = Common.ConvertToDecimal(dataGridView1.Rows[34].Cells[7].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[38].Cells[7].Value.ToString());
-            dataGridView1.Rows[39].Cells[8].Value = Common.ConvertToDecimal(dataGridView1.Rows[34].Cells[8].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[38].Cells[8].Value.ToString());
-            dataGridView1.Rows[39].Cells[9].Value = Common.ConvertToDecimal(dataGridView1.Rows[34].Cells[9].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[38].Cells[9].Value.ToString());
-            dataGridView1.Rows[39].Cells[10].Value = Common.ConvertToDecimal(dataGridView1.Rows[34].Cells[10].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[38].Cells[10].Value.ToString());
-            dataGridView1.Rows[39].Cells[11].Value = Common.ConvertToDecimal(dataGridView1.Rows[34].Cells[11].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[38].Cells[11].Value.ToString());
+            
 
-
-            dataGridView1.Rows[42].Cells[2].Value = Common.ConvertToDecimal(dataGridView1.Rows[41].Cells[2].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[39].Cells[2].Value.ToString());
-            dataGridView1.Rows[42].Cells[3].Value = Common.ConvertToDecimal(dataGridView1.Rows[41].Cells[3].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[39].Cells[3].Value.ToString());
-            dataGridView1.Rows[42].Cells[4].Value = Common.ConvertToDecimal(dataGridView1.Rows[41].Cells[4].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[39].Cells[4].Value.ToString());
-            dataGridView1.Rows[42].Cells[5].Value = Common.ConvertToDecimal(dataGridView1.Rows[41].Cells[5].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[39].Cells[5].Value.ToString());
-            dataGridView1.Rows[42].Cells[6].Value = Common.ConvertToDecimal(dataGridView1.Rows[41].Cells[6].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[39].Cells[6].Value.ToString());
-            dataGridView1.Rows[42].Cells[7].Value = Common.ConvertToDecimal(dataGridView1.Rows[41].Cells[7].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[39].Cells[7].Value.ToString());
-            dataGridView1.Rows[42].Cells[8].Value = Common.ConvertToDecimal(dataGridView1.Rows[41].Cells[8].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[39].Cells[8].Value.ToString());
-            dataGridView1.Rows[42].Cells[9].Value = Common.ConvertToDecimal(dataGridView1.Rows[41].Cells[9].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[39].Cells[9].Value.ToString());
-            dataGridView1.Rows[42].Cells[10].Value = Common.ConvertToDecimal(dataGridView1.Rows[41].Cells[10].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[39].Cells[10].Value.ToString());
-            dataGridView1.Rows[42].Cells[11].Value = Common.ConvertToDecimal(dataGridView1.Rows[41].Cells[11].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[39].Cells[11].Value.ToString());
+            dataGridView1.Rows[43].Cells[2].Value =  Common.ConvertToDecimal(dataGridView1.Rows[40].Cells[2].Value.ToString()) +  Common.ConvertToDecimal(dataGridView1.Rows[42].Cells[2].Value.ToString());
+            dataGridView1.Rows[43].Cells[3].Value =  Common.ConvertToDecimal(dataGridView1.Rows[40].Cells[3].Value.ToString()) +  Common.ConvertToDecimal(dataGridView1.Rows[42].Cells[3].Value.ToString());
+            dataGridView1.Rows[43].Cells[4].Value =  Common.ConvertToDecimal(dataGridView1.Rows[40].Cells[4].Value.ToString()) +  Common.ConvertToDecimal(dataGridView1.Rows[42].Cells[4].Value.ToString());
+            dataGridView1.Rows[43].Cells[5].Value =  Common.ConvertToDecimal(dataGridView1.Rows[40].Cells[5].Value.ToString()) +  Common.ConvertToDecimal(dataGridView1.Rows[42].Cells[5].Value.ToString());
+            dataGridView1.Rows[43].Cells[6].Value =  Common.ConvertToDecimal(dataGridView1.Rows[40].Cells[6].Value.ToString()) +  Common.ConvertToDecimal(dataGridView1.Rows[42].Cells[6].Value.ToString());
+            dataGridView1.Rows[43].Cells[7].Value =  Common.ConvertToDecimal(dataGridView1.Rows[40].Cells[7].Value.ToString()) +  Common.ConvertToDecimal(dataGridView1.Rows[42].Cells[7].Value.ToString());
+            dataGridView1.Rows[43].Cells[8].Value =  Common.ConvertToDecimal(dataGridView1.Rows[40].Cells[8].Value.ToString()) +  Common.ConvertToDecimal(dataGridView1.Rows[42].Cells[8].Value.ToString());
+            dataGridView1.Rows[43].Cells[9].Value =  Common.ConvertToDecimal(dataGridView1.Rows[40].Cells[9].Value.ToString()) +  Common.ConvertToDecimal(dataGridView1.Rows[42].Cells[9].Value.ToString());
+            dataGridView1.Rows[43].Cells[10].Value = Common.ConvertToDecimal(dataGridView1.Rows[40].Cells[10].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[42].Cells[10].Value.ToString());
+            dataGridView1.Rows[43].Cells[11].Value = Common.ConvertToDecimal(dataGridView1.Rows[40].Cells[11].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[42].Cells[11].Value.ToString());
 
             #endregion
 
@@ -338,7 +320,38 @@ namespace OperationalStatisticsBook
                 }
             }
             #endregion
+            dataGridView1.Rows[40].Cells[2].Value = Common.ConvertToDecimal(dataGridView1.Rows[34].Cells[2].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[39].Cells[2].Value.ToString());
+            dataGridView1.Rows[40].Cells[3].Value = Common.ConvertToDecimal(dataGridView1.Rows[34].Cells[3].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[39].Cells[3].Value.ToString());
+            dataGridView1.Rows[40].Cells[4].Value = Common.ConvertToDecimal(dataGridView1.Rows[34].Cells[4].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[39].Cells[4].Value.ToString());
+            dataGridView1.Rows[40].Cells[5].Value = Common.ConvertToDecimal(dataGridView1.Rows[34].Cells[5].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[39].Cells[5].Value.ToString());
+            dataGridView1.Rows[40].Cells[6].Value = Common.ConvertToDecimal(dataGridView1.Rows[34].Cells[6].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[39].Cells[6].Value.ToString());
+            dataGridView1.Rows[40].Cells[7].Value = Common.ConvertToDecimal(dataGridView1.Rows[34].Cells[7].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[39].Cells[7].Value.ToString());
+            dataGridView1.Rows[40].Cells[8].Value = Common.ConvertToDecimal(dataGridView1.Rows[34].Cells[8].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[39].Cells[8].Value.ToString());
+            dataGridView1.Rows[40].Cells[9].Value = Common.ConvertToDecimal(dataGridView1.Rows[34].Cells[9].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[39].Cells[9].Value.ToString());
+            dataGridView1.Rows[40].Cells[10].Value = Common.ConvertToDecimal(dataGridView1.Rows[34].Cells[10].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[39].Cells[10].Value.ToString());
+            dataGridView1.Rows[40].Cells[11].Value = Common.ConvertToDecimal(dataGridView1.Rows[34].Cells[11].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[39].Cells[11].Value.ToString());
 
+
+
+
+        }
+        private void setRowColNonEditable()
+        {
+            Common.SetRowNonEditable(dataGridView1, 34);
+            Common.SetRowNonEditable(dataGridView1, 35);
+            Common.SetRowNonEditable(dataGridView1, 39);
+            Common.SetRowNonEditable(dataGridView1, 40);
+            Common.SetRowNonEditable(dataGridView1, 41);
+            Common.SetRowNonEditable(dataGridView1, 43);
+
+            Common.SetColumnNonEditable(dataGridView1, 6 , 42);
+            Common.SetColumnNonEditable(dataGridView1, 11, 42);
+            Common.SetColumnNonEditable(dataGridView1, 13, 42);
+            Common.SetColumnNonEditable(dataGridView1, 14, 42);
+            Common.SetColumnNonEditable(dataGridView1, 15, 42);
+            Common.SetColumnNonEditable(dataGridView1, 16, 42);
+            Common.SetColumnNonEditable(dataGridView1, 17, 42);
+            Common.SetColumnNonEditable(dataGridView1, 22, 42);
         }
     }
 }
