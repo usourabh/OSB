@@ -100,7 +100,6 @@ namespace OperationalStatisticsBook
             table.Rows.Add("22", "HasanPur", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("23", "Gazi Pur", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("24", "Raj Ghat-I", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
-            table.Rows.Add("25", "Raj Ghat-II", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("26", "Hari Nagar-I ", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("27", "Hari Nagar-II", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("28", "Kesho Pur", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
@@ -118,7 +117,8 @@ namespace OperationalStatisticsBook
             table.Rows.Add("Electric Buses", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "");
 
             table.Rows.Add("1", "Rohini sec. 37", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
-            table.Rows.Add("2", "Mundhela kalan", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
+            table.Rows.Add("2", "Raj Ghat-II", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
+            table.Rows.Add("3", "Mundhela kalan", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("", "Total Electric", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("", "Total DTC", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
 
@@ -127,8 +127,8 @@ namespace OperationalStatisticsBook
             table.Rows.Add("1", "Kathmandu", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("Grand Total", "Grand Total", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
 
-
             return table;
+
         }
 
         void BindIndexPage(int OsbId)
@@ -182,6 +182,7 @@ namespace OperationalStatisticsBook
             }
 
         }
+
         int DeleteExisitingTableRecord(string TableName, int OsbId)
         {
             string strTable = "[rpt].[" + TableName + "]";
@@ -196,6 +197,7 @@ namespace OperationalStatisticsBook
 
             return i;
         }
+
         private void ResetOnClick(object sender, EventArgs e)
         {
             DeleteExisitingTableRecord("tbl_DepotWiseOperationalDataInRespectOfNonAcAndAcLowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021TripsScheduledAndOperated", OsbId);
@@ -295,7 +297,7 @@ namespace OperationalStatisticsBook
             dataGridView1.Rows[37].Cells[19].Value = Common.GetSum(row, 3, 36, 19);
             dataGridView1.Rows[37].Cells[20].Value = Common.GetSum(row, 3, 36, 20);
             dataGridView1.Rows[37].Cells[21].Value = Common.GetSum(row, 3, 36, 21);
-         
+            
 
 
             dataGridView1.Rows[42].Cells[2].Value = Common.GetSum(row, 40, 41, 2);
@@ -361,7 +363,6 @@ namespace OperationalStatisticsBook
                     if (i != 38 && i != 39 && i != 44 && i != 45) {
                         dataGridView1.Rows[i].Cells[6].Value = Common.ConvertToDecimal(row[i].Cells[2].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[3].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[4].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[5].Value.ToString());
                         dataGridView1.Rows[i].Cells[11].Value = Common.ConvertToDecimal(row[i].Cells[7].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[8].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[9].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[10].Value.ToString());
-
                         dataGridView1.Rows[i].Cells[12].Value = Common.ConvertToDecimal(row[i].Cells[2].Value.ToString()) > 0 ? Math.Round(Common.ConvertToDecimal(row[i].Cells[7].Value.ToString()) / Common.ConvertToDecimal(row[i].Cells[2].Value.ToString()) * 100, 2) : 0;
                         dataGridView1.Rows[i].Cells[13].Value = Common.ConvertToDecimal(row[i].Cells[3].Value.ToString()) > 0 ? Math.Round(Common.ConvertToDecimal(row[i].Cells[8].Value.ToString()) / Common.ConvertToDecimal(row[i].Cells[3].Value.ToString()) * 100, 2) : 0;
                         dataGridView1.Rows[i].Cells[14].Value = Common.ConvertToDecimal(row[i].Cells[4].Value.ToString()) > 0 ? Math.Round(Common.ConvertToDecimal(row[i].Cells[9].Value.ToString()) / Common.ConvertToDecimal(row[i].Cells[4].Value.ToString()) * 100, 2) : 0;

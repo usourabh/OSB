@@ -68,7 +68,7 @@ namespace OperationalStatisticsBook
                 {
                     dataGridView1.DataSource = BindOperationalDepotWiseFleetStrengthNBusesOnRoad();
                 }
-                NonEditableRowAndcolumn();
+                SetNonEditableRowAndcolumn();
                 CalcalculateTotal();
             
             }
@@ -125,7 +125,7 @@ namespace OperationalStatisticsBook
             table.Rows.Add("24", "Inderprastha", "Aug.1958", "0", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("25", "Gazi Pur", "Oct.1989", "0", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("26", "Raj Ghat-I", "Oct.2010", "0", "0", "0", "0", "0", "0", "0", "0");
-            table.Rows.Add("27", "Raj Ghat-II", "Oct.2010", "0", "0", "0", "0", "0", "0", "0", "0");
+            table.Rows.Add("27", "Raj Ghat-II", "July.2015", "0", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("28", "Hari Nagar-I ", "July.1961", "0", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("29", "Hari Nagar-II", "July.1975", "0", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("30", "Kesho Pur", "March 1985", "0", "0", "0", "0", "0", "0", "0", "0");
@@ -146,7 +146,7 @@ namespace OperationalStatisticsBook
         {
             DeleteExisitingTableRecord("tbl_OperationalDepotWiseFleetStrengthNBusesOnRoad", OsbId);
             dataGridView1.DataSource = BindOperationalDepotWiseFleetStrengthNBusesOnRoad();
-            NonEditableRowAndcolumn();
+            SetNonEditableRowAndcolumn();
             MessageBox.Show("Done");
         }
 
@@ -209,18 +209,14 @@ namespace OperationalStatisticsBook
             #region Calculating_VerticalSum
 
             // North Total
-            dataGridView1.Rows[37].Cells[3].Value = Common.GetSum(row, 0, 37,3);
-            dataGridView1.Rows[37].Cells[4].Value = Common.GetSum(row, 0, 37,4);
-            dataGridView1.Rows[37].Cells[5].Value = Common.GetSum(row, 0, 37,5);
-            dataGridView1.Rows[37].Cells[6].Value = Common.GetSum(row, 0, 37,6);
-            dataGridView1.Rows[37].Cells[7].Value = Common.GetSum(row, 0, 37,7);
-            dataGridView1.Rows[37].Cells[8].Value = Common.GetSum(row, 0, 37,8);
-            dataGridView1.Rows[37].Cells[9].Value = Common.GetSum(row, 0, 37,9);
-            dataGridView1.Rows[37].Cells[10].Value = Common.GetSum(row,0, 37,10);
-        
-          
-
-       
+            dataGridView1.Rows[38].Cells[3].Value = Common.GetSum(row, 0, 37,3);
+            dataGridView1.Rows[38].Cells[4].Value = Common.GetSum(row, 0, 37,4);
+            dataGridView1.Rows[38].Cells[5].Value = Common.GetSum(row, 0, 37,5);
+            dataGridView1.Rows[38].Cells[6].Value = Common.GetSum(row, 0, 37,6);
+            dataGridView1.Rows[38].Cells[7].Value = Common.GetSum(row, 0, 37,7);
+            dataGridView1.Rows[38].Cells[8].Value = Common.GetSum(row, 0, 37,8);
+            dataGridView1.Rows[38].Cells[9].Value = Common.GetSum(row, 0, 37,9);
+            dataGridView1.Rows[38].Cells[10].Value = Common.GetSum(row,0, 37,10);
 
             #endregion
 
@@ -236,9 +232,9 @@ namespace OperationalStatisticsBook
         {
             CalcalculateTotal();
         }
-        public void NonEditableRowAndcolumn()
+        public void SetNonEditableRowAndcolumn()
         {
-            Common.SetRowNonEditable(dataGridView1, 37);
+            Common.SetRowNonEditable(dataGridView1, 38);
         }
     }
 }
