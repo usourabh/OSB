@@ -251,7 +251,6 @@ namespace OperationalStatisticsBook
             #region Calculating_VerticalSum
 
 
-            dataGridView1.Rows[37].Cells[2].Value =  Common.GetSum(row, 3, 36, 2);
             dataGridView1.Rows[37].Cells[3].Value =  Common.GetSum(row, 3, 36, 3);
             dataGridView1.Rows[37].Cells[4].Value =  Common.GetSum(row, 3, 36, 4);
             dataGridView1.Rows[37].Cells[5].Value =  Common.GetSum(row, 3, 36, 5);
@@ -261,22 +260,7 @@ namespace OperationalStatisticsBook
             dataGridView1.Rows[37].Cells[9].Value =  Common.GetSum(row, 3, 36, 9);
             dataGridView1.Rows[37].Cells[10].Value = Common.GetSum(row, 3, 36, 10);
             dataGridView1.Rows[37].Cells[11].Value = Common.GetSum(row, 3, 36, 11);
-
-
-            dataGridView1.Rows[42].Cells[2].Value =  Common.GetSum(row, 39, 41, 2);
-            dataGridView1.Rows[42].Cells[3].Value =  Common.GetSum(row, 39, 41, 3);
-            dataGridView1.Rows[42].Cells[4].Value =  Common.GetSum(row, 39, 41, 4);
-            dataGridView1.Rows[42].Cells[5].Value =  Common.GetSum(row, 39, 41, 5);
-            dataGridView1.Rows[42].Cells[6].Value =  Common.GetSum(row, 39, 41, 6);
-            dataGridView1.Rows[42].Cells[7].Value =  Common.GetSum(row, 39, 41, 7);
-            dataGridView1.Rows[42].Cells[8].Value =  Common.GetSum(row, 39, 41, 8);
-            dataGridView1.Rows[42].Cells[9].Value =  Common.GetSum(row, 39, 41, 9);
-            dataGridView1.Rows[42].Cells[10].Value = Common.GetSum(row, 39, 41, 10);
-            dataGridView1.Rows[42].Cells[11].Value = Common.GetSum(row, 39, 41, 11);
-
-
-
-          
+         
             
             #endregion
 
@@ -286,7 +270,7 @@ namespace OperationalStatisticsBook
 
                 if (i > 2)
                 {
-                    if (i != 38 && i != 43)
+                    if (i != 38 && i != 43 && i!=45)
                     {
                         dataGridView1.Rows[i].Cells[6].Value = Common.ConvertToDecimal(row[i].Cells[2].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[3].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[4].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[5].Value.ToString());
                         dataGridView1.Rows[i].Cells[11].Value = Common.ConvertToDecimal(row[i].Cells[7].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[8].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[9].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[10].Value.ToString());
@@ -298,7 +282,10 @@ namespace OperationalStatisticsBook
             
             for (int i = 2; i <= 11; i++)
             {
-
+                // All depots Total
+                dataGridView1.Rows[37].Cells[i].Value = Common.GetSum(row, 3, 36, i);
+                //For Total Electric
+                dataGridView1.Rows[42].Cells[i].Value = Common.GetSum(row, 39, 41, i);
                 //For Total DTC
                 dataGridView1.Rows[43].Cells[i].Value = Common.ConvertToDecimal(dataGridView1.Rows[37].Cells[i].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[42].Cells[i].Value.ToString());
                 //For grand total

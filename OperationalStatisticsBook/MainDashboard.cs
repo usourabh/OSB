@@ -1330,8 +1330,6 @@ namespace OperationalStatisticsBook
             return pageCount;
         }
 
-
-
         private byte[] ConvertReportToPDF(LocalReport rep)
         {
             string reportType = "PDF";

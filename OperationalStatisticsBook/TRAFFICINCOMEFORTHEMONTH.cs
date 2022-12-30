@@ -44,14 +44,11 @@ namespace OperationalStatisticsBook
            // table.Rows.Add("1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17");
             table.Rows.Add( "Ticket Earning ", "0" );
             table.Rows.Add( "Pass Earning ", "0");
+            table.Rows.Add( "Tourist", "0");
             table.Rows.Add( "Special Hire ", "0");
+            table.Rows.Add( "School Bus ", "0");
             table.Rows.Add( "Pink Ticket Earning ", "0");
          
-
-
-
-
-
             return table;
         }
 
@@ -96,8 +93,6 @@ namespace OperationalStatisticsBook
 
             return i;
         }
-
-
 
         private void ResetOnClick(object sender, EventArgs e)
         {

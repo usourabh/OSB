@@ -42,15 +42,11 @@ namespace OperationalStatisticsBook
 
 
             // table.Rows.Add("1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17");
-            table.Rows.Add("Ticket Earning ", "0");
-            table.Rows.Add("Pass Earning ", "0");
-            table.Rows.Add("Special Hire ", "0");
-            table.Rows.Add("Pink Ticket Earning ", "0");
-
-
-
-
-
+            table.Rows.Add("Interest ", "0");
+            table.Rows.Add("MISC. ", "0");
+            table.Rows.Add("CNG ", "0");
+            table.Rows.Add("Salary", "0");
+            table.Rows.Add("Store & Spare", "0");
 
             return table;
         }
@@ -96,11 +92,6 @@ namespace OperationalStatisticsBook
 
             return i;
         }
-
-
-
-       
-
 
         private void ResetOnClick(object sender, EventArgs e)
         {

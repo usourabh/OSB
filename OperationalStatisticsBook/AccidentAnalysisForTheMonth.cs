@@ -297,14 +297,7 @@ namespace OperationalStatisticsBook
                 }
 
             }
-
-            
-            for(int i = 2; i<=41; i++)
-            {
-                dataGridView1.Rows[39].Cells[i].Value = Common.GetSum(row, 36, 38, i);
-                dataGridView1.Rows[40].Cells[i].Value = Common.ConvertToDecimal(dataGridView1.Rows[34].Cells[i].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[39].Cells[i].Value.ToString());
-            }
-           
+                             
             #endregion
 
             #region Calculating_HorizontalSum
@@ -313,7 +306,7 @@ namespace OperationalStatisticsBook
 
                 if (i >= 0)
                 {
-                    if (i != 35 && i != 40)
+                    if (i != 35 && i != 40 && i != 39 && i!=42)
                     {
                         dataGridView1.Rows[i].Cells[6].Value = Common.ConvertToDecimal(row[i].Cells[2].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[3].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[4].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[5].Value.ToString());
                         dataGridView1.Rows[i].Cells[11].Value = Common.ConvertToDecimal(row[i].Cells[7].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[8].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[9].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[10].Value.ToString());
@@ -338,6 +331,13 @@ namespace OperationalStatisticsBook
             // grand total
             for(int i = 2; i<=41; i++)
             {
+                // Total Electric
+                dataGridView1.Rows[39].Cells[i].Value = Common.GetSum(row, 36, 38, i);
+
+                // Total DTC
+                dataGridView1.Rows[40].Cells[i].Value = Common.ConvertToDecimal(dataGridView1.Rows[34].Cells[i].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[39].Cells[i].Value.ToString());
+
+                // For Grand Total
                 dataGridView1.Rows[43].Cells[i].Value = Common.ConvertToDecimal(row[40].Cells[i].Value.ToString()) + Common.ConvertToDecimal(row[42].Cells[i].Value.ToString());
 
             }
@@ -351,16 +351,16 @@ namespace OperationalStatisticsBook
         private void setRowColNonEditable()
         { 
 
-            Common.SetColumnNonEditable(dataGridView1, 6);
-            Common.SetColumnNonEditable(dataGridView1, 11);
-            Common.SetColumnNonEditable(dataGridView1, 16);
-            Common.SetColumnNonEditable(dataGridView1, 17);
-            Common.SetColumnNonEditable(dataGridView1, 18);
-            Common.SetColumnNonEditable(dataGridView1, 19);
-            Common.SetColumnNonEditable(dataGridView1, 20);
-            Common.SetColumnNonEditable(dataGridView1, 21);
-            Common.SetColumnNonEditable(dataGridView1, 31);
-            Common.SetColumnNonEditable(dataGridView1, 36);
+            Common.SetColumnNonEditable(dataGridView1, 6 , 42);
+            Common.SetColumnNonEditable(dataGridView1, 11, 42);
+            Common.SetColumnNonEditable(dataGridView1, 16, 42);
+            Common.SetColumnNonEditable(dataGridView1, 17, 42);
+            Common.SetColumnNonEditable(dataGridView1, 18, 42);
+            Common.SetColumnNonEditable(dataGridView1, 19, 42);
+            Common.SetColumnNonEditable(dataGridView1, 20, 42);
+            Common.SetColumnNonEditable(dataGridView1, 21, 42);
+            Common.SetColumnNonEditable(dataGridView1, 31, 42);
+            Common.SetColumnNonEditable(dataGridView1, 36, 42);
 
             Common.SetRowNonEditable(dataGridView1, 34);
             Common.SetRowNonEditable(dataGridView1, 35);
