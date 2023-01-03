@@ -129,9 +129,11 @@ namespace OperationalStatisticsBook
             table.Rows.Add(" ", " ", "", "", "", "", "", "", "");
 
             table.Rows.Add(" DISTRIBUTION OF FLEET", " ", " ", "", "", "", "Extent of Overaged Buses", " ", " ");
+            int lastDayofTheMonth = DateTime.DaysInMonth(currentDate.Year, currentDate.Month);
 
-          
-            table.Rows.Add("As on 31st July-2022 ", " ", " ", "", "", "", "(More Than 8 Years Old)", " ", " ");
+            string lastDateForDistributionFleet = lastDayofTheMonth + "-" + currentDate.Month + "-" + currentDate.Year;
+
+            table.Rows.Add(lastDateForDistributionFleet, " ", " ", "", "", "", "(More Than 8 Years Old)", " ", " ");
             table.Rows.Add("Age Group in Years ", "Number of buses ", "", "", "", "", "", "Absolute(Number)", "Percentage ");
             table.Rows.Add("0-2", "153 ", "", "", "", "",                                  "31.3.07", "347", "9.81");
             table.Rows.Add("2-4", "0", "", "", "", "",                                     "31.3.08", "299", "8.45");
@@ -150,11 +152,11 @@ namespace OperationalStatisticsBook
             table.Rows.Add(" ", " ", "", "", "", "",                                       "31.3.21", "3760", "100.00");
             table.Rows.Add(" ", " ", "", "", "", "",                                       "31.3.22", "3760", "100.00");
 
-            int lastDayofTheMonth = DateTime.DaysInMonth(currentDate.Year, currentDate.Month);
-            string lastDateOfSelectedMonth = lastDayofTheMonth +"."+ currentDate.Month + "." + currentDate.Year;
+            
+            string lastDateOfSelectedMonthForlastGridViewCell = lastDayofTheMonth +"."+ currentDate.Month + "." + currentDate.Year;
 
 
-            table.Rows.Add(" ", " ", "", "", "", "", lastDateOfSelectedMonth, "3760", " ");
+            table.Rows.Add(" ", " ", "", "", "", "", lastDateOfSelectedMonthForlastGridViewCell, "3760", " ");
 
 
             return table;
@@ -310,9 +312,10 @@ namespace OperationalStatisticsBook
                                                   + Common.ConvertToDecimal(row[31].Cells[1].Value.ToString());
 
             //percentage last 
-            dataGridView1.Rows[42].Cells[8].Value = dataGridView1.Rows[19].Cells[8].Value;
+            dataGridView1.Rows[42].Cells[8].Value = Math.Round( Common.ConvertToDecimal(row[42].Cells[7].Value.ToString()) / Common.ConvertToDecimal(row[32].Cells[1].Value.ToString()) *100, 2);
 
         }
+
         void SetNonEditable()
         {
             for(byte i=0; i<=15; i++)
@@ -326,6 +329,7 @@ namespace OperationalStatisticsBook
                 Common.SetRowNonEditable(dataGridView1, i);
             }
         }
+
         private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             CalculateFormula();

@@ -128,7 +128,7 @@ namespace OperationalStatisticsBook
             table.Rows.Add("2018-19", "39", "", "24721", "", "6.42", "", "0", "", "102", "", "3849", "");
             table.Rows.Add("2019-20", "35", "", "28163", "", "7.49", "", "0", "", "80", "", "3762", "");
             table.Rows.Add("2020-21", "35", "", "29369", "", "7.81", "", "0", "", "2", "", "3760", "");
-            table.Rows.Add("2021-22", "36", "", "30675", "", "8.15", "", "2", "", "", "", "3762", "");
+            table.Rows.Add("2021-22", "36", "", "30675", "", "8.15", "", "2", "", "0", "", "3762", "");
 
             table.Rows.Add(" ", "No of Depots", "No of Depots", "Man Power", "Man Power", "Staff Ratio", "Staff Ratio", "Added (Vehicle)", "Added (Vehicle)", "Deleted (Vehicle)", "Deleted (Vehicle)", "Fleet at the end", "Fleet at the end");
 

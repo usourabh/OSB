@@ -1314,8 +1314,8 @@ namespace OperationalStatisticsBook
             }
         }
 
-
         //countpage function is counting the no of pages in single rdlc
+
         public int countpage(byte[] pdfContent)
         {
             int pageCount;

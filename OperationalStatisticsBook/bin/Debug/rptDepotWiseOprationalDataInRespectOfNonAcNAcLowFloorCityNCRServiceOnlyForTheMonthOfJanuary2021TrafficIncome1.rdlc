@@ -574,7 +574,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value> Depot- wise Operational Data (in respect of Non AC &amp; AC Low Floor City + NCR service only) For the month of </Value>
+                    <Value> Depot- wise Operational Data (in respect of Non AC &amp; AC Low Floor City + NCR bus service only) For the month of </Value>
                     <Style>
                       <FontWeight>Bold</FontWeight>
                     </Style>
@@ -586,7 +586,20 @@
                     </Style>
                   </TextRun>
                   <TextRun>
-                    <Value> Traffic Income</Value>
+                    <Value xml:space="preserve"> </Value>
+                    <Style>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Traffic Income</Value>
                     <Style>
                       <FontWeight>Bold</FontWeight>
                     </Style>

@@ -226,7 +226,7 @@ namespace OperationalStatisticsBook
 
             table.Rows.Add(" ", "Total (VII)", "0", "0", "0", "0", "0", "0");
 
-            table.Rows.Add("VIII ", "Total (VII)", "0", "0", "0", "0", "0", "0");
+            table.Rows.Add("VIII ", "Total Expenditure (V + VII)", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("IX ", "Total loss/Profit (I-VIII) ", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("X ", "prior Period Adj./Interest Utilized", "2140.67", "91.28", "3086.08", "134.91", "4402.37", "231.84");
             table.Rows.Add("XI ", "Net Loss/ Profit", "0", "0", "0", "0", "0", "0");

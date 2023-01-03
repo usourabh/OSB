@@ -304,7 +304,6 @@ namespace OperationalStatisticsBook
 
             #endregion Monthly Earning  
 
-
             #endregion Calculating_VerticalSum
             #region Calculating_HorizontalSum
             // for (int i = 0; i < (row.Count - 1); i++)
@@ -377,7 +376,7 @@ namespace OperationalStatisticsBook
 
                     // Add column Number 11 Start
                     dataGridView1.Rows[12].Cells[6].Value = Math.Round(Common.ConvertToDecimal(row[12].Cells[3].Value.ToString()) + Common.ConvertToDecimal(row[12].Cells[4].Value.ToString()) + Common.ConvertToDecimal(row[12].Cells[5].Value.ToString()), 2);
-                    dataGridView1.Rows[12].Cells[9].Value = Math.Round(Common.ConvertToDecimal(row[12].Cells[7].Value.ToString()) + Common.ConvertToDecimal(row[12].Cells[8].Value.ToString()));
+                    dataGridView1.Rows[12].Cells[9].Value = Math.Round(Common.ConvertToDecimal(row[12].Cells[7].Value.ToString()) + Common.ConvertToDecimal(row[12].Cells[8].Value.ToString()), 2);
                     dataGridView1.Rows[12].Cells[10].Value = Math.Round(Common.ConvertToDecimal(row[12].Cells[3].Value.ToString()) + Common.ConvertToDecimal(row[12].Cells[7].Value.ToString()), 0);
                     dataGridView1.Rows[12].Cells[11].Value = Math.Round(Common.ConvertToDecimal(row[12].Cells[4].Value.ToString()) + Common.ConvertToDecimal(row[12].Cells[8].Value.ToString()), 0);
                     dataGridView1.Rows[12].Cells[12].Value = Math.Round(Common.ConvertToDecimal(row[12].Cells[5].Value.ToString()), 2);
@@ -389,7 +388,7 @@ namespace OperationalStatisticsBook
 
                     // Add column Number 12 Start
                     dataGridView1.Rows[13].Cells[6].Value = Math.Round(Common.ConvertToDecimal(row[13].Cells[3].Value.ToString()) + Common.ConvertToDecimal(row[13].Cells[4].Value.ToString()) + Common.ConvertToDecimal(row[13].Cells[5].Value.ToString()), 2);
-                    dataGridView1.Rows[13].Cells[9].Value = Math.Round(Common.ConvertToDecimal(row[13].Cells[7].Value.ToString()) + Common.ConvertToDecimal(row[13].Cells[8].Value.ToString()));
+                    dataGridView1.Rows[13].Cells[9].Value = Math.Round(Common.ConvertToDecimal(row[13].Cells[7].Value.ToString()) + Common.ConvertToDecimal(row[13].Cells[8].Value.ToString()), 2);
                     dataGridView1.Rows[13].Cells[10].Value = Math.Round(Common.ConvertToDecimal(row[13].Cells[3].Value.ToString()) + Common.ConvertToDecimal(row[13].Cells[7].Value.ToString()), 0);
                     dataGridView1.Rows[13].Cells[11].Value = Math.Round(Common.ConvertToDecimal(row[13].Cells[4].Value.ToString()) + Common.ConvertToDecimal(row[13].Cells[8].Value.ToString()), 0);
                     dataGridView1.Rows[13].Cells[12].Value = Math.Round(Common.ConvertToDecimal(row[13].Cells[5].Value.ToString()), 2);
@@ -401,7 +400,7 @@ namespace OperationalStatisticsBook
 
                     // Add column Number 13 Start
                     dataGridView1.Rows[14].Cells[6].Value = Math.Round(Common.ConvertToDecimal(row[14].Cells[3].Value.ToString()) + Common.ConvertToDecimal(row[14].Cells[4].Value.ToString()) + Common.ConvertToDecimal(row[14].Cells[5].Value.ToString()), 2);
-                    dataGridView1.Rows[14].Cells[9].Value = Math.Round(Common.ConvertToDecimal(row[14].Cells[7].Value.ToString()) + Common.ConvertToDecimal(row[14].Cells[8].Value.ToString()));
+                    dataGridView1.Rows[14].Cells[9].Value = Math.Round(Common.ConvertToDecimal(row[14].Cells[7].Value.ToString()) + Common.ConvertToDecimal(row[14].Cells[8].Value.ToString()), 2);
                     dataGridView1.Rows[14].Cells[10].Value = Math.Round(Common.ConvertToDecimal(row[14].Cells[3].Value.ToString()) + Common.ConvertToDecimal(row[14].Cells[7].Value.ToString()), 0);
                     dataGridView1.Rows[14].Cells[11].Value = Math.Round(Common.ConvertToDecimal(row[14].Cells[4].Value.ToString()) + Common.ConvertToDecimal(row[14].Cells[8].Value.ToString()), 0);
                     dataGridView1.Rows[14].Cells[12].Value = Math.Round(Common.ConvertToDecimal(row[14].Cells[5].Value.ToString()), 2);
@@ -425,7 +424,7 @@ namespace OperationalStatisticsBook
 
                     // Add column Number 17 Start
                     dataGridView1.Rows[20].Cells[6].Value = Math.Round(Common.ConvertToDecimal(row[20].Cells[3].Value.ToString()) + Common.ConvertToDecimal(row[20].Cells[4].Value.ToString()) + Common.ConvertToDecimal(row[20].Cells[5].Value.ToString()), 2);
-                    dataGridView1.Rows[20].Cells[9].Value = Math.Round(Common.ConvertToDecimal(row[20].Cells[7].Value.ToString()) + Common.ConvertToDecimal(row[20].Cells[8].Value.ToString()));
+                    dataGridView1.Rows[20].Cells[9].Value = Math.Round(Common.ConvertToDecimal(row[20].Cells[7].Value.ToString()) + Common.ConvertToDecimal(row[20].Cells[8].Value.ToString()), 2);
                     dataGridView1.Rows[20].Cells[10].Value = Math.Round(Common.ConvertToDecimal(row[20].Cells[3].Value.ToString()) + Common.ConvertToDecimal(row[20].Cells[7].Value.ToString()), 0);
                     dataGridView1.Rows[20].Cells[11].Value = Math.Round(Common.ConvertToDecimal(row[20].Cells[4].Value.ToString()) + Common.ConvertToDecimal(row[20].Cells[8].Value.ToString()), 0);
                     dataGridView1.Rows[20].Cells[12].Value = Math.Round(Common.ConvertToDecimal(row[20].Cells[5].Value.ToString()), 2);
@@ -473,7 +472,7 @@ namespace OperationalStatisticsBook
 
                     // Add column Number 18 (c) Start
                     dataGridView1.Rows[25].Cells[6].Value = Math.Round(Common.ConvertToDecimal(row[25].Cells[3].Value.ToString()) + Common.ConvertToDecimal(row[25].Cells[4].Value.ToString()) + Common.ConvertToDecimal(row[25].Cells[5].Value.ToString()), 2);
-                    dataGridView1.Rows[25].Cells[9].Value = Math.Round(Common.ConvertToDecimal(row[25].Cells[7].Value.ToString()) + Common.ConvertToDecimal(row[25].Cells[8].Value.ToString()));
+                    dataGridView1.Rows[25].Cells[9].Value = Math.Round(Common.ConvertToDecimal(row[25].Cells[7].Value.ToString()) + Common.ConvertToDecimal(row[25].Cells[8].Value.ToString()), 2);
                     dataGridView1.Rows[25].Cells[10].Value = Math.Round(Common.ConvertToDecimal(row[25].Cells[3].Value.ToString()) + Common.ConvertToDecimal(row[25].Cells[7].Value.ToString()), 2);
                     dataGridView1.Rows[25].Cells[11].Value = Math.Round(Common.ConvertToDecimal(row[25].Cells[4].Value.ToString()) + Common.ConvertToDecimal(row[25].Cells[8].Value.ToString()), 2);
                     dataGridView1.Rows[25].Cells[12].Value = Math.Round(Common.ConvertToDecimal(row[25].Cells[5].Value.ToString()), 2);
@@ -497,7 +496,7 @@ namespace OperationalStatisticsBook
 
                     // Add column Number 19 Daily Earning (b) Start
                     dataGridView1.Rows[29].Cells[6].Value = Math.Round(Common.ConvertToDecimal(row[29].Cells[3].Value.ToString()) + Common.ConvertToDecimal(row[29].Cells[4].Value.ToString()) + Common.ConvertToDecimal(row[29].Cells[5].Value.ToString()), 2);
-                    dataGridView1.Rows[29].Cells[9].Value = Math.Round(Common.ConvertToDecimal(row[29].Cells[7].Value.ToString()) + Common.ConvertToDecimal(row[29].Cells[8].Value.ToString()));
+                    dataGridView1.Rows[29].Cells[9].Value = Math.Round(Common.ConvertToDecimal(row[29].Cells[7].Value.ToString()) + Common.ConvertToDecimal(row[29].Cells[8].Value.ToString()), 2);
                     dataGridView1.Rows[29].Cells[10].Value = Math.Round(Common.ConvertToDecimal(row[29].Cells[3].Value.ToString()) + Common.ConvertToDecimal(row[29].Cells[7].Value.ToString()), 2);
                     dataGridView1.Rows[29].Cells[11].Value = Math.Round(Common.ConvertToDecimal(row[29].Cells[4].Value.ToString()) + Common.ConvertToDecimal(row[29].Cells[8].Value.ToString()), 2);
                     dataGridView1.Rows[29].Cells[12].Value = Math.Round(Common.ConvertToDecimal(row[29].Cells[5].Value.ToString()), 2);
@@ -509,7 +508,7 @@ namespace OperationalStatisticsBook
 
                     // Add column Number 22 Total passengers carried (a)Ticket Start
                     dataGridView1.Rows[35].Cells[6].Value = Math.Round(Common.ConvertToDecimal(row[35].Cells[3].Value.ToString()) + Common.ConvertToDecimal(row[35].Cells[4].Value.ToString()) + Common.ConvertToDecimal(row[35].Cells[5].Value.ToString()), 2);
-                    dataGridView1.Rows[35].Cells[9].Value = Math.Round(Common.ConvertToDecimal(row[35].Cells[7].Value.ToString()) + Common.ConvertToDecimal(row[35].Cells[8].Value.ToString()));
+                    dataGridView1.Rows[35].Cells[9].Value = Math.Round(Common.ConvertToDecimal(row[35].Cells[7].Value.ToString()) + Common.ConvertToDecimal(row[35].Cells[8].Value.ToString()), 2);
                     dataGridView1.Rows[35].Cells[10].Value = Math.Round(Common.ConvertToDecimal(row[35].Cells[3].Value.ToString()) + Common.ConvertToDecimal(row[35].Cells[7].Value.ToString()), 2);
                     dataGridView1.Rows[35].Cells[11].Value = Math.Round(Common.ConvertToDecimal(row[35].Cells[4].Value.ToString()) + Common.ConvertToDecimal(row[35].Cells[8].Value.ToString()), 2);
                     dataGridView1.Rows[35].Cells[12].Value = Math.Round(Common.ConvertToDecimal(row[35].Cells[5].Value.ToString()), 2);
@@ -521,7 +520,7 @@ namespace OperationalStatisticsBook
 
                     // Add column Number 22 Total passengers carried (b)PinkTicketed Start
                     dataGridView1.Rows[36].Cells[6].Value = Math.Round(Common.ConvertToDecimal(row[36].Cells[3].Value.ToString()) + Common.ConvertToDecimal(row[36].Cells[4].Value.ToString()) + Common.ConvertToDecimal(row[36].Cells[5].Value.ToString()), 2);
-                    dataGridView1.Rows[36].Cells[9].Value = Math.Round(Common.ConvertToDecimal(row[36].Cells[7].Value.ToString()) + Common.ConvertToDecimal(row[36].Cells[8].Value.ToString()));
+                    dataGridView1.Rows[36].Cells[9].Value = Math.Round(Common.ConvertToDecimal(row[36].Cells[7].Value.ToString()) + Common.ConvertToDecimal(row[36].Cells[8].Value.ToString()), 2);
                     dataGridView1.Rows[36].Cells[10].Value = Math.Round(Common.ConvertToDecimal(row[36].Cells[3].Value.ToString()) + Common.ConvertToDecimal(row[36].Cells[7].Value.ToString()), 2);
                     dataGridView1.Rows[36].Cells[11].Value = Math.Round(Common.ConvertToDecimal(row[36].Cells[4].Value.ToString()) + Common.ConvertToDecimal(row[36].Cells[8].Value.ToString()), 2);
                     dataGridView1.Rows[36].Cells[12].Value = Math.Round(Common.ConvertToDecimal(row[36].Cells[5].Value.ToString()), 2);
@@ -533,7 +532,7 @@ namespace OperationalStatisticsBook
 
                     // Add column Number 22 Total passengers carried Total Ticket Start
                     dataGridView1.Rows[37].Cells[6].Value = Math.Round(Common.ConvertToDecimal(row[37].Cells[3].Value.ToString()) + Common.ConvertToDecimal(row[37].Cells[4].Value.ToString()) + Common.ConvertToDecimal(row[37].Cells[5].Value.ToString()), 2);
-                    dataGridView1.Rows[37].Cells[9].Value = Math.Round(Common.ConvertToDecimal(row[37].Cells[7].Value.ToString()) + Common.ConvertToDecimal(row[37].Cells[8].Value.ToString()));
+                    dataGridView1.Rows[37].Cells[9].Value = Math.Round(Common.ConvertToDecimal(row[37].Cells[7].Value.ToString()) + Common.ConvertToDecimal(row[37].Cells[8].Value.ToString()), 2);
                     dataGridView1.Rows[37].Cells[10].Value = Math.Round(Common.ConvertToDecimal(row[37].Cells[3].Value.ToString()) + Common.ConvertToDecimal(row[37].Cells[7].Value.ToString()), 2);
                     dataGridView1.Rows[37].Cells[11].Value = Math.Round(Common.ConvertToDecimal(row[37].Cells[4].Value.ToString()) + Common.ConvertToDecimal(row[37].Cells[8].Value.ToString()), 2);
                     dataGridView1.Rows[37].Cells[12].Value = Math.Round(Common.ConvertToDecimal(row[37].Cells[5].Value.ToString()), 2);
@@ -545,7 +544,7 @@ namespace OperationalStatisticsBook
 
                     // Add column Number 22 pass holders (c) Start
                     dataGridView1.Rows[38].Cells[6].Value = Math.Round(Common.ConvertToDecimal(row[38].Cells[3].Value.ToString()) + Common.ConvertToDecimal(row[38].Cells[4].Value.ToString()) + Common.ConvertToDecimal(row[38].Cells[5].Value.ToString()), 2);
-                    dataGridView1.Rows[38].Cells[9].Value = Math.Round(Common.ConvertToDecimal(row[38].Cells[7].Value.ToString()) + Common.ConvertToDecimal(row[38].Cells[8].Value.ToString()));
+                    dataGridView1.Rows[38].Cells[9].Value = Math.Round(Common.ConvertToDecimal(row[38].Cells[7].Value.ToString()) + Common.ConvertToDecimal(row[38].Cells[8].Value.ToString()), 2);
                     dataGridView1.Rows[38].Cells[10].Value = Math.Round(Common.ConvertToDecimal(row[38].Cells[3].Value.ToString()) + Common.ConvertToDecimal(row[38].Cells[7].Value.ToString()), 2);
                     dataGridView1.Rows[38].Cells[11].Value = Math.Round(Common.ConvertToDecimal(row[38].Cells[4].Value.ToString()) + Common.ConvertToDecimal(row[38].Cells[8].Value.ToString()), 2);
                     dataGridView1.Rows[38].Cells[12].Value = Math.Round(Common.ConvertToDecimal(row[38].Cells[5].Value.ToString()), 2);
@@ -885,6 +884,7 @@ namespace OperationalStatisticsBook
 
             }
             #endregion
+
 
         }
 

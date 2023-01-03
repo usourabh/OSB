@@ -2080,7 +2080,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Depot- wise Oprational Data </Value>
+                    <Value>Depot- wise Oprational Data in respect of Non AC &amp; AC Low Floor City &amp; NCR service only</Value>
                     <Style>
                       <FontStyle>Normal</FontStyle>
                       <FontSize>8pt</FontSize>
@@ -2097,7 +2097,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>For the month of Fleet &amp; its Utillization in respect of Non AC &amp; AC Low Floor City &amp; NCR service only </Value>
+                    <Value>for the month of </Value>
                     <Style>
                       <FontStyle>Normal</FontStyle>
                       <FontSize>8pt</FontSize>
@@ -2117,7 +2117,24 @@
                     </Style>
                   </TextRun>
                   <TextRun>
-                    <Value> its Utilization</Value>
+                    <Value xml:space="preserve"> </Value>
+                    <Style>
+                      <FontStyle>Normal</FontStyle>
+                      <FontSize>8pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                      <TextDecoration>None</TextDecoration>
+                      <Color>#000000</Color>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Fleet &amp; its Utilization</Value>
                     <Style>
                       <FontStyle>Normal</FontStyle>
                       <FontSize>8pt</FontSize>

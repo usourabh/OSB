@@ -147,7 +147,7 @@ namespace OperationalStatisticsBook
                         cmd.Parameters.AddWithValue("@Param4", row.Cells[5].Value == null ? "" : row.Cells[5].Value.ToString());
                         cmd.Parameters.AddWithValue("@Param5", row.Cells[6].Value == null ? "" : row.Cells[6].Value.ToString());
                         cmd.Parameters.AddWithValue("@Param6", row.Cells[7].Value == null ? "" : row.Cells[7].Value.ToString());
-                          cmd.CommandType = CommandType.Text;
+                        cmd.CommandType = CommandType.Text;
                         con.Open();
                         cmd.ExecuteNonQuery();
                         con.Close();

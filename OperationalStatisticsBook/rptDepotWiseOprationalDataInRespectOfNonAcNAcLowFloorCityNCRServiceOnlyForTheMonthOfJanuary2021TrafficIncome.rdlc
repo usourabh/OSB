@@ -1354,7 +1354,21 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value> Depot- wise Operational Data (in respect of Non AC &amp; AC Low Floor City + NCR service only) For the month of </Value>
+                    <Value> Depot- wise Operational Data (in respect of Non AC &amp; AC Low Floor City + NCR bus service only) </Value>
+                    <Style>
+                      <FontSize>8pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>For the month of </Value>
                     <Style>
                       <FontSize>8pt</FontSize>
                       <FontWeight>Bold</FontWeight>
@@ -1368,7 +1382,21 @@
                     </Style>
                   </TextRun>
                   <TextRun>
-                    <Value> Traffic Income</Value>
+                    <Value xml:space="preserve"> </Value>
+                    <Style>
+                      <FontSize>8pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Center</TextAlign>
+                </Style>
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Traffic Income</Value>
                     <Style>
                       <FontSize>8pt</FontSize>
                       <FontWeight>Bold</FontWeight>

@@ -57,9 +57,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
         <Top>0.28787cm</Top>
-        <Left>0.35842cm</Left>
+        <Left>0cm</Left>
         <Height>0.6cm</Height>
-        <Width>17.70695cm</Width>
+        <Width>17.15132cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -74,43 +74,43 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>1.76388cm</Width>
+              <Width>1.72114cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.37583cm</Width>
+              <Width>1.33309cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.43285cm</Width>
+              <Width>1.39011cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.34055cm</Width>
+              <Width>1.29781cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.35347cm</Width>
+              <Width>1.31073cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.30056cm</Width>
+              <Width>1.25782cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.20355cm</Width>
+              <Width>1.16081cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.34465cm</Width>
+              <Width>1.30191cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.24764cm</Width>
+              <Width>1.2049cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.37993cm</Width>
+              <Width>1.33719cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.38938cm</Width>
+              <Width>1.34664cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.28292cm</Width>
+              <Width>1.24018cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.29174cm</Width>
+              <Width>1.249cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -1119,9 +1119,8 @@
         </TablixRowHierarchy>
         <DataSetName>rptSalientFeatureGrowthBasicStructure</DataSetName>
         <Top>0.88787cm</Top>
-        <Left>0.35842cm</Left>
         <Height>1.29729cm</Height>
-        <Width>17.70695cm</Width>
+        <Width>17.15133cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -1130,13 +1129,13 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>0.95833in</Height>
+    <Height>0.90625in</Height>
     <Style />
   </Body>
-  <Width>7.21925in</Width>
+  <Width>6.84425in</Width>
   <Page>
     <PageFooter>
-      <Height>0.84667cm</Height>
+      <Height>0.79375cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
