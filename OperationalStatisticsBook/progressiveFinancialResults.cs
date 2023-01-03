@@ -104,7 +104,7 @@ namespace OperationalStatisticsBook
             //    table.Rows.Add(currentMonth.AddMonths(-i).ToString("MMMM"), "0", "0", "0", "0", "0", "0", "0", "0");
             //}
 
-            for (int i = currentDate.Month; i <= 12; i++)
+            for (int i = currentDate.Month-1; i <= 12; i++)
             {
                 table.Rows.Add(Common.monthNames[i - 1], "0", "0", "0", "0", "0", "0", "0", "0");
             }
@@ -116,7 +116,7 @@ namespace OperationalStatisticsBook
             //    table.Rows.Add(newDateM.AddMonths(-i).ToString("MMMM"), " ", "0", "0", "0", "0", "0", "0", "0");
             //}
 
-            for (int i = 1; i <= currentDate.Month; i++)
+            for (int i = 1; i <= currentDate.Month-1; i++)
             {
                 table.Rows.Add(Common.monthNames[i - 1], "0", "0", "0", "0", "0", "0", "0", "0");
             }

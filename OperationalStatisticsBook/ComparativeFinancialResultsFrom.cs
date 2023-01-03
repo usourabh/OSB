@@ -95,8 +95,6 @@ namespace OperationalStatisticsBook
             return i;
         }
 
-
-
         DataTable BindComparativeFinancialResultsFrom()
         {
             DataTable table = new DataTable();
@@ -240,6 +238,7 @@ namespace OperationalStatisticsBook
 
             return table;
         }
+
         private void ResetOnClick(object sender, EventArgs e)
         {
             DeleteExisitingTableRecord("tbl_ComparativeFinancialResultsFrom", OsbId);
@@ -363,7 +362,6 @@ namespace OperationalStatisticsBook
 
             }
         }
-
 
         private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {

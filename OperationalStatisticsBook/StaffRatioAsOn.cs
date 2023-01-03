@@ -119,7 +119,6 @@ namespace OperationalStatisticsBook
             return i;
         }
 
-
         DataTable BindStaffRatioAsOn()
         {
             DataTable dt = new DataTable();
@@ -134,10 +133,10 @@ namespace OperationalStatisticsBook
 
          //   dt.Rows.Add("", "", "", "", "", "Authorised Fl.Strength (Col.5-3)", "@Actual Fl.Strength (Col.5-4)");
          //   dt.Rows.Add("1", "2", "3", "4", "5", "6","7");
-            dt.Rows.Add("DR.", "2.65", "", "", "", "","");
-            dt.Rows.Add("COND.", "2.65", "", "", "", "","");
-            dt.Rows.Add("Tr.Sup.", "0.50", "", "", "", "","");
-            dt.Rows.Add("R & M.", "0.25", "", "", "", "","");
+            dt.Rows.Add("Driver", "2.65", "", "", "", "","");
+            dt.Rows.Add("Conductor", "2.65", "", "", "", "","");
+            dt.Rows.Add("Traffic Supervisor", "0.50", "", "", "", "","");
+            dt.Rows.Add("Repair & Maintainance", "0.25", "", "", "", "","");
             dt.Rows.Add("Admin.", "1.00", "", "", "", "","");
             dt.Rows.Add("Total*", "7.05", "", "", "", "","");
             dt.Rows.Add("", " ", " ", " ", " ", " "," ");
@@ -220,12 +219,12 @@ namespace OperationalStatisticsBook
 
             // column no 4 
 
-            dataGridView1.Rows[0].Cells[3].Value = Math.Round(Common.ConvertToDecimal(dataGridView1.Rows[0].Cells[1].Value.ToString()) * 3913, 0);
-            dataGridView1.Rows[1].Cells[3].Value = Math.Round(Common.ConvertToDecimal(dataGridView1.Rows[1].Cells[1].Value.ToString()) * 3913, 0);
-            dataGridView1.Rows[2].Cells[3].Value = Math.Round(Common.ConvertToDecimal(dataGridView1.Rows[2].Cells[1].Value.ToString()) * 3913, 0);
-            dataGridView1.Rows[3].Cells[3].Value = Math.Round(Common.ConvertToDecimal(dataGridView1.Rows[3].Cells[1].Value.ToString()) * 3913, 0);
-            dataGridView1.Rows[4].Cells[3].Value = Math.Round(Common.ConvertToDecimal(dataGridView1.Rows[4].Cells[1].Value.ToString()) * 3913, 0);
-            dataGridView1.Rows[5].Cells[3].Value = Math.Round(Common.ConvertToDecimal(dataGridView1.Rows[5].Cells[1].Value.ToString()) * 3913, 0);
+            dataGridView1.Rows[0].Cells[3].Value = Math.Round(Common.ConvertToDecimal(dataGridView1.Rows[0].Cells[1].Value.ToString()) * 4060, 0);
+            dataGridView1.Rows[1].Cells[3].Value = Math.Round(Common.ConvertToDecimal(dataGridView1.Rows[1].Cells[1].Value.ToString()) * 4060, 0);
+            dataGridView1.Rows[2].Cells[3].Value = Math.Round(Common.ConvertToDecimal(dataGridView1.Rows[2].Cells[1].Value.ToString()) * 4060, 0);
+            dataGridView1.Rows[3].Cells[3].Value = Math.Round(Common.ConvertToDecimal(dataGridView1.Rows[3].Cells[1].Value.ToString()) * 4060, 0);
+            dataGridView1.Rows[4].Cells[3].Value = Math.Round(Common.ConvertToDecimal(dataGridView1.Rows[4].Cells[1].Value.ToString()) * 4060, 0);
+            dataGridView1.Rows[5].Cells[3].Value = Math.Round(Common.ConvertToDecimal(dataGridView1.Rows[5].Cells[1].Value.ToString()) * 4060, 0);
 
             // Formulas column no = 6, 7
             //Col = 6

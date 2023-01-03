@@ -153,8 +153,8 @@ namespace OperationalStatisticsBook
             dt.Rows.Add("Average route length (Kms)", "", "", "", "", "");
             dt.Rows.Add("Staff Strength (including contractual)", "", "", "", "", "");
             dt.Rows.Add("Daily Earning (Rs in Cr)", "", "", "", "", "");
-            dt.Rows.Add("Earnings Per Kms (Rs.)", "", "", "", "", "");
-            dt.Rows.Add("Earnings Per bus Per Day (Rs.)", "", "", "", "", "");
+            dt.Rows.Add("Earning Per Kms (Rs.)", "", "", "", "", "");
+            dt.Rows.Add("Earning Per bus Per Day (Rs.)", "", "", "", "", "");
             return dt;
             
 

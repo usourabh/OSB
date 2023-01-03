@@ -119,7 +119,6 @@ namespace OperationalStatisticsBook
             //    table.Rows.Add(newDate.AddYears(-i).Year + "-" + newDate2.AddYears(-i).Year, 0, " ", 0, " ", 0, " ", 0, " ", 0, " ", 0, " ");
             //}
 
-            table.Rows.Add("1", "2", "", "3", "", "4", "", "5", "", "6", "0", "7", "");
             table.Rows.Add("2012-13", "46", "", "38103", "", "7.00", "", "0", "", "446", "", "5445", "");
             table.Rows.Add("2013-14", "45", "", "35503", "", "6.80", "", "0", "", "222", "", "5223", "");
             table.Rows.Add("2014-15", "43", "", "32864", "", "6.97", "", "0", "", "511", "", "4712", "");
@@ -140,11 +139,9 @@ namespace OperationalStatisticsBook
                 table.Rows.Add(Common.monthNames[i-1], 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
             }
 
-
             //for (int i = 6; i > 0; i--)
             //{
             //    table.Rows.Add(currentMonth.AddMonths(-i).ToString("MMMM"), 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
-
             //}
 
             table.Rows.Add(" ", "No of Depots", "No of Depots", "Man Power", "Man Power", "Staff Ratio", "Staff Ratio", "Added (Vehicle)", "Added (Vehicle)", "Deleted (Vehicle)", "Deleted (Vehicle)", "Fleet at the end", "Fleet at the end");
@@ -155,9 +152,7 @@ namespace OperationalStatisticsBook
                 table.Rows.Add(Common.monthNames[i-1], 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
             }
 
-
             return table;
-
         }
 
         private void ResetOnClick(object sender, EventArgs e)

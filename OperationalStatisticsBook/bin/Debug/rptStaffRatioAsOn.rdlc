@@ -1087,7 +1087,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>  Staff Ratio as on 31st July</Value>
+                    <Value>  Staff Ratio as on @</Value>
                     <Style>
                       <FontStyle>Normal</FontStyle>
                       <FontWeight>Bold</FontWeight>
