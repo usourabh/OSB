@@ -137,6 +137,7 @@ namespace OperationalStatisticsBook
             dt.Rows.Add(" ", "Index Page", "frmOSBMain");
             dt.Rows.Add(" ", "Performance of DTC at a Glance", "frmPerformanceofDTCGlance");
             dt.Rows.Add(" ", "PROGRESSIVE FINANCIAL RESULTS (Rs. In Lakh)", "progressiveFinancialResults");
+            
             dt.Rows.Add(" ", "Staff Ratio as on ", "StaffRatioAsOn");
             dt.Rows.Add("1.1", "Analysis of causes of Accidents ", "analysisOfCausesAccidents");
             dt.Rows.Add("1.2", "Growith of basic structure of DTC", "SalientFeatureGrowthBasicStructure");
@@ -551,9 +552,17 @@ namespace OperationalStatisticsBook
             string Page3ReportName1 = "rptStaffRatioAsOn.rdlc";
             string Page3DataSourceName1 = "rptStaffRatioAsOn";
             DataTable Page3Data1 = objPageData.GetDataStaffRatio_Page3_tbl1(this.OsbId, this.Year, this.Month);
+
             rptParam = new ReportParameter[1];
-            rptParam[0] = new ReportParameter("ReportTitle", MonthList[0].MonthName + "-" + MonthList[1].Year);
+
+            DateTime currentDate = new DateTime(Year, Month, 01);
+            int lastDayofTheMonth = DateTime.DaysInMonth(currentDate.Year, currentDate.Month);
+            string lastDateForDistributionFleet = lastDayofTheMonth + "-" + currentDate.Month + "-" + currentDate.Year;
+
+            rptParam[0] = new ReportParameter("ReportTitle", lastDayofTheMonth + "-" + MonthList[0].MonthName + "-" + MonthList[1].Year);
+
             byte[] byarry4 = GenerateReport(Page3ReportName1, rptParam, Page3DataSourceName1, Page3Data1);
+
             lstByte.Add(byarry4);
 
 
@@ -896,9 +905,9 @@ namespace OperationalStatisticsBook
             // No Of Trips Actual Operated On Time And No Of Trips Actual Operated within two minutes
 
             var MonthList13 = GlobalMaster.GetPrevousMonthList(Month, Year, 02);
-            DateTime currentDate = new DateTime(Year, Month, 01);
-            DateTime newDate = currentDate.AddYears(+1);
-            string currentYear = currentDate.Year.ToString();
+            DateTime currentDate12 = new DateTime(Year, Month, 01);
+            DateTime newDate = currentDate12.AddYears(+1);
+            string currentYear = currentDate12.Year.ToString();
             string previousYear = newDate.Year.ToString();
             String previousMonthName = newDate.ToString("MMMM");
 

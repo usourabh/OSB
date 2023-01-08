@@ -1087,7 +1087,16 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>  Staff Ratio as on @</Value>
+                    <Value>  Staff Ratio as on </Value>
+                    <Style>
+                      <FontStyle>Normal</FontStyle>
+                      <FontWeight>Bold</FontWeight>
+                      <TextDecoration>None</TextDecoration>
+                      <Color>#000000</Color>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>=Parameters!ReportTitle.Value</Value>
                     <Style>
                       <FontStyle>Normal</FontStyle>
                       <FontWeight>Bold</FontWeight>

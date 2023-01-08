@@ -59,8 +59,13 @@ namespace OperationalStatisticsBook
             ReportDataSource datasource = new ReportDataSource("rptStaffRatioAsOn", dtReportData);
             this.reportViewer1.LocalReport.DataSources.Clear();
             this.reportViewer1.LocalReport.DataSources.Add(datasource);
+
+            DateTime currentDate = new DateTime(Year, Month, 01);
+            int lastDayofTheMonth = DateTime.DaysInMonth(currentDate.Year, currentDate.Month);
+            string lastDateForDistributionFleet = lastDayofTheMonth + "-" + currentDate.Month + "-" + currentDate.Year;
+
             ReportParameter[] rptParam = new ReportParameter[1];
-            rptParam[0] = new ReportParameter("ReportTitle", MonthList[0].MonthName + "-" + MonthList[1].Year);
+            rptParam[0] = new ReportParameter("ReportTitle", lastDayofTheMonth + "-"+ MonthList[0].MonthName + "-" + MonthList[1].Year);
             this.reportViewer1.LocalReport.SetParameters(rptParam);
             this.reportViewer1.RefreshReport();
         }
