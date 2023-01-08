@@ -38,8 +38,8 @@ namespace WindowsFormsApp1
         {
             String[,] param = new string[,]
                    {
-                   {"@Month","4".ToString()},
-                   {"@Year","2021".ToString()},
+                 {"@OsbId",OsbId.ToString().Trim()},
+
                 };
             DataTable dt = Common.ExecuteProcedure("sp_PieChartExpenditureForTheMonth", param);
             return dt;
