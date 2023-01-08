@@ -40,8 +40,8 @@ namespace WindowsFormsApp1
                    {
                    //{"@Month".ToString().Trim()},
                    //{"@Year".ToString().Trim()},
-                     {"@Month","4".ToString()},
-                   {"@Year","2021".ToString()},
+                     {"@OsbId",OsbId.ToString().Trim()},
+                 //  {"@Year","2021".ToString()},
                 };
 
             //DateTime currentDate = new DateTime(Year, Month, 01);

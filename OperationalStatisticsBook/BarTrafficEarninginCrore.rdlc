@@ -124,7 +124,7 @@
                       <Color>#5c5c5c</Color>
                     </Style>
                     <ChartAxisTitle>
-                      <Caption>Axis Title</Caption>
+                      <Caption />
                       <Style>
                         <FontSize>9pt</FontSize>
                         <Color>#5c5c5c</Color>
