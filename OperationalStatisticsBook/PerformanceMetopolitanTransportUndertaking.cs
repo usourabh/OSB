@@ -71,22 +71,22 @@ namespace OperationalStatisticsBook
             table.Rows.Add("8", "(a)Diesel consumption", " KMPL", "", "", "", "", "");
             table.Rows.Add("", "(b)CNG", " KMP KG", "", "", "", "", "");
 
-            table.Rows.Add("B", "Financial Performance", "", "", "", "", "", "");
+            table.Rows.Add("B", "Financial Performance", "Paise", "", "", "", "", "");
             table.Rows.Add("1", "Revenue per Km.", "Paise", "", "", "", "", "");
             table.Rows.Add("2", "Cost per Km", "Paise", "", "", "", "", "");
             table.Rows.Add("3", "Net Profit/ Loss Per Km.", "Paise", "", "", "", "", "");
 
-            table.Rows.Add("C", "Cost Structrue", "", "", "", "", "", "");
-            table.Rows.Add("1", "Staff cost", "", "", "", "", "", "");
-            table.Rows.Add("2", "Fuel and Lubricant", "", "", "", "", "", "");
-            table.Rows.Add("3", "Tyres and tubes", "", "", "", "", "", "");
-            table.Rows.Add("4", "Spares and Material", "", "", "", "", "", "");
-            table.Rows.Add("5", "Interest", "", "", "", "", "", "");
-            table.Rows.Add("6", "Depreciation", "", "", "", "", "", "");
-            table.Rows.Add("7", "Taxes", "", "", "", "", "", "");
-            table.Rows.Add("8", "Others", "", "", "", "", "", "");
-
-                        return table;
+            table.Rows.Add("C", "Cost Structrue", "Rs./Km", "", "", "", "", "");
+            table.Rows.Add("1", "Staff cost", "Rs./Km", "", "", "", "", "");
+            table.Rows.Add("2", "Fuel and Lubricant", "Rs./Km", "", "", "", "", "");
+            table.Rows.Add("3", "Tyres and tubes", "Rs./Km", "", "", "", "", "");
+            table.Rows.Add("4", "Spares and Material", "Rs./Km", "", "", "", "", "");
+            table.Rows.Add("5", "Interest", "Rs./Km", "", "", "", "", "");
+            table.Rows.Add("6", "Depreciation", "Rs./Km", "", "", "", "", "");
+            table.Rows.Add("7", "Taxes", "Rs./Km", "", "", "", "", "");
+            table.Rows.Add("8", "Others", "Rs./Km", "", "", "", "", "");
+            
+            return table;
         }
 
         void ShowData()
