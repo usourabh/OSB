@@ -133,12 +133,7 @@ namespace OperationalStatisticsBook
                 }
 
                 CalcalculateTotal();
-
-                Common.SetRowNonEditable(dataGridView1, 13);
-                Common.SetRowNonEditable(dataGridView1, 21);
-                Common.SetRowNonEditable(dataGridView1, 30);
-                Common.SetRowNonEditable(dataGridView1, 42);
-                Common.SetRowNonEditable(dataGridView1, 43);
+                setRowColNonEditable();
 
             }
             catch (Exception ex)
@@ -147,6 +142,7 @@ namespace OperationalStatisticsBook
             }
 
         }
+
         int DeleteExisitingTableRecord(string TableName, int OsbId)
         {
             string strTable = "[rpt].[" + TableName + "]";
@@ -162,17 +158,11 @@ namespace OperationalStatisticsBook
             return i;
         }
 
-
-
         private void ResetOnClick(object sender, EventArgs e)
         {
             DeleteExisitingTableRecord("tbl_DepotWiseOprationalDataInRespectOfNonACNAC", OsbId);
             dataGridView1.DataSource = BindDepotWiseOprationalDataInRespectOfNonAC();
-            Common.SetRowNonEditable(dataGridView1, 13);
-            Common.SetRowNonEditable(dataGridView1, 21);
-            Common.SetRowNonEditable(dataGridView1, 30);
-            Common.SetRowNonEditable(dataGridView1, 42);
-            Common.SetRowNonEditable(dataGridView1, 43);
+            setRowColNonEditable();
             MessageBox.Show("Done");
         }
 
@@ -257,19 +247,31 @@ namespace OperationalStatisticsBook
 
             for (int i = 2; i <= 16; i++)
             {
-                dataGridView1.Rows[13].Cells[i].Value = Common.GetSum(row, 1, 13, i);
-                dataGridView1.Rows[21].Cells[i].Value = Common.GetSum(row, 15, 21, i);
-                dataGridView1.Rows[30].Cells[i].Value = Common.GetSum(row, 23, 30, i);
-                dataGridView1.Rows[42].Cells[i].Value = Common.GetSum(row, 32, 42, i);
+                //Total region wise
+                dataGridView1.Rows[13].Cells[i].Value = Common.GetSum(row, 0, 12, i);
+                dataGridView1.Rows[21].Cells[i].Value = Common.GetSum(row, 14, 20, i);
+                dataGridView1.Rows[30].Cells[i].Value = Common.GetSum(row, 22, 29, i);
+                dataGridView1.Rows[42].Cells[i].Value = Common.GetSum(row, 31, 41, i);
             }
 
             for (int i = 2; i <= 16; i++)
             {
-                dataGridView1.Rows[43].Cells[i].Value = Common.ConvertToDecimal(dataGridView1.Rows[14].Cells[i].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[22].Cells[i].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[31].Cells[i].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[43].Cells[i].Value.ToString());
+                // grand total
+                dataGridView1.Rows[43].Cells[i].Value = Common.ConvertToDecimal(dataGridView1.Rows[13].Cells[i].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[21].Cells[i].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[30].Cells[i].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[42].Cells[i].Value.ToString());
 
             }
             #endregion
 
+        }
+
+        private void setRowColNonEditable()
+        {
+
+            Common.SetRowNonEditable(dataGridView1, 13);
+            Common.SetRowNonEditable(dataGridView1, 21);
+            Common.SetRowNonEditable(dataGridView1, 30);
+            Common.SetRowNonEditable(dataGridView1, 42);
+            Common.SetRowNonEditable(dataGridView1, 43);
         }
 
     }

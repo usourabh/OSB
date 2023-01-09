@@ -270,6 +270,18 @@ namespace OperationalStatisticsBook
                         dataGridView1.Rows[i].Cells[21].Value = Common.ConvertToDecimal(row[i].Cells[17].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[18].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[19].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[20].Value.ToString());
                     }
 
+                    for (int j = 2; j < 22; j++)
+                    {
+                        dataGridView1.Rows[34].Cells[j].Value = Common.GetSum(row, 0, 33, j);
+
+                        dataGridView1.Rows[39].Cells[j].Value = Common.GetSum(row, 36, 38, j);
+
+                        dataGridView1.Rows[40].Cells[j].Value = Common.ConvertToDecimal(dataGridView1.Rows[34].Cells[j].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[39].Cells[j].Value.ToString());
+
+                        dataGridView1.Rows[43].Cells[j].Value = Common.ConvertToDecimal(dataGridView1.Rows[42].Cells[j].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[40].Cells[j].Value.ToString());
+                    }
+
+                    if()
                     dataGridView1.Rows[i].Cells[22].Value = Common.ConvertToDecimal(row[i].Cells[7].Value.ToString()) > 0 ? Math.Round((Common.ConvertToDecimal(row[i].Cells[17].Value.ToString()) / Common.ConvertToDecimal(row[i].Cells[7].Value.ToString())) * 100, 2) : 0;
                     dataGridView1.Rows[i].Cells[23].Value = Common.ConvertToDecimal(row[i].Cells[8].Value.ToString()) > 0 ? Math.Round((Common.ConvertToDecimal(row[i].Cells[18].Value.ToString()) / Common.ConvertToDecimal(row[i].Cells[8].Value.ToString())) * 100, 2) : 0;
                     dataGridView1.Rows[i].Cells[24].Value = Common.ConvertToDecimal(row[i].Cells[9].Value.ToString()) > 0 ? Math.Round((Common.ConvertToDecimal(row[i].Cells[19].Value.ToString()) / Common.ConvertToDecimal(row[i].Cells[9].Value.ToString())) * 100, 2) : 0;
@@ -281,16 +293,7 @@ namespace OperationalStatisticsBook
 
             #region Calculating_VerticalSum
 
-            for(int i = 2; i<22; i++)
-            {
-                dataGridView1.Rows[34].Cells[i].Value = Common.GetSum(row, 0, 33, i);
-
-                dataGridView1.Rows[39].Cells[i].Value = Common.GetSum(row, 36, 38, i);
-
-                dataGridView1.Rows[40].Cells[i].Value = Common.ConvertToDecimal(dataGridView1.Rows[34].Cells[i].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[39].Cells[i].Value.ToString());
-
-                dataGridView1.Rows[43].Cells[i].Value = Common.ConvertToDecimal(dataGridView1.Rows[42].Cells[i].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[40].Cells[i].Value.ToString());
-            }
+            
 
             #endregion
         }
