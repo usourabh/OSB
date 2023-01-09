@@ -281,7 +281,7 @@ namespace OperationalStatisticsBook
                         dataGridView1.Rows[43].Cells[j].Value = Common.ConvertToDecimal(dataGridView1.Rows[42].Cells[j].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[40].Cells[j].Value.ToString());
                     }
 
-                    if()
+                    //if()
                     dataGridView1.Rows[i].Cells[22].Value = Common.ConvertToDecimal(row[i].Cells[7].Value.ToString()) > 0 ? Math.Round((Common.ConvertToDecimal(row[i].Cells[17].Value.ToString()) / Common.ConvertToDecimal(row[i].Cells[7].Value.ToString())) * 100, 2) : 0;
                     dataGridView1.Rows[i].Cells[23].Value = Common.ConvertToDecimal(row[i].Cells[8].Value.ToString()) > 0 ? Math.Round((Common.ConvertToDecimal(row[i].Cells[18].Value.ToString()) / Common.ConvertToDecimal(row[i].Cells[8].Value.ToString())) * 100, 2) : 0;
                     dataGridView1.Rows[i].Cells[24].Value = Common.ConvertToDecimal(row[i].Cells[9].Value.ToString()) > 0 ? Math.Round((Common.ConvertToDecimal(row[i].Cells[19].Value.ToString()) / Common.ConvertToDecimal(row[i].Cells[9].Value.ToString())) * 100, 2) : 0;
