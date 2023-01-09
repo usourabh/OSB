@@ -393,6 +393,26 @@
                 </Style>
               </ChartArea>
             </ChartAreas>
+            <ChartLegends>
+              <ChartLegend Name="Legend1">
+                <Style>
+                  <BackgroundGradientType>None</BackgroundGradientType>
+                  <FontSize>8pt</FontSize>
+                </Style>
+                <Position>RightCenter</Position>
+                <DockOutsideChartArea>true</DockOutsideChartArea>
+                <ChartLegendTitle>
+                  <Caption />
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </ChartLegendTitle>
+                <HeaderSeparatorColor>Black</HeaderSeparatorColor>
+                <ColumnSeparatorColor>Black</ColumnSeparatorColor>
+              </ChartLegend>
+            </ChartLegends>
             <Palette>Pacific</Palette>
             <ChartBorderSkin>
               <Style>
@@ -413,8 +433,8 @@
             <DataSetName>ExpenditureOfTheMonth</DataSetName>
             <Top>1.43729cm</Top>
             <Left>2.80141cm</Left>
-            <Height>6.81391cm</Height>
-            <Width>11.81271cm</Width>
+            <Height>11.78808cm</Height>
+            <Width>16.0725cm</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
@@ -426,10 +446,10 @@
             </Style>
           </Chart>
         </ReportItems>
-        <Height>3.41517in</Height>
+        <Height>5.70684in</Height>
         <Style />
       </Body>
-      <Width>6.92708in</Width>
+      <Width>9.03125in</Width>
       <Page>
         <PageFooter>
           <Height>1.11125cm</Height>

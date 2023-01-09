@@ -76,7 +76,7 @@
             <Top>0.58208cm</Top>
             <Left>1.74307cm</Left>
             <Height>0.9846cm</Height>
-            <Width>13.21501cm</Width>
+            <Width>14.74959cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -394,6 +394,8 @@
                   <BackgroundGradientType>None</BackgroundGradientType>
                   <FontSize>8pt</FontSize>
                 </Style>
+                <Position>RightCenter</Position>
+                <DockOutsideChartArea>true</DockOutsideChartArea>
                 <ChartLegendTitle>
                   <Caption />
                   <Style>
@@ -426,8 +428,8 @@
             <DataSetName>PieTrafficEarningForTheMonthOfMonth</DataSetName>
             <Top>1.63724cm</Top>
             <Left>1.74307cm</Left>
-            <Height>6.38528cm</Height>
-            <Width>13.21501cm</Width>
+            <Height>8.29028cm</Height>
+            <Width>14.74959cm</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
@@ -439,14 +441,14 @@
             </Style>
           </Chart>
         </ReportItems>
-        <Height>3.32514in</Height>
+        <Height>4.60639in</Height>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
         </Style>
       </Body>
-      <Width>6.66666in</Width>
+      <Width>7.71874in</Width>
       <Page>
         <PageFooter>
           <Height>1.13771cm</Height>
