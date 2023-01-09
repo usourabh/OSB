@@ -243,21 +243,66 @@ namespace OperationalStatisticsBook
         {
             var row = dataGridView1.Rows;
 
+            DateTime currentDate = new DateTime(Year, Month, 01);
+            int lastDayofTheMonth = DateTime.DaysInMonth(currentDate.Year, currentDate.Month);
+
+            for (int i = 0; i <= 43; i++)
+            {
+                //Kilometer efficiency formula
+                dataGridView1.Rows[i].Cells[4].Value = Common.ConvertToDecimal(row[i].Cells[3].Value.ToString()) > 0 ? Math.Round((Common.ConvertToDecimal(row[i].Cells[4].Value.ToString()) / Common.ConvertToDecimal(row[i].Cells[3].Value.ToString())) * 100, 2) : 0;
+
+
+
+                // Traffic Income per km Paise
+                dataGridView1.Rows[i].Cells[9].Value = Common.ConvertToDecimal(row[i].Cells[3].Value.ToString()) > 0 ? (Common.ConvertToDecimal(row[i].Cells[7].Value.ToString()) / Common.ConvertToDecimal(row[i].Cells[3].Value.ToString())) * 100 : 0;
+
+                // Accident per 100,000 Km
+                dataGridView1.Rows[i].Cells[12].Value = Common.ConvertToDecimal(row[i].Cells[3].Value.ToString()) > 0 ? Math.Round(  ((Common.ConvertToDecimal(row[i].Cells[11].Value.ToString()) * 100000) / Common.ConvertToDecimal(row[i].Cells[3].Value.ToString())), 2 ) : 0;
+
+                //Driver kilometer per day/ drivers
+                dataGridView1.Rows[i].Cells[14].Value = Common.ConvertToDecimal(row[i].Cells[13].Value.ToString()) > 0 ? (Common.ConvertToDecimal(row[i].Cells[5].Value.ToString()) / Common.ConvertToDecimal(row[i].Cells[13].Value.ToString())) : 0;
+
+                // Earning per day / per conductor
+                dataGridView1.Rows[i].Cells[16].Value = Common.ConvertToDecimal(row[i].Cells[15].Value.ToString()) > 0 ? (Common.ConvertToDecimal(row[i].Cells[8].Value.ToString()) / Common.ConvertToDecimal(row[i].Cells[15].Value.ToString())) : 0;
+
+
+
+                //if condition will not run for total every region and for grand total also
+                if (i != 13 && i != 21 && i != 30 && i!=42 && i != 43)
+                {
+                    // For Daily Operated km
+                    dataGridView1.Rows[i].Cells[5].Value = lastDayofTheMonth > 0 ? (Common.ConvertToDecimal(row[i].Cells[4].Value.ToString()) / lastDayofTheMonth) : 0;
+                    dataGridView1.Rows[i].Cells[8].Value = lastDayofTheMonth > 0 ? (Common.ConvertToDecimal(row[i].Cells[7].Value.ToString()) / lastDayofTheMonth) : 0;
+                }
+
+            }
+            
+
+
+
             #region Calculating_VerticalSum
 
             for (int i = 2; i <= 16; i++)
             {
-                //Total region wise
-                dataGridView1.Rows[13].Cells[i].Value = Common.GetSum(row, 0, 12, i);
-                dataGridView1.Rows[21].Cells[i].Value = Common.GetSum(row, 14, 20, i);
-                dataGridView1.Rows[30].Cells[i].Value = Common.GetSum(row, 22, 29, i);
-                dataGridView1.Rows[42].Cells[i].Value = Common.GetSum(row, 31, 41, i);
+
+                if (i != 4 && i != 6 && i != 9 && i != 10 && i != 12 && i != 14 && i != 16)
+                {
+                    //Total region wise
+                    dataGridView1.Rows[13].Cells[i].Value = Common.GetSum(row, 0, 12, i);
+                    dataGridView1.Rows[21].Cells[i].Value = Common.GetSum(row, 14, 20, i);
+                    dataGridView1.Rows[30].Cells[i].Value = Common.GetSum(row, 22, 29, i);
+                    dataGridView1.Rows[42].Cells[i].Value = Common.GetSum(row, 31, 41, i);
+                }
             }
 
             for (int i = 2; i <= 16; i++)
             {
                 // grand total
-                dataGridView1.Rows[43].Cells[i].Value = Common.ConvertToDecimal(dataGridView1.Rows[13].Cells[i].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[21].Cells[i].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[30].Cells[i].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[42].Cells[i].Value.ToString());
+                // Grand Total will not run for kilometer efficiency
+                if(i!=4 && i!=6 && i != 9 && i!=10 && i!=12 && i!=14 && i!=16)
+                {
+                    dataGridView1.Rows[43].Cells[i].Value = Common.ConvertToDecimal(dataGridView1.Rows[13].Cells[i].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[21].Cells[i].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[30].Cells[i].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[42].Cells[i].Value.ToString());
+                }
 
             }
             #endregion

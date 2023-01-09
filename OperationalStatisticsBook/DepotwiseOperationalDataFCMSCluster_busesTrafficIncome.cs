@@ -224,23 +224,13 @@ namespace OperationalStatisticsBook
 
             #region Calculating_VerticalSum
 
-       
-            dataGridView1.Rows[8].Cells[2].Value = Common.GetSum(row, 1, 7, 2);
-            dataGridView1.Rows[8].Cells[3].Value = Common.GetSum(row, 1, 7, 3);
-            dataGridView1.Rows[8].Cells[4].Value = Common.GetSum(row, 1, 7, 4);
-
-
-            dataGridView1.Rows[15].Cells[2].Value = Common.GetSum(row, 10, 14, 2);
-            dataGridView1.Rows[15].Cells[3].Value = Common.GetSum(row, 10, 14, 3);
-            dataGridView1.Rows[15].Cells[4].Value = Common.GetSum(row, 10, 14, 4);
-
-
-
-            // All Grand Total
-            dataGridView1.Rows[16].Cells[2].Value = Common.ConvertToDecimal(dataGridView1.Rows[8].Cells[2].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[15].Cells[2].Value.ToString());
-            dataGridView1.Rows[16].Cells[3].Value = Common.ConvertToDecimal(dataGridView1.Rows[8].Cells[3].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[15].Cells[3].Value.ToString());
-            dataGridView1.Rows[16].Cells[4].Value = Common.ConvertToDecimal(dataGridView1.Rows[8].Cells[4].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[15].Cells[4].Value.ToString());
-
+            for(int i  = 2; i<=3; i++)
+            {
+                dataGridView1.Rows[8].Cells[i].Value = Common.GetSum(row, 1, 7, i);
+                dataGridView1.Rows[15].Cells[i].Value = Common.GetSum(row, 10, 14, i);
+                dataGridView1.Rows[16].Cells[i].Value = Common.ConvertToDecimal(dataGridView1.Rows[8].Cells[i].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[15].Cells[i].Value.ToString());
+            }
+           
 
             #region Calculating_HorizontalSum
             for (int i = 0; i < (row.Count - 1); i++)
@@ -250,10 +240,7 @@ namespace OperationalStatisticsBook
                 {
                     if (i != 0 && i != 9)
                     {
-
                         dataGridView1.Rows[i].Cells[3].Value = Math.Round((Common.ConvertToDecimal(row[i].Cells[2].Value.ToString()) / MonthLastDay));
-                 
-
                     }
                 }
             }
@@ -281,9 +268,14 @@ namespace OperationalStatisticsBook
         {
             Common.SetRowNonEditable(dataGridView1, 0);
             Common.SetRowNonEditable(dataGridView1, 8);
+            dataGridView1.Rows[8].Cells[4].ReadOnly = false;
             Common.SetRowNonEditable(dataGridView1, 9);
             Common.SetRowNonEditable(dataGridView1, 15);
             Common.SetRowNonEditable(dataGridView1, 16);
+            dataGridView1.Rows[15].Cells[4].ReadOnly = false;
+            dataGridView1.Rows[16].Cells[4].ReadOnly = false;
+
+
         }
     }
 }

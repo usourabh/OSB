@@ -260,14 +260,7 @@ namespace OperationalStatisticsBook
 
             #region Calculating_VerticalSum
 
-            for (int i = 2; i <= 11; i++)
-            {
-                dataGridView1.Rows[37].Cells[i].Value = Common.GetSum(row, 3, 36, i);
-                dataGridView1.Rows[43].Cells[i].Value = Common.GetSum(row, 40, 42, i);
-                dataGridView1.Rows[44].Cells[i].Value = Common.ConvertToDecimal(dataGridView1.Rows[37].Cells[i].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[43].Cells[i].Value.ToString());
-                dataGridView1.Rows[48].Cells[i].Value = Common.ConvertToDecimal(dataGridView1.Rows[47].Cells[i].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[44].Cells[i].Value.ToString());
-
-            }
+            
             for (int i = 17; i<=21; i++)
             {
                 dataGridView1.Rows[37].Cells[i].Value = Common.GetSum(row, 3, 36, i);
@@ -294,6 +287,16 @@ namespace OperationalStatisticsBook
                         dataGridView1.Rows[i].Cells[21].Value = Common.ConvertToDecimal(row[i].Cells[17].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[18].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[19].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[20].Value.ToString());
                     }
                 }
+            }
+
+
+            for (int i = 2; i <= 11; i++)
+            {
+                dataGridView1.Rows[37].Cells[i].Value = Common.GetSum(row, 3, 36, i);
+                dataGridView1.Rows[43].Cells[i].Value = Common.GetSum(row, 40, 42, i);
+                dataGridView1.Rows[44].Cells[i].Value = Common.ConvertToDecimal(dataGridView1.Rows[37].Cells[i].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[43].Cells[i].Value.ToString());
+                dataGridView1.Rows[48].Cells[i].Value = Common.ConvertToDecimal(dataGridView1.Rows[47].Cells[i].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[44].Cells[i].Value.ToString());
+
             }
             #endregion
 

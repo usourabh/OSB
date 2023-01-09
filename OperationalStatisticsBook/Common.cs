@@ -94,6 +94,18 @@ namespace OperationalStatisticsBook
             }
         }
 
+        public static void SetRowNonEditableExceptCol(System.Windows.Forms.DataGridView dataGridView1, int RowIndex, int exceptForColumns)
+        {
+            dataGridView1.Rows[RowIndex].ReadOnly = true;
+            dataGridView1.Rows[RowIndex].DefaultCellStyle.BackColor = System.Drawing.Color.LightGray;
+
+            if (exceptForColumns != -1)
+            {
+                dataGridView1.Rows[RowIndex].Cells[exceptForColumns].ReadOnly = false;
+                dataGridView1.Rows[RowIndex].Cells[exceptForColumns].Style.BackColor = System.Drawing.Color.White;
+            }
+        }
+
         public static void SetCELLumnNonEditable(System.Windows.Forms.DataGridView dataGridView1, int ColunIndex, int RowIndex)
         {
             dataGridView1.Rows[RowIndex].Cells[ColunIndex].ReadOnly = true;
