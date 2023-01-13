@@ -113,21 +113,18 @@
                   <TextRun>
                     <Value>Statemnet showing the in respect of City, NCR &amp; Foreign bus service  (Income &amp; Expewnditure </Value>
                     <Style>
-                      <FontSize>12pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
                   <TextRun>
                     <Value>=Parameters!ReportTitle.Value</Value>
                     <Style>
-                      <FontSize>12pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
                   <TextRun>
                     <Value> in lakhs)</Value>
                     <Style>
-                      <FontSize>12pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
@@ -138,10 +135,10 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox1</rd:DefaultName>
-            <Top>0.7112cm</Top>
-            <Left>0.31432cm</Left>
-            <Height>0.78521cm</Height>
-            <Width>23.3448cm</Width>
+            <Top>0.3937cm</Top>
+            <Left>0.12911cm</Left>
+            <Height>0.38834cm</Height>
+            <Width>17.70101cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -159,49 +156,49 @@
                   <Width>0.83754cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.91879cm</Width>
+                  <Width>1.68608cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.86462cm</Width>
+                  <Width>0.91754cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.0017cm</Width>
+                  <Width>1.18149cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>1.81649cm</Width>
+                  <Width>0.94337cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.34316cm</Width>
+                  <Width>1.23191cm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>0.87692cm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>0.96983cm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1.0517cm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1.18149cm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1.07566cm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1.08858cm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1.31316cm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1.26087cm</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>1.1415cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>0.5465cm</Width>
-                </TablixColumn>
-                <TablixColumn>
-                  <Width>2.55983cm</Width>
-                </TablixColumn>
-                <TablixColumn>
-                  <Width>1.89587cm</Width>
-                </TablixColumn>
-                <TablixColumn>
-                  <Width>1.02274cm</Width>
-                </TablixColumn>
-                <TablixColumn>
-                  <Width>1.40608cm</Width>
-                </TablixColumn>
-                <TablixColumn>
-                  <Width>1.84233cm</Width>
-                </TablixColumn>
-                <TablixColumn>
-                  <Width>1.76358cm</Width>
-                </TablixColumn>
-                <TablixColumn>
-                  <Width>1.11504cm</Width>
-                </TablixColumn>
-                <TablixColumn>
-                  <Width>0.59941cm</Width>
+                  <Width>0.94337cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
@@ -576,7 +573,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.82628cm</Height>
+                  <Height>0.72045cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -591,7 +588,7 @@
                                   <Style>
                                     <FontStyle>Normal</FontStyle>
                                     <FontFamily>Times New Roman</FontFamily>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                     <FontWeight>Normal</FontWeight>
                                     <TextDecoration>None</TextDecoration>
                                     <Color>#000000</Color>
@@ -630,7 +627,7 @@
                                   <Style>
                                     <FontStyle>Normal</FontStyle>
                                     <FontFamily>Times New Roman</FontFamily>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                     <FontWeight>Normal</FontWeight>
                                     <TextDecoration>None</TextDecoration>
                                     <Color>#000000</Color>
@@ -669,7 +666,7 @@
                                   <Style>
                                     <FontStyle>Normal</FontStyle>
                                     <FontFamily>Times New Roman</FontFamily>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                     <FontWeight>Normal</FontWeight>
                                     <TextDecoration>None</TextDecoration>
                                     <Color>#000000</Color>
@@ -708,7 +705,7 @@
                                   <Style>
                                     <FontStyle>Normal</FontStyle>
                                     <FontFamily>Times New Roman</FontFamily>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                     <FontWeight>Normal</FontWeight>
                                     <TextDecoration>None</TextDecoration>
                                     <Color>#000000</Color>
@@ -747,7 +744,7 @@
                                   <Style>
                                     <FontStyle>Normal</FontStyle>
                                     <FontFamily>Times New Roman</FontFamily>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                     <FontWeight>Normal</FontWeight>
                                     <TextDecoration>None</TextDecoration>
                                     <Color>#000000</Color>
@@ -786,7 +783,7 @@
                                   <Style>
                                     <FontStyle>Normal</FontStyle>
                                     <FontFamily>Times New Roman</FontFamily>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                     <FontWeight>Normal</FontWeight>
                                     <TextDecoration>None</TextDecoration>
                                     <Color>#000000</Color>
@@ -825,7 +822,7 @@
                                   <Style>
                                     <FontStyle>Normal</FontStyle>
                                     <FontFamily>Times New Roman</FontFamily>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                     <FontWeight>Normal</FontWeight>
                                     <TextDecoration>None</TextDecoration>
                                     <Color>#000000</Color>
@@ -864,7 +861,7 @@
                                   <Style>
                                     <FontStyle>Normal</FontStyle>
                                     <FontFamily>Times New Roman</FontFamily>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                     <FontWeight>Normal</FontWeight>
                                     <TextDecoration>None</TextDecoration>
                                     <Color>#000000</Color>
@@ -903,7 +900,7 @@
                                   <Style>
                                     <FontStyle>Normal</FontStyle>
                                     <FontFamily>Times New Roman</FontFamily>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                     <FontWeight>Normal</FontWeight>
                                     <TextDecoration>None</TextDecoration>
                                     <Color>#000000</Color>
@@ -942,7 +939,7 @@
                                   <Style>
                                     <FontStyle>Normal</FontStyle>
                                     <FontFamily>Times New Roman</FontFamily>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                     <FontWeight>Normal</FontWeight>
                                     <TextDecoration>None</TextDecoration>
                                     <Color>#000000</Color>
@@ -981,7 +978,7 @@
                                   <Style>
                                     <FontStyle>Normal</FontStyle>
                                     <FontFamily>Times New Roman</FontFamily>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                     <FontWeight>Normal</FontWeight>
                                     <TextDecoration>None</TextDecoration>
                                     <Color>#000000</Color>
@@ -1020,7 +1017,7 @@
                                   <Style>
                                     <FontStyle>Normal</FontStyle>
                                     <FontFamily>Times New Roman</FontFamily>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                     <FontWeight>Normal</FontWeight>
                                     <TextDecoration>None</TextDecoration>
                                     <Color>#000000</Color>
@@ -1059,7 +1056,7 @@
                                   <Style>
                                     <FontStyle>Normal</FontStyle>
                                     <FontFamily>Times New Roman</FontFamily>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                     <FontWeight>Normal</FontWeight>
                                     <TextDecoration>None</TextDecoration>
                                     <Color>#000000</Color>
@@ -1098,7 +1095,7 @@
                                   <Style>
                                     <FontStyle>Normal</FontStyle>
                                     <FontFamily>Times New Roman</FontFamily>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                     <FontWeight>Normal</FontWeight>
                                     <TextDecoration>None</TextDecoration>
                                     <Color>#000000</Color>
@@ -1137,7 +1134,7 @@
                                   <Style>
                                     <FontStyle>Normal</FontStyle>
                                     <FontFamily>Times New Roman</FontFamily>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                     <FontWeight>Normal</FontWeight>
                                     <TextDecoration>None</TextDecoration>
                                     <Color>#000000</Color>
@@ -1176,7 +1173,7 @@
                                   <Style>
                                     <FontStyle>Normal</FontStyle>
                                     <FontFamily>Times New Roman</FontFamily>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                     <FontWeight>Normal</FontWeight>
                                     <TextDecoration>None</TextDecoration>
                                     <Color>#000000</Color>
@@ -1205,7 +1202,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.82628cm</Height>
+                  <Height>0.37649cm</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -1218,7 +1215,7 @@
                                 <TextRun>
                                   <Value>=Fields!S_No.Value</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -1252,7 +1249,7 @@
                                 <TextRun>
                                   <Value>=Fields!Param1.Value</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -1286,7 +1283,7 @@
                                 <TextRun>
                                   <Value>=Fields!Param2.Value</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -1320,7 +1317,7 @@
                                 <TextRun>
                                   <Value>=Fields!Param3.Value</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -1354,7 +1351,7 @@
                                 <TextRun>
                                   <Value>=Fields!Param4.Value</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -1388,7 +1385,7 @@
                                 <TextRun>
                                   <Value>=Fields!Param5.Value</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -1422,7 +1419,7 @@
                                 <TextRun>
                                   <Value>=Fields!Param6.Value</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -1456,7 +1453,7 @@
                                 <TextRun>
                                   <Value>=Fields!Param7.Value</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -1490,7 +1487,7 @@
                                 <TextRun>
                                   <Value>=Fields!Param8.Value</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -1524,7 +1521,7 @@
                                 <TextRun>
                                   <Value>=Fields!Param9.Value</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -1558,7 +1555,7 @@
                                 <TextRun>
                                   <Value>=Fields!Param10.Value</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -1592,7 +1589,7 @@
                                 <TextRun>
                                   <Value>=Fields!Param11.Value</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -1626,7 +1623,7 @@
                                 <TextRun>
                                   <Value>=Fields!Param12.Value</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -1660,7 +1657,7 @@
                                 <TextRun>
                                   <Value>=Fields!Param13.Value</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -1694,7 +1691,7 @@
                                 <TextRun>
                                   <Value>=Fields!Param14.Value</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -1728,7 +1725,7 @@
                                 <TextRun>
                                   <Value>=Fields!Param15.Value</Value>
                                   <Style>
-                                    <FontSize>8pt</FontSize>
+                                    <FontSize>7pt</FontSize>
                                   </Style>
                                 </TextRun>
                               </TextRuns>
@@ -1789,10 +1786,10 @@
               </TablixMembers>
             </TablixRowHierarchy>
             <DataSetName>StatementShowingRespectCityNCRForeignBusService</DataSetName>
-            <Top>2.14904cm</Top>
-            <Left>0.31432cm</Left>
-            <Height>2.47884cm</Height>
-            <Width>22.67518cm</Width>
+            <Top>0.93196cm</Top>
+            <Left>0.12911cm</Left>
+            <Height>1.92322cm</Height>
+            <Width>17.70101cm</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
@@ -1801,10 +1798,10 @@
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>2in</Height>
+        <Height>1.19792in</Height>
         <Style />
       </Body>
-      <Width>9.5542in</Width>
+      <Width>7.12712in</Width>
       <Page>
         <PageHeight>29.7cm</PageHeight>
         <PageWidth>21cm</PageWidth>

@@ -251,8 +251,6 @@ namespace OperationalStatisticsBook
                 //Kilometer efficiency formula
                 dataGridView1.Rows[i].Cells[4].Value = Common.ConvertToDecimal(row[i].Cells[3].Value.ToString()) > 0 ? Math.Round((Common.ConvertToDecimal(row[i].Cells[4].Value.ToString()) / Common.ConvertToDecimal(row[i].Cells[3].Value.ToString())) * 100, 2) : 0;
 
-
-
                 // Traffic Income per km Paise
                 dataGridView1.Rows[i].Cells[9].Value = Common.ConvertToDecimal(row[i].Cells[3].Value.ToString()) > 0 ? (Common.ConvertToDecimal(row[i].Cells[7].Value.ToString()) / Common.ConvertToDecimal(row[i].Cells[3].Value.ToString())) * 100 : 0;
 

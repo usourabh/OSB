@@ -954,6 +954,7 @@ namespace OperationalStatisticsBook
 
             byte[] byarry28 = GenerateReport(Page30ReportName1, rptParam, Page30DataSourceName1, Page30Data1);
             lstByte.Add(byarry28);
+
             //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
             // Accident Analysis by other party involvement 
 
@@ -1099,6 +1100,27 @@ namespace OperationalStatisticsBook
             byte[] byarry37 = GenerateReport(Page37ReportName, null, Page37DataSourceName, Page37Data);
             lstByte.Add(byarry37);
 
+            // Statement Showing The Income Expewditure In Respect Of City NCR Foreign Bus Service 
+
+            //string Page60ReportName = "rptStatementShowingRespectCityNCRForeignBusService.rdlc";
+            //string Page60DataSourceName = "rptStatementShowingRespectCityNCRForeignBusService";
+            //DataTable Page60Data = objPageData.GetDataStatemShowingIncomeNExpenditureCityNcr_Page39(this.OsbId);
+
+            //rptParam = new ReportParameter[1];
+            //rptParam[0] = new ReportParameter("ReportTitle", MonthList[0].MonthName + "-" + MonthList[1].Year);
+
+            //byte[] byarry58 = GenerateReport(Page60ReportName, null, Page60DataSourceName, Page60Data);
+            //lstByte.Add(byarry58);
+
+
+
+
+
+
+
+
+
+
             //<-----------BAR GRAPH PIE CHART----------->
 
 
@@ -1224,7 +1246,7 @@ namespace OperationalStatisticsBook
 
             string Page41ReportName1 = "PieTrafficEarningForTheMonthOf.rdlc";
             string Page41DataSourceName1 = "PieTrafficEarningForTheMonthOfMonth";
-            DataTable Page41Data1 = objPageData.GetDataBarPassengerInCarried_Page41_pie1();
+            DataTable Page41Data1 = objPageData.GetDataBarPassengerInCarried_Page41_pie1(OsbId);
 
             var MonthList36 = GlobalMaster.GetPrevousMonthList(Month, Year, 02);
             rptParam = new ReportParameter[1];
@@ -1238,7 +1260,7 @@ namespace OperationalStatisticsBook
 
             string Page41ReportName2 = "PieExpenditureForTheMonthOf.rdlc";
             string Page41DataSourceName2 = "ExpenditureOfTheMonth";
-            DataTable Page41Data2 = objPageData.GetDataBarPassengerInCarried_Page41_pie2();
+            DataTable Page41Data2 = objPageData.GetDataBarPassengerInCarried_Page41_pie2(OsbId);
 
             var MonthList37 = GlobalMaster.GetPrevousMonthList(Month, Year, 02);
 
@@ -1247,8 +1269,6 @@ namespace OperationalStatisticsBook
 
             byte[] byarry45 = GenerateReport(Page41ReportName2, rptParam, Page41DataSourceName2, Page41Data2);
             lstByte.Add(byarry45);
-
-
 
 
 
@@ -1294,7 +1314,6 @@ namespace OperationalStatisticsBook
             }
             catch (Exception ex)
             {
-
                 throw;
             }
             //save the output file  

@@ -442,7 +442,7 @@ namespace OperationalStatisticsBook
             DataTable dt = Common.ExecuteProcedure("sp_rptDepotwiseOperationalDataFCMSCluster_busesTrafficIncome", param);
             return dt;
         }
-
+        //NCR AND CITY
         // Statement Showing The Income Expewditure In Respect Of City NCR Foreign Bus Service 
 
         public DataTable GetDataStatShowingIncomeNExpenditureRespectFBS_Page36(int OsbId)
@@ -455,11 +455,26 @@ namespace OperationalStatisticsBook
             return dt;
         }
 
+        // NCR AND CITY
+        // Statement Showing The Income Expewditure In Respect Of City NCR Foreign Bus Service 
+
+        public DataTable GetDataStatemShowingIncomeNExpenditureCityNcr_Page39(int OsbId)
+        {
+            String[,] param = new string[,]
+                   {
+                   {"@OsbId",OsbId.ToString()},
+                };
+            DataTable dt = Common.ExecuteProcedure("sp_rptStatemnetShowingTheInRespectOfCityNcrAndForeignBusService", param);
+            return dt;
+        }
+
+
         //<-----------BAR GRAPH PIE CHART----------->
 
 
         // Bar Fleet and its utilization
 
+        // this Bar gets generated through live data(from database) thats why it has month and year parameter but not OSBID
         public DataTable GetDataBarFleetNUtilization_Page38_graph1(int Year, int Month)
         {
             var MonthList = GlobalMaster.GetPrevousMonthList(Month, Year, 02);
@@ -543,12 +558,11 @@ namespace OperationalStatisticsBook
 
         //pie chart TRAFFIC EARNING FOR THE MONTH
 
-        public DataTable GetDataBarPassengerInCarried_Page41_pie1()
+        public DataTable GetDataBarPassengerInCarried_Page41_pie1(int OsbId)
         {
             String[,] param = new string[,]
                    {
-                     {"@Month","4".ToString()},
-                   {"@Year","2021".ToString()},
+                   {"@OsbId",OsbId.ToString()},
                 };
 
             DataTable dt = Common.ExecuteProcedure("sp_BarPieChartTrafficEarning", param);
@@ -557,12 +571,11 @@ namespace OperationalStatisticsBook
 
         // PIE CHART EXPENDITURE FOR THE MONTH
 
-        public DataTable GetDataBarPassengerInCarried_Page41_pie2()
+        public DataTable GetDataBarPassengerInCarried_Page41_pie2(int OsbId)
         {
             String[,] param = new string[,]
                    {
-                   {"@Month","4".ToString()},
-                   {"@Year","2021".ToString()},
+                     {"@OsbId",OsbId.ToString()},
                 };
             DataTable dt = Common.ExecuteProcedure("sp_PieChartExpenditureForTheMonth", param);
             return dt;
