@@ -77,7 +77,6 @@ namespace OperationalStatisticsBook
 
         }
 
-
         DataTable BindStatemnetShowingTheInRespectOfCityNcrAndForeignBusServiceRsIncomeAndExpewnditureJune_2022Inlakhs()
         {
             DataTable table = new DataTable();
@@ -181,6 +180,7 @@ namespace OperationalStatisticsBook
 
             return table;
         }
+
         private void StatemnetShowingTheInRespectOfCityNcrAndForeignBusServiceRsIncomeAndExpewnditureJune_2022Inlakhs_Load(object sender, EventArgs e)
         {
             BindIndexPage(OsbId);
@@ -249,7 +249,6 @@ namespace OperationalStatisticsBook
             
 
         }
-
 
         private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {

@@ -23,12 +23,14 @@ namespace OperationalStatisticsBook
 {
     public partial class MainDashboard : Form
     {
+
         int OsbId = 0;
         int Year = 0;
         int Month = 0;
         string MonthName = "";
         string FinYear = "";
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["dtOperation"].ConnectionString);
+
         public MainDashboard()
         {
             InitializeComponent();
@@ -1102,15 +1104,15 @@ namespace OperationalStatisticsBook
 
             // Statement Showing The Income Expewditure In Respect Of City NCR Foreign Bus Service 
 
-            //string Page60ReportName = "rptStatementShowingRespectCityNCRForeignBusService.rdlc";
-            //string Page60DataSourceName = "rptStatementShowingRespectCityNCRForeignBusService";
-            //DataTable Page60Data = objPageData.GetDataStatemShowingIncomeNExpenditureCityNcr_Page39(this.OsbId);
+            string Page60ReportName = "rptStatementShowingRespectCityNCRForeignBusService.rdlc";
+            string Page60DataSourceName = "rptStatementShowingRespectCityNCRForeignBusService";
+            DataTable Page60Data = objPageData.GetDataStatemShowingIncomeNExpenditureCityNcr_Page39(this.OsbId);
 
-            //rptParam = new ReportParameter[1];
-            //rptParam[0] = new ReportParameter("ReportTitle", MonthList[0].MonthName + "-" + MonthList[1].Year);
+            rptParam = new ReportParameter[1];
+            rptParam[0] = new ReportParameter("ReportTitle", MonthList[0].MonthName + "-" + MonthList[1].Year);
 
-            //byte[] byarry58 = GenerateReport(Page60ReportName, null, Page60DataSourceName, Page60Data);
-            //lstByte.Add(byarry58);
+            byte[] byarry58 = GenerateReport(Page60ReportName, null, Page60DataSourceName, Page60Data);
+            lstByte.Add(byarry58);
 
 
 
@@ -1331,6 +1333,7 @@ namespace OperationalStatisticsBook
             if (rptParam != null)
                 if (rptParam.Count() > 0)
                     rdsAPP.LocalReport.SetParameters(rptParam);
+     
             try
             {
                 byte[] fByte = ConvertReportToPDF(rdsAPP.LocalReport);
