@@ -510,6 +510,7 @@ namespace OperationalStatisticsBook
         private void GetSinglePagePDF()
         {
             AllPageDataContext objPageData = new AllPageDataContext();
+
             List<byte[]> lstByte = new List<byte[]>();
 
 
@@ -1012,6 +1013,7 @@ namespace OperationalStatisticsBook
             string currentYear4 = currentDate.Year.ToString();
             string previousYear4 = newDate.Year.ToString();
             String previousMonthName4 = newDate.ToString("MMMM");
+
             rptParam = new ReportParameter[1];
             rptParam[0] = new ReportParameter("ReportTitle", MonthList25[0].MonthName + "-" + currentYear4);
 
@@ -1073,6 +1075,7 @@ namespace OperationalStatisticsBook
             byte[] byarry35 = GenerateReport(Page36ReportName1, rptParam, Page36DataSourceName1, Page36Data1);
             lstByte.Add(byarry35);
 
+
             // Depot wise operational data of FCMS (cluster buses) Traffic income
 
             string Page36ReportName2 = "rptDepotwiseOperationalDataFCMSCluster_busesTrafficIncome.rdlc";
@@ -1092,6 +1095,7 @@ namespace OperationalStatisticsBook
             byte[] byarry36 = GenerateReport(Page36ReportName2, rptParam, Page36DataSourceName2, Page36Data2);
             lstByte.Add(byarry36);
 
+
             // Statement Showing The Income Expewditure In Respect Of City NCR Foreign Bus Service 
 
             string Page37ReportName = "rptStatementShowingTheRsInRespectOfCityNCRForeignBusServiceIncomeExpewditureJune2022InLakhs.rdlc";
@@ -1102,18 +1106,20 @@ namespace OperationalStatisticsBook
             byte[] byarry37 = GenerateReport(Page37ReportName, null, Page37DataSourceName, Page37Data);
             lstByte.Add(byarry37);
 
-            // Statement Showing The Income Expewditure In Respect Of City NCR Foreign Bus Service 
 
-            string Page60ReportName = "rptStatementShowingRespectCityNCRForeignBusService.rdlc";
-            string Page60DataSourceName = "rptStatementShowingRespectCityNCRForeignBusService";
-            DataTable Page60Data = objPageData.GetDataStatemShowingIncomeNExpenditureCityNcr_Page39(this.OsbId);
 
-            rptParam = new ReportParameter[1];
-            rptParam[0] = new ReportParameter("ReportTitle", MonthList[0].MonthName + "-" + MonthList[1].Year);
+            //Statement Showing The Income Expewditure In Respect Of City NCR Foreign Bus Service
 
-            byte[] byarry58 = GenerateReport(Page60ReportName, null, Page60DataSourceName, Page60Data);
-            lstByte.Add(byarry58);
 
+            //string Page60ReportName = "rptStatementShowingRespectCityNCRForeignBusService.rdlc";
+            //string Page60DataSourceName = "rptStatementShowingRespectCityNCRForeignBusService";
+            //DataTable Page60Data = objPageData.GetDataStatemShowingIncomeNExpenditureCityNcr_Page39(this.OsbId);
+
+            //rptParam = new ReportParameter[1];
+            //rptParam[0] = new ReportParameter("ReportTitle", MonthList[0].MonthName + "-" + MonthList[1].Year);
+
+            //byte[] byarry58 = GenerateReport(Page60ReportName, null, Page60DataSourceName, Page60Data);
+            //lstByte.Add(byarry58);
 
 
 
@@ -1271,7 +1277,6 @@ namespace OperationalStatisticsBook
 
             byte[] byarry45 = GenerateReport(Page41ReportName2, rptParam, Page41DataSourceName2, Page41Data2);
             lstByte.Add(byarry45);
-
 
 
             #endregion
