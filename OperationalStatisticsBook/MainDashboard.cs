@@ -181,7 +181,7 @@ namespace OperationalStatisticsBook
             //<-------------BARGRAPH AND PIE CHART------------>
 
             dt.Rows.Add(" ", "BAR GRPAPH Passenger Carried", "BarPassengerCarried");
-            dt.Rows.Add(" ", "BAR GRPAPH Fleet Utilization ", "BarFleetNUtilization");
+            dt.Rows.Add(" ", "BAR GRPAPH Fleet Utilization ", "BarFleetNUtilizationGrid");
             dt.Rows.Add(" ", "BAR GRPAPH Operational ratio", "OperationalRatio");
             dt.Rows.Add(" ", "BAR GRPAPH Kilometers efficency", "Kilometersefficiency");
             dt.Rows.Add(" ", "BAR GRPAPH Traffic Earning", "BarTrafficEarning");

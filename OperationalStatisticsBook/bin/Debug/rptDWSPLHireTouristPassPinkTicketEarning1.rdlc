@@ -972,49 +972,14 @@
               </Border>
             </Style>
           </Tablix>
-          <Textbox Name="Textbox3">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>Note: RGD-2 depot Spl.Hire 6320 km &amp; Earning Rs. 1583600</Value>
-                    <Style>
-                      <FontSize>7pt</FontSize>
-                      <FontWeight>Bold</FontWeight>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Left</TextAlign>
-                </Style>
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>Textbox3</rd:DefaultName>
-            <Top>2.742cm</Top>
-            <Left>0.26141cm</Left>
-            <Height>0.25604cm</Height>
-            <Width>9.03346cm</Width>
-            <ZIndex>2</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
         </ReportItems>
-        <Height>1.18033in</Height>
+        <Height>1.12825in</Height>
         <Style />
       </Body>
       <Width>7.5831in</Width>
       <Page>
         <PageFooter>
-          <Height>0.58209cm</Height>
+          <Height>0.4498cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -1038,9 +1003,9 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox2</rd:DefaultName>
-              <Top>0.10583cm</Top>
+              <Top>0.03528cm</Top>
               <Left>8.51641cm</Left>
-              <Height>0.40364cm</Height>
+              <Height>0.26252cm</Height>
               <Width>0.77846cm</Width>
               <Style>
                 <Border>
