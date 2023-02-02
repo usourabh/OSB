@@ -139,7 +139,7 @@ namespace OperationalStatisticsBook
             dt.Rows.Add(" ", "Index Page", "frmOSBMain");
             dt.Rows.Add(" ", "Performance of DTC at a Glance", "frmPerformanceofDTCGlance");
             dt.Rows.Add(" ", "PROGRESSIVE FINANCIAL RESULTS (Rs. In Lakh)", "progressiveFinancialResults");
-            
+
             dt.Rows.Add(" ", "Staff Ratio as on ", "StaffRatioAsOn");
             dt.Rows.Add("1.1", "Analysis of causes of Accidents ", "analysisOfCausesAccidents");
             dt.Rows.Add("1.2", "Growith of basic structure of DTC", "SalientFeatureGrowthBasicStructure");
@@ -414,9 +414,9 @@ namespace OperationalStatisticsBook
                     objFrm.Show();
                 }
 
-                else if (frmName == "BarFleetNUtilization")
+                else if (frmName == "BarFleetNUtilizationGrid")
                 {
-                    BarFleetNUtilization objFrm = new BarFleetNUtilization(OsbId, Year, Month, FinYear, MonthName);
+                    BarFleetNUtilizationGrid objFrm = new BarFleetNUtilizationGrid(OsbId, Year, Month, FinYear, MonthName);
                     objFrm.Show();
                 }
                 else if (frmName == "BarKilometersefficiency")
@@ -950,7 +950,7 @@ namespace OperationalStatisticsBook
             string previousYear1 = newDate1.Year.ToString();
             String previousMonthName1 = newDate.ToString("MMMM");
             rptParam = new ReportParameter[3];
-           
+
             rptParam[0] = new ReportParameter("ReportTitle", MonthList22[0].MonthName + "-" + currentYear1 + " & " + MonthList22[0].MonthName + "-" + previousYear1);
             rptParam[1] = new ReportParameter("fromDate", MonthList22[0].MonthName + "-" + currentYear1);
             rptParam[2] = new ReportParameter("ToDate", MonthList22[0].MonthName + "-" + previousYear1);
@@ -993,7 +993,7 @@ namespace OperationalStatisticsBook
             string previousYear3 = newDate3.Year.ToString();
             String previousMonthName3 = newDate.ToString("MMMM");
             rptParam = new ReportParameter[3];
-        
+
             rptParam[0] = new ReportParameter("ReportTitle", MonthList24[0].MonthName + "-" + currentYear3 + " & " + MonthList24[0].MonthName + "-" + previousYear3);
             rptParam[1] = new ReportParameter("FromDate", MonthList24[0].MonthName + "-" + currentYear3);
             rptParam[2] = new ReportParameter("ToDate", MonthList24[0].MonthName + "-" + previousYear3);
@@ -1338,7 +1338,7 @@ namespace OperationalStatisticsBook
             if (rptParam != null)
                 if (rptParam.Count() > 0)
                     rdsAPP.LocalReport.SetParameters(rptParam);
-     
+
             try
             {
                 byte[] fByte = ConvertReportToPDF(rdsAPP.LocalReport);

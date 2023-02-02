@@ -144,7 +144,7 @@ namespace OperationalStatisticsBook
             MessageBox.Show("Done");
         }
 
-        // 
+        // Reset btn
         private void button1_Click(object sender, EventArgs e)
         {
             DeleteExisitingTableRecord("tbl_BarPassengerCarried", OsbId);

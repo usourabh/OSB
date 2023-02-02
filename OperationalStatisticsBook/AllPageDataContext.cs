@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace OperationalStatisticsBook
 {
-  public  class AllPageDataContext
+    public class AllPageDataContext
     {
         //INDEX PAGE
         public DataTable GetIndexPageData_Page1(int OsbId)
@@ -474,6 +474,11 @@ namespace OperationalStatisticsBook
 
         // Bar Fleet and its utilization
 
+
+
+
+
+
         // this Bar gets generated through live data(from database) thats why it has month and year parameter but not OSBID
         public DataTable GetDataBarFleetNUtilization_Page38_graph1(int Year, int Month)
         {
@@ -498,7 +503,7 @@ namespace OperationalStatisticsBook
             String[,] param = new string[,]
                    {
                    {"@OsbId",OsbId.ToString().Trim()},
-                   
+
                 };
             DataTable dt = Common.ExecuteProcedure("sp_BarOperationalRatio", param);
             return dt;

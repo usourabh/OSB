@@ -17,25 +17,25 @@ namespace WindowsFormsApp1
 {
     public partial class BarFleetNUtilization : Form
     {
-       
-            int OsbId = 0;
-            int Year = 0;
-            int Month = 0;
-            string MonthName = "0";
-            string finYear = "0";
-            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["dtOperation"].ConnectionString);
+
+        int OsbId = 0;
+        int Year = 0;
+        int Month = 0;
+        string MonthName = "0";
+        string finYear = "0";
+        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["dtOperation"].ConnectionString);
 
 
-            public BarFleetNUtilization(int OsbId, int Year, int Month, string finYear, string MonthName)
-            {
-                InitializeComponent();
-                this.OsbId = OsbId;
-                this.Year = Year;
-                this.Month = Month;
-                this.finYear = finYear;
-                this.MonthName = MonthName;
+        public BarFleetNUtilization(int OsbId, int Year, int Month, string finYear, string MonthName)
+        {
+            InitializeComponent();
+            this.OsbId = OsbId;
+            this.Year = Year;
+            this.Month = Month;
+            this.finYear = finYear;
+            this.MonthName = MonthName;
 
-            }
+        }
         public DataTable GetData()
         {
             var MonthList = GlobalMaster.GetPrevousMonthList(Month, Year, 02);
@@ -54,7 +54,7 @@ namespace WindowsFormsApp1
         }
         private void BarFleetNUtilization_Load(object sender, EventArgs e)
         {
-            var MonthList = GlobalMaster.GetPrevousMonthList(Month,Year,02);
+            var MonthList = GlobalMaster.GetPrevousMonthList(Month, Year, 02);
             DateTime currentDate = new DateTime(Year, Month, 01);
             DateTime newDate = currentDate.AddYears(-1);
             string currentYear = currentDate.Year.ToString();
