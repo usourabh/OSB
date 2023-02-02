@@ -1357,6 +1357,7 @@ D:\OSB\OperationalStatisticsBook\bin\Debug\Microsoft.VisualStudio.TextManager.In
 D:\OSB\OperationalStatisticsBook\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.8.0.dll
 D:\OSB\OperationalStatisticsBook\bin\Debug\Microsoft.MSXML.dll
 D:\OSB\OperationalStatisticsBook\bin\Debug\itextsharp.xml
+D:\OSB\OperationalStatisticsBook\obj\Debug\OperationalStatisticsBook.csproj.AssemblyReference.cache
 D:\OSB\OperationalStatisticsBook\obj\Debug\OperationalStatisticsBook.AccidentAnalysisForTheMonth.resources
 D:\OSB\OperationalStatisticsBook\obj\Debug\OperationalStatisticsBook.AccidentAnalysisOtherPartyInvolvment.resources
 D:\OSB\OperationalStatisticsBook\obj\Debug\OperationalStatisticsBook.AccidentNCompensationGvnAccidentVictims.resources
