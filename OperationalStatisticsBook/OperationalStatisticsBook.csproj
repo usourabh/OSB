@@ -129,6 +129,12 @@
     <Compile Include="BarFleetNUtilization.Designer.cs">
       <DependentUpon>BarFleetNUtilization.cs</DependentUpon>
     </Compile>
+    <Compile Include="BarFleetNUtilizationGrid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BarFleetNUtilizationGrid.Designer.cs">
+      <DependentUpon>BarFleetNUtilizationGrid.cs</DependentUpon>
+    </Compile>
     <Compile Include="BarKilometersefficiency.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -692,6 +698,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BarFleetNUtilization.resx">
       <DependentUpon>BarFleetNUtilization.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BarFleetNUtilizationGrid.resx">
+      <DependentUpon>BarFleetNUtilizationGrid.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BarKilometersefficiency.rdlc" />
     <EmbeddedResource Include="BarKilometersefficiency.resx">
