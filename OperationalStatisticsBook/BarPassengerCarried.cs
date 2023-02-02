@@ -61,6 +61,7 @@ namespace OperationalStatisticsBook
             }
 
         }
+
         int DeleteExisitingTableRecord(string TableName, int OsbId)
         {
             con.Open();
@@ -76,8 +77,6 @@ namespace OperationalStatisticsBook
 
             return i;
         }
-
-
 
         DataTable BindBarPassengerCarried()
         {
@@ -103,6 +102,7 @@ namespace OperationalStatisticsBook
 
             return table;
         }
+
         private void SaveOnClick(object sender, EventArgs e)
         {
             {
@@ -137,7 +137,6 @@ namespace OperationalStatisticsBook
             }
         }
 
-
         private void ResetOnClick(object sender, EventArgs e)
         {
             DeleteExisitingTableRecord("tbl_BarPassengerCarried ", OsbId);
@@ -145,16 +144,13 @@ namespace OperationalStatisticsBook
             MessageBox.Show("Done");
         }
 
-
-
+        // 
         private void button1_Click(object sender, EventArgs e)
         {
             DeleteExisitingTableRecord("tbl_BarPassengerCarried", OsbId);
             dataGridView1.DataSource = BindBarPassengerCarried();
             MessageBox.Show("Done");
         }
-
-      
 
         private void BarPassengerCarried_Load(object sender, EventArgs e)
         {
