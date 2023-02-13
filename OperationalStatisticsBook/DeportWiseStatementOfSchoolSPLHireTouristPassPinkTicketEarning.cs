@@ -254,7 +254,7 @@ namespace OperationalStatisticsBook
 
         private void setRowColNonEditable()
         {
-            Common.SetRowNonEditable(dataGridView1, 40);
+            //Common.SetRowNonEditable(dataGridView1, 40);
             Common.SetColumnNonEditable(dataGridView1, 19);
             Common.SetColumnNonEditable(dataGridView1, 20);
         }
