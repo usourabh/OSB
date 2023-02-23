@@ -33,7 +33,7 @@ namespace OperationalStatisticsBook
         }
         int DeleteExisitingTableRecord(string TableName, int OsbId)
         {
-            string strTable = "[rpt].[" + TableName + "]";
+            string strTable = "[dtcoperation].[rpt].[" + TableName + "]";
             int i = 0;
             SqlCommand cmd = new SqlCommand("delete from " + strTable + " where OsbId=@OsbId", con);
             cmd.Parameters.AddWithValue("@OsbId", OsbId);
@@ -59,8 +59,8 @@ namespace OperationalStatisticsBook
             table.Columns.Add("B.M.T.C.", typeof(string));
 
             //table.Rows.Add("", "", "", "DELHI", "CALCUTTA", "BOMBAY", "CHENNAI", "BANGLORE");
-           // table.Rows.Add("1", "2", "3", "4", "5", "6", "7", "8");
-           // table.Rows.Add("A", "Physical Parformance", "", "", "", "", "", "");
+            // table.Rows.Add("1", "2", "3", "4", "5", "6", "7", "8");
+            // table.Rows.Add("A", "Physical Parformance", "", "", "", "", "", "");
             table.Rows.Add("1", "Avg. fleet held", "Number", "", "", "", "", "");
             table.Rows.Add("2", "Avg. age of the fleet", "Years", "", "", "", "", "");
             table.Rows.Add("3", "%age of overaged Buses", "%age", "", "", "", "", "");
@@ -85,7 +85,7 @@ namespace OperationalStatisticsBook
             table.Rows.Add("6", "Depreciation", "Rs./Km", "", "", "", "", "");
             table.Rows.Add("7", "Taxes", "Rs./Km", "", "", "", "", "");
             table.Rows.Add("8", "Others", "Rs./Km", "", "", "", "", "");
-            
+
             return table;
         }
 
@@ -98,30 +98,41 @@ namespace OperationalStatisticsBook
 
             };
             DataTable dt = Common.ExecuteProcedure("sp_PerformanceMetopolitanTransportUndertaking", param);
-            String[,] param1 = new string[,]
-                    {
-                {"@Year",Year.ToString().Trim()},
-              
-            };
-            DataTable dt1 = Common.ExecuteProcedure("rptGetAllPerformanceTransUnder", param1);
+            //String[,] param1 = new string[,]
+            //        {
+            //    {"@Year",Year.ToString().Trim()},
+
+            //};
+
+
+            DataTable autoSpTable = new DataTable();
+            SqlCommand cmd = new SqlCommand("[dbo].[sp_PerforMetropoTransUnderDataOSB1p9]", con);
+            cmd.Parameters.AddWithValue("@Month", Month);
+            cmd.Parameters.AddWithValue("@Year", Year);
+            cmd.CommandType = CommandType.StoredProcedure;
+            SqlDataAdapter sda = new SqlDataAdapter(cmd);
+            sda.Fill(autoSpTable);
+
 
             if (dt.Rows.Count > 0)
             {
                 dataGridView1.DataSource = dt;
                 Save.BackColor = Color.Green;
             }
-            else if (dt1.Rows.Count > 0)
+            else if (autoSpTable.Rows.Count > 0)
             {
-                dataGridView1.DataSource = dt1;
+                dataGridView1.DataSource = autoSpTable;
             }
             else
+            {
                 dataGridView1.DataSource = BindPerformanceMetopolitanTransportUndertaking();
-
+            }
 
         }
 
         private void ResetOnClick(object sender, EventArgs e)
         {
+            DeleteExisitingTableRecord("tbl_PerformanceMetopolitanTransportUndertaking", OsbId);
             dataGridView1.DataSource = BindPerformanceMetopolitanTransportUndertaking();
             MessageBox.Show("Done");
         }
@@ -138,7 +149,7 @@ namespace OperationalStatisticsBook
                     {
                         SqlCommand cmd = new SqlCommand("INSERT INTO [dtcoperation].[rpt].[tbl_PerformanceMetopolitanTransportUndertaking] ([OsbId],[Particular],[Param1],[Param2],[Param3],[Param4],[Param5],[Param6]) VALUES (@OsbId,@Particular,@Param1,@Param2,@Param3,@Param4,@Param5,@Param6)", con);
                         cmd.Parameters.AddWithValue("@OsbId", OsbId);
-                       // cmd.Parameters.AddWithValue("@SNo", row.Cells[0].Value == null ? "" : row.Cells[0].Value.ToString());
+                        // cmd.Parameters.AddWithValue("@SNo", row.Cells[0].Value == null ? "" : row.Cells[0].Value.ToString());
                         cmd.Parameters.AddWithValue("@Particular", row.Cells[0].Value == null ? "" : row.Cells[0].Value.ToString());
                         cmd.Parameters.AddWithValue("@Param1", row.Cells[1].Value == null ? "" : row.Cells[1].Value.ToString());
                         cmd.Parameters.AddWithValue("@Param2", row.Cells[2].Value == null ? "" : row.Cells[2].Value.ToString());
@@ -170,7 +181,7 @@ namespace OperationalStatisticsBook
         private void PerformanceMetopolitanTransportUndertaking_Load(object sender, EventArgs e)
         {
             ShowData();
-           // dataGridView1.DataSource = BindPerformanceMetopolitanTransportUndertaking();
+            // dataGridView1.DataSource = BindPerformanceMetopolitanTransportUndertaking();
         }
     }
 }

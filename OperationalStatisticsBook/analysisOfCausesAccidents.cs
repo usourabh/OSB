@@ -42,8 +42,8 @@ namespace OperationalStatisticsBook
             table.Columns.Add("%age ", typeof(string));
 
             // Row Static data
-           // table.Rows.Add("1", "2", "3", "3", "4", "4");
-            table.Rows.Add("1", "Rash & Negligance", " " , " " , " ", " ");
+            // table.Rows.Add("1", "2", "3", "3", "4", "4");
+            table.Rows.Add("1", "Rash & Negligance", " ", " ", " ", " ");
             table.Rows.Add("a", "D.T.C", 0, 0, 0, 0);
             table.Rows.Add("b", "Other", 0, 0, 0, 0);
             table.Rows.Add("2", "Error of Judgement", " ", " ", " ", " ");
@@ -57,7 +57,7 @@ namespace OperationalStatisticsBook
             table.Rows.Add("6", "Boarding Passengers", 0, 0, 0, 0);
             table.Rows.Add("7", "MISC", 0, 0, 0, 0);
             table.Rows.Add("", "Total", 0, 0, 0, 0);
-           // table.Rows.Add("", "Total", 0, 0, 0, 0);
+            // table.Rows.Add("", "Total", 0, 0, 0, 0);
 
 
 
@@ -89,11 +89,28 @@ namespace OperationalStatisticsBook
                 cmd.CommandType = CommandType.Text;
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
                 sda.Fill(dt);
+
+                DataTable autoSpTable = new DataTable();
+                SqlCommand cmd1 = new SqlCommand("[dbo].[sp_AnalysisOfCausesAccidentsYearlyOSB1_1]", con);
+                cmd1.Parameters.AddWithValue("@Year", Year);
+                cmd1.Parameters.AddWithValue("@Month", Month);
+
+                cmd1.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter sda1 = new SqlDataAdapter(cmd1);
+                sda1.Fill(autoSpTable);
+
                 if (dt.Rows.Count > 0)
                 {
                     dataGridView1.DataSource = dt;
                     SaveBtn.BackColor = Color.Green;
                 }
+
+                else if (autoSpTable.Rows.Count > 0)
+                {
+
+                    dataGridView1.DataSource = autoSpTable;
+                }
+
                 else
                 {
                     dataGridView1.DataSource = BindAnalysisOfCausesAccidents();
@@ -115,7 +132,7 @@ namespace OperationalStatisticsBook
             {
                 try
                 {
-                    if (row.Cells[0].Value != null || row.Cells[1].Value != null || row.Cells[2].Value != null || row.Cells[3].Value != null || row.Cells[4].Value != null || row.Cells[5].Value != null )
+                    if (row.Cells[0].Value != null || row.Cells[1].Value != null || row.Cells[2].Value != null || row.Cells[3].Value != null || row.Cells[4].Value != null || row.Cells[5].Value != null)
                     {
                         SqlCommand cmd = new SqlCommand("INSERT INTO [rpt].[tbl_analysisCausesAccidents] ([OsbId],[SNO],[Particular],[Absolute],[Percentage],[Absolutes],[Percentages]) VALUES (@OsbId,@SNO,@Particular,@Absolute,@Percentage,@Absolutes,@Percentages)", con);
                         cmd.Parameters.AddWithValue("@OsbId", OsbId);
@@ -171,13 +188,13 @@ namespace OperationalStatisticsBook
             {
                 dataGridView1.Rows[13].Cells[i].Value = Common.GetSum(row, 1, 12, i);
             }
-            
-            for(int i = 1; i<=12; i++)
+
+            for (int i = 1; i <= 12; i++)
             {
                 // 1st column percentage
-                dataGridView1.Rows[i].Cells[3].Value = Common.ConvertToDecimal(row[13].Cells[2].Value.ToString()) > 0 ? Math.Round(  (Common.ConvertToDecimal(row[i].Cells[2].Value.ToString()) / Common.ConvertToDecimal(row[13].Cells[2].Value.ToString())) * 100, 2) : 0;
+                dataGridView1.Rows[i].Cells[3].Value = Common.ConvertToDecimal(row[13].Cells[2].Value.ToString()) > 0 ? Math.Round((Common.ConvertToDecimal(row[i].Cells[2].Value.ToString()) / Common.ConvertToDecimal(row[13].Cells[2].Value.ToString())) * 100, 2) : 0;
                 // 2nd column percentage                                                                                             
-                dataGridView1.Rows[i].Cells[5].Value = Common.ConvertToDecimal(row[13].Cells[4].Value.ToString()) > 0 ? Math.Round(  (Common.ConvertToDecimal(row[i].Cells[4].Value.ToString()) / Common.ConvertToDecimal(row[13].Cells[4].Value.ToString())) * 100, 2) : 0;
+                dataGridView1.Rows[i].Cells[5].Value = Common.ConvertToDecimal(row[13].Cells[4].Value.ToString()) > 0 ? Math.Round((Common.ConvertToDecimal(row[i].Cells[4].Value.ToString()) / Common.ConvertToDecimal(row[13].Cells[4].Value.ToString())) * 100, 2) : 0;
             }
         }
 
