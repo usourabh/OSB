@@ -41,7 +41,7 @@ namespace OperationalStatisticsBook
             {
                 DataTable dt = new DataTable();
                 SqlCommand cmd = new SqlCommand("SELECT [S_No],[Param1],[Param2],[Param3],[Param4] ,[Param5],[Param6],[Param7] FROM [rpt].[tbl_ComparativeFinancialResultsFrom] where OsbId=@OsbId", con);
-                cmd.Parameters.AddWithValue("@OsbId", OsbId);
+                cmd.Parameters.AddWithValue("@OsbId", 5);
                 cmd.CommandType = CommandType.Text;
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
                 sda.Fill(dt);
@@ -80,6 +80,7 @@ namespace OperationalStatisticsBook
             }
 
         }
+
         int DeleteExisitingTableRecord(string TableName, int OsbId)
         {
             string strTable = "[rpt].[" + TableName + "]";
@@ -114,13 +115,13 @@ namespace OperationalStatisticsBook
 
 
             table.Columns.Add(GlobalMaster.FinMaster[4].FinVal, typeof(string));
-            table.Columns.Add(GlobalMaster.FinMaster[4].FinVal+" ", typeof(string));
-     
+            table.Columns.Add(GlobalMaster.FinMaster[4].FinVal + " ", typeof(string));
+
             table.Columns.Add(GlobalMaster.FinMaster[3].FinVal, typeof(string));
-            table.Columns.Add(GlobalMaster.FinMaster[3].FinVal+" ", typeof(string));
-        
+            table.Columns.Add(GlobalMaster.FinMaster[3].FinVal + " ", typeof(string));
+
             table.Columns.Add(GlobalMaster.FinMaster[2].FinVal, typeof(string));
-            table.Columns.Add(GlobalMaster.FinMaster[2].FinVal+" ", typeof(string));
+            table.Columns.Add(GlobalMaster.FinMaster[2].FinVal + " ", typeof(string));
 
             //Row here.......
 
@@ -324,11 +325,11 @@ namespace OperationalStatisticsBook
             var row = dataGridView1.Rows;
             //Common.SetRowNonEditable(dataGridView1, 2);
 
-            
 
-            for(int i=2 ; i<= 7; i++)
-            {   
-                
+
+            for (int i = 2; i <= 7; i++)
+            {
+
                 // NET TICKET EARNING TOTAL
                 dataGridView1.Rows[2].Cells[i].Value = Math.Round(Common.ConvertToDecimal(dataGridView1.Rows[0].Cells[i].Value.ToString()) - Common.ConvertToDecimal(dataGridView1.Rows[1].Cells[i].Value.ToString()), 2);
                 // TOTAL TRAFFIC EARNING iii to Viii

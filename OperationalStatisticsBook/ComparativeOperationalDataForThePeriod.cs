@@ -38,7 +38,7 @@ namespace OperationalStatisticsBook
             {
                 DataTable dt = new DataTable();
                 SqlCommand cmd = new SqlCommand("SELECT [S_No],[Param1],[Param2],[Param3],[Param4] ,[Param5] FROM [rpt].[tbl_ComparativeOperationalData] where OsbId=@OsbId", con);
-                cmd.Parameters.AddWithValue("@OsbId", OsbId);
+                cmd.Parameters.AddWithValue("@OsbId", 5);
                 cmd.CommandType = CommandType.Text;
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
                 sda.Fill(dt);
@@ -61,6 +61,7 @@ namespace OperationalStatisticsBook
             }
 
         }
+
         int DeleteExisitingTableRecord(string TableName, int OsbId)
         {
             string strTable = "[rpt].[" + TableName + "]";
@@ -75,6 +76,7 @@ namespace OperationalStatisticsBook
 
             return i;
         }
+
         DataTable BindComparativeOperationDataTbl()
         {
 
@@ -89,10 +91,10 @@ namespace OperationalStatisticsBook
             table.Columns.Add("Financial Year ", typeof(string));
             table.Columns.Add("Financial Year  ", typeof(string));
 
-           
+
             //Rows Static data
 
-           // table.Rows.Add("1", "2", "3", "4", "5", "6");
+            // table.Rows.Add("1", "2", "3", "4", "5", "6");
             table.Rows.Add("1", "Total Fleet as on last date", "No", "3762", "3760", "3762");
             table.Rows.Add("2", "Average Fleet", "No", "3789", "3761", "3760");
             table.Rows.Add("3", "Avg. No. of buses on road", "No", "3222", "2894", "3206");
@@ -113,12 +115,12 @@ namespace OperationalStatisticsBook
             table.Rows.Add("18", "Breakdowns per 10,000 kms", "No", "4.57", "2.90", "4.01");
             table.Rows.Add("19", "Accidents as per 1 lakh kms", "lakh", "0.05", "0.04", "0.04");
             table.Rows.Add("20", "Total passsengers carried", "lakh", "12182.40", "4468.05", "5702.20");
-            table.Rows.Add("21", "Pink pass passenger", "No", "0", "0", "0"); 
-            table.Rows.Add("22", "Passengers carried daily", "%", "33.29", "12.24", "15.62"); 
+            table.Rows.Add("21", "Pink pass passenger", "No", "0", "0", "0");
+            table.Rows.Add("22", "Passengers carried daily", "%", "33.29", "12.24", "15.62");
             table.Rows.Add("23", "Passengers per bus daily", "No", "1033", "423", "487");
             table.Rows.Add("24", "Load Factor", "%", "86.77", "22.97", "22.30");
 
-          //  dataGridView1.DataSource = table;
+            //  dataGridView1.DataSource = table;
 
             return table;
         }
@@ -126,7 +128,7 @@ namespace OperationalStatisticsBook
         private void ComparativeOperationalData_Load(object sender, EventArgs e)
         {
             BindIndexPage(OsbId);
-          //  BindComparativeOperationDataTbl();
+            //  BindComparativeOperationDataTbl();
         }
 
         private void Reset_Click(object sender, EventArgs e)
@@ -159,7 +161,7 @@ namespace OperationalStatisticsBook
                         cmd.Parameters.AddWithValue("@Param3", row.Cells[3].Value == null ? "" : row.Cells[3].Value.ToString());
                         cmd.Parameters.AddWithValue("@Param4", row.Cells[4].Value == null ? "" : row.Cells[4].Value.ToString());
                         cmd.Parameters.AddWithValue("@Param5", row.Cells[5].Value == null ? "" : row.Cells[5].Value.ToString());
-                        
+
 
                         cmd.CommandType = CommandType.Text;
                         con.Open();
@@ -177,5 +179,5 @@ namespace OperationalStatisticsBook
         }
 
     }
-    
+
 }

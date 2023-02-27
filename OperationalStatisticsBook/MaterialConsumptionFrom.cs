@@ -65,6 +65,7 @@ namespace OperationalStatisticsBook
             Common.SetColumnNonEditable(dataGridView1, 5);
 
         }
+
         DataTable BindMaterialConsumptionFrom()
         {
             DataTable table = new DataTable();
@@ -74,9 +75,9 @@ namespace OperationalStatisticsBook
             table.Columns.Add("S.No", typeof(string));
             table.Columns.Add("Item", typeof(string));
             table.Columns.Add("Unit", typeof(string));
-            table.Columns.Add("2018-2019", typeof(string));
             table.Columns.Add("2019-2020", typeof(string));
             table.Columns.Add("2020-2021", typeof(string));
+            table.Columns.Add("2021-2022", typeof(string));
 
             //Rows data
 
@@ -115,6 +116,7 @@ namespace OperationalStatisticsBook
 
             return i;
         }
+
         private void ResetOnClick(object sender, EventArgs e)
         {
             BindMaterialConsumptionFrom();
@@ -122,7 +124,7 @@ namespace OperationalStatisticsBook
 
         private void SaveOnClick(object sender, EventArgs e)
         {
-            DeleteExisitingTableRecord("tbl_MaterialConsumptionFrom", OsbId);          
+            DeleteExisitingTableRecord("tbl_MaterialConsumptionFrom", OsbId);
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
                 try
@@ -137,7 +139,7 @@ namespace OperationalStatisticsBook
                         cmd.Parameters.AddWithValue("@Param1", row.Cells[3].Value == null ? "" : row.Cells[3].Value.ToString().Trim());
                         cmd.Parameters.AddWithValue("@Param2", row.Cells[4].Value == null ? "" : row.Cells[4].Value.ToString().Trim());
                         cmd.Parameters.AddWithValue("@Param3", row.Cells[5].Value == null ? "" : row.Cells[5].Value.ToString().Trim());
-              
+
                         cmd.CommandType = CommandType.Text;
                         con.Open();
                         cmd.ExecuteNonQuery();

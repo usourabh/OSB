@@ -31,6 +31,7 @@ namespace OperationalStatisticsBook
             this.finYear = finYear;
             this.MonthName = MonthName;
         }
+
         int DeleteExisitingTableRecord(string TableName, int OsbId)
         {
             string strTable = "[dtcoperation].[rpt].[" + TableName + "]";
@@ -45,6 +46,7 @@ namespace OperationalStatisticsBook
 
             return i;
         }
+
         DataTable BindPerformanceMetopolitanTransportUndertaking()
         {
             DataTable table = new DataTable();

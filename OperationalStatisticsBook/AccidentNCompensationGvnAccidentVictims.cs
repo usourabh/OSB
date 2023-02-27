@@ -61,7 +61,7 @@ namespace OperationalStatisticsBook
 
         }
 
-         DataTable BindAccidentNCompensationGvnAccidentVictims()
+        DataTable BindAccidentNCompensationGvnAccidentVictims()
         {
 
             DataTable table = new DataTable();
@@ -77,10 +77,10 @@ namespace OperationalStatisticsBook
             table.Columns.Add("No of Cases received", typeof(string));
             table.Columns.Add("Compensation given (Rs. in lakh)", typeof(string));
             table.Columns.Add("Compensation given (Rs. in lakh) ", typeof(string));
-         //   table.Rows.Add("1", "2", "3", "4", "5", "6", "7", "8", "9");
+            //   table.Rows.Add("1", "2", "3", "4", "5", "6", "7", "8", "9");
             //Static Rows
 
-           
+
 
             DateTime currentDate = new DateTime(Year, Month, 01);
             DateTime newDate = currentDate.AddYears(0);
@@ -90,9 +90,9 @@ namespace OperationalStatisticsBook
 
             table.Rows.Add("1", "2", "3", "4", "5", "6", "7", "8", "9");
             table.Rows.Add("2012-13", "251", "0.07", "229", "68", "308", "284.72", "179");
-            table.Rows.Add("2013-14", "225", "0.07", "184", "63","259", "171.78", "45");
-            table.Rows.Add("2014-15", "178", "0.06", "141", "40","225", "176.89", "31");
-            table.Rows.Add("2015-16", "153", "0.06", "119", "34","167", "124.21", "16");
+            table.Rows.Add("2013-14", "225", "0.07", "184", "63", "259", "171.78", "45");
+            table.Rows.Add("2014-15", "178", "0.06", "141", "40", "225", "176.89", "31");
+            table.Rows.Add("2015-16", "153", "0.06", "119", "34", "167", "124.21", "16");
             table.Rows.Add("2016-17", "128", "0.05", "97", "29", "207", "102.30", "15");
             table.Rows.Add("2017-18", "121", "0.05", "93", "28", "157", "61.98", "07");
             table.Rows.Add("2018-19", "125", "0.05", "97", "25", "123", "65.33", "09");
@@ -131,7 +131,7 @@ namespace OperationalStatisticsBook
                         cmd.Parameters.AddWithValue("@Param5", row.Cells[5].Value == null ? "" : row.Cells[5].Value.ToString());
                         cmd.Parameters.AddWithValue("@Param6", row.Cells[6].Value == null ? "" : row.Cells[6].Value.ToString());
                         cmd.Parameters.AddWithValue("@Param7", row.Cells[7].Value == null ? "" : row.Cells[7].Value.ToString());
-                       
+
                         cmd.CommandType = CommandType.Text;
                         con.Open();
                         cmd.ExecuteNonQuery();
@@ -165,7 +165,7 @@ namespace OperationalStatisticsBook
         private void AccidentNCompensationGvnAccidentVictims_Load(object sender, EventArgs e)
         {
             BindIndexPage(OsbId);
-          //  dataGridView1.DataSource = BindAccidentNCompensationGvnAccidentVictims();
+            //  dataGridView1.DataSource = BindAccidentNCompensationGvnAccidentVictims();
         }
 
         private void PrintReportOnClick(object sender, EventArgs e)

@@ -85,19 +85,19 @@ namespace OperationalStatisticsBook
             {
                 DataTable dt = new DataTable();
                 SqlCommand cmd = new SqlCommand("SELECT [SNO],[Particular],[Absolute],[Percentage],[Absolutes],[Percentages] FROM [rpt].[tbl_analysisCausesAccidents] where OsbId=@OsbId", con);
-                cmd.Parameters.AddWithValue("@OsbId", OsbId);
+                cmd.Parameters.AddWithValue("@OsbId", 5);
                 cmd.CommandType = CommandType.Text;
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
                 sda.Fill(dt);
 
-                DataTable autoSpTable = new DataTable();
-                SqlCommand cmd1 = new SqlCommand("[dbo].[sp_AnalysisOfCausesAccidentsYearlyOSB1_1]", con);
-                cmd1.Parameters.AddWithValue("@Year", Year);
-                cmd1.Parameters.AddWithValue("@Month", Month);
+                //DataTable autoSpTable = new DataTable();
+                //SqlCommand cmd1 = new SqlCommand("[dbo].[sp_AnalysisOfCausesAccidentsYearlyOSB1_1]", con);
+                //cmd1.Parameters.AddWithValue("@Year", Year);
+                //cmd1.Parameters.AddWithValue("@Month", Month);
 
-                cmd1.CommandType = CommandType.StoredProcedure;
-                SqlDataAdapter sda1 = new SqlDataAdapter(cmd1);
-                sda1.Fill(autoSpTable);
+                //cmd1.CommandType = CommandType.StoredProcedure;
+                //SqlDataAdapter sda1 = new SqlDataAdapter(cmd1);
+                //sda1.Fill(autoSpTable);
 
                 if (dt.Rows.Count > 0)
                 {
@@ -105,11 +105,11 @@ namespace OperationalStatisticsBook
                     SaveBtn.BackColor = Color.Green;
                 }
 
-                else if (autoSpTable.Rows.Count > 0)
-                {
+                //else if (autoSpTable.Rows.Count > 0)
+                //{
 
-                    dataGridView1.DataSource = autoSpTable;
-                }
+                //    dataGridView1.DataSource = autoSpTable;
+                //}
 
                 else
                 {
