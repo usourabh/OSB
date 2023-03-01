@@ -22,7 +22,6 @@ namespace OperationalStatisticsBook
         string finYear = "";
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["dtOperation"].ConnectionString);
 
-
         public DepotWiseTotalMissedKmsAndBreakdowns(int OsbId, int Year, int Month, string finYear, string MonthName)
         {
             InitializeComponent();
@@ -32,7 +31,6 @@ namespace OperationalStatisticsBook
             this.finYear = finYear;
             this.MonthName = MonthName;
         }
-
 
         int DeleteExisitingTableRecord(string TableName, int OsbId)
         {
@@ -48,7 +46,6 @@ namespace OperationalStatisticsBook
 
             return i;
         }
-
 
         void BindIndexPage(int OsbId)
         {
@@ -257,7 +254,6 @@ namespace OperationalStatisticsBook
 
             return table;
         }
-
 
         private void ResetOnClick(object sender, EventArgs e)
         {
