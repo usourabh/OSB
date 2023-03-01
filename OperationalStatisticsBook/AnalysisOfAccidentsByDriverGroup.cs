@@ -53,7 +53,7 @@ namespace OperationalStatisticsBook
                             new DataColumn("Param7", typeof(string)),
                             new DataColumn("Param8", typeof(string)),
                             new DataColumn("Param9", typeof(string))
-                           
+
 
 
             });
@@ -72,9 +72,9 @@ namespace OperationalStatisticsBook
 
 
             //Rows here.....
-           // table.Rows.Add("S.No", "Age Group", previousMonthName + ' ' + currentYear, previousMonthName + ' ' + currentYear, previousMonthName + ' ' + currentYear, previousMonthName + ' ' + currentYear, previousMonthName + ' ' + currentYear, previousMonthName + ' ' + currentYear, previousMonthName + ' ' + currentYear, previousMonthName + ' ' + currentYear);
-           // table.Rows.Add("", "", "Minor", "Major", "Fatal", "Total", "Minor", "Major", "Fatal", "Total");
-          //  table.Rows.Add("1", "2", "3", "4", "5", "6", "7", "8", "9", "10");
+            // table.Rows.Add("S.No", "Age Group", previousMonthName + ' ' + currentYear, previousMonthName + ' ' + currentYear, previousMonthName + ' ' + currentYear, previousMonthName + ' ' + currentYear, previousMonthName + ' ' + currentYear, previousMonthName + ' ' + currentYear, previousMonthName + ' ' + currentYear, previousMonthName + ' ' + currentYear);
+            // table.Rows.Add("", "", "Minor", "Major", "Fatal", "Total", "Minor", "Major", "Fatal", "Total");
+            //  table.Rows.Add("1", "2", "3", "4", "5", "6", "7", "8", "9", "10");
             table.Rows.Add("1", "20-25", "0", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("2", "26-30", "0", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("3", "31-35", "0", "0", "0", "0", "0", "0", "0", "0");
@@ -87,7 +87,48 @@ namespace OperationalStatisticsBook
 
             return table;
         }
-       private void ResetOnClick(object sender, EventArgs e)
+
+        DataTable BindAnalysisOfAccidentsByDriverGroup_sp(DataTable sp1, DataTable sp2)
+        {
+            DataTable table = new DataTable();
+            DateTime currentDate = new DateTime(Year, Month, 01);
+            DateTime newDate = currentDate.AddYears(-1);
+            int currentYear = currentDate.Year;
+            int previousYear = newDate.Year;
+            String previousMonthName = newDate.ToString("MMMM");
+
+            table.Columns.AddRange(new DataColumn[10] {
+                            new DataColumn("S.No", typeof(string)),
+                            new DataColumn("Param1", typeof(string)),
+                            new DataColumn("Param2", typeof(string)),
+                            new DataColumn("Param3", typeof(string)),
+                            new DataColumn("Param4", typeof(string)),
+                            new DataColumn("Param5", typeof(string)),
+                            new DataColumn("Param6", typeof(string)),
+                            new DataColumn("Param7", typeof(string)),
+                            new DataColumn("Param8", typeof(string)),
+                            new DataColumn("Param9", typeof(string))
+
+
+
+            });
+
+
+            table.Rows.Add("1", sp1.Rows[0]["AgeGroup"], sp1.Rows[0]["Minor"], sp1.Rows[0]["Major"], sp1.Rows[0]["Fatal"], "0", sp1.Rows[0]["Minor"], sp1.Rows[0]["Major"], sp1.Rows[0]["Fatal"], "0");
+            table.Rows.Add("2", sp1.Rows[1]["AgeGroup"], sp1.Rows[1]["Minor"], sp1.Rows[1]["Major"], sp1.Rows[1]["Fatal"], "0", sp1.Rows[1]["Minor"], sp1.Rows[1]["Major"], sp1.Rows[1]["Fatal"], "0");
+            table.Rows.Add("3", sp1.Rows[2]["AgeGroup"], sp1.Rows[2]["Minor"], sp1.Rows[2]["Major"], sp1.Rows[2]["Fatal"], "0", sp1.Rows[2]["Minor"], sp1.Rows[2]["Major"], sp1.Rows[2]["Fatal"], "0");
+            table.Rows.Add("4", sp1.Rows[3]["AgeGroup"], sp1.Rows[3]["Minor"], sp1.Rows[3]["Major"], sp1.Rows[3]["Fatal"], "0", sp1.Rows[3]["Minor"], sp1.Rows[3]["Major"], sp1.Rows[3]["Fatal"], "0");
+            table.Rows.Add("5", sp1.Rows[4]["AgeGroup"], sp1.Rows[4]["Minor"], sp1.Rows[4]["Major"], sp1.Rows[4]["Fatal"], "0", sp1.Rows[4]["Minor"], sp1.Rows[4]["Major"], sp1.Rows[4]["Fatal"], "0");
+            table.Rows.Add("6", sp1.Rows[5]["AgeGroup"], sp1.Rows[5]["Minor"], sp1.Rows[5]["Major"], sp1.Rows[5]["Fatal"], "0", sp1.Rows[5]["Minor"], sp1.Rows[5]["Major"], sp1.Rows[5]["Fatal"], "0");
+            table.Rows.Add("7", sp1.Rows[6]["AgeGroup"], sp1.Rows[6]["Minor"], sp1.Rows[6]["Major"], sp1.Rows[6]["Fatal"], "0", sp1.Rows[6]["Minor"], sp1.Rows[6]["Major"], sp1.Rows[6]["Fatal"], "0");
+            table.Rows.Add("8", sp1.Rows[7]["AgeGroup"], sp1.Rows[7]["Minor"], sp1.Rows[7]["Major"], sp1.Rows[7]["Fatal"], "0", sp1.Rows[7]["Minor"], sp1.Rows[7]["Major"], sp1.Rows[7]["Fatal"], "0");
+            table.Rows.Add("", "Total", "0", "0", "0", "0", "0", "0", "0", "0");
+
+            return table;
+        }
+
+
+        private void ResetOnClick(object sender, EventArgs e)
         {
             DeleteExisitingTableRecord("tbl_AnalysisOfAccidentsByDriverGroup", OsbId);
             dataGridView1.DataSource = BindAnalysisOfAccidentsByDriverGroup();
@@ -159,11 +200,36 @@ namespace OperationalStatisticsBook
                 cmd.CommandType = CommandType.Text;
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
                 sda.Fill(dt);
+
+
+                DataTable autoSpTable = new DataTable();
+                SqlCommand cmd1 = new SqlCommand("sp_AnalysisOfAccbyDriverAgeGroupOSB5_3", con);
+                cmd1.Parameters.AddWithValue("@month", Month);
+                cmd1.Parameters.AddWithValue("@year", Year);
+                cmd1.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter sda1 = new SqlDataAdapter(cmd1);
+                sda1.Fill(autoSpTable);
+
+                DataTable autoSpTable2 = new DataTable();
+                SqlCommand cmd2 = new SqlCommand("sp_AnalysisOfAccbyDriverAgeGroupOSB5_3", con);
+                cmd2.Parameters.AddWithValue("@month", Month);
+                cmd2.Parameters.AddWithValue("@year", (Year - 1));
+                cmd2.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter sda2 = new SqlDataAdapter(cmd2);
+                sda2.Fill(autoSpTable2);
+
+
                 if (dt.Rows.Count > 0)
                 {
                     dataGridView1.DataSource = dt;
                     Save.BackColor = Color.Green;
                 }
+
+                else if (autoSpTable.Rows.Count > 0 || autoSpTable2.Rows.Count > 0)
+                {
+                    dataGridView1.DataSource = BindAnalysisOfAccidentsByDriverGroup_sp(autoSpTable, autoSpTable2);
+                }
+
                 else
                 {
                     dataGridView1.DataSource = BindAnalysisOfAccidentsByDriverGroup();
@@ -187,7 +253,7 @@ namespace OperationalStatisticsBook
 
         private void AnalysisOfAccidentsByDriverGroup_Load(object sender, EventArgs e)
         {
-            BindIndexPage(OsbId);  
+            BindIndexPage(OsbId);
             // dataGridView1.DataSource = BindAccidentAnalysisOtherPartyInvolvment();
         }
         void CalcalculateTotal()
@@ -205,7 +271,7 @@ namespace OperationalStatisticsBook
             dataGridView1.Rows[8].Cells[7].Value = Common.GetSum(row, 0, 7, 7);
             dataGridView1.Rows[8].Cells[8].Value = Common.GetSum(row, 0, 7, 8);
             dataGridView1.Rows[8].Cells[9].Value = Common.GetSum(row, 0, 7, 9);
-          
+
 
 
 

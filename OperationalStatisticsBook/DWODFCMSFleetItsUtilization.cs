@@ -31,6 +31,7 @@ namespace OperationalStatisticsBook
             this.finYear = finYear;
             this.MonthName = MonthName;
         }
+
         int DeleteExisitingTableRecord(string TableName, int OsbId)
         {
             string strTable = "[rpt].[" + TableName + "]";
@@ -45,6 +46,7 @@ namespace OperationalStatisticsBook
 
             return i;
         }
+
         DataTable BindDWODFCMSFleetItsUtilization()
         {
             DataTable table = new DataTable();
@@ -57,7 +59,45 @@ namespace OperationalStatisticsBook
             table.Columns.Add("Avg.no.of buses on Road ", typeof(string));
             table.Columns.Add("Percentage fleet utilisation  ", typeof(string));
 
-          //  table.Rows.Add("1", "2", "3", "4", "5", "6", "7");
+            //  table.Rows.Add("1", "2", "3", "4", "5", "6", "7");
+            table.Rows.Add("Non AC City", "", "", "", "", "", "");
+            table.Rows.Add("1", "Bawana Sec.1", "0", "0", "0", "0", "0");
+            table.Rows.Add("2", "Rani Khera-1 ", "0", "0", "0", "0", "0");
+            table.Rows.Add("3", "Rani Khera-2", "0", "0", "0", "0", "0");
+            table.Rows.Add("4", "Rani Khera-3", "0", "0", "0", "0", "0");
+            table.Rows.Add("5", "Kharkhari Nahar", "0", "0", "0", "0", "0");
+            table.Rows.Add("6", "Dwk. Sec-22 ", "0", "0", "0", "0", "0");
+            table.Rows.Add("7", "Rewla (Khanpur)", "0", "0", "0", "0", "0");
+            table.Rows.Add("", "TOTAL", "0", "0", "0", "0", "0");
+            table.Rows.Add("AC City", "", "", "", "", "", "");
+            table.Rows.Add("1", "Bawana Sec. 5", "0", "0", "0", "0", "0");
+            table.Rows.Add("2", "Inderprastha", "0", "0", "0", "0", "0");
+            table.Rows.Add("3", "Yamuna Vihar", "0", "0", "0", "0", "0");
+            table.Rows.Add("4", "Ghuman Hera-1", "0", "0", "0", "0", "0");
+            table.Rows.Add("5", "Ghuman Hera-2", "0", "0", "0", "0", "0");
+
+            table.Rows.Add("", "TOTAL", "0", "0", "0", "0", "0");
+            table.Rows.Add("", "GRAND TOTAL", "0", "0", "0", "0", "0");
+
+
+
+
+            return table;
+        }
+
+        DataTable BindDWODFCMSFleetItsUtilization_sp()
+        {
+            DataTable table = new DataTable();
+
+            table.Columns.Add("S.No.", typeof(string));
+            table.Columns.Add("Name of Depot", typeof(string));
+            table.Columns.Add("Fleet as on last day of the month", typeof(string));
+            table.Columns.Add("Avg. fleet during the month ", typeof(string));
+            table.Columns.Add("Avg.no. of buses Scheduled  ", typeof(string));
+            table.Columns.Add("Avg.no.of buses on Road ", typeof(string));
+            table.Columns.Add("Percentage fleet utilisation  ", typeof(string));
+
+            //  table.Rows.Add("1", "2", "3", "4", "5", "6", "7");
             table.Rows.Add("Non AC City", "", "", "", "", "", "");
             table.Rows.Add("1", "Bawana Sec.1", "0", "0", "0", "0", "0");
             table.Rows.Add("2", "Rani Khera-1 ", "0", "0", "0", "0", "0");
@@ -92,33 +132,36 @@ namespace OperationalStatisticsBook
 
             };
             DataTable dt = Common.ExecuteProcedure("sp_DWODFCMSFleetItsUtilization", param);
-            //String[,] param1 = new string[,]
-            //        {
-            //    {"@Year",Year.ToString().Trim()},
-            //    {"@Month",Month.ToString().Trim()},
-            //};
-            //DataTable dt1 = Common.ExecuteProcedure("sp_GetAllFleetNUtilizations", param1);
+
+
+            DataTable autoSpTable = new DataTable();
+            SqlCommand cmd1 = new SqlCommand("sp_DepotWiseOperFCMSClusterFleetNUtilizationOSB8_1", con);
+            cmd1.Parameters.AddWithValue("@month", Month);
+            cmd1.Parameters.AddWithValue("@year", Year);
+            cmd1.CommandType = CommandType.StoredProcedure;
+            SqlDataAdapter sda1 = new SqlDataAdapter(cmd1);
+            sda1.Fill(autoSpTable);
+
 
             if (dt.Rows.Count > 0)
             {
                 dataGridView1.DataSource = dt;
                 Save.BackColor = Color.Green;
             }
-            //else if (dt1.Rows.Count > 0)
-            //{
-            //    dataGridView1.DataSource = dt1;
+            else if (autoSpTable.Rows.Count > 0)
+            {
+                dataGridView1.DataSource = dt1;
 
-            //}
+            }
             else
             {
                 dataGridView1.DataSource = BindDWODFCMSFleetItsUtilization();
             }
-        
+
             CalcalculateTotal();
             NonEditableRowAndColumn();
 
         }
-    
 
         private void ResetOnClick(object sender, EventArgs e)
         {
@@ -149,7 +192,7 @@ namespace OperationalStatisticsBook
                         cmd.Parameters.AddWithValue("@Param3", row.Cells[4].Value == null ? "" : row.Cells[4].Value.ToString());
                         cmd.Parameters.AddWithValue("@Param4", row.Cells[5].Value == null ? "" : row.Cells[5].Value.ToString());
                         cmd.Parameters.AddWithValue("@Param5", row.Cells[6].Value == null ? "" : row.Cells[6].Value.ToString());
-                           cmd.CommandType = CommandType.Text;
+                        cmd.CommandType = CommandType.Text;
                         con.Open();
                         cmd.ExecuteNonQuery();
                         con.Close();
@@ -177,10 +220,10 @@ namespace OperationalStatisticsBook
             #region Calculating_VerticalSum
 
 
-            dataGridView1.Rows[8].Cells[2].Value = Common.GetSum(row, 1,7, 2);
-            dataGridView1.Rows[8].Cells[3].Value = Common.GetSum(row, 1,7, 3);
-            dataGridView1.Rows[8].Cells[4].Value = Common.GetSum(row, 1,7, 4);
-            dataGridView1.Rows[8].Cells[5].Value = Common.GetSum(row, 1,7, 5);
+            dataGridView1.Rows[8].Cells[2].Value = Common.GetSum(row, 1, 7, 2);
+            dataGridView1.Rows[8].Cells[3].Value = Common.GetSum(row, 1, 7, 3);
+            dataGridView1.Rows[8].Cells[4].Value = Common.GetSum(row, 1, 7, 4);
+            dataGridView1.Rows[8].Cells[5].Value = Common.GetSum(row, 1, 7, 5);
 
 
             dataGridView1.Rows[15].Cells[2].Value = Common.GetSum(row, 10, 14, 2);
@@ -206,7 +249,7 @@ namespace OperationalStatisticsBook
 
                 if (i > 0)
                 {
-                    if (i !=0 && i !=9 )
+                    if (i != 0 && i != 9)
                     {
 
                         dataGridView1.Rows[i].Cells[6].Value = Common.ConvertToDecimal(row[i].Cells[3].Value.ToString()) > 0 ? Math.Round((Common.ConvertToDecimal(row[i].Cells[5].Value.ToString()) / Common.ConvertToDecimal(row[i].Cells[3].Value.ToString())) * 100, 2) : 0;

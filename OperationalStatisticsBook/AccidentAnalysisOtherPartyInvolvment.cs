@@ -43,11 +43,36 @@ namespace OperationalStatisticsBook
                 cmd.CommandType = CommandType.Text;
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
                 sda.Fill(dt);
+
+
+                DataTable autoSpTable = new DataTable();
+                SqlCommand cmd1 = new SqlCommand("sp_AccidentAnalybyOtherPartyInvolvOSB5_2", con);
+                cmd1.Parameters.AddWithValue("@month", Month);
+                cmd1.Parameters.AddWithValue("@year", Year);
+                cmd1.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter sda1 = new SqlDataAdapter(cmd1);
+                sda1.Fill(autoSpTable);
+
+                DataTable autoSpTable2 = new DataTable();
+                SqlCommand cmd2 = new SqlCommand("sp_AccidentAnalybyOtherPartyInvolvOSB5_2", con);
+                cmd2.Parameters.AddWithValue("@month", Month);
+                cmd2.Parameters.AddWithValue("@year", (Year - 1));
+                cmd2.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter sda2 = new SqlDataAdapter(cmd2);
+                sda2.Fill(autoSpTable2);
+
+
                 if (dt.Rows.Count > 0)
                 {
                     dataGridView1.DataSource = dt;
                     Save.BackColor = Color.Green;
                 }
+
+                else if (autoSpTable.Rows.Count > 0 || autoSpTable2.Rows.Count > 0)
+                {
+                    dataGridView1.DataSource = BindAccidentAnalysisOtherPartyInvolvment_sp(autoSpTable, autoSpTable2);
+                }
+
                 else
                 {
                     dataGridView1.DataSource = BindAccidentAnalysisOtherPartyInvolvment();
@@ -105,15 +130,15 @@ namespace OperationalStatisticsBook
 
 
 
-           
-           // table.Rows.Add("S.No", "Particulars", previousMonthName + ' ' + currentYear, previousMonthName + "  " + currentYear, previousMonthName + "   " + currentYear, previousMonthName + "    " + currentYear, previousMonthName + " " + previousYear, previousMonthName + "  " + previousYear, previousMonthName + "   " + previousYear, previousMonthName + "    " + previousYear);
-           // table.Rows.Add("", "", "Minor", "Major", "Fatal", "Total", "Minor", "Major", "Fatal", "Total");
-           // table.Rows.Add("1", "2", "3", "4", "5", "6", "7", "8", "9", "10");
+
+            // table.Rows.Add("S.No", "Particulars", previousMonthName + ' ' + currentYear, previousMonthName + "  " + currentYear, previousMonthName + "   " + currentYear, previousMonthName + "    " + currentYear, previousMonthName + " " + previousYear, previousMonthName + "  " + previousYear, previousMonthName + "   " + previousYear, previousMonthName + "    " + previousYear);
+            // table.Rows.Add("", "", "Minor", "Major", "Fatal", "Total", "Minor", "Major", "Fatal", "Total");
+            // table.Rows.Add("1", "2", "3", "4", "5", "6", "7", "8", "9", "10");
             table.Rows.Add("1", "PO BUS", "0", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("2", "D.T.C", "0", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("3", "Two Wheeler", "0", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("4", "Trucks", "0", "0", "0", "0", "0", "0", "0", "0");
-           // table.Rows.Add("4", "Two Wheeler", "0", "0", "0", "0", "0", "0", "0", "0");
+            // table.Rows.Add("4", "Two Wheeler", "0", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("5", "Pedestrian", "0", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("6", "Hand Cart", "0", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("7", "Animal Cart", "0", "0", "0", "0", "0", "0", "0", "0");
@@ -121,12 +146,12 @@ namespace OperationalStatisticsBook
             table.Rows.Add("9", "Passengers", "0", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("10", "E-Rickshaw", "0", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("11", "Rickshaw", "0", "0", "0", "0", "0", "0", "0", "0");
-           
+
             table.Rows.Add("12", "Three Wheeler", "0", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("13", "Jeep/RTV", "0", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("14", "Car", "0", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("15", "Tempo", "0", "0", "0", "0", "0", "0", "0", "0");
-          
+
             table.Rows.Add("16", "Cyclist", "0", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("17", "Goods Carr.", "0", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("18", "Other Vehicle", "0", "0", "0", "0", "0", "0", "0", "0");
@@ -137,6 +162,63 @@ namespace OperationalStatisticsBook
             return table;
         }
 
+        DataTable BindAccidentAnalysisOtherPartyInvolvment_sp(DataTable sp1, DataTable sp2)
+        {
+            DataTable table = new DataTable();
+            table.Columns.AddRange(new DataColumn[10] {
+                            new DataColumn("Param1", typeof(string)),
+                            new DataColumn("Param2", typeof(string)),
+                            new DataColumn("Param3",typeof(string)),
+                            new DataColumn("Param4",typeof(string)),
+                            new DataColumn("Param5",typeof(string)),
+                            new DataColumn("Param6",typeof(string)),
+                            new DataColumn("Param7",typeof(string)),
+                            new DataColumn("Param8",typeof(string)),
+                            new DataColumn("Param9",typeof(string)),
+                            new DataColumn("Param10",typeof(string)),
+
+            });
+
+
+
+
+
+            DateTime currentDate = new DateTime(Year, Month, 01);
+            DateTime newDate = currentDate.AddYears(-1);
+            int currentYear = currentDate.Year;
+            int previousYear = newDate.Year;
+            String previousMonthName = newDate.ToString("MMMM");
+
+
+
+
+            // table.Rows.Add("S.No", "Particulars", previousMonthName + ' ' + currentYear, previousMonthName + "  " + currentYear, previousMonthName + "   " + currentYear, previousMonthName + "    " + currentYear, previousMonthName + " " + previousYear, previousMonthName + "  " + previousYear, previousMonthName + "   " + previousYear, previousMonthName + "    " + previousYear);
+            // table.Rows.Add("", "", "Minor", "Major", "Fatal", "Total", "Minor", "Major", "Fatal", "Total");
+            // table.Rows.Add("1", "2", "3", "4", "5", "6", "7", "8", "9", "10");
+            table.Rows.Add("1", sp1.Rows[0]["Particular"], sp1.Rows[0]["Minor"], sp1.Rows[0]["Major"], sp1.Rows[0]["Fatal"], "0", sp2.Rows[0]["Minor"], sp2.Rows[0]["Major"], sp2.Rows[0]["Fatal"], "0");
+            table.Rows.Add("2", sp1.Rows[1]["Particular"], sp1.Rows[1]["Minor"], sp1.Rows[1]["Major"], sp1.Rows[1]["Fatal"], "0", sp2.Rows[1]["Minor"], sp2.Rows[1]["Major"], sp2.Rows[1]["Fatal"], "0");
+            table.Rows.Add("3", sp1.Rows[2]["Particular"], sp1.Rows[2]["Minor"], sp1.Rows[2]["Major"], sp1.Rows[2]["Fatal"], "0", sp2.Rows[2]["Minor"], sp2.Rows[2]["Major"], sp2.Rows[2]["Fatal"], "0");
+            table.Rows.Add("4", sp1.Rows[3]["Particular"], sp1.Rows[3]["Minor"], sp1.Rows[3]["Major"], sp1.Rows[3]["Fatal"], "0", sp2.Rows[3]["Minor"], sp2.Rows[3]["Major"], sp2.Rows[3]["Fatal"], "0");
+            table.Rows.Add("5", sp1.Rows[4]["Particular"], sp1.Rows[4]["Minor"], sp1.Rows[4]["Major"], sp1.Rows[4]["Fatal"], "0", sp2.Rows[4]["Minor"], sp2.Rows[4]["Major"], sp2.Rows[4]["Fatal"], "0");
+            table.Rows.Add("6", sp1.Rows[5]["Particular"], sp1.Rows[5]["Minor"], sp1.Rows[5]["Major"], sp1.Rows[5]["Fatal"], "0", sp2.Rows[5]["Minor"], sp2.Rows[5]["Major"], sp2.Rows[5]["Fatal"], "0");
+            table.Rows.Add("7", sp1.Rows[6]["Particular"], sp1.Rows[6]["Minor"], sp1.Rows[6]["Major"], sp1.Rows[6]["Fatal"], "0", sp2.Rows[6]["Minor"], sp2.Rows[6]["Major"], sp2.Rows[6]["Fatal"], "0");
+            table.Rows.Add("8", sp1.Rows[7]["Particular"], sp1.Rows[7]["Minor"], sp1.Rows[7]["Major"], sp1.Rows[7]["Fatal"], "0", sp2.Rows[7]["Minor"], sp2.Rows[7]["Major"], sp2.Rows[7]["Fatal"], "0");
+            table.Rows.Add("9", sp1.Rows[8]["Particular"], sp1.Rows[8]["Minor"], sp1.Rows[8]["Major"], sp1.Rows[8]["Fatal"], "0", sp2.Rows[8]["Minor"], sp2.Rows[8]["Major"], sp2.Rows[8]["Fatal"], "0");
+            table.Rows.Add("10", sp1.Rows[9]["Particular"], sp1.Rows[9]["Minor"], sp1.Rows[9]["Major"], sp1.Rows[9]["Fatal"], "0", sp2.Rows[9]["Minor"], sp2.Rows[9]["Major"], sp2.Rows[9]["Fatal"], "0");
+            table.Rows.Add("11", sp1.Rows[10]["Particular"], sp1.Rows[10]["Minor"], sp1.Rows[10]["Major"], sp1.Rows[10]["Fatal"], "0", sp2.Rows[10]["Minor"], sp2.Rows[10]["Major"], sp2.Rows[10]["Fatal"], "0");
+            table.Rows.Add("12", sp1.Rows[11]["Particular"], sp1.Rows[11]["Minor"], sp1.Rows[11]["Major"], sp1.Rows[11]["Fatal"], "0", sp2.Rows[11]["Minor"], sp2.Rows[11]["Major"], sp2.Rows[11]["Fatal"], "0");
+            table.Rows.Add("13", sp1.Rows[12]["Particular"], sp1.Rows[12]["Minor"], sp1.Rows[12]["Major"], sp1.Rows[12]["Fatal"], "0", sp2.Rows[12]["Minor"], sp2.Rows[12]["Major"], sp2.Rows[12]["Fatal"], "0");
+            table.Rows.Add("14", sp1.Rows[13]["Particular"], sp1.Rows[13]["Minor"], sp1.Rows[13]["Major"], sp1.Rows[13]["Fatal"], "0", sp2.Rows[13]["Minor"], sp2.Rows[13]["Major"], sp2.Rows[13]["Fatal"], "0");
+            table.Rows.Add("15", sp1.Rows[14]["Particular"], sp1.Rows[14]["Minor"], sp1.Rows[14]["Major"], sp1.Rows[14]["Fatal"], "0", sp2.Rows[14]["Minor"], sp2.Rows[14]["Major"], sp2.Rows[14]["Fatal"], "0");
+            table.Rows.Add("16", sp1.Rows[15]["Particular"], sp1.Rows[15]["Minor"], sp1.Rows[15]["Major"], sp1.Rows[15]["Fatal"], "0", sp2.Rows[15]["Minor"], sp2.Rows[15]["Major"], sp2.Rows[15]["Fatal"], "0");
+            table.Rows.Add("17", sp1.Rows[16]["Particular"], sp1.Rows[16]["Minor"], sp1.Rows[16]["Major"], sp1.Rows[16]["Fatal"], "0", sp2.Rows[16]["Minor"], sp2.Rows[16]["Major"], sp2.Rows[16]["Fatal"], "0");
+            table.Rows.Add("18", sp1.Rows[17]["Particular"], sp1.Rows[17]["Minor"], sp1.Rows[17]["Major"], sp1.Rows[17]["Fatal"], "0", sp2.Rows[17]["Minor"], sp2.Rows[17]["Major"], sp2.Rows[17]["Fatal"], "0");
+            table.Rows.Add("", "Total", "0", "0", "0", "0", "0", "0", "0", "0");
+
+
+
+            return table;
+        }
 
 
         private void ResetOnClick(object sender, EventArgs e)
@@ -206,9 +288,9 @@ namespace OperationalStatisticsBook
             dataGridView1.Rows[18].Cells[7].Value = Common.GetSum(row, 0, 17, 7);
             dataGridView1.Rows[18].Cells[8].Value = Common.GetSum(row, 0, 17, 8);
             dataGridView1.Rows[18].Cells[9].Value = Common.GetSum(row, 0, 17, 9);
-          
 
-          
+
+
 
             #endregion
 
@@ -220,7 +302,7 @@ namespace OperationalStatisticsBook
                 {
                     dataGridView1.Rows[i].Cells[5].Value = Common.ConvertToDecimal(row[i].Cells[2].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[3].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[4].Value.ToString());
                     dataGridView1.Rows[i].Cells[9].Value = Common.ConvertToDecimal(row[i].Cells[6].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[7].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[8].Value.ToString());
-                 
+
                 }
             }
             #endregion
@@ -234,7 +316,7 @@ namespace OperationalStatisticsBook
 
         private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-           
+
             CalcalculateTotal();
         }
 
