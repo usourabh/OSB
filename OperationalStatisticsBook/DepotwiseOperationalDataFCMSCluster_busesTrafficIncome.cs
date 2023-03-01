@@ -43,7 +43,13 @@ namespace OperationalStatisticsBook
             DataTable dt = Common.ExecuteProcedure("sp_rptDepotwiseOperationalDataFCMSCluster_busesTrafficIncome", param);
 
 
-
+            DataTable autoSpTable = new DataTable();
+            SqlCommand cmd1 = new SqlCommand("sp_DepotWiseOperFCMSClusterTrafficIncomeOSB8_2", con);
+            cmd1.Parameters.AddWithValue("@month", Month);
+            cmd1.Parameters.AddWithValue("@year", (Year - 1));
+            cmd1.CommandType = CommandType.StoredProcedure;
+            SqlDataAdapter sda1 = new SqlDataAdapter(cmd1);
+            sda1.Fill(autoSpTable);
 
 
             if (dt.Rows.Count > 0)
@@ -51,10 +57,9 @@ namespace OperationalStatisticsBook
                 dataGridView1.DataSource = dt;
                 Save.BackColor = Color.Green;
             }
-            else if (dt1.Rows.Count > 0)
+            else if (autoSpTable.Rows.Count > 0)
             {
-                dataGridView1.DataSource = dt1;
-
+                dataGridView1.DataSource = BindDepotwiseOperationalDataFCMSCluster_busesTrafficIncome_sp(autoSpTable);
             }
             else
             {
@@ -112,6 +117,40 @@ namespace OperationalStatisticsBook
 
             return table;
         }
+
+        DataTable BindDepotwiseOperationalDataFCMSCluster_busesTrafficIncome_sp(DataTable sp)
+        {
+            DataTable table = new DataTable();
+
+            table.Columns.Add("S.No", typeof(string));
+            table.Columns.Add("Name of Depot", typeof(string));
+            table.Columns.Add("Monthly Traffic Income (Rs.) ", typeof(string));
+            table.Columns.Add("Daily Traffic Income (Rs.)", typeof(string));
+            table.Columns.Add("Traffic Income per bus per day(Rs.)", typeof(string));
+
+            ///Rows here........ 
+          //  table.Rows.Add("1 ", " 2", "3", "4", "5");
+            table.Rows.Add("Non AC City", " ", "", "", "");
+            table.Rows.Add("1", sp.Rows[0]["NameOfTheDepot"], sp.Rows[0]["MonthlyTrafficIncome"], sp.Rows[0]["DailyTrafficIncome"], sp.Rows[0]["TrafficIncomePerBusPerDay"]);
+            table.Rows.Add("2", sp.Rows[1]["NameOfTheDepot"], sp.Rows[1]["MonthlyTrafficIncome"], sp.Rows[1]["DailyTrafficIncome"], sp.Rows[1]["TrafficIncomePerBusPerDay"]);
+            table.Rows.Add("3", sp.Rows[2]["NameOfTheDepot"], sp.Rows[2]["MonthlyTrafficIncome"], sp.Rows[2]["DailyTrafficIncome"], sp.Rows[2]["TrafficIncomePerBusPerDay"]);
+            table.Rows.Add("4", sp.Rows[3]["NameOfTheDepot"], sp.Rows[3]["MonthlyTrafficIncome"], sp.Rows[3]["DailyTrafficIncome"], sp.Rows[3]["TrafficIncomePerBusPerDay"]);
+            table.Rows.Add("5", sp.Rows[4]["NameOfTheDepot"], sp.Rows[4]["MonthlyTrafficIncome"], sp.Rows[4]["DailyTrafficIncome"], sp.Rows[4]["TrafficIncomePerBusPerDay"]);
+            table.Rows.Add("6", sp.Rows[5]["NameOfTheDepot"], sp.Rows[5]["MonthlyTrafficIncome"], sp.Rows[5]["DailyTrafficIncome"], sp.Rows[5]["TrafficIncomePerBusPerDay"]);
+            table.Rows.Add("7", sp.Rows[6]["NameOfTheDepot"], sp.Rows[6]["MonthlyTrafficIncome"], sp.Rows[6]["DailyTrafficIncome"], sp.Rows[6]["TrafficIncomePerBusPerDay"]);
+            table.Rows.Add(" ", "TOTAL", "0", "0", "0");
+            table.Rows.Add(" AC City", " ", "", "", "");
+            table.Rows.Add("1", sp.Rows[7]["NameOfTheDepot"], sp.Rows[7]["MonthlyTrafficIncome"], sp.Rows[7]["DailyTrafficIncome"], sp.Rows[7]["TrafficIncomePerBusPerDay"]);
+            table.Rows.Add("2", sp.Rows[8]["NameOfTheDepot"], sp.Rows[8]["MonthlyTrafficIncome"], sp.Rows[8]["DailyTrafficIncome"], sp.Rows[8]["TrafficIncomePerBusPerDay"]);
+            table.Rows.Add("3", sp.Rows[9]["NameOfTheDepot"], sp.Rows[9]["MonthlyTrafficIncome"], sp.Rows[9]["DailyTrafficIncome"], sp.Rows[9]["TrafficIncomePerBusPerDay"]);
+            table.Rows.Add("4", sp.Rows[10]["NameOfTheDepot"], sp.Rows[10]["MonthlyTrafficIncome"], sp.Rows[10]["DailyTrafficIncome"], sp.Rows[10]["TrafficIncomePerBusPerDay"]);
+            table.Rows.Add("5", sp.Rows[11]["NameOfTheDepot"], sp.Rows[11]["MonthlyTrafficIncome"], sp.Rows[11]["DailyTrafficIncome"], sp.Rows[11]["TrafficIncomePerBusPerDay"]);
+            table.Rows.Add(" ", "TOTAL", "0", "0", "0");
+            table.Rows.Add(" ", "Grand Total", "0", "0", "0");
+
+            return table;
+        }
+
 
         private void ResetOnClick(object sender, EventArgs e)
         {
