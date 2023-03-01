@@ -38,31 +38,29 @@ namespace OperationalStatisticsBook
             String[,] param = new string[,]
                     {
                     {"@OsbId",OsbId.ToString()},
-                   
+
             };
             DataTable dt = Common.ExecuteProcedure("sp_rptDepotwiseOperationalDataFCMSCluster_busesTrafficIncome", param);
-            //String[,] param1 = new string[,]
-            //        {
-            //    {"@Year",Year.ToString().Trim()},
-            //    {"@Month",Month.ToString().Trim()},
-            //};
-           // DataTable dt1 = Common.ExecuteProcedure("sp_GetAllTrafficIncomeData", param1);
+
+
+
+
 
             if (dt.Rows.Count > 0)
             {
                 dataGridView1.DataSource = dt;
                 Save.BackColor = Color.Green;
             }
-            //else if (dt1.Rows.Count > 0)
-            //{
-            //    dataGridView1.DataSource = dt1;
+            else if (dt1.Rows.Count > 0)
+            {
+                dataGridView1.DataSource = dt1;
 
-            //}
+            }
             else
             {
                 dataGridView1.DataSource = BindDepotwiseOperationalDataFCMSCluster_busesTrafficIncome();
             }
-        
+
             CalcalculateTotal();
             NonEditableRowAndColumn();
         }
@@ -132,7 +130,7 @@ namespace OperationalStatisticsBook
             {
                 try
                 {
-                    if (row.Cells[0].Value != null || row.Cells[1].Value != null || row.Cells[2].Value != null || row.Cells[3].Value != null || row.Cells[4].Value != null )
+                    if (row.Cells[0].Value != null || row.Cells[1].Value != null || row.Cells[2].Value != null || row.Cells[3].Value != null || row.Cells[4].Value != null)
                     {
                         SqlCommand cmd = new SqlCommand("INSERT INTO [rpt].[tbl_DepotwiseOperationalDataFCMSCluster_busesTrafficIncome] ([OsbId],[S_No],[Param1],[Param2],[Param3],[Param4]) VALUES (@OsbId,@S_No,@Param1,@Param2,@Param3,@Param4)", con);
                         cmd.Parameters.AddWithValue("@OsbId", OsbId);
@@ -141,8 +139,8 @@ namespace OperationalStatisticsBook
                         cmd.Parameters.AddWithValue("@Param2", row.Cells[2].Value == null ? "" : row.Cells[2].Value.ToString());
                         cmd.Parameters.AddWithValue("@Param3", row.Cells[3].Value == null ? "" : row.Cells[3].Value.ToString());
                         cmd.Parameters.AddWithValue("@Param4", row.Cells[4].Value == null ? "" : row.Cells[4].Value.ToString());
-                       
-                       
+
+
                         cmd.CommandType = CommandType.Text;
                         con.Open();
                         cmd.ExecuteNonQuery();
@@ -164,7 +162,7 @@ namespace OperationalStatisticsBook
             dataGridView1.DataSource = BindDepotwiseOperationalDataFCMSCluster_busesTrafficIncome();
             MessageBox.Show("Done");
         }
-    
+
 
         private void Print_ReportOnClick(object sender, EventArgs e)
         {
@@ -224,13 +222,13 @@ namespace OperationalStatisticsBook
 
             #region Calculating_VerticalSum
 
-            for(int i  = 2; i<=3; i++)
+            for (int i = 2; i <= 3; i++)
             {
                 dataGridView1.Rows[8].Cells[i].Value = Common.GetSum(row, 1, 7, i);
                 dataGridView1.Rows[15].Cells[i].Value = Common.GetSum(row, 10, 14, i);
                 dataGridView1.Rows[16].Cells[i].Value = Common.ConvertToDecimal(dataGridView1.Rows[8].Cells[i].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[15].Cells[i].Value.ToString());
             }
-           
+
 
             #region Calculating_HorizontalSum
             for (int i = 0; i < (row.Count - 1); i++)
@@ -246,7 +244,7 @@ namespace OperationalStatisticsBook
             }
             #endregion
 
-     
+
 
             #endregion
 
@@ -256,7 +254,7 @@ namespace OperationalStatisticsBook
         {
 
             ShowData();
-       
+
         }
 
         private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)

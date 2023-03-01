@@ -85,7 +85,7 @@ namespace OperationalStatisticsBook
             return table;
         }
 
-        DataTable BindDWODFCMSFleetItsUtilization_sp()
+        DataTable BindDWODFCMSFleetItsUtilization_sp(DataTable sp)
         {
             DataTable table = new DataTable();
 
@@ -99,20 +99,21 @@ namespace OperationalStatisticsBook
 
             //  table.Rows.Add("1", "2", "3", "4", "5", "6", "7");
             table.Rows.Add("Non AC City", "", "", "", "", "", "");
-            table.Rows.Add("1", "Bawana Sec.1", "0", "0", "0", "0", "0");
-            table.Rows.Add("2", "Rani Khera-1 ", "0", "0", "0", "0", "0");
-            table.Rows.Add("3", "Rani Khera-2", "0", "0", "0", "0", "0");
-            table.Rows.Add("4", "Rani Khera-3", "0", "0", "0", "0", "0");
-            table.Rows.Add("5", "Kharkhari Nahar", "0", "0", "0", "0", "0");
-            table.Rows.Add("6", "Dwk. Sec-22 ", "0", "0", "0", "0", "0");
-            table.Rows.Add("7", "Rewla (Khanpur)", "0", "0", "0", "0", "0");
+
+            table.Rows.Add("1", sp.Rows[0]["DepotName"], sp.Rows[0]["FleetLastDay"], sp.Rows[0]["AvgFleet"], sp.Rows[0]["AvgSchBuses"], sp.Rows[0]["AvgOnRoadBuses"], sp.Rows[0]["UtilizationPercent"]);
+            table.Rows.Add("2", sp.Rows[1]["DepotName"], sp.Rows[1]["FleetLastDay"], sp.Rows[1]["AvgFleet"], sp.Rows[1]["AvgSchBuses"], sp.Rows[1]["AvgOnRoadBuses"], sp.Rows[1]["UtilizationPercent"]);
+            table.Rows.Add("3", sp.Rows[2]["DepotName"], sp.Rows[2]["FleetLastDay"], sp.Rows[2]["AvgFleet"], sp.Rows[2]["AvgSchBuses"], sp.Rows[2]["AvgOnRoadBuses"], sp.Rows[2]["UtilizationPercent"]);
+            table.Rows.Add("4", sp.Rows[3]["DepotName"], sp.Rows[3]["FleetLastDay"], sp.Rows[3]["AvgFleet"], sp.Rows[3]["AvgSchBuses"], sp.Rows[3]["AvgOnRoadBuses"], sp.Rows[3]["UtilizationPercent"]);
+            table.Rows.Add("5", sp.Rows[4]["DepotName"], sp.Rows[4]["FleetLastDay"], sp.Rows[4]["AvgFleet"], sp.Rows[4]["AvgSchBuses"], sp.Rows[4]["AvgOnRoadBuses"], sp.Rows[4]["UtilizationPercent"]);
+            table.Rows.Add("6", sp.Rows[5]["DepotName"], sp.Rows[5]["FleetLastDay"], sp.Rows[5]["AvgFleet"], sp.Rows[5]["AvgSchBuses"], sp.Rows[5]["AvgOnRoadBuses"], sp.Rows[5]["UtilizationPercent"]);
+            table.Rows.Add("7", sp.Rows[6]["DepotName"], sp.Rows[6]["FleetLastDay"], sp.Rows[6]["AvgFleet"], sp.Rows[6]["AvgSchBuses"], sp.Rows[6]["AvgOnRoadBuses"], sp.Rows[6]["UtilizationPercent"]);
             table.Rows.Add("", "TOTAL", "0", "0", "0", "0", "0");
             table.Rows.Add("AC City", "", "", "", "", "", "");
-            table.Rows.Add("1", "Bawana Sec. 5", "0", "0", "0", "0", "0");
-            table.Rows.Add("2", "Inderprastha", "0", "0", "0", "0", "0");
-            table.Rows.Add("3", "Yamuna Vihar", "0", "0", "0", "0", "0");
-            table.Rows.Add("4", "Ghuman Hera-1", "0", "0", "0", "0", "0");
-            table.Rows.Add("5", "Ghuman Hera-2", "0", "0", "0", "0", "0");
+            table.Rows.Add("1", sp.Rows[7]["DepotName"], sp.Rows[7]["FleetLastDay"], sp.Rows[7]["AvgFleet"], sp.Rows[7]["AvgSchBuses"], sp.Rows[7]["AvgOnRoadBuses"], sp.Rows[7]["UtilizationPercent"]);
+            table.Rows.Add("2", sp.Rows[8]["DepotName"], sp.Rows[8]["FleetLastDay"], sp.Rows[8]["AvgFleet"], sp.Rows[8]["AvgSchBuses"], sp.Rows[8]["AvgOnRoadBuses"], sp.Rows[8]["UtilizationPercent"]);
+            table.Rows.Add("3", sp.Rows[9]["DepotName"], sp.Rows[9]["FleetLastDay"], sp.Rows[9]["AvgFleet"], sp.Rows[9]["AvgSchBuses"], sp.Rows[9]["AvgOnRoadBuses"], sp.Rows[9]["UtilizationPercent"]);
+            table.Rows.Add("4", sp.Rows[10]["DepotName"], sp.Rows[10]["FleetLastDay"], sp.Rows[10]["AvgFleet"], sp.Rows[10]["AvgSchBuses"], sp.Rows[10]["AvgOnRoadBuses"], sp.Rows[10]["UtilizationPercent"]);
+            table.Rows.Add("5", sp.Rows[11]["DepotName"], sp.Rows[11]["FleetLastDay"], sp.Rows[11]["AvgFleet"], sp.Rows[11]["AvgSchBuses"], sp.Rows[11]["AvgOnRoadBuses"], sp.Rows[11]["UtilizationPercent"]);
 
             table.Rows.Add("", "TOTAL", "0", "0", "0", "0", "0");
             table.Rows.Add("", "GRAND TOTAL", "0", "0", "0", "0", "0");
@@ -137,7 +138,7 @@ namespace OperationalStatisticsBook
             DataTable autoSpTable = new DataTable();
             SqlCommand cmd1 = new SqlCommand("sp_DepotWiseOperFCMSClusterFleetNUtilizationOSB8_1", con);
             cmd1.Parameters.AddWithValue("@month", Month);
-            cmd1.Parameters.AddWithValue("@year", Year);
+            cmd1.Parameters.AddWithValue("@year", (Year + 1));
             cmd1.CommandType = CommandType.StoredProcedure;
             SqlDataAdapter sda1 = new SqlDataAdapter(cmd1);
             sda1.Fill(autoSpTable);
@@ -150,8 +151,7 @@ namespace OperationalStatisticsBook
             }
             else if (autoSpTable.Rows.Count > 0)
             {
-                dataGridView1.DataSource = dt1;
-
+                dataGridView1.DataSource = BindDWODFCMSFleetItsUtilization_sp(autoSpTable);
             }
             else
             {
@@ -273,6 +273,7 @@ namespace OperationalStatisticsBook
         {
             CalcalculateTotal();
         }
+
         void NonEditableRowAndColumn()
         {
             Common.SetRowNonEditable(dataGridView1, 0);
