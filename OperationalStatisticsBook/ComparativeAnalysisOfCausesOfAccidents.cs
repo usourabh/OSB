@@ -45,11 +45,35 @@ namespace OperationalStatisticsBook
                 cmd.CommandType = CommandType.Text;
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
                 sda.Fill(dt);
+
+                DataTable autoSpTable = new DataTable();
+                SqlCommand cmd1 = new SqlCommand("sp_AnalysisOfCausesAccidentsMonthlyOSB5_1", con);
+                cmd1.Parameters.AddWithValue("@month", Month);
+                cmd1.Parameters.AddWithValue("@year", Year);
+                cmd1.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter sda1 = new SqlDataAdapter(cmd1);
+                sda1.Fill(autoSpTable);
+
+                DataTable autoSpTable2 = new DataTable();
+                SqlCommand cmd2 = new SqlCommand("sp_AnalysisOfCausesAccidentsMonthlyOSB5_1", con);
+                cmd2.Parameters.AddWithValue("@month", Month);
+                cmd2.Parameters.AddWithValue("@year", (Year - 1));
+                cmd2.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter sda2 = new SqlDataAdapter(cmd2);
+                sda2.Fill(autoSpTable2);
+
+
                 if (dt.Rows.Count > 0)
                 {
                     dataGridView1.DataSource = dt;
                     Save.BackColor = Color.Green;
                 }
+
+                else if (autoSpTable.Rows.Count > 0 || autoSpTable2.Rows.Count > 0)
+                {
+                    dataGridView1.DataSource = BindComparativeAnalysisOfCausesOfAccidents_sp(autoSpTable, autoSpTable2);
+                }
+
                 else
                 {
                     dataGridView1.DataSource = BindComparativeAnalysisOfCausesOfAccidents();
@@ -131,11 +155,59 @@ namespace OperationalStatisticsBook
             return dt;
         }
 
+        DataTable BindComparativeAnalysisOfCausesOfAccidents_sp(DataTable sp, DataTable sp1)
+        {
+            DataTable dt = new DataTable();
+
+            dt.Columns.AddRange(new DataColumn[6] { new DataColumn("S_NO", typeof(string)),
+                            new DataColumn("Param1", typeof(string)),
+                            new DataColumn("Param2",typeof(string)),
+                            new DataColumn("Param3",typeof(string)),
+                            new DataColumn("Param4",typeof(string)),
+                            new DataColumn("Param5",typeof(string))
+            });
+
+            DateTime currentDate = new DateTime(Year, Month, 01);
+            DateTime newDate = currentDate.AddYears(+1);
+            string currentYear = currentDate.Year.ToString();
+            string previousYear = newDate.Year.ToString();
+            String previousMonthName = newDate.ToString("MMMM");
+
+            // Rows
+
+            // dt.Rows.Add("S_No", "Particulars", previousMonthName + ' ' + previousYear, previousMonthName + "  " + previousYear, previousMonthName + ' ' + currentYear, previousMonthName + "  " + currentYear);
+            // dt.Rows.Add("", "", "Absolute", "%Age", "Absolute", "%Age");
+            // dt.Rows.Add("1", "2", "3", "4", "5", "6");
+            dt.Rows.Add("1", "Rash & Negligence Driving", "", "", "", "");
+            dt.Rows.Add("a", "D.T.C", sp.Rows[0]["RashNegligenceDTC"], "0", sp1.Rows[0]["RashNegligenceDTC"], "0");
+            dt.Rows.Add("b", "Other", sp.Rows[0]["RashNegligenceOTHER"], "0", sp1.Rows[0]["RashNegligenceOTHER"], "0");
+            dt.Rows.Add("2", "Error of Judgement", " ", "", "", "");
+            dt.Rows.Add("a", "D.T.C", sp.Rows[0]["ErrorOfJudgementDTC"], "0", sp1.Rows[0]["ErrorOfJudgementDTC"], "0");
+            dt.Rows.Add("b", "Other", sp.Rows[0]["ErrorOfJudgementOTHER"], "0", sp1.Rows[0]["ErrorOfJudgementOTHER"], "0");
+            dt.Rows.Add("3", "Mechanical Defect", " ", "", "", "");
+            dt.Rows.Add("a", "D.T.C", sp.Rows[0]["MechanicalDefectDTC"], "0", sp1.Rows[0]["MechanicalDefectDTC"], "0");
+            dt.Rows.Add("b", "Other", sp.Rows[0]["MechanicalDefectOTHER"], "0", sp1.Rows[0]["MechanicalDefectOTHER"], "0");
+            dt.Rows.Add("4", "Lack of road sense", sp.Rows[0]["LackOfRoadSense"], "0", sp1.Rows[0]["LackOfRoadSense"], "0");
+            dt.Rows.Add("5", "Aligthing Passengers", " ", "", "", "");
+            dt.Rows.Add("a", "Front Gate", sp.Rows[0]["AligthingPassengers"], "0", sp1.Rows[0]["AligthingPassengers"], "0");
+            dt.Rows.Add("b", "Rear Gate", "0", "0", "0", "0");
+            dt.Rows.Add("6", "Boarding Passengers", " ", "", "", "");
+            dt.Rows.Add("a", "Front Gate", sp.Rows[0]["BoardingPassengers"], "0", sp1.Rows[0]["BoardingPassengers"], "0");
+            dt.Rows.Add("b", "Rear Gate", "0", "0", "0", "0");
+            dt.Rows.Add("7", "Contributory / Miscellaneous", sp.Rows[0]["Miscellaneous"], "0", sp1.Rows[0]["Miscellaneous"], "0");
+            dt.Rows.Add("", "Total", "0", "0", "0", "0");
+
+            return dt;
+        }
+
         private void ResetOnClick(object sender, EventArgs e)
         {
             DeleteExisitingdtRecord("tbl_ComparativeAnalysisOfCausesOfAccidents", OsbId);
             dataGridView1.DataSource = BindComparativeAnalysisOfCausesOfAccidents();
             MessageBox.Show("Done");
+            Common.SetRowNonEditable(dataGridView1, 17);
+            Common.SetColumnNonEditable(dataGridView1, 3);
+            Common.SetColumnNonEditable(dataGridView1, 5);
         }
 
         private void SaveOnClick(object sender, EventArgs e)
@@ -189,11 +261,6 @@ namespace OperationalStatisticsBook
 
             var row = dataGridView1.Rows;
 
-            // Total
-            dataGridView1.Rows[17].Cells[2].Value = Common.GetSum(row, 1, 16, 2);
-            dataGridView1.Rows[17].Cells[3].Value = Common.GetSum(row, 1, 16, 3);
-            dataGridView1.Rows[17].Cells[4].Value = Common.GetSum(row, 1, 16, 4);
-            dataGridView1.Rows[17].Cells[5].Value = Common.GetSum(row, 1, 16, 5);
 
             // PERCENTAGE
             dataGridView1.Rows[1].Cells[3].Value = Common.ConvertToDecimal(row[17].Cells[2].Value.ToString()) > 0 ? Math.Round((Common.ConvertToDecimal(row[1].Cells[2].Value.ToString()) / Common.ConvertToDecimal(row[17].Cells[2].Value.ToString())) * 100, 2) : 0;
@@ -231,6 +298,13 @@ namespace OperationalStatisticsBook
             dataGridView1.Rows[14].Cells[5].Value = Common.ConvertToDecimal(row[17].Cells[4].Value.ToString()) > 0 ? Math.Round((Common.ConvertToDecimal(row[14].Cells[4].Value.ToString()) / Common.ConvertToDecimal(row[17].Cells[4].Value.ToString())) * 100, 2) : 0;
             dataGridView1.Rows[15].Cells[5].Value = Common.ConvertToDecimal(row[17].Cells[4].Value.ToString()) > 0 ? Math.Round((Common.ConvertToDecimal(row[15].Cells[4].Value.ToString()) / Common.ConvertToDecimal(row[17].Cells[4].Value.ToString())) * 100, 2) : 0;
             dataGridView1.Rows[16].Cells[5].Value = Common.ConvertToDecimal(row[17].Cells[4].Value.ToString()) > 0 ? Math.Round((Common.ConvertToDecimal(row[16].Cells[4].Value.ToString()) / Common.ConvertToDecimal(row[17].Cells[4].Value.ToString())) * 100, 2) : 0;
+
+            // Total
+            dataGridView1.Rows[17].Cells[2].Value = Common.GetSum(row, 1, 16, 2);
+            dataGridView1.Rows[17].Cells[3].Value = Common.GetSum(row, 1, 16, 3);
+            dataGridView1.Rows[17].Cells[4].Value = Common.GetSum(row, 1, 16, 4);
+            dataGridView1.Rows[17].Cells[5].Value = Common.GetSum(row, 1, 16, 5);
+
 
         }
 
