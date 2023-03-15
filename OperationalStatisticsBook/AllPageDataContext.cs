@@ -68,7 +68,7 @@ namespace OperationalStatisticsBook
         {
             String[,] param = new string[,]
                    {
-                   {"@OsbId",OsbId.ToString()},
+                   {"@OsbId","5"},
                 };
             DataTable dt = Common.ExecuteProcedure("sp_rptanalysisCausesAccidents", param);
             return dt;

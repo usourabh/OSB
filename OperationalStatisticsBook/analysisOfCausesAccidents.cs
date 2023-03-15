@@ -83,12 +83,25 @@ namespace OperationalStatisticsBook
 
             try
             {
-                DataTable dt = new DataTable();
-                SqlCommand cmd = new SqlCommand("SELECT [SNO],[Particular],[Absolute],[Percentage],[Absolutes],[Percentages] FROM [rpt].[tbl_analysisCausesAccidents] where OsbId=@OsbId", con);
-                cmd.Parameters.AddWithValue("@OsbId", 5);
-                cmd.CommandType = CommandType.Text;
-                SqlDataAdapter sda = new SqlDataAdapter(cmd);
-                sda.Fill(dt);
+                // WE are showing same data for every month in single financial year thats y we did't automate this report
+                if (Year == 2022)
+                {
+
+                    DataTable dt = new DataTable();
+                    SqlCommand cmd = new SqlCommand("SELECT [SNO],[Particular],[Absolute],[Percentage],[Absolutes],[Percentages] FROM [rpt].[tbl_analysisCausesAccidents] where OsbId=@OsbId", con);
+                    cmd.Parameters.AddWithValue("@OsbId", 5);
+                    cmd.CommandType = CommandType.Text;
+                    SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                    sda.Fill(dt);
+
+                    if (dt.Rows.Count > 0)
+                    {
+                        dataGridView1.DataSource = dt;
+                        SaveBtn.BackColor = Color.Green;
+                    }
+
+                }
+
 
                 //DataTable autoSpTable = new DataTable();
                 //SqlCommand cmd1 = new SqlCommand("[dbo].[sp_AnalysisOfCausesAccidentsYearlyOSB1_1]", con);
@@ -99,11 +112,7 @@ namespace OperationalStatisticsBook
                 //SqlDataAdapter sda1 = new SqlDataAdapter(cmd1);
                 //sda1.Fill(autoSpTable);
 
-                if (dt.Rows.Count > 0)
-                {
-                    dataGridView1.DataSource = dt;
-                    SaveBtn.BackColor = Color.Green;
-                }
+
 
                 //else if (autoSpTable.Rows.Count > 0)
                 //{

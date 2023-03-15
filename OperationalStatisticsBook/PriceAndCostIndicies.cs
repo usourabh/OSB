@@ -53,15 +53,17 @@ namespace OperationalStatisticsBook
             String previousMonthName = newDate.ToString("MMMM");
             String[,] param = new string[,]
                     {
-                    {"@OsbId",OsbId.ToString()},
+                    //{"@OsbId",OsbId.ToString()},
+                    //remove below line if you want to remove hardcore osbid
+                    {"@OsbId", "5"},
             };
             DataTable dt = Common.ExecuteProcedure("SP_rptPriceAndCostIndices", param);
-            if(dt.Rows.Count>0)
+            if (dt.Rows.Count > 0)
             {
                 dataGridView1.DataSource = dt;
                 Save.BackColor = Color.Green;
             }
-           else
+            else
             {
                 dataGridView1.DataSource = BindPriceAndCostIndicies();
             }
@@ -74,9 +76,9 @@ namespace OperationalStatisticsBook
         DataTable BindPriceAndCostIndicies()
         {
             DataTable table = new DataTable();
-            
-            
-            
+
+
+
             table.Columns.Add("Year", typeof(string));
             table.Columns.Add("Price Per 100 KG (Rs.)", typeof(string));
             table.Columns.Add("Indicies", typeof(string));
@@ -87,8 +89,8 @@ namespace OperationalStatisticsBook
             table.Columns.Add("CPKM (P) ", typeof(string));
             table.Columns.Add("Indicies    ", typeof(string));
             //Rows data
-          //  table.Rows.Add("", "Fuel-Lubricant", "Fuel-Lubricant", "Fuel-Lubricant", "Fuel-Lubricant", "Tyres,Tubes & Retd. Material", "Tyres,Tubes & Retd. Material", "Tyres,Tubes & Retd. Material", "Tyres,Tubes & Retd. Material");
-           // table.Rows.Add("1", "2", "3", "4", "5", "6", "7", "8", "9");
+            //  table.Rows.Add("", "Fuel-Lubricant", "Fuel-Lubricant", "Fuel-Lubricant", "Fuel-Lubricant", "Tyres,Tubes & Retd. Material", "Tyres,Tubes & Retd. Material", "Tyres,Tubes & Retd. Material", "Tyres,Tubes & Retd. Material");
+            // table.Rows.Add("1", "2", "3", "4", "5", "6", "7", "8", "9");
             DateTime currentDate = new DateTime(Year, Month, 01);
             DateTime newDate = currentDate.AddYears(-1);
             DateTime newDate2 = currentDate.AddYears(0);
@@ -100,11 +102,11 @@ namespace OperationalStatisticsBook
             //    table.Rows.Add(newDate.AddYears(-i).Year + "-" + newDate2.AddYears(-i).Year, "0", "0", "0", "0", "0", "0", "0", "0");
             //}
 
-            table.Rows.Add("2016-2017", "3604", "228", "1575", "97", "11183", "226", "1", "1");
-            table.Rows.Add("2017-2018", "3628", "230", "1943", "120", "11208", "227", "1", "1");
-            table.Rows.Add("2018-2019", "4412", "279", "1796", "111", "11208", "227", "0", "0");
-            table.Rows.Add("2019-2020", "4367", "257", "1956", "111", "11208", "227", "0", "0");
-            table.Rows.Add("2020-2021", "4117", "257", "1815", "111", "11208", "227", "1", "0");
+            table.Rows.Add("2016-2017", " ", " ", " ", " ", " ", " ", " ", " ");
+            table.Rows.Add("2017-2018", " ", " ", " ", " ", " ", " ", " ", " ");
+            table.Rows.Add("2018-2019", " ", " ", " ", " ", " ", " ", " ", " ");
+            table.Rows.Add("2019-2020", " ", " ", " ", " ", " ", " ", " ", " ");
+            table.Rows.Add("2020-2021", " ", " ", " ", " ", " ", " ", " ", " ");
 
 
             return table;
@@ -161,7 +163,7 @@ namespace OperationalStatisticsBook
         {
             ShowData();
             //dataGridView1.DataSource = BindPriceAndCostIndicies();
-           // BindIndexPage(OsbId);
+            // BindIndexPage(OsbId);
         }
 
         private void PrintReportOnClick(object sender, EventArgs e)

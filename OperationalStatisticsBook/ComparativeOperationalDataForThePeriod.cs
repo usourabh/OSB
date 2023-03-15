@@ -95,30 +95,30 @@ namespace OperationalStatisticsBook
             //Rows Static data
 
             // table.Rows.Add("1", "2", "3", "4", "5", "6");
-            table.Rows.Add("1", "Total Fleet as on last date", "No", "3762", "3760", "3762");
-            table.Rows.Add("2", "Average Fleet", "No", "3789", "3761", "3760");
-            table.Rows.Add("3", "Avg. No. of buses on road", "No", "3222", "2894", "3206");
-            table.Rows.Add("4", "Fleet Utilization", "%", "85.04", "76.95", "85.27");
-            table.Rows.Add("5", "Trips Scheduled daily", "No", "32913", "26795", "33547");
-            table.Rows.Add("6", "Trips operated daily", "No", "29832", "24582", "31834");
-            table.Rows.Add("7", "Operational Ratio", "%", "90.64", "91.74", "94.89");
-            table.Rows.Add("8", "Scheduled Kms", "lakh", "2566.64", "2095.38", "2533.52");
-            table.Rows.Add("9", "Operated Kms", "lakh", "2272.17", "1898.88", "2354.74");
-            table.Rows.Add("10", "Kms Efficiency", "%", "88.53", "90.62", "92.94");
-            table.Rows.Add("11", "Kms Operated Daily", "lakh", "6.21", "5.20", "6.45");
-            table.Rows.Add("12", "Vehicle Utilization Km/Bus/Day", "kms", "193", "180", "201");
-            table.Rows.Add("13", "Total Traffic Income (Including Passenger Tax)", "Rs. in lakh", "73552.78", "43567.32", "52457.18");
+            table.Rows.Add("1", "Total Fleet as on last date", "No", " ", " ", " ");
+            table.Rows.Add("2", "Average Fleet", "No", " ", " ", " ");
+            table.Rows.Add("3", "Avg. No. of buses on road", "No", " ", " ", " ");
+            table.Rows.Add("4", "Fleet Utilization", "%", " ", " ", " ");
+            table.Rows.Add("5", "Trips Scheduled daily", "No", " ", " ", " ");
+            table.Rows.Add("6", "Trips operated daily", "No", " ", " ", " ");
+            table.Rows.Add("7", "Operational Ratio", "%", " ", " ", " ");
+            table.Rows.Add("8", "Scheduled Kms", "lakh", " ", " ", " ");
+            table.Rows.Add("9", "Operated Kms", "lakh", " ", " ", " ");
+            table.Rows.Add("10", "Kms Efficiency", "%", " ", " ", " ");
+            table.Rows.Add("11", "Kms Operated Daily", "lakh", " ", " ", " ");
+            table.Rows.Add("12", "Vehicle Utilization Km/Bus/Day", "kms", " ", " ", " ");
+            table.Rows.Add("13", "Total Traffic Income (Including Passenger Tax)", "Rs. in lakh", " ", " ", " ");
             table.Rows.Add("14", "Pink Pass Earning", "Rs. in lakh", "0", "0", "0");
-            table.Rows.Add("15", "Traffic Income Per day", "Paise", "200.96", "119.36", "143.72");
-            table.Rows.Add("16", "Traffic Income Per km", "Rs", "3237", "2294", "2228");
-            table.Rows.Add("17", "Traffic Income per bus daily", "No", "6237", "4124", "4483");
-            table.Rows.Add("18", "Breakdowns per 10,000 kms", "No", "4.57", "2.90", "4.01");
-            table.Rows.Add("19", "Accidents as per 1 lakh kms", "lakh", "0.05", "0.04", "0.04");
-            table.Rows.Add("20", "Total passsengers carried", "lakh", "12182.40", "4468.05", "5702.20");
+            table.Rows.Add("15", "Traffic Income Per day", "Paise", " ", " ", " ");
+            table.Rows.Add("16", "Traffic Income Per km", "Rs", " ", " ", " ");
+            table.Rows.Add("17", "Traffic Income per bus daily", "No", " ", " ", " ");
+            table.Rows.Add("18", "Breakdowns per 10,000 kms", "No", " ", " ", " ");
+            table.Rows.Add("19", "Accidents as per 1 lakh kms", "lakh", " ", " ", " ");
+            table.Rows.Add("20", "Total passsengers carried", "lakh", " ", " ", " ");
             table.Rows.Add("21", "Pink pass passenger", "No", "0", "0", "0");
-            table.Rows.Add("22", "Passengers carried daily", "%", "33.29", "12.24", "15.62");
-            table.Rows.Add("23", "Passengers per bus daily", "No", "1033", "423", "487");
-            table.Rows.Add("24", "Load Factor", "%", "86.77", "22.97", "22.30");
+            table.Rows.Add("22", "Passengers carried daily", "%", " ", " ", " ");
+            table.Rows.Add("23", "Passengers per bus daily", "No", " ", " ", " ");
+            table.Rows.Add("24", "Load Factor", "%", " ", " ", " ");
 
             //  dataGridView1.DataSource = table;
 
