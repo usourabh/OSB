@@ -46,7 +46,7 @@ namespace OperationalStatisticsBook
             DataTable autoSpTable = new DataTable();
             SqlCommand cmd1 = new SqlCommand("sp_DepotWiseOperFCMSClusterTrafficIncomeOSB8_2", con);
             cmd1.Parameters.AddWithValue("@month", Month);
-            cmd1.Parameters.AddWithValue("@year", (Year - 1));
+            cmd1.Parameters.AddWithValue("@year", Year);
             cmd1.CommandType = CommandType.StoredProcedure;
             SqlDataAdapter sda1 = new SqlDataAdapter(cmd1);
             sda1.Fill(autoSpTable);

@@ -15,7 +15,7 @@ namespace OperationalStatisticsBook
 {
     public partial class OperationalRatio : Form
     {
-        int OsbId = 0; 
+        int OsbId = 0;
         int Year = 0;
         int Month = 0;
         string MonthName = "0";
@@ -40,15 +40,31 @@ namespace OperationalStatisticsBook
             try
             {
                 DataTable dt = new DataTable();
-                SqlCommand cmd = new SqlCommand("SELECT [S_No],[Id],[OsbId],[Month],[Value],[Year] FROM [tbl_BarOperationalRatio] where OsbId=@OsbId", con);
+                SqlCommand cmd = new SqlCommand("SELECT [Month],[Value] FROM [tbl_BarOperationalRatio] where OsbId=@OsbId", con);
                 cmd.Parameters.AddWithValue("@OsbId", OsbId);
                 cmd.CommandType = CommandType.Text;
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
                 sda.Fill(dt);
+
+
+                DataTable autoSpTable = new DataTable();
+                SqlCommand cmd1 = new SqlCommand("[dbo].[OperationalRatioOSBBAR]", con);
+                cmd1.Parameters.AddWithValue("@Year", Year);
+                cmd1.Parameters.AddWithValue("@Month", Month);
+                cmd1.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter sda1 = new SqlDataAdapter(cmd1);
+                sda1.Fill(autoSpTable);
+
+
                 if (dt.Rows.Count > 0)
                 {
                     dataGridView1.DataSource = dt;
                     Save.BackColor = Color.Green;
+                }
+
+                else if (autoSpTable.Rows.Count > 0)
+                {
+                    dataGridView1.DataSource = autoSpTable;
                 }
                 else
                 {
@@ -57,10 +73,11 @@ namespace OperationalStatisticsBook
             }
             catch (Exception ex)
             {
-
+                throw ex;
             }
 
         }
+
         int DeleteExisitingTableRecord(string TableName, int OsbId)
         {
             con.Open();
@@ -76,6 +93,7 @@ namespace OperationalStatisticsBook
 
             return i;
         }
+
         DataTable BindOperationalRatio()
         {
             var MonthList = GlobalMaster.GetPrevousMonthList(Month, Year, 13);
@@ -98,7 +116,7 @@ namespace OperationalStatisticsBook
             table.Rows.Add(MonthList[1].MonthName + "-" + MonthList[1].Year);
             table.Rows.Add(MonthList[0].MonthName + "-" + MonthList[0].Year);
 
-          
+
             return table;
         }
 
@@ -145,7 +163,7 @@ namespace OperationalStatisticsBook
 
         private void OperationalRatio_Load(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = BindOperationalRatio();
+            //dataGridView1.DataSource = BindOperationalRatio();
             BindIndexPage(OsbId);
         }
 

@@ -180,12 +180,12 @@ namespace OperationalStatisticsBook
 
             //<-------------BARGRAPH AND PIE CHART------------>
 
-            dt.Rows.Add(" ", "BAR GRPAPH Passenger Carried", "BarPassengerCarried");
             dt.Rows.Add(" ", "BAR GRPAPH Fleet Utilization ", "BarFleetNUtilizationGrid");
             dt.Rows.Add(" ", "BAR GRPAPH Operational ratio", "OperationalRatio");
             dt.Rows.Add(" ", "BAR GRPAPH Kilometers efficency", "Kilometersefficiency");
             dt.Rows.Add(" ", "BAR GRPAPH Traffic Earning", "BarTrafficEarning");
             dt.Rows.Add(" ", "BAR GRPAPH Earning per bus per day in Rs.", "EarningPerBusPerDay");
+            dt.Rows.Add(" ", "BAR GRPAPH Passenger Carried", "BarPassengerCarried");
             dt.Rows.Add(" ", "PIE CHART Traffic Earning for the month ", "TRAFFICINCOMEFORTHEMONTH");
             dt.Rows.Add(" ", "PIE CHART Expenditure of  the month ", "EXPENDITUREFORTHEMONTH");
             return dt;

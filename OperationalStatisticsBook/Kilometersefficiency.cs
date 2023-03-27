@@ -22,7 +22,6 @@ namespace OperationalStatisticsBook
         string finYear = "0";
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["dtOperation"].ConnectionString);
 
-
         public Kilometersefficiency(int OsbId, int Year, int Month, string finYear, string MonthName)
         {
             InitializeComponent();
@@ -44,11 +43,27 @@ namespace OperationalStatisticsBook
                 cmd.CommandType = CommandType.Text;
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
                 sda.Fill(dt);
+
+                DataTable autoSpTable = new DataTable();
+                SqlCommand cmd1 = new SqlCommand("[dbo].[KilometerEfficiencyOSBBAR]", con);
+                cmd1.Parameters.AddWithValue("@Year", Year);
+                cmd1.Parameters.AddWithValue("@Month", Month);
+                cmd1.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter sda1 = new SqlDataAdapter(cmd1);
+                sda1.Fill(autoSpTable);
+
+
                 if (dt.Rows.Count > 0)
                 {
                     dataGridView1.DataSource = dt;
                     Save.BackColor = Color.Green;
                 }
+
+                else if (autoSpTable.Rows.Count > 0)
+                {
+                    dataGridView1.DataSource = autoSpTable;
+                }
+
                 else
                 {
                     dataGridView1.DataSource = BindKilometersefficiency();
@@ -60,6 +75,7 @@ namespace OperationalStatisticsBook
             }
 
         }
+
         int DeleteExisitingTableRecord(string TableName, int OsbId)
         {
             con.Open();
@@ -75,6 +91,7 @@ namespace OperationalStatisticsBook
 
             return i;
         }
+
         DataTable BindKilometersefficiency()
         {
             var MonthList = GlobalMaster.GetPrevousMonthList(Month, Year, 13);
@@ -97,7 +114,7 @@ namespace OperationalStatisticsBook
             table.Rows.Add(MonthList[1].MonthName + "-" + MonthList[1].Year);
             table.Rows.Add(MonthList[0].MonthName + "-" + MonthList[0].Year);
 
-        
+
             return table;
         }
 
@@ -144,7 +161,7 @@ namespace OperationalStatisticsBook
 
         private void Kilometersefficiency_Load(object sender, EventArgs e)
         {
-           // dataGridView1.DataSource = BindKilometersefficiency();
+            // dataGridView1.DataSource = BindKilometersefficiency();
             BindIndexPage(OsbId);
         }
 
@@ -153,6 +170,7 @@ namespace OperationalStatisticsBook
             BarKilometersefficiency obj = new BarKilometersefficiency(OsbId, Year, Month, finYear, MonthName);
             obj.Show();
         }
+
     }
 }
 
