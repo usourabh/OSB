@@ -60,17 +60,35 @@ namespace OperationalStatisticsBook
                 cmd.CommandType = CommandType.Text;
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
                 sda.Fill(dt);
+
+
+
+                DataTable autoSpTable = new DataTable();
+                SqlCommand cmd1 = new SqlCommand("[dbo].[StatementOfPassesForTheMonth6_1]", con);
+                cmd1.Parameters.AddWithValue("@month", Month);
+                cmd1.Parameters.AddWithValue("@year", Year);
+                cmd1.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter sda1 = new SqlDataAdapter(cmd1);
+                sda1.Fill(autoSpTable);
+
+
                 if (dt.Rows.Count > 0)
                 {
                     dataGridView1.DataSource = dt;
                     Save.BackColor = Color.Green;
                 }
+
+                else if (autoSpTable.Rows.Count > 0)
+                {
+                    dataGridView1.DataSource = autoSpTable;
+                }
+
                 else
                 {
                     dataGridView1.DataSource = BindStatementOfForTheMonthOfPasses();
                 }
-                
-              //  Common.SetColumnNonEditable(dataGridView1,4);
+
+                //  Common.SetColumnNonEditable(dataGridView1,4);
                 CalcalculateTotal();
                 SetNonEditable();
             }
@@ -97,7 +115,7 @@ namespace OperationalStatisticsBook
                             new DataColumn("Param2", typeof(string)),
                             new DataColumn("Param3", typeof(string)),
                             new DataColumn("Param4",typeof(string))
-                  
+
 
 
             });
@@ -107,9 +125,9 @@ namespace OperationalStatisticsBook
             //table.Columns.Add("No.of", typeof(string));
             //table.Columns.Add("Amount", typeof(string));
             ////Rows.......
-          //  table.Rows.Add("S.No ","Type of Concessional Passes", "Denomination",  "No.of", "Amount");
-          //  table.Rows.Add(" ", " ", "(Rs.) ", "Passes", "(Rs)");
-          //  table.Rows.Add("1 ", "2 ", "3", "4", "5");
+            //  table.Rows.Add("S.No ","Type of Concessional Passes", "Denomination",  "No.of", "Amount");
+            //  table.Rows.Add(" ", " ", "(Rs.) ", "Passes", "(Rs)");
+            //  table.Rows.Add("1 ", "2 ", "3", "4", "5");
             table.Rows.Add("1 ", "STUDENT PASSES ", " ", " ", " ");
             table.Rows.Add("1.1", "Student Destination ( AC)  ", "100", "0", "0");
             table.Rows.Add("1.2", " All Route Pass ( AC) 100*1  ", "100", "0", "0");
@@ -126,7 +144,7 @@ namespace OperationalStatisticsBook
             table.Rows.Add("1.12", " All route special (AC) 150*5", "750", "0", "0");
             table.Rows.Add("1.13", " All route special (AC) 150*6", "900", "0", "0");
             table.Rows.Add("2.1", " AAY/PR-S Monthly Non AC 500*1 ", "500", "0", "0");
-         //   table.Rows.Add("2.1", " AAY/PR-S Monthly Non AC 500*1 ", "1000", "0", "0");
+            //   table.Rows.Add("2.1", " AAY/PR-S Monthly Non AC 500*1 ", "1000", "0", "0");
             table.Rows.Add("2.2", " AAY/PR-S Monthly Non AC 500*2", "1000", "0", "0");
             table.Rows.Add("3 ", "Sr. Citizen Above 60 Years Old (NON AC)", " ", " ", " ");
             table.Rows.Add("3.1 ", "Sr. Citizen. Above 60 Years Old (All Route ) 50*1 ", "50", "0", "0");
@@ -242,13 +260,13 @@ namespace OperationalStatisticsBook
 
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
-                
+
                 try
                 {
                     if (row.Cells[0].Value != null || row.Cells[1].Value != null || row.Cells[2].Value != null || row.Cells[3].Value != null || row.Cells[4].Value != null || row.Cells[5].Value != null)
                     {
-                        
-                           SqlCommand cmd = new SqlCommand("INSERT INTO [rpt].[tbl_StatementOfForTheMonthOfPasses] ([OsbId],[S_No],[Param1],[Param2],[Param3],[Param4]) VALUES (@OsbId,@S_No,@Param1,@Param2,@Param3,@Param4)", con);
+
+                        SqlCommand cmd = new SqlCommand("INSERT INTO [rpt].[tbl_StatementOfForTheMonthOfPasses] ([OsbId],[S_No],[Param1],[Param2],[Param3],[Param4]) VALUES (@OsbId,@S_No,@Param1,@Param2,@Param3,@Param4)", con);
                         cmd.Parameters.AddWithValue("@OsbId", OsbId);
                         cmd.Parameters.AddWithValue("@S_No", row.Cells[0].Value == null ? "" : row.Cells[0].Value.ToString());
                         cmd.Parameters.AddWithValue("@Param1", row.Cells[1].Value == null ? "" : row.Cells[1].Value.ToString());
@@ -283,14 +301,14 @@ namespace OperationalStatisticsBook
 
             #region Calculating_VerticalSum
 
-           // dataGridView1.Rows[111].Cells[2].Value = Common.GetSum(row, 0, 110, 2);
+            // dataGridView1.Rows[111].Cells[2].Value = Common.GetSum(row, 0, 110, 2);
             dataGridView1.Rows[110].Cells[3].Value = Common.GetSum(row, 1, 109, 3);
             dataGridView1.Rows[110].Cells[4].Value = Common.GetSum(row, 1, 109, 4);
 
             // All Grand Total
 
-              dataGridView1.Rows[112].Cells[3].Value = Common.ConvertToDecimal(dataGridView1.Rows[110].Cells[3].Value.ToString()) + Common.GetSum(row, 111,111, 3);
-              dataGridView1.Rows[112].Cells[4].Value = Common.ConvertToDecimal(dataGridView1.Rows[110].Cells[4].Value.ToString()) + Common.GetSum(row, 111,111, 4);
+            dataGridView1.Rows[112].Cells[3].Value = Common.ConvertToDecimal(dataGridView1.Rows[110].Cells[3].Value.ToString()) + Common.GetSum(row, 111, 111, 3);
+            dataGridView1.Rows[112].Cells[4].Value = Common.ConvertToDecimal(dataGridView1.Rows[110].Cells[4].Value.ToString()) + Common.GetSum(row, 111, 111, 4);
             //  dataGridView1.Rows[64].Cells[3].Value = Common.ConvertToDecimal(dataGridView1.Rows[13].Cells[3].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[21].Cells[3].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[31].Cells[3].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[45].Cells[3].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[63].Cells[3].Value.ToString()) + Common.GetSum(row, 46, 50, 3);
 
             #endregion
@@ -299,7 +317,7 @@ namespace OperationalStatisticsBook
             for (int i = 0; i < 98; i++)
             {
 
-                if (i >=1)
+                if (i >= 1)
                 {
                     if (i != 8 && i != 17 && i != 30 && i != 43 && i != 50 && i != 59 && i != 72 && i != 85 && i != 98)
                     {

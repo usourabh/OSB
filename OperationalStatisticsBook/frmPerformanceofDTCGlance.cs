@@ -71,11 +71,27 @@ namespace OperationalStatisticsBook
                 cmd.CommandType = CommandType.Text;
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
                 sda.Fill(dt);
+
+
+                DataTable autoSpTable = new DataTable();
+                SqlCommand cmd1 = new SqlCommand("[dbo].[PerformanceOfDTCGlanceOSB]", con);
+                cmd1.Parameters.AddWithValue("@month", Month);
+                cmd1.Parameters.AddWithValue("@year", Year);
+                cmd1.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter sda1 = new SqlDataAdapter(cmd1);
+                sda1.Fill(autoSpTable);
+
                 if (dt.Rows.Count > 0)
                 {
                     grdIndexPage.DataSource = dt;
                     btnupdateIndexPage.BackColor = Color.Green;
                 }
+
+                else if (autoSpTable.Rows.Count > 0)
+                {
+                    grdIndexPage.DataSource = autoSpTable;
+                }
+
                 else
                 {
                     grdIndexPage.DataSource = BindMasterData();
@@ -127,7 +143,7 @@ namespace OperationalStatisticsBook
         DataTable BindMasterData()
         {
             var MonthList = GlobalMaster.GetPrevousMonthList(Month, Year, 5);
-        
+
 
             DataTable dt = new DataTable();
             dt.Columns.AddRange(new DataColumn[6] { new DataColumn("PhysicalParameter", typeof(string)),
@@ -139,7 +155,7 @@ namespace OperationalStatisticsBook
             });
 
             //dt.Rows.Add("Physical Parameter", MonthList[4].MonthName + "-" + MonthList[4].Year, MonthList[3].MonthName + "-" + MonthList[3].Year, MonthList[2].MonthName + "-" + MonthList[2].Year, MonthList[1].MonthName + "-" + MonthList[1].Year, MonthList[0].MonthName + "-" + MonthList[0].Year );
-            
+
             dt.Rows.Add("No. of Depots", "", "", "", "", "");
             dt.Rows.Add("Fleet Held (on last day)", "", "", "", "", "");
             dt.Rows.Add("- Non-AC Low Floor", "", "", "", "", "");
@@ -156,7 +172,7 @@ namespace OperationalStatisticsBook
             dt.Rows.Add("Earning Per Kms (Rs.)", "", "", "", "", "");
             dt.Rows.Add("Earning Per bus Per Day (Rs.)", "", "", "", "", "");
             return dt;
-            
+
 
         }
 

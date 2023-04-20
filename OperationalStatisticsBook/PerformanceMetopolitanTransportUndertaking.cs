@@ -108,7 +108,7 @@ namespace OperationalStatisticsBook
 
 
             DataTable autoSpTable = new DataTable();
-            SqlCommand cmd = new SqlCommand("[dbo].[sp_PerforMetropoTransUnderDataOSB1p9]", con);
+            SqlCommand cmd = new SqlCommand("[dbo].[sp_PerforMetropoTransUnderDataOSB1_9]", con);
             cmd.Parameters.AddWithValue("@Month", Month);
             cmd.Parameters.AddWithValue("@Year", Year);
             cmd.CommandType = CommandType.StoredProcedure;

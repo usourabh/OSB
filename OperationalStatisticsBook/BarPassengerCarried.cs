@@ -40,15 +40,32 @@ namespace OperationalStatisticsBook
             try
             {
                 DataTable dt = new DataTable();
-                SqlCommand cmd = new SqlCommand("SELECT [S_No],[Id],[OsbId],[Month],[Value],[Year] FROM [tbl_BarPassengerCarried ] where OsbId=@OsbId", con);
+                SqlCommand cmd = new SqlCommand("SELECT [Id],[OsbId],[Month],[Value],[Year] FROM [tbl_BarPassengerCarried ] where OsbId=@OsbId", con);
                 cmd.Parameters.AddWithValue("@OsbId", OsbId);
                 cmd.CommandType = CommandType.Text;
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
                 sda.Fill(dt);
+
+
+                DataTable autoSpTable = new DataTable();
+                SqlCommand cmd1 = new SqlCommand("[dbo].[PassengerCarriedOSBBAR]", con);
+                cmd1.Parameters.AddWithValue("@Year", Year);
+                cmd1.Parameters.AddWithValue("@Month", Month);
+                cmd1.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter sda1 = new SqlDataAdapter(cmd1);
+                cmd1.CommandTimeout = 120;
+                sda1.Fill(autoSpTable);
+
+
+
                 if (dt.Rows.Count > 0)
                 {
                     dataGridView1.DataSource = dt;
                     Save.BackColor = Color.Green;
+                }
+                else if (autoSpTable.Rows.Count > 0)
+                {
+                    dataGridView1.DataSource = autoSpTable;
                 }
                 else
                 {
@@ -154,7 +171,8 @@ namespace OperationalStatisticsBook
 
         private void BarPassengerCarried_Load(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = BindBarPassengerCarried();
+            BindIndexPage(OsbId);
+            // dataGridView1.DataSource = BindBarPassengerCarried();
 
         }
 

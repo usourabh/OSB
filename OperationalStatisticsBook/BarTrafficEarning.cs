@@ -40,16 +40,34 @@ namespace OperationalStatisticsBook
             try
             {
                 DataTable dt = new DataTable();
-                SqlCommand cmd = new SqlCommand("SELECT [S_No],[Id],[OsbId],[Month],[Value],[Year] FROM [tbl_BarTrafficEarning ] where OsbId=@OsbId", con);
+                SqlCommand cmd = new SqlCommand("SELECT [Id],[OsbId],[Month],[Value],[Year] FROM [tbl_BarTrafficEarning ] where OsbId=@OsbId", con);
                 cmd.Parameters.AddWithValue("@OsbId", OsbId);
                 cmd.CommandType = CommandType.Text;
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
                 sda.Fill(dt);
+
+
+                DataTable autoSpTable = new DataTable();
+                SqlCommand cmd1 = new SqlCommand("[dbo].[TrafficEarningOSBBAR]", con);
+                cmd1.Parameters.AddWithValue("@Year", Year);
+                cmd1.Parameters.AddWithValue("@Month", Month);
+                cmd1.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter sda1 = new SqlDataAdapter(cmd1);
+                cmd1.CommandTimeout = 120;
+                sda1.Fill(autoSpTable);
+
+
                 if (dt.Rows.Count > 0)
                 {
                     dataGridView1.DataSource = dt;
                     Save.BackColor = Color.Green;
                 }
+
+                else if (autoSpTable.Rows.Count > 0)
+                {
+                    dataGridView1.DataSource = autoSpTable;
+                }
+
                 else
                 {
                     dataGridView1.DataSource = BindBarTrafficEarning();
@@ -57,7 +75,7 @@ namespace OperationalStatisticsBook
             }
             catch (Exception ex)
             {
-
+                throw ex;
             }
 
         }
@@ -86,19 +104,19 @@ namespace OperationalStatisticsBook
             table.Columns.Add("Value", typeof(string));
 
 
-            table.Rows.Add(MonthList[12].MonthName + "-" + MonthList[12].Year);
-            table.Rows.Add(MonthList[11].MonthName + "-" + MonthList[11].Year);
-            table.Rows.Add(MonthList[10].MonthName + "-" + MonthList[10].Year);
-            table.Rows.Add(MonthList[9].MonthName + "-" + MonthList[9].Year);
-            table.Rows.Add(MonthList[8].MonthName + "-" + MonthList[8].Year);
-            table.Rows.Add(MonthList[7].MonthName + "-" + MonthList[7].Year);
-            table.Rows.Add(MonthList[6].MonthName + "-" + MonthList[6].Year);
-            table.Rows.Add(MonthList[5].MonthName + "-" + MonthList[5].Year);
-            table.Rows.Add(MonthList[4].MonthName + "-" + MonthList[4].Year);
-            table.Rows.Add(MonthList[3].MonthName + "-" + MonthList[3].Year);
-            table.Rows.Add(MonthList[2].MonthName + "-" + MonthList[2].Year);
-            table.Rows.Add(MonthList[1].MonthName + "-" + MonthList[1].Year);
-            table.Rows.Add(MonthList[0].MonthName + "-" + MonthList[0].Year);
+            //table.Rows.Add(MonthList[12].MonthName + "-" + MonthList[12].Year);
+            //table.Rows.Add(MonthList[11].MonthName + "-" + MonthList[11].Year);
+            //table.Rows.Add(MonthList[10].MonthName + "-" + MonthList[10].Year);
+            //table.Rows.Add(MonthList[9].MonthName + "-" + MonthList[9].Year);
+            //table.Rows.Add(MonthList[8].MonthName + "-" + MonthList[8].Year);
+            //table.Rows.Add(MonthList[7].MonthName + "-" + MonthList[7].Year);
+            //table.Rows.Add(MonthList[6].MonthName + "-" + MonthList[6].Year);
+            //table.Rows.Add(MonthList[5].MonthName + "-" + MonthList[5].Year);
+            //table.Rows.Add(MonthList[4].MonthName + "-" + MonthList[4].Year);
+            //table.Rows.Add(MonthList[3].MonthName + "-" + MonthList[3].Year);
+            //table.Rows.Add(MonthList[2].MonthName + "-" + MonthList[2].Year);
+            //table.Rows.Add(MonthList[1].MonthName + "-" + MonthList[1].Year);
+            //table.Rows.Add(MonthList[0].MonthName + "-" + MonthList[0].Year);
 
             return table;
         }
@@ -153,8 +171,8 @@ namespace OperationalStatisticsBook
 
         private void BarTrafficEarning_Load(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = BindBarTrafficEarning();
-           // BindIndexPage(OsbId);
+            //dataGridView1.DataSource = BindBarTrafficEarning();
+            BindIndexPage(OsbId);
         }
 
         private void button1_Click_1(object sender, EventArgs e)

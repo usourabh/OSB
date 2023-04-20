@@ -44,16 +44,28 @@ namespace OperationalStatisticsBook
                 cmd.CommandType = CommandType.Text;
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
                 sda.Fill(dt);
+
+                DataTable autoSpTable = new DataTable();
+                SqlCommand cmd1 = new SqlCommand("NoofTripsactOperatedOnTimeNWithinTwoMinutesOSB4_7", con);
+                cmd1.Parameters.AddWithValue("@Month", Month);
+                cmd1.Parameters.AddWithValue("@Year", Year);
+                cmd1.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter sda1 = new SqlDataAdapter(cmd1);
+                sda1.Fill(autoSpTable);
+
                 if (dt.Rows.Count > 0)
                 {
                     dataGridView1.DataSource = dt;
                     Save.BackColor = Color.Green;
                 }
+                else if (autoSpTable.Rows.Count > 0)
+                {
+                    dataGridView1.DataSource = BindDistrubutionOfFleetByTypeMakeAndYearOfCommission();
+                }
                 else
                 {
                     dataGridView1.DataSource = BindDistrubutionOfFleetByTypeMakeAndYearOfCommission();
                 }
-
                 CalculateFormula();
                 SetNonEditable();
             }
@@ -78,10 +90,10 @@ namespace OperationalStatisticsBook
             table.Columns.Add("Total  ", typeof(string));
             table.Columns.Add("Percentage ", typeof(string));
 
-           // table.Rows.Add("Year of Comm.", "CNG ", "CNG", "CNG", "CNG", "Electric", "Electric", "Total", "duistribution");
-           // table.Rows.Add(" ", "LOW FLOOR ", "LOW FLOOR", "LOW FLOOR", "LOW FLOOR", "LOW FLOOR", "LOW FLOOR", "Total", "by year of" );
-           // table.Rows.Add(" ", "NON AC ", "AC", "NON AC", "AC", "AC", "AC", "Total", "commission");
-           // table.Rows.Add("1", "2 ", "3", "4", "5", "6", "7", "8", "9");
+            // table.Rows.Add("Year of Comm.", "CNG ", "CNG", "CNG", "CNG", "Electric", "Electric", "Total", "duistribution");
+            // table.Rows.Add(" ", "LOW FLOOR ", "LOW FLOOR", "LOW FLOOR", "LOW FLOOR", "LOW FLOOR", "LOW FLOOR", "Total", "by year of" );
+            // table.Rows.Add(" ", "NON AC ", "AC", "NON AC", "AC", "AC", "AC", "Total", "commission");
+            // table.Rows.Add("1", "2 ", "3", "4", "5", "6", "7", "8", "9");
 
 
             DateTime currentDate = new DateTime(Year, Month, 01);
@@ -117,10 +129,7 @@ namespace OperationalStatisticsBook
             table.Rows.Add("2021-22", " ", "", "", "", "", "", "", "0.00");
             table.Rows.Add("2022-23", " ", "", "", "", "53", "100", "", "96.09");
 
-
-
             table.Rows.Add("TOTAL ", " ", "", "", "", "", "", "", "");
-
 
             table.Rows.Add("Percentage Distribution  ", "16.71", "11.12", "47.28", "20.98", "1.35", "2.56", "", "");
 
@@ -129,31 +138,32 @@ namespace OperationalStatisticsBook
             table.Rows.Add(" ", " ", "", "", "", "", "", "", "");
 
             table.Rows.Add(" DISTRIBUTION OF FLEET", " ", " ", "", "", "", "Extent of Overaged Buses", " ", " ");
+
             int lastDayofTheMonth = DateTime.DaysInMonth(currentDate.Year, currentDate.Month);
 
             string lastDateForDistributionFleet = lastDayofTheMonth + "-" + currentDate.Month + "-" + currentDate.Year;
 
             table.Rows.Add(lastDateForDistributionFleet, " ", " ", "", "", "", "(More Than 8 Years Old)", " ", " ");
             table.Rows.Add("Age Group in Years ", "Number of buses ", "", "", "", "", "", "Absolute(Number)", "Percentage ");
-            table.Rows.Add("0-2", "153 ", "", "", "", "",                                  "31.3.07", "347", "9.81");
-            table.Rows.Add("2-4", "0", "", "", "", "",                                     "31.3.08", "299", "8.45");
-            table.Rows.Add("4-6", "0", "", "", "", "",                                     "31.3.09", "260", "6.83");
-            table.Rows.Add("6-8", "0", "", "", "", "",                                     "31.3.10", "1839", "39.24");
-            table.Rows.Add("8-10", "0", "", "", "", "",                                    "31.3.11", "1843", "29.71");
-            table.Rows.Add("10+", "3760", "", "", "", "",                                  "31.3.12", "2079", "35.29");
-            table.Rows.Add("Total", "3913", "", "", "", " ",                               "31.3.13", "1634", "30.01");
+            table.Rows.Add("0-2", "153 ", "", "", "", "", "31.3.07", "347", "9.81");
+            table.Rows.Add("2-4", "0", "", "", "", "", "31.3.08", "299", "8.45");
+            table.Rows.Add("4-6", "0", "", "", "", "", "31.3.09", "260", "6.83");
+            table.Rows.Add("6-8", "0", "", "", "", "", "31.3.10", "1839", "39.24");
+            table.Rows.Add("8-10", "0", "", "", "", "", "31.3.11", "1843", "29.71");
+            table.Rows.Add("10+", "3760", "", "", "", "", "31.3.12", "2079", "35.29");
+            table.Rows.Add("Total", "3913", "", "", "", " ", "31.3.13", "1634", "30.01");
             table.Rows.Add("*Authorised Fleet Strength of DTC=5500 ", " ", "", "", "", "", "31.3.14", "1440", "27.57");
-            table.Rows.Add(" ", " ", "", "", "", "",                                       "31.3.15", "930", "19.74");
-            table.Rows.Add(" ", " ", "", "", "", "",                                       "31.3.16", "569", "13.07");
-            table.Rows.Add(" ", " ", "", "", "", "",                                       "31.3.17", "245", "6.08");
-            table.Rows.Add(" ", " ", "", "", "", "",                                       "31.3.18", "826", "20.91");
-            table.Rows.Add(" ", " ", "", "", "", "",                                       "31.3.19", "1978", "51.39");
-            table.Rows.Add(" ", " ", "", "", "", "",                                       "31.3.20", "1868", "99.15");
-            table.Rows.Add(" ", " ", "", "", "", "",                                       "31.3.21", "3760", "100.00");
-            table.Rows.Add(" ", " ", "", "", "", "",                                       "31.3.22", "3760", "100.00");
+            table.Rows.Add(" ", " ", "", "", "", "", "31.3.15", "930", "19.74");
+            table.Rows.Add(" ", " ", "", "", "", "", "31.3.16", "569", "13.07");
+            table.Rows.Add(" ", " ", "", "", "", "", "31.3.17", "245", "6.08");
+            table.Rows.Add(" ", " ", "", "", "", "", "31.3.18", "826", "20.91");
+            table.Rows.Add(" ", " ", "", "", "", "", "31.3.19", "1978", "51.39");
+            table.Rows.Add(" ", " ", "", "", "", "", "31.3.20", "1868", "99.15");
+            table.Rows.Add(" ", " ", "", "", "", "", "31.3.21", "3760", "100.00");
+            table.Rows.Add(" ", " ", "", "", "", "", "31.3.22", "3760", "100.00");
 
-            
-            string lastDateOfSelectedMonthForlastGridViewCell = lastDayofTheMonth +"."+ currentDate.Month + "." + currentDate.Year;
+
+            string lastDateOfSelectedMonthForlastGridViewCell = lastDayofTheMonth + "." + currentDate.Month + "." + currentDate.Year;
 
 
             table.Rows.Add(" ", " ", "", "", "", "", lastDateOfSelectedMonthForlastGridViewCell, "3760", " ");
@@ -178,12 +188,13 @@ namespace OperationalStatisticsBook
             cmd.Parameters.AddWithValue("@OsbId", OsbId);
             cmd.CommandType = CommandType.Text;
             con.Open();
-            
+
             i = cmd.ExecuteNonQuery();
             con.Close();
 
             return i;
         }
+
         private void SaveOnClick(object sender, EventArgs e)
         {
             DeleteExisitingTableRecord("tbl_DistrubutionOfFleetByTypeMakeAndYearOfCommission", OsbId);
@@ -192,7 +203,7 @@ namespace OperationalStatisticsBook
             {
                 try
                 {
-                    if (row.Cells[0].Value != null || row.Cells[1].Value != null || row.Cells[2].Value != null || row.Cells[3].Value != null || row.Cells[4].Value != null || row.Cells[5].Value != null || row.Cells[6].Value != null || row.Cells[7].Value != null || row.Cells[8].Value != null || row.Cells[9].Value != null )
+                    if (row.Cells[0].Value != null || row.Cells[1].Value != null || row.Cells[2].Value != null || row.Cells[3].Value != null || row.Cells[4].Value != null || row.Cells[5].Value != null || row.Cells[6].Value != null || row.Cells[7].Value != null || row.Cells[8].Value != null || row.Cells[9].Value != null)
                     {
                         SqlCommand cmd = new SqlCommand("INSERT INTO [rpt].[tbl_DistrubutionOfFleetByTypeMakeAndYearOfCommission] ([OsbId],[YearOfComm],[Param1],[Param2],[Param3],[Param4],[Param5],[Param6],[Param7],[Param8]) VALUES (@OsbId,@YearOfComm,@Param1,@Param2,@Param3,@Param4,@Param5,@Param6,@Param7,@Param8)", con);
                         cmd.Parameters.AddWithValue("@OsbId", OsbId);
@@ -238,13 +249,13 @@ namespace OperationalStatisticsBook
 
             // total horizontally adding
 
-            for(int i=0; i<=19; i++)
+            for (int i = 0; i <= 19; i++)
             {
-                dataGridView1.Rows[i].Cells[7].Value = Math.Round(Common.ConvertToDecimal(row[i].Cells[1].Value.ToString()) 
-                                                                + Common.ConvertToDecimal(row[i].Cells[2].Value.ToString()) 
-                                                                + Common.ConvertToDecimal(row[i].Cells[3].Value.ToString()) 
-                                                                + Common.ConvertToDecimal(row[i].Cells[4].Value.ToString()) 
-                                                                + Common.ConvertToDecimal(row[i].Cells[5].Value.ToString()) 
+                dataGridView1.Rows[i].Cells[7].Value = Math.Round(Common.ConvertToDecimal(row[i].Cells[1].Value.ToString())
+                                                                + Common.ConvertToDecimal(row[i].Cells[2].Value.ToString())
+                                                                + Common.ConvertToDecimal(row[i].Cells[3].Value.ToString())
+                                                                + Common.ConvertToDecimal(row[i].Cells[4].Value.ToString())
+                                                                + Common.ConvertToDecimal(row[i].Cells[5].Value.ToString())
                                                                 + Common.ConvertToDecimal(row[i].Cells[6].Value.ToString()), 0);
             }
 
@@ -257,16 +268,16 @@ namespace OperationalStatisticsBook
 
 
             // PERCENTAGE DISTRIBUTION BY YEAR OF COMMISSION
-            for(int i=0; i<=18; i++)
+            for (int i = 0; i <= 18; i++)
             {
-                dataGridView1.Rows[i].Cells[8].Value = Common.ConvertToDecimal(row[19].Cells[7].Value.ToString()) > 0 ? 
-                    Math.Round(Common.ConvertToDecimal(row[i].Cells[7].Value.ToString()) / Common.ConvertToDecimal(row[19].Cells[7].Value.ToString()) * 100, 2) : 0 ;
+                dataGridView1.Rows[i].Cells[8].Value = Common.ConvertToDecimal(row[19].Cells[7].Value.ToString()) > 0 ?
+                    Math.Round(Common.ConvertToDecimal(row[i].Cells[7].Value.ToString()) / Common.ConvertToDecimal(row[19].Cells[7].Value.ToString()) * 100, 2) : 0;
 
                 dataGridView1.Rows[19].Cells[8].Value = Common.GetSum(row, 0, 18, 8);
 
             }
             //PERCENTAGE DISTRIBUTION
-            for (int i=1; i<=7; i++)
+            for (int i = 1; i <= 7; i++)
             {
                 dataGridView1.Rows[20].Cells[i].Value = Common.ConvertToDecimal(row[19].Cells[7].Value.ToString()) > 0 ?
                     Math.Round(Common.ConvertToDecimal(row[19].Cells[i].Value.ToString()) / Common.ConvertToDecimal(row[19].Cells[7].Value.ToString()) * 100, 2) : 0;
@@ -312,13 +323,13 @@ namespace OperationalStatisticsBook
                                                   + Common.ConvertToDecimal(row[31].Cells[1].Value.ToString());
 
             //percentage last 
-            dataGridView1.Rows[42].Cells[8].Value = Math.Round( Common.ConvertToDecimal(row[42].Cells[7].Value.ToString()) / Common.ConvertToDecimal(row[32].Cells[1].Value.ToString()) *100, 2);
+            dataGridView1.Rows[42].Cells[8].Value = Math.Round(Common.ConvertToDecimal(row[42].Cells[7].Value.ToString()) / Common.ConvertToDecimal(row[32].Cells[1].Value.ToString()) * 100, 2);
 
         }
 
         void SetNonEditable()
         {
-            for(byte i=0; i<=15; i++)
+            for (byte i = 0; i <= 15; i++)
             {
                 Common.SetRowNonEditable(dataGridView1, i);
             }

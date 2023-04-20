@@ -1349,7 +1349,6 @@ namespace OperationalStatisticsBook
                 return null;
             }
         }
-
         //countpage function is counting the no of pages in single rdlc
 
         public int countpage(byte[] pdfContent)

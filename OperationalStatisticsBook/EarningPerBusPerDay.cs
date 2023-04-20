@@ -39,16 +39,34 @@ namespace OperationalStatisticsBook
             try
             {
                 DataTable dt = new DataTable();
-                SqlCommand cmd = new SqlCommand("SELECT [S_No],[Id],[OsbId],[Month],[Value],[Year] FROM [tbl_BarEarningPerBusPerDay] where OsbId=@OsbId", con);
+                SqlCommand cmd = new SqlCommand("SELECT [Id],[OsbId],[Month],[Value],[Year] FROM [tbl_BarEarningPerBusPerDay] where OsbId=@OsbId", con);
                 cmd.Parameters.AddWithValue("@OsbId", OsbId);
                 cmd.CommandType = CommandType.Text;
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
                 sda.Fill(dt);
+
+
+                DataTable autoSpTable = new DataTable();
+                SqlCommand cmd1 = new SqlCommand("[dbo].[EarningPerBusPerDayOSBBAR]", con);
+                cmd1.Parameters.AddWithValue("@Year", Year);
+                cmd1.Parameters.AddWithValue("@Month", Month);
+                cmd1.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter sda1 = new SqlDataAdapter(cmd1);
+                cmd1.CommandTimeout = 120;
+                sda1.Fill(autoSpTable);
+
+
                 if (dt.Rows.Count > 0)
                 {
                     dataGridView1.DataSource = dt;
                     Save.BackColor = Color.Green;
                 }
+
+                else if (autoSpTable.Rows.Count > 0)
+                {
+                    dataGridView1.DataSource = autoSpTable;
+                }
+
                 else
                 {
                     dataGridView1.DataSource = BindEarningPerBusPerDay();
@@ -56,7 +74,7 @@ namespace OperationalStatisticsBook
             }
             catch (Exception ex)
             {
-
+                throw ex;
             }
 
         }
@@ -75,6 +93,7 @@ namespace OperationalStatisticsBook
 
             return i;
         }
+
         DataTable BindEarningPerBusPerDay()
         {
             var MonthList = GlobalMaster.GetPrevousMonthList(Month, Year, 13);
@@ -97,7 +116,7 @@ namespace OperationalStatisticsBook
             table.Rows.Add(MonthList[1].MonthName + "-" + MonthList[1].Year);
             table.Rows.Add(MonthList[0].MonthName + "-" + MonthList[0].Year);
 
-        
+
             return table;
         }
 
@@ -111,7 +130,7 @@ namespace OperationalStatisticsBook
         private void btnSaveOnClick(object sender, EventArgs e)
         {
             {
-                
+
                 DeleteExisitingTableRecord("tbl_BarEarningPerBusPerDay", OsbId);
 
                 foreach (DataGridViewRow row in dataGridView1.Rows)
@@ -147,11 +166,12 @@ namespace OperationalStatisticsBook
         {
             dataGridView1.DataSource = BindEarningPerBusPerDay();
             BindIndexPage(OsbId);
+
         }
 
         private void Generatebarchart_OnClick(object sender, EventArgs e)
         {
-            BarEarningPerBusPerDay obj = new BarEarningPerBusPerDay(OsbId,Year,Month,finYear,MonthName);
+            BarEarningPerBusPerDay obj = new BarEarningPerBusPerDay(OsbId, Year, Month, finYear, MonthName);
             obj.Show();
         }
     }
