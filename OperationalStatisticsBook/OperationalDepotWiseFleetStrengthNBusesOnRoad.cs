@@ -48,6 +48,7 @@ namespace OperationalStatisticsBook
 
             return i;
         }
+
         void BindIndexPage(int OsbId)
         {
 
@@ -70,7 +71,7 @@ namespace OperationalStatisticsBook
                 }
                 SetNonEditableRowAndcolumn();
                 CalcalculateTotal();
-            
+
             }
             catch (Exception ex)
             {
@@ -97,9 +98,9 @@ namespace OperationalStatisticsBook
             table.Columns.Add("DTC No. of Buses        ", typeof(string));
 
             // Rows
-           // table.Rows.Add("", "", "", "Capacity (in terms of number of buses can be parked under ideal condition)", "Held at the Opening of Month", "Buses added during the month","Scrapped During the month","Trans-ferred during month","Held Closing of the month","Avg.fleet during the month","Buses on Road");
+            // table.Rows.Add("", "", "", "Capacity (in terms of number of buses can be parked under ideal condition)", "Held at the Opening of Month", "Buses added during the month","Scrapped During the month","Trans-ferred during month","Held Closing of the month","Avg.fleet during the month","Buses on Road");
             //table.Rows.Add("1", "2", "3", "4", "5", "6","7","8","9","10","11");
-            table.Rows.Add("1", "B.B.M", "Dec.1954", "0", "0", "0","0","0","0","0","0");
+            table.Rows.Add("1", "B.B.M", "Dec.1954", "0", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("2", "Rohini-I", "Sept.1988", "0", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("3", "Rohini-II ", "Oct.1989", "0", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("4", "Rohini-III", "Feb.1991", "0", "0", "0", "0", "0", "0", "0", "0");
@@ -178,7 +179,7 @@ namespace OperationalStatisticsBook
                         cmd.ExecuteNonQuery();
                         con.Close();
                     }
-                    
+
                 }
                 catch (Exception ex)
                 {
@@ -193,13 +194,13 @@ namespace OperationalStatisticsBook
         {
             DeleteExisitingTableRecord("tbl_OperationalDepotWiseFleetStrengthNBusesOnRoad", OsbId);
             dataGridView1.DataSource = BindOperationalDepotWiseFleetStrengthNBusesOnRoad();
-         //   NonEditableRowAndcolumn();
+            //   NonEditableRowAndcolumn();
             MessageBox.Show("Done");
         }
         private void OperationalDepotWiseFleetStrengthNBusesOnRoad_Load(object sender, EventArgs e)
         {
             BindIndexPage(OsbId);
-         
+
         }
 
         void CalcalculateTotal()
@@ -209,14 +210,14 @@ namespace OperationalStatisticsBook
             #region Calculating_VerticalSum
 
             // North Total
-            dataGridView1.Rows[38].Cells[3].Value = Common.GetSum(row, 0, 37,3);
-            dataGridView1.Rows[38].Cells[4].Value = Common.GetSum(row, 0, 37,4);
-            dataGridView1.Rows[38].Cells[5].Value = Common.GetSum(row, 0, 37,5);
-            dataGridView1.Rows[38].Cells[6].Value = Common.GetSum(row, 0, 37,6);
-            dataGridView1.Rows[38].Cells[7].Value = Common.GetSum(row, 0, 37,7);
-            dataGridView1.Rows[38].Cells[8].Value = Common.GetSum(row, 0, 37,8);
-            dataGridView1.Rows[38].Cells[9].Value = Common.GetSum(row, 0, 37,9);
-            dataGridView1.Rows[38].Cells[10].Value = Common.GetSum(row,0, 37,10);
+            dataGridView1.Rows[38].Cells[3].Value = Common.GetSum(row, 0, 37, 3);
+            dataGridView1.Rows[38].Cells[4].Value = Common.GetSum(row, 0, 37, 4);
+            dataGridView1.Rows[38].Cells[5].Value = Common.GetSum(row, 0, 37, 5);
+            dataGridView1.Rows[38].Cells[6].Value = Common.GetSum(row, 0, 37, 6);
+            dataGridView1.Rows[38].Cells[7].Value = Common.GetSum(row, 0, 37, 7);
+            dataGridView1.Rows[38].Cells[8].Value = Common.GetSum(row, 0, 37, 8);
+            dataGridView1.Rows[38].Cells[9].Value = Common.GetSum(row, 0, 37, 9);
+            dataGridView1.Rows[38].Cells[10].Value = Common.GetSum(row, 0, 37, 10);
 
             #endregion
 

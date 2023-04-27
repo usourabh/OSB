@@ -146,7 +146,7 @@ namespace OperationalStatisticsBook
                     }
                     catch (Exception ex)
                     {
-
+                        throw ex;
                     }
 
                 }

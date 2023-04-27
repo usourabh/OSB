@@ -121,10 +121,11 @@ namespace OperationalStatisticsBook
         {
             string strTable = "[rpt].[" + TableName + "]";
             int i = 0;
-            SqlCommand cmd = new SqlCommand("delete from " + strTable + " where OsbId=@OsbId", con);
+            con.Open();
+            SqlCommand cmd = new SqlCommand("delete from " + strTable + " where OsbId= " + OsbId, con);
             cmd.Parameters.AddWithValue("@OsbId", OsbId);
             cmd.CommandType = CommandType.Text;
-            con.Open();
+
 
             i = cmd.ExecuteNonQuery();
             con.Close();
@@ -149,25 +150,27 @@ namespace OperationalStatisticsBook
                 {
                     if (row.Cells[0].Value != null || row.Cells[1].Value != null)
                     {
+                        con.Open();
                         SqlCommand cmd = new SqlCommand("INSERT INTO [rpt].[BarPieChartTrafficEarning] ([OsbId],[Name],[Data]) VALUES (@OsbId,@Name,@Data)", con);
                         cmd.Parameters.AddWithValue("@OsbId", OsbId);
                         cmd.Parameters.AddWithValue("@Name", row.Cells[0].Value == null ? "" : row.Cells[0].Value.ToString());
-                        cmd.Parameters.AddWithValue("@Data", row.Cells[1].Value == null ? "" : row.Cells[1].Value.ToString());
+                        cmd.Parameters.AddWithValue("@Data", row.Cells[1].Value == null ? 0 : Convert.ToDecimal(row.Cells[1].Value));
 
                         cmd.CommandType = CommandType.Text;
-                        con.Open();
+
                         cmd.ExecuteNonQuery();
                         con.Close();
                     }
                 }
                 catch (Exception ex)
                 {
-
+                    throw ex;
                 }
-
             }
+
             MessageBox.Show("Done");
         }
+
 
         private void TRAFFICINCOMEFORTHEMONTH_Load(object sender, EventArgs e)
         {
