@@ -111,6 +111,168 @@ namespace OperationalStatisticsBook
             return table;
         }
 
+        DataTable BindDepotWiseOprationalDataInRespectOfNonAC_Sp(DataTable sp)
+        {
+            DataTable table = new DataTable();
+
+            table.Columns.Add("For The Month of July-2022", typeof(string));
+            table.Columns.Add("For The Month of July-2022 ", typeof(string));
+            table.Columns.Add("For The Month of July-2022  ", typeof(string));
+            table.Columns.Add("For The Month of July-2022   ", typeof(string));
+            table.Columns.Add("For The Month of July-2022    ", typeof(string));
+            table.Columns.Add("For The Month of July-2022     ", typeof(string));
+            table.Columns.Add("For The Month of July-2022      ", typeof(string));
+            table.Columns.Add("For The Month of July-2022       ", typeof(string));
+            table.Columns.Add("For The Month of July-2022        ", typeof(string));
+            table.Columns.Add("For The Month of July-2022         ", typeof(string));
+            table.Columns.Add("For The Month of July-2022                          ", typeof(string));
+            table.Columns.Add("For The Month of July-2022          ", typeof(string));
+            table.Columns.Add("  For The Month of July-2022             ", typeof(string));
+            table.Columns.Add(" For The Month of July-2022                  ", typeof(string));
+            table.Columns.Add("  For The Month of July-2022     ", typeof(string));
+            table.Columns.Add("  For The Month of July-2022       ", typeof(string));
+            table.Columns.Add("  For The Month of July-2022  ", typeof(string));
+
+
+            DataColumn regionOrder = sp.Columns["regionOrder"];
+            int rgorder = 1;
+            int rgorder2 = 1;
+            int rgorder3 = 1;
+            int rgorder4 = 1;
+            foreach (DataRow row in sp.Rows)
+            {
+
+                if ((int)row[regionOrder] == 1 && rgorder == 1)
+                {
+
+                    for (int i = 0; i < 12; i++)
+                    {
+
+                        decimal earningPerDayConductor = (Convert.ToDecimal(sp.Rows[i]["DailyTrafficIncome"]) / Convert.ToInt32(sp.Rows[i]["NoOfConductors"]));
+                        table.Rows.Add(i + 1, sp.Rows[i]["CircleName"].ToString(),
+                            Math.Round(Convert.ToDecimal(sp.Rows[i]["SchKm"]), 0).ToString(),
+                            Math.Round(Convert.ToDecimal(sp.Rows[i]["ActKm"]), 0).ToString(),
+                            Math.Round(Convert.ToDecimal(sp.Rows[i]["kilometerEffciency"]), 0).ToString(),
+                            Math.Round(Convert.ToDecimal(sp.Rows[i]["DailyOperatedKm"]), 0).ToString(),
+                            Math.Round(Convert.ToDecimal(sp.Rows[i]["KmPerBusPerDay"]), 0).ToString(),
+                            Math.Round(Convert.ToDecimal(sp.Rows[i]["MonthlyTrafficIncome"]), 0).ToString(),
+                            Math.Round(Convert.ToDecimal(sp.Rows[i]["DailyTrafficIncome"]), 0).ToString(),
+                            Math.Round(Convert.ToDecimal(sp.Rows[i]["TrafficIncomePerKm"]), 0).ToString(),
+                            Math.Round(Convert.ToDecimal(sp.Rows[i]["TrafficIncomePerBusPerDay"]), 0).ToString(),
+                            Math.Round(Convert.ToDecimal(sp.Rows[i]["TotalAccident"]), 0).ToString(),
+                            Math.Round(Convert.ToDecimal(sp.Rows[i]["AccidentPer1LakhKm"]), 0).ToString(),
+                            Math.Round(Convert.ToDecimal(sp.Rows[i]["NoOfDrivers"]), 0).ToString(),
+                            Math.Round(Convert.ToDecimal(sp.Rows[i]["KMPerDayPerDriver"]), 0).ToString(),
+                            Math.Round(Convert.ToDecimal(sp.Rows[i]["NoOfConductors"]), 0).ToString(),
+                            Math.Round(earningPerDayConductor, 0)
+                                  );
+                    }
+
+                    table.Rows.Add(" ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ");
+                    table.Rows.Add(" ", "Total North Region", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
+                    rgorder = 2;
+                }
+
+
+                if ((int)row[regionOrder] == 2 && rgorder2 == 1)
+                {
+
+
+                    for (int i = 12; i < 19; i++)
+                    {
+                        decimal earningPerDayConductor = (Convert.ToDecimal(sp.Rows[i]["DailyTrafficIncome"]) / Convert.ToInt32(sp.Rows[i]["NoOfConductors"]));
+                        table.Rows.Add(i + 1, sp.Rows[i]["CircleName"].ToString(),
+                            Math.Round(Convert.ToDecimal(sp.Rows[i]["SchKm"]), 0).ToString(),
+                            Math.Round(Convert.ToDecimal(sp.Rows[i]["ActKm"]), 0).ToString(),
+                            Math.Round(Convert.ToDecimal(sp.Rows[i]["kilometerEffciency"]), 0).ToString(),
+                            Math.Round(Convert.ToDecimal(sp.Rows[i]["DailyOperatedKm"]), 0).ToString(),
+                            Math.Round(Convert.ToDecimal(sp.Rows[i]["KmPerBusPerDay"]), 0).ToString(),
+                            Math.Round(Convert.ToDecimal(sp.Rows[i]["MonthlyTrafficIncome"]), 0).ToString(),
+                            Math.Round(Convert.ToDecimal(sp.Rows[i]["DailyTrafficIncome"]), 0).ToString(),
+                            Math.Round(Convert.ToDecimal(sp.Rows[i]["TrafficIncomePerKm"]), 0).ToString(),
+                            Math.Round(Convert.ToDecimal(sp.Rows[i]["TrafficIncomePerBusPerDay"]), 0).ToString(),
+                            Math.Round(Convert.ToDecimal(sp.Rows[i]["TotalAccident"]), 0).ToString(),
+                            Math.Round(Convert.ToDecimal(sp.Rows[i]["AccidentPer1LakhKm"]), 0).ToString(),
+                            Math.Round(Convert.ToDecimal(sp.Rows[i]["NoOfDrivers"]), 0).ToString(),
+                            Math.Round(Convert.ToDecimal(sp.Rows[i]["KMPerDayPerDriver"]), 0).ToString(),
+                            Math.Round(Convert.ToDecimal(sp.Rows[i]["NoOfConductors"]), 0).ToString(),
+                            Math.Round(earningPerDayConductor, 0)
+                                  );
+                    }
+
+                    table.Rows.Add(" ", "Total South Region", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
+                    rgorder2 = 2;
+                }
+
+
+                if ((int)row[regionOrder] == 3 && rgorder3 == 1)
+                {
+
+
+                    for (int i = 19; i < 26; i++)
+                    {
+                        decimal earningPerDayConductor = (Convert.ToDecimal(sp.Rows[i]["DailyTrafficIncome"]) / Convert.ToInt32(sp.Rows[i]["NoOfConductors"]));
+                        table.Rows.Add(i + 1, sp.Rows[i]["CircleName"].ToString(),
+                            Math.Round(Convert.ToDecimal(sp.Rows[i]["SchKm"]), 0).ToString(),
+                            Math.Round(Convert.ToDecimal(sp.Rows[i]["ActKm"]), 0).ToString(),
+                            Math.Round(Convert.ToDecimal(sp.Rows[i]["kilometerEffciency"]), 0).ToString(),
+                            Math.Round(Convert.ToDecimal(sp.Rows[i]["DailyOperatedKm"]), 0).ToString(),
+                            Math.Round(Convert.ToDecimal(sp.Rows[i]["KmPerBusPerDay"]), 0).ToString(),
+                            Math.Round(Convert.ToDecimal(sp.Rows[i]["MonthlyTrafficIncome"]), 0).ToString(),
+                            Math.Round(Convert.ToDecimal(sp.Rows[i]["DailyTrafficIncome"]), 0).ToString(),
+                            Math.Round(Convert.ToDecimal(sp.Rows[i]["TrafficIncomePerKm"]), 0).ToString(),
+                            Math.Round(Convert.ToDecimal(sp.Rows[i]["TrafficIncomePerBusPerDay"]), 0).ToString(),
+                            Math.Round(Convert.ToDecimal(sp.Rows[i]["TotalAccident"]), 0).ToString(),
+                            Math.Round(Convert.ToDecimal(sp.Rows[i]["AccidentPer1LakhKm"]), 0).ToString(),
+                            Math.Round(Convert.ToDecimal(sp.Rows[i]["NoOfDrivers"]), 0).ToString(),
+                            Math.Round(Convert.ToDecimal(sp.Rows[i]["KMPerDayPerDriver"]), 0).ToString(),
+                            Math.Round(Convert.ToDecimal(sp.Rows[i]["NoOfConductors"]), 0).ToString(),
+                            Math.Round(earningPerDayConductor, 0)
+                                  );
+                    }
+
+                    table.Rows.Add(" ", "Total East Region", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
+                    rgorder3 = 2;
+                }
+
+
+                if ((int)row[regionOrder] == 4 && rgorder4 == 1)
+                {
+
+
+                    for (int i = 26; i < 37; i++)
+                    {
+                        decimal earningPerDayConductor = (Convert.ToDecimal(sp.Rows[i]["DailyTrafficIncome"]) / Convert.ToInt32(sp.Rows[i]["NoOfConductors"]));
+                        table.Rows.Add(i + 1, sp.Rows[i]["CircleName"].ToString(),
+                            Math.Round(Convert.ToDecimal(sp.Rows[i]["SchKm"]), 0).ToString(),
+                            Math.Round(Convert.ToDecimal(sp.Rows[i]["ActKm"]), 0).ToString(),
+                            Math.Round(Convert.ToDecimal(sp.Rows[i]["kilometerEffciency"]), 0).ToString(),
+                            Math.Round(Convert.ToDecimal(sp.Rows[i]["DailyOperatedKm"]), 0).ToString(),
+                            Math.Round(Convert.ToDecimal(sp.Rows[i]["KmPerBusPerDay"]), 0).ToString(),
+                            Math.Round(Convert.ToDecimal(sp.Rows[i]["MonthlyTrafficIncome"]), 0).ToString(),
+                            Math.Round(Convert.ToDecimal(sp.Rows[i]["DailyTrafficIncome"]), 0).ToString(),
+                            Math.Round(Convert.ToDecimal(sp.Rows[i]["TrafficIncomePerKm"]), 0).ToString(),
+                            Math.Round(Convert.ToDecimal(sp.Rows[i]["TrafficIncomePerBusPerDay"]), 0).ToString(),
+                            Math.Round(Convert.ToDecimal(sp.Rows[i]["TotalAccident"]), 0).ToString(),
+                            Math.Round(Convert.ToDecimal(sp.Rows[i]["AccidentPer1LakhKm"]), 0).ToString(),
+                            Math.Round(Convert.ToDecimal(sp.Rows[i]["NoOfDrivers"]), 0).ToString(),
+                            Math.Round(Convert.ToDecimal(sp.Rows[i]["KMPerDayPerDriver"]), 0).ToString(),
+                            Math.Round(Convert.ToDecimal(sp.Rows[i]["NoOfConductors"]), 0).ToString(),
+                            Math.Round(earningPerDayConductor, 0)
+                                  );
+                    }
+
+                    table.Rows.Add(" ", "Total West", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
+                    table.Rows.Add(" ", "Grand Total", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
+                    rgorder4 = 2;
+                }
+
+            }
+
+
+            return table;
+        }
+
         void BindIndexPage(int OsbId)
         {
 
@@ -122,23 +284,42 @@ namespace OperationalStatisticsBook
                 cmd.CommandType = CommandType.Text;
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
                 sda.Fill(dt);
+
+                DataTable autoSpTable = new DataTable();
+                SqlCommand cmd1 = new SqlCommand("[dbo].[DepotWiseOperationalDataOSB4_6]", con);
+                cmd1.Parameters.AddWithValue("@month", Month);
+                cmd1.Parameters.AddWithValue("@year", Year);
+                cmd1.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter sda1 = new SqlDataAdapter(cmd1);
+                cmd1.CommandTimeout = 350;
+                sda1.Fill(autoSpTable);
+
+
                 if (dt.Rows.Count > 0)
                 {
                     dataGridView1.DataSource = dt;
                     Save.BackColor = Color.Green;
+                    CalcalculateTotal();
                 }
+
+                else if (autoSpTable.Rows.Count > 0)
+                {
+                    dataGridView1.DataSource = BindDepotWiseOprationalDataInRespectOfNonAC_Sp(autoSpTable);
+                }
+
+
                 else
                 {
                     dataGridView1.DataSource = BindDepotWiseOprationalDataInRespectOfNonAC();
                 }
 
                 CalcalculateTotal();
-                setRowColNonEditable();
+                //setRowColNonEditable();
 
             }
             catch (Exception ex)
             {
-
+                throw ex;
             }
 
         }
@@ -248,20 +429,20 @@ namespace OperationalStatisticsBook
 
             for (int i = 0; i <= 43; i++)
             {
-                //Kilometer efficiency formula
-                dataGridView1.Rows[i].Cells[4].Value = Common.ConvertToDecimal(row[i].Cells[3].Value.ToString()) > 0 ? Math.Round((Common.ConvertToDecimal(row[i].Cells[4].Value.ToString()) / Common.ConvertToDecimal(row[i].Cells[3].Value.ToString())) * 100, 2) : 0;
+                ////Kilometer efficiency formula
+                //dataGridView1.Rows[i].Cells[4].Value = Common.ConvertToDecimal(row[i].Cells[3].Value.ToString()) > 0 ? Math.Round((Common.ConvertToDecimal(row[i].Cells[4].Value.ToString()) / Common.ConvertToDecimal(row[i].Cells[3].Value.ToString())) * 100, 2) : 0;
 
-                // Traffic Income per km Paise
-                dataGridView1.Rows[i].Cells[9].Value = Common.ConvertToDecimal(row[i].Cells[3].Value.ToString()) > 0 ? Math.Round((Common.ConvertToDecimal(row[i].Cells[7].Value.ToString()) / Common.ConvertToDecimal(row[i].Cells[3].Value.ToString())) * 100, 0) : 0;
+                //// Traffic Income per km Paise
+                //dataGridView1.Rows[i].Cells[9].Value = Common.ConvertToDecimal(row[i].Cells[3].Value.ToString()) > 0 ? Math.Round((Common.ConvertToDecimal(row[i].Cells[7].Value.ToString()) / Common.ConvertToDecimal(row[i].Cells[3].Value.ToString())) * 100, 0) : 0;
 
-                // Accident per 100,000 Km
-                dataGridView1.Rows[i].Cells[12].Value = Common.ConvertToDecimal(row[i].Cells[3].Value.ToString()) > 0 ? Math.Round(((Common.ConvertToDecimal(row[i].Cells[11].Value.ToString()) * 100000) / Common.ConvertToDecimal(row[i].Cells[3].Value.ToString())), 2) : 0;
+                //// Accident per 100,000 Km
+                //dataGridView1.Rows[i].Cells[12].Value = Common.ConvertToDecimal(row[i].Cells[3].Value.ToString()) > 0 ? Math.Round(((Common.ConvertToDecimal(row[i].Cells[11].Value.ToString()) * 100000) / Common.ConvertToDecimal(row[i].Cells[3].Value.ToString())), 2) : 0;
 
-                //Driver kilometer per day/ drivers
-                dataGridView1.Rows[i].Cells[14].Value = Common.ConvertToDecimal(row[i].Cells[13].Value.ToString()) > 0 ? (Common.ConvertToDecimal(row[i].Cells[13].Value.ToString()) / Common.ConvertToDecimal(row[i].Cells[5].Value.ToString())) * 100 : 0;
+                ////Driver kilometer per day/ drivers
+                //dataGridView1.Rows[i].Cells[14].Value = Common.ConvertToDecimal(row[i].Cells[13].Value.ToString()) > 0 ? (Common.ConvertToDecimal(row[i].Cells[13].Value.ToString()) / Common.ConvertToDecimal(row[i].Cells[5].Value.ToString())) * 100 : 0;
 
                 // Earning per day / per conductor
-                dataGridView1.Rows[i].Cells[16].Value = Common.ConvertToDecimal(row[i].Cells[15].Value.ToString()) > 0 ? Math.Round((Common.ConvertToDecimal(row[i].Cells[8].Value.ToString()) / Common.ConvertToDecimal(row[i].Cells[15].Value.ToString())), 0) : 0;
+                //dataGridView1.Rows[i].Cells[16].Value = Common.ConvertToDecimal(row[i].Cells[15].Value.ToString()) > 0 ? Math.Round((Common.ConvertToDecimal(row[i].Cells[8].Value.ToString()) / Common.ConvertToDecimal(row[i].Cells[15].Value.ToString())), 0) : 0;
 
 
 

@@ -136,7 +136,7 @@ namespace OperationalStatisticsBook
 
             for (int i = currentDate.Month; i <= 12; i++)
             {
-                table.Rows.Add(Common.monthNames[i-1], 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                table.Rows.Add(Common.monthNames[i - 1], 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
             }
 
             //for (int i = 6; i > 0; i--)
@@ -147,9 +147,9 @@ namespace OperationalStatisticsBook
             table.Rows.Add(" ", "No of Depots", "No of Depots", "Man Power", "Man Power", "Staff Ratio", "Staff Ratio", "Added (Vehicle)", "Added (Vehicle)", "Deleted (Vehicle)", "Deleted (Vehicle)", "Fleet at the end", "Fleet at the end");
             table.Rows.Add("Year", currentYear, previousYear, currentYear, previousYear, currentYear, previousYear, currentYear, previousYear, currentYear, previousYear, currentYear, previousYear);
 
-            for (int i = 1; i<=currentDate.Month; i++)
+            for (int i = 1; i <= currentDate.Month; i++)
             {
-                table.Rows.Add(Common.monthNames[i-1], 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+                table.Rows.Add(Common.monthNames[i - 1], 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
             }
 
             return table;
