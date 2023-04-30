@@ -42,11 +42,29 @@ namespace OperationalStatisticsBook
                 cmd.CommandType = CommandType.Text;
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
                 sda.Fill(dt);
+
+
+                DataTable autoSpTable = new DataTable();
+                SqlCommand cmd1 = new SqlCommand("[dbo].[SalientFeatGrowthBasicStrucOSB1_2]", con);
+                cmd1.Parameters.AddWithValue("@month", Month);
+                cmd1.Parameters.AddWithValue("@year", Year);
+                cmd1.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter sda1 = new SqlDataAdapter(cmd1);
+                sda1.Fill(autoSpTable);
+
                 if (dt.Rows.Count > 0)
                 {
                     dataGridView1.DataSource = dt;
                     Save.BackColor = Color.Green;
                 }
+
+
+                else if (autoSpTable.Rows.Count > 0)
+                {
+                    dataGridView1.DataSource = BindSalientFeatureGrowthBasicStuructureAuto_Sp(autoSpTable);
+                }
+
+
                 else
                 {
                     dataGridView1.DataSource = BindSalientFeatureGrowthBasicSturucture();
@@ -101,10 +119,10 @@ namespace OperationalStatisticsBook
             //Rows Static Data
             DateTime currentDate = new DateTime(Year, Month, 01);
 
-            DateTime newDate = currentDate.AddYears(0);
-            DateTime newDateM = currentDate.AddMonths(+1);
-            DateTime newDate2 = currentDate.AddYears(1);
-            DateTime currentMonth = currentDate.AddMonths(-6);
+            //DateTime newDate = currentDate.AddYears(0);
+            //DateTime newDateM = currentDate.AddMonths(+1);
+            //DateTime newDate2 = currentDate.AddYears(1);
+            //DateTime currentMonth = currentDate.AddMonths(-6);
 
             DateTime newDateCurrent = currentDate.AddYears(0);
             DateTime newDateCurrent1 = currentDate.AddYears(-1);
@@ -154,6 +172,103 @@ namespace OperationalStatisticsBook
 
             return table;
         }
+
+        DataTable BindSalientFeatureGrowthBasicStuructureAuto_Sp(DataTable sp)
+        {
+
+
+            DataTable table = new DataTable();
+
+            //column name
+            table.Columns.Add("Year", typeof(string));
+            table.Columns.Add("No of Depots", typeof(string));
+            table.Columns.Add(" ", typeof(string));
+            table.Columns.Add("Man Power", typeof(string));
+            table.Columns.Add("  ", typeof(string));
+            table.Columns.Add("Staff Ratio", typeof(string));
+            table.Columns.Add("   ", typeof(string));
+            table.Columns.Add("Added (Vehicle)", typeof(string));
+            table.Columns.Add("    ", typeof(string));
+            table.Columns.Add("Deleted (Vehicle)", typeof(string));
+            table.Columns.Add("     ", typeof(string));
+            table.Columns.Add("Fleet at the end", typeof(string));
+            table.Columns.Add("      ", typeof(string));
+
+
+
+
+            //Rows Static Data
+            DateTime currentDate = new DateTime(Year, Month, 01);
+
+            //DateTime newDate = currentDate.AddYears(0);
+            //DateTime newDateM = currentDate.AddMonths(+1);
+            //DateTime newDate2 = currentDate.AddYears(1);
+            //DateTime currentMonth = currentDate.AddMonths(-6);
+
+            DateTime newDateCurrent = currentDate.AddYears(0);
+            DateTime newDateCurrent1 = currentDate.AddYears(-1);
+            string currentYear = newDateCurrent1.Year.ToString();
+            string previousYear = newDateCurrent.Year.ToString();
+
+            DateTime newDateCurrent2 = currentDate.AddYears(-2);
+            string previousYear1 = newDateCurrent2.Year.ToString();
+            // int j = 1;
+            //for (int i = 10; i > 0; i--)
+            //{
+            //    table.Rows.Add(newDate.AddYears(-i).Year + "-" + newDate2.AddYears(-i).Year, 0, " ", 0, " ", 0, " ", 0, " ", 0, " ", 0, " ");
+            //}
+
+            table.Rows.Add("2012-13", "46", "", "38103", "", "7.00", "", "0", "", "446", "", "5445", "");
+            table.Rows.Add("2013-14", "45", "", "35503", "", "6.80", "", "0", "", "222", "", "5223", "");
+            table.Rows.Add("2014-15", "43", "", "32864", "", "6.97", "", "0", "", "511", "", "4712", "");
+            table.Rows.Add("2015-16", "43", "", "30527", "", "7.01", "", "1", "", "361", "", "4352", "");
+            table.Rows.Add("2016-17", "39", "", "27879", "", "6.92", "", "0", "", "325", "", "4027", "");
+            table.Rows.Add("2017-18", "39", "", "25489", "", "6.45", "", "0", "", "76", "", "3951", "");
+            table.Rows.Add("2018-19", "39", "", "24721", "", "6.42", "", "0", "", "102", "", "3849", "");
+            table.Rows.Add("2019-20", "35", "", "28163", "", "7.49", "", "0", "", "80", "", "3762", "");
+            table.Rows.Add("2020-21", "35", "", "29369", "", "7.81", "", "0", "", "2", "", "3760", "");
+            table.Rows.Add("2021-22", "36", "", "30675", "", "8.15", "", "2", "", "0", "", "3762", "");
+
+            table.Rows.Add(" ", "No of Depots", "No of Depots", "Man Power", "Man Power", "Staff Ratio", "Staff Ratio", "Added (Vehicle)", "Added (Vehicle)", "Deleted (Vehicle)", "Deleted (Vehicle)", "Fleet at the end", "Fleet at the end");
+
+            table.Rows.Add("Year", previousYear1, currentYear, previousYear1, currentYear, previousYear1, currentYear, previousYear1, currentYear, previousYear1, currentYear, previousYear1, currentYear);
+
+
+
+            if (currentDate.Month <= 12) table.Rows.Add(Common.monthNames[currentDate.Month - 1], 0, sp.Rows[0], 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+            if (currentDate.Month <= 11) table.Rows.Add(Common.monthNames[currentDate.Month], 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+            if (currentDate.Month <= 10) table.Rows.Add(Common.monthNames[currentDate.Month + 1], 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+            if (currentDate.Month <= 9) table.Rows.Add(Common.monthNames[currentDate.Month + 2], 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+            if (currentDate.Month <= 8) table.Rows.Add(Common.monthNames[currentDate.Month + 3], 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+            if (currentDate.Month <= 7) table.Rows.Add(Common.monthNames[currentDate.Month + 4], 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+            if (currentDate.Month <= 6) table.Rows.Add(Common.monthNames[currentDate.Month + 5], 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+            if (currentDate.Month <= 5) table.Rows.Add(Common.monthNames[currentDate.Month + 6], 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+            if (currentDate.Month <= 4) table.Rows.Add(Common.monthNames[currentDate.Month + 7], 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+            if (currentDate.Month <= 3) table.Rows.Add(Common.monthNames[currentDate.Month + 8], 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+            if (currentDate.Month <= 2) table.Rows.Add(Common.monthNames[currentDate.Month + 9], 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+            if (currentDate.Month <= 1) table.Rows.Add(Common.monthNames[currentDate.Month + 10], 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+
+
+
+
+            //for (int i = currentDate.Month; i <= 12; i++)
+            //{
+            //    table.Rows.Add(Common.monthNames[i - 1], "35", "35", Convert.ToString(27700+118), 0, 0, 0, 0, 0, 0, 0, 0, 0);
+            //}
+
+
+
+            table.Rows.Add(" ", "No of Depots", "No of Depots", "Man Power", "Man Power", "Staff Ratio", "Staff Ratio", "Added (Vehicle)", "Added (Vehicle)", "Deleted (Vehicle)", "Deleted (Vehicle)", "Fleet at the end", "Fleet at the end");
+            table.Rows.Add("Year", currentYear, previousYear, currentYear, previousYear, currentYear, previousYear, currentYear, previousYear, currentYear, previousYear, currentYear, previousYear);
+
+            for (int i = 1; i <= currentDate.Month; i++)
+            {
+                table.Rows.Add(Common.monthNames[i - 1], 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+            }
+
+            return table;
+        }
+
 
         private void ResetOnClick(object sender, EventArgs e)
         {
@@ -215,3 +330,4 @@ namespace OperationalStatisticsBook
         }
     }
 }
+
