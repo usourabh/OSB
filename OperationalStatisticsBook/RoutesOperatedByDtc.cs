@@ -29,6 +29,7 @@ namespace OperationalStatisticsBook
             this.finYear = finYear;
             this.MonthName = MonthName;
         }
+
         DataTable BindRoutesOperatedByDtc()
         {
             DataTable table = new DataTable();
@@ -55,8 +56,8 @@ namespace OperationalStatisticsBook
             DateTime newDateCurrent = currentDate.AddYears(0);
 
             DateTime currentYear1 = currentDate.AddYears(-2);
-           
-            
+
+
             string currentYear = currentYear1.Year.ToString();
             string previousYear = newDateCurrent.Year.ToString();
             DateTime newDateCurrent2 = currentDate.AddYears(-1);
