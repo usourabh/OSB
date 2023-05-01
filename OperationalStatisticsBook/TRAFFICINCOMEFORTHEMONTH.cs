@@ -60,12 +60,24 @@ namespace OperationalStatisticsBook
 
 
             // table.Rows.Add("1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17");
-            table.Rows.Add("Pink Ticket Earning ", sp.Rows[0]["PinkTicketEarning"].ToString());
-            table.Rows.Add("School Bus ", sp.Rows[0]["schoolBus"].ToString());
-            table.Rows.Add("Special Hire ", sp.Rows[0]["specialHire"].ToString());
-            table.Rows.Add("Tourist", sp.Rows[0]["tourist"].ToString());
-            table.Rows.Add("Pass Earning ", sp.Rows[0]["PassEarning"].ToString());
-            table.Rows.Add("Ticket Earning ", sp.Rows[0]["TicketEarning"].ToString());
+            //Convert.ToDecimal(sp.Rows[i]["SchTripCityNonAc"]) != 0 ? (Convert.ToDecimal(sp.Rows[i]["OperatedTripCityNonAc"]) * 100) / Convert.ToDecimal(sp.Rows[i]["SchTripCityNonAc"]) : 1;
+
+            decimal totalEarning = Convert.ToDecimal(sp.Rows[0]["PinkTicketEarning"]) + Convert.ToDecimal(sp.Rows[0]["schoolBus"]) + Convert.ToDecimal(sp.Rows[0]["specialHire"]) + Convert.ToDecimal(sp.Rows[0]["tourist"]) + Convert.ToDecimal(sp.Rows[0]["PassEarning"]) + Convert.ToDecimal(sp.Rows[0]["TicketEarning"]);
+
+            decimal pinkTicket = Math.Round((Convert.ToDecimal(sp.Rows[0]["PinkTicketEarning"]) * 100) / totalEarning, 2);
+            decimal schoolBus = Math.Round((Convert.ToDecimal(sp.Rows[0]["schoolBus"]) * 100) / totalEarning, 2);
+            decimal specialHire = Math.Round((Convert.ToDecimal(sp.Rows[0]["specialHire"]) * 100) / totalEarning, 2);
+            decimal tourist = Math.Round((Convert.ToDecimal(sp.Rows[0]["tourist"]) * 100) / totalEarning, 2);
+            decimal passEarning = Math.Round((Convert.ToDecimal(sp.Rows[0]["PassEarning"]) * 100) / totalEarning, 2);
+            decimal ticketEarning = Math.Round((Convert.ToDecimal(sp.Rows[0]["TicketEarning"]) * 100) / totalEarning, 2);
+
+            table.Rows.Add("Pink Ticket Earning ", pinkTicket.ToString());
+            table.Rows.Add("School Bus ", schoolBus.ToString());
+            table.Rows.Add("Pass Earning ", passEarning.ToString());
+            table.Rows.Add("Tourist", tourist.ToString());
+            table.Rows.Add("Ticket Earning ", ticketEarning.ToString());
+            table.Rows.Add("Special Hire ", specialHire.ToString());
+
 
 
             return table;

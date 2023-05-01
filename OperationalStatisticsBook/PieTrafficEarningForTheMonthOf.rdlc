@@ -428,8 +428,8 @@
             <DataSetName>PieTrafficEarningForTheMonthOfMonth</DataSetName>
             <Top>1.63724cm</Top>
             <Left>1.74307cm</Left>
-            <Height>8.29028cm</Height>
-            <Width>14.74959cm</Width>
+            <Height>12.7882cm</Height>
+            <Width>18.63896cm</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
@@ -441,17 +441,17 @@
             </Style>
           </Chart>
         </ReportItems>
-        <Height>4.60639in</Height>
+        <Height>6.03347in</Height>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
         </Style>
       </Body>
-      <Width>7.71874in</Width>
+      <Width>10.65624in</Width>
       <Page>
         <PageFooter>
-          <Height>1.13771cm</Height>
+          <Height>4.31271cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
