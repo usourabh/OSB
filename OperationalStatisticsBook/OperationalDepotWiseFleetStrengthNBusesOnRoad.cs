@@ -60,10 +60,26 @@ namespace OperationalStatisticsBook
                 cmd.CommandType = CommandType.Text;
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
                 sda.Fill(dt);
+
+
+                DataTable autoSpTable = new DataTable();
+                SqlCommand cmd1 = new SqlCommand("[dbo].[sp_DepotWisefleetStrengthBusesOnRoadOSB1_11]", con);
+                cmd1.Parameters.AddWithValue("@month", Month);
+                cmd1.Parameters.AddWithValue("@year", Year);
+                cmd1.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter sda1 = new SqlDataAdapter(cmd1);
+                sda1.Fill(autoSpTable);
+
+
                 if (dt.Rows.Count > 0)
                 {
                     dataGridView1.DataSource = dt;
                     Save.BackColor = Color.Green;
+                }
+
+                else if (autoSpTable.Rows.Count > 0)
+                {
+                    dataGridView1.DataSource = BindOperationalDepotWiseFleetStrengthNBusesOnRoadAuto_Sp(autoSpTable);
                 }
                 else
                 {
@@ -143,6 +159,76 @@ namespace OperationalStatisticsBook
             return table;
         }
 
+        DataTable BindOperationalDepotWiseFleetStrengthNBusesOnRoadAuto_Sp(DataTable sp)
+        {
+            DataTable table = new DataTable();
+
+            table.Columns.Add("S.No", typeof(string));
+            table.Columns.Add("Name of depot with parking facilities", typeof(string));
+            table.Columns.Add("Date of Commissioning", typeof(string));
+            table.Columns.Add("Capacity in terms of number of buses", typeof(string));
+            table.Columns.Add("Held opening of the month", typeof(string));
+            table.Columns.Add("Buses Added during the month", typeof(string));
+            table.Columns.Add("Scrapped during the month", typeof(string));
+            table.Columns.Add("Transferred during the month", typeof(string));
+            table.Columns.Add("Held closing of the month", typeof(string));
+            table.Columns.Add("Avg. Fleet during the month", typeof(string));
+            table.Columns.Add("Buses on Road", typeof(string));
+
+            // Rows
+            // table.Rows.Add("", "", "", "Capacity (in terms of number of buses can be parked under ideal condition)", "Held at the Opening of Month", "Buses added during the month","Scrapped During the month","Trans-ferred during month","Held Closing of the month","Avg.fleet during the month","Buses on Road");
+            //table.Rows.Add("1", "2", "3", "4", "5", "6","7","8","9","10","11");
+
+            for (int i = 0; i < sp.Rows.Count; i++)
+            {
+                table.Rows.Add(i + 1, sp.Rows[i]["CircleName"].ToString(), sp.Rows[i]["DateOFComm"].ToString(), "0", sp.Rows[i]["OpeningOfMonth"].ToString(), sp.Rows[i]["BusAddDuringMonth"].ToString(), sp.Rows[i]["ScrapDuringMonth"].ToString(), "0", sp.Rows[i]["HeldClosingofMonth"].ToString(), sp.Rows[i]["AvgFleetDuringMonth"].ToString(), sp.Rows[i]["BusesOnRoad"].ToString());
+            }
+            // table.Rows.Add("1", sp.Rows[0]["CircleName"].ToString(), sp.Rows[0]["DateOFComm"].ToString(), "0", sp.Rows[0]["OpeningOfMonth"].ToString(), sp.Rows[0]["BusAddDuringMonth"].ToString(), sp.Rows[0]["ScrapDuringMonth"].ToString(), "0", sp.Rows[0]["HeldClosingofMonth"].ToString(), sp.Rows[0]["AvgFleetDuringMonth"].ToString(), sp.Rows[0]["BusesOnRoad"].ToString());
+
+            //table.Rows.Add("1", "B.B.M", "Dec.1954", "0", "0", "0", "0", "0", "0", "0", "0");
+            //table.Rows.Add("2", "Rohini-I", "Sept.1988", "0", "0", "0", "0", "0", "0", "0", "0");
+            //table.Rows.Add("3", "Rohini-II ", "Oct.1989", "0", "0", "0", "0", "0", "0", "0", "0");
+            //table.Rows.Add("4", "Rohini-III", "Feb.1991", "0", "0", "0", "0", "0", "0", "0", "0");
+            //table.Rows.Add("5", "Rohini-IV", "July-2010 ", "0", "0", "0", "0", "0", "0", "0", "0");
+            //table.Rows.Add("6", "Wazir Pur", "Oct.1974 ", "0", "0", "0", "0", "0", "0", "0", "0");
+            //table.Rows.Add("7", "Subhash Place", "Oct.1984 ", "0", "0", "0", "0", "0", "0", "0", "0");
+            //table.Rows.Add("8", "G.T.K.Rd.", "Sept.1976 ", "0", "0", "0", "0", "0", "0", "0", "0");
+            //table.Rows.Add("9", "Nangloi", "June.1983 ", "0", "0", "0", "0", "0", "0", "0", "0");
+            //table.Rows.Add("10", "Kanjhawla", "Apr.2010 ", "0", "0", "0", "0", "0", "0", "0", "0");
+            //table.Rows.Add("11", "Narela", "Feb.2010 ", "0", "0", "0", "0", "0", "0", "0", "0");
+            //table.Rows.Add("12", "Rohini sec.-37 ", "May 2022", "0", "0", "0", "0", "0", "0", "0", "0");
+            //table.Rows.Add("13", "Kalka Ji", "Nov.1966", "0", "0", "0", "0", "0", "0", "0", "0");
+            //table.Rows.Add("14", "SNPD", "May.1975", "0", "0", "0", "0", "0", "0", "0", "0");
+            //table.Rows.Add("15", "Ambedkar Nagar", "Jan.1975", "0", "0", "0", "0", "0", "0", "0", "0");
+            //table.Rows.Add("16", "Vasant Vihar", "April.1976", "0", "0", "0", "0", "0", "0", "0", "0");
+            //table.Rows.Add("17", "Tehkhand", "Jan.2010", "0", "0", "0", "0", "0", "0", "0", "0");
+            //table.Rows.Add("18", "Sukhdev Vihar", "Feb.1976", "0", "0", "0", "0", "0", "0", "0", "0");
+            //table.Rows.Add("19", "Sarojni Nagar", "April.1954", "0", "0", "0", "0", "0", "0", "0", "0");
+            //table.Rows.Add("20", "Nand Nagri", "Jan.1983", "0", "0", "0", "0", "0", "0", "0", "0");
+            //table.Rows.Add("21", "NOIDA", "Feb.1984", "0", "0", "0", "0", "0", "0", "0", "0");
+            //table.Rows.Add("22", "E.V.Nagar", "July.2003", "0", "0", "0", "0", "0", "0", "0", "0");
+            //table.Rows.Add("23", "HasanPur", "Nov.1979", "0", "0", "0", "0", "0", "0", "0", "0");
+            //table.Rows.Add("24", "Inderprastha", "Aug.1958", "0", "0", "0", "0", "0", "0", "0", "0");
+            //table.Rows.Add("25", "Gazi Pur", "Oct.1989", "0", "0", "0", "0", "0", "0", "0", "0");
+            //table.Rows.Add("26", "Raj Ghat-I", "Oct.2010", "0", "0", "0", "0", "0", "0", "0", "0");
+            //table.Rows.Add("27", "Raj Ghat-II", "July.2015", "0", "0", "0", "0", "0", "0", "0", "0");
+            //table.Rows.Add("28", "Hari Nagar-I ", "July.1961", "0", "0", "0", "0", "0", "0", "0", "0");
+            //table.Rows.Add("29", "Hari Nagar-II", "July.1975", "0", "0", "0", "0", "0", "0", "0", "0");
+            //table.Rows.Add("30", "Kesho Pur", "March 1985", "0", "0", "0", "0", "0", "0", "0", "0");
+            //table.Rows.Add("31", "Naraina", "Jan.1982", "0", "0", "0", "0", "0", "0", "0", "0");
+            //table.Rows.Add("32", "Shadi Pur", "May 1957", "0", "0", "0", "0", "0", "0", "0", "0");
+            //table.Rows.Add("33", "BAGDOLA", "Oct.2009", "0", "0", "0", "0", "0", "0", "0", "0");
+            //table.Rows.Add("34", "DW.SEC-2", "Feb.2010", "0", "0", "0", "0", "0", "0", "0", "0");
+            //table.Rows.Add("35", "Maya Puri", "Sept.1975", "0", "0", "0", "0", "0", "0", "0", "0");
+            //table.Rows.Add("36", "Dichaon Kalan", "Oct.1974", "0", "0", "0", "0", "0", "0", "0", "0");
+            //table.Rows.Add("37", "Peera Garhi", "Jun.1989", "0", "0", "0", "0", "0", "0", "0", "0");
+            //table.Rows.Add("38", "Mundhela kalan", "May 2022", "0", "0", "0", "0", "0", "0", "0", "0");
+            //table.Rows.Add(" ", "Grand Total", "", "", "", "", "", "", "", "", "");
+
+            return table;
+        }
+
+
         private void ResetOnClick(object sender, EventArgs e)
         {
             DeleteExisitingTableRecord("tbl_OperationalDepotWiseFleetStrengthNBusesOnRoad", OsbId);
@@ -197,6 +283,7 @@ namespace OperationalStatisticsBook
             //   NonEditableRowAndcolumn();
             MessageBox.Show("Done");
         }
+
         private void OperationalDepotWiseFleetStrengthNBusesOnRoad_Load(object sender, EventArgs e)
         {
             BindIndexPage(OsbId);
@@ -210,19 +297,20 @@ namespace OperationalStatisticsBook
             #region Calculating_VerticalSum
 
             // North Total
-            dataGridView1.Rows[38].Cells[3].Value = Common.GetSum(row, 0, 37, 3);
-            dataGridView1.Rows[38].Cells[4].Value = Common.GetSum(row, 0, 37, 4);
-            dataGridView1.Rows[38].Cells[5].Value = Common.GetSum(row, 0, 37, 5);
-            dataGridView1.Rows[38].Cells[6].Value = Common.GetSum(row, 0, 37, 6);
-            dataGridView1.Rows[38].Cells[7].Value = Common.GetSum(row, 0, 37, 7);
-            dataGridView1.Rows[38].Cells[8].Value = Common.GetSum(row, 0, 37, 8);
-            dataGridView1.Rows[38].Cells[9].Value = Common.GetSum(row, 0, 37, 9);
-            dataGridView1.Rows[38].Cells[10].Value = Common.GetSum(row, 0, 37, 10);
+            dataGridView1.Rows[40].Cells[3].Value = Common.GetSum(row, 0, 39, 3);
+            dataGridView1.Rows[40].Cells[4].Value = Common.GetSum(row, 0, 39, 4);
+            dataGridView1.Rows[40].Cells[5].Value = Common.GetSum(row, 0, 39, 5);
+            dataGridView1.Rows[40].Cells[6].Value = Common.GetSum(row, 0, 39, 6);
+            dataGridView1.Rows[40].Cells[7].Value = Common.GetSum(row, 0, 39, 7);
+            dataGridView1.Rows[40].Cells[8].Value = Common.GetSum(row, 0, 39, 8);
+            dataGridView1.Rows[40].Cells[9].Value = Common.GetSum(row, 0, 39, 9);
+            dataGridView1.Rows[40].Cells[10].Value = Common.GetSum(row, 0, 39, 10);
 
             #endregion
 
 
         }
+
         private void PrintReportOnClick(object sender, EventArgs e)
         {
             rptOperationalDepotWiseFleetStrengthNBusesOnRoad objFrm = new rptOperationalDepotWiseFleetStrengthNBusesOnRoad(OsbId, Year, Month, finYear, MonthName);
@@ -233,9 +321,10 @@ namespace OperationalStatisticsBook
         {
             CalcalculateTotal();
         }
+
         public void SetNonEditableRowAndcolumn()
         {
-            Common.SetRowNonEditable(dataGridView1, 38);
+            Common.SetRowNonEditable(dataGridView1, 40);
         }
     }
 }
