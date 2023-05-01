@@ -32,9 +32,10 @@ namespace OperationalStatisticsBook
             this.finYear = finYear;
             this.MonthName = MonthName;
         }
+
         DataTable BindDepotWiseOperationalDataInRespectOfNonAcAndAcLowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021TripsScheduledAndOperated()
         {
-          
+
 
             DataTable table = new DataTable();
 
@@ -131,6 +132,81 @@ namespace OperationalStatisticsBook
 
         }
 
+        DataTable BindDepotWiseOperationalDataInRespectOfNonAcAndAcLowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021TripsScheduledAndOperated_Auto_sp(DataTable sp)
+        {
+
+
+            DataTable table = new DataTable();
+
+            table.Columns.Add("S.No", typeof(string));
+            table.Columns.Add("Name of Depot", typeof(string));
+            table.Columns.Add("Trips Scheduled daily", typeof(string));
+            table.Columns.Add("Trips Scheduled daily ", typeof(string));
+            table.Columns.Add("Trips Scheduled daily  ", typeof(string));
+            table.Columns.Add("Trips Scheduled  daily", typeof(string));
+            table.Columns.Add("Trips  Scheduled daily", typeof(string));
+
+            table.Columns.Add("Trips Operated daily", typeof(string));
+            table.Columns.Add("Trips Operated daily ", typeof(string));
+            table.Columns.Add("Trips Operated daily  ", typeof(string));
+            table.Columns.Add("Trips  Operated daily ", typeof(string));
+            table.Columns.Add("Trips Operated  daily ", typeof(string));
+
+            table.Columns.Add("Operational ratio (%)", typeof(string));
+            table.Columns.Add("Operational ratio (%) ", typeof(string));
+            table.Columns.Add("Operational ratio (%)  ", typeof(string));
+            table.Columns.Add("Operational  ratio (%) ", typeof(string));
+            table.Columns.Add("Operational   ratio (%)", typeof(string));
+
+            table.Columns.Add("Total no.of Break downs", typeof(string));
+            table.Columns.Add("Total no.of Break downs ", typeof(string));
+            table.Columns.Add("Total no.of Break downs  ", typeof(string));
+            table.Columns.Add("Total no.of Break  downs ", typeof(string));
+            table.Columns.Add("Total no.of  Break downs ", typeof(string));
+
+            table.Columns.Add("Breakdowns Rate per 10,000 Kms ", typeof(string));
+            table.Columns.Add("Breakdowns Rate per 10,000 Kms", typeof(string));
+            table.Columns.Add("Breakdowns Rate per 10,000 Kms  ", typeof(string));
+            table.Columns.Add("Breakdowns Rate per 10,000  Kms  ", typeof(string));
+            table.Columns.Add("Breakdowns Rate per  10,000 Kms  ", typeof(string));
+
+
+            table.Rows.Add("S.No ", "Name of the Depot", "City", "City", "NCR", "NCR", "Total", "City", "City", "NCR", "NCR", "Total", "City", "City", "NCR", "NCR", "Total", "City", "City", "NCR", "NCR", "Total", "City", "City", "NCR", "NCR", "Total");
+            table.Rows.Add(" ", " ", "NAC", "AC", "NAC", "AC", "Total", "NAC", "AC", "NAC", "AC", "Total", "NAC", "AC", "NAC", "AC", "Total", "NAC", "AC", "NAC", "AC", "Total", "NAC", "AC", "NAC", "AC", "Total");
+            table.Rows.Add("1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27");
+
+            for (int i = 0; i < sp.Rows.Count; i++)
+            {
+
+                decimal operCityNac = Convert.ToDecimal(sp.Rows[i]["SchTripCityNonAc"]) != 0 ? (Convert.ToDecimal(sp.Rows[i]["OperatedTripCityNonAc"]) * 100) / Convert.ToDecimal(sp.Rows[i]["SchTripCityNonAc"]) : 1;
+                decimal operCityAC = Convert.ToDecimal(sp.Rows[i]["SchTripCityAc"]) != 0 ? (Convert.ToDecimal(sp.Rows[i]["OperatedTripCityAc"]) * 100) / Convert.ToDecimal(sp.Rows[i]["SchTripCityAc"]) : 1;
+                decimal operNCRNac = Convert.ToDecimal(sp.Rows[i]["SchTripNcrNonAc"]) != 0 ? (Convert.ToDecimal(sp.Rows[i]["OperatedTripNcrNonAc"]) * 100) / Convert.ToDecimal(sp.Rows[i]["SchTripNcrNonAc"]) : 1;
+                decimal operNCRAc = Convert.ToDecimal(sp.Rows[i]["SchTripNcrAc"]) != 0 ? (Convert.ToDecimal(sp.Rows[i]["OperatedTripNcrAc"]) * 100) / Convert.ToDecimal(sp.Rows[i]["SchTripNcrAc"]) : 1;
+
+                table.Rows.Add(i + 1, sp.Rows[i]["CircleName"].ToString(), sp.Rows[i]["SchTripCityNonAc"].ToString(), sp.Rows[i]["SchTripCityAc"].ToString(), sp.Rows[i]["SchTripNcrNonAc"].ToString(), sp.Rows[i]["SchTripNcrAc"].ToString(), "0", sp.Rows[i]["OperatedTripCityNonAc"].ToString(), sp.Rows[i]["OperatedTripCityAc"].ToString(), sp.Rows[i]["OperatedTripNcrNonAc"].ToString(), sp.Rows[i]["OperatedTripNcrAc"].ToString(), "0", operCityNac.ToString(), operCityAC.ToString(), operNCRNac.ToString(), operNCRAc.ToString(), "0", sp.Rows[i]["CityNacTotalBreakdown"].ToString(), sp.Rows[i]["CityAcTotalBreakdown"].ToString(), sp.Rows[i]["NCRNacTotalBreakdown"].ToString(), sp.Rows[i]["NCRAcTotalBreakdown"].ToString(), "0", sp.Rows[i]["BreakDownRatePer10KCityNac"].ToString(), sp.Rows[i]["BreakDownRatePer10KCityAc"].ToString(), sp.Rows[i]["BreakDownRatePer10KNcrNac"].ToString(), sp.Rows[i]["BreakDownRatePer10KNcrAc"].ToString(), "0");
+
+            }
+
+
+            table.Rows.Add("Total", "Total", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
+
+            table.Rows.Add("Electric Buses", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "");
+
+            table.Rows.Add("1", "Rohini sec. 37", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
+            table.Rows.Add("2", "Raj Ghat-II", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
+            table.Rows.Add("3", "Mundhela kalan", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
+            table.Rows.Add("", "Total Electric", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
+            table.Rows.Add("", "Total DTC", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
+
+            table.Rows.Add("", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "");
+            table.Rows.Add("International", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "");
+            table.Rows.Add("1", "Kathmandu", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
+            table.Rows.Add("Grand Total", "Grand Total", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
+
+            return table;
+
+        }
+
         void BindIndexPage(int OsbId)
         {
 
@@ -142,11 +218,29 @@ namespace OperationalStatisticsBook
                 cmd.CommandType = CommandType.Text;
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
                 sda.Fill(dt);
+
+                DataTable autoSpTable = new DataTable();
+                SqlCommand cmd1 = new SqlCommand("[dbo].[DepotWiseOperDataTripScheduleOSB4_2]", con);
+                cmd1.Parameters.AddWithValue("@month", Month);
+                cmd1.Parameters.AddWithValue("@year", Year);
+                cmd1.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter sda1 = new SqlDataAdapter(cmd1);
+                sda1.Fill(autoSpTable);
+
+
+
+
                 if (dt.Rows.Count > 0)
                 {
                     dataGridView1.DataSource = dt;
                     Save.BackColor = Color.Green;
                 }
+
+                else if (autoSpTable.Rows.Count > 0)
+                {
+                    dataGridView1.DataSource = BindDepotWiseOperationalDataInRespectOfNonAcAndAcLowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021TripsScheduledAndOperated_Auto_sp(autoSpTable);
+                }
+
                 else
                 {
                     dataGridView1.DataSource = BindDepotWiseOperationalDataInRespectOfNonAcAndAcLowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021TripsScheduledAndOperated();
@@ -154,11 +248,11 @@ namespace OperationalStatisticsBook
 
                 setRowColNonEditable();
                 CalcalculateTotal();
-                
+
             }
             catch (Exception ex)
             {
-
+                throw ex;
             }
 
         }
@@ -260,13 +354,13 @@ namespace OperationalStatisticsBook
 
             #region Calculating_VerticalSum
 
-            
-            for (int i = 17; i<=21; i++)
+
+            for (int i = 17; i <= 21; i++)
             {
                 dataGridView1.Rows[37].Cells[i].Value = Common.GetSum(row, 3, 36, i);
                 dataGridView1.Rows[48].Cells[i].Value = Common.ConvertToDecimal(dataGridView1.Rows[47].Cells[i].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[44].Cells[i].Value.ToString());
             }
-            
+
 
             #endregion
 
@@ -292,10 +386,10 @@ namespace OperationalStatisticsBook
 
             for (int i = 2; i <= 11; i++)
             {
-                dataGridView1.Rows[37].Cells[i].Value = Common.GetSum(row, 3, 36, i);
-                dataGridView1.Rows[43].Cells[i].Value = Common.GetSum(row, 40, 42, i);
-                dataGridView1.Rows[44].Cells[i].Value = Common.ConvertToDecimal(dataGridView1.Rows[37].Cells[i].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[43].Cells[i].Value.ToString());
-                dataGridView1.Rows[48].Cells[i].Value = Common.ConvertToDecimal(dataGridView1.Rows[47].Cells[i].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[44].Cells[i].Value.ToString());
+                dataGridView1.Rows[40].Cells[i].Value = Common.GetSum(row, 3, 39, i);
+                dataGridView1.Rows[45].Cells[i].Value = Common.GetSum(row, 42, 44, i);
+                dataGridView1.Rows[46].Cells[i].Value = Common.ConvertToDecimal(dataGridView1.Rows[40].Cells[i].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[45].Cells[i].Value.ToString());
+                dataGridView1.Rows[50].Cells[i].Value = Common.ConvertToDecimal(dataGridView1.Rows[49].Cells[i].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[46].Cells[i].Value.ToString());
 
             }
             #endregion
@@ -314,17 +408,17 @@ namespace OperationalStatisticsBook
 
         private void setRowColNonEditable()
         {
-            Common.SetRowNonEditable(dataGridView1, 37);
-            Common.SetRowNonEditable(dataGridView1, 38);
-            Common.SetRowNonEditable(dataGridView1, 39);
-            Common.SetRowNonEditable(dataGridView1, 43);
-            Common.SetRowNonEditable(dataGridView1, 44);
-            Common.SetRowNonEditable(dataGridView1, 45);
-            Common.SetRowNonEditable(dataGridView1, 46);
+            //Common.SetRowNonEditable(dataGridView1, 37);
+            //Common.SetRowNonEditable(dataGridView1, 38);
+            //Common.SetRowNonEditable(dataGridView1, 39);
+            //Common.SetRowNonEditable(dataGridView1, 43);
+            //Common.SetRowNonEditable(dataGridView1, 44);
+            //Common.SetRowNonEditable(dataGridView1, 45);
+            //Common.SetRowNonEditable(dataGridView1, 46);
 
-            Common.SetRowNonEditable(dataGridView1, 48);
+            //Common.SetRowNonEditable(dataGridView1, 48);
 
-            Common.SetColumnNonEditable(dataGridView1, 6 , 47);
+            Common.SetColumnNonEditable(dataGridView1, 6, 47);
             Common.SetColumnNonEditable(dataGridView1, 11, 47);
             Common.SetColumnNonEditable(dataGridView1, 12, 47);
             Common.SetColumnNonEditable(dataGridView1, 13, 47);
