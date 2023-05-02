@@ -168,7 +168,7 @@ namespace OperationalStatisticsBook
                                   );
                     }
 
-                    table.Rows.Add(" ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ");
+                    table.Rows.Add("0", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", "0");
                     table.Rows.Add(" ", "Total North Region", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
                     rgorder = 2;
                 }
@@ -469,8 +469,8 @@ namespace OperationalStatisticsBook
                     //Total region wise
                     dataGridView1.Rows[13].Cells[i].Value = Common.GetSum(row, 0, 12, i);
                     dataGridView1.Rows[21].Cells[i].Value = Common.GetSum(row, 14, 20, i);
-                    dataGridView1.Rows[30].Cells[i].Value = Common.GetSum(row, 22, 29, i);
-                    dataGridView1.Rows[42].Cells[i].Value = Common.GetSum(row, 31, 41, i);
+                    dataGridView1.Rows[29].Cells[i].Value = Common.GetSum(row, 22, 29, i);
+                    dataGridView1.Rows[41].Cells[i].Value = Common.GetSum(row, 31, 41, i);
                 }
             }
 
@@ -480,7 +480,7 @@ namespace OperationalStatisticsBook
                 // Grand Total will not run for kilometer efficiency
                 if (i != 4 && i != 6 && i != 9 && i != 10 && i != 12 && i != 14 && i != 16)
                 {
-                    dataGridView1.Rows[43].Cells[i].Value = Common.ConvertToDecimal(dataGridView1.Rows[13].Cells[i].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[21].Cells[i].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[30].Cells[i].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[42].Cells[i].Value.ToString());
+                    dataGridView1.Rows[42].Cells[i].Value = Common.ConvertToDecimal(dataGridView1.Rows[13].Cells[i].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[21].Cells[i].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[30].Cells[i].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[42].Cells[i].Value.ToString());
                 }
 
             }
