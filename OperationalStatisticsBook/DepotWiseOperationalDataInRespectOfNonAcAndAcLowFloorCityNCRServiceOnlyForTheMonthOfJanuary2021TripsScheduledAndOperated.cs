@@ -175,6 +175,10 @@ namespace OperationalStatisticsBook
             table.Rows.Add(" ", " ", "NAC", "AC", "NAC", "AC", "Total", "NAC", "AC", "NAC", "AC", "Total", "NAC", "AC", "NAC", "AC", "Total", "NAC", "AC", "NAC", "AC", "Total", "NAC", "AC", "NAC", "AC", "Total");
             table.Rows.Add("1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27");
 
+            DateTime currentDate = new DateTime(Year, Month, 01);
+            int lastDayofTheMonth = DateTime.DaysInMonth(currentDate.Year, currentDate.Month);
+
+
             for (int i = 0; i < sp.Rows.Count; i++)
             {
 
@@ -183,7 +187,7 @@ namespace OperationalStatisticsBook
                 decimal operNCRNac = Convert.ToDecimal(sp.Rows[i]["SchTripNcrNonAc"]) != 0 ? (Convert.ToDecimal(sp.Rows[i]["OperatedTripNcrNonAc"]) * 100) / Convert.ToDecimal(sp.Rows[i]["SchTripNcrNonAc"]) : 1;
                 decimal operNCRAc = Convert.ToDecimal(sp.Rows[i]["SchTripNcrAc"]) != 0 ? (Convert.ToDecimal(sp.Rows[i]["OperatedTripNcrAc"]) * 100) / Convert.ToDecimal(sp.Rows[i]["SchTripNcrAc"]) : 1;
 
-                table.Rows.Add(i + 1, sp.Rows[i]["CircleName"].ToString(), sp.Rows[i]["SchTripCityNonAc"].ToString(), sp.Rows[i]["SchTripCityAc"].ToString(), sp.Rows[i]["SchTripNcrNonAc"].ToString(), sp.Rows[i]["SchTripNcrAc"].ToString(), "0", sp.Rows[i]["OperatedTripCityNonAc"].ToString(), sp.Rows[i]["OperatedTripCityAc"].ToString(), sp.Rows[i]["OperatedTripNcrNonAc"].ToString(), sp.Rows[i]["OperatedTripNcrAc"].ToString(), "0", operCityNac.ToString(), operCityAC.ToString(), operNCRNac.ToString(), operNCRAc.ToString(), "0", sp.Rows[i]["CityNacTotalBreakdown"].ToString(), sp.Rows[i]["CityAcTotalBreakdown"].ToString(), sp.Rows[i]["NCRNacTotalBreakdown"].ToString(), sp.Rows[i]["NCRAcTotalBreakdown"].ToString(), "0", sp.Rows[i]["BreakDownRatePer10KCityNac"].ToString(), sp.Rows[i]["BreakDownRatePer10KCityAc"].ToString(), sp.Rows[i]["BreakDownRatePer10KNcrNac"].ToString(), sp.Rows[i]["BreakDownRatePer10KNcrAc"].ToString(), "0");
+                table.Rows.Add(i + 1, sp.Rows[i]["CircleName"].ToString(), Math.Round((Convert.ToDecimal(sp.Rows[i]["SchTripCityNonAc"]) / lastDayofTheMonth), 0).ToString(), Math.Round((Convert.ToDecimal(sp.Rows[i]["SchTripCityAc"]) / lastDayofTheMonth), 0).ToString(), Math.Round((Convert.ToDecimal(sp.Rows[i]["SchTripNcrNonAc"]) / lastDayofTheMonth), 0).ToString(), Math.Round((Convert.ToDecimal(sp.Rows[i]["SchTripNcrAc"]) / lastDayofTheMonth), 0).ToString(), "0", Math.Round((Convert.ToDecimal(sp.Rows[i]["OperatedTripCityNonAc"]) / lastDayofTheMonth), 0).ToString(), Math.Round((Convert.ToDecimal(sp.Rows[i]["OperatedTripCityAc"]) / lastDayofTheMonth), 0).ToString(), Math.Round((Convert.ToDecimal(sp.Rows[i]["OperatedTripNcrNonAc"]) / lastDayofTheMonth), 0).ToString(), Math.Round((Convert.ToDecimal(sp.Rows[i]["OperatedTripNcrAc"]) / lastDayofTheMonth), 0).ToString(), "0", operCityNac.ToString(), operCityAC.ToString(), operNCRNac.ToString(), operNCRAc.ToString(), "0", sp.Rows[i]["CityNacTotalBreakdown"].ToString(), sp.Rows[i]["CityAcTotalBreakdown"].ToString(), sp.Rows[i]["NCRNacTotalBreakdown"].ToString(), sp.Rows[i]["NCRAcTotalBreakdown"].ToString(), "0", sp.Rows[i]["BreakDownRatePer10KCityNac"].ToString(), sp.Rows[i]["BreakDownRatePer10KCityAc"].ToString(), sp.Rows[i]["BreakDownRatePer10KNcrNac"].ToString(), sp.Rows[i]["BreakDownRatePer10KNcrAc"].ToString(), "0");
 
             }
 
