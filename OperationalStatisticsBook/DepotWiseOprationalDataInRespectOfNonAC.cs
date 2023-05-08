@@ -147,8 +147,9 @@ namespace OperationalStatisticsBook
 
                     for (int i = 0; i < 12; i++)
                     {
+                        decimal earningPerDayConductor = (Convert.ToDecimal(sp.Rows[i]["DailyTrafficIncome"]) / (Convert.ToInt32(sp.Rows[i]["NoOfConductors"]) == 0 ? 1 : Convert.ToInt32(sp.Rows[i]["NoOfConductors"])));
 
-                        decimal earningPerDayConductor = (Convert.ToDecimal(sp.Rows[i]["DailyTrafficIncome"]) / Convert.ToInt32(sp.Rows[i]["NoOfConductors"]));
+                        // decimal earningPerDayConductor = (Convert.ToDecimal(sp.Rows[i]["DailyTrafficIncome"]) / Convert.ToInt32(sp.Rows[i]["NoOfConductors"]));
                         table.Rows.Add(i + 1, sp.Rows[i]["CircleName"].ToString(),
                             Math.Round(Convert.ToDecimal(sp.Rows[i]["SchKm"]), 0).ToString(),
                             Math.Round(Convert.ToDecimal(sp.Rows[i]["ActKm"]), 0).ToString(),
@@ -180,7 +181,11 @@ namespace OperationalStatisticsBook
 
                     for (int i = 12; i < 19; i++)
                     {
-                        decimal earningPerDayConductor = (Convert.ToDecimal(sp.Rows[i]["DailyTrafficIncome"]) / Convert.ToInt32(sp.Rows[i]["NoOfConductors"]));
+                        decimal earningPerDayConductor = (Convert.ToDecimal(sp.Rows[i]["DailyTrafficIncome"]) / (Convert.ToInt32(sp.Rows[i]["NoOfConductors"]) == 0 ? 1 : Convert.ToInt32(sp.Rows[i]["NoOfConductors"])));
+
+
+                        //decimal earningPerDayConductor = (Convert.ToDecimal(sp.Rows[i]["DailyTrafficIncome"]) / Convert.ToInt32(sp.Rows[i]["NoOfConductors"]));
+
                         table.Rows.Add(i + 1, sp.Rows[i]["CircleName"].ToString(),
                             Math.Round(Convert.ToDecimal(sp.Rows[i]["SchKm"]), 0).ToString(),
                             Math.Round(Convert.ToDecimal(sp.Rows[i]["ActKm"]), 0).ToString(),
@@ -211,7 +216,10 @@ namespace OperationalStatisticsBook
 
                     for (int i = 19; i < 26; i++)
                     {
-                        decimal earningPerDayConductor = (Convert.ToDecimal(sp.Rows[i]["DailyTrafficIncome"]) / Convert.ToInt32(sp.Rows[i]["NoOfConductors"]));
+
+                        decimal earningPerDayConductor = (Convert.ToDecimal(sp.Rows[i]["DailyTrafficIncome"]) / (Convert.ToInt32(sp.Rows[i]["NoOfConductors"]) == 0 ? 1 : Convert.ToInt32(sp.Rows[i]["NoOfConductors"])));
+
+                        //decimal earningPerDayConductor = (Convert.ToDecimal(sp.Rows[i]["DailyTrafficIncome"]) / Convert.ToInt32(sp.Rows[i]["NoOfConductors"]));
                         table.Rows.Add(i + 1, sp.Rows[i]["CircleName"].ToString(),
                             Math.Round(Convert.ToDecimal(sp.Rows[i]["SchKm"]), 0).ToString(),
                             Math.Round(Convert.ToDecimal(sp.Rows[i]["ActKm"]), 0).ToString(),
@@ -242,7 +250,9 @@ namespace OperationalStatisticsBook
 
                     for (int i = 26; i < 37; i++)
                     {
-                        decimal earningPerDayConductor = (Convert.ToDecimal(sp.Rows[i]["DailyTrafficIncome"]) / Convert.ToInt32(sp.Rows[i]["NoOfConductors"]));
+                        decimal earningPerDayConductor = (Convert.ToDecimal(sp.Rows[i]["DailyTrafficIncome"]) / (Convert.ToInt32(sp.Rows[i]["NoOfConductors"]) == 0 ? 1 : Convert.ToInt32(sp.Rows[i]["NoOfConductors"])));
+
+                        //decimal earningPerDayConductor = (Convert.ToDecimal(sp.Rows[i]["DailyTrafficIncome"]) / Convert.ToInt32(sp.Rows[i]["NoOfConductors"]));
                         table.Rows.Add(i + 1, sp.Rows[i]["CircleName"].ToString(),
                             Math.Round(Convert.ToDecimal(sp.Rows[i]["SchKm"]), 0).ToString(),
                             Math.Round(Convert.ToDecimal(sp.Rows[i]["ActKm"]), 0).ToString(),
@@ -306,7 +316,6 @@ namespace OperationalStatisticsBook
                 {
                     dataGridView1.DataSource = BindDepotWiseOprationalDataInRespectOfNonAC_Sp(autoSpTable);
                 }
-
 
                 else
                 {

@@ -23,7 +23,6 @@ namespace OperationalStatisticsBook
         string finYear = "";
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["dtOperation"].ConnectionString);
 
-
         public DepotWiseOprationalDataInRespectOfNonAcNAcLowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021AnalysisOfKilometers(int OsbId, int Year, int Month, string finYear, string MonthName)
         {
             InitializeComponent();
@@ -33,7 +32,6 @@ namespace OperationalStatisticsBook
             this.finYear = finYear;
             this.MonthName = MonthName;
         }
-
 
         int DeleteExisitingTableRecord(string TableName, int OsbId)
         {
@@ -68,6 +66,7 @@ namespace OperationalStatisticsBook
                 cmd1.Parameters.AddWithValue("@year", Year);
                 cmd1.CommandType = CommandType.StoredProcedure;
                 SqlDataAdapter sda1 = new SqlDataAdapter(cmd1);
+                cmd1.CommandTimeout = 350;
                 sda1.Fill(autoSpTable);
 
                 if (dt.Rows.Count > 0)
@@ -83,14 +82,17 @@ namespace OperationalStatisticsBook
 
 
                 else
+                {
                     dataGridView1.DataSource = BindDepotWiseOprationalDataInRespectOfNonAcNAcLowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021AnalysisOfKilometers();
+
+                }
 
                 setRowColNonEditable();
                 CalcalculateTotal();
             }
             catch (Exception ex)
             {
-
+                throw ex;
             }
 
         }
@@ -223,14 +225,12 @@ namespace OperationalStatisticsBook
 
             for (int i = 0; i < sp.Rows.Count; i++)
             {
-
                 decimal KmEfficiencyCityNac = Convert.ToDecimal(sp.Rows[i]["SchKmCityNonAc"]) != 0 ? (Convert.ToDecimal(sp.Rows[i]["OperatedKmCityNonAc"]) * 100) / Convert.ToDecimal(sp.Rows[i]["SchKmCityNonAc"]) : 1;
                 decimal KmEfficiencyCityAC = Convert.ToDecimal(sp.Rows[i]["SchKmCityAc"]) != 0 ? (Convert.ToDecimal(sp.Rows[i]["OperatedKmCityAc"]) * 100) / Convert.ToDecimal(sp.Rows[i]["SchKmCityAc"]) : 1;
                 decimal KmEfficiencyNCRNac = Convert.ToDecimal(sp.Rows[i]["SchKmNcrNonAc"]) != 0 ? (Convert.ToDecimal(sp.Rows[i]["OperatedKmNcrNonAc"]) * 100) / Convert.ToDecimal(sp.Rows[i]["SchKmNcrNonAc"]) : 1;
                 decimal KmEfficiencyNCRAc = Convert.ToDecimal(sp.Rows[i]["SchKmNcrAc"]) != 0 ? (Convert.ToDecimal(sp.Rows[i]["OperatedKmNcrAc"]) * 100) / Convert.ToDecimal(sp.Rows[i]["SchKmNcrAc"]) : 1;
 
                 table.Rows.Add(i + 1, sp.Rows[i]["CircleName"].ToString(), sp.Rows[i]["SchKmCityNonAc"].ToString(), sp.Rows[i]["SchKmCityAc"].ToString(), sp.Rows[i]["SchKmNcrNonAc"].ToString(), sp.Rows[i]["SchKmNcrAc"].ToString(), "0", sp.Rows[i]["OperatedKmCityNonAc"].ToString(), sp.Rows[i]["OperatedKmCityAc"].ToString(), sp.Rows[i]["OperatedKmNcrNonAc"].ToString(), sp.Rows[i]["OperatedKmNcrAc"].ToString(), "0", KmEfficiencyCityNac.ToString(), KmEfficiencyCityAC.ToString(), KmEfficiencyNCRNac.ToString(), KmEfficiencyNCRAc.ToString(), "0", sp.Rows[i]["DailyOpKmCityNac"].ToString(), sp.Rows[i]["DailyOpKmCityAc"].ToString(), sp.Rows[i]["DailyOpKmNCRNac"].ToString(), sp.Rows[i]["DailyOpKmNCRAc"].ToString(), "0", sp.Rows[i]["KmPerBusPerDayCityNac"].ToString(), sp.Rows[i]["KmPerBusPerDayCityAc"].ToString(), sp.Rows[i]["KmPerBusPerDayNcrNAc"].ToString(), sp.Rows[i]["KmPerBusPerDayNcrAc"].ToString(), "0");
-
             }
 
 
@@ -253,7 +253,6 @@ namespace OperationalStatisticsBook
 
             return table;
         }
-
 
         private void ResetOnClick(object sender, EventArgs e)
         {
@@ -376,6 +375,7 @@ namespace OperationalStatisticsBook
 
 
         }
+
         private void setRowColNonEditable()
         {
             //Common.SetRowNonEditable(dataGridView1, 34);
