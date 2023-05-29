@@ -230,7 +230,6 @@ namespace OperationalStatisticsBook
             table.Rows.Add("Year", previousYear1, currentYear, previousYear1, currentYear, previousYear1, currentYear, previousYear1, currentYear, previousYear1, currentYear, previousYear1, currentYear);
 
 
-
             if (currentDate.Month <= 12) table.Rows.Add(Common.monthNames[currentDate.Month - 1], 0, sp.Rows[11]["NoOfDepotsYearMinus1"].ToString(), 0, sp.Rows[11]["ManPowerYearMinus1"].ToString(), 0, sp.Rows[11]["StaffRatioCurrentYearMinus1"].ToString(), 0, sp.Rows[11]["AddedVehicleYearMinus1"].ToString(), 0, 0, 0, sp.Rows[11]["TotalFleetYearMinus1"].ToString());
             if (currentDate.Month <= 11) table.Rows.Add(Common.monthNames[currentDate.Month], 0, sp.Rows[10]["NoOfDepotsYearMinus1"].ToString(), 0, sp.Rows[10]["ManPowerYearMinus1"].ToString(), 0, sp.Rows[10]["StaffRatioCurrentYearMinus1"].ToString(), 0, sp.Rows[10]["AddedVehicleYearMinus1"].ToString(), 0, 0, 0, sp.Rows[10]["TotalFleetYearMinus1"].ToString());
             if (currentDate.Month <= 10) table.Rows.Add(Common.monthNames[currentDate.Month + 1], 0, sp.Rows[9]["NoOfDepotsYearMinus1"].ToString(), 0, sp.Rows[9]["ManPowerYearMinus1"].ToString(), 0, sp.Rows[9]["StaffRatioCurrentYearMinus1"].ToString(), 0, sp.Rows[9]["AddedVehicleYearMinus1"].ToString(), 0, 0, 0, sp.Rows[9]["TotalFleetYearMinus1"].ToString());
@@ -379,7 +378,6 @@ namespace OperationalStatisticsBook
 
             return table;
         }
-
 
         private void ResetOnClick(object sender, EventArgs e)
         {

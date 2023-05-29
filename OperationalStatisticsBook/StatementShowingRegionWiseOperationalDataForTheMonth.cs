@@ -21,7 +21,7 @@ namespace OperationalStatisticsBook
         string finYear = "0";
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["dtOperation"].ConnectionString);
 
-    
+
         public StatementShowingRegionWiseOperationalDataForTheMonth(int OsbId, int Year, int Month, string finYear, string MonthName)
         {
             InitializeComponent();
@@ -31,8 +31,6 @@ namespace OperationalStatisticsBook
             this.finYear = finYear;
             this.MonthName = MonthName;
         }
-
-
 
         int DeleteExisitingTableRecord(string TableName, int OsbId)
         {
@@ -60,10 +58,28 @@ namespace OperationalStatisticsBook
                 cmd.CommandType = CommandType.Text;
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
                 sda.Fill(dt);
+
+                DataTable autoSpTable = new DataTable();
+
+                if (dt.Rows.Count < 1)
+                {
+                    SqlCommand cmd1 = new SqlCommand("[dbo].[statementShowingRegionWiseOperationalDataOSB3_2]", con);
+                    cmd1.Parameters.AddWithValue("@month", Month);
+                    cmd1.Parameters.AddWithValue("@year", Year);
+                    cmd1.CommandType = CommandType.StoredProcedure;
+                    SqlDataAdapter sda1 = new SqlDataAdapter(cmd1);
+                    sda1.Fill(autoSpTable);
+                    cmd1.CommandTimeout = 350;
+                }
+
                 if (dt.Rows.Count > 0)
                 {
                     dataGridView1.DataSource = dt;
                     Save.BackColor = Color.Green;
+                }
+                else if (autoSpTable.Rows.Count > 0)
+                {
+                    dataGridView1.DataSource = BindStatementShowingRegionWiseOperationalDataForTheMonth_Auto_spTable(autoSpTable);
                 }
                 else
                 {
@@ -92,12 +108,12 @@ namespace OperationalStatisticsBook
             table.Columns.Add("DTC   ", typeof(string));
             table.Columns.Add("DTC    ", typeof(string));
             table.Columns.Add("DTC     ", typeof(string));
-       
+
 
             // Rows
-          
+
             table.Rows.Add("", "", "Unit", "North", "South", "East", "West", "Total DTC");
-            table.Rows.Add("1", "2", "3", "4", "5", "6", "7","8");
+            table.Rows.Add("1", "2", "3", "4", "5", "6", "7", "8");
             table.Rows.Add("1", "Total Fleet as on last day", "Number", "0", "0", "0", "0", "0");
             table.Rows.Add("2", "Avg. Fleet", "Number", "0", "0", "0", "0", "0");
             table.Rows.Add("3", "Avg.No of Buses Scheduled", "Number", "0", "0", "0", "0", "0");
@@ -148,6 +164,62 @@ namespace OperationalStatisticsBook
             return table;
         }
 
+        DataTable BindStatementShowingRegionWiseOperationalDataForTheMonth_Auto_spTable(DataTable sp)
+        {
+            DataTable table = new DataTable();
+
+            table.Columns.Add("S.No", typeof(string));
+            table.Columns.Add("Item", typeof(string));
+            table.Columns.Add("DTC", typeof(string));
+            table.Columns.Add("DTC ", typeof(string));
+            table.Columns.Add("DTC  ", typeof(string));
+            table.Columns.Add("DTC   ", typeof(string));
+            table.Columns.Add("DTC    ", typeof(string));
+            table.Columns.Add("DTC     ", typeof(string));
+
+
+            // Rows
+
+            table.Rows.Add("", "", "Unit", "North", "South", "East", "West", "Total DTC");
+            table.Rows.Add("1", "2", "3", "4", "5", "6", "7", "8");
+            for (int i = 0; i <= 15; i++)
+            {
+                table.Rows.Add(i + 1, sp.Rows[i]["Item"], sp.Rows[i]["Unit"], sp.Rows[i]["North"], sp.Rows[i]["South"], sp.Rows[i]["East"], sp.Rows[i]["West"], "0");
+            }
+            table.Rows.Add("(a)", sp.Rows[16]["Item"], sp.Rows[16]["Unit"], sp.Rows[16]["North"], sp.Rows[16]["South"], sp.Rows[16]["East"], sp.Rows[16]["West"], "0");
+            table.Rows.Add("(b)", sp.Rows[17]["Item"], sp.Rows[17]["Unit"], sp.Rows[17]["North"], sp.Rows[17]["South"], sp.Rows[17]["East"], sp.Rows[17]["West"], "0");
+            table.Rows.Add("17", sp.Rows[18]["Item"], sp.Rows[18]["Unit"], sp.Rows[18]["North"], sp.Rows[18]["South"], sp.Rows[18]["East"], sp.Rows[18]["West"], "0");
+            table.Rows.Add("18", sp.Rows[19]["Item"], sp.Rows[19]["Unit"], sp.Rows[19]["North"], sp.Rows[19]["South"], sp.Rows[19]["East"], sp.Rows[19]["West"], "0");
+            table.Rows.Add("(a)", sp.Rows[20]["Item"], sp.Rows[20]["Unit"], sp.Rows[20]["North"], sp.Rows[20]["South"], sp.Rows[20]["East"], sp.Rows[20]["West"], "0");
+            table.Rows.Add("(b)", sp.Rows[21]["Item"], sp.Rows[21]["Unit"], sp.Rows[21]["North"], sp.Rows[21]["South"], sp.Rows[21]["East"], sp.Rows[21]["West"], "0");
+            table.Rows.Add("", sp.Rows[22]["Item"], sp.Rows[22]["Unit"], sp.Rows[22]["North"], sp.Rows[22]["South"], sp.Rows[22]["East"], sp.Rows[22]["West"], "0");
+            table.Rows.Add("(c)", sp.Rows[23]["Item"], sp.Rows[23]["Unit"], sp.Rows[23]["North"], sp.Rows[23]["South"], sp.Rows[23]["East"], sp.Rows[23]["West"], "0");
+            table.Rows.Add("", sp.Rows[24]["Item"], sp.Rows[24]["Unit"], sp.Rows[24]["North"], sp.Rows[24]["South"], sp.Rows[24]["East"], sp.Rows[24]["West"], "0");
+            table.Rows.Add("19", sp.Rows[25]["Item"], sp.Rows[25]["Unit"], sp.Rows[25]["North"], sp.Rows[25]["South"], sp.Rows[25]["East"], sp.Rows[25]["West"], "0");
+            table.Rows.Add("(a)", sp.Rows[26]["Item"], sp.Rows[26]["Unit"], sp.Rows[26]["North"], sp.Rows[26]["South"], sp.Rows[26]["East"], sp.Rows[26]["West"], "0");
+            table.Rows.Add("(b)", sp.Rows[27]["Item"], sp.Rows[27]["Unit"], sp.Rows[27]["North"], sp.Rows[27]["South"], sp.Rows[27]["East"], sp.Rows[27]["West"], "0");
+            table.Rows.Add("20", sp.Rows[28]["Item"], sp.Rows[28]["Unit"], sp.Rows[28]["North"], sp.Rows[28]["South"], sp.Rows[28]["East"], sp.Rows[28]["West"], "0");
+            table.Rows.Add("(a)", sp.Rows[29]["Item"], sp.Rows[29]["Unit"], sp.Rows[29]["North"], sp.Rows[29]["South"], sp.Rows[29]["East"], sp.Rows[29]["West"], "0");
+            table.Rows.Add("(b)", sp.Rows[30]["Item"], sp.Rows[30]["Unit"], sp.Rows[30]["North"], sp.Rows[30]["South"], sp.Rows[30]["East"], sp.Rows[30]["West"], "0");
+            table.Rows.Add("21", sp.Rows[31]["Item"], sp.Rows[31]["Unit"], sp.Rows[31]["North"], sp.Rows[31]["South"], sp.Rows[31]["East"], sp.Rows[31]["West"], "0");
+            table.Rows.Add("22", sp.Rows[32]["Item"], sp.Rows[32]["Unit"], sp.Rows[32]["North"], sp.Rows[32]["South"], sp.Rows[32]["East"], sp.Rows[32]["West"], "0");
+            table.Rows.Add("(a)", sp.Rows[33]["Item"], sp.Rows[33]["Unit"], sp.Rows[33]["North"], sp.Rows[33]["South"], sp.Rows[33]["East"], sp.Rows[33]["West"], "0");
+            table.Rows.Add("(b)", sp.Rows[34]["Item"], sp.Rows[34]["Unit"], sp.Rows[34]["North"], sp.Rows[34]["South"], sp.Rows[34]["East"], sp.Rows[34]["West"], "0");
+            table.Rows.Add("", sp.Rows[35]["Item"], sp.Rows[35]["Unit"], sp.Rows[35]["North"], sp.Rows[35]["South"], sp.Rows[35]["East"], sp.Rows[35]["West"], "0");
+            table.Rows.Add("(c)", sp.Rows[36]["Item"], sp.Rows[36]["Unit"], sp.Rows[36]["North"], sp.Rows[36]["South"], sp.Rows[36]["East"], sp.Rows[36]["West"], "0");
+            table.Rows.Add("", sp.Rows[37]["Item"], sp.Rows[37]["Unit"], sp.Rows[37]["North"], sp.Rows[37]["South"], sp.Rows[37]["East"], sp.Rows[37]["West"], "0");
+
+            table.Rows.Add("23", sp.Rows[38]["Item"], sp.Rows[38]["Unit"], sp.Rows[38]["North"], sp.Rows[38]["South"], sp.Rows[38]["East"], sp.Rows[38]["West"], "0");
+            table.Rows.Add("24", sp.Rows[39]["Item"], sp.Rows[39]["Unit"], sp.Rows[39]["North"], sp.Rows[39]["South"], sp.Rows[39]["East"], sp.Rows[39]["West"], "0");
+            table.Rows.Add("25", sp.Rows[40]["Item"], sp.Rows[40]["Unit"], sp.Rows[40]["North"], sp.Rows[40]["South"], sp.Rows[40]["East"], sp.Rows[40]["West"], "0");
+            table.Rows.Add("26", sp.Rows[41]["Item"], sp.Rows[41]["Unit"], sp.Rows[41]["North"], sp.Rows[41]["South"], sp.Rows[41]["East"], sp.Rows[41]["West"], "0");
+            table.Rows.Add("27", sp.Rows[42]["Item"], sp.Rows[42]["Unit"], sp.Rows[42]["North"], sp.Rows[42]["South"], sp.Rows[42]["East"], sp.Rows[42]["West"], "0");
+            table.Rows.Add("28", sp.Rows[43]["Item"], sp.Rows[43]["Unit"], sp.Rows[43]["North"], sp.Rows[43]["South"], sp.Rows[43]["East"], sp.Rows[43]["West"], "0");
+            table.Rows.Add("29", sp.Rows[44]["Item"], sp.Rows[44]["Unit"], sp.Rows[44]["North"], sp.Rows[44]["South"], sp.Rows[44]["East"], sp.Rows[44]["West"], "0");
+
+
+            return table;
+        }
 
         private void ResetOnClick(object sender, EventArgs e)
         {
@@ -201,15 +273,15 @@ namespace OperationalStatisticsBook
         void CalcalculateTotal()
         {
             int MonthLastDay = 0;
-            DateTime currentDate = new DateTime(Year, Month, 01); 
+            DateTime currentDate = new DateTime(Year, Month, 01);
             String previousMonthName = currentDate.ToString("MMMM");
-           switch(previousMonthName)
+            switch (previousMonthName)
             {
                 case "January":
-                     MonthLastDay = 31;
+                    MonthLastDay = 31;
                     break;
                 case "February":
-                     MonthLastDay = 28;
+                    MonthLastDay = 28;
                     break;
                 case "March":
                     MonthLastDay = 31;
@@ -234,7 +306,7 @@ namespace OperationalStatisticsBook
                     break;
                 case "October":
                     MonthLastDay = 31;
-                    break; 
+                    break;
                 case "November":
                     MonthLastDay = 30;
                     break;
@@ -259,11 +331,11 @@ namespace OperationalStatisticsBook
             dataGridView1.Rows[10].Cells[6].Value = Common.GetDiv(row, 8, 9, 6);
             dataGridView1.Rows[10].Cells[7].Value = Common.GetDiv(row, 8, 9, 7);
 
-            dataGridView1.Rows[14].Cells[3].Value = Math.Round(Common.GetDiv(row, 12, 13, 3),2);
-            dataGridView1.Rows[14].Cells[4].Value = Math.Round(Common.GetDiv(row, 12, 13, 4),2);
-            dataGridView1.Rows[14].Cells[5].Value = Math.Round(Common.GetDiv(row, 12, 13, 5),2);
-            dataGridView1.Rows[14].Cells[6].Value = Math.Round(Common.GetDiv(row, 12, 13, 6),2);
-            dataGridView1.Rows[14].Cells[7].Value = Math.Round(Common.GetDiv(row, 12, 13, 7),2);
+            dataGridView1.Rows[14].Cells[3].Value = Math.Round(Common.GetDiv(row, 12, 13, 3), 2);
+            dataGridView1.Rows[14].Cells[4].Value = Math.Round(Common.GetDiv(row, 12, 13, 4), 2);
+            dataGridView1.Rows[14].Cells[5].Value = Math.Round(Common.GetDiv(row, 12, 13, 5), 2);
+            dataGridView1.Rows[14].Cells[6].Value = Math.Round(Common.GetDiv(row, 12, 13, 6), 2);
+            dataGridView1.Rows[14].Cells[7].Value = Math.Round(Common.GetDiv(row, 12, 13, 7), 2);
             // division column number  End 
             // Total Ticket
 
@@ -272,9 +344,9 @@ namespace OperationalStatisticsBook
             dataGridView1.Rows[24].Cells[5].Value = Math.Round(Common.GetSum(row, 22, 23, 5), 2);
             dataGridView1.Rows[24].Cells[6].Value = Math.Round(Common.GetSum(row, 22, 23, 6), 2);
             dataGridView1.Rows[24].Cells[7].Value = Math.Round(Common.GetSum(row, 22, 23, 7), 2);
-        
-          
-           // Grand total
+
+
+            // Grand total
             dataGridView1.Rows[26].Cells[3].Value = Math.Round(Common.GetSum(row, 24, 25, 3), 2);
             dataGridView1.Rows[26].Cells[4].Value = Math.Round(Common.GetSum(row, 24, 25, 4), 2);
             dataGridView1.Rows[26].Cells[5].Value = Math.Round(Common.GetSum(row, 24, 25, 5), 2);
@@ -303,11 +375,11 @@ namespace OperationalStatisticsBook
             for (int i = 0; i < 5; i++)
             {
 
-                if (i>1)
+                if (i > 1)
                 {
                     // Add column Number 7 All Column Start
-                    dataGridView1.Rows[i].Cells[7].Value = Common.ConvertToDecimal(row[i].Cells[3].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[4].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[5].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[6].Value.ToString());                  
-                    
+                    dataGridView1.Rows[i].Cells[7].Value = Common.ConvertToDecimal(row[i].Cells[3].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[4].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[5].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[6].Value.ToString());
+
                     dataGridView1.Rows[6].Cells[7].Value = Common.ConvertToDecimal(row[6].Cells[3].Value.ToString()) + Common.ConvertToDecimal(row[6].Cells[4].Value.ToString()) + Common.ConvertToDecimal(row[6].Cells[5].Value.ToString()) + Common.ConvertToDecimal(row[6].Cells[6].Value.ToString());
 
                     dataGridView1.Rows[8].Cells[7].Value = Common.ConvertToDecimal(row[8].Cells[3].Value.ToString()) + Common.ConvertToDecimal(row[8].Cells[4].Value.ToString()) + Common.ConvertToDecimal(row[8].Cells[5].Value.ToString()) + Common.ConvertToDecimal(row[8].Cells[6].Value.ToString());
@@ -317,25 +389,25 @@ namespace OperationalStatisticsBook
                     dataGridView1.Rows[12].Cells[7].Value = Common.ConvertToDecimal(row[12].Cells[3].Value.ToString()) + Common.ConvertToDecimal(row[12].Cells[4].Value.ToString()) + Common.ConvertToDecimal(row[12].Cells[5].Value.ToString()) + Common.ConvertToDecimal(row[12].Cells[6].Value.ToString());
                     dataGridView1.Rows[13].Cells[7].Value = Common.ConvertToDecimal(row[13].Cells[3].Value.ToString()) + Common.ConvertToDecimal(row[13].Cells[4].Value.ToString()) + Common.ConvertToDecimal(row[13].Cells[5].Value.ToString()) + Common.ConvertToDecimal(row[13].Cells[6].Value.ToString());
                     dataGridView1.Rows[14].Cells[7].Value = Common.ConvertToDecimal(row[14].Cells[3].Value.ToString()) + Common.ConvertToDecimal(row[14].Cells[4].Value.ToString()) + Common.ConvertToDecimal(row[14].Cells[5].Value.ToString()) + Common.ConvertToDecimal(row[14].Cells[6].Value.ToString());
-                   
+
                     dataGridView1.Rows[16].Cells[7].Value = Common.ConvertToDecimal(row[16].Cells[3].Value.ToString()) + Common.ConvertToDecimal(row[16].Cells[4].Value.ToString()) + Common.ConvertToDecimal(row[16].Cells[5].Value.ToString()) + Common.ConvertToDecimal(row[16].Cells[6].Value.ToString());
                     //(b) End New line
                     dataGridView1.Rows[20].Cells[7].Value = Common.ConvertToDecimal(row[20].Cells[3].Value.ToString()) + Common.ConvertToDecimal(row[20].Cells[4].Value.ToString()) + Common.ConvertToDecimal(row[20].Cells[5].Value.ToString()) + Common.ConvertToDecimal(row[20].Cells[6].Value.ToString());
-                   
+
                     dataGridView1.Rows[22].Cells[7].Value = Common.ConvertToDecimal(row[22].Cells[3].Value.ToString()) + Common.ConvertToDecimal(row[22].Cells[4].Value.ToString()) + Common.ConvertToDecimal(row[22].Cells[5].Value.ToString()) + Common.ConvertToDecimal(row[22].Cells[6].Value.ToString());
                     dataGridView1.Rows[23].Cells[7].Value = Common.ConvertToDecimal(row[23].Cells[3].Value.ToString()) + Common.ConvertToDecimal(row[23].Cells[4].Value.ToString()) + Common.ConvertToDecimal(row[23].Cells[5].Value.ToString()) + Common.ConvertToDecimal(row[23].Cells[6].Value.ToString());
                     dataGridView1.Rows[24].Cells[7].Value = Common.ConvertToDecimal(row[24].Cells[3].Value.ToString()) + Common.ConvertToDecimal(row[24].Cells[4].Value.ToString()) + Common.ConvertToDecimal(row[24].Cells[5].Value.ToString()) + Common.ConvertToDecimal(row[24].Cells[6].Value.ToString());
                     dataGridView1.Rows[25].Cells[7].Value = Common.ConvertToDecimal(row[25].Cells[3].Value.ToString()) + Common.ConvertToDecimal(row[25].Cells[4].Value.ToString()) + Common.ConvertToDecimal(row[25].Cells[5].Value.ToString()) + Common.ConvertToDecimal(row[25].Cells[6].Value.ToString());
-                   
-                    dataGridView1.Rows[28].Cells[7].Value = Math.Round(Common.ConvertToDecimal(row[28].Cells[3].Value.ToString()) + Common.ConvertToDecimal(row[28].Cells[4].Value.ToString()) + Common.ConvertToDecimal(row[28].Cells[5].Value.ToString()) + Common.ConvertToDecimal(row[28].Cells[6].Value.ToString()) , 2);
-                    dataGridView1.Rows[29].Cells[7].Value = Math.Round(Common.ConvertToDecimal(row[29].Cells[3].Value.ToString()) + Common.ConvertToDecimal(row[29].Cells[4].Value.ToString()) + Common.ConvertToDecimal(row[29].Cells[5].Value.ToString()) + Common.ConvertToDecimal(row[29].Cells[6].Value.ToString()) , 2);
-                   
-                    dataGridView1.Rows[35].Cells[7].Value = Math.Round(Common.ConvertToDecimal(row[35].Cells[3].Value.ToString()) + Common.ConvertToDecimal(row[35].Cells[4].Value.ToString()) + Common.ConvertToDecimal(row[35].Cells[5].Value.ToString()) + Common.ConvertToDecimal(row[35].Cells[6].Value.ToString()) , 2);
-                    dataGridView1.Rows[36].Cells[7].Value = Math.Round(Common.ConvertToDecimal(row[36].Cells[3].Value.ToString()) + Common.ConvertToDecimal(row[36].Cells[4].Value.ToString()) + Common.ConvertToDecimal(row[36].Cells[5].Value.ToString()) + Common.ConvertToDecimal(row[36].Cells[6].Value.ToString()) , 2);
-                    dataGridView1.Rows[37].Cells[7].Value = Math.Round(Common.ConvertToDecimal(row[37].Cells[3].Value.ToString()) + Common.ConvertToDecimal(row[37].Cells[4].Value.ToString()) + Common.ConvertToDecimal(row[37].Cells[5].Value.ToString()) + Common.ConvertToDecimal(row[37].Cells[6].Value.ToString()) , 2);
-                    dataGridView1.Rows[38].Cells[7].Value = Math.Round(Common.ConvertToDecimal(row[38].Cells[3].Value.ToString()) + Common.ConvertToDecimal(row[38].Cells[4].Value.ToString()) + Common.ConvertToDecimal(row[38].Cells[5].Value.ToString()) + Common.ConvertToDecimal(row[38].Cells[6].Value.ToString()) , 2);
-                    dataGridView1.Rows[40].Cells[7].Value = Math.Round(Common.ConvertToDecimal(row[40].Cells[3].Value.ToString()) + Common.ConvertToDecimal(row[40].Cells[4].Value.ToString()) + Common.ConvertToDecimal(row[40].Cells[5].Value.ToString()) + Common.ConvertToDecimal(row[40].Cells[6].Value.ToString()) , 2);
-                    dataGridView1.Rows[43].Cells[7].Value = Math.Round(Common.ConvertToDecimal(row[43].Cells[3].Value.ToString()) + Common.ConvertToDecimal(row[43].Cells[4].Value.ToString()) + Common.ConvertToDecimal(row[43].Cells[5].Value.ToString()) + Common.ConvertToDecimal(row[43].Cells[6].Value.ToString()) , 2);
+
+                    dataGridView1.Rows[28].Cells[7].Value = Math.Round(Common.ConvertToDecimal(row[28].Cells[3].Value.ToString()) + Common.ConvertToDecimal(row[28].Cells[4].Value.ToString()) + Common.ConvertToDecimal(row[28].Cells[5].Value.ToString()) + Common.ConvertToDecimal(row[28].Cells[6].Value.ToString()), 2);
+                    dataGridView1.Rows[29].Cells[7].Value = Math.Round(Common.ConvertToDecimal(row[29].Cells[3].Value.ToString()) + Common.ConvertToDecimal(row[29].Cells[4].Value.ToString()) + Common.ConvertToDecimal(row[29].Cells[5].Value.ToString()) + Common.ConvertToDecimal(row[29].Cells[6].Value.ToString()), 2);
+
+                    dataGridView1.Rows[35].Cells[7].Value = Math.Round(Common.ConvertToDecimal(row[35].Cells[3].Value.ToString()) + Common.ConvertToDecimal(row[35].Cells[4].Value.ToString()) + Common.ConvertToDecimal(row[35].Cells[5].Value.ToString()) + Common.ConvertToDecimal(row[35].Cells[6].Value.ToString()), 2);
+                    dataGridView1.Rows[36].Cells[7].Value = Math.Round(Common.ConvertToDecimal(row[36].Cells[3].Value.ToString()) + Common.ConvertToDecimal(row[36].Cells[4].Value.ToString()) + Common.ConvertToDecimal(row[36].Cells[5].Value.ToString()) + Common.ConvertToDecimal(row[36].Cells[6].Value.ToString()), 2);
+                    dataGridView1.Rows[37].Cells[7].Value = Math.Round(Common.ConvertToDecimal(row[37].Cells[3].Value.ToString()) + Common.ConvertToDecimal(row[37].Cells[4].Value.ToString()) + Common.ConvertToDecimal(row[37].Cells[5].Value.ToString()) + Common.ConvertToDecimal(row[37].Cells[6].Value.ToString()), 2);
+                    dataGridView1.Rows[38].Cells[7].Value = Math.Round(Common.ConvertToDecimal(row[38].Cells[3].Value.ToString()) + Common.ConvertToDecimal(row[38].Cells[4].Value.ToString()) + Common.ConvertToDecimal(row[38].Cells[5].Value.ToString()) + Common.ConvertToDecimal(row[38].Cells[6].Value.ToString()), 2);
+                    dataGridView1.Rows[40].Cells[7].Value = Math.Round(Common.ConvertToDecimal(row[40].Cells[3].Value.ToString()) + Common.ConvertToDecimal(row[40].Cells[4].Value.ToString()) + Common.ConvertToDecimal(row[40].Cells[5].Value.ToString()) + Common.ConvertToDecimal(row[40].Cells[6].Value.ToString()), 2);
+                    dataGridView1.Rows[43].Cells[7].Value = Math.Round(Common.ConvertToDecimal(row[43].Cells[3].Value.ToString()) + Common.ConvertToDecimal(row[43].Cells[4].Value.ToString()) + Common.ConvertToDecimal(row[43].Cells[5].Value.ToString()) + Common.ConvertToDecimal(row[43].Cells[6].Value.ToString()), 2);
 
                     // Add All Column  7 Number End
                 }
@@ -377,19 +449,19 @@ namespace OperationalStatisticsBook
 
 
                     // (a) Avg buses on Road kms/bus/day Start
-                    dataGridView1.Rows[18].Cells[3].Value = Common.ConvertToDecimal(row[6].Cells[3].Value.ToString()) > 0 ? Math.Round((Common.ConvertToDecimal(row[16].Cells[3].Value.ToString()) * 100000)/ Common.ConvertToDecimal(row[6].Cells[3].Value.ToString())) :0;
-                    dataGridView1.Rows[18].Cells[4].Value = Common.ConvertToDecimal(row[6].Cells[4].Value.ToString()) > 0 ? Math.Round((Common.ConvertToDecimal(row[16].Cells[4].Value.ToString()) * 100000)/ Common.ConvertToDecimal(row[6].Cells[4].Value.ToString())) :0;
-                    dataGridView1.Rows[18].Cells[5].Value = Common.ConvertToDecimal(row[6].Cells[5].Value.ToString()) > 0 ? Math.Round((Common.ConvertToDecimal(row[16].Cells[5].Value.ToString()) * 100000)/ Common.ConvertToDecimal(row[6].Cells[5].Value.ToString())) :0;
-                    dataGridView1.Rows[18].Cells[6].Value = Common.ConvertToDecimal(row[6].Cells[6].Value.ToString()) > 0 ? Math.Round((Common.ConvertToDecimal(row[16].Cells[6].Value.ToString()) * 100000)/ Common.ConvertToDecimal(row[6].Cells[6].Value.ToString())) :0;
-                    dataGridView1.Rows[18].Cells[7].Value = Common.ConvertToDecimal(row[6].Cells[7].Value.ToString()) > 0 ? Math.Round((Common.ConvertToDecimal(row[16].Cells[7].Value.ToString()) * 100000)/ Common.ConvertToDecimal(row[6].Cells[7].Value.ToString())) :0;
+                    dataGridView1.Rows[18].Cells[3].Value = Common.ConvertToDecimal(row[6].Cells[3].Value.ToString()) > 0 ? Math.Round((Common.ConvertToDecimal(row[16].Cells[3].Value.ToString()) * 100000) / Common.ConvertToDecimal(row[6].Cells[3].Value.ToString())) : 0;
+                    dataGridView1.Rows[18].Cells[4].Value = Common.ConvertToDecimal(row[6].Cells[4].Value.ToString()) > 0 ? Math.Round((Common.ConvertToDecimal(row[16].Cells[4].Value.ToString()) * 100000) / Common.ConvertToDecimal(row[6].Cells[4].Value.ToString())) : 0;
+                    dataGridView1.Rows[18].Cells[5].Value = Common.ConvertToDecimal(row[6].Cells[5].Value.ToString()) > 0 ? Math.Round((Common.ConvertToDecimal(row[16].Cells[5].Value.ToString()) * 100000) / Common.ConvertToDecimal(row[6].Cells[5].Value.ToString())) : 0;
+                    dataGridView1.Rows[18].Cells[6].Value = Common.ConvertToDecimal(row[6].Cells[6].Value.ToString()) > 0 ? Math.Round((Common.ConvertToDecimal(row[16].Cells[6].Value.ToString()) * 100000) / Common.ConvertToDecimal(row[6].Cells[6].Value.ToString())) : 0;
+                    dataGridView1.Rows[18].Cells[7].Value = Common.ConvertToDecimal(row[6].Cells[7].Value.ToString()) > 0 ? Math.Round((Common.ConvertToDecimal(row[16].Cells[7].Value.ToString()) * 100000) / Common.ConvertToDecimal(row[6].Cells[7].Value.ToString())) : 0;
 
                     //  (a) Avg buses on Road kms/bus/day End
 
                     // (b) Avg buses on Road kms/bus/day Start
-                    dataGridView1.Rows[19].Cells[3].Value = Common.ConvertToDecimal(row[3].Cells[3].Value.ToString()) > 0 ?Math.Round((Common.ConvertToDecimal(row[16].Cells[3].Value.ToString()) * 100000) / Common.ConvertToDecimal(row[3].Cells[3].Value.ToString())) : 0;
-                    dataGridView1.Rows[19].Cells[4].Value = Common.ConvertToDecimal(row[3].Cells[4].Value.ToString()) > 0 ?Math.Round((Common.ConvertToDecimal(row[16].Cells[4].Value.ToString()) * 100000) / Common.ConvertToDecimal(row[3].Cells[4].Value.ToString())) : 0;
-                    dataGridView1.Rows[19].Cells[5].Value = Common.ConvertToDecimal(row[3].Cells[5].Value.ToString()) > 0 ?Math.Round((Common.ConvertToDecimal(row[16].Cells[5].Value.ToString()) * 100000) / Common.ConvertToDecimal(row[3].Cells[5].Value.ToString())) : 0;
-                    dataGridView1.Rows[19].Cells[6].Value = Common.ConvertToDecimal(row[3].Cells[6].Value.ToString()) > 0 ?Math.Round((Common.ConvertToDecimal(row[16].Cells[6].Value.ToString()) * 100000) / Common.ConvertToDecimal(row[3].Cells[6].Value.ToString())) : 0;
+                    dataGridView1.Rows[19].Cells[3].Value = Common.ConvertToDecimal(row[3].Cells[3].Value.ToString()) > 0 ? Math.Round((Common.ConvertToDecimal(row[16].Cells[3].Value.ToString()) * 100000) / Common.ConvertToDecimal(row[3].Cells[3].Value.ToString())) : 0;
+                    dataGridView1.Rows[19].Cells[4].Value = Common.ConvertToDecimal(row[3].Cells[4].Value.ToString()) > 0 ? Math.Round((Common.ConvertToDecimal(row[16].Cells[4].Value.ToString()) * 100000) / Common.ConvertToDecimal(row[3].Cells[4].Value.ToString())) : 0;
+                    dataGridView1.Rows[19].Cells[5].Value = Common.ConvertToDecimal(row[3].Cells[5].Value.ToString()) > 0 ? Math.Round((Common.ConvertToDecimal(row[16].Cells[5].Value.ToString()) * 100000) / Common.ConvertToDecimal(row[3].Cells[5].Value.ToString())) : 0;
+                    dataGridView1.Rows[19].Cells[6].Value = Common.ConvertToDecimal(row[3].Cells[6].Value.ToString()) > 0 ? Math.Round((Common.ConvertToDecimal(row[16].Cells[6].Value.ToString()) * 100000) / Common.ConvertToDecimal(row[3].Cells[6].Value.ToString())) : 0;
                     dataGridView1.Rows[19].Cells[7].Value = Common.ConvertToDecimal(row[3].Cells[7].Value.ToString()) > 0 ? Math.Round((Common.ConvertToDecimal(row[16].Cells[7].Value.ToString()) * 100000) / Common.ConvertToDecimal(row[3].Cells[7].Value.ToString())) : 0;
 
                     //  (b) Avg fleet heald kms/bus/day End
@@ -406,30 +478,30 @@ namespace OperationalStatisticsBook
 
                     // column Number 15  Start
 
-                    dataGridView1.Rows[16].Cells[3].Value = Math.Round((Common.ConvertToDecimal(row[13].Cells[3].Value.ToString()) / MonthLastDay) , 2);
-                    dataGridView1.Rows[16].Cells[4].Value = Math.Round((Common.ConvertToDecimal(row[13].Cells[4].Value.ToString()) / MonthLastDay) , 2);
-                    dataGridView1.Rows[16].Cells[5].Value = Math.Round((Common.ConvertToDecimal(row[13].Cells[5].Value.ToString()) / MonthLastDay) , 2);
-                    dataGridView1.Rows[16].Cells[6].Value = Math.Round((Common.ConvertToDecimal(row[13].Cells[6].Value.ToString()) / MonthLastDay) , 2);
-                    dataGridView1.Rows[16].Cells[7].Value = Math.Round((Common.ConvertToDecimal(row[13].Cells[7].Value.ToString()) / MonthLastDay) , 2);
+                    dataGridView1.Rows[16].Cells[3].Value = Math.Round((Common.ConvertToDecimal(row[13].Cells[3].Value.ToString()) / MonthLastDay), 2);
+                    dataGridView1.Rows[16].Cells[4].Value = Math.Round((Common.ConvertToDecimal(row[13].Cells[4].Value.ToString()) / MonthLastDay), 2);
+                    dataGridView1.Rows[16].Cells[5].Value = Math.Round((Common.ConvertToDecimal(row[13].Cells[5].Value.ToString()) / MonthLastDay), 2);
+                    dataGridView1.Rows[16].Cells[6].Value = Math.Round((Common.ConvertToDecimal(row[13].Cells[6].Value.ToString()) / MonthLastDay), 2);
+                    dataGridView1.Rows[16].Cells[7].Value = Math.Round((Common.ConvertToDecimal(row[13].Cells[7].Value.ToString()) / MonthLastDay), 2);
                     // column Number 15 End
 
                     // column Number 19 (a) Start
 
-                    dataGridView1.Rows[28].Cells[3].Value = Math.Round((Common.ConvertToDecimal(row[26].Cells[3].Value.ToString()) / MonthLastDay) , 2);
-                    dataGridView1.Rows[28].Cells[4].Value = Math.Round((Common.ConvertToDecimal(row[26].Cells[4].Value.ToString()) / MonthLastDay) , 2);
-                    dataGridView1.Rows[28].Cells[5].Value = Math.Round((Common.ConvertToDecimal(row[26].Cells[5].Value.ToString()) / MonthLastDay) , 2);
-                    dataGridView1.Rows[28].Cells[6].Value = Math.Round((Common.ConvertToDecimal(row[26].Cells[6].Value.ToString()) / MonthLastDay) , 2);
-                    dataGridView1.Rows[28].Cells[7].Value = Math.Round((Common.ConvertToDecimal(row[26].Cells[7].Value.ToString()) / MonthLastDay) , 2);
+                    dataGridView1.Rows[28].Cells[3].Value = Math.Round((Common.ConvertToDecimal(row[26].Cells[3].Value.ToString()) / MonthLastDay), 2);
+                    dataGridView1.Rows[28].Cells[4].Value = Math.Round((Common.ConvertToDecimal(row[26].Cells[4].Value.ToString()) / MonthLastDay), 2);
+                    dataGridView1.Rows[28].Cells[5].Value = Math.Round((Common.ConvertToDecimal(row[26].Cells[5].Value.ToString()) / MonthLastDay), 2);
+                    dataGridView1.Rows[28].Cells[6].Value = Math.Round((Common.ConvertToDecimal(row[26].Cells[6].Value.ToString()) / MonthLastDay), 2);
+                    dataGridView1.Rows[28].Cells[7].Value = Math.Round((Common.ConvertToDecimal(row[26].Cells[7].Value.ToString()) / MonthLastDay), 2);
                     // column Number 19 (a) End
 
 
                     // column Number 23  Start
 
-                    dataGridView1.Rows[40].Cells[3].Value = Math.Round((Common.ConvertToDecimal(row[39].Cells[3].Value.ToString()) / MonthLastDay) , 2);
-                    dataGridView1.Rows[40].Cells[4].Value = Math.Round((Common.ConvertToDecimal(row[39].Cells[4].Value.ToString()) / MonthLastDay) , 2);
-                    dataGridView1.Rows[40].Cells[5].Value = Math.Round((Common.ConvertToDecimal(row[39].Cells[5].Value.ToString()) / MonthLastDay) , 2);
-                    dataGridView1.Rows[40].Cells[6].Value = Math.Round((Common.ConvertToDecimal(row[39].Cells[6].Value.ToString()) / MonthLastDay) , 2);
-                    dataGridView1.Rows[40].Cells[7].Value = Math.Round((Common.ConvertToDecimal(row[39].Cells[7].Value.ToString()) / MonthLastDay) , 2);
+                    dataGridView1.Rows[40].Cells[3].Value = Math.Round((Common.ConvertToDecimal(row[39].Cells[3].Value.ToString()) / MonthLastDay), 2);
+                    dataGridView1.Rows[40].Cells[4].Value = Math.Round((Common.ConvertToDecimal(row[39].Cells[4].Value.ToString()) / MonthLastDay), 2);
+                    dataGridView1.Rows[40].Cells[5].Value = Math.Round((Common.ConvertToDecimal(row[39].Cells[5].Value.ToString()) / MonthLastDay), 2);
+                    dataGridView1.Rows[40].Cells[6].Value = Math.Round((Common.ConvertToDecimal(row[39].Cells[6].Value.ToString()) / MonthLastDay), 2);
+                    dataGridView1.Rows[40].Cells[7].Value = Math.Round((Common.ConvertToDecimal(row[39].Cells[7].Value.ToString()) / MonthLastDay), 2);
                     // column Number 23 End
 
                     // column Number 20 (A)
@@ -438,13 +510,13 @@ namespace OperationalStatisticsBook
                     dataGridView1.Rows[31].Cells[5].Value = Common.ConvertToDecimal(row[13].Cells[5].Value.ToString()) > 0 ? Math.Round((Common.ConvertToDecimal(row[26].Cells[5].Value.ToString()) / Common.ConvertToDecimal(row[13].Cells[5].Value.ToString())) * 100) : 0;
                     dataGridView1.Rows[31].Cells[6].Value = Common.ConvertToDecimal(row[13].Cells[6].Value.ToString()) > 0 ? Math.Round((Common.ConvertToDecimal(row[26].Cells[6].Value.ToString()) / Common.ConvertToDecimal(row[13].Cells[6].Value.ToString())) * 100) : 0;
                     dataGridView1.Rows[31].Cells[7].Value = Common.ConvertToDecimal(row[13].Cells[7].Value.ToString()) > 0 ? Math.Round((Common.ConvertToDecimal(row[26].Cells[7].Value.ToString()) / Common.ConvertToDecimal(row[13].Cells[7].Value.ToString())) * 100) : 0;
-                    
+
 
                     // Formula for 20 B Row
-                    dataGridView1.Rows[32].Cells[3].Value = Common.ConvertToDecimal(row[16].Cells[3].Value.ToString()) > 0 ? Math.Round((Common.ConvertToDecimal(row[29].Cells[3].Value.ToString()) / Common.ConvertToDecimal(row[16].Cells[3].Value.ToString())) * 100 ) : 0;
-                    dataGridView1.Rows[32].Cells[4].Value = Common.ConvertToDecimal(row[16].Cells[4].Value.ToString()) > 0 ? Math.Round((Common.ConvertToDecimal(row[29].Cells[4].Value.ToString()) / Common.ConvertToDecimal(row[16].Cells[4].Value.ToString())) * 100 ) : 0;
-                    dataGridView1.Rows[32].Cells[5].Value = Common.ConvertToDecimal(row[16].Cells[5].Value.ToString()) > 0 ? Math.Round((Common.ConvertToDecimal(row[29].Cells[5].Value.ToString()) / Common.ConvertToDecimal(row[16].Cells[5].Value.ToString())) * 100 ) : 0;
-                    dataGridView1.Rows[32].Cells[6].Value = Common.ConvertToDecimal(row[16].Cells[6].Value.ToString()) > 0 ? Math.Round((Common.ConvertToDecimal(row[29].Cells[6].Value.ToString()) / Common.ConvertToDecimal(row[16].Cells[6].Value.ToString())) * 100 ) : 0;
+                    dataGridView1.Rows[32].Cells[3].Value = Common.ConvertToDecimal(row[16].Cells[3].Value.ToString()) > 0 ? Math.Round((Common.ConvertToDecimal(row[29].Cells[3].Value.ToString()) / Common.ConvertToDecimal(row[16].Cells[3].Value.ToString())) * 100) : 0;
+                    dataGridView1.Rows[32].Cells[4].Value = Common.ConvertToDecimal(row[16].Cells[4].Value.ToString()) > 0 ? Math.Round((Common.ConvertToDecimal(row[29].Cells[4].Value.ToString()) / Common.ConvertToDecimal(row[16].Cells[4].Value.ToString())) * 100) : 0;
+                    dataGridView1.Rows[32].Cells[5].Value = Common.ConvertToDecimal(row[16].Cells[5].Value.ToString()) > 0 ? Math.Round((Common.ConvertToDecimal(row[29].Cells[5].Value.ToString()) / Common.ConvertToDecimal(row[16].Cells[5].Value.ToString())) * 100) : 0;
+                    dataGridView1.Rows[32].Cells[6].Value = Common.ConvertToDecimal(row[16].Cells[6].Value.ToString()) > 0 ? Math.Round((Common.ConvertToDecimal(row[29].Cells[6].Value.ToString()) / Common.ConvertToDecimal(row[16].Cells[6].Value.ToString())) * 100) : 0;
                     dataGridView1.Rows[32].Cells[7].Value = Common.ConvertToDecimal(row[16].Cells[7].Value.ToString()) > 0 ? Math.Round((Common.ConvertToDecimal(row[29].Cells[7].Value.ToString()) / Common.ConvertToDecimal(row[16].Cells[7].Value.ToString())) * 100) : 0;
 
 
@@ -456,7 +528,7 @@ namespace OperationalStatisticsBook
                     dataGridView1.Rows[33].Cells[7].Value = Common.ConvertToDecimal(row[6].Cells[7].Value.ToString()) > 0 ? Math.Round((Common.ConvertToDecimal(row[28].Cells[7].Value.ToString()) * 100000) / Common.ConvertToDecimal(row[6].Cells[7].Value.ToString())) : 0;
 
                     // Column Number 21 
-                
+
                     // 25 Passengers par bus daily Start
 
                     dataGridView1.Rows[42].Cells[3].Value = Common.ConvertToDecimal(row[13].Cells[3].Value.ToString()) > 0 ? Math.Round((Common.ConvertToDecimal(row[39].Cells[3].Value.ToString()) / Common.ConvertToDecimal(row[13].Cells[3].Value.ToString())), 1) : 0;
@@ -491,7 +563,7 @@ namespace OperationalStatisticsBook
             {
                 for (int i = 3; i < 8; i++)
                 {
-                    dataGridView1.Rows[44].Cells[i].Value = Common.ConvertToDecimal(row[13].Cells[i].Value.ToString()) > 0 ? Math.Round(((Common.ConvertToDecimal(row[43].Cells[i].Value.ToString())) * 10000) / ((Common.ConvertToDecimal(row[13].Cells[i].Value.ToString())) * 100000),2) : 0;
+                    dataGridView1.Rows[44].Cells[i].Value = Common.ConvertToDecimal(row[13].Cells[i].Value.ToString()) > 0 ? Math.Round(((Common.ConvertToDecimal(row[43].Cells[i].Value.ToString())) * 10000) / ((Common.ConvertToDecimal(row[13].Cells[i].Value.ToString())) * 100000), 2) : 0;
                 }
             }
             catch (Exception)
@@ -499,7 +571,7 @@ namespace OperationalStatisticsBook
 
                 throw;
             }
-            
+
 
         }
 

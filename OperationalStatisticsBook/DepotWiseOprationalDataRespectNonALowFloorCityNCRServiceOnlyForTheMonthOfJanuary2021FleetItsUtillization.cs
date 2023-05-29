@@ -34,7 +34,7 @@ namespace OperationalStatisticsBook
         }
         DataTable BindDepotWiseOprationalDataRespectNonALowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021FleetItsUtillization()
         {
-          
+
 
             DataTable table = new DataTable();
 
@@ -127,6 +127,136 @@ namespace OperationalStatisticsBook
 
         }
 
+        DataTable BindDepotWiseOprationalDataRespectNonALowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021FleetItsUtillizationAuto_Sp_Table(DataTable sp)
+        {
+
+            DataTable table = new DataTable();
+
+            table.Columns.Add("S_No", typeof(string));
+            table.Columns.Add("Depot", typeof(string));
+            table.Columns.Add("Fleet as on the last day of the month  CITY NAC", typeof(string));
+            table.Columns.Add("Fleet as on the last day of the  month CITY AC ", typeof(string));
+            table.Columns.Add("Fleet as  on the last day of the month NCR NAC ", typeof(string));
+            table.Columns.Add("Fleet as on the last day of the month  NCR AC  ", typeof(string));
+            table.Columns.Add("Fleet as on the last day of the month  TOTAL   ", typeof(string));
+
+            table.Columns.Add("Avg. fleet during the month CITY NAC", typeof(string));
+            table.Columns.Add("Avg. fleet during the month CITY AC", typeof(string));
+            table.Columns.Add("Avg. fleet during the month NCR NAC", typeof(string));
+            table.Columns.Add("Avg. fleet during the  month NCR AC", typeof(string));
+            table.Columns.Add("Avg. fleet during  the month TOTAL", typeof(string));
+
+            table.Columns.Add("Avg.no of buses scheduled CITY NAC", typeof(string));
+            table.Columns.Add("Avg.no of buses scheduled CITY AC ", typeof(string));
+            table.Columns.Add("Avg.no of buses scheduled NCR NAC ", typeof(string));
+            table.Columns.Add("Avg.no of buses scheduled NCR AC  ", typeof(string));
+            table.Columns.Add("Avg.no of buses scheduled TOTAL   ", typeof(string));
+
+            table.Columns.Add("Avg.no.of buses on Road CITY NAC", typeof(string));
+            table.Columns.Add("Avg.no.of buses on Road CITY AC ", typeof(string));
+            table.Columns.Add("Avg.no.of buses on  Road NCR NAC  ", typeof(string));
+            table.Columns.Add("Avg.no.of buses  on Road NCR AC    ", typeof(string));
+            table.Columns.Add("Avg.no.of  buses on Road TOTAL     ", typeof(string));
+
+            table.Columns.Add("Percentage fleet utilisation CITY NAC", typeof(string));
+            table.Columns.Add("Percentage fleet utilisation CITY AC ", typeof(string));
+            table.Columns.Add("Percentage fleet utilisation NCR NAC   ", typeof(string));
+            table.Columns.Add("Percentage fleet  utilisation NCR AC    ", typeof(string));
+            table.Columns.Add("Percentage  fleet utilisation TOTAL     ", typeof(string));
+
+
+            for (int i = 0; i < sp.Rows.Count; i++)
+            {
+                if (!(Convert.ToInt32(sp.Rows[i]["CirleCode"]) == 36 || Convert.ToInt32(sp.Rows[i]["CirleCode"]) == 35 || Convert.ToInt32(sp.Rows[i]["CirleCode"]) == 37 || Convert.ToInt32(sp.Rows[i]["CirleCode"]) == 38 || Convert.ToInt32(sp.Rows[i]["CirleCode"]) == 40 || Convert.ToInt32(sp.Rows[i]["CirleCode"]) == 41 || Convert.ToInt32(sp.Rows[i]["CirleCode"]) == 23))
+                {
+                    decimal percentageFleetUtilizCityNac = Math.Round((Convert.ToDecimal(sp.Rows[i]["AvgFleetCityNac"]) != 0) ? (Convert.ToDecimal(sp.Rows[i]["AvgNoBusesOnRoadCityNac"]) / Convert.ToDecimal(sp.Rows[i]["AvgFleetCityNac"])) * 100 : 0, 2);
+                    decimal percentageFleetUtilizCityAc = Math.Round((Convert.ToDecimal(sp.Rows[i]["AvgFleetCityAc"]) != 0) ? (Convert.ToDecimal(sp.Rows[i]["AvgNoBusesOnRoadCityAc"]) / Convert.ToDecimal(sp.Rows[i]["AvgFleetCityAc"])) * 100 : 0, 2);
+                    decimal percentageFleetUtilizNcrNac = Math.Round((Convert.ToDecimal(sp.Rows[i]["AvgFleetNCRNac"]) != 0) ? (Convert.ToDecimal(sp.Rows[i]["AvgNoBusesOnRoadNCRNac"]) / Convert.ToDecimal(sp.Rows[i]["AvgFleetNCRNac"])) * 100 : 0, 2);
+                    decimal percentageFleetUtilizNcrAc = Math.Round((Convert.ToDecimal(sp.Rows[i]["AvgFleetNacAc"]) != 0) ? (Convert.ToDecimal(sp.Rows[i]["AvgNoBusesOnRoadNCRAc"]) / Convert.ToDecimal(sp.Rows[i]["AvgFleetNacAc"])) * 100 : 0, 2);
+
+                    table.Rows.Add(i + 1, sp.Rows[i]["CircleName"], sp.Rows[i]["FleetLastDayCityNac"], sp.Rows[i]["FleetLastDayCityAc"], sp.Rows[i]["FleetLastDayNCRNac"], sp.Rows[i]["FleetLastDayNCRAc"], "0", sp.Rows[i]["AvgFleetCityNac"], sp.Rows[i]["AvgFleetCityAc"], sp.Rows[i]["AvgFleetNCRNac"], sp.Rows[i]["AvgFleetNacAc"], "0", sp.Rows[i]["AvgNoBusesScheduleCityNac"], sp.Rows[i]["AvgNoBusesScheduleCityAc"], sp.Rows[i]["AvgNoBusesScheduleNCRNac"], sp.Rows[i]["AvgNoBusesScheduleNCRAc"], "0", sp.Rows[i]["AvgNoBusesOnRoadCityNac"], sp.Rows[i]["AvgNoBusesOnRoadCityAc"], sp.Rows[i]["AvgNoBusesOnRoadNCRNac"], sp.Rows[i]["AvgNoBusesOnRoadNCRAc"], "0", Convert.ToString(percentageFleetUtilizCityNac), Convert.ToString(percentageFleetUtilizCityAc), Convert.ToString(percentageFleetUtilizNcrNac), Convert.ToString(percentageFleetUtilizNcrAc), "0");
+                }
+
+            }
+
+            table.Rows.Add("", "Total", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
+            table.Rows.Add("", "Electric Buses", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "");
+
+            for (int i = 38; i < 40; i++)
+            {
+                decimal percentageFleetUtilizCityNac = Math.Round((Convert.ToDecimal(sp.Rows[i]["AvgFleetCityNac"]) != 0) ? (Convert.ToDecimal(sp.Rows[i]["AvgNoBusesOnRoadCityNac"]) / Convert.ToDecimal(sp.Rows[i]["AvgFleetCityNac"])) * 100 : 0, 2);
+                decimal percentageFleetUtilizCityAc = Math.Round((Convert.ToDecimal(sp.Rows[i]["AvgFleetCityAc"]) != 0) ? (Convert.ToDecimal(sp.Rows[i]["AvgNoBusesOnRoadCityAc"]) / Convert.ToDecimal(sp.Rows[i]["AvgFleetCityAc"])) * 100 : 0, 2);
+                decimal percentageFleetUtilizNcrNac = Math.Round((Convert.ToDecimal(sp.Rows[i]["AvgFleetNCRNac"]) != 0) ? (Convert.ToDecimal(sp.Rows[i]["AvgNoBusesOnRoadNCRNac"]) / Convert.ToDecimal(sp.Rows[i]["AvgFleetNCRNac"])) * 100 : 0, 2);
+                decimal percentageFleetUtilizNcrAc = Math.Round((Convert.ToDecimal(sp.Rows[i]["AvgFleetNacAc"]) != 0) ? (Convert.ToDecimal(sp.Rows[i]["AvgNoBusesOnRoadNCRAc"]) / Convert.ToDecimal(sp.Rows[i]["AvgFleetNacAc"])) * 100 : 0, 2);
+
+                table.Rows.Add(" ", sp.Rows[i]["CircleName"],
+                    sp.Rows[i]["FleetLastDayCityNac"],
+                    sp.Rows[i]["FleetLastDayCityAc"],
+                    sp.Rows[i]["FleetLastDayNCRNac"],
+                    sp.Rows[i]["FleetLastDayNCRAc"],
+                    "0",
+                    sp.Rows[i]["AvgFleetCityNac"],
+                    sp.Rows[i]["AvgFleetCityAc"],
+                    sp.Rows[i]["AvgFleetNCRNac"],
+                    sp.Rows[i]["AvgFleetNacAc"],
+                    "0",
+                    sp.Rows[i]["AvgNoBusesScheduleCityNac"],
+                    sp.Rows[i]["AvgNoBusesScheduleCityAc"],
+                    sp.Rows[i]["AvgNoBusesScheduleNCRNac"],
+                    sp.Rows[i]["AvgNoBusesScheduleNCRAc"],
+                    "0",
+                    sp.Rows[i]["AvgNoBusesOnRoadCityNac"],
+                    sp.Rows[i]["AvgNoBusesOnRoadCityAc"],
+                    sp.Rows[i]["AvgNoBusesOnRoadNCRNac"],
+                    sp.Rows[i]["AvgNoBusesOnRoadNCRAc"],
+                    "0",
+                    Convert.ToString(percentageFleetUtilizCityNac),
+                    Convert.ToString(percentageFleetUtilizCityAc),
+                    Convert.ToString(percentageFleetUtilizNcrNac),
+                    Convert.ToString(percentageFleetUtilizNcrAc),
+                    "0");
+            }
+
+            table.Rows.Add(" ",
+                sp.Rows[22]["CircleName"],
+                sp.Rows[22]["FleetLastDayCityNac"],
+                sp.Rows[22]["FleetLastDayCityAc"],
+                sp.Rows[22]["FleetLastDayNCRNac"],
+                sp.Rows[22]["FleetLastDayNCRAc"],
+                "0",
+                sp.Rows[22]["AvgFleetCityNac"],
+                sp.Rows[22]["AvgFleetCityAc"],
+                sp.Rows[22]["AvgFleetNCRNac"],
+                sp.Rows[22]["AvgFleetNacAc"],
+                "0",
+                sp.Rows[22]["AvgNoBusesScheduleCityNac"],
+                sp.Rows[22]["AvgNoBusesScheduleCityAc"],
+                sp.Rows[22]["AvgNoBusesScheduleNCRNac"],
+                sp.Rows[22]["AvgNoBusesScheduleNCRAc"],
+                "0",
+                sp.Rows[22]["AvgNoBusesOnRoadCityNac"],
+                sp.Rows[22]["AvgNoBusesOnRoadCityAc"],
+                sp.Rows[22]["AvgNoBusesOnRoadNCRNac"],
+                sp.Rows[22]["AvgNoBusesOnRoadNCRAc"],
+                "0",
+                Math.Round((Convert.ToDecimal(sp.Rows[22]["AvgFleetCityNac"]) != 0) ? (Convert.ToDecimal(sp.Rows[22]["AvgNoBusesOnRoadCityNac"]) / Convert.ToDecimal(sp.Rows[22]["AvgFleetCityNac"])) * 100 : 0, 2),
+                Math.Round((Convert.ToDecimal(sp.Rows[22]["AvgFleetCityAc"]) != 0) ? (Convert.ToDecimal(sp.Rows[22]["AvgNoBusesOnRoadCityAc"]) / Convert.ToDecimal(sp.Rows[22]["AvgFleetCityAc"])) * 100 : 0, 2),
+                Math.Round((Convert.ToDecimal(sp.Rows[22]["AvgFleetNCRNac"]) != 0) ? (Convert.ToDecimal(sp.Rows[22]["AvgNoBusesOnRoadNCRNac"]) / Convert.ToDecimal(sp.Rows[22]["AvgFleetNCRNac"])) * 100 : 0, 2),
+                Math.Round((Convert.ToDecimal(sp.Rows[22]["AvgFleetNacAc"]) != 0) ? (Convert.ToDecimal(sp.Rows[22]["AvgNoBusesOnRoadNCRAc"]) / Convert.ToDecimal(sp.Rows[22]["AvgFleetNacAc"])) * 100 : 0, 2),
+                "0");
+
+            table.Rows.Add("", "Total Electric", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
+            table.Rows.Add("", "Total DTC", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
+
+            table.Rows.Add("", "International", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "");
+            table.Rows.Add("1", "Kathmandu", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
+            table.Rows.Add("", "Grand Total", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
+
+
+            return table;
+
+        }
+
         void BindIndexPage(int OsbId)
         {
 
@@ -138,28 +268,49 @@ namespace OperationalStatisticsBook
                 cmd.CommandType = CommandType.Text;
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
                 sda.Fill(dt);
+
+                DataTable autoSpTable = new DataTable();
+
+                if (dt.Rows.Count < 1)
+                {
+                    SqlCommand cmd1 = new SqlCommand("[dbo].[sp_DepotWIseoprationaldataOsb4_1]", con);
+                    cmd1.Parameters.AddWithValue("@month", Month);
+                    cmd1.Parameters.AddWithValue("@year", Year);
+                    cmd1.CommandType = CommandType.StoredProcedure;
+                    SqlDataAdapter sda1 = new SqlDataAdapter(cmd1);
+                    sda1.Fill(autoSpTable);
+                    cmd1.CommandTimeout = 350;
+
+                }
+
                 if (dt.Rows.Count > 0)
                 {
                     dataGridView1.DataSource = dt;
                     Save.BackColor = Color.Green;
                 }
+
+                else if (autoSpTable.Rows.Count > 0)
+                {
+                    dataGridView1.DataSource = BindDepotWiseOprationalDataRespectNonALowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021FleetItsUtillizationAuto_Sp_Table(autoSpTable);
+                }
                 else
                 {
-
                     dataGridView1.DataSource = BindDepotWiseOprationalDataRespectNonALowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021FleetItsUtillization();
                 }
+
                 setRowColNonEditable();
                 CalcalculateTotal();
             }
             catch (Exception ex)
             {
-
+                throw ex;
             }
 
         }
+
         int DeleteExisitingTableRecord(string TableName, int OsbId)
         {
-            string strTable = "[rpt].[" + TableName + "]";
+            string strTable = "[dtcoperation].[rpt].[" + TableName + "]";
             int i = 0;
             SqlCommand cmd = new SqlCommand("delete from " + strTable + " where OsbId=@OsbId", con);
             cmd.Parameters.AddWithValue("@OsbId", OsbId);
@@ -171,9 +322,10 @@ namespace OperationalStatisticsBook
 
             return i;
         }
+
         private void ResetOnClick(object sender, EventArgs e)
         {
-         
+            DeleteExisitingTableRecord("tbl_DepotWiseOprationalDataRespectNonALowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021FleetItsUtillization", OsbId);
             dataGridView1.DataSource = BindDepotWiseOprationalDataRespectNonALowFloorCityNCRServiceOnlyForTheMonthOfJanuary2021FleetItsUtillization();
             setRowColNonEditable();
             MessageBox.Show("Done");
@@ -254,70 +406,78 @@ namespace OperationalStatisticsBook
 
         void CalcalculateTotal()
         {
-            var row = dataGridView1.Rows;
-
-            #region Calculating_HorizontalSum
-
-            for (int i = 0; i < 44; i++)
+            try
             {
-                if (i >= 0)
+                var row = dataGridView1.Rows;
+
+                #region Calculating_HorizontalSum
+
+                for (int i = 0; i < 43; i++)
                 {
-                    if (i != 35 && i != 40 && i!=42)
+                    if (i >= 0)
                     {
-                        dataGridView1.Rows[i].Cells[6].Value = Common.ConvertToDecimal(row[i].Cells[2].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[3].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[4].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[5].Value.ToString());
-                        dataGridView1.Rows[i].Cells[11].Value = Common.ConvertToDecimal(row[i].Cells[7].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[8].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[9].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[10].Value.ToString());
-                        dataGridView1.Rows[i].Cells[16].Value = Common.ConvertToDecimal(row[i].Cells[12].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[13].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[14].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[15].Value.ToString());
-                        dataGridView1.Rows[i].Cells[21].Value = Common.ConvertToDecimal(row[i].Cells[17].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[18].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[19].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[20].Value.ToString());
+                        if (i != 35 && i != 40 && i != 42)
+                        {
+                            dataGridView1.Rows[i].Cells[6].Value = Common.ConvertToDecimal(row[i].Cells[2].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[3].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[4].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[5].Value.ToString());
+                            dataGridView1.Rows[i].Cells[11].Value = Common.ConvertToDecimal(row[i].Cells[7].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[8].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[9].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[10].Value.ToString());
+                            dataGridView1.Rows[i].Cells[16].Value = Common.ConvertToDecimal(row[i].Cells[12].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[13].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[14].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[15].Value.ToString());
+                            dataGridView1.Rows[i].Cells[21].Value = Common.ConvertToDecimal(row[i].Cells[17].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[18].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[19].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[20].Value.ToString());
+                        }
+
+                        for (int j = 2; j < 22; j++)
+                        {
+                            dataGridView1.Rows[33].Cells[j].Value = Common.GetSum(row, 0, 32, j);
+
+                            dataGridView1.Rows[38].Cells[j].Value = Common.GetSum(row, 35, 37, j);
+
+                            dataGridView1.Rows[39].Cells[j].Value = Common.ConvertToDecimal(dataGridView1.Rows[33].Cells[j].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[38].Cells[j].Value.ToString());
+
+                            dataGridView1.Rows[42].Cells[j].Value = Common.ConvertToDecimal(dataGridView1.Rows[39].Cells[j].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[41].Cells[j].Value.ToString());
+                        }
+
+                        //if()
+                        dataGridView1.Rows[i].Cells[22].Value = Common.ConvertToDecimal(row[i].Cells[7].Value.ToString()) > 0 ? Math.Round((Common.ConvertToDecimal(row[i].Cells[17].Value.ToString()) / Common.ConvertToDecimal(row[i].Cells[7].Value.ToString())) * 100, 2) : 0;
+                        dataGridView1.Rows[i].Cells[23].Value = Common.ConvertToDecimal(row[i].Cells[8].Value.ToString()) > 0 ? Math.Round((Common.ConvertToDecimal(row[i].Cells[18].Value.ToString()) / Common.ConvertToDecimal(row[i].Cells[8].Value.ToString())) * 100, 2) : 0;
+                        dataGridView1.Rows[i].Cells[24].Value = Common.ConvertToDecimal(row[i].Cells[9].Value.ToString()) > 0 ? Math.Round((Common.ConvertToDecimal(row[i].Cells[19].Value.ToString()) / Common.ConvertToDecimal(row[i].Cells[9].Value.ToString())) * 100, 2) : 0;
+                        dataGridView1.Rows[i].Cells[25].Value = Common.ConvertToDecimal(row[i].Cells[10].Value.ToString()) > 0 ? Math.Round((Common.ConvertToDecimal(row[i].Cells[20].Value.ToString()) / Common.ConvertToDecimal(row[i].Cells[10].Value.ToString())) * 100, 2) : 0;
+                        dataGridView1.Rows[i].Cells[26].Value = Common.ConvertToDecimal(row[i].Cells[11].Value.ToString()) > 0 ? Math.Round((Common.ConvertToDecimal(row[i].Cells[21].Value.ToString()) / Common.ConvertToDecimal(row[i].Cells[11].Value.ToString())) * 100, 2) : 0;
                     }
-
-                    for (int j = 2; j < 22; j++)
-                    {
-                        dataGridView1.Rows[34].Cells[j].Value = Common.GetSum(row, 0, 33, j);
-
-                        dataGridView1.Rows[39].Cells[j].Value = Common.GetSum(row, 36, 38, j);
-
-                        dataGridView1.Rows[40].Cells[j].Value = Common.ConvertToDecimal(dataGridView1.Rows[34].Cells[j].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[39].Cells[j].Value.ToString());
-
-                        dataGridView1.Rows[43].Cells[j].Value = Common.ConvertToDecimal(dataGridView1.Rows[42].Cells[j].Value.ToString()) + Common.ConvertToDecimal(dataGridView1.Rows[40].Cells[j].Value.ToString());
-                    }
-
-                    //if()
-                    dataGridView1.Rows[i].Cells[22].Value = Common.ConvertToDecimal(row[i].Cells[7].Value.ToString()) > 0 ? Math.Round((Common.ConvertToDecimal(row[i].Cells[17].Value.ToString()) / Common.ConvertToDecimal(row[i].Cells[7].Value.ToString())) * 100, 2) : 0;
-                    dataGridView1.Rows[i].Cells[23].Value = Common.ConvertToDecimal(row[i].Cells[8].Value.ToString()) > 0 ? Math.Round((Common.ConvertToDecimal(row[i].Cells[18].Value.ToString()) / Common.ConvertToDecimal(row[i].Cells[8].Value.ToString())) * 100, 2) : 0;
-                    dataGridView1.Rows[i].Cells[24].Value = Common.ConvertToDecimal(row[i].Cells[9].Value.ToString()) > 0 ? Math.Round((Common.ConvertToDecimal(row[i].Cells[19].Value.ToString()) / Common.ConvertToDecimal(row[i].Cells[9].Value.ToString())) * 100, 2) : 0;
-                    dataGridView1.Rows[i].Cells[25].Value = Common.ConvertToDecimal(row[i].Cells[10].Value.ToString()) > 0 ? Math.Round((Common.ConvertToDecimal(row[i].Cells[20].Value.ToString()) / Common.ConvertToDecimal(row[i].Cells[10].Value.ToString())) * 100, 2) : 0;
-                    dataGridView1.Rows[i].Cells[26].Value = Common.ConvertToDecimal(row[i].Cells[11].Value.ToString()) > 0 ? Math.Round((Common.ConvertToDecimal(row[i].Cells[21].Value.ToString()) / Common.ConvertToDecimal(row[i].Cells[11].Value.ToString())) * 100, 2) : 0;
                 }
+                #endregion
+
+                #region Calculating_VerticalSum
+
             }
-            #endregion
+            catch (Exception ex)
+            {
+                throw ex;
+            }
 
-            #region Calculating_VerticalSum
 
-            
 
             #endregion
         }
 
         private void setRowColNonEditable()
         {
-            Common.SetRowNonEditable(dataGridView1, 34);
-            Common.SetRowNonEditable(dataGridView1, 35);
-            Common.SetRowNonEditable(dataGridView1, 39);
-            Common.SetRowNonEditable(dataGridView1, 40);
-            Common.SetRowNonEditable(dataGridView1, 41);
-            Common.SetRowNonEditable(dataGridView1, 43);
+            //Common.SetRowNonEditable(dataGridView1, 34);
+            //Common.SetRowNonEditable(dataGridView1, 35);
+            //Common.SetRowNonEditable(dataGridView1, 39);
+            //Common.SetRowNonEditable(dataGridView1, 40);
+            //Common.SetRowNonEditable(dataGridView1, 41);
+            //Common.SetRowNonEditable(dataGridView1, 43);
 
-            Common.SetColumnNonEditable(dataGridView1, 6,  42);
-            Common.SetColumnNonEditable(dataGridView1, 11, 42);
-            Common.SetColumnNonEditable(dataGridView1, 16, 42);
-            Common.SetColumnNonEditable(dataGridView1, 21, 42);
-            Common.SetColumnNonEditable(dataGridView1, 22, 42);
-            Common.SetColumnNonEditable(dataGridView1, 23, 42);
-            Common.SetColumnNonEditable(dataGridView1, 24, 42);
-            Common.SetColumnNonEditable(dataGridView1, 25, 42);
-            Common.SetColumnNonEditable(dataGridView1, 26, 42);
+            //Common.SetColumnNonEditable(dataGridView1, 6, 42);
+            //Common.SetColumnNonEditable(dataGridView1, 11, 42);
+            //Common.SetColumnNonEditable(dataGridView1, 16, 42);
+            //Common.SetColumnNonEditable(dataGridView1, 21, 42);
+            //Common.SetColumnNonEditable(dataGridView1, 22, 42);
+            //Common.SetColumnNonEditable(dataGridView1, 23, 42);
+            //Common.SetColumnNonEditable(dataGridView1, 24, 42);
+            //Common.SetColumnNonEditable(dataGridView1, 25, 42);
+            //Common.SetColumnNonEditable(dataGridView1, 26, 42);
 
-           
+
         }
 
     }
