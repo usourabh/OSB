@@ -103,6 +103,81 @@ namespace OperationalStatisticsBook
 
             return table;
         }
+
+        DataTable BindDeportWiseStatementOfSchoolSPLHireTouristPassPinkTicketEarning_AutoSpTable(DataTable sp)
+        {
+            DataTable table = new DataTable();
+
+            table.Columns.Add("S.No", typeof(string));
+            table.Columns.Add("Depot", typeof(string));
+            table.Columns.Add("School Bus", typeof(string));
+            table.Columns.Add("School Bus ", typeof(string));
+            table.Columns.Add("Spl. Hire", typeof(string));
+            table.Columns.Add("Spl. Hire ", typeof(string));
+            table.Columns.Add("School Bus  ", typeof(string));
+            table.Columns.Add("School Bus   ", typeof(string));
+            table.Columns.Add("Spl. Hire  ", typeof(string));
+            table.Columns.Add("Spl. Hire   ", typeof(string));
+            table.Columns.Add("Tourist", typeof(string));
+            table.Columns.Add("Tourist ", typeof(string));
+            table.Columns.Add("PassEarning", typeof(string));
+            table.Columns.Add("PassEarning ", typeof(string));
+            table.Columns.Add("PassEarning  ", typeof(string));
+            table.Columns.Add("PinkTicketEarning(Free Woman ticket)in Rs", typeof(string));
+            table.Columns.Add("PinkTicketEarning(Free Woman ticket )in Rs", typeof(string));
+            table.Columns.Add("PinkTicketEarning(Free Woman ticket  )in Rs", typeof(string));
+            table.Columns.Add("PinkTicketEarning(Free Woman ticket   )in Rs", typeof(string));
+            table.Columns.Add(" Grand Total", typeof(string));
+            table.Columns.Add("Grand Total", typeof(string));
+
+
+            table.Rows.Add("", "", "Kms", "Kms", "Kms", "Kms", "Income(Rs)", "Income(Rs)", "Income(Rs)", "Income(Rs)", "AC", "AC", "Income (Rs.)", "Income (Rs.)", "Income (Rs.)", "City", "City", "NCR", "NCR", "", "");
+            table.Rows.Add("", "", "NAC", "AC", "NAC", "AC", "NAC", "AC", "NAC", "AC", "Kms.", "Income (Rs).", "NAC City", "AC City", "NAC NCR", "NAC", "AC", "NAC", "AC", "KMs", "Earning (Rs.)");
+            table.Rows.Add("1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "14", "15", "16", "17", "18", "19", "20", "21", "22");
+
+
+            table.Rows.Add("1", "B.B.M", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
+            table.Rows.Add("2", "Rohini-I", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
+            table.Rows.Add("3", "Rohini-II", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
+            table.Rows.Add("4", "Rohini-III", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
+            table.Rows.Add("5", "Rohini-IV", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
+            table.Rows.Add("6", "Wazir Pur", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
+            table.Rows.Add("7", "Subhash Place", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
+            table.Rows.Add("8", "G.T.K. Rd.", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
+            table.Rows.Add("9", "Nangloi", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
+            table.Rows.Add("10", "Kanjhawla", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
+            table.Rows.Add("11", "NARELA", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
+            table.Rows.Add("12", "ROHINI-30", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
+            table.Rows.Add("13", "Kalka Ji", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
+            table.Rows.Add("14", "SNPD", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
+            table.Rows.Add("15", "AND", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
+            table.Rows.Add("16", "Vasant Vihar", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
+            table.Rows.Add("17", "Tehkhand", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
+            table.Rows.Add("18", "Sukhdev Vihar", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
+            table.Rows.Add("19", "Sarojni Nagar", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
+            table.Rows.Add("20", "Nand Nagri", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
+            table.Rows.Add("21", "NOIDA", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
+            table.Rows.Add("22", "E.V.Nagar", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
+            table.Rows.Add("23", "HasanPur", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
+            table.Rows.Add("24", "Gazi Pur", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
+            table.Rows.Add("25", "Raj Ghat-I", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
+            table.Rows.Add("26", "Raj Ghat-II", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
+            table.Rows.Add("27", "Hari Nagar-I ", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
+            table.Rows.Add("28", "Hari Nagar-II", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
+            table.Rows.Add("29", "Kesho Pur", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
+            table.Rows.Add("30", "Naraina", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
+            table.Rows.Add("31", "Shadi Pur", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
+            table.Rows.Add("32", "BAGDOLA", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
+            table.Rows.Add("33", "DW.SEC- 2", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
+            table.Rows.Add("34", "Maya Puri", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
+            table.Rows.Add("35", "Dichaon Kalan", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
+            table.Rows.Add("36", "Peera Garhi", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
+            table.Rows.Add("37", "Mundhela kalan", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
+            table.Rows.Add("38", "Total", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
+
+            return table;
+        }
+
         int DeleteExisitingTableRecord(string TableName, int OsbId)
         {
             string strTable = "[rpt].[" + TableName + "]";
@@ -130,13 +205,15 @@ namespace OperationalStatisticsBook
 
 
             DataTable autoSpTable = new DataTable();
-            SqlCommand cmd1 = new SqlCommand("NoofTripsactOperatedOnTimeNWithinTwoMinutesOSB4_7", con);
-            cmd1.Parameters.AddWithValue("@month", Month);
-            cmd1.Parameters.AddWithValue("@year", Year);
-            cmd1.CommandType = CommandType.StoredProcedure;
-            SqlDataAdapter sda1 = new SqlDataAdapter(cmd1);
-            sda1.Fill(autoSpTable);
-
+            if (dt.Rows.Count < 1)
+            {
+                SqlCommand cmd1 = new SqlCommand("[dbo].[DepotWiseStateOfSchbusSplHireTouristPinkPassOSB6_2]", con);
+                cmd1.Parameters.AddWithValue("@month", Month);
+                cmd1.Parameters.AddWithValue("@year", Year);
+                cmd1.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter sda1 = new SqlDataAdapter(cmd1);
+                sda1.Fill(autoSpTable);
+            }
 
 
             if (dt.Rows.Count > 0)
@@ -144,7 +221,10 @@ namespace OperationalStatisticsBook
                 dataGridView1.DataSource = dt;
                 Save.BackColor = Color.Green;
             }
-
+            else if (autoSpTable.Rows.Count > 0)
+            {
+                dataGridView1.DataSource = BindDeportWiseStatementOfSchoolSPLHireTouristPassPinkTicketEarning_AutoSpTable(autoSpTable);
+            }
             else
             {
                 dataGridView1.DataSource = BindDeportWiseStatementOfSchoolSPLHireTouristPassPinkTicketEarning();
@@ -157,6 +237,7 @@ namespace OperationalStatisticsBook
 
         private void ResetOnClick(object sender, EventArgs e)
         {
+            DeleteExisitingTableRecord("tbl_DeportWiseStatementOfSchoolSPLHireTouristPassPinkTicketEarning", OsbId);
             dataGridView1.DataSource = BindDeportWiseStatementOfSchoolSPLHireTouristPassPinkTicketEarning();
             setRowColNonEditable();
             MessageBox.Show("Done");
