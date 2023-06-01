@@ -32,7 +32,6 @@ namespace OperationalStatisticsBook
             this.MonthName = MonthName;
         }
 
- 
         void BindIndexPage(int OsbId)
         {
 
@@ -44,10 +43,27 @@ namespace OperationalStatisticsBook
                 cmd.CommandType = CommandType.Text;
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
                 sda.Fill(dt);
+
+                DataTable autoSpTable = new DataTable();
+                if (dt.Rows.Count < 1)
+                {
+                    SqlCommand cmd1 = new SqlCommand("[dbo].[AccidentAnalysisAcNonAcforTheMonth4_5]", con);
+                    cmd1.Parameters.AddWithValue("@month", Month);
+                    cmd1.Parameters.AddWithValue("@year", Year);
+                    cmd1.CommandType = CommandType.StoredProcedure;
+                    cmd1.CommandTimeout = 200;
+                    SqlDataAdapter sda1 = new SqlDataAdapter(cmd1);
+                    sda1.Fill(autoSpTable);
+                }
+
                 if (dt.Rows.Count > 0)
                 {
                     dataGridView1.DataSource = dt;
                     Save.BackColor = Color.Green;
+                }
+                else if (autoSpTable.Rows.Count > 0)
+                {
+                    dataGridView1.DataSource = BindAccidentAnalysisForTheMonth_AutoSpTable(autoSpTable);
                 }
                 else
                 {
@@ -60,11 +76,240 @@ namespace OperationalStatisticsBook
             }
             catch (Exception ex)
             {
-
+                throw ex;
             }
 
         }
-              
+
+        DataTable BindAccidentAnalysisForTheMonth_AutoSpTable(DataTable sp)
+        {
+            DataTable table = new DataTable();
+
+            table.Columns.Add("S.No", typeof(string));
+            table.Columns.Add("Name of Depot", typeof(string));
+            table.Columns.Add("MINOR*", typeof(string));
+            table.Columns.Add("MINOR* ", typeof(string));
+            table.Columns.Add("MINOR*  ", typeof(string));
+            table.Columns.Add("MINOR*   ", typeof(string));
+            table.Columns.Add("MINOR*     ", typeof(string));
+            table.Columns.Add("MAJOR**", typeof(string));
+            table.Columns.Add("MAJOR** ", typeof(string));
+            table.Columns.Add("MAJOR**  ", typeof(string));
+            table.Columns.Add("MAJOR**   ", typeof(string));
+            table.Columns.Add("MAJOR**    ", typeof(string));
+            table.Columns.Add("FATAL***", typeof(string));
+            table.Columns.Add("FATAL*** ", typeof(string));
+            table.Columns.Add("FATAL***  ", typeof(string));
+            table.Columns.Add("FATAL***   ", typeof(string));
+            table.Columns.Add("FATAL***    ", typeof(string));
+            table.Columns.Add("TOTAL", typeof(string));
+            table.Columns.Add("TOTAL ", typeof(string));
+            table.Columns.Add("TOTAL  ", typeof(string));
+            table.Columns.Add("TOTAL   ", typeof(string));
+            table.Columns.Add("TOTAL     ", typeof(string));
+            table.Columns.Add("RATIO PER ONE LAKH KMS.", typeof(string));
+            table.Columns.Add("RATIO PER ONE LAKH KMS. ", typeof(string));
+            table.Columns.Add("RATIO PER ONE LAKH KMS.  ", typeof(string));
+            table.Columns.Add("RATIO PER ONE LAKH KMS.   ", typeof(string));
+            table.Columns.Add("RATIO PER ONE LAKH KMS.    ", typeof(string));
+            table.Columns.Add("PERSONS INJURED", typeof(string));
+            table.Columns.Add("PERSONS INJURED ", typeof(string));
+            table.Columns.Add("PERSONS INJURED  ", typeof(string));
+            table.Columns.Add("PERSONS INJURED   ", typeof(string));
+            table.Columns.Add("PERSONS INJURED    ", typeof(string));
+            table.Columns.Add("PERSONS KILLED ", typeof(string));
+            table.Columns.Add("PERSONS KILLED  ", typeof(string));
+            table.Columns.Add("PERSONS KILLED   ", typeof(string));
+            table.Columns.Add("PERSONS KILLED    ", typeof(string));
+            table.Columns.Add("PERSONS KILLED      ", typeof(string));
+            table.Columns.Add("FATALITIES PER 100000 KMS", typeof(string));
+            table.Columns.Add("FATALITIES PER 100000 KMS ", typeof(string));
+            table.Columns.Add("FATALITIES PER 100000 KMS  ", typeof(string));
+            table.Columns.Add("FATALITIES PER 100000 KMS   ", typeof(string));
+            table.Columns.Add("FATALITIES PER 100000 KMS    ", typeof(string));
+
+            ///Rows here........ 
+            // table.Rows.Add(" ", " ", "City", "City", "NCR", "NCR", "Total", "City", "City", "NCR", "NCR", "Total", "City", "City", "NCR", "NCR", "Total", "City", "City", "NCR", "NCR", "Total", "City", "City", "NCR", "NCR", "Total", "City", "City", "NCR", "NCR", "Total", "City", "City", "NCR", "NCR", "Total", "City", "City", "NCR", "NCR", "Total");
+            // table.Rows.Add(" ", " ", "NAC ", "AC ", "NAC", "AC", " ", "NAC ", "AC ", "NAC", "AC", " ", "NAC ", "AC ", "NAC", "AC", " ", "NAC ", "AC ", "NAC", "AC", " ", "NAC ", "AC ", "NAC", "AC", " ", "NAC ", "AC ", "NAC", "AC", " ", "NAC ", "AC ", "NAC", "AC", " ", "NAC ", "AC ", "NAC", "AC", " ");
+            // table.Rows.Add("1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42");
+
+            for (int i = 0; i < sp.Rows.Count; i++)
+            {
+                if (Convert.ToInt32(sp.Rows[i]["CirleCode"]) != 22 && Convert.ToInt32(sp.Rows[i]["CirleCode"]) != 40 && Convert.ToInt32(sp.Rows[i]["CirleCode"]) != 41)
+                {
+                    int totalCityNac = Convert.ToInt32(sp.Rows[i]["MinorCityNonAc"]) + Convert.ToInt32(sp.Rows[i]["MajorCityNonAc"]) + Convert.ToInt32(sp.Rows[i]["FatalCityNonAc"]);
+                    int totalCityAc = Convert.ToInt32(sp.Rows[i]["MinorCityAc"]) + Convert.ToInt32(sp.Rows[i]["MajorCityAc"]) + Convert.ToInt32(sp.Rows[i]["FatalCityAc"]);
+                    int totalNcrNac = Convert.ToInt32(sp.Rows[i]["MinorNcrNonAc"]) + Convert.ToInt32(sp.Rows[i]["MajorNcrNonAc"]) + Convert.ToInt32(sp.Rows[i]["FatalNcrNonAc"]);
+                    int totalNcrAc = Convert.ToInt32(sp.Rows[i]["MinorNcrAc"]) + Convert.ToInt32(sp.Rows[i]["MajorNcrAc"]) + Convert.ToInt32(sp.Rows[i]["FatalNcrAc"]);
+
+                    int operatedKmCityNac = Convert.ToInt32(sp.Rows[i]["RationPerLakhCityNac"] ?? 1);
+                    int operatedKmCityAc = Convert.ToInt32(sp.Rows[i]["RationPerLakhCityAc"] ?? 1);
+                    int operatedKmNcrNac = Convert.ToInt32(sp.Rows[i]["RationPerLakhNcrNac"] ?? 1);
+                    int operatedKmNcrAc = Convert.ToInt32(sp.Rows[i]["RationPerLakhNcrAc"] ?? 1);
+
+                    table.Rows.Add(i + 1, sp.Rows[i]["CircleName"],
+
+                    sp.Rows[i]["MinorCityNonAc"], sp.Rows[i]["MinorCityAc"], sp.Rows[i]["MinorNcrNonAc"], sp.Rows[i]["MinorNcrAc"], "0",
+                    sp.Rows[i]["MajorCityNonAc"], sp.Rows[i]["MajorCityAc"], sp.Rows[i]["MajorNcrNonAc"], sp.Rows[i]["MajorNcrAc"], "0",
+                    sp.Rows[i]["FatalCityNonAc"], sp.Rows[i]["FatalCityAc"], sp.Rows[i]["FatalNcrNonAc"], sp.Rows[i]["FatalNcrAc"], "0",
+
+                    Convert.ToString(totalCityNac), Convert.ToString(totalCityAc), Convert.ToString(totalNcrNac), Convert.ToString(totalNcrAc), "0",
+
+                    (operatedKmCityNac != 0) ? Convert.ToString((totalCityNac * 100000) / operatedKmCityNac) : "1",
+                    (operatedKmCityAc != 0) ? Convert.ToString((totalCityAc * 100000) / operatedKmCityAc) : "1",
+                    (operatedKmNcrNac != 0) ? Convert.ToString((totalNcrNac * 100000) / operatedKmNcrNac) : "1",
+                    (operatedKmNcrAc != 0) ? Convert.ToString((totalNcrAc * 100000) / operatedKmNcrAc) : "1",
+
+                    sp.Rows[i]["PersonInjuredCityNonAc"], sp.Rows[i]["PersonInjuredCityAc"], sp.Rows[i]["PersonInjuredNcrNonAc"], sp.Rows[i]["PersonInjuredNcrAc"], "0",
+
+                    sp.Rows[i]["FatalCityNonAc"], sp.Rows[i]["FatalCityAc"], sp.Rows[i]["FatalNcrNonAc"], sp.Rows[i]["FatalNcrAc"], "0",
+
+                    (operatedKmCityNac != 0) ? Convert.ToString((Convert.ToInt32(sp.Rows[i]["FatalCityNonAc"]) * 100000) / operatedKmCityNac) : "1",
+                    (operatedKmCityAc != 0) ? Convert.ToString((Convert.ToInt32(sp.Rows[i]["FatalCityAc"]) * 100000) / operatedKmCityAc) : "1",
+                    (operatedKmNcrNac != 0) ? Convert.ToString((Convert.ToInt32(sp.Rows[i]["FatalNcrNonAc"]) * 100000) / operatedKmNcrNac) : "1",
+                    (operatedKmNcrAc != 0) ? Convert.ToString((Convert.ToInt32(sp.Rows[i]["FatalNcrAc"]) * 100000) / operatedKmNcrAc) : "1"
+                    );
+                }
+
+            }
+
+            table.Rows.Add(" ", "Total ", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
+
+            table.Rows.Add(" Electric Buses", " ", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "");
+
+
+
+            //////////////////////////////////
+            ///   ROHINI 2
+            //////////////////////////////////
+            if (true)
+            {
+                int totalCityNac = Convert.ToInt32(sp.Rows[22]["MinorCityNonAc"]) + Convert.ToInt32(sp.Rows[22]["MajorCityNonAc"]) + Convert.ToInt32(sp.Rows[22]["FatalCityNonAc"]);
+                int totalCityAc = Convert.ToInt32(sp.Rows[22]["MinorCityAc"]) + Convert.ToInt32(sp.Rows[22]["MajorCityAc"]) + Convert.ToInt32(sp.Rows[22]["FatalCityAc"]);
+                int totalNcrNac = Convert.ToInt32(sp.Rows[22]["MinorNcrNonAc"]) + Convert.ToInt32(sp.Rows[22]["MajorNcrNonAc"]) + Convert.ToInt32(sp.Rows[22]["FatalNcrNonAc"]);
+                int totalNcrAc = Convert.ToInt32(sp.Rows[22]["MinorNcrAc"]) + Convert.ToInt32(sp.Rows[22]["MajorNcrAc"]) + Convert.ToInt32(sp.Rows[22]["FatalNcrAc"]);
+
+                int operatedKmCityNac = Convert.ToInt32(sp.Rows[22]["RationPerLakhCityNac"] ?? 1);
+                int operatedKmCityAc = Convert.ToInt32(sp.Rows[22]["RationPerLakhCityAc"] ?? 1);
+                int operatedKmNcrNac = Convert.ToInt32(sp.Rows[22]["RationPerLakhNcrNac"] ?? 1);
+                int operatedKmNcrAc = Convert.ToInt32(sp.Rows[22]["RationPerLakhNcrAc"] ?? 1);
+
+                table.Rows.Add(1, sp.Rows[22]["CircleName"],
+
+                    sp.Rows[22]["MinorCityNonAc"], sp.Rows[22]["MinorCityAc"], sp.Rows[22]["MinorNcrNonAc"], sp.Rows[22]["MinorNcrAc"], "0",
+                    sp.Rows[22]["MajorCityNonAc"], sp.Rows[22]["MajorCityAc"], sp.Rows[22]["MajorNcrNonAc"], sp.Rows[22]["MajorNcrAc"], "0",
+                    sp.Rows[22]["FatalCityNonAc"], sp.Rows[22]["FatalCityAc"], sp.Rows[22]["FatalNcrNonAc"], sp.Rows[22]["FatalNcrAc"], "0",
+
+                    Convert.ToString(totalCityNac), Convert.ToString(totalCityAc), Convert.ToString(totalNcrNac), Convert.ToString(totalNcrAc), "0",
+
+                    (operatedKmCityNac != 0) ? Convert.ToString((totalCityNac * 100000) / operatedKmCityNac) : "1",
+                    (operatedKmCityAc != 0) ? Convert.ToString((totalCityAc * 100000) / operatedKmCityAc) : "1",
+                    (operatedKmNcrNac != 0) ? Convert.ToString((totalNcrNac * 100000) / operatedKmNcrNac) : "1",
+                    (operatedKmNcrAc != 0) ? Convert.ToString((totalNcrAc * 100000) / operatedKmNcrAc) : "1",
+
+                    sp.Rows[22]["PersonInjuredCityNonAc"], sp.Rows[22]["PersonInjuredCityAc"], sp.Rows[22]["PersonInjuredNcrNonAc"], sp.Rows[22]["PersonInjuredNcrAc"], "0",
+
+                    sp.Rows[22]["FatalCityNonAc"], sp.Rows[22]["FatalCityAc"], sp.Rows[22]["FatalNcrNonAc"], sp.Rows[22]["FatalNcrAc"], "0",
+
+                    (operatedKmCityNac != 0) ? Convert.ToString((Convert.ToInt32(sp.Rows[22]["FatalCityNonAc"]) * 100000) / operatedKmCityNac) : "1",
+                    (operatedKmCityAc != 0) ? Convert.ToString((Convert.ToInt32(sp.Rows[22]["FatalCityAc"]) * 100000) / operatedKmCityAc) : "1",
+                    (operatedKmNcrNac != 0) ? Convert.ToString((Convert.ToInt32(sp.Rows[22]["FatalNcrNonAc"]) * 100000) / operatedKmNcrNac) : "1",
+                    (operatedKmNcrAc != 0) ? Convert.ToString((Convert.ToInt32(sp.Rows[22]["FatalNcrAc"]) * 100000) / operatedKmNcrAc) : "1"
+                    );
+            }
+
+
+            //////////////////////////////////
+            ///   ROHINI SEC - 37
+            //////////////////////////////////
+            if (true)
+            {
+                int totalCityNac = Convert.ToInt32(sp.Rows[35]["MinorCityNonAc"]) + Convert.ToInt32(sp.Rows[35]["MajorCityNonAc"]) + Convert.ToInt32(sp.Rows[35]["FatalCityNonAc"]);
+                int totalCityAc = Convert.ToInt32(sp.Rows[35]["MinorCityAc"]) + Convert.ToInt32(sp.Rows[35]["MajorCityAc"]) + Convert.ToInt32(sp.Rows[35]["FatalCityAc"]);
+                int totalNcrNac = Convert.ToInt32(sp.Rows[35]["MinorNcrNonAc"]) + Convert.ToInt32(sp.Rows[35]["MajorNcrNonAc"]) + Convert.ToInt32(sp.Rows[35]["FatalNcrNonAc"]);
+                int totalNcrAc = Convert.ToInt32(sp.Rows[35]["MinorNcrAc"]) + Convert.ToInt32(sp.Rows[35]["MajorNcrAc"]) + Convert.ToInt32(sp.Rows[35]["FatalNcrAc"]);
+
+                int operatedKmCityNac = Convert.ToInt32(sp.Rows[35]["RationPerLakhCityNac"] ?? 1);
+                int operatedKmCityAc = Convert.ToInt32(sp.Rows[35]["RationPerLakhCityAc"] ?? 1);
+                int operatedKmNcrNac = Convert.ToInt32(sp.Rows[35]["RationPerLakhNcrNac"] ?? 1);
+                int operatedKmNcrAc = Convert.ToInt32(sp.Rows[35]["RationPerLakhNcrAc"] ?? 1);
+
+                table.Rows.Add(1, sp.Rows[35]["CircleName"],
+
+                    sp.Rows[35]["MinorCityNonAc"], sp.Rows[35]["MinorCityAc"], sp.Rows[35]["MinorNcrNonAc"], sp.Rows[35]["MinorNcrAc"], "0",
+                    sp.Rows[35]["MajorCityNonAc"], sp.Rows[35]["MajorCityAc"], sp.Rows[35]["MajorNcrNonAc"], sp.Rows[35]["MajorNcrAc"], "0",
+                    sp.Rows[35]["FatalCityNonAc"], sp.Rows[35]["FatalCityAc"], sp.Rows[35]["FatalNcrNonAc"], sp.Rows[35]["FatalNcrAc"], "0",
+
+                    Convert.ToString(totalCityNac), Convert.ToString(totalCityAc), Convert.ToString(totalNcrNac), Convert.ToString(totalNcrAc), "0",
+
+                    (operatedKmCityNac != 0) ? Convert.ToString((totalCityNac * 100000) / operatedKmCityNac) : "1",
+                    (operatedKmCityAc != 0) ? Convert.ToString((totalCityAc * 100000) / operatedKmCityAc) : "1",
+                    (operatedKmNcrNac != 0) ? Convert.ToString((totalNcrNac * 100000) / operatedKmNcrNac) : "1",
+                    (operatedKmNcrAc != 0) ? Convert.ToString((totalNcrAc * 100000) / operatedKmNcrAc) : "1",
+
+                    sp.Rows[35]["PersonInjuredCityNonAc"], sp.Rows[35]["PersonInjuredCityAc"], sp.Rows[35]["PersonInjuredNcrNonAc"], sp.Rows[35]["PersonInjuredNcrAc"], "0",
+
+                    sp.Rows[35]["FatalCityNonAc"], sp.Rows[35]["FatalCityAc"], sp.Rows[35]["FatalNcrNonAc"], sp.Rows[35]["FatalNcrAc"], "0",
+
+                    (operatedKmCityNac != 0) ? Convert.ToString((Convert.ToInt32(sp.Rows[35]["FatalCityNonAc"]) * 100000) / operatedKmCityNac) : "1",
+                    (operatedKmCityAc != 0) ? Convert.ToString((Convert.ToInt32(sp.Rows[35]["FatalCityAc"]) * 100000) / operatedKmCityAc) : "1",
+                    (operatedKmNcrNac != 0) ? Convert.ToString((Convert.ToInt32(sp.Rows[35]["FatalNcrNonAc"]) * 100000) / operatedKmNcrNac) : "1",
+                    (operatedKmNcrAc != 0) ? Convert.ToString((Convert.ToInt32(sp.Rows[35]["FatalNcrAc"]) * 100000) / operatedKmNcrAc) : "1"
+                    );
+            }
+
+            //////////////////////////////////
+            ///   MUNDHELA KALAN
+            //////////////////////////////////
+            if (true)
+            {
+                int totalCityNac = Convert.ToInt32(sp.Rows[36]["MinorCityNonAc"]) + Convert.ToInt32(sp.Rows[36]["MajorCityNonAc"]) + Convert.ToInt32(sp.Rows[36]["FatalCityNonAc"]);
+                int totalCityAc = Convert.ToInt32(sp.Rows[36]["MinorCityAc"]) + Convert.ToInt32(sp.Rows[36]["MajorCityAc"]) + Convert.ToInt32(sp.Rows[36]["FatalCityAc"]);
+                int totalNcrNac = Convert.ToInt32(sp.Rows[36]["MinorNcrNonAc"]) + Convert.ToInt32(sp.Rows[36]["MajorNcrNonAc"]) + Convert.ToInt32(sp.Rows[36]["FatalNcrNonAc"]);
+                int totalNcrAc = Convert.ToInt32(sp.Rows[36]["MinorNcrAc"]) + Convert.ToInt32(sp.Rows[36]["MajorNcrAc"]) + Convert.ToInt32(sp.Rows[36]["FatalNcrAc"]);
+
+                int operatedKmCityNac = Convert.ToInt32(sp.Rows[36]["RationPerLakhCityNac"] ?? 1);
+                int operatedKmCityAc = Convert.ToInt32(sp.Rows[36]["RationPerLakhCityAc"] ?? 1);
+                int operatedKmNcrNac = Convert.ToInt32(sp.Rows[36]["RationPerLakhNcrNac"] ?? 1);
+                int operatedKmNcrAc = Convert.ToInt32(sp.Rows[36]["RationPerLakhNcrAc"] ?? 1);
+
+                table.Rows.Add(1, sp.Rows[36]["CircleName"],
+
+                    sp.Rows[36]["MinorCityNonAc"], sp.Rows[36]["MinorCityAc"], sp.Rows[36]["MinorNcrNonAc"], sp.Rows[36]["MinorNcrAc"], "0",
+                    sp.Rows[36]["MajorCityNonAc"], sp.Rows[36]["MajorCityAc"], sp.Rows[36]["MajorNcrNonAc"], sp.Rows[36]["MajorNcrAc"], "0",
+                    sp.Rows[36]["FatalCityNonAc"], sp.Rows[36]["FatalCityAc"], sp.Rows[36]["FatalNcrNonAc"], sp.Rows[36]["FatalNcrAc"], "0",
+
+                    Convert.ToString(totalCityNac), Convert.ToString(totalCityAc), Convert.ToString(totalNcrNac), Convert.ToString(totalNcrAc), "0",
+
+                    (operatedKmCityNac != 0) ? Convert.ToString((totalCityNac * 100000) / operatedKmCityNac) : "1",
+                    (operatedKmCityAc != 0) ? Convert.ToString((totalCityAc * 100000) / operatedKmCityAc) : "1",
+                    (operatedKmNcrNac != 0) ? Convert.ToString((totalNcrNac * 100000) / operatedKmNcrNac) : "1",
+                    (operatedKmNcrAc != 0) ? Convert.ToString((totalNcrAc * 100000) / operatedKmNcrAc) : "1",
+
+                    sp.Rows[36]["PersonInjuredCityNonAc"], sp.Rows[36]["PersonInjuredCityAc"], sp.Rows[36]["PersonInjuredNcrNonAc"], sp.Rows[36]["PersonInjuredNcrAc"], "0",
+
+                    sp.Rows[36]["FatalCityNonAc"], sp.Rows[36]["FatalCityAc"], sp.Rows[36]["FatalNcrNonAc"], sp.Rows[36]["FatalNcrAc"], "0",
+
+                    (operatedKmCityNac != 0) ? Convert.ToString((Convert.ToInt32(sp.Rows[36]["FatalCityNonAc"]) * 100000) / operatedKmCityNac) : "1",
+                    (operatedKmCityAc != 0) ? Convert.ToString((Convert.ToInt32(sp.Rows[36]["FatalCityAc"]) * 100000) / operatedKmCityAc) : "1",
+                    (operatedKmNcrNac != 0) ? Convert.ToString((Convert.ToInt32(sp.Rows[36]["FatalNcrNonAc"]) * 100000) / operatedKmNcrNac) : "1",
+                    (operatedKmNcrAc != 0) ? Convert.ToString((Convert.ToInt32(sp.Rows[36]["FatalNcrAc"]) * 100000) / operatedKmNcrAc) : "1"
+                    );
+            }
+
+            table.Rows.Add(" ", "Total Electric ", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
+            table.Rows.Add(" ", "Total DTC ", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
+
+            table.Rows.Add(" International", " ", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "");
+
+            table.Rows.Add("1", "Kathmandu", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
+
+            table.Rows.Add("", "Grand Total", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
+
+
+            return table;
+        }
+
         int DeleteExisitingTableRecord(string TableName, int OsbId)
         {
             string strTable = "[rpt].[" + TableName + "]";
@@ -79,7 +324,7 @@ namespace OperationalStatisticsBook
 
             return i;
         }
-      
+
         DataTable BindAccidentAnalysisForTheMonth()
         {
             DataTable table = new DataTable();
@@ -128,9 +373,9 @@ namespace OperationalStatisticsBook
             table.Columns.Add("FATALITIES PER 100000 KMS    ", typeof(string));
 
             ///Rows here........ 
-           // table.Rows.Add(" ", " ", "City", "City", "NCR", "NCR", "Total", "City", "City", "NCR", "NCR", "Total", "City", "City", "NCR", "NCR", "Total", "City", "City", "NCR", "NCR", "Total", "City", "City", "NCR", "NCR", "Total", "City", "City", "NCR", "NCR", "Total", "City", "City", "NCR", "NCR", "Total", "City", "City", "NCR", "NCR", "Total");
-           // table.Rows.Add(" ", " ", "NAC ", "AC ", "NAC", "AC", " ", "NAC ", "AC ", "NAC", "AC", " ", "NAC ", "AC ", "NAC", "AC", " ", "NAC ", "AC ", "NAC", "AC", " ", "NAC ", "AC ", "NAC", "AC", " ", "NAC ", "AC ", "NAC", "AC", " ", "NAC ", "AC ", "NAC", "AC", " ", "NAC ", "AC ", "NAC", "AC", " ");
-           // table.Rows.Add("1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42");
+            // table.Rows.Add(" ", " ", "City", "City", "NCR", "NCR", "Total", "City", "City", "NCR", "NCR", "Total", "City", "City", "NCR", "NCR", "Total", "City", "City", "NCR", "NCR", "Total", "City", "City", "NCR", "NCR", "Total", "City", "City", "NCR", "NCR", "Total", "City", "City", "NCR", "NCR", "Total", "City", "City", "NCR", "NCR", "Total");
+            // table.Rows.Add(" ", " ", "NAC ", "AC ", "NAC", "AC", " ", "NAC ", "AC ", "NAC", "AC", " ", "NAC ", "AC ", "NAC", "AC", " ", "NAC ", "AC ", "NAC", "AC", " ", "NAC ", "AC ", "NAC", "AC", " ", "NAC ", "AC ", "NAC", "AC", " ", "NAC ", "AC ", "NAC", "AC", " ", "NAC ", "AC ", "NAC", "AC", " ");
+            // table.Rows.Add("1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42");
             table.Rows.Add("2", "BBM ", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("3", "Rohini-I ", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("4", "Rohini-II ", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
@@ -166,25 +411,26 @@ namespace OperationalStatisticsBook
             table.Rows.Add("34", "Dichaon Kalan", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("35", "Peera Garhi", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add(" ", "Total ", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
-            
+
             table.Rows.Add(" Electric Buses", " ", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "");
-           
+
             table.Rows.Add("1", " Rohini sec. 37", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("2", "Rajghat II ", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add("3", "Mundhela kalan ", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
-           
+
             table.Rows.Add(" ", "Total Electric ", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
             table.Rows.Add(" ", "Total DTC ", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
-            
+
             table.Rows.Add(" International", " ", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "");
-            
+
             table.Rows.Add("1", "Kathmandu", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
-            
+
             table.Rows.Add("", "Grand Total", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0");
 
 
             return table;
         }
+
         private void ResetOnClick(object sender, EventArgs e)
         {
             DeleteExisitingTableRecord("tbl_AccidentAnalysisForTheMonth", OsbId);
@@ -261,15 +507,17 @@ namespace OperationalStatisticsBook
             }
             MessageBox.Show("Done");
         }
+
         private void button1_Click(object sender, EventArgs e)
         {
             DeleteExisitingTableRecord("tbl_AccidentAnalysisForTheMonth", OsbId);
             dataGridView1.DataSource = BindAccidentAnalysisForTheMonth();
             MessageBox.Show("Done");
         }
+
         private void AccidentAnalysisForTheMonth_Load(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = BindAccidentAnalysisForTheMonth();
+            //dataGridView1.DataSource = BindAccidentAnalysisForTheMonth();
             BindIndexPage(OsbId);
         }
 
@@ -287,17 +535,17 @@ namespace OperationalStatisticsBook
 
             for (int i = 2; i <= 36; i++)
             {
-                if (i<=21)
+                if (i <= 21)
                 {
                     dataGridView1.Rows[34].Cells[i].Value = Common.GetSum(row, 0, 33, i);
                 }
-                if (i>=27 && i<37)
+                if (i >= 27 && i < 37)
                 {
                     dataGridView1.Rows[34].Cells[i].Value = Common.GetSum(row, 0, 33, i);
                 }
 
             }
-                             
+
             #endregion
 
             #region Calculating_HorizontalSum
@@ -306,7 +554,7 @@ namespace OperationalStatisticsBook
 
                 if (i >= 0)
                 {
-                    if (i != 35 && i != 40 && i != 39 && i!=42)
+                    if (i != 35 && i != 40 && i != 39 && i != 42)
                     {
                         dataGridView1.Rows[i].Cells[6].Value = Common.ConvertToDecimal(row[i].Cells[2].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[3].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[4].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[5].Value.ToString());
                         dataGridView1.Rows[i].Cells[11].Value = Common.ConvertToDecimal(row[i].Cells[7].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[8].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[9].Value.ToString()) + Common.ConvertToDecimal(row[i].Cells[10].Value.ToString());
@@ -329,7 +577,7 @@ namespace OperationalStatisticsBook
             #endregion
 
             // grand total
-            for(int i = 2; i<=41; i++)
+            for (int i = 2; i <= 41; i++)
             {
                 // Total Electric
                 dataGridView1.Rows[39].Cells[i].Value = Common.GetSum(row, 36, 38, i);
@@ -349,9 +597,9 @@ namespace OperationalStatisticsBook
         }
 
         private void setRowColNonEditable()
-        { 
+        {
 
-            Common.SetColumnNonEditable(dataGridView1, 6 , 42);
+            Common.SetColumnNonEditable(dataGridView1, 6, 42);
             Common.SetColumnNonEditable(dataGridView1, 11, 42);
             Common.SetColumnNonEditable(dataGridView1, 16, 42);
             Common.SetColumnNonEditable(dataGridView1, 17, 42);
