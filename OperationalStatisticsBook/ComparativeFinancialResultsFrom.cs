@@ -39,21 +39,44 @@ namespace OperationalStatisticsBook
 
             try
             {
-                DataTable dt = new DataTable();
-                SqlCommand cmd = new SqlCommand("SELECT [S_No],[Param1],[Param2],[Param3],[Param4] ,[Param5],[Param6],[Param7] FROM [rpt].[tbl_ComparativeFinancialResultsFrom] where OsbId=@OsbId", con);
-                cmd.Parameters.AddWithValue("@OsbId", 5);
-                cmd.CommandType = CommandType.Text;
-                SqlDataAdapter sda = new SqlDataAdapter(cmd);
-                sda.Fill(dt);
-                if (dt.Rows.Count > 0)
+                if (finYear == "2022-23")
                 {
-                    dataGridView1.DataSource = dt;
-                    Save.BackColor = Color.Green;
+                    DataTable dt = new DataTable();
+                    SqlCommand cmd = new SqlCommand("SELECT [S_No],[Param1],[Param2],[Param3],[Param4] ,[Param5],[Param6],[Param7] FROM [rpt].[tbl_ComparativeFinancialResultsFrom] where OsbId=@OsbId", con);
+                    cmd.Parameters.AddWithValue("@OsbId", 5);
+                    cmd.CommandType = CommandType.Text;
+                    SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                    sda.Fill(dt);
+                    if (dt.Rows.Count > 0)
+                    {
+                        dataGridView1.DataSource = dt;
+                        Save.BackColor = Color.Green;
+                    }
+                    else
+                    {
+                        dataGridView1.DataSource = BindComparativeFinancialResultsFrom();
+                    }
                 }
-                else
+
+                else if (finYear == "2023-24")
                 {
-                    dataGridView1.DataSource = BindComparativeFinancialResultsFrom();
+                    DataTable dt = new DataTable();
+                    SqlCommand cmd = new SqlCommand("SELECT [S_No],[Param1],[Param2],[Param3],[Param4] ,[Param5],[Param6],[Param7] FROM [rpt].[tbl_ComparativeFinancialResultsFrom] where OsbId=@OsbId", con);
+                    cmd.Parameters.AddWithValue("@OsbId", OsbId);
+                    cmd.CommandType = CommandType.Text;
+                    SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                    sda.Fill(dt);
+                    if (dt.Rows.Count > 0)
+                    {
+                        dataGridView1.DataSource = dt;
+                        Save.BackColor = Color.Green;
+                    }
+                    else
+                    {
+                        dataGridView1.DataSource = BindComparativeFinancialResultsFrom();
+                    }
                 }
+
 
 
                 SetRowColNonEditable();
@@ -337,7 +360,7 @@ namespace OperationalStatisticsBook
 
         private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
-            CalculateFormula();
+            // CalculateFormula();
         }
 
         private void SetRowColNonEditable()
