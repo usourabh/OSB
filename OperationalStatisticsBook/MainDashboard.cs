@@ -509,7 +509,7 @@ namespace OperationalStatisticsBook
 
         private void GetSinglePagePDF()
         {
-            AllPageDataContext objPageData = new AllPageDataContext();
+            AllPageDataContext objPageData = new AllPageDataContext(OsbId, Year, Month, FinYear, MonthName);
 
             List<byte[]> lstByte = new List<byte[]>();
 

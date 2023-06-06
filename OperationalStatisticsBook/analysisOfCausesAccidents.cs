@@ -84,9 +84,8 @@ namespace OperationalStatisticsBook
             try
             {
                 // WE are showing same data for every month in single financial year thats y we did't automate this report
-                if (Year == 2022)
+                if (finYear == "2022-23")
                 {
-
                     DataTable dt = new DataTable();
                     SqlCommand cmd = new SqlCommand("SELECT [SNO],[Particular],[Absolute],[Percentage],[Absolutes],[Percentages] FROM [rpt].[tbl_analysisCausesAccidents] where OsbId=@OsbId", con);
                     cmd.Parameters.AddWithValue("@OsbId", 5);
@@ -99,9 +98,24 @@ namespace OperationalStatisticsBook
                         dataGridView1.DataSource = dt;
                         SaveBtn.BackColor = Color.Green;
                     }
-
                 }
 
+
+                else if (finYear == "2023-24")
+                {
+                    DataTable dt = new DataTable();
+                    SqlCommand cmd = new SqlCommand("SELECT [SNO],[Particular],[Absolute],[Percentage],[Absolutes],[Percentages] FROM [rpt].[tbl_analysisCausesAccidents] where OsbId=@OsbId", con);
+                    cmd.Parameters.AddWithValue("@OsbId", 132);
+                    cmd.CommandType = CommandType.Text;
+                    SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                    sda.Fill(dt);
+
+                    if (dt.Rows.Count > 0)
+                    {
+                        dataGridView1.DataSource = dt;
+                        SaveBtn.BackColor = Color.Green;
+                    }
+                }
 
                 //DataTable autoSpTable = new DataTable();
                 //SqlCommand cmd1 = new SqlCommand("[dbo].[sp_AnalysisOfCausesAccidentsYearlyOSB1_1]", con);
@@ -124,12 +138,13 @@ namespace OperationalStatisticsBook
                 {
                     dataGridView1.DataSource = BindAnalysisOfCausesAccidents();
                 }
-                setRowNonEditable();
-                Calculate();
+
+                // setRowNonEditable();
+                //Calculate();
             }
             catch (Exception ex)
             {
-
+                throw ex;
             }
 
         }
@@ -190,21 +205,21 @@ namespace OperationalStatisticsBook
 
         void Calculate()
         {
-            var row = dataGridView1.Rows;
-            // Total
+            //var row = dataGridView1.Rows;
+            //// Total
 
-            for (int i = 2; i <= 5; i++)
-            {
-                dataGridView1.Rows[13].Cells[i].Value = Common.GetSum(row, 1, 12, i);
-            }
+            //for (int i = 2; i <= 5; i++)
+            //{
+            //    dataGridView1.Rows[13].Cells[i].Value = Common.GetSum(row, 1, 12, i);
+            //}
 
-            for (int i = 1; i <= 12; i++)
-            {
-                // 1st column percentage
-                dataGridView1.Rows[i].Cells[3].Value = Common.ConvertToDecimal(row[13].Cells[2].Value.ToString()) > 0 ? Math.Round((Common.ConvertToDecimal(row[i].Cells[2].Value.ToString()) / Common.ConvertToDecimal(row[13].Cells[2].Value.ToString())) * 100, 2) : 0;
-                // 2nd column percentage                                                                                             
-                dataGridView1.Rows[i].Cells[5].Value = Common.ConvertToDecimal(row[13].Cells[4].Value.ToString()) > 0 ? Math.Round((Common.ConvertToDecimal(row[i].Cells[4].Value.ToString()) / Common.ConvertToDecimal(row[13].Cells[4].Value.ToString())) * 100, 2) : 0;
-            }
+            //for (int i = 1; i <= 12; i++)
+            //{
+            //    // 1st column percentage
+            //    dataGridView1.Rows[i].Cells[3].Value = Common.ConvertToDecimal(row[13].Cells[2].Value.ToString()) > 0 ? Math.Round((Common.ConvertToDecimal(row[i].Cells[2].Value.ToString()) / Common.ConvertToDecimal(row[13].Cells[2].Value.ToString())) * 100, 2) : 0;
+            //    // 2nd column percentage                                                                                             
+            //    dataGridView1.Rows[i].Cells[5].Value = Common.ConvertToDecimal(row[13].Cells[4].Value.ToString()) > 0 ? Math.Round((Common.ConvertToDecimal(row[i].Cells[4].Value.ToString()) / Common.ConvertToDecimal(row[13].Cells[4].Value.ToString())) * 100, 2) : 0;
+            //}
         }
 
         private void setRowNonEditable()

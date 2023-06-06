@@ -142,7 +142,7 @@ namespace OperationalStatisticsBook
             table.Rows.Add("i ", "H.S.D.OIL", "", "", "", "", "", "");
             table.Rows.Add("ii ", "C.N.G.", "", "", "", "", "", "");
             table.Rows.Add("iii ", "Lubricants", "", "", "", "", "", "");
-            table.Rows.Add("iv ", "Petrol", "13.55", "", "", "", "", "", "");
+            table.Rows.Add("iv ", "Petrol", "13.55", "", "", "", "", "");
             table.Rows.Add("v ", "Tyres ,Tubes & Flaps", "", "", "", "", "", "");
             table.Rows.Add("vi", "Retd. Materials", "", "", "", "", "", "");
             table.Rows.Add("vii", "Stores spare & Batteries", "", "", "", "", "", "");

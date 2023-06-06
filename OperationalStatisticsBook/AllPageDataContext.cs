@@ -9,6 +9,22 @@ namespace OperationalStatisticsBook
 {
     public class AllPageDataContext
     {
+
+        int OsbId = 0;
+        int Year = 0;
+        int Month = 0;
+        string MonthName = "";
+        string finYear = "";
+
+        public AllPageDataContext(int OsbId, int Year, int Month, string finYear, string MonthName)
+        {
+            this.OsbId = OsbId;
+            this.Year = Year;
+            this.Month = Month;
+            this.finYear = finYear;
+            this.MonthName = MonthName;
+        }
+
         //INDEX PAGE
         public DataTable GetIndexPageData_Page1(int OsbId)
         {
@@ -66,12 +82,34 @@ namespace OperationalStatisticsBook
 
         public DataTable GetDataAnalysisCausesAccidents_Page3_tbl2(int OsbId)
         {
-            String[,] param = new string[,]
+            if (finYear == "2023-24")
+            {
+                String[,] param = new string[,]
                    {
-                   {"@OsbId","5"},
+                   {"@OsbId","132"},
                 };
-            DataTable dt = Common.ExecuteProcedure("sp_rptanalysisCausesAccidents", param);
-            return dt;
+                DataTable dt = Common.ExecuteProcedure("sp_rptanalysisCausesAccidents", param);
+                return dt;
+            }
+            else if (finYear == "2022-23")
+            {
+                String[,] param = new string[,]
+                       {
+                   {"@OsbId","5"},
+                    };
+                DataTable dt = Common.ExecuteProcedure("sp_rptanalysisCausesAccidents", param);
+                return dt;
+            }
+            else
+            {
+                String[,] param = new string[,]
+                       {
+                   {"@OsbId", OsbId.ToString()},
+                    };
+                DataTable dt = Common.ExecuteProcedure("sp_rptanalysisCausesAccidents", param);
+                return dt;
+            }
+
         }
 
 
