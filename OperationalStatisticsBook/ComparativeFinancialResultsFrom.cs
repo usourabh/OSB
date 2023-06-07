@@ -62,7 +62,7 @@ namespace OperationalStatisticsBook
                 {
                     DataTable dt = new DataTable();
                     SqlCommand cmd = new SqlCommand("SELECT [S_No],[Param1],[Param2],[Param3],[Param4] ,[Param5],[Param6],[Param7] FROM [rpt].[tbl_ComparativeFinancialResultsFrom] where OsbId=@OsbId", con);
-                    cmd.Parameters.AddWithValue("@OsbId", OsbId);
+                    cmd.Parameters.AddWithValue("@OsbId", 132);
                     cmd.CommandType = CommandType.Text;
                     SqlDataAdapter sda = new SqlDataAdapter(cmd);
                     sda.Fill(dt);
@@ -76,8 +76,6 @@ namespace OperationalStatisticsBook
                         dataGridView1.DataSource = BindComparativeFinancialResultsFrom();
                     }
                 }
-
-
 
                 SetRowColNonEditable();
                 CalculateFormula();
@@ -251,8 +249,8 @@ namespace OperationalStatisticsBook
 
         private void ResetOnClick(object sender, EventArgs e)
         {
-            DeleteExisitingTableRecord("tbl_ComparativeFinancialResultsFrom", OsbId);
-            dataGridView1.DataSource = BindComparativeFinancialResultsFrom();
+            //DeleteExisitingTableRecord("tbl_ComparativeFinancialResultsFrom", OsbId);
+            //dataGridView1.DataSource = BindComparativeFinancialResultsFrom();
             CalculateFormula();
             SetRowColNonEditable();
             MessageBox.Show("Done");
