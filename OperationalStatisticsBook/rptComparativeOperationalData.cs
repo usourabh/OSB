@@ -34,24 +34,48 @@ namespace OperationalStatisticsBook
 
         }
 
+
         public DataTable GetData()
         {
-            String[,] param = new string[,]
+
+            if (finYear == "2023-24")
+            {
+                String[,] param = new string[,]
+                   {
+                   {"@OsbId", "132"},
+                };
+                DataTable dt = Common.ExecuteProcedure("sp_ComparativeOperationalData", param);
+                return dt;
+            }
+            else if (finYear == "2022-23")
+            {
+                String[,] param = new string[,]
+                   {
+                   {"@OsbId", "5"},
+                };
+                DataTable dt = Common.ExecuteProcedure("sp_ComparativeOperationalData", param);
+                return dt;
+            }
+            else
+            {
+                String[,] param = new string[,]
                    {
                    {"@OsbId",OsbId.ToString()},
                 };
-            DataTable dt = Common.ExecuteProcedure("sp_ComparativeOperationalData", param);
-            return dt;
+                DataTable dt = Common.ExecuteProcedure("sp_ComparativeOperationalData", param);
+                return dt;
+            }
+
         }
         private void rptComparativeOperationalData_Load(object sender, EventArgs e)
         {
-           
+
             DataTable dtReportData = GetData();
             ReportDataSource datasource = new ReportDataSource("rptComparativeOperationalData", dtReportData);
             this.reportViewer1.LocalReport.DataSources.Clear();
             this.reportViewer1.LocalReport.DataSources.Add(datasource);
             ReportParameter[] rptParam = new ReportParameter[4];
-            rptParam[0] = new ReportParameter("ReportTitle",  GlobalMaster.FinMaster[3].FinVal + " to " + GlobalMaster.FinMaster[1].FinVal );
+            rptParam[0] = new ReportParameter("ReportTitle", GlobalMaster.FinMaster[3].FinVal + " to " + GlobalMaster.FinMaster[1].FinVal);
             rptParam[1] = new ReportParameter("txtDate1", GlobalMaster.FinMaster[3].FinVal);
             rptParam[2] = new ReportParameter("txtDate2", GlobalMaster.FinMaster[2].FinVal);
             rptParam[3] = new ReportParameter("txtDate3", GlobalMaster.FinMaster[1].FinVal);

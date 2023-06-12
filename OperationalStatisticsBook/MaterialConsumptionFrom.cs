@@ -34,31 +34,54 @@ namespace OperationalStatisticsBook
         void ShowData()
         {
             DateTime currentDate = new DateTime(Year, Month, 01);
-            String[,] param = new string[,]
-                    {
-                    {"@OsbId",OsbId.ToString()},
 
-            };
-            DataTable dt = Common.ExecuteProcedure("sp_rptMaterialConsumptionFrom", param);
-            //String[,] param1 = new string[,]
-            //        {
-            //    {"@Inputyear",Year.ToString().Trim()},
-            //    //{"@Month",Month.ToString().Trim()},
-            //};
-            //DataTable dt1 = Common.ExecuteProcedure("rptGetAllMaterialConsumption", param1);
-
-            if (dt.Rows.Count > 0)
+            if (finYear == "2023-24")
             {
-                dataGridView1.DataSource = dt;
-                Save.BackColor = Color.Green;
+
+                DataTable dt = new DataTable();
+                SqlCommand cmd = new SqlCommand("Select S_No, ITEM, UNIT, Param1, Param2, Param3 From [rpt].tbl_MaterialConsumptionFrom where OsbId = @OsbId", con);
+                cmd.Parameters.AddWithValue("@OsbId", 132);
+                cmd.CommandType = CommandType.Text;
+                SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                sda.Fill(dt);
+
+                if (dt.Rows.Count > 0)
+                {
+                    dataGridView1.DataSource = dt;
+                    Save.BackColor = Color.Green;
+                }
+                else
+                {
+                    dataGridView1.DataSource = BindMaterialConsumptionFrom();
+                }
             }
+
+            else if (finYear == "2022-23")
+            {
+                DataTable dt = new DataTable();
+                SqlCommand cmd = new SqlCommand("Select S_No, ITEM, UNIT, Param1, Param2, Param3 From [rpt].tbl_MaterialConsumptionFrom where OsbId = @OsbId", con);
+                cmd.Parameters.AddWithValue("@OsbId", 5);
+                cmd.CommandType = CommandType.Text;
+                SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                sda.Fill(dt);
+
+                if (dt.Rows.Count > 0)
+                {
+                    dataGridView1.DataSource = dt;
+                    Save.BackColor = Color.Green;
+                }
+                else
+                {
+                    // dataGridView1.DataSource = dt1;
+                }
+            }
+
             else
             {
-                // dataGridView1.DataSource = dt1;
                 dataGridView1.DataSource = BindMaterialConsumptionFrom();
             }
-            //else
-            //    dataGridView1.DataSource = BindMaterialConsumptionFrom();
+
+
 
             Common.SetColumnNonEditable(dataGridView1, 3);
             Common.SetColumnNonEditable(dataGridView1, 4);

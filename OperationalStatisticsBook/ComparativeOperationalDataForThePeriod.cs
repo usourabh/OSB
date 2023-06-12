@@ -36,21 +36,43 @@ namespace OperationalStatisticsBook
 
             try
             {
-                DataTable dt = new DataTable();
-                SqlCommand cmd = new SqlCommand("SELECT [S_No],[Param1],[Param2],[Param3],[Param4] ,[Param5] FROM [rpt].[tbl_ComparativeOperationalData] where OsbId=@OsbId", con);
-                cmd.Parameters.AddWithValue("@OsbId", 5);
-                cmd.CommandType = CommandType.Text;
-                SqlDataAdapter sda = new SqlDataAdapter(cmd);
-                sda.Fill(dt);
-                if (dt.Rows.Count > 0)
+                if (finYear == "2022-23")
                 {
-                    dataGridView1.DataSource = dt;
-                    Save.BackColor = Color.Green;
+                    DataTable dt = new DataTable();
+                    SqlCommand cmd = new SqlCommand("SELECT [S_No],[Param1],[Param2],[Param3],[Param4] ,[Param5] FROM [rpt].[tbl_ComparativeOperationalData] where OsbId=@OsbId", con);
+                    cmd.Parameters.AddWithValue("@OsbId", 5);
+                    cmd.CommandType = CommandType.Text;
+                    SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                    sda.Fill(dt);
+                    if (dt.Rows.Count > 0)
+                    {
+                        dataGridView1.DataSource = dt;
+                        Save.BackColor = Color.Green;
+                    }
+                    else
+                    {
+                        dataGridView1.DataSource = BindComparativeOperationDataTbl();
+                    }
                 }
-                else
+                else if (finYear == "2023-24")
                 {
-                    dataGridView1.DataSource = BindComparativeOperationDataTbl();
+                    DataTable dt = new DataTable();
+                    SqlCommand cmd = new SqlCommand("SELECT [S_No],[Param1],[Param2],[Param3],[Param4] ,[Param5] FROM [rpt].[tbl_ComparativeOperationalData] where OsbId=@OsbId", con);
+                    cmd.Parameters.AddWithValue("@OsbId", 132);
+                    cmd.CommandType = CommandType.Text;
+                    SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                    sda.Fill(dt);
+                    if (dt.Rows.Count > 0)
+                    {
+                        dataGridView1.DataSource = dt;
+                        Save.BackColor = Color.Green;
+                    }
+                    else
+                    {
+                        dataGridView1.DataSource = BindComparativeOperationDataTbl();
+                    }
                 }
+
                 Common.SetColumnNonEditable(dataGridView1, 3);
                 Common.SetColumnNonEditable(dataGridView1, 4);
                 Common.SetColumnNonEditable(dataGridView1, 5);
@@ -108,17 +130,17 @@ namespace OperationalStatisticsBook
             table.Rows.Add("11", "Kms Operated Daily", "lakh", " ", " ", " ");
             table.Rows.Add("12", "Vehicle Utilization Km/Bus/Day", "kms", " ", " ", " ");
             table.Rows.Add("13", "Total Traffic Income (Including Passenger Tax)", "Rs. in lakh", " ", " ", " ");
-            table.Rows.Add("14", "Pink Pass Earning", "Rs. in lakh", "0", "0", "0");
-            table.Rows.Add("15", "Traffic Income Per day", "Paise", " ", " ", " ");
-            table.Rows.Add("16", "Traffic Income Per km", "Rs", " ", " ", " ");
-            table.Rows.Add("17", "Traffic Income per bus daily", "No", " ", " ", " ");
-            table.Rows.Add("18", "Breakdowns per 10,000 kms", "No", " ", " ", " ");
-            table.Rows.Add("19", "Accidents as per 1 lakh kms", "lakh", " ", " ", " ");
-            table.Rows.Add("20", "Total passsengers carried", "lakh", " ", " ", " ");
-            table.Rows.Add("21", "Pink pass passenger", "No", "0", "0", "0");
-            table.Rows.Add("22", "Passengers carried daily", "%", " ", " ", " ");
-            table.Rows.Add("23", "Passengers per bus daily", "No", " ", " ", " ");
-            table.Rows.Add("24", "Load Factor", "%", " ", " ", " ");
+            //table.Rows.Add("14", "Pink Pass Earning", "Rs. in lakh", " ", " ", " ");
+            table.Rows.Add("14", "Traffic Income Per day", "Paise", " ", " ", " ");
+            table.Rows.Add("15", "Traffic Income Per km", "Rs", " ", " ", " ");
+            table.Rows.Add("16", "Traffic Income per bus daily", "No", " ", " ", " ");
+            table.Rows.Add("17", "Breakdowns per 10,000 kms", "No", " ", " ", " ");
+            table.Rows.Add("18", "Accidents as per 1 lakh kms", "lakh", " ", " ", " ");
+            table.Rows.Add("19", "Total passsengers carried", "lakh", " ", " ", " ");
+            //table.Rows.Add("21", "Pink pass passenger", "No", " ", " ", " ");
+            table.Rows.Add("20", "Passengers carried daily", "%", " ", " ", " ");
+            table.Rows.Add("21", "Passengers per bus daily", "No", " ", " ", " ");
+            table.Rows.Add("22", "Load Factor", "%", " ", " ", " ");
 
             //  dataGridView1.DataSource = table;
 

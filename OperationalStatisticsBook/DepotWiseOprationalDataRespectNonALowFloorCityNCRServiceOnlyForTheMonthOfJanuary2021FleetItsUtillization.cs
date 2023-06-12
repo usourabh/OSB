@@ -277,9 +277,10 @@ namespace OperationalStatisticsBook
                     cmd1.Parameters.AddWithValue("@month", Month);
                     cmd1.Parameters.AddWithValue("@year", Year);
                     cmd1.CommandType = CommandType.StoredProcedure;
+                    cmd1.CommandTimeout = 350;
+
                     SqlDataAdapter sda1 = new SqlDataAdapter(cmd1);
                     sda1.Fill(autoSpTable);
-                    cmd1.CommandTimeout = 350;
 
                 }
 

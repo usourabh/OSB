@@ -174,12 +174,35 @@ namespace OperationalStatisticsBook
 
         public DataTable GetDataComparativeOperationalData_Page7(int OsbId)
         {
-            String[,] param = new string[,]
+            if (finYear == "2023-24")
+            {
+                String[,] param = new string[,]
+                   {
+                   {"@OsbId", "132"},
+                };
+                DataTable dt = Common.ExecuteProcedure("sp_ComparativeOperationalData", param);
+                return dt;
+            }
+
+            else if (finYear == "2022-23")
+            {
+                String[,] param = new string[,]
+                {
+                   {"@OsbId", "5"},
+                };
+                DataTable dt = Common.ExecuteProcedure("sp_ComparativeOperationalData", param);
+                return dt;
+            }
+            else
+            {
+                String[,] param = new string[,]
                    {
                    {"@OsbId",OsbId.ToString()},
                 };
-            DataTable dt = Common.ExecuteProcedure("sp_ComparativeOperationalData", param);
-            return dt;
+                DataTable dt = Common.ExecuteProcedure("sp_ComparativeOperationalData", param);
+                return dt;
+            }
+
         }
 
 

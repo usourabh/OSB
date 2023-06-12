@@ -51,22 +51,47 @@ namespace OperationalStatisticsBook
             DateTime newDate = currentDate.AddYears(+1);
             string currentYear = newDate.Year.ToString();
             String previousMonthName = newDate.ToString("MMMM");
-            String[,] param = new string[,]
+
+            if (finYear == "2023-24")
+            {
+                String[,] param = new string[,]
+                    {
+                    //{"@OsbId",OsbId.ToString()},
+                    //remove below line if you want to remove hardcore osbid
+                    {"@OsbId", "132"},
+                        };
+                DataTable dt = Common.ExecuteProcedure("SP_rptPriceAndCostIndices", param);
+                if (dt.Rows.Count > 0)
+                {
+                    dataGridView1.DataSource = dt;
+                    Save.BackColor = Color.Green;
+                }
+                else
+                {
+                    dataGridView1.DataSource = BindPriceAndCostIndicies();
+                }
+            }
+
+            else if (finYear == "2022-23")
+            {
+                String[,] param = new string[,]
                     {
                     //{"@OsbId",OsbId.ToString()},
                     //remove below line if you want to remove hardcore osbid
                     {"@OsbId", "5"},
-            };
-            DataTable dt = Common.ExecuteProcedure("SP_rptPriceAndCostIndices", param);
-            if (dt.Rows.Count > 0)
-            {
-                dataGridView1.DataSource = dt;
-                Save.BackColor = Color.Green;
+                        };
+                DataTable dt = Common.ExecuteProcedure("SP_rptPriceAndCostIndices", param);
+                if (dt.Rows.Count > 0)
+                {
+                    dataGridView1.DataSource = dt;
+                    Save.BackColor = Color.Green;
+                }
+                else
+                {
+                    dataGridView1.DataSource = BindPriceAndCostIndicies();
+                }
             }
-            else
-            {
-                dataGridView1.DataSource = BindPriceAndCostIndicies();
-            }
+
             Common.SetRowNonEditable(dataGridView1, 0);
             Common.SetRowNonEditable(dataGridView1, 1);
             Common.SetRowNonEditable(dataGridView1, 2);
@@ -102,11 +127,12 @@ namespace OperationalStatisticsBook
             //    table.Rows.Add(newDate.AddYears(-i).Year + "-" + newDate2.AddYears(-i).Year, "0", "0", "0", "0", "0", "0", "0", "0");
             //}
 
-            table.Rows.Add("2016-2017", " ", " ", " ", " ", " ", " ", " ", " ");
+            //table.Rows.Add("2016-2017", " ", " ", " ", " ", " ", " ", " ", " ");
             table.Rows.Add("2017-2018", " ", " ", " ", " ", " ", " ", " ", " ");
             table.Rows.Add("2018-2019", " ", " ", " ", " ", " ", " ", " ", " ");
             table.Rows.Add("2019-2020", " ", " ", " ", " ", " ", " ", " ", " ");
             table.Rows.Add("2020-2021", " ", " ", " ", " ", " ", " ", " ", " ");
+            table.Rows.Add("2021-2022", " ", " ", " ", " ", " ", " ", " ", " ");
 
 
             return table;

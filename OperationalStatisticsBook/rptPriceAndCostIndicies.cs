@@ -36,12 +36,33 @@ namespace OperationalStatisticsBook
 
         public DataTable GetData()
         {
-            String[,] param = new string[,]
+            if (finYear == "2023-24")
+            {
+                String[,] param = new string[,]
                    {
-                   {"@OsbId",OsbId.ToString()},
+                   {"@OsbId", "132"},
                 };
-            DataTable dt = Common.ExecuteProcedure("GetAllrptPriceAndCostIndices", param);
-            return dt;
+                DataTable dt = Common.ExecuteProcedure("GetAllrptPriceAndCostIndices", param);
+                return dt;
+            }
+            else if (finYear == "2022-23")
+            {
+                String[,] param = new string[,]
+                   {
+                   {"@OsbId", "5"},
+                };
+                DataTable dt = Common.ExecuteProcedure("GetAllrptPriceAndCostIndices", param);
+                return dt;
+            }
+            else
+            {
+                String[,] param = new string[,]
+                   {
+                   {"@OsbId", OsbId.ToString()},
+                };
+                DataTable dt = Common.ExecuteProcedure("GetAllrptPriceAndCostIndices", param);
+                return dt;
+            }
         }
         private void rptPriceAndCostIndicies_Load(object sender, EventArgs e)
         {
@@ -49,8 +70,8 @@ namespace OperationalStatisticsBook
             ReportDataSource datasource = new ReportDataSource("rptPriceAndCostIndicies", dtReportData);
             this.reportViewer1.LocalReport.DataSources.Clear();
             this.reportViewer1.LocalReport.DataSources.Add(datasource);
-             ReportParameter[] rptParam = new ReportParameter[1];
-            rptParam[0] = new ReportParameter("ReportTitle", GlobalMaster.FinMaster[6].FinVal + " to " + GlobalMaster.FinMaster[2].FinVal); 
+            ReportParameter[] rptParam = new ReportParameter[1];
+            rptParam[0] = new ReportParameter("ReportTitle", GlobalMaster.FinMaster[6].FinVal + " to " + GlobalMaster.FinMaster[2].FinVal);
             this.reportViewer1.LocalReport.SetParameters(rptParam);
             this.reportViewer1.RefreshReport();
         }
